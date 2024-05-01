@@ -298,11 +298,11 @@ namespace LaserMarking
                 {
                     axMBActX2.Comm.Offline();
                 }
+                
                 axMBActX2.Comm.ConnectionType =
                 MBPLib2.ConnectionTypes.CONNECTION_USB;
                 is_success = axMBActX2.Comm.Online();
                 
-
             }
             catch (System.Runtime.InteropServices.COMException error)
             {
@@ -845,7 +845,7 @@ namespace LaserMarking
                                     TubesFound.Add (cellVar.ToString());
                                     mtl = "SS";
                                 }
-                                else if ((cellVar.ToString()).Contains("4130") || (cellVar.ToString()).Contains("A513-5") || (cellVar.ToString()).Contains("A513-1") || (cellVar.ToString()).Contains("J524") || (cellVar.ToString()).Contains("J525"))
+                                else if ( ((cellVar.ToString()).Contains("4130") || (cellVar.ToString()).Contains("A513-5") || (cellVar.ToString()).Contains("A513-1") || (cellVar.ToString()).Contains("J524") || (cellVar.ToString()).Contains("J525"))  && (!(cellVar.ToString()).Contains("J524 "))  && (!(cellVar.ToString()).Contains("J524,"))  )
                                 {
                                     TubesFound.Add(cellVar.ToString());
                                     mtl = "CS";
@@ -925,40 +925,34 @@ namespace LaserMarking
             ProgramMaterialCombo.SelectedIndex = -1; ;
             if(mtl == "SS")
             {
+                ProgramMaterialCombo.SelectedItem = "SS";
                 if (diameter == 2.000)
                 {
                     ProgramSizeCombo.SelectedItem = "32";
-                    ProgramMaterialCombo.SelectedItem = "SS";
+                    
                 }else if (diameter == 1.500)
                 {
                     ProgramSizeCombo.SelectedItem = "24";
-                    ProgramMaterialCombo.SelectedItem = "SS";
                 }else if (diameter == 1.250)
                 {
                     ProgramSizeCombo.SelectedItem = "20";
-                    ProgramMaterialCombo.SelectedItem = "SS";
                 }else if (diameter == 1.000)
                 {
                     ProgramSizeCombo.SelectedItem = "16";
-                    ProgramMaterialCombo.SelectedItem = "SS";
                 }else if (diameter == 0.750)
                 {
                     ProgramSizeCombo.SelectedItem = "12";
-                    ProgramMaterialCombo.SelectedItem = "SS";
                 }else if (diameter == 0.500)
                 {
                     ProgramSizeCombo.SelectedItem = "08";
-                    ProgramMaterialCombo.SelectedItem = "SS";
                 }
                 else if (diameter == 0.375)
                 {
-                    ProgramSizeCombo.SelectedItem = "06";
-                    ProgramMaterialCombo.SelectedItem = "SS";
+                    ProgramSizeCombo.SelectedItem = "06";    
                 }
                 else if (diameter == 0.250)
                 {
                     ProgramSizeCombo.SelectedItem = "04";
-                    ProgramMaterialCombo.SelectedItem = "SS";
                 }
                 else
                 {
@@ -968,7 +962,44 @@ namespace LaserMarking
             }
             else
             {
-                MessageBox.Show("No programs for anything but Stainless.");
+                ProgramMaterialCombo.SelectedItem = "CS";
+                if (diameter == 2.000)
+                {
+                    ProgramSizeCombo.SelectedItem = "32";
+
+                }
+                else if (diameter == 1.500)
+                {
+                    ProgramSizeCombo.SelectedItem = "24";
+                }
+                else if (diameter == 1.250)
+                {
+                    ProgramSizeCombo.SelectedItem = "20";
+                }
+                else if (diameter == 1.000)
+                {
+                    ProgramSizeCombo.SelectedItem = "16";
+                }
+                else if (diameter == 0.750)
+                {
+                    ProgramSizeCombo.SelectedItem = "12";
+                }
+                else if (diameter == 0.500)
+                {
+                    ProgramSizeCombo.SelectedItem = "08";
+                }
+                else if (diameter == 0.375)
+                {
+                    ProgramSizeCombo.SelectedItem = "06";
+                }
+                else if (diameter == 0.250)
+                {
+                    ProgramSizeCombo.SelectedItem = "04";
+                }
+                else
+                {
+                    MessageBox.Show("No CARBON program exists for " + diameter + " inch.");
+                }
             }
         }
 
@@ -1078,7 +1109,10 @@ namespace LaserMarking
                     } 
                 
                 }
-                catch { axMBActX2.Block(1).Text = " "; }
+                catch {
+                    DirectoryInfo directory = new DirectoryInfo(@"U:\Engineering\CUSTOMERLOGO\");
+                    axMBActX2.Block(1).Text = "" + directory.ToString() + "Multiflow.MHL";
+                }
             }
             
 
@@ -1099,7 +1133,7 @@ namespace LaserMarking
 
         private void ProgramSizeCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ProgramMaterialCombo.SelectedIndex = -1;
+            //ProgramMaterialCombo.SelectedIndex = -1;
         }
 
         private void CheckForExistingProgram(string selectedPN)
@@ -2169,7 +2203,7 @@ namespace LaserMarking
                     axMBActX2.Block(1).IsLogoAspectRatioKeep = true;
                     //axMBActX2.Block(1).LogoWidth = 10.250; //in mm
                     DirectoryInfo directory = new DirectoryInfo(@"U:\Engineering\CUSTOMERLOGO\");
-                    axMBActX2.Block(1).Text = "" + directory.ToString() + "UMI.MHL";
+                    axMBActX2.Block(1).Text = "" + directory.ToString() + "Multiflow.MHL";
 
                 }
 
