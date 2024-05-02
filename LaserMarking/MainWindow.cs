@@ -424,26 +424,32 @@ namespace LaserMarking
             catch (System.Runtime.InteropServices.COMException error)
             {
                 MessageBox.Show(error.Message);
+               
             }
 
 
             //axMBActX1.IsBlockingCommunication = false;
-            axMBActX2.IsBlockingCommunication = true;
+            //axMBActX2.IsBlockingCommunication = true;
+            
 
             try
             {
-                axMBActX2.SaveControllerJob(0);
 
-                int JobNo;
-                try
-                {
-                    JobNo = axMBActX2.Operation.GetCurrentJobNo();
-                    //MessageBox.Show("JOb Number "+JobNo);
-                }
-                catch (System.Runtime.InteropServices.COMException error)
-                {
-                    MessageBox.Show(error.Message);
-                }
+                axMBActX2.SaveControllerJob(0);
+                
+                //int JobNo;
+                //JobNo = axMBActX2.Operation.GetCurrentJobNo();
+
+                axMBActX2.IsBlockingCommunication = true;
+
+                axMBActX2.Operation.SetCurrentJobNo(0);
+
+                axMBActX2.Operation.StartMarking();
+
+
+                //MessageBox.Show("Marking Done");
+
+                //MessageBox.Show("JOb Number "+JobNo);
 
 
 
@@ -457,17 +463,7 @@ namespace LaserMarking
                 //}
 
 
-                try
-                {
-                    axMBActX2.IsBlockingCommunication = true;
-                    axMBActX2.Operation.StartMarking();
-                    //MessageBox.Show("Marking Done");
-                    
-                }
-                catch (System.Runtime.InteropServices.COMException error)
-                {
-                    MessageBox.Show(error.Message);
-                }
+                //Get_Z_Click performs the same operation 
                 //get result
                 double diffZ;
                 double tiltX;
@@ -479,12 +475,12 @@ namespace LaserMarking
                 bool result2;
                 double time2;
 
-                axMBActX2.Operation.GetZTrackingResult(0, out diffZ, out tiltX, out tiltY, out stab, out time, out isWithinTolerance, out result);
+                //axMBActX2.Operation.GetZTrackingResult(0, out diffZ, out tiltX, out tiltY, out stab, out time, out isWithinTolerance, out result);
                 axMBActX2.Operation.GetMarkingResult(out result2,out time2);
                 //MessageBox.Show(" diffZ: " + diffZ + " tiltX: " + tiltX + " tiltY: " + tiltY + " stab: " + stab + " time: " + time + " isWithinTolerance: " + isWithinTolerance + " result: " + result + " result2: " + result2 + " time2: " + time2);
 
 
-
+                
             }
             catch (System.Runtime.InteropServices.COMException error)
             {
@@ -517,7 +513,7 @@ namespace LaserMarking
             {
                 MessageBox.Show(error.Message);
             }
-            MessageBox.Show("Marking end");
+            //MessageBox.Show("Marking end");
             Mark_Part.BackColor = SystemColors.ControlLight;
         }
 
@@ -1016,9 +1012,20 @@ namespace LaserMarking
 
                     cmd2.Parameters.AddWithValue("@Search", (TubePartNumber.ToString()));
 
-                    cmd2.CommandText = "" +
+                    cmd2.Parameters.AddWithValue("@Rev", (OrderRev.ToString()));
 
-                    " select * FROM [HydraulicHoseInfo_prod].[dbo].[TubeAssemblies] where PartNo = @Search                                                                                                    ";
+                    if (OrderRev == " ")
+                    {
+                        cmd2.CommandText = "" +
+
+                        " select * FROM [HydraulicHoseInfo_prod].[dbo].[TubeAssemblies] where PartNo = @Search";
+                    }
+                    else
+                    {
+                        cmd2.CommandText = "" +
+
+                        " select * FROM [HydraulicHoseInfo_prod].[dbo].[TubeAssemblies] where PartNo = @Search AND Rev = @Rev";
+                    }                                                                                                   
 
                     SqlDataReader reader2 = cmd2.ExecuteReader();  //SET up reader to read values out of command.
 
@@ -1028,9 +1035,9 @@ namespace LaserMarking
                         try
                         {
                             //if ((reader2["Rev"]).ToString() == "" )
-                            if (true) // USE REV FROM ORDER FOR NOW
+                            if (OrderRev == " ") // USE REV FROM ORDER FOR NOW
                             {
-                                PartNumAndRevBox.Text = (reader2["PartNo"]).ToString() + "_" + OrderRev;
+                                PartNumAndRevBox.Text = (reader2["PartNo"]).ToString();
                             }
                             else
                             {

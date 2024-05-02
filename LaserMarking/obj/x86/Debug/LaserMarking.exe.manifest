@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PrqyW+0bWzz+s8hFk55hPGa9qHT6rMSK6589ByJlhAc=</dsig:DigestValue>
+        <dsig:DigestValue>NrX6wXqwwZUNL30fpjTC8NsS2bkBtHIHLcuXKiDSAZs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QMSWBu7I7D/iSK8UXozZUiyTeqAg0h1vAf7zjPh/V+w=</dsig:DigestValue>
+        <dsig:DigestValue>+tREpUGGspjoPjWw3/kXWGgv6HOHc6U2U1IRNxtoA1U=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,43 +85,43 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>moybjYp7TjfdEdyQoTTeYz9WfsM9CyvHOHm6xlxAAe8=</dsig:DigestValue>
+        <dsig:DigestValue>phYur+N6N9InOFuJE3+qVbvRIQPO3q/lZahnb8iu0AM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.MBPActXLib.dll" size="622592">
-      <assemblyIdentity name="Interop.MBPActXLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Interop.MBPActXLib" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yKNguzXYcEFgfeNoBF8vpeF9UR606Ix9GgjwVDI1DkU=</dsig:DigestValue>
+        <dsig:DigestValue>aqjrznIe1Xeii2ZZwTLSw07RDY4T7Z4yc+5GazE0NyQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.MBPLib2.dll" size="104960">
-      <assemblyIdentity name="Interop.MBPLib2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Interop.MBPLib2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>yYl9TjBZLaMwk5d0F9/AbheueSQL4nemcBDmzIs/IRE=</dsig:DigestValue>
+        <dsig:DigestValue>wD7sYKwBYXWJBsUt281Zwr/Z7oNEBqQhP1sWI6CsL5w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="142248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="64936">
       <assemblyIdentity name="LaserMarking" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BT5DpdwZrUrU2t4s2YCXpBG88bXX6ezI+jfrsqGbzlI=</dsig:DigestValue>
+        <dsig:DigestValue>Wbcapu7rrm1h10QpA+vUKoLPv63eSrJEMVTEAsJ2TFs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
