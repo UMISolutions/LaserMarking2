@@ -2217,6 +2217,37 @@ namespace LaserMarking
             }
             catch { axMBActX2.Block(1).Text = " "; }
         }
+
+        private void save_Click(object sender, EventArgs e)
+        {
+          
+            string FilePath = $@"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\{PartNumAndRevBox}.MA2";
+            axMBActX2.SaveControllerJob(0);
+
+            int JobNo;    
+            try
+            {
+                
+                if (File.Exists(FilePath))
+                {
+                    File.Delete(FilePath);
+                    
+                    axMBActX2.ReceiveControllerJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2", 0);
+                }
+                else
+                {
+                   
+                    axMBActX2.ReceiveControllerJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2", 0);
+                }
+     
+                
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+            
+        }
     }
-    }
+}
 

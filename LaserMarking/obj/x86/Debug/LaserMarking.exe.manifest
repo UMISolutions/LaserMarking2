@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dJRfwcGD6kBiTd9N3QGjCbAJuzHFQ12Mj/hB50zsZaM=</dsig:DigestValue>
+        <dsig:DigestValue>BC3dTP7+pVlBAE1DVMXeZ5Sbiixd0ZnISSOCR9sdVrc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PJc9VG8rTg8ah93JNmrjccunCEI6HNPi8Qw/bC9bzNg=</dsig:DigestValue>
+        <dsig:DigestValue>dU4iEN4ib5uxXfTlbaHIZVNBYa0GoJuH8b6C2fbP6U0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,31 +85,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>goyEU84ZE9YrLqQgCdy3agm9WbrshEg6+x5Ir94Sms4=</dsig:DigestValue>
+        <dsig:DigestValue>A8V1uYF3j4aXXf+CSlRwnWg7PFGMvhZAUNL2M07dKOM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.MBPActXLib.dll" size="622592">
-      <assemblyIdentity name="Interop.MBPActXLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Interop.MBPActXLib" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>05V5JwD8Jrv7/7PV9TgJB183XiZvRjSbSE++xFcuGjY=</dsig:DigestValue>
+        <dsig:DigestValue>qdEi4Xy0UtFR+sAwcki1xGQdkcUNnCwWN4UPp+2XU3Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.MBPLib2.dll" size="104960">
-      <assemblyIdentity name="Interop.MBPLib2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="Interop.MBPLib2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0AwHUq8EURLuVzCqvjUDJ26F1f3wGLbJUqMXBKdzNpE=</dsig:DigestValue>
+        <dsig:DigestValue>aST47ctiViW6hAg4VhptEO9vBpjHTqOuKwgEFDl0N6I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bGMGqlvxhdzeS+GwE4A9W7150Gpw241Bl85rWYkwEgE=</dsig:DigestValue>
+        <dsig:DigestValue>lMq/+chWh6+RZ39P6vC/+9ExXvkhvLpEqI8cnq/Z2xA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

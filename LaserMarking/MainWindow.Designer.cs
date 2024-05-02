@@ -87,6 +87,7 @@ namespace LaserMarking
             this.axMBActX1 = new AxMBPLib2.AxMBActX();
             this.AllPartNumBtn = new System.Windows.Forms.Button();
             this.GetLengthsBtn = new System.Windows.Forms.Button();
+            this.save = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -638,11 +639,22 @@ namespace LaserMarking
             this.GetLengthsBtn.Visible = false;
             this.GetLengthsBtn.Click += new System.EventHandler(this.GetLengthsBtn_Click);
             // 
+            // save
+            // 
+            this.save.Location = new System.Drawing.Point(329, 617);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(82, 47);
+            this.save.TabIndex = 55;
+            this.save.Text = "Save";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 870);
+            this.Controls.Add(this.save);
             this.Controls.Add(this.GetLengthsBtn);
             this.Controls.Add(this.AllPartNumBtn);
             this.Controls.Add(this.axMBActX1);
@@ -765,6 +777,7 @@ namespace LaserMarking
         private AxMBPLib2.AxMBActX axMBActX1;
         private System.Windows.Forms.Button AllPartNumBtn;
         private System.Windows.Forms.Button GetLengthsBtn;
+        private System.Windows.Forms.Button save;
         //private System.Windows.Forms.Button saveBtn;
     }
 }
