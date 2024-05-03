@@ -2222,12 +2222,11 @@ namespace LaserMarking
         {
           
             string FilePath = $@"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\{PartNumAndRevBox}.MA2";
-            axMBActX2.SaveControllerJob(0);
-
-            int JobNo;    
+           
+               
             try
             {
-                
+                axMBActX2.SaveControllerJob(0);
                 if (File.Exists(FilePath))
                 {
                     File.Delete(FilePath);
