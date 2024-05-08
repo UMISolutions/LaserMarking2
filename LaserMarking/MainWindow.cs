@@ -27,10 +27,15 @@ namespace LaserMarking
         //PDM Variables
         private IEdmVault5 vault1 = null;
         IEdmFile7 aFile;
+        IEdmFolder5 aFolder;
+        IEdmPos5 aPos;
+        IEdmCard6 aCard;
+        IEdmCardControl7 aControl;
         IEdmFolder5 ppoRetParentFolder;
         private IEdmBom bom;
         private IEdmBomMgr2 bomMgr;
         private IEdmBomView3 bomView;
+        string fileExt;
 
 
         bool GenericProgram = true;
@@ -641,6 +646,8 @@ namespace LaserMarking
             double wall;
             string partnum;
             string mtl;
+            string OrderRev = "0";
+            
 
             DateTime thisDay = DateTime.Today;
             string customdate = thisDay.ToString("yyyy-MM-dd");
@@ -649,29 +656,107 @@ namespace LaserMarking
 
             DateBox.Text = customdate;
 
+
             if (OrdersGridView.SelectedRows.Count != 0)
             {
                 DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
                 SelectedPN = row.Cells["Part_Number"].Value.ToString();
-                SelectedCustomerPN = row.Cells["Customer"].Value.ToString();
+
+
             }
 
-            string PNSub = SelectedPN.Substring(0, 5);
-            string OrderRev = " ";
             if (SelectedPN.Length>5)
             {
                 OrderRev = SelectedPN.Substring(6, SelectedPN.Length - 6);
             }
-            
 
-            CheckForCustomProgram(PNSub);
-            if (GenericProgram == true) 
-            {
-                GetTubePartNumberFromPDMBom(PNSub, out diam, out wall, out partnum, out mtl); 
-                OpenGenericProgram();
-                FillTubeDetails(PNSub, OrderRev); // needs to happen after the program is opened
-            }
             
+            if (SelectedPN[0] == '8' && SelectedPN.Length >= 7 && SelectedPN.Contains("_"))
+            {
+                CheckForCustomProgram(SelectedPN);
+                if (GenericProgram)
+                {
+                    string[] numbers = SelectedPN.Split('_');
+                    GetTubePartNumberFromPDMBom(numbers[0], out diam, out wall, out partnum, out mtl);
+                    OpenGenericProgram();
+                    
+                    FillTubeDetails(numbers[0], numbers[1]);
+
+                }
+            }
+            else if (SelectedPN[0] == '8' && SelectedPN.Length == 5)
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Part_Number");
+                dt.Columns.Add("Customer");
+                dt.Columns.Add("CustomerPN");
+                dt.Columns.Add("Rev");
+                dt.Columns.Add("Description");
+                DataRow dr = null;
+                aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{SelectedPN}.slddrw", out ppoRetParentFolder);
+               
+                try
+                {
+
+                    IEdmEnumeratorVariable10 enumVariable = (IEdmEnumeratorVariable10)aFile.GetEnumeratorVariable();
+                    bool getVarSuccess = enumVariable.GetVarAsText("PartNo", "@", ppoRetParentFolder.ID, out object poPartNo);
+                    getVarSuccess = enumVariable.GetVarAsText("Customer Name", "@", ppoRetParentFolder.ID, out object poCustomer);
+                    getVarSuccess = enumVariable.GetVarAsText("CustomerPN", "@", ppoRetParentFolder.ID, out object poCustomerPN);
+                    getVarSuccess = enumVariable.GetVarAsText("Revision", "@", ppoRetParentFolder.ID, out object poRevision);
+                    getVarSuccess = enumVariable.GetVarAsText("Description", "@", ppoRetParentFolder.ID, out object poDescription);
+
+
+                    dr = dt.NewRow();
+                  
+                    dr["Part_Number"] = poPartNo != null ? poPartNo.ToString() : "N/A";
+                    dr["Customer"] = poCustomer != null ? poCustomer.ToString() : "N/A";
+                    dr["CustomerPN"] = poCustomerPN != null ? poCustomerPN.ToString() : "N/A";
+                    dr["Rev"] = poRevision != null ? poRevision.ToString() : "N/A";
+                    dr["Description"] = poDescription != null ? poDescription.ToString() : "N/A";
+
+                    dt.Rows.Add(dr);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+                
+                OrdersGridView.DataSource = dt;
+                DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
+                OrderRev = row.Cells["Rev"].Value.ToString();
+               
+                CheckForCustomProgram(SelectedPN + "_" + OrderRev);
+                if (GenericProgram)
+                {
+                    
+                    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl);
+                    OpenGenericProgram();
+                    FillTubeDetails(SelectedPN, OrderRev);
+                }
+            }
+            else
+            {
+                CheckForCustomProgram(SelectedPN);
+                if (GenericProgram)
+                {
+                    OpenGenericProgram();
+                    FillTubeDetails(SelectedPN, OrderRev);
+                }
+            }
+
+
+
+            //CheckForCustomProgram(PNSub);
+            //if (GenericProgram == true)
+            //{
+            //    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl);  
+            //    OpenGenericProgram();
+            //    Console.WriteLine("Here1");
+            //    FillTubeDetails(SelectedPN, orderRev); // needs to happen after the program is opened
+            //}
+
         }
 
         private void CheckForCustomProgram(string PN)
@@ -1001,6 +1086,7 @@ namespace LaserMarking
 
         private void FillTubeDetails(string TubePartNumber, string OrderRev)
         {
+            /*
             int customerId =0;
             using (SqlConnection cn = new SqlConnection(OpenConnect(UMIConnectionString)))
             {
@@ -1010,9 +1096,9 @@ namespace LaserMarking
                     SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
                     cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
 
-                    cmd2.Parameters.AddWithValue("@Search", (TubePartNumber.ToString()));
+                    cmd2.Parameters.AddWithValue("@Search", TubePartNumber);
 
-                    cmd2.Parameters.AddWithValue("@Rev", (OrderRev.ToString()));
+                    cmd2.Parameters.AddWithValue("@rev", OrderRev);
 
                     if (OrderRev == " ")
                     {
@@ -1024,7 +1110,7 @@ namespace LaserMarking
                     {
                         cmd2.CommandText = "" +
 
-                        " select * FROM [HydraulicHoseInfo_prod].[dbo].[TubeAssemblies] where PartNo = @Search AND Rev = @Rev";
+                        " select * FROM [HydraulicHoseInfo_prod].[dbo].[TubeAssemblies] where PartNo = @Search AND Rev = @rev";
                     }                                                                                                   
 
                     SqlDataReader reader2 = cmd2.ExecuteReader();  //SET up reader to read values out of command.
@@ -1035,6 +1121,7 @@ namespace LaserMarking
                         try
                         {
                             //if ((reader2["Rev"]).ToString() == "" )
+                            
                             if (OrderRev == " ") // USE REV FROM ORDER FOR NOW
                             {
                                 PartNumAndRevBox.Text = (reader2["PartNo"]).ToString();
@@ -1085,6 +1172,91 @@ namespace LaserMarking
                     MessageBox.Show("Error getting open orders" + ex);
                 }
             }
+            */
+            try
+            {
+                File1List.Items.Clear();
+
+                IEdmVault7 vault2 = null;
+                if (vault1 == null)
+                {
+                    vault1 = new EdmVault5();
+                }
+
+                vault2 = (IEdmVault7)vault1;
+                if (!vault1.IsLoggedIn)
+                {
+                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+                }
+
+                aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{TubePartNumber}.slddrw", out ppoRetParentFolder);
+
+                IEdmEnumeratorVariable10 enumVariable = (IEdmEnumeratorVariable10)aFile.GetEnumeratorVariable();
+                bool getVarSuccess = enumVariable.GetVarAsText("PartNo", "@", ppoRetParentFolder.ID, out object poPartNo);
+                getVarSuccess = enumVariable.GetVarAsText("CustomerPN", "@", ppoRetParentFolder.ID, out object poCustomerPN);
+                getVarSuccess = enumVariable.GetVarAsText("Revision", "@", ppoRetParentFolder.ID, out object poRevision);
+                getVarSuccess = enumVariable.GetVarAsText("Description", "@", ppoRetParentFolder.ID, out object poDescription);
+               
+                if (poRevision == null)
+                {
+                    poRevision = 0;
+                }
+                if (poCustomerPN == null)
+                {
+                    poCustomerPN = "No Part number found";
+                }
+                if (poDescription == null)
+                {
+                    poDescription = "No description found";
+                }
+
+                PartNumAndRevBox.Text = poPartNo.ToString() +"_"+ poRevision.ToString();
+                CustPartNumAndRevBox.Text = poCustomerPN.ToString();
+                string desc = poDescription.ToString();
+                int DescLengthAllow = 32;
+                if (desc.Length <= DescLengthAllow)
+                {
+                    DescLine1Box.Text = desc;
+                }
+                else if (desc.Length > DescLengthAllow && desc.Length <= (DescLengthAllow * 2))
+                {
+                    DescLine1Box.Text = desc.Substring(0, DescLengthAllow);
+                    DescLine2Box.Text = desc.Substring(DescLengthAllow, desc.Length - DescLengthAllow);
+                }
+                else
+                {
+                    DescLine1Box.Text = desc.Substring(0, DescLengthAllow);
+                    DescLine2Box.Text = desc.Substring(DescLengthAllow, DescLengthAllow);
+
+                }
+                using (SqlConnection cn = new SqlConnection(OpenConnect(UMIConnectionString)))
+                {
+                    try
+                    {
+                        cn.Open();  // Open connection using the SQL connection string above
+                        SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
+                        cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
+                        cmd2.Parameters.AddWithValue("@Search", TubePartNumber);
+                        cmd2.CommandText = "" + " select Customer_id FROM [HydraulicHoseInfo_prod].[dbo].[TubeAssemblies] where PartNo = @Search";
+                        SqlDataReader reader2 = cmd2.ExecuteReader();
+                        while (reader2.Read())
+                        {
+                            UpdateCurrentProgramBlocks(Convert.ToInt32(reader2[0]));
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error getting open orders" + ex);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void UpdateCurrentProgramBlocks(int customerId)
@@ -1925,10 +2097,13 @@ namespace LaserMarking
 
         private void AllPartNumBtn_Click(object sender, EventArgs e)
         {
+            /*
             using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
             {
+
                 try
                 {
+                    
                     cn.Open();  // Open connection using the SQL connection string above
                     SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
                     cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
@@ -1951,13 +2126,66 @@ namespace LaserMarking
                     dt.Load(cmd2.ExecuteReader());
 
                     OrdersGridView.DataSource = dt;
-
-
+                    
                 }
-                catch (Exception ex)
+                catch { }
+            }
+            */
+            try
+            { 
+                File1List.Items.Clear();
+
+                IEdmVault7 vault2 = null;
+                if (vault1 == null)
                 {
-                    MessageBox.Show("Error getting open orders" + ex);
+                    vault1 = new EdmVault5();
                 }
+
+                vault2 = (IEdmVault7)vault1;
+                if (!vault1.IsLoggedIn)
+                {
+                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+                }
+
+                //Show the Select File dialog
+
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Part_Number");
+                DataRow dr = null;
+
+                string path = @"C:\UMIS\UMi Parts\80000";
+                DirectoryInfo di = new DirectoryInfo(path);
+                Queue<FileInfo> unvisited = new Queue<FileInfo>();
+
+
+                foreach(var fi in di.EnumerateFiles("*.slddrw"))
+                {
+                    if (fi.Name != null && fi != null)
+                    {
+                        unvisited.Enqueue(fi);  
+                    }
+                    
+                }
+
+                while (unvisited.Count > 0)
+                {
+                    var filed = unvisited.Dequeue();
+                  
+
+                    dr = dt.NewRow();
+                    dr["Part_Number"] = Path.GetFileNameWithoutExtension(filed.Name);
+                    
+                    dt.Rows.Add(dr);
+   
+                    
+                }
+               
+                OrdersGridView.DataSource = dt;
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
             
         }
