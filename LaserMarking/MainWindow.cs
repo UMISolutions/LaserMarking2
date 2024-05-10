@@ -771,6 +771,7 @@ namespace LaserMarking
                         string partNum = "";
                         string customerNum = "";
                         string description = "";
+                        string description2 = "";
                         axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
                         axMBActX2.OpenJob(FilePath);
                         try
@@ -779,10 +780,23 @@ namespace LaserMarking
                             partNum = axMBActX2.Block(3).Text;
                             customerNum = axMBActX2.Block(4).Text;
                             description = axMBActX2.Block(5).Text;
-                            axMBActX2.Block(8).IsMarkingEnable = false;
+                            description2 = axMBActX2.Block(6).Text;
+                            
                             PartNumAndRevBox.Text = partNum;
                             CustPartNumAndRevBox.Text = customerNum;
                             DescLine1Box.Text = description;
+                            DescLine2Box.Text = description2;
+
+                            if (axMBActX2.Block(8).IsMarkingEnable)
+                            {
+                                QRCheckBox.Checked = true;
+                            }
+                            else
+                            {
+                                QRCheckBox.Checked = false;
+                            }
+                            UpdateCurrentProgramBlocks(0);
+
                         }
                         catch (System.Runtime.InteropServices.COMException error)
                         {
