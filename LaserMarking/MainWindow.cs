@@ -768,16 +768,33 @@ namespace LaserMarking
                 {
                     if (axMBActX2.OpenJob(FilePath))
                     {
-                        JobTitleLabel.Text = axMBActX2.Job.Title;
-                        axMBActX2.Block(8).IsMarkingEnable = false;
-
-                    }
+                        string partNum = "";
+                        string customerNum = "";
+                        string description = "";
+                        axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
+                        axMBActX2.OpenJob(FilePath);
+                        try
+                        {
+                            JobTitleLabel.Text = axMBActX2.Job.Title;
+                            partNum = axMBActX2.Block(3).Text;
+                            customerNum = axMBActX2.Block(4).Text;
+                            description = axMBActX2.Block(5).Text;
+                            axMBActX2.Block(8).IsMarkingEnable = false;
+                            PartNumAndRevBox.Text = partNum;
+                            CustPartNumAndRevBox.Text = customerNum;
+                            DescLine1Box.Text = description;
+                        }
+                        catch (System.Runtime.InteropServices.COMException error)
+                        {
+                            MessageBox.Show(error.Message + error);
+                        }  
+                    }               
                 }
                 catch (System.Runtime.InteropServices.COMException error)
                 {
                     MessageBox.Show(error.Message + error);
                 }
-                MessageBox.Show("Program found for PN "+PN);
+                MessageBox.Show("Custom program found for PN "+PN);
                 GenericProgram = false;
             }
             else
