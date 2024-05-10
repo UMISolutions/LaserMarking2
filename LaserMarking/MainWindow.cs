@@ -2454,17 +2454,17 @@ namespace LaserMarking
                
             try
             {
-                axMBActX2.SaveControllerJob(0);
+                
                 if (File.Exists(FilePath))
                 {
                     File.Delete(FilePath);
-                    
-                    axMBActX2.ReceiveControllerJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2", 0);
+
+                    axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
                 }
                 else
                 {
-                   
-                    axMBActX2.ReceiveControllerJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2", 0);
+
+                    axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
                 }
      
                 
