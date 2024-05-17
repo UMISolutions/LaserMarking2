@@ -1,10 +1,15 @@
 ﻿
+using System.Collections.Generic;
+using System;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace LaserMarking
 {
     partial class MainWindow
     {
+        
+
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -23,7 +28,7 @@ namespace LaserMarking
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+       #region Windows Form Designer generated code
 
         /// <summary>
         /// Required method for Designer support - do not modify
@@ -349,7 +354,7 @@ namespace LaserMarking
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(606, 15);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 16);
+            this.label3.Size = new System.Drawing.Size(70, 16);
             this.label3.TabIndex = 24;
             this.label3.Text = "Program:";
             // 
@@ -359,7 +364,7 @@ namespace LaserMarking
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(7, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 16);
+            this.label4.Size = new System.Drawing.Size(58, 16);
             this.label4.TabIndex = 25;
             this.label4.Text = "Orders:";
             // 
@@ -585,7 +590,7 @@ namespace LaserMarking
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(446, 16);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(48, 16);
+            this.label5.Size = new System.Drawing.Size(47, 16);
             this.label5.TabIndex = 49;
             this.label5.Text = "Tube:";
             // 
@@ -779,6 +784,81 @@ namespace LaserMarking
         private System.Windows.Forms.Button GetLengthsBtn;
         private System.Windows.Forms.Button save;
         //private System.Windows.Forms.Button saveBtn;
+    }
+    public partial class frmSelectBOM : Form
+    {
+        private ComboBox comboBoxBOMs;
+        private Button buttonBOM;
+        private Label selectBOMLabel;
+
+        public frmSelectBOM()
+        {
+            this.comboBoxBOMs = new ComboBox();
+            this.buttonBOM = new Button();
+            this.selectBOMLabel = new Label();
+            this.SuspendLayout();
+
+            this.comboBoxBOMs.Location = new System.Drawing.Point(39, 85);
+            this.comboBoxBOMs.Name = "BOMs";
+            this.comboBoxBOMs.Size = new System.Drawing.Size(230, 21);
+
+
+            this.buttonBOM.Location = new System.Drawing.Point(39, 110);
+            this.buttonBOM.Name = "buttonBOM";
+            this.buttonBOM.Text = "Continue";
+            this.buttonBOM.Size = new System.Drawing.Size(230, 21);
+            this.buttonBOM.Click += new System.EventHandler(this.buttonBOM_Click);
+
+
+            this.selectBOMLabel.Location = new System.Drawing.Point(39, 40);
+            this.selectBOMLabel.AutoSize = true;
+            this.selectBOMLabel.Size = new System.Drawing.Size(91, 13);
+            this.selectBOMLabel.Text = "Multiple BOMs were found in the drawing. \nPlease select the BOM containing tube part \nnumbers and continue.";
+
+
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(300, 200);
+            this.Controls.Add(this.buttonBOM);
+            this.Controls.Add(this.comboBoxBOMs);
+            this.Controls.Add(this.selectBOMLabel);
+            this.Name = "frmSelectBOM";
+            this.Text = "frmSelectBOM";
+
+            this.ResumeLayout(false);
+
+        }
+        public string selectedBOM { get; set; }
+        public void SelectBOM(List<string> BOMnames) //initialize
+        {
+            Cursor = Cursors.WaitCursor;
+
+            foreach (string BOMname in BOMnames)
+            {
+                Console.WriteLine(BOMname);
+                comboBoxBOMs.Items.Add(BOMname);
+            }
+            Cursor = Cursors.Default;
+        }
+
+        private void loadForm(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonBOM_Click(object sender, EventArgs e)
+        {
+            if (comboBoxBOMs.SelectedIndex == -1)
+            {
+                MessageBox.Show("must select a BOM to continue", "SELECT BOM", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                this.selectedBOM = comboBoxBOMs.Text;
+                DialogResult = DialogResult.OK;
+                Close();
+            }
+        }
     }
 }
 

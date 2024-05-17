@@ -154,7 +154,8 @@ namespace LaserMarking
                     cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
 
                     cmd2.Parameters.AddWithValue("@Search", "%%");
-
+                    /*
+                    // Code used before
                     cmd2.CommandText = "" +
 
                     //" DECLARE @temp TABLE (SO_Number VARCHAR(255),Order_Date VARCHAR(255),Promise_Date VARCHAR(255),Customer VARCHAR(255),Part_Number VARCHAR(255),Open_Qty VARCHAR(255),Price VARCHAR(255),Open_Amount VARCHAR(255))    " +
@@ -162,11 +163,18 @@ namespace LaserMarking
                     //" SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
                     //" where Part_Number like '80%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
 
+                    
+
                     " DECLARE @temp TABLE (SO_Number VARCHAR(255),Order_Date VARCHAR(255),Promise_Date VARCHAR(255),Customer VARCHAR(255),Part_Number VARCHAR(255),Open_Qty VARCHAR(255),Price VARCHAR(255),Open_Amount VARCHAR(255))    " +
                     " INSERT @temp EXEC CheckOpenOrders                                                                                                                                                                                  " +
                     " SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
                     " where Part_Number like '8%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
-
+                    */
+                    cmd2.CommandText = "" +
+                    " select wo.ItemCode as Part_number, wo1.PlannedQty as Total_QTY, wo1.EndDate as  Due_date " +
+                    "from WOR1 wo1 " +
+                    " left join OWOR wo on wo.DocEntry = wo1.DocEntry  " +
+                    "where wo1.ItemCode like '%tub%'  and wo.Status != 'L' ";
                     DataTable dt = new DataTable();
                     dt.Load(cmd2.ExecuteReader());
                     
@@ -646,7 +654,8 @@ namespace LaserMarking
             double wall;
             string partnum;
             string mtl;
-            string OrderRev = "0";
+            string PNSub = " ";
+            string orderRev = "0";
             
 
             DateTime thisDay = DateTime.Today;
@@ -664,13 +673,107 @@ namespace LaserMarking
 
 
             }
-
-            if (SelectedPN.Length>5)
+           
+            if (SelectedPN.Contains("_"))
             {
-                OrderRev = SelectedPN.Substring(6, SelectedPN.Length - 6);
+                PNSub = SelectedPN.Split('_')[0];
+                orderRev = SelectedPN.Split('_')[1];
+                
             }
 
-            
+
+            if (SelectedPN[0] == 'T')
+            {
+                DataTable dt = new DataTable();
+          
+                dt.Columns.Add("Part_Number");
+                dt.Columns.Add("Description");
+                dt.Columns.Add("Quantity");
+                dt.Columns.Add("UOM");
+                GetTubeKitFromPDMBom(PNSub,dt);
+                OrdersGridView.DataSource = dt;
+                
+            }
+            else if (SelectedPN[0] == 'P')
+            {
+                CheckForCustomProgram(SelectedPN);
+                if (GenericProgram)
+                {
+                    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall,out  partnum, out mtl);
+                    OpenGenericProgram();
+                    FillTubeDetails(SelectedPN, " ");
+                }
+            }
+            else if (SelectedPN[0] == '8' && SelectedPN.Length == 5)
+            {
+
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Part_Number");
+                dt.Columns.Add("Customer");
+                dt.Columns.Add("CustomerPN");
+                dt.Columns.Add("Rev");
+                dt.Columns.Add("Description");
+                DataRow dr = null;
+                aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{SelectedPN}.slddrw", out ppoRetParentFolder);
+
+               
+
+                try
+                {
+                    IEdmEnumeratorVariable10 enumVariable = (IEdmEnumeratorVariable10)aFile.GetEnumeratorVariable();
+                    bool getVarSuccess = enumVariable.GetVarAsText("PartNo", "@", ppoRetParentFolder.ID, out object poPartNo);
+                    getVarSuccess = enumVariable.GetVarAsText("Customer Name", "@", ppoRetParentFolder.ID, out object poCustomer);
+                    getVarSuccess = enumVariable.GetVarAsText("CustomerPN", "@", ppoRetParentFolder.ID, out object poCustomerPN);
+                    getVarSuccess = enumVariable.GetVarAsText("Revision", "@", ppoRetParentFolder.ID, out object poRevision);
+                    getVarSuccess = enumVariable.GetVarAsText("Description", "@", ppoRetParentFolder.ID, out object poDescription);
+
+
+                    dr = dt.NewRow();
+
+                    dr["Part_Number"] = poPartNo != null ? poPartNo.ToString() : "N/A";
+                    dr["Customer"] = poCustomer != null ? poCustomer.ToString() : "N/A";
+                    dr["CustomerPN"] = poCustomerPN != null ? poCustomerPN.ToString() : "N/A";
+                    dr["Rev"] = poRevision != null ? poRevision.ToString() : "N/A";
+                    dr["Description"] = poDescription != null ? poDescription.ToString() : "N/A";
+
+                    dt.Rows.Add(dr);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+
+                }
+
+                OrdersGridView.DataSource = dt;
+                DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
+                orderRev = row.Cells["Rev"].Value.ToString();
+
+                CheckForCustomProgram(SelectedPN + "_" + orderRev);
+                if (GenericProgram)
+                {
+
+                    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl);
+                    OpenGenericProgram();
+                    FillTubeDetails(SelectedPN, orderRev);
+                }
+            }
+            else
+            {
+                CheckForCustomProgram(SelectedPN);
+                if (GenericProgram)
+                {
+              
+                    GetTubePartNumberFromPDMBom(PNSub, out diam, out wall, out partnum, out mtl);
+                    OpenGenericProgram();
+
+                    FillTubeDetails(PNSub, orderRev);
+
+                }
+            }
+
+
+            /*
             if (SelectedPN[0] == '8' && SelectedPN.Length >= 7 && SelectedPN.Contains("_"))
             {
                 CheckForCustomProgram(SelectedPN);
@@ -746,7 +849,7 @@ namespace LaserMarking
                 }
             }
 
-
+            */
 
             //CheckForCustomProgram(PNSub);
             //if (GenericProgram == true)
@@ -758,7 +861,154 @@ namespace LaserMarking
             //}
 
         }
+        
 
+
+        private void GetTubeKitFromPDMBom(string partNumber, DataTable dt)
+        {
+            try
+            {
+                File1List.Items.Clear();
+
+                IEdmVault7 vault2 = null;                                                                                   
+                if (vault1 == null)
+                {
+                    vault1 = new EdmVault5();
+                }
+
+                vault2 = (IEdmVault7)vault1;
+                if (!vault1.IsLoggedIn)
+                {
+                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+                }
+
+               
+                DirectoryInfo di = new DirectoryInfo($@"C:\UMIS\Projects");
+
+                FileInfo[] files = di.GetFiles(partNumber + ".SLDDRW", SearchOption.AllDirectories);
+                
+                aFile = (IEdmFile17)vault2.GetFileFromPath(files[0].FullName.ToString(), out ppoRetParentFolder);
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error selecting drawing given PN: " + partNumber + " From projects folder.\n" + ex.Message);
+            }
+
+            try
+            {
+                IEdmVault7 vault2 = null;
+                if (vault1 == null)
+                {
+                    vault1 = new EdmVault5();
+                }
+                vault2 = (IEdmVault9)vault1;
+                if (!vault1.IsLoggedIn)
+                {
+                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+                }
+
+                if (aFile!= null)
+                {
+                    Dictionary<string, string> tubes = new Dictionary<string, string>();
+                    List<string> BOMnames = new List<string>();
+                    bomMgr = (IEdmBomMgr2)(IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
+                    EdmBomInfo[] derivedBOMs;
+
+                    aFile.GetDerivedBOMs(out derivedBOMs);
+
+
+                    int BOMid = derivedBOMs[derivedBOMs.Length - 1].mlBomID; //use the latest version if multiple BOMs are not found
+                    bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, BOMid); //use the latest version of the BOM
+                    bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
+
+
+                    EdmBomColumn[] bomColumns = null;
+                    bomView.GetColumns(out bomColumns);
+                    
+                    object[] bomRows;
+                    bomView.GetRows(out bomRows);
+
+                    object cellVar = null;
+                    object computedValue = null;
+                    string config = null;
+                    bool readOnly = false;
+                    bool rightBOM = true;
+                    
+                    foreach (IEdmBomCell cell in bomRows)
+                    {
+                        for (int j = 1; j < bomColumns.Count(); j++) //columns
+                        {
+                            if (bomColumns[j].mbsCaption.ToLower().Contains("uom"))
+                            {
+                                cell.GetVar(bomColumns[j].mlVariableID, bomColumns[j].meType, out cellVar, out computedValue, out config, out readOnly);
+                                if (cellVar.ToString() == "FT")
+                                {
+                                    rightBOM = false;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (!rightBOM)
+                    {
+                        BOMid = derivedBOMs[derivedBOMs.Length - 2].mlBomID;
+                        bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, BOMid); //use the latest version of the BOM
+                        bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
+
+                        bomView.GetColumns(out bomColumns);
+
+                        bomView.GetRows(out bomRows);
+                    }
+                    
+                    DataRow dr = null;
+                    foreach (IEdmBomCell cell in bomRows)
+                    {
+                        
+                        dr = dt.NewRow();
+ 
+                        for (int j = 1; j < bomColumns.Count(); j++) //columns
+                        {
+
+                            cell.GetVar(bomColumns[j].mlVariableID, bomColumns[j].meType, out cellVar, out computedValue, out config, out readOnly);
+                            
+                            string column = bomColumns[j].mbsCaption.ToLower();
+
+                            if (column.Contains("item"))
+                            {
+                                dr["Item"] = cellVar.ToString();                        
+                            }
+                            //if column is item do nothing
+                            else if (column.Contains("partno") || column.Contains("part number") || column.Contains("part no."))
+                            {
+                                dr["Part_Number"] = cellVar.ToString();
+                            }
+                            else if (column.Contains("description"))
+                            {
+                                dr["Description"] = cellVar.ToString();
+                            }
+                            else if (column.Contains("qty"))
+                            {
+                                dr["Quantity"] = cellVar.ToString();
+                            }
+                            else if (column.Contains("uom"))
+                            {
+                                dr["UOM"] = cellVar.ToString();
+                            }
+                        }
+                        dt.Rows.Add(dr);
+                    }
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException ex)
+            {
+                MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+            }
+        }
         private void CheckForCustomProgram(string PN)
         {
             string FilePath = $@"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\{PN}.MA2";
@@ -840,8 +1090,18 @@ namespace LaserMarking
                     vault1.LoginAuto("UMIS", this.Handle.ToInt32());
                 }
 
+                if (pNSub[0] != 'P')
+                {
+                    aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\{pNSub[0]}0000\{pNSub}.slddrw", out ppoRetParentFolder);
+                }
+                else
+                {
+                    DirectoryInfo di = new DirectoryInfo($@"C:\UMIS\Projects");
+                    FileInfo[] files = di.GetFiles(pNSub + ".SLDDRW", SearchOption.AllDirectories);
 
-                aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{pNSub}.slddrw", out ppoRetParentFolder);
+                    aFile = (IEdmFile17)vault1.GetFileFromPath(files[0].FullName.ToString(), out ppoRetParentFolder);
+                }
+                
                 if (aFile != null)
                 {
                     File1List.Items.Add(aFile.Name);
@@ -1219,8 +1479,18 @@ namespace LaserMarking
                 {
                     vault1.LoginAuto("UMIS", this.Handle.ToInt32());
                 }
+                if (TubePartNumber[0] != 'P')
+                {
+                    aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\{TubePartNumber[0]}0000\{TubePartNumber}.slddrw", out ppoRetParentFolder);
 
-                aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{TubePartNumber}.slddrw", out ppoRetParentFolder);
+                }
+                else
+                {
+                    DirectoryInfo di = new DirectoryInfo($@"C:\UMIS\Projects");
+                    FileInfo[] files = di.GetFiles(TubePartNumber + ".SLDDRW", SearchOption.AllDirectories);
+
+                    aFile = (IEdmFile7)vault1.GetFileFromPath(files[0].FullName.ToString(), out ppoRetParentFolder);
+                }
 
                 IEdmEnumeratorVariable10 enumVariable = (IEdmEnumeratorVariable10)aFile.GetEnumeratorVariable();
                 bool getVarSuccess = enumVariable.GetVarAsText("PartNo", "@", ppoRetParentFolder.ID, out object poPartNo);
@@ -2129,6 +2399,7 @@ namespace LaserMarking
         private void AllPartNumBtn_Click(object sender, EventArgs e)
         {
             /*
+            //Populate 80000 series from sql database
             using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
             {
 
@@ -2162,6 +2433,7 @@ namespace LaserMarking
                 catch { }
             }
             */
+            //Populate 80000 from pdm
             try
             { 
                 File1List.Items.Clear();
@@ -2193,24 +2465,24 @@ namespace LaserMarking
                 {
                     if (fi.Name != null && fi != null)
                     {
-                        unvisited.Enqueue(fi);  
+                        unvisited.Enqueue(fi);
                     }
-                    
+
                 }
 
                 while (unvisited.Count > 0)
                 {
                     var filed = unvisited.Dequeue();
-                  
+
 
                     dr = dt.NewRow();
                     dr["Part_Number"] = Path.GetFileNameWithoutExtension(filed.Name);
-                    
+
                     dt.Rows.Add(dr);
-   
-                    
+
+
                 }
-               
+
                 OrdersGridView.DataSource = dt;
             }
 
@@ -2218,7 +2490,7 @@ namespace LaserMarking
             {
                 MessageBox.Show(ex.Message);
             }
-            
+
         }
 
         private void runlengthCheck() //used to checking all SW boms!!!!!!!!!!!!!!!!!!
