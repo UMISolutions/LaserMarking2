@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using EPDM.Interop.epdm;
 using System.Collections;
 using System.Diagnostics;
+using static System.Net.WebRequestMethods;
 
 namespace LaserMarking
 {
@@ -625,8 +626,6 @@ namespace LaserMarking
             
         }
 
-       
-
         private void SetMarkingConditionButton_Click(object sender, EventArgs e)
         {
             try
@@ -640,8 +639,6 @@ namespace LaserMarking
             
         }
 
-
-        
         private void OrdersGridView_Click(object sender, EventArgs e)
         {
             Mark_Part.BackColor = SystemColors.ControlLight ;
@@ -656,31 +653,23 @@ namespace LaserMarking
             string mtl;
             string PNSub = " ";
             string orderRev = "0";
-            
-
+  
             DateTime thisDay = DateTime.Today;
             string customdate = thisDay.ToString("yyyy-MM-dd");
 
-           
-
             DateBox.Text = customdate;
-
 
             if (OrdersGridView.SelectedRows.Count != 0)
             {
                 DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
                 SelectedPN = row.Cells["Part_Number"].Value.ToString();
-
-
             }
            
             if (SelectedPN.Contains("_"))
             {
                 PNSub = SelectedPN.Split('_')[0];
                 orderRev = SelectedPN.Split('_')[1];
-                
             }
-
 
             if (SelectedPN[0] == 'T')
             {
@@ -692,7 +681,6 @@ namespace LaserMarking
                 dt.Columns.Add("UOM");
                 GetTubeKitFromPDMBom(PNSub,dt);
                 OrdersGridView.DataSource = dt;
-                
             }
             else if (SelectedPN[0] == 'P')
             {
@@ -706,6 +694,20 @@ namespace LaserMarking
             }
             else if (SelectedPN[0] == '8' && SelectedPN.Length == 5)
             {
+                File1List.Items.Clear();
+
+                IEdmVault7 vault2 = null;
+                if (vault1 == null)
+                {
+                    vault1 = new EdmVault5();
+                }
+
+                vault2 = (IEdmVault7)vault1;
+
+                if (!vault1.IsLoggedIn)
+                {
+                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+                }
 
                 DataTable dt = new DataTable();
                 dt.Columns.Add("Part_Number");
@@ -713,10 +715,8 @@ namespace LaserMarking
                 dt.Columns.Add("CustomerPN");
                 dt.Columns.Add("Rev");
                 dt.Columns.Add("Description");
-                DataRow dr = null;
-                aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{SelectedPN}.slddrw", out ppoRetParentFolder);
-
-               
+                DataRow dr;
+                aFile = (IEdmFile7)vault2.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{SelectedPN}.slddrw", out ppoRetParentFolder);
 
                 try
                 {
@@ -726,8 +726,6 @@ namespace LaserMarking
                     getVarSuccess = enumVariable.GetVarAsText("CustomerPN", "@", ppoRetParentFolder.ID, out object poCustomerPN);
                     getVarSuccess = enumVariable.GetVarAsText("Revision", "@", ppoRetParentFolder.ID, out object poRevision);
                     getVarSuccess = enumVariable.GetVarAsText("Description", "@", ppoRetParentFolder.ID, out object poDescription);
-
-
                     dr = dt.NewRow();
 
                     dr["Part_Number"] = poPartNo != null ? poPartNo.ToString() : "N/A";
@@ -752,7 +750,6 @@ namespace LaserMarking
                 CheckForCustomProgram(SelectedPN + "_" + orderRev);
                 if (GenericProgram)
                 {
-
                     GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl);
                     OpenGenericProgram();
                     FillTubeDetails(SelectedPN, orderRev);
@@ -763,12 +760,9 @@ namespace LaserMarking
                 CheckForCustomProgram(SelectedPN);
                 if (GenericProgram)
                 {
-              
                     GetTubePartNumberFromPDMBom(PNSub, out diam, out wall, out partnum, out mtl);
                     OpenGenericProgram();
-
                     FillTubeDetails(PNSub, orderRev);
-
                 }
             }
 
@@ -1012,7 +1006,7 @@ namespace LaserMarking
         private void CheckForCustomProgram(string PN)
         {
             string FilePath = $@"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\{PN}.MA2";
-            if (File.Exists(FilePath))
+            if (System.IO.File.Exists(FilePath))
             {
                 try
                 {
@@ -1108,7 +1102,7 @@ namespace LaserMarking
                 }
                 else
                 {
-                    MessageBox.Show("File not found in 80,000 folder.");
+                    MessageBox.Show("File" + pNSub + "not found in.");
                 }
                 
 
@@ -2456,36 +2450,48 @@ namespace LaserMarking
                 dt.Columns.Add("Part_Number");
                 DataRow dr = null;
 
-                string path = @"C:\UMIS\UMi Parts\80000";
-                DirectoryInfo di = new DirectoryInfo(path);
-                Queue<FileInfo> unvisited = new Queue<FileInfo>();
+                string path = $@"C:\UMIS\UMi Parts\80000\";
 
-
-                foreach(var fi in di.EnumerateFiles("*.slddrw"))
+                var folderPath = System.IO.Path.GetDirectoryName(path);
+                var folder = vault2.GetFolderFromPath(folderPath);
+                IEdmPos5 FilePos = folder.GetFirstFilePosition();
+                while (!FilePos.IsNull)
                 {
-                    if (fi.Name != null && fi != null)
+                    IEdmFile5 file = folder.GetNextFile(FilePos);
+
+                    if (file != null && (file.Name.EndsWith(".slddrw", StringComparison.OrdinalIgnoreCase)))
                     {
-                        unvisited.Enqueue(fi);
+                        
+                        dr = dt.NewRow();
+                        dr["Part_Number"] = Path.GetFileNameWithoutExtension(file.Name);
+                        dt.Rows.Add(dr);
+                        
+
                     }
-
                 }
+                dt.DefaultView.Sort = "Part_Number" + " " + "ASC";
+                dt = dt.DefaultView.ToTable();
 
-                while (unvisited.Count > 0)
-                {
-                    var filed = unvisited.Dequeue();
+                //DirectoryInfo di = new DirectoryInfo(path);
+                //Queue<FileInfo> unvisited = new Queue<FileInfo>();
 
+                //foreach (var fi in di.EnumerateFiles("*.slddrw"))
+                //{
+                //    if (fi.Name != null && fi != null)
+                //    {
+                //        unvisited.Enqueue(fi);
+                //    }
+                //}
 
-                    dr = dt.NewRow();
-                    dr["Part_Number"] = Path.GetFileNameWithoutExtension(filed.Name);
-
-                    dt.Rows.Add(dr);
-
-
-                }
-
+                //while (unvisited.Count > 0)
+                //{
+                //    var filed = unvisited.Dequeue();
+                //    dr = dt.NewRow();
+                //    dr["Part_Number"] = Path.GetFileNameWithoutExtension(filed.Name);
+                //    dt.Rows.Add(dr);
+                //}
                 OrdersGridView.DataSource = dt;
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -2758,9 +2764,9 @@ namespace LaserMarking
             try
             {
                 
-                if (File.Exists(FilePath))
+                if (System.IO.File.Exists(FilePath))
                 {
-                    File.Delete(FilePath);
+                    System.IO.File.Delete(FilePath);
 
                     axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
                 }
