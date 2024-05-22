@@ -15,6 +15,7 @@ using EPDM.Interop.epdm;
 using System.Collections;
 using System.Diagnostics;
 using static System.Net.WebRequestMethods;
+using System.CodeDom;
 
 namespace LaserMarking
 {
@@ -651,6 +652,7 @@ namespace LaserMarking
             double wall;
             string partnum;
             string mtl;
+            bool fileFound;
             string PNSub = " ";
             string orderRev = "0";
   
@@ -687,9 +689,12 @@ namespace LaserMarking
                 CheckForCustomProgram(SelectedPN);
                 if (GenericProgram)
                 {
-                    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall,out  partnum, out mtl);
-                    OpenGenericProgram();
-                    FillTubeDetails(SelectedPN, " ");
+                    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall,out  partnum, out mtl, out fileFound);
+                    if (fileFound)
+                    {
+                        OpenGenericProgram();
+                        FillTubeDetails(SelectedPN, " ");
+                    }
                 }
             }
             else if (SelectedPN[0] == '8' && SelectedPN.Length == 5)
@@ -750,9 +755,12 @@ namespace LaserMarking
                 CheckForCustomProgram(SelectedPN + "_" + orderRev);
                 if (GenericProgram)
                 {
-                    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl);
-                    OpenGenericProgram();
-                    FillTubeDetails(SelectedPN, orderRev);
+                    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl, out fileFound);
+                    if (fileFound)
+                    {
+                        OpenGenericProgram();
+                        FillTubeDetails(SelectedPN, orderRev);
+                    }
                 }
             }
             else
@@ -760,9 +768,12 @@ namespace LaserMarking
                 CheckForCustomProgram(SelectedPN);
                 if (GenericProgram)
                 {
-                    GetTubePartNumberFromPDMBom(PNSub, out diam, out wall, out partnum, out mtl);
-                    OpenGenericProgram();
-                    FillTubeDetails(PNSub, orderRev);
+                    GetTubePartNumberFromPDMBom(PNSub, out diam, out wall, out partnum, out mtl, out fileFound);
+                    if (fileFound)
+                    {
+                        OpenGenericProgram();
+                        FillTubeDetails(PNSub, orderRev);
+                    }
                 }
             }
 
@@ -855,11 +866,10 @@ namespace LaserMarking
             //}
 
         }
-        
-
 
         private void GetTubeKitFromPDMBom(string partNumber, DataTable dt)
         {
+            
             try
             {
                 File1List.Items.Clear();
@@ -876,17 +886,30 @@ namespace LaserMarking
                     vault1.LoginAuto("UMIS", this.Handle.ToInt32());
                 }
 
-               
-                DirectoryInfo di = new DirectoryInfo($@"C:\UMIS\Projects");
+                string path = $@"C:\UMIS\Projects\";
+                var folderPath = System.IO.Path.GetDirectoryName(path);
+                var folder = vault2.GetFolderFromPath(folderPath);
+                IEdmPos5 FolderPos = folder.GetFirstSubFolderPosition();
+                bool found = false;
+                while (!FolderPos.IsNull && !found)
+                {
+                    IEdmFolder5 SubFolder = folder.GetNextSubFolder(FolderPos);
 
-                FileInfo[] files = di.GetFiles(partNumber + ".SLDDRW", SearchOption.AllDirectories);
-                
-                aFile = (IEdmFile17)vault2.GetFileFromPath(files[0].FullName.ToString(), out ppoRetParentFolder);
-                
+                    IEdmPos5 FilePos = SubFolder.GetFirstFilePosition();
+                    while (!FilePos.IsNull)
+                    {
+                        IEdmFile5 file = SubFolder.GetNextFile(FilePos);
+                        if (file != null && file.Name.Contains(partNumber) && file.Name.EndsWith(".slddrw", StringComparison.OrdinalIgnoreCase)) 
+                        {
+                            aFile = (IEdmFile7)file;
+                            found = true;
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error selecting drawing given PN: " + partNumber + " From projects folder.\n" + ex.Message);
+                MessageBox.Show("Could not find PN: " + partNumber + " in projects folder.\n" + ex.Message);
             }
 
             try
@@ -996,11 +1019,11 @@ namespace LaserMarking
             }
             catch (System.Runtime.InteropServices.COMException ex)
             {
-                MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+                MessageBox.Show("Error looking up BOM.\n\n" + ex.Message);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+                MessageBox.Show("Error looking up BOM.\n\n" + ex.Message);
             }
         }
         private void CheckForCustomProgram(string PN)
@@ -1061,12 +1084,14 @@ namespace LaserMarking
             }
         }
 
-        private void GetTubePartNumberFromPDMBom(string pNSub, out double diameter, out double wallThick, out string partNumber, out string mtl)
+        private void GetTubePartNumberFromPDMBom(string pNSub, out double diameter, out double wallThick, out string partNumber, out string mtl, out bool fileFound)
         {
             diameter = 9999;
             wallThick = 9999;
             partNumber = "";
             mtl = "";
+            string folderName = " ";
+            fileFound = false;
             //GetFileFromSearch*******************
             try
             {
@@ -1086,201 +1111,215 @@ namespace LaserMarking
 
                 if (pNSub[0] != 'P')
                 {
-                    aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\{pNSub[0]}0000\{pNSub}.slddrw", out ppoRetParentFolder);
-                }
-                else
-                {
-                    DirectoryInfo di = new DirectoryInfo($@"C:\UMIS\Projects");
-                    FileInfo[] files = di.GetFiles(pNSub + ".SLDDRW", SearchOption.AllDirectories);
-
-                    aFile = (IEdmFile17)vault1.GetFileFromPath(files[0].FullName.ToString(), out ppoRetParentFolder);
-                }
-                
-                if (aFile != null)
-                {
-                    File1List.Items.Add(aFile.Name);
-                }
-                else
-                {
-                    MessageBox.Show("File" + pNSub + "not found in.");
-                }
-                
-
-
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                MessageBox.Show("Error selecting drawing given PN: "+pNSub+" From 80000 folder\n." + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error selecting drawing given PN: " + pNSub + " From 80000 folder.\n" + ex.Message);
-            }
-
-            //GetBOMFromFILE*******************
-            try
-            {
-                IEdmVault7 vault2 = null;
-                if (vault1 == null)
-                {
-                    vault1 = new EdmVault5();
-                }
-                vault2 = (IEdmVault9)vault1;
-                if (!vault1.IsLoggedIn)
-                {
-                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
-                }
-
-                if (aFile != null)
-                {
-
-                    bomMgr = (IEdmBomMgr2)(IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
-                    EdmBomInfo[] derivedBOMs;
-
-                    aFile.GetDerivedBOMs(out derivedBOMs);
-
-                   // MessageBox.Show(""+derivedBOMs.Length);
-
-                    ////**************
-                    //int arrSize = 0;
-                    //EdmBomVersion[] ppoVersions = null;
-                    //int i = 0;
-                    
-                    //int id = 0;
-                    //string str = "";
-                    //string verstr = "";
-                    //int verArrSize = 0;
-                    //arrSize = derivedBOMs.Length;
-                    //int userID = 0;
-                    //bool canSeeLayout = false;
-
-                    ////userID = vault2.GetLoggedInWindowsUserID(vault2.Name);
-
-                    //while (i < arrSize)
-                    //{
-                    //    id = derivedBOMs[i].mlBomID;
-                    //    bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, id);
-                    //    str = "Named BOM: " + derivedBOMs[i].mbsBomName + "\r\n" + "Type of BOM as defined in EdmBomType: " + derivedBOMs[i].meType + "\\n" + "Check-out user: " + bom.CheckOutUserID + "\r\n" + "Current state: " + bom.CurrentState.Name + "\r\n" + "Current version: " + bom.CurrentVersion + "\r\n" + "ID: " + bom.FileID + "\r\n" + "Is checked out: " + bom.IsCheckedOut;
-                    //    MessageBox.Show(str);
-                    //    bom.GetVersions(out ppoVersions);
-                    //    verArrSize = ppoVersions.Length;
-                    //    int j = 0;
-                    //    while (j < verArrSize)
-                    //    {
-                    //        verstr = "BOM version: " + "\r\n" + "Type as defined in EdmBomVersionType: " + ppoVersions[j].meType + "\r\n" + "Version number: " + ppoVersions[j].mlVersion + "\r\n" + "Date: " + ppoVersions[j].moDate + "\r\n" + "Label: " + ppoVersions[j].mbsTag + "\r\n" + "Comment: " + ppoVersions[j].mbsComment;
-                    //        MessageBox.Show(verstr);
-                    //        j = j + 1;
-                    //    }
-                    //    i = i + 1;
-                    //}
-
-
-
-                    //*****************
-
-                    bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, derivedBOMs[(derivedBOMs.Length - 1)].mlBomID); // USE ID OF DERIVED BOM at end of the list. I assume it is the latest date, most recent.
-                    bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
-
-
-                    EdmBomColumn[] BomColumns = null;
-                    bomView.GetColumns(out BomColumns);
-
-                    object[] BomRows = null;
-                    bomView.GetRows(out BomRows);
-
-                    object cellVar = null;
-                    object ComputedValue = null;
-                    string config = null;
-                    bool ReadOnlyOut = false;
-                    List<string> TubesFound = new List<string>();
-
-                    //search all cells inluding item column (different column type)
-                    foreach (IEdmBomCell CELL in BomRows)
+                    folderName = pNSub[0]+"0000";
+                    aFile = (IEdmFile7)vault2.GetFileFromPath($@"C:\UMIS\UMi Parts\{pNSub[0]}0000\{pNSub}.slddrw", out ppoRetParentFolder);
+                    fileFound = true;
+                    if (aFile == null)
                     {
-                        int ColumnCount = 0;
+                        fileFound = false;
+                        throw new Exception("Drawing not found for " + pNSub + " from " + folderName + " folder. Please create before continuing.");
+                    }    
+                }
+                else
+                {
+                    folderName = "Project";
+                    string path = $@"C:\UMIS\Projects\";
+                    var folderPath = System.IO.Path.GetDirectoryName(path);
+                    var folder = vault2.GetFolderFromPath(folderPath);
+                    IEdmPos5 FolderPos = folder.GetFirstSubFolderPosition();
+                    while (!FolderPos.IsNull && !fileFound)
+                    {
+                        IEdmFolder5 SubFolder = folder.GetNextSubFolder(FolderPos);
 
-                        foreach (EdmBomColumn COLUMN in BomColumns)
+                        IEdmPos5 FilePos = SubFolder.GetFirstFilePosition();
+                        while (!FilePos.IsNull)
                         {
-                            //MessageBox.Show("" + COLUMN.mbsCaption);
-                            if (ColumnCount <= (BomColumns.Count() - 1)) // in case BOM has more columns than expeted
+                            IEdmFile5 file = SubFolder.GetNextFile(FilePos);
+                            if (file != null && file.Name.Contains(pNSub) && file.Name.EndsWith(".slddrw", StringComparison.OrdinalIgnoreCase))
                             {
-                                
-                                CELL.GetVar(BomColumns[ColumnCount].mlVariableID, BomColumns[ColumnCount].meType, out cellVar, out ComputedValue, out config, out ReadOnlyOut);
-                                if ((cellVar.ToString()).Contains("304LT") || (cellVar.ToString()).Contains("316LT")  )
-                                {
-                                    TubesFound.Add (cellVar.ToString());
-                                    mtl = "SS";
-                                }
-                                else if ( ((cellVar.ToString()).Contains("4130") || (cellVar.ToString()).Contains("A513-5") || (cellVar.ToString()).Contains("A513-1") || (cellVar.ToString()).Contains("J524") || (cellVar.ToString()).Contains("J525"))  && (!(cellVar.ToString()).Contains("J524 "))  && (!(cellVar.ToString()).Contains("J524,"))  )
-                                {
-                                    TubesFound.Add(cellVar.ToString());
-                                    mtl = "CS";
-                                }
-                                else
-                                {
-                                    
-                                }
-                                //MessageBox.Show("Col Position: " + ColumnCount + "\n Col ml variable: " + BomColumns[ColumnCount].mlVariableID + "\n cell item :" + cellItem + "\n Col Type for [abc] :" + BomColumns[ColumnCount].meType);
-                                ColumnCount += 1;
-
-
-
+                                aFile = (IEdmFile7)file;
+                                fileFound = true;
                             }
                         }
                     }
-                    if(TubesFound.Count == 0)
+                    if (fileFound == false)
                     {
-                        MessageBox.Show("No Tube Part Numbers Found");
-                    }
-                    else if (TubesFound.Count >1)
-                    {
-                        string total = "";
-                        foreach (string find in TubesFound)
-                        {
-                            total += find+"\n";
-                        }
-                        MessageBox.Show("More than one tube was found:\n" + total);
-                    }
-                    else
-                    {
-                        //string StringDiameter = "";
-                        //string StringWallThickness = "";
-                        //StringDiameter = TubesFound[0].Substring(TubesFound[0].Length - 7, 4);
-                        //StringWallThickness = TubesFound[0].Substring(TubesFound[0].Length - 3, 3);
-                        //MessageBox.Show("Diameter " + Convert.ToDouble(StringDiameter) / 1000 + "\nWall: " + Convert.ToDouble(StringWallThickness) / 1000);
-                        partNumber = TubesFound[0];
-                        SelectedMaterialPN.Text = partNumber;
-                        diameter = Convert.ToDouble(TubesFound[0].Substring(TubesFound[0].Length - 7, 4)) / 1000;
-                        wallThick = Convert.ToDouble(TubesFound[0].Substring(TubesFound[0].Length - 3, 3))/1000;
-
+                        throw new Exception("Drawing not found for " + pNSub + " from " + folderName + " folder. Please create before continuing.");
                     }
                     
-
-
-
-
                 }
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n"+ ex.Message);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+                MessageBox.Show("Drawing not found for "+pNSub+" from "+folderName+" folder. Please create before continuing." );
             }
 
-            //APPLY PROGRAM BASED ON SIZE
-            try
+            if (fileFound == true)
             {
+                //GetBOMFromFILE*******************
+                try
+                {
+                    IEdmVault7 vault2 = null;
+                    if (vault1 == null)
+                    {
+                        vault1 = new EdmVault5();
+                    }
+                    vault2 = (IEdmVault9)vault1;
+                    if (!vault1.IsLoggedIn)
+                    {
+                        vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+                    }
 
+                    if (aFile != null)
+                    {
+
+                        bomMgr = (IEdmBomMgr2)(IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
+                        EdmBomInfo[] derivedBOMs;
+
+                        aFile.GetDerivedBOMs(out derivedBOMs);
+
+                        // MessageBox.Show(""+derivedBOMs.Length);
+
+                        ////**************
+                        //int arrSize = 0;
+                        //EdmBomVersion[] ppoVersions = null;
+                        //int i = 0;
+
+                        //int id = 0;
+                        //string str = "";
+                        //string verstr = "";
+                        //int verArrSize = 0;
+                        //arrSize = derivedBOMs.Length;
+                        //int userID = 0;
+                        //bool canSeeLayout = false;
+
+                        ////userID = vault2.GetLoggedInWindowsUserID(vault2.Name);
+
+                        //while (i < arrSize)
+                        //{
+                        //    id = derivedBOMs[i].mlBomID;
+                        //    bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, id);
+                        //    str = "Named BOM: " + derivedBOMs[i].mbsBomName + "\r\n" + "Type of BOM as defined in EdmBomType: " + derivedBOMs[i].meType + "\\n" + "Check-out user: " + bom.CheckOutUserID + "\r\n" + "Current state: " + bom.CurrentState.Name + "\r\n" + "Current version: " + bom.CurrentVersion + "\r\n" + "ID: " + bom.FileID + "\r\n" + "Is checked out: " + bom.IsCheckedOut;
+                        //    MessageBox.Show(str);
+                        //    bom.GetVersions(out ppoVersions);
+                        //    verArrSize = ppoVersions.Length;
+                        //    int j = 0;
+                        //    while (j < verArrSize)
+                        //    {
+                        //        verstr = "BOM version: " + "\r\n" + "Type as defined in EdmBomVersionType: " + ppoVersions[j].meType + "\r\n" + "Version number: " + ppoVersions[j].mlVersion + "\r\n" + "Date: " + ppoVersions[j].moDate + "\r\n" + "Label: " + ppoVersions[j].mbsTag + "\r\n" + "Comment: " + ppoVersions[j].mbsComment;
+                        //        MessageBox.Show(verstr);
+                        //        j = j + 1;
+                        //    }
+                        //    i = i + 1;
+                        //}
+
+
+
+                        //*****************
+
+                        bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, derivedBOMs[(derivedBOMs.Length - 1)].mlBomID); // USE ID OF DERIVED BOM at end of the list. I assume it is the latest date, most recent.
+                        bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
+
+
+                        EdmBomColumn[] BomColumns = null;
+                        bomView.GetColumns(out BomColumns);
+
+                        object[] BomRows = null;
+                        bomView.GetRows(out BomRows);
+
+                        object cellVar = null;
+                        object ComputedValue = null;
+                        string config = null;
+                        bool ReadOnlyOut = false;
+                        List<string> TubesFound = new List<string>();
+
+                        //search all cells inluding item column (different column type)
+                        foreach (IEdmBomCell CELL in BomRows)
+                        {
+                            int ColumnCount = 0;
+
+                            foreach (EdmBomColumn COLUMN in BomColumns)
+                            {
+                                //MessageBox.Show("" + COLUMN.mbsCaption);
+                                if (ColumnCount <= (BomColumns.Count() - 1)) // in case BOM has more columns than expeted
+                                {
+
+                                    CELL.GetVar(BomColumns[ColumnCount].mlVariableID, BomColumns[ColumnCount].meType, out cellVar, out ComputedValue, out config, out ReadOnlyOut);
+                                    if ((cellVar.ToString()).Contains("304LT") || (cellVar.ToString()).Contains("316LT"))
+                                    {
+                                        TubesFound.Add(cellVar.ToString());
+                                        mtl = "SS";
+                                    }
+                                    else if (((cellVar.ToString()).Contains("4130") || (cellVar.ToString()).Contains("A513-5") || (cellVar.ToString()).Contains("A513-1") || (cellVar.ToString()).Contains("J524") || (cellVar.ToString()).Contains("J525")) && (!(cellVar.ToString()).Contains("J524 ")) && (!(cellVar.ToString()).Contains("J524,")))
+                                    {
+                                        TubesFound.Add(cellVar.ToString());
+                                        mtl = "CS";
+                                    }
+                                    else
+                                    {
+
+                                    }
+                                    //MessageBox.Show("Col Position: " + ColumnCount + "\n Col ml variable: " + BomColumns[ColumnCount].mlVariableID + "\n cell item :" + cellItem + "\n Col Type for [abc] :" + BomColumns[ColumnCount].meType);
+                                    ColumnCount += 1;
+
+
+
+                                }
+                            }
+                        }
+                        if (TubesFound.Count == 0)
+                        {
+                            MessageBox.Show("No Tube Part Numbers Found");
+                        }
+                        else if (TubesFound.Count > 1)
+                        {
+                            string total = "";
+                            foreach (string find in TubesFound)
+                            {
+                                total += find + "\n";
+                            }
+                            MessageBox.Show("More than one tube was found:\n" + total);
+                        }
+                        else
+                        {
+                            //string StringDiameter = "";
+                            //string StringWallThickness = "";
+                            //StringDiameter = TubesFound[0].Substring(TubesFound[0].Length - 7, 4);
+                            //StringWallThickness = TubesFound[0].Substring(TubesFound[0].Length - 3, 3);
+                            //MessageBox.Show("Diameter " + Convert.ToDouble(StringDiameter) / 1000 + "\nWall: " + Convert.ToDouble(StringWallThickness) / 1000);
+                            partNumber = TubesFound[0];
+                            SelectedMaterialPN.Text = partNumber;
+                            diameter = Convert.ToDouble(TubesFound[0].Substring(TubesFound[0].Length - 7, 4)) / 1000;
+                            wallThick = Convert.ToDouble(TubesFound[0].Substring(TubesFound[0].Length - 3, 3)) / 1000;
+
+                        }
+
+
+
+
+
+                    }
+                }
+                catch (System.Runtime.InteropServices.COMException ex)
+                {
+                    MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+                }
+
+                //APPLY PROGRAM BASED ON SIZE
+                try
+                {
+
+                }
+                catch
+                {
+
+                }
+                AttemptToSelectProgram(diameter, mtl);
             }
-            catch
-            {
-
-            }
-            AttemptToSelectProgram(diameter, mtl);
-
         }
 
         
@@ -1480,17 +1519,33 @@ namespace LaserMarking
                 }
                 else
                 {
-                    DirectoryInfo di = new DirectoryInfo($@"C:\UMIS\Projects");
-                    FileInfo[] files = di.GetFiles(TubePartNumber + ".SLDDRW", SearchOption.AllDirectories);
+                    string path = $@"C:\UMIS\Projects\";
+                    var folderPath = System.IO.Path.GetDirectoryName(path);
+                    var folder = vault2.GetFolderFromPath(folderPath);
+                    IEdmPos5 FolderPos = folder.GetFirstSubFolderPosition();
+                    bool found = false;
+                    while (!FolderPos.IsNull && !found)
+                    {
+                        IEdmFolder5 SubFolder = folder.GetNextSubFolder(FolderPos);
 
-                    aFile = (IEdmFile7)vault1.GetFileFromPath(files[0].FullName.ToString(), out ppoRetParentFolder);
+                        IEdmPos5 FilePos = SubFolder.GetFirstFilePosition();
+                        while (!FilePos.IsNull)
+                        {
+                            IEdmFile5 file = SubFolder.GetNextFile(FilePos);
+                            if (file != null && file.Name.Contains(TubePartNumber) && file.Name.EndsWith(".slddrw", StringComparison.OrdinalIgnoreCase))
+                            {
+                                aFile = (IEdmFile7)file;
+                                found = true;
+                            }
+                        }
+                    }
                 }
 
-                IEdmEnumeratorVariable10 enumVariable = (IEdmEnumeratorVariable10)aFile.GetEnumeratorVariable();
-                bool getVarSuccess = enumVariable.GetVarAsText("PartNo", "@", ppoRetParentFolder.ID, out object poPartNo);
-                getVarSuccess = enumVariable.GetVarAsText("CustomerPN", "@", ppoRetParentFolder.ID, out object poCustomerPN);
-                getVarSuccess = enumVariable.GetVarAsText("Revision", "@", ppoRetParentFolder.ID, out object poRevision);
-                getVarSuccess = enumVariable.GetVarAsText("Description", "@", ppoRetParentFolder.ID, out object poDescription);
+                IEdmEnumeratorVariable6 enumVariable = (IEdmEnumeratorVariable6)aFile.GetEnumeratorVariable();
+                bool getVarSuccess = enumVariable.GetVarFromDb("PartNo", "@", out object poPartNo);
+                getVarSuccess = enumVariable.GetVarFromDb("CustomerPN", "@", out object poCustomerPN);
+                getVarSuccess = enumVariable.GetVarFromDb("Revision", "@", out object poRevision);
+                getVarSuccess = enumVariable.GetVarFromDb("Description", "@", out object poDescription);
                
                 if (poRevision == null)
                 {
@@ -2459,7 +2514,7 @@ namespace LaserMarking
                 {
                     IEdmFile5 file = folder.GetNextFile(FilePos);
 
-                    if (file != null && (file.Name.EndsWith(".slddrw", StringComparison.OrdinalIgnoreCase)))
+                    if (file != null && file.Name.EndsWith(".slddrw", StringComparison.OrdinalIgnoreCase))
                     {
                         
                         dr = dt.NewRow();
