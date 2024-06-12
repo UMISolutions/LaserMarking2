@@ -686,6 +686,10 @@ namespace LaserMarking
             }
             else if (SelectedPN[0] == 'P')
             {
+                if (SelectedPN.Contains("_"))
+                {
+                    SelectedPN = PNSub;
+                }
                 CheckForCustomProgram(SelectedPN);
                 if (GenericProgram)
                 {
