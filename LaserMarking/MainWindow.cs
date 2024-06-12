@@ -653,6 +653,7 @@ namespace LaserMarking
             string partnum;
             string mtl;
             bool fileFound;
+            string PNSub = " ";
             string orderRev = "0";
   
             DateTime thisDay = DateTime.Today;
@@ -668,8 +669,8 @@ namespace LaserMarking
            
             if (SelectedPN.Contains("_"))
             {
+                PNSub = SelectedPN.Split('_')[0];
                 orderRev = SelectedPN.Split('_')[1];
-                SelectedPN = SelectedPN.Split('_')[0]; 
             }
 
             if (SelectedPN[0] == 'T')
@@ -680,11 +681,15 @@ namespace LaserMarking
                 dt.Columns.Add("Description");
                 dt.Columns.Add("Quantity");
                 dt.Columns.Add("UOM");
-                GetTubeKitFromPDMBom(SelectedPN, dt);
+                GetTubeKitFromPDMBom(PNSub,dt);
                 OrdersGridView.DataSource = dt;
             }
             else if (SelectedPN[0] == 'P')
             {
+                if (SelectedPN.Contains("_"))
+                {
+                    SelectedPN = PNSub;
+                }
                 CheckForCustomProgram(SelectedPN);
                 if (GenericProgram)
                 {
@@ -767,11 +772,11 @@ namespace LaserMarking
                 CheckForCustomProgram(SelectedPN);
                 if (GenericProgram)
                 {
-                    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl, out fileFound);
+                    GetTubePartNumberFromPDMBom(PNSub, out diam, out wall, out partnum, out mtl, out fileFound);
                     if (fileFound)
                     {
                         OpenGenericProgram();
-                        FillTubeDetails(SelectedPN, orderRev);
+                        FillTubeDetails(PNSub, orderRev);
                     }
                 }
             }
