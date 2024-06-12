@@ -722,11 +722,11 @@ namespace LaserMarking
             }
             else if (SelectedPN[0] == 'P')
             {
+                CheckForCustomProgram(SelectedPN);
                 if (SelectedPN.Contains("_"))
                 {
                     SelectedPN = PNSub;
                 }
-                CheckForCustomProgram(SelectedPN);
                 if (GenericProgram)
                 {
                     GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall,out  partnum, out mtl, out fileFound);
