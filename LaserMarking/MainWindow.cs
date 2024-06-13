@@ -92,6 +92,8 @@ namespace LaserMarking
             SelectedBlockCombo.Items.Add("Cust PN");
             SelectedBlockCombo.Items.Add("Desc 1");
             SelectedBlockCombo.Items.Add("Desc 2");
+            SelectedBlockCombo.Items.Add("Box Size");
+            SelectedBlockCombo.Items.Add("Box Position");
 
         }
 
@@ -1117,7 +1119,7 @@ namespace LaserMarking
                                 QRCheckBox.Checked = false;
                             }
                             UpdateCurrentProgramBlocks(0);
-
+                            
                         }
                         catch (System.Runtime.InteropServices.COMException error)
                         {
@@ -1962,17 +1964,42 @@ namespace LaserMarking
             {
                 BlockNum = 6;
             }
+            else if (Block == "Box Size" || Block == "Box Position")
+            {
+                BlockNum = 0;
+            }
 
-            axMBActX2.Block(0).X = 0;
-            axMBActX2.Block(0).Y = 0;
-
+            //axMBActX2.Block(0).X = 0;
+            //axMBActX2.Block(0).Y = 0;
+         
             if (Block != "" && BlockNum != 999)
             {
-                if(Direction == "XP")
+                if (Direction == "XP")
                 {
                     try
                     {
-                        axMBActX2.Block(BlockNum).X += 1; // Edit the block No. 2
+                       if (axMBActX2.Block(BlockNum).IsEditable)
+                       {
+                            if (BlockNum == 0 || BlockNum == 1)
+                            {
+                                if (Block == "Box Position")
+                                {
+                                    axMBActX2.Block(BlockNum).X += 1;
+                                }
+                                else
+                                {
+                                    axMBActX2.Block(BlockNum).LogoWidth += 1;
+                                }
+                            }
+                            else
+                            {
+                                //axMBActX2.Block(BlockNum).X += 1; // Edit the block No. 2                                
+                                axMBActX2.Block(BlockNum).CharWidth += 1;
+                            }
+                           
+                        }
+                       
+                       
                     }
                     catch (System.Runtime.InteropServices.COMException error)
                     {
@@ -1982,7 +2009,24 @@ namespace LaserMarking
                 {
                     try
                     {
-                        axMBActX2.Block(BlockNum).X -= 1; // Edit the block No. 2
+                        if (BlockNum == 0 || BlockNum == 1)
+                        {
+                            if (Block == "Box Position")
+                            {
+                                axMBActX2.Block(BlockNum).X -= 1;
+                            }
+                            else
+                            {
+                                axMBActX2.Block(BlockNum).LogoWidth -= 1; 
+                            }
+                        }
+                        else
+                        {
+                            //axMBActX2.Block(BlockNum).X -= 1; // Edit the block No. 2
+                            axMBActX2.Block(BlockNum).CharWidth -= 1;
+                        }
+                        
+
                     }
                     catch (System.Runtime.InteropServices.COMException error)
                     {
@@ -1993,7 +2037,24 @@ namespace LaserMarking
                 {
                     try
                     {
-                        axMBActX2.Block(BlockNum).Y += 1; // Edit the block No. 2
+                        if (BlockNum == 0 || BlockNum == 1)
+                        {
+                            if (Block == "Box Position")
+                            {
+                                axMBActX2.Block(BlockNum).Y += 1;
+                            }
+                            else
+                            {
+                                axMBActX2.Block(BlockNum).LogoHeight += 0.5;
+                            }
+                        }
+                        else
+                        {
+                            //axMBActX2.Block(BlockNum).Y += 1; // Edit the block No. 2
+                            axMBActX2.Block(BlockNum).CharHeight += 0.5;
+                        }
+                        
+
                     }
                     catch (System.Runtime.InteropServices.COMException error)
                     {
@@ -2004,7 +2065,24 @@ namespace LaserMarking
                 {
                     try
                     {
-                        axMBActX2.Block(BlockNum).Y -= 1; // Edit the block No. 2
+                        if (BlockNum == 0 || BlockNum == 1)
+                        {
+                            if (Block == "Box Position")
+                            {
+                                axMBActX2.Block(BlockNum).Y -= 1;
+                            }
+                            else
+                            {
+                                axMBActX2.Block(BlockNum).LogoHeight -= 0.5;
+                            }
+                        }
+                        else
+                        {
+                            //axMBActX2.Block(BlockNum).Y -= 1; // Edit the block No. 2
+                            axMBActX2.Block(BlockNum).CharHeight -= 0.5;
+                        }
+                        
+
                     }
                     catch (System.Runtime.InteropServices.COMException error)
                     {
@@ -2012,8 +2090,8 @@ namespace LaserMarking
                     }
                 }
             }
-            axMBActX2.Block(0).X = 0;
-            axMBActX2.Block(0).Y = 0;
+            //axMBActX2.Block(0).X = 0;
+            //axMBActX2.Block(0).Y = 0;
 
         }
 
@@ -2097,8 +2175,11 @@ namespace LaserMarking
                     string FilePath = @"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\" + ProgramSizeCombo.SelectedItem.ToString() + "-" + ProgramMaterialCombo.SelectedItem.ToString() + "-A.MA2";
                     if (axMBActX2.OpenJob(FilePath))
                     {
+                        axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
+                        axMBActX2.OpenJob(FilePath);
                         JobTitleLabel.Text = axMBActX2.Job.Title;
                         axMBActX2.Block(8).IsMarkingEnable = false;
+                        axMBActX2.Block(3).X = 10;
 
                     }
                     
