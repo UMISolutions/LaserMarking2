@@ -1629,11 +1629,11 @@ namespace LaserMarking
                 }
                 if (poCustomerPN == null)
                 {
-                    poCustomerPN = "No Part number found";
+                    poCustomerPN = "";
                 }
                 if (poDescription == null)
                 {
-                    poDescription = "No description found";
+                    poDescription = "";
                 }
 
                 PartNumAndRevBox.Text = poPartNo.ToString() +"_"+ poRevision.ToString();
@@ -2989,6 +2989,20 @@ namespace LaserMarking
             }
             
         }
+        private void Desc2Box_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Desc2Box.Checked)
+            {
+                axMBActX2.Block(6).IsMarkingEnable = true;
+            }
+            else
+            {
+                axMBActX2.Block(6).IsMarkingEnable = false;
+            }
+            
+        }
+
+
     }
 }
 

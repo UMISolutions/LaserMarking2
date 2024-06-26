@@ -93,6 +93,9 @@ namespace LaserMarking
             this.AllPartNumBtn = new System.Windows.Forms.Button();
             this.GetLengthsBtn = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.Desc2Box = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -110,7 +113,6 @@ namespace LaserMarking
             this.axMBActX2.Size = new System.Drawing.Size(823, 618);
             this.axMBActX2.TabIndex = 0;
             this.axMBActX2.UseWaitCursor = true;
-            this.axMBActX2.EvError += new System.EventHandler(this.axMBActX1_EvError);
             this.axMBActX2.EvMarkingEnd += new AxMBPLib2._DMBActXEvents_EvMarkingEndEventHandler(this.axMBActX1_EvMarkingEnd);
             // 
             // OrdersGridView
@@ -653,11 +655,44 @@ namespace LaserMarking
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(0, 0);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(80, 17);
+            this.checkBox1.TabIndex = 56;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(0, 0);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(80, 17);
+            this.checkBox2.TabIndex = 57;
+            this.checkBox2.Text = "checkBox2";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // Desc2Box
+            // 
+            this.Desc2Box.AutoSize = true;
+            this.Desc2Box.Location = new System.Drawing.Point(14, 617);
+            this.Desc2Box.Name = "Desc2Box";
+            this.Desc2Box.Size = new System.Drawing.Size(15, 14);
+            this.Desc2Box.TabIndex = 58;
+            this.Desc2Box.UseVisualStyleBackColor = true;
+            this.Desc2Box.CheckedChanged += new System.EventHandler(this.Desc2Box_CheckedChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 870);
+            this.Controls.Add(this.Desc2Box);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.save);
             this.Controls.Add(this.GetLengthsBtn);
             this.Controls.Add(this.AllPartNumBtn);
@@ -782,6 +817,9 @@ namespace LaserMarking
         private System.Windows.Forms.Button AllPartNumBtn;
         private System.Windows.Forms.Button GetLengthsBtn;
         private System.Windows.Forms.Button save;
+        private CheckBox checkBox1;
+        private CheckBox checkBox2;
+        private CheckBox Desc2Box;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
