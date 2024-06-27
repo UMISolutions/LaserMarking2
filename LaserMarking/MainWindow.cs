@@ -192,6 +192,18 @@ namespace LaserMarking
                 }
             }
         }
+        private void OrdersGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            string columnName = OrdersGridView.Columns[e.ColumnIndex].Name;
+            DataTable dataTable = OrdersGridView.DataSource as DataTable;
+
+            if (dataTable != null)
+            {
+                DataView dataView = dataTable.DefaultView;
+                dataView.Sort = $"{columnName} ASC";
+                OrdersGridView.DataSource = dataView.ToTable();
+            }
+        }
 
         private void GetOrderTubePNBTN_Click(object sender, EventArgs e)
         {
