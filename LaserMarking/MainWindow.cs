@@ -1640,6 +1640,8 @@ namespace LaserMarking
             catch { axMBActX2.Block(5).Text = " "; }
             try { if (axMBActX2.Block(6).IsEditable) { axMBActX2.Block(6).Text = DescLine2Box.Text; } }
             catch { axMBActX2.Block(6).Text = " "; }
+            try { if (axMBActX2.Block(7).IsEditable) { axMBActX2.Block(7).Text = heapBox.Text; } }
+            catch { axMBActX2.Block(7).Text = " "; }
             if (customerId != 0)
             {
                 try 
@@ -1822,6 +1824,11 @@ namespace LaserMarking
         }
 
         private void DescLine2Box_TextChanged(object sender, EventArgs e)
+        {
+            UpdateCurrentProgramBlocks(0);
+        }
+
+        private void heapBox_TextChanged(object sender, EventArgs e)
         {
             UpdateCurrentProgramBlocks(0);
         }
@@ -2120,7 +2127,11 @@ namespace LaserMarking
                         axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
                         axMBActX2.OpenJob(FilePath);
                         JobTitleLabel.Text = axMBActX2.Job.Title;
-                        axMBActX2.Block(8).IsMarkingEnable = false;
+                        if (axMBActX2.Block(8).IsEditable)
+                        {
+                            axMBActX2.Block(8).IsMarkingEnable = false;
+                        }
+                        
                         axMBActX2.Block(3).X = 10;
 
                     }
@@ -2948,7 +2959,7 @@ namespace LaserMarking
             }
             
         }
-
+       
 
     }
 }

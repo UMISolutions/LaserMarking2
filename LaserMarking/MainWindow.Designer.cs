@@ -94,6 +94,7 @@ namespace LaserMarking
             this.GetLengthsBtn = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.Desc2Box = new System.Windows.Forms.CheckBox();
+            this.heapBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -664,11 +665,20 @@ namespace LaserMarking
             this.Desc2Box.UseVisualStyleBackColor = true;
             this.Desc2Box.CheckedChanged += new System.EventHandler(this.Desc2Box_CheckedChanged);
             // 
+            // heapBox
+            // 
+            this.heapBox.Location = new System.Drawing.Point(34, 644);
+            this.heapBox.Name = "heapBox";
+            this.heapBox.Size = new System.Drawing.Size(77, 20);
+            this.heapBox.TabIndex = 59;
+            this.heapBox.TextChanged += new System.EventHandler(this.heapBox_TextChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 870);
+            this.Controls.Add(this.heapBox);
             this.Controls.Add(this.Desc2Box);
             this.Controls.Add(this.save);
             this.Controls.Add(this.GetLengthsBtn);
@@ -795,6 +805,7 @@ namespace LaserMarking
         private System.Windows.Forms.Button GetLengthsBtn;
         private System.Windows.Forms.Button save;
         private CheckBox Desc2Box;
+        private TextBox heapBox;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
