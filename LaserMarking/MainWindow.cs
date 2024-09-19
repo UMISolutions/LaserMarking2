@@ -21,9 +21,9 @@ namespace LaserMarking
 {
     public partial class MainWindow : Form
     {
-        public static string UMIConnectionString = $"Data Source=UMISSERVER2 ;Initial Catalog = UMi_Tooling; Integrated Security = True; Connect Timeout = 120; ";
-        public static string HHI_PUMIConnectionString = $"Data Source=UMISSERVER2 ;Initial Catalog = HydraulicHoseInfo_prod; Integrated Security = True; Connect Timeout = 120; ";
-        string SAPConnectionString = "Persist Security Info=True;Initial Catalog=UMIS;Integrated Security = True;Data Source=umisserver2;";
+        public static string UMIConnectionString = $"Data Source=UMI-ERP-01 ;Initial Catalog = UMi_Tooling; Integrated Security = True; Connect Timeout = 120; ";
+        public static string HHI_PUMIConnectionString = $"Data Source=UMI-ERP-01 ;Initial Catalog = HydraulicHoseInfo_prod; Integrated Security = True; Connect Timeout = 120; ";
+        string SAPConnectionString = "Persist Security Info=True;Initial Catalog=UMIS;Integrated Security = True;Data Source=UMI-ERP-01;";
 
 
         //PDM Variables
