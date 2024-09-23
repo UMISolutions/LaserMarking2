@@ -1,0 +1,4 @@
+﻿Version 1.0.1.5 - 2024-09-27
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+- Added test/prod DB configurations when debugging
+- Updated connection strings for new server
