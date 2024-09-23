@@ -25,7 +25,7 @@ namespace LaserMarking
         public static string UMIConnectionString = $"Data Source=UMI-ERP-01 ;Initial Catalog = UMi_Tooling; Integrated Security = True; Connect Timeout = 120; ";
         public static string HHI_PUMIConnectionString = $"Data Source=UMI-ERP-01 ;Initial Catalog = HydraulicHoseInfo_prod; Integrated Security = True; Connect Timeout = 120; ";
         string SAPConnectionString = "Persist Security Info=True;Initial Catalog=UMIS;Integrated Security = True;Data Source=UMI-ERP-01;";
-
+        private int SQLTest;
 
         //PDM Variables
         private IEdmVault5 vault1 = null;
@@ -56,6 +56,18 @@ namespace LaserMarking
             loadMaterialComboBox();
 
             AttemptToConnectToLaser();
+
+            if (System.Diagnostics.Debugger.IsAttached)
+            {
+                SQLTest = 1;
+            }
+            else
+            {
+                SQLTest = 0;
+            }
+
+            //Set DB Conn strings to test/prod depending on environment
+            SetDBConnections();
 
         }
 
@@ -300,6 +312,24 @@ namespace LaserMarking
             {
                 return "";
             }
+        }
+
+        //Sets connection strings based on whether we are debugging or not
+        private void SetDBConnections()
+        {
+            if (SQLTest == 1)
+            {
+                //UMIConnectionString = $"Data Source=UMI-ERP-01 ;Initial Catalog = UMi_Tooling; Integrated Security = True; Connect Timeout = 120; ";
+                HHI_PUMIConnectionString = $"Data Source=UMI-ERP-01 ;Initial Catalog = HydraulicHoseInfo_test; Integrated Security = True; Connect Timeout = 120; ";
+                SAPConnectionString = "Persist Security Info=True;Initial Catalog=UMIS_UAT;Integrated Security = True;Data Source=UMI-ERP-01;";
+            }
+            else
+            {
+                //UMIConnectionString = $"Data Source=UMI-ERP-01 ;Initial Catalog = UMi_Tooling; Integrated Security = True; Connect Timeout = 120; ";
+                HHI_PUMIConnectionString = $"Data Source=UMI-ERP-01 ;Initial Catalog = HydraulicHoseInfo_prod; Integrated Security = True; Connect Timeout = 120; ";
+                SAPConnectionString = "Persist Security Info=True;Initial Catalog=UMIS;Integrated Security = True;Data Source=UMI-ERP-01;";
+            }
+
         }
 
         private void AttemptToConnectToLaser()
