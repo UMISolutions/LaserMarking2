@@ -21,6 +21,7 @@ namespace LaserMarking
 {
     public partial class MainWindow : Form
     {
+        //UMIConnectionString now has no references after I fixed something while chaging conn strings - leaving in here in case it is needed - Andrew J
         public static string UMIConnectionString = $"Data Source=UMI-ERP-01 ;Initial Catalog = UMi_Tooling; Integrated Security = True; Connect Timeout = 120; ";
         public static string HHI_PUMIConnectionString = $"Data Source=UMI-ERP-01 ;Initial Catalog = HydraulicHoseInfo_prod; Integrated Security = True; Connect Timeout = 120; ";
         string SAPConnectionString = "Persist Security Info=True;Initial Catalog=UMIS;Integrated Security = True;Data Source=UMI-ERP-01;";
@@ -1583,7 +1584,7 @@ namespace LaserMarking
                     DescLine2Box.Text = desc.Substring(DescLengthAllow, DescLengthAllow);
 
                 }
-                using (SqlConnection cn = new SqlConnection(OpenConnect(UMIConnectionString)))
+                using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
                 {
                     try
                     {
@@ -1591,7 +1592,7 @@ namespace LaserMarking
                         SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
                         cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
                         cmd2.Parameters.AddWithValue("@Search", TubePartNumber);
-                        cmd2.CommandText = "" + " select Customer_id FROM [HydraulicHoseInfo_prod].[dbo].[TubeAssemblies] where PartNo = @Search";
+                        cmd2.CommandText = "" + " select Customer_id FROM TubeAssemblies where PartNo = @Search";
                         SqlDataReader reader2 = cmd2.ExecuteReader();
                         while (reader2.Read())
                         {
