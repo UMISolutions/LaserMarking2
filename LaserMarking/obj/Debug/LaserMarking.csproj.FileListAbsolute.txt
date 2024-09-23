@@ -80,4 +80,5 @@ C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.application
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.pdb
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\Interop.ADOMD.dll
+C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\EPDM.Interop.epdm.dll
+C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMar.428953FD.Up2Date
