@@ -66,6 +66,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPDM.Interop.epdm.dll" size="371528">
+      <assemblyIdentity name="EPDM.Interop.epdm" version="5.26.0.0" publicKeyToken="0625A0C4BB5DE148" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Kiqh6ufbWFHAlV0PUZLXgylC4KsXtcFElyXU48E1VT0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.EdmLib.dll" size="364032">
       <assemblyIdentity name="Interop.EdmLib" version="5.26.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
@@ -102,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="79784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="69032">
       <assemblyIdentity name="LaserMarking" version="1.0.1.1" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>R1GbXzQvq2jpIvehR4OvsKunK7PFS34rJX9pq92aBdU=</dsig:DigestValue>
+        <dsig:DigestValue>wLP1ilTdSU2MZ4KgIlrctWtge8cTiBBCua1plv63FNU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
