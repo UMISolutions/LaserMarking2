@@ -1084,10 +1084,16 @@ namespace LaserMarking
                             customerNum = axMBActX2.Block(4).Text;
                             description = axMBActX2.Block(5).Text;
                             description2 = axMBActX2.Block(6).Text;
-                            string disabled = axMBActX2.Block(16).Text; //New disabled "DO NOT MODIFY" block
-                            if (disabled == "DO NOT MODIFY")
+                            try
                             {
-                                save.Enabled = false; // Disable the button
+                                string disabled = axMBActX2.Block(16).Text; //New disabled "DO NOT MODIFY" block
+                                if (disabled == "DO NOT MODIFY")
+                                {
+                                    save.Enabled = false; // Disable the button
+                                }
+                            }
+                            catch (System.Runtime.InteropServices.COMException error)
+                            {
                             }
                             DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
                             string myPN = row.Cells["Part_Number"].Value.ToString();
