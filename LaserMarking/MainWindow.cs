@@ -642,6 +642,7 @@ namespace LaserMarking
 
         private void OrdersGridView_Click(object sender, EventArgs e)
         {
+            save.Enabled = true;
             Mark_Part.BackColor = SystemColors.ControlLight ;
             string SelectedPN = "";
             string SelectedRev = "";
@@ -1052,8 +1053,22 @@ namespace LaserMarking
                             customerNum = axMBActX2.Block(4).Text;
                             description = axMBActX2.Block(5).Text;
                             description2 = axMBActX2.Block(6).Text;
-                            
+                            try
+                            {
+                                string disabled = axMBActX2.Block(16).Text; //New disabled "DO NOT MODIFY" block
+                                if (disabled == "DO NOT MODIFY")
+                                {
+                                    save.Enabled = false; // Disable the button
+                                }
+                            }
+                            catch (System.Runtime.InteropServices.COMException error)
+                            {
+                            }
+                            DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
+                            string myPN = row.Cells["Part_Number"].Value.ToString();
+                            string myRev = row.Cells["Rev"].Value.ToString();
                             PartNumAndRevBox.Text = partNum;
+                            PartNumAndRevBox.Text = (myPN + "_" + myRev);
                             CustPartNumAndRevBox.Text = customerNum;
                             DescLine1Box.Text = description;
                             DescLine2Box.Text = description2;
@@ -1084,7 +1099,27 @@ namespace LaserMarking
             }
             else
             {
-                GenericProgram = true;
+                if (PN.Contains("_"))
+                {
+                    var parts = PN.Split('_');
+                    string selectedPN = parts[0];
+                    int orderRev;
+                    if (parts.Length > 1 && int.TryParse(parts[1], out orderRev))
+                    {
+                        orderRev--;
+                        if (orderRev >= 0)
+                        {
+                            CheckForCustomProgram(selectedPN + "_" + orderRev);
+                        } else
+                        {
+                            GenericProgram = true;
+                        }
+                    }
+                    else
+                    {
+                        GenericProgram = true;
+                    }
+                }
             }
         }
 
