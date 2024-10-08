@@ -1089,7 +1089,11 @@ namespace LaserMarking
                             {
                                 save.Enabled = false; // Disable the button
                             }
+                            DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
+                            string myPN = row.Cells["Part_Number"].Value.ToString();
+                            string myRev = row.Cells["Rev"].Value.ToString();
                             PartNumAndRevBox.Text = partNum;
+                            PartNumAndRevBox.Text = (myPN + "_" + myRev);
                             CustPartNumAndRevBox.Text = customerNum;
                             DescLine1Box.Text = description;
                             DescLine2Box.Text = description2;
@@ -1120,7 +1124,27 @@ namespace LaserMarking
             }
             else
             {
-                GenericProgram = true;
+                if (PN.Contains("_"))
+                {
+                    var parts = PN.Split('_');
+                    string selectedPN = parts[0];
+                    int orderRev;
+                    if (parts.Length > 1 && int.TryParse(parts[1], out orderRev))
+                    {
+                        orderRev--;
+                        if (orderRev >= 0)
+                        {
+                            CheckForCustomProgram(selectedPN + "_" + orderRev);
+                        } else
+                        {
+                            GenericProgram = true;
+                        }
+                    }
+                    else
+                    {
+                        GenericProgram = true;
+                    }
+                }
             }
         }
 
