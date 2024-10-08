@@ -673,6 +673,7 @@ namespace LaserMarking
 
         private void OrdersGridView_Click(object sender, EventArgs e)
         {
+            save.Enabled = true;
             Mark_Part.BackColor = SystemColors.ControlLight ;
             string SelectedPN = "";
             string SelectedRev = "";
@@ -1083,7 +1084,11 @@ namespace LaserMarking
                             customerNum = axMBActX2.Block(4).Text;
                             description = axMBActX2.Block(5).Text;
                             description2 = axMBActX2.Block(6).Text;
-                            
+                            string disabled = axMBActX2.Block(16).Text; //New disabled "DO NOT MODIFY" block
+                            if (disabled == "DO NOT MODIFY")
+                            {
+                                save.Enabled = false; // Disable the button
+                            }
                             PartNumAndRevBox.Text = partNum;
                             CustPartNumAndRevBox.Text = customerNum;
                             DescLine1Box.Text = description;
