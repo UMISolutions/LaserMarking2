@@ -794,11 +794,11 @@ namespace LaserMarking
 
 
 
-                    dr["Part_Number"] = poPartNo != "" ? poPartNo.ToString() : "N/A";
-                    dr["Customer"] = poCustomer != "" ? poCustomer.ToString() : "N/A";
-                    dr["CustomerPN"] = poCustomerPN != "" ? poCustomerPN.ToString() : "N/A";
-                    dr["Rev"] = poRevision != "" ? poRevision.ToString() : "N/A";
-                    dr["Description"] = poDescription != "" ? poDescription.ToString() : "N/A";
+                    dr["Part_Number"] = (string)poPartNo != "" ? poPartNo.ToString() : "N/A";
+                    dr["Customer"] = (string)poCustomer != "" ? poCustomer.ToString() : "N/A";
+                    dr["CustomerPN"] = (string)poCustomerPN != "" ? poCustomerPN.ToString() : "N/A";
+                    dr["Rev"] = (string)poRevision != "" ? poRevision.ToString() : "N/A";
+                    dr["Description"] = (string)poDescription != "" ? poDescription.ToString() : "N/A";
 
                     dt.Rows.Add(dr);
 
