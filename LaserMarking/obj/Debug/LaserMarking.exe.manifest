@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dlK4UWKtqcVWIIx6VsFFU/WvcWhELnpXC+h7sLaXhDs=</dsig:DigestValue>
+        <dsig:DigestValue>tbYjRaiixWYwVlJgQHnHp7GQooMaQ7OHT54QeJcm5b8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>oUtWL59TA8X342LdURFlMmVzHXzA5XmeRRloGfFjws0=</dsig:DigestValue>
+        <dsig:DigestValue>DlWHDy01NGJq8POs+gaABbZqfFH9NwGYXQW34kON5xE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,19 +109,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lhFfDhwJlPgyGqJ4wm1UHEPOK08+Hk67BqRrRnqeqko=</dsig:DigestValue>
+        <dsig:DigestValue>tqCrw/hlkZGZzMlRfjfyd25ODjI6uwFMfljjMS0jti4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="70568">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="71592">
       <assemblyIdentity name="LaserMarking" version="1.0.1.1" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tM+CkK1wxsUAeghqHg1rz6DHUyNsUh2MJYonBQhudPE=</dsig:DigestValue>
+        <dsig:DigestValue>tMd6Jx8liuAIRKlKzzhjFfgK+Imvh304SehTfgkQGIA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -694,10 +694,6 @@ namespace LaserMarking
             save.Enabled = true;
             Mark_Part.BackColor = SystemColors.ControlLight ;
             string SelectedPN = "";
-            string SelectedRev = "";
-            string SelectedCustomerPN = "";
-            string SelectedCustomerRev = "";
-            string SelectedCustomerDesc = "";
             double diam;
             double wall;
             string partnum;
@@ -723,6 +719,11 @@ namespace LaserMarking
                 orderRev = SelectedPN.Split('_')[1];
             }
 
+            // SelectedPN: PN as shown in table (may have rev)
+            // PNSub: PN
+            // orderRev: rev
+
+            // TK case (what means)
             if (SelectedPN[0] == 'T')
             {
                 DataTable dt = new DataTable();
@@ -734,6 +735,8 @@ namespace LaserMarking
                 GetTubeKitFromPDMBom(PNSub,dt);
                 OrdersGridView.DataSource = dt;
             }
+
+            // P case (what means)
             else if (SelectedPN[0] == 'P')
             {
                 CheckForCustomProgram(SelectedPN);
@@ -751,6 +754,8 @@ namespace LaserMarking
                     }
                 }
             }
+
+            // From 8xxxx will add rev?
             else if (SelectedPN[0] == '8' && SelectedPN.Length == 5)
             {
                 File1List.Items.Clear();
@@ -787,11 +792,13 @@ namespace LaserMarking
                     getVarSuccess = enumVariable.GetVarAsText("Description", "@", ppoRetParentFolder.ID, out object poDescription);
                     dr = dt.NewRow();
 
-                    dr["Part_Number"] = poPartNo != null ? poPartNo.ToString() : "N/A";
-                    dr["Customer"] = poCustomer != null ? poCustomer.ToString() : "N/A";
-                    dr["CustomerPN"] = poCustomerPN != null ? poCustomerPN.ToString() : "N/A";
-                    dr["Rev"] = poRevision != null ? poRevision.ToString() : "N/A";
-                    dr["Description"] = poDescription != null ? poDescription.ToString() : "N/A";
+
+
+                    dr["Part_Number"] = poPartNo != "" ? poPartNo.ToString() : "N/A";
+                    dr["Customer"] = poCustomer != "" ? poCustomer.ToString() : "N/A";
+                    dr["CustomerPN"] = poCustomerPN != "" ? poCustomerPN.ToString() : "N/A";
+                    dr["Rev"] = poRevision != "" ? poRevision.ToString() : "N/A";
+                    dr["Description"] = poDescription != "" ? poDescription.ToString() : "N/A";
 
                     dt.Rows.Add(dr);
 
