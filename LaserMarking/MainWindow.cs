@@ -709,7 +709,7 @@ namespace LaserMarking
             // PNSub: PN
             // orderRev: rev
 
-            // TK case (what means)
+            
             if (SelectedPN[0] == 'T')
             {
                 DataTable dt = new DataTable();
