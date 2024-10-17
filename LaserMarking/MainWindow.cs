@@ -42,6 +42,7 @@ namespace LaserMarking
 
 
         bool GenericProgram = true;
+        bool isConnected = false;
 
         public MainWindow()
         {
@@ -493,12 +494,55 @@ namespace LaserMarking
                 MessageBox.Show(error.Message);
             }
 
-            
-
-            // axMBActX1.Operation.StartZTracking(0);
+            sendMarkedToDB();
 
         }
-        
+
+        private void sendMarkedToDB()
+        {
+            try { isConnected = axMBActX2.Comm.Online(); }
+            catch { }
+            using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
+            {
+                try
+                {
+                    cn.Open(); 
+
+                    // Prepare the SQL command with parameters
+                    string sql = @"
+            INSERT INTO LaserMarkings (DateTimeMarked, PartNum, ProductionNumber, HeatNumber, IsConnected)
+            VALUES (@DateTimeMarked, @PartNum, @ProductionNumber, @HeatNumber, @IsConnected)";
+
+                    using (SqlCommand cmd2 = new SqlCommand(sql, cn))
+                    {
+                        cmd2.CommandTimeout = 120; // Set a long timeout in case of really complex queries
+
+                        DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
+                        string ProductionNumber = "";
+                        try { ProductionNumber = row.Cells["ProductionNumber"].Value.ToString(); }
+                        catch { }
+
+                        // Add parameters to the command
+                        cmd2.Parameters.AddWithValue("@DateTimeMarked", DateTime.Now); // Set to current date and time
+                        cmd2.Parameters.AddWithValue("@PartNum", PartNumAndRevBox.Text); // Replace with actual part number
+                        cmd2.Parameters.AddWithValue("@ProductionNumber", ProductionNumber); // Replace with actual production order
+                        cmd2.Parameters.AddWithValue("@HeatNumber", "HeatNumber");
+                        cmd2.Parameters.AddWithValue("@IsConnected", isConnected); // Replace with actual test flag value
+
+                        // Execute the command
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions (e.g., log the error)
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+
+        }
+
+
         private void axMBActX1_EvMarkingEnd(object sender, _DMBActXEvents_EvMarkingEndEvent e)
         {
             try
