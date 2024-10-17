@@ -794,11 +794,11 @@ namespace LaserMarking
 
 
 
-                    dr["Part_Number"] = (string)poPartNo != "" ? poPartNo.ToString() : "N/A";
-                    dr["Customer"] = (string)poCustomer != "" ? poCustomer.ToString() : "N/A";
-                    dr["CustomerPN"] = (string)poCustomerPN != "" ? poCustomerPN.ToString() : "N/A";
-                    dr["Rev"] = (string)poRevision != "" ? poRevision.ToString() : "N/A";
-                    dr["Description"] = (string)poDescription != "" ? poDescription.ToString() : "N/A";
+                    dr["Part_Number"] = GetValueOrDefault(poPartNo);
+                    dr["Customer"] = GetValueOrDefault(poCustomer);
+                    dr["CustomerPN"] = GetValueOrDefault(poCustomerPN);
+                    dr["Rev"] = GetValueOrDefault(poRevision);
+                    dr["Description"] = GetValueOrDefault(poDescription);
 
                     dt.Rows.Add(dr);
 
@@ -806,7 +806,6 @@ namespace LaserMarking
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-
                 }
 
                 OrdersGridView.DataSource = dt;
@@ -814,6 +813,7 @@ namespace LaserMarking
                 orderRev = row.Cells["Rev"].Value.ToString();
 
                 CheckForCustomProgram(SelectedPN + "_" + orderRev);
+
                 if (GenericProgram)
                 {
                     GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl, out fileFound);
@@ -928,6 +928,10 @@ namespace LaserMarking
 
         }
 
+        private string GetValueOrDefault(object value)
+        {
+            return string.IsNullOrEmpty(value as string) ? "N/A" : value.ToString();
+        }
         private void GetTubeKitFromPDMBom(string partNumber, DataTable dt)
         {
             
@@ -2197,6 +2201,16 @@ namespace LaserMarking
                         axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
                         axMBActX2.OpenJob(FilePath);
                         JobTitleLabel.Text = axMBActX2.Job.Title;
+                        var block = axMBActX2.Block(8);
+                        if (block != null ) // Replace with correct check if IsMarkingEnable is nullable
+                        {
+                            block.IsMarkingEnable = false;
+                        }
+                        else
+                        {
+                            // Log or handle the error
+                            MessageBox.Show("Block is not valid or does not support IsMarkingEnable.");
+                        }
                         axMBActX2.Block(8).IsMarkingEnable = false;
                         axMBActX2.Block(3).X = 10;
 
