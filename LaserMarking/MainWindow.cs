@@ -47,11 +47,7 @@ namespace LaserMarking
         {
             InitializeComponent();
 
-            Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
-
             InitializeMarker();
-
-            USBConnection();
 
             loadMaterialComboBox();
 
@@ -97,11 +93,6 @@ namespace LaserMarking
 
         }
 
-        private void OnApplicationExit(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void InitializeMarker()
         {
@@ -113,30 +104,6 @@ namespace LaserMarking
             {
                 MessageBox.Show("Error initializing laser. \n\n " + error.Message);
             }
-
-        }
-
-        private void USBConnection()
-        {
-            //int ControllerSerialNo = 12345;
-            //try
-            //{
-            //    //If the application is exited without disconnected, the instance may exclusively use the online connection. In this case, release the online connection.
-            //if (axMBActX1.Comm.IsOnline)
-            //    {
-            //        axMBActX1.Comm.Offline();
-            //    }
-            //    axMBActX1.Comm.ConnectionType = MBPLib2.ConnectionTypes.CONNECTION_USB;
-            //    axMBActX1.Comm.UsbControllerSerialNo = ControllerSerialNo;
-            //    bool is_success = axMBActX1.Comm.Online();
-            //}
-            //catch (System.Runtime.InteropServices.COMException error)
-            //{
-            //    MessageBox.Show(error.Message);
-            //}
-
-
-
 
         }
 
@@ -159,8 +126,9 @@ namespace LaserMarking
                 return connStr;
             }
         }
-
-        private void updateOpenOrderItems()
+        
+        //Function to load items on Refresh Orders Click
+        private void updateOpenOrderItems() 
         {
             using (SqlConnection cn = new SqlConnection(OpenConnect(SAPConnectionString)))
             {
@@ -170,23 +138,6 @@ namespace LaserMarking
                     SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
                     cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
 
-                    cmd2.Parameters.AddWithValue("@Search", "%%");
-                    /*
-                    // Code used before
-                    cmd2.CommandText = "" +
-
-                    //" DECLARE @temp TABLE (SO_Number VARCHAR(255),Order_Date VARCHAR(255),Promise_Date VARCHAR(255),Customer VARCHAR(255),Part_Number VARCHAR(255),Open_Qty VARCHAR(255),Price VARCHAR(255),Open_Amount VARCHAR(255))    " +
-                    //" INSERT @temp EXEC CheckOpenOrders                                                                                                                                                                                  " +
-                    //" SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
-                    //" where Part_Number like '80%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
-
-                    
-
-                    " DECLARE @temp TABLE (SO_Number VARCHAR(255),Order_Date VARCHAR(255),Promise_Date VARCHAR(255),Customer VARCHAR(255),Part_Number VARCHAR(255),Open_Qty VARCHAR(255),Price VARCHAR(255),Open_Amount VARCHAR(255))    " +
-                    " INSERT @temp EXEC CheckOpenOrders                                                                                                                                                                                  " +
-                    " SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
-                    " where Part_Number like '8%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
-                    */
                     cmd2.CommandText = @"select OWOR.ItemCode as Part_number, 
                                         OWOR.PlannedQty as Total_QTY, 
                                         WOR1.EndDate as  Due_date, 
@@ -196,11 +147,12 @@ namespace LaserMarking
                                         where WOR1.ItemCode like '%tub%'  
                                         and OWOR.Status != 'L' --closed
                                         and OWOR.Status!= 'C' -- Cancelled";
+
                     DataTable dt = new DataTable();
                     dt.Load(cmd2.ExecuteReader());
-                    
+
                     OrdersGridView.DataSource = dt;
-                    
+
 
                 }
                 catch (Exception ex)
@@ -209,19 +161,8 @@ namespace LaserMarking
                 }
             }
         }
-        private void OrdersGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            string columnName = OrdersGridView.Columns[e.ColumnIndex].Name;
-            DataTable dataTable = OrdersGridView.DataSource as DataTable;
 
-            if (dataTable != null)
-            {
-                DataView dataView = dataTable.DefaultView;
-                dataView.Sort = $"{columnName} ASC";
-                OrdersGridView.DataSource = dataView.ToTable();
-            }
-        }
-
+        // Adds Material Column to datagrid
         private void GetOrderTubePNBTN_Click(object sender, EventArgs e)
         {
             OrdersGridView.Columns.Add("Material", "Material");
@@ -252,6 +193,7 @@ namespace LaserMarking
                 {
                     vault1.LoginAuto("UMIS", this.Handle.ToInt32());
                 }
+
                 aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{PN}.slddrw", out ppoRetParentFolder);
                 if (aFile != null)
                 {
@@ -1109,10 +1051,29 @@ namespace LaserMarking
                         try
                         {
                             JobTitleLabel.Text = axMBActX2.Job.Title;
-                            partNum = axMBActX2.Block(3).Text;
-                            customerNum = axMBActX2.Block(4).Text;
-                            description = axMBActX2.Block(5).Text;
-                            description2 = axMBActX2.Block(6).Text;
+                            try
+                            {
+                                partNum = axMBActX2.Block(3).Text;
+                            }
+                            catch {}
+
+                            try
+                            {
+                                customerNum = axMBActX2.Block(4).Text;
+                            }
+                            catch{ }
+
+                            try
+                            {
+                                description = axMBActX2.Block(5).Text;
+                            }
+                            catch{}
+
+                            try
+                            {
+                                description2 = axMBActX2.Block(6).Text;
+                            }
+                            catch{ }
                             try
                             {
                                 string disabled = axMBActX2.Block(16).Text; //New disabled "DO NOT MODIFY" block
@@ -1124,24 +1085,28 @@ namespace LaserMarking
                             catch (System.Runtime.InteropServices.COMException error)
                             {
                             }
-                            DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
-                            string myPN = row.Cells["Part_Number"].Value.ToString();
-                            string myRev = row.Cells["Rev"].Value.ToString();
+                            //DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
+                            //string myPN = row.Cells["Part_Number"].Value.ToString();
+                            //string myRev = row.Cells["Rev"].Value.ToString();
                             PartNumAndRevBox.Text = partNum;
-                            PartNumAndRevBox.Text = (myPN + "_" + myRev);
+                            //PartNumAndRevBox.Text = (myPN + "_" + myRev);
                             CustPartNumAndRevBox.Text = customerNum;
                             DescLine1Box.Text = description;
                             DescLine2Box.Text = description2;
 
-                            if (axMBActX2.Block(8).IsMarkingEnable)
+                            try
                             {
-                                QRCheckBox.Checked = true;
+                                if (axMBActX2.Block(8).IsMarkingEnable)
+                                {
+                                    QRCheckBox.Checked = true;
+                                }
+                                else
+                                {
+                                    QRCheckBox.Checked = false;
+                                }
                             }
-                            else
-                            {
-                                QRCheckBox.Checked = false;
-                            }
-                            UpdateCurrentProgramBlocks(0);
+                            catch { }
+                                UpdateCurrentProgramBlocks(0);
                             
                         }
                         catch (System.Runtime.InteropServices.COMException error)
@@ -2202,16 +2167,19 @@ namespace LaserMarking
                         axMBActX2.OpenJob(FilePath);
                         JobTitleLabel.Text = axMBActX2.Job.Title;
                         var block = axMBActX2.Block(8);
-                        if (block != null ) // Replace with correct check if IsMarkingEnable is nullable
+                        try
                         {
-                            block.IsMarkingEnable = false;
+                            // Check if IsMarkingEnable property is accessible
+                            if (block.IsMarkingEnable)
+                            {
+                                block.IsMarkingEnable = false;
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            // Log or handle the error
-                            MessageBox.Show("Block is not valid or does not support IsMarkingEnable.");
+                            // Handle the exception if accessing the property fails
+                            Console.WriteLine($"Error accessing IsMarkingEnable: {ex.Message}");
                         }
-                        axMBActX2.Block(8).IsMarkingEnable = false;
                         axMBActX2.Block(3).X = 10;
 
                     }
