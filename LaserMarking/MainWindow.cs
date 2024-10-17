@@ -185,11 +185,15 @@ namespace LaserMarking
                     " SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
                     " where Part_Number like '8%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
                     */
-                    cmd2.CommandText = "" +
-                    " select wo.ItemCode as Part_number, wo1.PlannedQty as Total_QTY, wo1.EndDate as  Due_date " +
-                    "from WOR1 wo1 " +
-                    " left join OWOR wo on wo.DocEntry = wo1.DocEntry  " +
-                    "where wo1.ItemCode like '%tub%'  and wo.Status != 'L' ";
+                    cmd2.CommandText = @"select OWOR.ItemCode as Part_number, 
+                                        OWOR.PlannedQty as Total_QTY, 
+                                        WOR1.EndDate as  Due_date, 
+                                        OWOR.OriginNum as ProductionNumber
+                                        from WOR1 --rows
+                                        left join OWOR on OWOR.DocEntry = WOR1.DocEntry  -- headers
+                                        where WOR1.ItemCode like '%tub%'  
+                                        and OWOR.Status != 'L' --closed
+                                        and OWOR.Status!= 'C' -- Cancelled";
                     DataTable dt = new DataTable();
                     dt.Load(cmd2.ExecuteReader());
                     
