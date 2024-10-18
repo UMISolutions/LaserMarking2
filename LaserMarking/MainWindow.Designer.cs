@@ -87,7 +87,7 @@ namespace LaserMarking
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.HeatBox = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.HeatCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -236,7 +236,6 @@ namespace LaserMarking
             this.ProgramMaterialCombo.Name = "ProgramMaterialCombo";
             this.ProgramMaterialCombo.Size = new System.Drawing.Size(121, 21);
             this.ProgramMaterialCombo.TabIndex = 19;
-            this.ProgramMaterialCombo.SelectedIndexChanged += new System.EventHandler(this.ProgramMaterialCombo_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -263,7 +262,6 @@ namespace LaserMarking
             this.ProgramSizeCombo.Name = "ProgramSizeCombo";
             this.ProgramSizeCombo.Size = new System.Drawing.Size(121, 21);
             this.ProgramSizeCombo.TabIndex = 23;
-            this.ProgramSizeCombo.SelectedIndexChanged += new System.EventHandler(this.ProgramSizeCombo_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -575,22 +573,23 @@ namespace LaserMarking
             this.HeatBox.TabIndex = 65;
             this.HeatBox.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
             // 
-            // checkBox1
+            // HeatCheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(31, 637);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(134, 17);
-            this.checkBox1.TabIndex = 66;
-            this.checkBox1.Text = "Heat Number (Block 7)";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.HeatCheckBox.AutoSize = true;
+            this.HeatCheckBox.Location = new System.Drawing.Point(31, 637);
+            this.HeatCheckBox.Name = "HeatCheckBox";
+            this.HeatCheckBox.Size = new System.Drawing.Size(134, 17);
+            this.HeatCheckBox.TabIndex = 66;
+            this.HeatCheckBox.Text = "Heat Number (Block 7)";
+            this.HeatCheckBox.UseVisualStyleBackColor = true;
+            this.HeatCheckBox.CheckedChanged += new System.EventHandler(this.HeatCheckBox_CheckedChanged);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 870);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.HeatCheckBox);
             this.Controls.Add(this.HeatBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -702,7 +701,7 @@ namespace LaserMarking
         private Label label8;
         private Label label9;
         private TextBox HeatBox;
-        private CheckBox checkBox1;
+        private CheckBox HeatCheckBox;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form

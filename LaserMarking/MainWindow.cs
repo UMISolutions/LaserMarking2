@@ -44,6 +44,7 @@ namespace LaserMarking
 
         bool GenericProgram = true;
         bool isConnected = false;
+        bool partNumsFliped = false;
 
         public MainWindow()
         {
@@ -456,7 +457,7 @@ namespace LaserMarking
             sendMarkedToDB();
 
         }
-
+        // Was complete... test if the flipped is working
         private void sendMarkedToDB()
         {
             try { isConnected = axMBActX2.Comm.Online(); }
@@ -483,9 +484,15 @@ namespace LaserMarking
 
                         // Add parameters to the command
                         cmd2.Parameters.AddWithValue("@DateTimeMarked", DateTime.Now); // Set to current date and time
-                        cmd2.Parameters.AddWithValue("@PartNum", PartNumAndRevBox.Text); // Replace with actual part number
+                        if (!partNumsFliped)
+                        {
+                            cmd2.Parameters.AddWithValue("@PartNum", PartNumAndRevBox.Text);
+                        } else
+                        {
+                            cmd2.Parameters.AddWithValue("@PartNum", CustPartNumAndRevBox.Text);
+                        }
                         cmd2.Parameters.AddWithValue("@ProductionNumber", ProductionNumber); // Replace with actual production order
-                        cmd2.Parameters.AddWithValue("@HeatNumber", "HeatNumber");
+                        cmd2.Parameters.AddWithValue("@HeatNumber", HeatBox.Text);
                         cmd2.Parameters.AddWithValue("@IsConnected", isConnected); // Replace with actual test flag value
 
                         // Execute the command
@@ -500,7 +507,6 @@ namespace LaserMarking
             }
 
         }
-
 
         private void axMBActX1_EvMarkingEnd(object sender, _DMBActXEvents_EvMarkingEndEvent e)
         {
@@ -550,8 +556,6 @@ namespace LaserMarking
                 MessageBox.Show(error.Message);
             }
         }
-
-        
 
         private void LightOffButton_Click(object sender, EventArgs e)
         {
@@ -783,7 +787,7 @@ namespace LaserMarking
                 }
             }
         }
-
+        // Returns "N/A" when null or empty :: Complete
         private string GetValueOrDefault(object value)
         {
             return string.IsNullOrEmpty(value as string) ? "N/A" : value.ToString();
@@ -960,6 +964,7 @@ namespace LaserMarking
                         string customerNum = "";
                         string description = "";
                         string description2 = "";
+                        string heatin = "";
                         axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
                         axMBActX2.OpenJob(FilePath);
                         try
@@ -987,7 +992,12 @@ namespace LaserMarking
                             {
                                 description2 = axMBActX2.Block(6).Text;
                             }
-                            catch{ }
+                            catch{}
+                            try
+                            {
+                                heatin = axMBActX2.Block(7).Text;
+                            }
+                            catch { }
                             try
                             {
                                 string disabled = axMBActX2.Block(16).Text; //New disabled "DO NOT MODIFY" block
@@ -999,14 +1009,11 @@ namespace LaserMarking
                             catch (System.Runtime.InteropServices.COMException error)
                             {
                             }
-                            //DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
-                            //string myPN = row.Cells["Part_Number"].Value.ToString();
-                            //string myRev = row.Cells["Rev"].Value.ToString();
                             PartNumAndRevBox.Text = partNum;
-                            //PartNumAndRevBox.Text = (myPN + "_" + myRev);
                             CustPartNumAndRevBox.Text = customerNum;
                             DescLine1Box.Text = description;
                             DescLine2Box.Text = description2;
+                            HeatBox.Text = heatin;  
 
                             try
                             {
@@ -1627,11 +1634,6 @@ namespace LaserMarking
 
         }
 
-        private void ProgramSizeCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //ProgramMaterialCombo.SelectedIndex = -1;
-        }
-
         private void CameraFinderViewButton_Click(object sender, EventArgs e)
         {
             try
@@ -1721,57 +1723,19 @@ namespace LaserMarking
             UpdateCurrentProgramBlocks(0);
         }
 
-        // Changes QR marking & editability :: Complete
-        private void QRCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (QRCheckBox.Checked)
-                {
-                    QRCodeDataBox.ReadOnly = false;
-
-                    axMBActX2.Block(8).IsMarkingEnable = true;
-
-                    if (axMBActX2.Block(8).IsEditable)
-                    {
-                        axMBActX2.Block(8).Text = "umisolutions.ca";
-                    }
-                }
-                else
-                {
-                    QRCodeDataBox.ReadOnly = true;
-                    axMBActX2.Block(8).IsMarkingEnable = false;
-                }
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show("No QR Block (8) exists or is not editable");
-            }
-        }
-
-        // Change QR based on txt :: Complete
-        private void QRCodeDataBox_TextChanged(object sender, EventArgs e)
-        {
-            
-            try { if (axMBActX2.Block(8).IsEditable) { axMBActX2.Block(8).Text = QRCodeDataBox.Text;
-                } }
-            catch { axMBActX2.Block(8).Text = "umisolutions.ca";
-            }
-        }
-
+        // Flips part numbers :: Complete
         private void FlipPartNumbersButton_Click(object sender, EventArgs e)
         {
             string tempPN = PartNumAndRevBox.Text;
             string tempCustPN = CustPartNumAndRevBox.Text;
+            if (partNumsFliped) partNumsFliped = false;
+            else partNumsFliped = true;
 
             PartNumAndRevBox.Text = tempCustPN;
             CustPartNumAndRevBox.Text = tempPN;
-
-            //80006 rev 2 
-            //80139 rev 0
-            //80140 rev 0
         }
 
+        // Sets cameras position (works I think) Should add ability to move from user inputs??
         private void SetCameraPosition_Click(object sender, EventArgs e)
         {
             double PositionX = 1.000;
@@ -1787,11 +1751,6 @@ namespace LaserMarking
                 MessageBox.Show(error.Message);
             }
         
-
-        
-
-
-
             try
             {
                 axMBActX2.Operation.SetCameraPosition(PositionX, PositionY, PositionZ, IsAffectWorkpiecePositionAdjustment);
@@ -1800,7 +1759,6 @@ namespace LaserMarking
             {
                 MessageBox.Show(error.Message);
             }
-
 
             try
             {
@@ -1812,12 +1770,6 @@ namespace LaserMarking
             }
 
 
-        }
-
-        private void ProgramMaterialCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            
         }
 
         private void OpenGenericProgram()
@@ -2244,36 +2196,6 @@ namespace LaserMarking
             catch { MessageBox.Show("No Image Block (2) exists or is not editable"); }
         }
 
-        private void save_Click(object sender, EventArgs e)
-        {
-          
-            string FilePath = $@"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\{PartNumAndRevBox}.MA2";
-           
-               
-            try
-            {
-                
-                if (System.IO.File.Exists(FilePath))
-                {
-                    System.IO.File.Delete(FilePath);
-
-                    axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
-                }
-                else
-                {
-
-                    axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
-                }
-     
-                
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-            
-        }
-
         // Changes if desc2 is marked :: Complete
         private void Desc2Box_CheckedChanged(object sender, EventArgs e)
         {
@@ -2294,7 +2216,102 @@ namespace LaserMarking
 
         }
 
+        // Changes if heat number is marked :: Complete
+        private void HeatCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (HeatCheckBox.Checked)
+                {
+                    axMBActX2.Block(7).IsMarkingEnable = true;
+                }
+                else
+                {
+                    axMBActX2.Block(7).IsMarkingEnable = false;
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No Heat Number Block (7) exists or is not editable");
+            }
+        }
 
+        // Changes QR marking & editability :: Complete
+        private void QRCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (QRCheckBox.Checked)
+                {
+                    QRCodeDataBox.ReadOnly = false;
+
+                    axMBActX2.Block(8).IsMarkingEnable = true;
+
+                    if (axMBActX2.Block(8).IsEditable)
+                    {
+                        axMBActX2.Block(8).Text = "umisolutions.ca";
+                    }
+                }
+                else
+                {
+                    QRCodeDataBox.ReadOnly = true;
+                    axMBActX2.Block(8).IsMarkingEnable = false;
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No QR Block (8) exists or is not editable");
+            }
+        }
+
+        // Change QR based on txt :: Complete
+        private void QRCodeDataBox_TextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (axMBActX2.Block(8).IsEditable)
+                {
+                    axMBActX2.Block(8).Text = QRCodeDataBox.Text;
+                }
+            }
+            catch
+            {
+                axMBActX2.Block(8).Text = "umisolutions.ca";
+            }
+        }
+
+        // Saves the file :: Complete
+        private void save_Click(object sender, EventArgs e)
+        {
+
+            string FilePath = $@"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\{PartNumAndRevBox}.MA2";
+
+            try
+            {
+
+                if (System.IO.File.Exists(FilePath))
+                {
+                    System.IO.File.Delete(FilePath);
+
+                    axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
+                }
+                else
+                {
+
+                    axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
+                }
+
+
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+        }
+
+        // NEED TO MAKE THIS SHOW IN PANEL LIKE ON EXTERNAL APP TEST
         private void btnOpenMarkerBuilder_MouseClick(object sender, MouseEventArgs e)
         {
             // save the file (use normal save)... will guarentee file exists
@@ -2316,10 +2333,13 @@ namespace LaserMarking
             }
         }
 
+        // Calls OrdersGridView_Click to load in new (saved) file :: Complete
         private void btnRefreshTag_Click(object sender, EventArgs e)
         {
             OrdersGridView_Click(sender, e);
         }
+
+        
     }
 }
 
