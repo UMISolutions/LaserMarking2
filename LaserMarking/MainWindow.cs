@@ -16,6 +16,7 @@ using System.Collections;
 using System.Diagnostics;
 using static System.Net.WebRequestMethods;
 using System.CodeDom;
+using AxMBPActXLib;
 
 namespace LaserMarking
 {
@@ -1585,6 +1586,7 @@ namespace LaserMarking
 
         }
 
+        // Sets label to the text in boxes :: Complete
         private void UpdateCurrentProgramBlocks(int customerId)
         {
             
@@ -1598,6 +1600,8 @@ namespace LaserMarking
             catch { axMBActX2.Block(5).Text = " "; }
             try { if (axMBActX2.Block(6).IsEditable) { axMBActX2.Block(6).Text = DescLine2Box.Text; } }
             catch { axMBActX2.Block(6).Text = " "; }
+            try { if (axMBActX2.Block(7).IsEditable) { axMBActX2.Block(7).Text = HeatBox.Text; } }
+            catch { axMBActX2.Block(7).Text = " "; }
             if (customerId != 0)
             {
                 try 
@@ -1711,56 +1715,48 @@ namespace LaserMarking
             }
         }
 
-        private void PartNumAndRevBox_TextChanged(object sender, EventArgs e)
+        // Calls UpdateCurrentProgramBlocks(0) when any text for a block changes :: Complete
+        private void BlockText_TextChanged(object sender, EventArgs e)
         {
             UpdateCurrentProgramBlocks(0);
         }
 
-        private void CustPartNumAndRevBox_TextChanged(object sender, EventArgs e)
-        {
-            UpdateCurrentProgramBlocks(0);
-        }
-
-        private void DescLine1Box_TextChanged(object sender, EventArgs e)
-        {
-            UpdateCurrentProgramBlocks(0);
-        }
-
-        private void DescLine2Box_TextChanged(object sender, EventArgs e)
-        {
-            UpdateCurrentProgramBlocks(0);
-        }
-
+        // Changes QR marking & editability :: Complete
         private void QRCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            if (QRCheckBox.Checked)
+            try
             {
-                QRCodeDataBox.ReadOnly = false;
-                axMBActX2.Block(8).IsMarkingEnable = true;
-                try
+                if (QRCheckBox.Checked)
                 {
+                    QRCodeDataBox.ReadOnly = false;
+
+                    axMBActX2.Block(8).IsMarkingEnable = true;
+
                     if (axMBActX2.Block(8).IsEditable)
                     {
-                        axMBActX2.Block(8).Text = "umisolutions.ca";// + QRCodeDataBox.Text;
+                        axMBActX2.Block(8).Text = "umisolutions.ca";
                     }
                 }
-                catch (System.Runtime.InteropServices.COMException error)
+                else
                 {
-                    MessageBox.Show(error.Message);
+                    QRCodeDataBox.ReadOnly = true;
+                    axMBActX2.Block(8).IsMarkingEnable = false;
                 }
             }
-            else
+            catch (System.Runtime.InteropServices.COMException error)
             {
-                QRCodeDataBox.ReadOnly = true;
-                axMBActX2.Block(8).IsMarkingEnable = false;
+                MessageBox.Show("No QR Block (8) exists or is not editable");
             }
         }
 
+        // Change QR based on txt :: Complete
         private void QRCodeDataBox_TextChanged(object sender, EventArgs e)
         {
             
-            try { if (axMBActX2.Block(8).IsEditable) { axMBActX2.Block(8).Text = QRCodeDataBox.Text; } }
-            catch { axMBActX2.Block(8).Text = "umisolutions.ca"; }
+            try { if (axMBActX2.Block(8).IsEditable) { axMBActX2.Block(8).Text = QRCodeDataBox.Text;
+                } }
+            catch { axMBActX2.Block(8).Text = "umisolutions.ca";
+            }
         }
 
         private void FlipPartNumbersButton_Click(object sender, EventArgs e)
@@ -1888,383 +1884,6 @@ namespace LaserMarking
                 MessageBox.Show(error.Message);
             }
         }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                IEdmVault7 vault2 = null;
-                if (vault1 == null)
-                {
-                    vault1 = new EdmVault5();
-                }
-                vault2 = (IEdmVault9)vault1;
-                if (!vault1.IsLoggedIn)
-                {
-                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
-                }
-
-                if (aFile != null)
-                {
-
-                    bomMgr = (IEdmBomMgr2)(IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
-                    EdmBomInfo[] derivedBOMs;
-                    aFile.GetDerivedBOMs(out derivedBOMs);
-                    int i = 0;
-                    int arrSize = derivedBOMs.Length;
-                    string str = "";
-                    int id;
-                    while (i < arrSize)
-                    {
-                        id = derivedBOMs[i].mlBomID;
-                        bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, id);
-                        str = "Derived BOM: " + derivedBOMs[i].mbsBomName + " " + bom.CheckOutUserID + " " + bom.CurrentState.Name + " " + bom.CurrentVersion + " " + bom.FileID + " " + bom.IsCheckedOut;
-
-                        //MessageBox.Show(str);
-                        i = i + 1;
-                    }
-                    
-
-                    bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
-                    
-
-                    EdmBomColumn[] ppoColumns = null;
-                    bomView.GetColumns(out ppoColumns);
-
-                    object[] ppoRows = null;
-                    IEdmBomCell ppoRow = default(IEdmBomCell);
-                    bomView.GetRows(out ppoRows);
-
-                    object cellItem = null;
-                    object cmop = null;
-                    string config = null;
-                    bool nnn= false;
-                    
-
-                    
-
-                    i = 0;
-                    arrSize = ppoColumns.Length;
-                    str = "";
-                    while (i < arrSize)
-                    {
-                        str = "BOM Column " + i + ": " + "\n" + "Header: " + ppoColumns[i].mbsCaption + "\n" + "Column type as defined in EdmBomColumnType: " + ppoColumns[i].meType + "\n" + "ID: " + ppoColumns[i].mlColumnID + "\n" + "Flags: " + ppoColumns[i].mlFlags + "\n" + "Variable ID: " + ppoColumns[i].mlVariableID + "\n" + "Variable type as defined in EdmVariableType: " + ppoColumns[i].mlVariableType + "\n" + "Column width: " + ppoColumns[i].mlWidth;
-                        //MessageBox.Show(str);
-                        i = i + 1;
-                    }
-
-
-
-
-                    
-                    
-                    i = 0;
-                    arrSize = ppoRows.Length;
-                    str = "";
-                    while (i < arrSize)
-                    {
-                        ppoRow = (IEdmBomCell)ppoRows[i];
-                        str = "BOM Row " + i + ": " + "\n" + "Item ID: " + ppoRow.GetItemID() + "\n" + "Path name: " + ppoRow.GetPathName() + "\n" + "Tree level: " + ppoRow.GetTreeLevel() + "\n" + " Is locked? " + ppoRow.IsLocked();
-                        //MessageBox.Show(str);
-                        i = i + 1;
-                    }
-
-                    string parts = "";
-                    foreach (IEdmBomCell rowe in ppoRows)
-                    {
-                        int abc = 0;
-                        foreach (EdmBomColumn d in ppoColumns)
-                        {
-                            
-                            
-                            if(abc<= (ppoColumns.Count() - 1))
-                            {
-                                rowe.GetVar(ppoColumns[abc].mlVariableID, ppoColumns[abc].meType, out cellItem, out cmop, out config, out nnn);
-                                if (abc == 1)
-                                {
-                                    parts += cellItem + "\n";
-                                }
-                                MessageBox.Show("Col Position: " + abc + "\n Col ml variable: " + ppoColumns[abc].mlVariableID + "\n cell item :" + cellItem + "\n Col Type for [abc] :" + ppoColumns[abc].meType);
-                                abc += 1;
-
-
-
-                            }
-
-                            
-                        }
-
-
-                    }
-
-                    foreach (IEdmBomCell rowe in ppoRows)
-                    {
-                        int abc = 1;
-                        //foreach (EdmBomColumn d in ppoColumns)
-                        //{
-                            rowe.GetVar(ppoColumns[1].mlVariableID, ppoColumns[1].meType, out cellItem, out cmop, out config, out nnn);
-
-                            if (abc == 1)
-                            {
-                                parts += cellItem + "\n";
-                            }
-                            MessageBox.Show("222222Col Position: " + abc + "\n Col ml variable: " + ppoColumns[abc].mlVariableID + "\n cell item :" + cellItem + "\n Col Type for [2] :" + ppoColumns[2].meType);
-                            abc += 1;
-                        //}
-
-
-                    }
-                    MessageBox.Show(parts);
-                    
-
-                    
-
-                }
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                MessageBox.Show("HRESULT = 0x" + ex.ErrorCode.ToString("X") + " " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                File1List.Items.Clear();
-
-                IEdmVault7 vault2 = null;
-                if (vault1 == null)
-                {
-                    vault1 = new EdmVault5();
-                }
-
-                vault2 = (IEdmVault7)vault1;
-                if (!vault1.IsLoggedIn)
-                {
-                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
-                }
-
-
-                aFile = (IEdmFile7)vault1.GetFileFromPath(@"C:\UMIS\UMi Parts\80000\81024.slddrw", out ppoRetParentFolder);
-                File1List.Items.Add(aFile.Name);
-
-
-                ////Set the initial directory in the Select File dialog
-                //OpenFileDialog1.InitialDirectory = vault1.RootFolderPath;
-
-                ////Show the Select File dialog
-                //System.Windows.Forms.DialogResult DialogResult;
-                //DialogResult = OpenFileDialog1.ShowDialog();
-
-                //if (!(DialogResult == System.Windows.Forms.DialogResult.OK))
-                //{
-                //    // do nothing
-                //}
-                //else
-                //{
-                //    foreach (string FileName in OpenFileDialog1.FileNames)
-                //    {
-                //        File1List.Items.Add(FileName);
-                //        aFile = (IEdmFile7)vault1.GetFileFromPath(FileName, out ppoRetParentFolder);
-                //        k = FileName.LastIndexOf(".");
-                //        fileExt = FileName.Substring(k + 1, (FileName.Length) - k - 1);
-                //        aPos = aFile.GetFirstFolderPosition();
-                //        aFolder = aFile.GetNextFolder(aPos);
-                //    }
-                //}
-
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                MessageBox.Show("HRESULT = 0x" + ex.ErrorCode.ToString("X") + " " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                IEdmVault7 vault2 = null;
-                if (vault1 == null)
-                {
-                    vault1 = new EdmVault5();
-                }
-
-                vault2 = (IEdmVault9)vault1;
-                if (!vault1.IsLoggedIn)
-                {
-                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
-                }
-
-
-                if ((aFile != null))
-                {
-                    IEdmEnumeratorVariable10 EnumVarObj = default(IEdmEnumeratorVariable10);
-                    EnumVarObj = (IEdmEnumeratorVariable10)aFile.GetEnumeratorVariable();
-                    
-
-                    // Get configurations
-                    EdmStrLst5 cfgList = default(EdmStrLst5);
-                    cfgList = aFile.GetConfigurations();
-
-                    IEdmPos5 pos = default(IEdmPos5);
-                    pos = cfgList.GetHeadPosition();
-                    string cfgName = null;
-
-                    Dictionary<string, Dictionary<string, string>> myDictDict = new Dictionary<string, Dictionary<string, string>>();
-
-                    object[] varz = null;
-                    string[] configz = null;
-                    EdmGetVarData poRetDat = new EdmGetVarData();
-                    EnumVarObj.GetVersionVars(aFile.GetLocalVersionNo(ppoRetParentFolder.ID), ppoRetParentFolder.ID, out varz, out configz, poRetDat);
-
-                    string str = null;
-                    str = "File variable data for " + aFile.Name + "\r\n";
-                    str = str + "Version: " + poRetDat.mlVersion + "\r\n";
-                    str = str + "Latest version: " + poRetDat.mlLatestVersion + "\r\n";
-                    str = str + "Revision: " + poRetDat.mbsRevision + "\r\n";
-                    str = str + "State: " + poRetDat.mbsState + "\r\n";
-                    str = str + "Workflow: " + poRetDat.mbsWorkflow + "r\\n";
-                    str = str + "Category: " + poRetDat.mbsCategory + "\r\n";
-                    str = str + "SQL Server date format code: " + poRetDat.mlDateFmt + "\r\n";
-                    str = str + "EdmGetVarDataFlags: " + poRetDat.mlEdmGetVarDataFlags;
-
-                    //MessageBox.Show(str);
-                    foreach (IEdmVariableValue6 b in varz)
-                    {
-                        MessageBox.Show("" + b.VariableName + "  " + b.GetValue("@"));
-                    }
-
-
-
-                    while (!pos.IsNull)
-                    {
-
-                        cfgName = cfgList.GetNext(pos);
-                        
-                        object VarObj = null;
-
-                        EnumVarObj.GetVar("PartNo", cfgName, out VarObj);
-                        string VarVal = VarObj?.ToString();
-
-                        EnumVarObj.GetVar("Description", cfgName, out VarObj);
-                        string Description = VarObj?.ToString();
-
-                        EnumVarObj.GetVar("Revision", cfgName, out VarObj);
-                        string revision = VarObj?.ToString();
-
-                        //EnumVarObj.GetVar("DrawnBy", "@", out VarObj);
-                        
-                        EnumVarObj.GetVarAsText("Customer Name", "@",(ppoRetParentFolder.ID), out VarObj);
-                        string Customer = VarObj?.ToString();
-
-                        EnumVarObj.GetVar("CustomerPN", cfgName, out VarObj);
-                        string CustomerPN = VarObj?.ToString();
-
-                        Dictionary<string, string> values = new Dictionary<string, string>();
-
-                        values.Add("PartNo", VarVal);
-                        values.Add("Revision", revision);
-                        values.Add("Description", Description);
-                        MessageBox.Show("PartNo: "+ VarVal+ "\nRev: " + revision + "\nDescription: " + Description + "\nCustomer: " + Customer + "\nCustomerPN: " + CustomerPN);
-
-                    }
-
-
-
-
-                    //    // Get the selected file's data card
-                    //    aCard = (IEdmCard6)aFolder.GetCard(fileExt);
-                    //cardID = aFolder.GetCardID(fileExt);
-                    
-                    //aCard.GetSize(out plWidth, out plHeight);
-                    
-                    //str = "File: " + aFile.Name + "\r\n" + "Card ID: " + cardID + ", EdmCardType: " + aCard.CardType + ", Width: " + plWidth + ", Height: " + plHeight;
-                    //MessageBox.Show(str);
-
-                    //aPos = aCard.GetFirstControlPosition();
-                    //while (!(aPos.IsNull))
-                    //{
-                    //    aControl = (IEdmCardControl7)(IEdmCardControl6)aCard.GetNextControl(aPos);
-                    //    contType = (int)aControl.ControlType;
-                    //    try
-                    //    {
-                    //        string[] a;
-                    //        aControl.GetControlVariableList(aFile.ID, out a);
-                            
-                    //        //int i = 0;    
-                    //        foreach (string b in a)
-                    //        {
-                    //            MessageBox.Show("Look    " + aControl.Name + " " + b );
-                    //        }
-                    //    }
-                    //    catch
-                    //    {
-
-                    //    }
-
-
-                    //    bool ret = false;
-                    //    string[] variableItemsList = null;
-                    //    if (((contType == 7) | (contType == 8) | (contType == 9) | (contType == 10)))
-                    //    {
-                    //        str = "List values associated with drop-down card control: " + aControl.VariableID.ToString();
-                    //        ret = aControl.GetControlVariableList(aFile.ID, out variableItemsList);
-
-                    //        foreach (string listValue in variableItemsList)
-                    //        {
-                    //            str = str + "\r\n" + listValue;
-                    //        }
-                    //        MessageBox.Show(str);
-                    //    }
-
-
-
-                    //    // Get the edit box controls in the card
-                    //    if (contType == 4)
-                    //    {
-                    //        str = "";
-                    //        aControl.GetParentInfo(out plParentCtrlID, out plPageNo);
-                    //        aControl.GetPosition(out plX, out plY, out plWidth, out plHeight);
-                    //        varType = (int)aControl.GetValidation(out poMin, out poMax);
-
-                    //        str = "Card control: " + aControl.Name;
-                    //        str = str + "\r\n" + "Variable ID: " + aControl.VariableID + "\t\n" + "EdmCardControlType: " + contType + "\r\n" + "Is multi-line? " + aControl.IsMultiLine + "\r\n" + "Is read-only? " + aControl.IsReadOnly + "\r\n" + "Show in preview? " + aControl.ShowInPreview;
-                    //        str = str + "\r\n" + "Location on card: [" + plX + ", " + plY + "], Width: " + plWidth + ", Height: " + plHeight;
-                    //        str = str + "\r\n" + "Parent control ID (0, if none): " + plParentCtrlID;
-                    //        str = str + "\r\n" + "Tab index: " + plPageNo;
-                    //        str = str + "\r\n" + "EdmVariableType: " + varType;
-
-                    //        str = str + "\r\n" + "Updates all configurations? " + aControl.UpdatesAllConfigurations.ToString();
-
-
-
-                    //        MessageBox.Show(str);
-                    //    }
-                    //}
-                }
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                MessageBox.Show("HRESULT = 0x" + ex.ErrorCode.ToString("X") + " " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        
-    }
 
         private void AllPartNumBtn_Click(object sender, EventArgs e)
         {
@@ -2612,23 +2231,17 @@ namespace LaserMarking
             runlengthCheck();
         }
 
+        // Change image to MultiFlow :: Complete
         private void pictureBox1_DoubleClick(object sender, EventArgs e)
         {
             try
             {
-
-                if (axMBActX2.Block(1).IsEditable)
-                {
-
                     axMBActX2.Block(1).IsLogoAspectRatioKeep = true;
                     //axMBActX2.Block(1).LogoWidth = 10.250; //in mm
                     DirectoryInfo directory = new DirectoryInfo(@"U:\Engineering\CUSTOMERLOGO\");
                     axMBActX2.Block(1).Text = "" + directory.ToString() + "Multiflow.MHL";
-
-                }
-
             }
-            catch { axMBActX2.Block(1).Text = " "; }
+            catch { MessageBox.Show("No Image Block (2) exists or is not editable"); }
         }
 
         private void save_Click(object sender, EventArgs e)
@@ -2660,18 +2273,27 @@ namespace LaserMarking
             }
             
         }
+
+        // Changes if desc2 is marked :: Complete
         private void Desc2Box_CheckedChanged(object sender, EventArgs e)
         {
-            if (Desc2Box.Checked)
+            try 
             {
-                axMBActX2.Block(6).IsMarkingEnable = true;
-            }
-            else
+                if (Desc2Box.Checked)
+                {
+                    axMBActX2.Block(6).IsMarkingEnable = true;
+                }
+                else
+                {
+                    axMBActX2.Block(6).IsMarkingEnable = false;
+                }
+            } catch (System.Runtime.InteropServices.COMException error)
             {
-                axMBActX2.Block(6).IsMarkingEnable = false;
+                MessageBox.Show("No Desc2 Block (6) exists or is not editable");
             }
-            
+
         }
+
 
         private void btnOpenMarkerBuilder_MouseClick(object sender, MouseEventArgs e)
         {

@@ -82,6 +82,12 @@ namespace LaserMarking
             this.Desc2Box = new System.Windows.Forms.CheckBox();
             this.btnOpenMarkerBuilder = new System.Windows.Forms.Button();
             this.btnRefreshTag = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.HeatBox = new System.Windows.Forms.TextBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -226,7 +232,7 @@ namespace LaserMarking
             // ProgramMaterialCombo
             // 
             this.ProgramMaterialCombo.FormattingEnabled = true;
-            this.ProgramMaterialCombo.Location = new System.Drawing.Point(257, 467);
+            this.ProgramMaterialCombo.Location = new System.Drawing.Point(310, 457);
             this.ProgramMaterialCombo.Name = "ProgramMaterialCombo";
             this.ProgramMaterialCombo.Size = new System.Drawing.Size(121, 21);
             this.ProgramMaterialCombo.TabIndex = 19;
@@ -235,7 +241,7 @@ namespace LaserMarking
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(207, 472);
+            this.label1.Location = new System.Drawing.Point(265, 465);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 20;
@@ -244,7 +250,7 @@ namespace LaserMarking
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 472);
+            this.label2.Location = new System.Drawing.Point(282, 492);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 22;
@@ -253,7 +259,7 @@ namespace LaserMarking
             // ProgramSizeCombo
             // 
             this.ProgramSizeCombo.FormattingEnabled = true;
-            this.ProgramSizeCombo.Location = new System.Drawing.Point(69, 467);
+            this.ProgramSizeCombo.Location = new System.Drawing.Point(310, 484);
             this.ProgramSizeCombo.Name = "ProgramSizeCombo";
             this.ProgramSizeCombo.Size = new System.Drawing.Size(121, 21);
             this.ProgramSizeCombo.TabIndex = 23;
@@ -323,7 +329,7 @@ namespace LaserMarking
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 505);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 457);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -333,7 +339,7 @@ namespace LaserMarking
             // 
             // DateBox
             // 
-            this.DateBox.Location = new System.Drawing.Point(129, 505);
+            this.DateBox.Location = new System.Drawing.Point(277, 508);
             this.DateBox.Name = "DateBox";
             this.DateBox.ReadOnly = true;
             this.DateBox.Size = new System.Drawing.Size(154, 20);
@@ -341,50 +347,50 @@ namespace LaserMarking
             // 
             // PartNumAndRevBox
             // 
-            this.PartNumAndRevBox.Location = new System.Drawing.Point(129, 532);
+            this.PartNumAndRevBox.Location = new System.Drawing.Point(277, 531);
             this.PartNumAndRevBox.Name = "PartNumAndRevBox";
             this.PartNumAndRevBox.Size = new System.Drawing.Size(154, 20);
             this.PartNumAndRevBox.TabIndex = 33;
-            this.PartNumAndRevBox.TextChanged += new System.EventHandler(this.PartNumAndRevBox_TextChanged);
+            this.PartNumAndRevBox.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
             // 
             // CustPartNumAndRevBox
             // 
-            this.CustPartNumAndRevBox.Location = new System.Drawing.Point(129, 559);
+            this.CustPartNumAndRevBox.Location = new System.Drawing.Point(277, 557);
             this.CustPartNumAndRevBox.Name = "CustPartNumAndRevBox";
             this.CustPartNumAndRevBox.Size = new System.Drawing.Size(154, 20);
             this.CustPartNumAndRevBox.TabIndex = 34;
-            this.CustPartNumAndRevBox.TextChanged += new System.EventHandler(this.CustPartNumAndRevBox_TextChanged);
+            this.CustPartNumAndRevBox.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
             // 
             // DescLine1Box
             // 
-            this.DescLine1Box.Location = new System.Drawing.Point(34, 587);
+            this.DescLine1Box.Location = new System.Drawing.Point(166, 583);
             this.DescLine1Box.Name = "DescLine1Box";
             this.DescLine1Box.Size = new System.Drawing.Size(265, 20);
             this.DescLine1Box.TabIndex = 35;
-            this.DescLine1Box.TextChanged += new System.EventHandler(this.DescLine1Box_TextChanged);
+            this.DescLine1Box.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
             // 
             // DescLine2Box
             // 
-            this.DescLine2Box.Location = new System.Drawing.Point(34, 614);
+            this.DescLine2Box.Location = new System.Drawing.Point(166, 609);
             this.DescLine2Box.Name = "DescLine2Box";
             this.DescLine2Box.Size = new System.Drawing.Size(265, 20);
             this.DescLine2Box.TabIndex = 36;
-            this.DescLine2Box.TextChanged += new System.EventHandler(this.DescLine2Box_TextChanged);
+            this.DescLine2Box.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
             // 
             // QRCheckBox
             // 
             this.QRCheckBox.AutoSize = true;
-            this.QRCheckBox.Location = new System.Drawing.Point(299, 534);
+            this.QRCheckBox.Location = new System.Drawing.Point(151, 459);
             this.QRCheckBox.Name = "QRCheckBox";
-            this.QRCheckBox.Size = new System.Drawing.Size(70, 17);
+            this.QRCheckBox.Size = new System.Drawing.Size(115, 17);
             this.QRCheckBox.TabIndex = 37;
-            this.QRCheckBox.Text = "QR Code";
+            this.QRCheckBox.Text = "QR Code (Block 8)";
             this.QRCheckBox.UseVisualStyleBackColor = true;
             this.QRCheckBox.CheckedChanged += new System.EventHandler(this.QRCheckBox_CheckedChanged);
             // 
             // QRCodeDataBox
             // 
-            this.QRCodeDataBox.Location = new System.Drawing.Point(299, 559);
+            this.QRCodeDataBox.Location = new System.Drawing.Point(134, 479);
             this.QRCodeDataBox.Name = "QRCodeDataBox";
             this.QRCodeDataBox.ReadOnly = true;
             this.QRCodeDataBox.Size = new System.Drawing.Size(132, 20);
@@ -393,7 +399,7 @@ namespace LaserMarking
             // 
             // FlipPartNumbersButton
             // 
-            this.FlipPartNumbersButton.Location = new System.Drawing.Point(69, 559);
+            this.FlipPartNumbersButton.Location = new System.Drawing.Point(74, 555);
             this.FlipPartNumbersButton.Name = "FlipPartNumbersButton";
             this.FlipPartNumbersButton.Size = new System.Drawing.Size(54, 23);
             this.FlipPartNumbersButton.TabIndex = 39;
@@ -486,7 +492,7 @@ namespace LaserMarking
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(311, 585);
+            this.save.Location = new System.Drawing.Point(311, 657);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(120, 47);
             this.save.TabIndex = 55;
@@ -497,16 +503,17 @@ namespace LaserMarking
             // Desc2Box
             // 
             this.Desc2Box.AutoSize = true;
-            this.Desc2Box.Location = new System.Drawing.Point(14, 617);
+            this.Desc2Box.Location = new System.Drawing.Point(32, 611);
             this.Desc2Box.Name = "Desc2Box";
-            this.Desc2Box.Size = new System.Drawing.Size(15, 14);
+            this.Desc2Box.Size = new System.Drawing.Size(133, 17);
             this.Desc2Box.TabIndex = 58;
+            this.Desc2Box.Text = "Description 2 (Block 6)";
             this.Desc2Box.UseVisualStyleBackColor = true;
             this.Desc2Box.CheckedChanged += new System.EventHandler(this.Desc2Box_CheckedChanged);
             // 
             // btnOpenMarkerBuilder
             // 
-            this.btnOpenMarkerBuilder.Location = new System.Drawing.Point(12, 640);
+            this.btnOpenMarkerBuilder.Location = new System.Drawing.Point(20, 657);
             this.btnOpenMarkerBuilder.Name = "btnOpenMarkerBuilder";
             this.btnOpenMarkerBuilder.Size = new System.Drawing.Size(151, 47);
             this.btnOpenMarkerBuilder.TabIndex = 59;
@@ -516,7 +523,7 @@ namespace LaserMarking
             // 
             // btnRefreshTag
             // 
-            this.btnRefreshTag.Location = new System.Drawing.Point(171, 640);
+            this.btnRefreshTag.Location = new System.Drawing.Point(177, 657);
             this.btnRefreshTag.Name = "btnRefreshTag";
             this.btnRefreshTag.Size = new System.Drawing.Size(128, 47);
             this.btnRefreshTag.TabIndex = 60;
@@ -524,11 +531,71 @@ namespace LaserMarking
             this.btnRefreshTag.UseVisualStyleBackColor = true;
             this.btnRefreshTag.Click += new System.EventHandler(this.btnRefreshTag_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(198, 511);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 61;
+            this.label6.Text = "Date (Block 2)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(156, 538);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(119, 13);
+            this.label7.TabIndex = 62;
+            this.label7.Text = "PartNum_Rev (Block 3)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(135, 560);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(140, 13);
+            this.label8.TabIndex = 63;
+            this.label8.Text = "CustPartNum_Rev (Block 4)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(51, 586);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 13);
+            this.label9.TabIndex = 64;
+            this.label9.Text = "Description 1 (Block 5)";
+            // 
+            // HeatBox
+            // 
+            this.HeatBox.Location = new System.Drawing.Point(166, 635);
+            this.HeatBox.Name = "HeatBox";
+            this.HeatBox.Size = new System.Drawing.Size(265, 20);
+            this.HeatBox.TabIndex = 65;
+            this.HeatBox.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(31, 637);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(134, 17);
+            this.checkBox1.TabIndex = 66;
+            this.checkBox1.Text = "Heat Number (Block 7)";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 870);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.HeatBox);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnRefreshTag);
             this.Controls.Add(this.btnOpenMarkerBuilder);
             this.Controls.Add(this.Desc2Box);
@@ -630,6 +697,12 @@ namespace LaserMarking
         private CheckBox Desc2Box;
         private Button btnOpenMarkerBuilder;
         private Button btnRefreshTag;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private TextBox HeatBox;
+        private CheckBox checkBox1;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
