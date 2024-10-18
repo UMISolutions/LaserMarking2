@@ -94,7 +94,6 @@ namespace LaserMarking
 
         }
 
-
         private void InitializeMarker()
         {
             try
@@ -107,31 +106,11 @@ namespace LaserMarking
             }
 
         }
-
-        public static string OpenConnect(string connStr)
-        {
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(connStr))
-                {
-                    cn.Open();
-                    //MessageBox.Show(connStr);
-                    return connStr;
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in OpenConnect() Cant open with connection string.\n" + ex.Message);
-                return connStr;
-            }
-        }
         
         //Function to load items on Refresh Orders Click
         private void updateOpenOrderItems() 
         {
-            using (SqlConnection cn = new SqlConnection(OpenConnect(SAPConnectionString)))
+            using (SqlConnection cn = new SqlConnection(SAPConnectionString))
             {
                 try
                 {
@@ -180,6 +159,7 @@ namespace LaserMarking
             }
         }
 
+        //Gets Material types for GetOrderTubePNBTN_Click
         private object SimplyGetTubeMaterialFromPN(string PN)
         {
             try
@@ -293,6 +273,7 @@ namespace LaserMarking
 
         }
 
+        // Connect to laser
         private void AttemptToConnectToLaser()
         {
             bool is_success = false;
@@ -327,11 +308,13 @@ namespace LaserMarking
 
         }
 
+        // Connect to laser
         private void markerConnectButton_Click(object sender, EventArgs e)
         {
             AttemptToConnectToLaser();
         }
 
+        // Disconnect laser
         private void MarkerDisconnectButton_Click(object sender, EventArgs e)
         {
 
@@ -358,24 +341,9 @@ namespace LaserMarking
             {
                 MessageBox.Show(error.Message);
             }
-
-            //try
-            //{
-            //    //If the application is exited without disconnected, the
-            //    //instance may exclusively use the online connection.In this
-            //    //case, release the online connection.
-            //    if (axMBActX1.Comm.IsOnline)
-            //    {
-            //        axMBActX1.Comm.Offline();
-            //    }
-                
-            //}
-            //catch (System.Runtime.InteropServices.COMException error)
-            //{
-            //    MessageBox.Show(error.Message);
-            //}
         }
 
+        //Function to load items on Refresh Orders Click
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             updateOpenOrderItems();
@@ -502,7 +470,7 @@ namespace LaserMarking
         {
             try { isConnected = axMBActX2.Comm.Online(); }
             catch { }
-            using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
+            using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
             {
                 try
                 {
@@ -823,95 +791,6 @@ namespace LaserMarking
                     }
                 }
             }
-
-
-            /*
-            if (SelectedPN[0] == '8' && SelectedPN.Length >= 7 && SelectedPN.Contains("_"))
-            {
-                CheckForCustomProgram(SelectedPN);
-                if (GenericProgram)
-                {
-                    string[] numbers = SelectedPN.Split('_');
-                    GetTubePartNumberFromPDMBom(numbers[0], out diam, out wall, out partnum, out mtl);
-                    OpenGenericProgram();
-                    
-                    FillTubeDetails(numbers[0], numbers[1]);
-
-                }
-            }
-            else if (SelectedPN[0] == '8' && SelectedPN.Length == 5)
-            {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Part_Number");
-                dt.Columns.Add("Customer");
-                dt.Columns.Add("CustomerPN");
-                dt.Columns.Add("Rev");
-                dt.Columns.Add("Description");
-                DataRow dr = null;
-                aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{SelectedPN}.slddrw", out ppoRetParentFolder);
-               
-                try
-                {
-
-                    IEdmEnumeratorVariable10 enumVariable = (IEdmEnumeratorVariable10)aFile.GetEnumeratorVariable();
-                    bool getVarSuccess = enumVariable.GetVarAsText("PartNo", "@", ppoRetParentFolder.ID, out object poPartNo);
-                    getVarSuccess = enumVariable.GetVarAsText("Customer Name", "@", ppoRetParentFolder.ID, out object poCustomer);
-                    getVarSuccess = enumVariable.GetVarAsText("CustomerPN", "@", ppoRetParentFolder.ID, out object poCustomerPN);
-                    getVarSuccess = enumVariable.GetVarAsText("Revision", "@", ppoRetParentFolder.ID, out object poRevision);
-                    getVarSuccess = enumVariable.GetVarAsText("Description", "@", ppoRetParentFolder.ID, out object poDescription);
-
-
-                    dr = dt.NewRow();
-                  
-                    dr["Part_Number"] = poPartNo != null ? poPartNo.ToString() : "N/A";
-                    dr["Customer"] = poCustomer != null ? poCustomer.ToString() : "N/A";
-                    dr["CustomerPN"] = poCustomerPN != null ? poCustomerPN.ToString() : "N/A";
-                    dr["Rev"] = poRevision != null ? poRevision.ToString() : "N/A";
-                    dr["Description"] = poDescription != null ? poDescription.ToString() : "N/A";
-
-                    dt.Rows.Add(dr);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-
-                }
-                
-                OrdersGridView.DataSource = dt;
-                DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
-                OrderRev = row.Cells["Rev"].Value.ToString();
-               
-                CheckForCustomProgram(SelectedPN + "_" + OrderRev);
-                if (GenericProgram)
-                {
-                    
-                    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl);
-                    OpenGenericProgram();
-                    FillTubeDetails(SelectedPN, OrderRev);
-                }
-            }
-            else
-            {
-                CheckForCustomProgram(SelectedPN);
-                if (GenericProgram)
-                {
-                    OpenGenericProgram();
-                    FillTubeDetails(SelectedPN, OrderRev);
-                }
-            }
-
-            */
-
-            //CheckForCustomProgram(PNSub);
-            //if (GenericProgram == true)
-            //{
-            //    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl);  
-            //    OpenGenericProgram();
-            //    Console.WriteLine("Here1");
-            //    FillTubeDetails(SelectedPN, orderRev); // needs to happen after the program is opened
-            //}
-
         }
 
         private string GetValueOrDefault(object value)
@@ -1687,6 +1566,7 @@ namespace LaserMarking
                     DescLine2Box.Text = desc.Substring(DescLengthAllow, DescLengthAllow);
 
                 }
+                using (SqlConnection cn = new SqlConnection(UMIConnectionString))
                 using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
                 {
                     try
@@ -1852,11 +1732,6 @@ namespace LaserMarking
             }
         }
 
-        private void axMBActX1_EvError(object sender, EventArgs e)
-        {
-            MessageBox.Show("Error CALLED: "+e);
-        }
-
         private void ClearErrors_Btn_Click(object sender, EventArgs e)
         {
             try
@@ -1969,7 +1844,7 @@ namespace LaserMarking
         private void MoveBlock(string Direction, string Block)
         {
             int BlockNum = 999;
-
+            int shapeNo = 999;
 
 
 
@@ -2025,8 +1900,31 @@ namespace LaserMarking
                             }
                             else
                             {
+                                try
+                                {
+                                    if (axMBActX2.Block(BlockNum).IsLocatedOn3DShape)
+                                    {
+                                        shapeNo = axMBActX2.Block(BlockNum).ShapeNo;
+                                    }
+                                }
+                                catch (System.Runtime.InteropServices.COMException error)
+                                {
+                                    MessageBox.Show(error.Message);
+                                }
+                                try
+                                {
+                                    if (axMBActX2.Shape(shapeNo) != null)
+                                    {
+                                        axMBActX2.Shape(shapeNo).X += 1;
+                                    }
+                                }
+                                catch (System.Runtime.InteropServices.COMException
+                                error)
+                                {
+                                    MessageBox.Show(error.Message);
+                                }
                                 //axMBActX2.Block(BlockNum).X += 1; // Edit the block No. 2                                
-                                axMBActX2.Block(BlockNum).CharWidth += 1;
+                                //axMBActX2.Block(BlockNum).CharWidth += 1;
                             }
                            
                         }
@@ -2949,7 +2847,7 @@ namespace LaserMarking
 
         private void GetLengthsBtn_Click(object sender, EventArgs e) //used to checking all SW boms!!!!!!!!!!!!!!!!!!
         {
-            using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
+            using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
             {
                 try
                 {
@@ -3047,7 +2945,31 @@ namespace LaserMarking
             
         }
 
+        private void btnOpenMarkerBuilder_MouseClick(object sender, MouseEventArgs e)
+        {
+            // save the file (use normal save)... will guarentee file exists
+            save_Click(sender, e);
 
+            // open file in marker builder
+            string filePath = $@"U:\Engineering\LaserMarkingProfiles\{PartNumAndRevBox.Text.Trim()}.MA2";
+
+            try
+            {
+                string markingBuilderPath = @"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\KEYENCE LASER MARKER\Marking Builder Plus Ver.2.lnk"; // replace with path for computer
+
+                // Start the process with the file as an argument
+                Process.Start(markingBuilderPath, filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening the application: " + ex.Message);
+            }
+        }
+
+        private void btnRefreshTag_Click(object sender, EventArgs e)
+        {
+            OrdersGridView_Click(sender, e);
+        }
     }
 }
 

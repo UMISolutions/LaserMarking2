@@ -89,15 +89,15 @@ namespace LaserMarking
             this.label5 = new System.Windows.Forms.Label();
             this.SelectedMaterialPN = new System.Windows.Forms.Label();
             this.GetOrderTubePNBTN = new System.Windows.Forms.Button();
-            this.axMBActX1 = new AxMBPLib2.AxMBActX();
             this.AllPartNumBtn = new System.Windows.Forms.Button();
             this.GetLengthsBtn = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
             this.Desc2Box = new System.Windows.Forms.CheckBox();
+            this.btnOpenMarkerBuilder = new System.Windows.Forms.Button();
+            this.btnRefreshTag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axMBActX1)).BeginInit();
             this.SuspendLayout();
             // 
             // axMBActX2
@@ -424,14 +424,14 @@ namespace LaserMarking
             this.DateBox.Location = new System.Drawing.Point(129, 505);
             this.DateBox.Name = "DateBox";
             this.DateBox.ReadOnly = true;
-            this.DateBox.Size = new System.Drawing.Size(141, 20);
+            this.DateBox.Size = new System.Drawing.Size(154, 20);
             this.DateBox.TabIndex = 32;
             // 
             // PartNumAndRevBox
             // 
             this.PartNumAndRevBox.Location = new System.Drawing.Point(129, 532);
             this.PartNumAndRevBox.Name = "PartNumAndRevBox";
-            this.PartNumAndRevBox.Size = new System.Drawing.Size(141, 20);
+            this.PartNumAndRevBox.Size = new System.Drawing.Size(154, 20);
             this.PartNumAndRevBox.TabIndex = 33;
             this.PartNumAndRevBox.TextChanged += new System.EventHandler(this.PartNumAndRevBox_TextChanged);
             // 
@@ -439,7 +439,7 @@ namespace LaserMarking
             // 
             this.CustPartNumAndRevBox.Location = new System.Drawing.Point(129, 559);
             this.CustPartNumAndRevBox.Name = "CustPartNumAndRevBox";
-            this.CustPartNumAndRevBox.Size = new System.Drawing.Size(141, 20);
+            this.CustPartNumAndRevBox.Size = new System.Drawing.Size(154, 20);
             this.CustPartNumAndRevBox.TabIndex = 34;
             this.CustPartNumAndRevBox.TextChanged += new System.EventHandler(this.CustPartNumAndRevBox_TextChanged);
             // 
@@ -472,10 +472,10 @@ namespace LaserMarking
             // 
             // QRCodeDataBox
             // 
-            this.QRCodeDataBox.Location = new System.Drawing.Point(276, 559);
+            this.QRCodeDataBox.Location = new System.Drawing.Point(299, 559);
             this.QRCodeDataBox.Name = "QRCodeDataBox";
             this.QRCodeDataBox.ReadOnly = true;
-            this.QRCodeDataBox.Size = new System.Drawing.Size(135, 20);
+            this.QRCodeDataBox.Size = new System.Drawing.Size(132, 20);
             this.QRCodeDataBox.TabIndex = 38;
             this.QRCodeDataBox.TextChanged += new System.EventHandler(this.QRCodeDataBox_TextChanged);
             // 
@@ -573,9 +573,9 @@ namespace LaserMarking
             // File1List
             // 
             this.File1List.FormattingEnabled = true;
-            this.File1List.Location = new System.Drawing.Point(342, 340);
+            this.File1List.Location = new System.Drawing.Point(1411, 7);
             this.File1List.Name = "File1List";
-            this.File1List.Size = new System.Drawing.Size(172, 121);
+            this.File1List.Size = new System.Drawing.Size(52, 17);
             this.File1List.TabIndex = 48;
             this.File1List.Visible = false;
             // 
@@ -612,16 +612,6 @@ namespace LaserMarking
             this.GetOrderTubePNBTN.UseVisualStyleBackColor = true;
             this.GetOrderTubePNBTN.Click += new System.EventHandler(this.GetOrderTubePNBTN_Click);
             // 
-            // axMBActX1
-            // 
-            this.axMBActX1.Enabled = true;
-            this.axMBActX1.Location = new System.Drawing.Point(537, 614);
-            this.axMBActX1.Name = "axMBActX1";
-            this.axMBActX1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMBActX1.OcxState")));
-            this.axMBActX1.Size = new System.Drawing.Size(100, 50);
-            this.axMBActX1.TabIndex = 52;
-            this.axMBActX1.Visible = false;
-            // 
             // AllPartNumBtn
             // 
             this.AllPartNumBtn.Location = new System.Drawing.Point(171, 12);
@@ -645,9 +635,9 @@ namespace LaserMarking
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(329, 617);
+            this.save.Location = new System.Drawing.Point(311, 585);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(82, 47);
+            this.save.Size = new System.Drawing.Size(120, 47);
             this.save.TabIndex = 55;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
@@ -663,16 +653,37 @@ namespace LaserMarking
             this.Desc2Box.UseVisualStyleBackColor = true;
             this.Desc2Box.CheckedChanged += new System.EventHandler(this.Desc2Box_CheckedChanged);
             // 
+            // btnOpenMarkerBuilder
+            // 
+            this.btnOpenMarkerBuilder.Location = new System.Drawing.Point(12, 640);
+            this.btnOpenMarkerBuilder.Name = "btnOpenMarkerBuilder";
+            this.btnOpenMarkerBuilder.Size = new System.Drawing.Size(151, 47);
+            this.btnOpenMarkerBuilder.TabIndex = 59;
+            this.btnOpenMarkerBuilder.Text = "Open In Marker Builder";
+            this.btnOpenMarkerBuilder.UseVisualStyleBackColor = true;
+            this.btnOpenMarkerBuilder.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnOpenMarkerBuilder_MouseClick);
+            // 
+            // btnRefreshTag
+            // 
+            this.btnRefreshTag.Location = new System.Drawing.Point(171, 640);
+            this.btnRefreshTag.Name = "btnRefreshTag";
+            this.btnRefreshTag.Size = new System.Drawing.Size(128, 47);
+            this.btnRefreshTag.TabIndex = 60;
+            this.btnRefreshTag.Text = "Reload (After Saving in Marker Builder)";
+            this.btnRefreshTag.UseVisualStyleBackColor = true;
+            this.btnRefreshTag.Click += new System.EventHandler(this.btnRefreshTag_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1465, 870);
+            this.Controls.Add(this.btnRefreshTag);
+            this.Controls.Add(this.btnOpenMarkerBuilder);
             this.Controls.Add(this.Desc2Box);
             this.Controls.Add(this.save);
             this.Controls.Add(this.GetLengthsBtn);
             this.Controls.Add(this.AllPartNumBtn);
-            this.Controls.Add(this.axMBActX1);
             this.Controls.Add(this.GetOrderTubePNBTN);
             this.Controls.Add(this.SelectedMaterialPN);
             this.Controls.Add(this.label5);
@@ -729,7 +740,6 @@ namespace LaserMarking
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axMBActX1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -789,11 +799,12 @@ namespace LaserMarking
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label SelectedMaterialPN;
         private System.Windows.Forms.Button GetOrderTubePNBTN;
-        private AxMBPLib2.AxMBActX axMBActX1;
         private System.Windows.Forms.Button AllPartNumBtn;
         private System.Windows.Forms.Button GetLengthsBtn;
         private System.Windows.Forms.Button save;
         private CheckBox Desc2Box;
+        private Button btnOpenMarkerBuilder;
+        private Button btnRefreshTag;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
