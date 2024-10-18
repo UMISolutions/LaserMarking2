@@ -40,25 +40,18 @@ namespace LaserMarking
             this.axMBActX2 = new AxMBPLib2.AxMBActX();
             this.OrdersGridView = new System.Windows.Forms.DataGridView();
             this.Get_Z = new System.Windows.Forms.Button();
-            this.Map_Surface = new System.Windows.Forms.Button();
             this.Mark_Part = new System.Windows.Forms.Button();
             this.markerConnectButton = new System.Windows.Forms.Button();
             this.MarkerDisconnectButton = new System.Windows.Forms.Button();
             this.RefreshButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.EditingContextButton = new System.Windows.Forms.Button();
             this.ControllerContextButton = new System.Windows.Forms.Button();
             this.LightOnButton = new System.Windows.Forms.Button();
             this.LightOffButton = new System.Windows.Forms.Button();
             this.OpenJobButton = new System.Windows.Forms.Button();
             this.JobTitleLabel = new System.Windows.Forms.Label();
-            this.XPositiveButton = new System.Windows.Forms.Button();
-            this.YMovePositiveButton = new System.Windows.Forms.Button();
-            this.SetMarkingConditionButton = new System.Windows.Forms.Button();
             this.ProgramMaterialCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ProgramSizeCombo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -76,14 +69,8 @@ namespace LaserMarking
             this.QRCheckBox = new System.Windows.Forms.CheckBox();
             this.QRCodeDataBox = new System.Windows.Forms.TextBox();
             this.FlipPartNumbersButton = new System.Windows.Forms.Button();
-            this.XMoveNegButton = new System.Windows.Forms.Button();
-            this.YMoveNegButton = new System.Windows.Forms.Button();
-            this.SelectedBlockCombo = new System.Windows.Forms.ComboBox();
             this.SetCameraPosition = new System.Windows.Forms.Button();
             this.OpenControllerJob = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.File1List = new System.Windows.Forms.ListBox();
             this.OpenFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label5 = new System.Windows.Forms.Label();
@@ -136,17 +123,6 @@ namespace LaserMarking
             this.Get_Z.UseVisualStyleBackColor = true;
             this.Get_Z.Click += new System.EventHandler(this.Get_Z_Click);
             // 
-            // Map_Surface
-            // 
-            this.Map_Surface.Enabled = false;
-            this.Map_Surface.Location = new System.Drawing.Point(942, 713);
-            this.Map_Surface.Name = "Map_Surface";
-            this.Map_Surface.Size = new System.Drawing.Size(115, 23);
-            this.Map_Surface.TabIndex = 3;
-            this.Map_Surface.Text = "Map XY";
-            this.Map_Surface.UseVisualStyleBackColor = true;
-            this.Map_Surface.Click += new System.EventHandler(this.Map_Surface_Click);
-            // 
             // Mark_Part
             // 
             this.Mark_Part.BackColor = System.Drawing.SystemColors.ControlLight;
@@ -187,28 +163,6 @@ namespace LaserMarking
             this.RefreshButton.Text = "Refresh Orders";
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
-            // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(942, 684);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "StartCameraScanning";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(1069, 684);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "FinishCameraScanning";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // EditingContextButton
             // 
@@ -269,37 +223,6 @@ namespace LaserMarking
             this.JobTitleLabel.TabIndex = 15;
             this.JobTitleLabel.Text = "Program Title";
             // 
-            // XPositiveButton
-            // 
-            this.XPositiveButton.Location = new System.Drawing.Point(537, 760);
-            this.XPositiveButton.Name = "XPositiveButton";
-            this.XPositiveButton.Size = new System.Drawing.Size(52, 38);
-            this.XPositiveButton.TabIndex = 16;
-            this.XPositiveButton.Text = "+X";
-            this.XPositiveButton.UseVisualStyleBackColor = true;
-            this.XPositiveButton.Click += new System.EventHandler(this.XPositiveButton_Click);
-            // 
-            // YMovePositiveButton
-            // 
-            this.YMovePositiveButton.Location = new System.Drawing.Point(446, 713);
-            this.YMovePositiveButton.Name = "YMovePositiveButton";
-            this.YMovePositiveButton.Size = new System.Drawing.Size(48, 36);
-            this.YMovePositiveButton.TabIndex = 17;
-            this.YMovePositiveButton.Text = "+Y";
-            this.YMovePositiveButton.UseVisualStyleBackColor = true;
-            this.YMovePositiveButton.Click += new System.EventHandler(this.YMovePositiveButton_Click);
-            // 
-            // SetMarkingConditionButton
-            // 
-            this.SetMarkingConditionButton.Enabled = false;
-            this.SetMarkingConditionButton.Location = new System.Drawing.Point(942, 742);
-            this.SetMarkingConditionButton.Name = "SetMarkingConditionButton";
-            this.SetMarkingConditionButton.Size = new System.Drawing.Size(151, 23);
-            this.SetMarkingConditionButton.TabIndex = 18;
-            this.SetMarkingConditionButton.Text = "Set Mark Cond. To block";
-            this.SetMarkingConditionButton.UseVisualStyleBackColor = true;
-            this.SetMarkingConditionButton.Click += new System.EventHandler(this.SetMarkingConditionButton_Click);
-            // 
             // ProgramMaterialCombo
             // 
             this.ProgramMaterialCombo.FormattingEnabled = true;
@@ -317,17 +240,6 @@ namespace LaserMarking
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "Material";
-            // 
-            // button3
-            // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(1069, 713);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 23);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Block Mark Enable";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label2
             // 
@@ -489,34 +401,6 @@ namespace LaserMarking
             this.FlipPartNumbersButton.UseVisualStyleBackColor = true;
             this.FlipPartNumbersButton.Click += new System.EventHandler(this.FlipPartNumbersButton_Click);
             // 
-            // XMoveNegButton
-            // 
-            this.XMoveNegButton.Location = new System.Drawing.Point(357, 760);
-            this.XMoveNegButton.Name = "XMoveNegButton";
-            this.XMoveNegButton.Size = new System.Drawing.Size(47, 38);
-            this.XMoveNegButton.TabIndex = 40;
-            this.XMoveNegButton.Text = "-X";
-            this.XMoveNegButton.UseVisualStyleBackColor = true;
-            this.XMoveNegButton.Click += new System.EventHandler(this.XMoveNegButton_Click);
-            // 
-            // YMoveNegButton
-            // 
-            this.YMoveNegButton.Location = new System.Drawing.Point(446, 797);
-            this.YMoveNegButton.Name = "YMoveNegButton";
-            this.YMoveNegButton.Size = new System.Drawing.Size(48, 35);
-            this.YMoveNegButton.TabIndex = 41;
-            this.YMoveNegButton.Text = "-Y";
-            this.YMoveNegButton.UseVisualStyleBackColor = true;
-            this.YMoveNegButton.Click += new System.EventHandler(this.YMoveNegButton_Click);
-            // 
-            // SelectedBlockCombo
-            // 
-            this.SelectedBlockCombo.FormattingEnabled = true;
-            this.SelectedBlockCombo.Location = new System.Drawing.Point(410, 770);
-            this.SelectedBlockCombo.Name = "SelectedBlockCombo";
-            this.SelectedBlockCombo.Size = new System.Drawing.Size(121, 21);
-            this.SelectedBlockCombo.TabIndex = 42;
-            // 
             // SetCameraPosition
             // 
             this.SetCameraPosition.Location = new System.Drawing.Point(318, 821);
@@ -536,39 +420,6 @@ namespace LaserMarking
             this.OpenControllerJob.Text = "OPN CNTRL JOB";
             this.OpenControllerJob.UseVisualStyleBackColor = true;
             this.OpenControllerJob.Click += new System.EventHandler(this.OpenControllerJob_Click);
-            // 
-            // button4
-            // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(1042, 768);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 45;
-            this.button4.Text = "GetSWBom";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(942, 768);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 23);
-            this.button5.TabIndex = 46;
-            this.button5.Text = "OpenSWDwg";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(1099, 742);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 47;
-            this.button6.Text = "GetSWCustomProp";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // File1List
             // 
@@ -688,14 +539,8 @@ namespace LaserMarking
             this.Controls.Add(this.SelectedMaterialPN);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.File1List);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.OpenControllerJob);
             this.Controls.Add(this.SetCameraPosition);
-            this.Controls.Add(this.SelectedBlockCombo);
-            this.Controls.Add(this.YMoveNegButton);
-            this.Controls.Add(this.XMoveNegButton);
             this.Controls.Add(this.FlipPartNumbersButton);
             this.Controls.Add(this.QRCodeDataBox);
             this.Controls.Add(this.QRCheckBox);
@@ -713,25 +558,18 @@ namespace LaserMarking
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ProgramSizeCombo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ProgramMaterialCombo);
-            this.Controls.Add(this.SetMarkingConditionButton);
-            this.Controls.Add(this.YMovePositiveButton);
-            this.Controls.Add(this.XPositiveButton);
             this.Controls.Add(this.JobTitleLabel);
             this.Controls.Add(this.OpenJobButton);
             this.Controls.Add(this.LightOffButton);
             this.Controls.Add(this.LightOnButton);
             this.Controls.Add(this.ControllerContextButton);
             this.Controls.Add(this.EditingContextButton);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.MarkerDisconnectButton);
             this.Controls.Add(this.markerConnectButton);
             this.Controls.Add(this.Mark_Part);
-            this.Controls.Add(this.Map_Surface);
             this.Controls.Add(this.Get_Z);
             this.Controls.Add(this.OrdersGridView);
             this.Controls.Add(this.axMBActX2);
@@ -750,25 +588,18 @@ namespace LaserMarking
         private AxMBPLib2.AxMBActX axMBActX2;
         private System.Windows.Forms.DataGridView OrdersGridView;
         private System.Windows.Forms.Button Get_Z;
-        private System.Windows.Forms.Button Map_Surface;
         private System.Windows.Forms.Button Mark_Part;
         private System.Windows.Forms.Button markerConnectButton;
         private System.Windows.Forms.Button MarkerDisconnectButton;
         private System.Windows.Forms.Button RefreshButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button EditingContextButton;
         private System.Windows.Forms.Button ControllerContextButton;
         private System.Windows.Forms.Button LightOnButton;
         private System.Windows.Forms.Button LightOffButton;
         private System.Windows.Forms.Button OpenJobButton;
         private System.Windows.Forms.Label JobTitleLabel;
-        private System.Windows.Forms.Button XPositiveButton;
-        private System.Windows.Forms.Button YMovePositiveButton;
-        private System.Windows.Forms.Button SetMarkingConditionButton;
         private System.Windows.Forms.ComboBox ProgramMaterialCombo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ProgramSizeCombo;
         private System.Windows.Forms.Label label3;
@@ -786,14 +617,8 @@ namespace LaserMarking
         private System.Windows.Forms.CheckBox QRCheckBox;
         private System.Windows.Forms.TextBox QRCodeDataBox;
         private System.Windows.Forms.Button FlipPartNumbersButton;
-        private System.Windows.Forms.Button XMoveNegButton;
-        private System.Windows.Forms.Button YMoveNegButton;
-        private System.Windows.Forms.ComboBox SelectedBlockCombo;
         private System.Windows.Forms.Button SetCameraPosition;
         private System.Windows.Forms.Button OpenControllerJob;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.ListBox File1List;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog1;
         private System.Windows.Forms.Label label5;

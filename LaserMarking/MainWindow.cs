@@ -82,16 +82,6 @@ namespace LaserMarking
             ProgramSizeCombo.Items.Add("24");
             ProgramSizeCombo.Items.Add("28");
             ProgramSizeCombo.Items.Add("32");
-
-            SelectedBlockCombo.Items.Add("Date");
-            SelectedBlockCombo.Items.Add("Logo");
-            SelectedBlockCombo.Items.Add("Part No.");
-            SelectedBlockCombo.Items.Add("Cust PN");
-            SelectedBlockCombo.Items.Add("Desc 1");
-            SelectedBlockCombo.Items.Add("Desc 2");
-            SelectedBlockCombo.Items.Add("Box Size");
-            SelectedBlockCombo.Items.Add("Box Position");
-
         }
 
         private void InitializeMarker()
@@ -1309,8 +1299,6 @@ namespace LaserMarking
             }
         }
 
-        
-
         private void AttemptToSelectProgram(double diameter, string mtl)
         {
             ProgramSizeCombo.SelectedIndex = -1;
@@ -1635,57 +1623,9 @@ namespace LaserMarking
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //Edit the block No. 2
-                axMBActX2.Block(2).IsMarkingEnable = true;
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-        }
-
         private void ProgramSizeCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             //ProgramMaterialCombo.SelectedIndex = -1;
-        }
-
-        private void CheckForExistingProgram(string selectedPN)
-        {
-            string partialName = "999999999999";
-            try
-            {
-                partialName = selectedPN.Substring(0, 5);
-            }
-            catch
-            {
-                MessageBox.Show("Something went wrong when trimming your string.");
-            }
-            
-
-            DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"U:\Engineering\LaserMarkingProfiles");
-            FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
-
-            if(filesInDir.Count() > 1)
-            {
-
-            }else if(filesInDir.Count() == 0)
-            {
-
-            }
-            else
-            {
-
-            }
-
-            OpenProgram op = new OpenProgram();
-            
-            op.OpenExistingProgramListBox.Items.AddRange(filesInDir);
-            
-            op.Show();
         }
 
         private void CameraFinderViewButton_Click(object sender, EventArgs e)
@@ -1834,218 +1774,6 @@ namespace LaserMarking
             //80006 rev 2 
             //80139 rev 0
             //80140 rev 0
-        }
-
-        private void XMoveNegButton_Click(object sender, EventArgs e)
-        {
-            MoveBlock("XN", (SelectedBlockCombo.SelectedItem).ToString());
-        }
-
-        private void MoveBlock(string Direction, string Block)
-        {
-            int BlockNum = 999;
-            int shapeNo = 999;
-
-
-
-            if (Block == "Date")
-            {
-                BlockNum = 2;
-            }else if (Block == "Logo")
-            {
-                BlockNum = 1;
-            }
-            else if (Block == "Part No.")
-            {
-                BlockNum = 3;
-            }
-            else if (Block == "Cust PN")
-            {
-                BlockNum = 4;
-            }
-            else if (Block == "Desc 1")
-            {
-                BlockNum = 5;
-            }
-            else if (Block == "Desc 2")
-            {
-                BlockNum = 6;
-            }
-            else if (Block == "Box Size" || Block == "Box Position")
-            {
-                BlockNum = 0;
-            }
-
-            //axMBActX2.Block(0).X = 0;
-            //axMBActX2.Block(0).Y = 0;
-         
-            if (Block != "" && BlockNum != 999)
-            {
-                if (Direction == "XP")
-                {
-                    try
-                    {
-                       if (axMBActX2.Block(BlockNum).IsEditable)
-                       {
-                            if (BlockNum == 0 || BlockNum == 1)
-                            {
-                                if (Block == "Box Position")
-                                {
-                                    axMBActX2.Block(BlockNum).X += 1;
-                                }
-                                else
-                                {
-                                    axMBActX2.Block(BlockNum).LogoWidth += 1;
-                                }
-                            }
-                            else
-                            {
-                                try
-                                {
-                                    if (axMBActX2.Block(BlockNum).IsLocatedOn3DShape)
-                                    {
-                                        shapeNo = axMBActX2.Block(BlockNum).ShapeNo;
-                                    }
-                                }
-                                catch (System.Runtime.InteropServices.COMException error)
-                                {
-                                    MessageBox.Show(error.Message);
-                                }
-                                try
-                                {
-                                    if (axMBActX2.Shape(shapeNo) != null)
-                                    {
-                                        axMBActX2.Shape(shapeNo).X += 1;
-                                    }
-                                }
-                                catch (System.Runtime.InteropServices.COMException
-                                error)
-                                {
-                                    MessageBox.Show(error.Message);
-                                }
-                                //axMBActX2.Block(BlockNum).X += 1; // Edit the block No. 2                                
-                                //axMBActX2.Block(BlockNum).CharWidth += 1;
-                            }
-                           
-                        }
-                       
-                       
-                    }
-                    catch (System.Runtime.InteropServices.COMException error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-                }else if (Direction == "XN")
-                {
-                    try
-                    {
-                        if (BlockNum == 0 || BlockNum == 1)
-                        {
-                            if (Block == "Box Position")
-                            {
-                                axMBActX2.Block(BlockNum).X -= 1;
-                            }
-                            else
-                            {
-                                axMBActX2.Block(BlockNum).LogoWidth -= 1; 
-                            }
-                        }
-                        else
-                        {
-                            //axMBActX2.Block(BlockNum).X -= 1; // Edit the block No. 2
-                            axMBActX2.Block(BlockNum).CharWidth -= 1;
-                        }
-                        
-
-                    }
-                    catch (System.Runtime.InteropServices.COMException error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-                }
-                else if (Direction == "YP")
-                {
-                    try
-                    {
-                        if (BlockNum == 0 || BlockNum == 1)
-                        {
-                            if (Block == "Box Position")
-                            {
-                                axMBActX2.Block(BlockNum).Y += 1;
-                            }
-                            else
-                            {
-                                axMBActX2.Block(BlockNum).LogoHeight += 0.5;
-                            }
-                        }
-                        else
-                        {
-                            //axMBActX2.Block(BlockNum).Y += 1; // Edit the block No. 2
-                            axMBActX2.Block(BlockNum).CharHeight += 0.5;
-                        }
-                        
-
-                    }
-                    catch (System.Runtime.InteropServices.COMException error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-                }
-                else if (Direction == "YN")
-                {
-                    try
-                    {
-                        if (BlockNum == 0 || BlockNum == 1)
-                        {
-                            if (Block == "Box Position")
-                            {
-                                axMBActX2.Block(BlockNum).Y -= 1;
-                            }
-                            else
-                            {
-                                axMBActX2.Block(BlockNum).LogoHeight -= 0.5;
-                            }
-                        }
-                        else
-                        {
-                            //axMBActX2.Block(BlockNum).Y -= 1; // Edit the block No. 2
-                            axMBActX2.Block(BlockNum).CharHeight -= 0.5;
-                        }
-                        
-
-                    }
-                    catch (System.Runtime.InteropServices.COMException error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-                }
-            }
-            //axMBActX2.Block(0).X = 0;
-            //axMBActX2.Block(0).Y = 0;
-
-        }
-
-        private void YMoveNegButton_Click(object sender, EventArgs e)
-        {
-            MoveBlock("YN", (SelectedBlockCombo.SelectedItem).ToString());
-        }
-        private void XPositiveButton_Click(object sender, EventArgs e)
-        {
-            MoveBlock("XP", (SelectedBlockCombo.SelectedItem).ToString());
-            
-        }
-
-        private void YMovePositiveButton_Click(object sender, EventArgs e)
-        {
-            MoveBlock("YP", (SelectedBlockCombo.SelectedItem).ToString());
-            try
-            {
-                axMBActX2.Block(1).Y += 1; // Edit the block No. 2
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
         }
 
         private void SetCameraPosition_Click(object sender, EventArgs e)
