@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dJRfwcGD6kBiTd9N3QGjCbAJuzHFQ12Mj/hB50zsZaM=</dsig:DigestValue>
+        <dsig:DigestValue>wJSNnBymZpVisyX6a7//M8bYcC/G2fc1HQwVzpr/YRk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PJc9VG8rTg8ah93JNmrjccunCEI6HNPi8Qw/bC9bzNg=</dsig:DigestValue>
+        <dsig:DigestValue>++2/VQtXP5Pcac1482jzACh4lDCGaQ2d3H2Ruyon7Bs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>X/fly3vbROj8KTRUDOu20Is4ALdawuCCjckPc8vnHqs=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>LF9MyBs4LyNYBk+LToyITMHHpnhcV0sk4XnWJFi8M/o=</dsig:DigestValue>
+>>>>>>> 632e82b39c798a54d17557f11abb27dc7aca5998
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +101,11 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>iHEhhcrswbS7AXXYGWN8oPl71zOmrDbOEJwqx1SNw0g=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>lWD88LCUoxc5hutjPGivOziANcwWuO9lcbNluWLlm9A=</dsig:DigestValue>
+>>>>>>> 632e82b39c798a54d17557f11abb27dc7aca5998
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,29 +117,42 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>0mr3syoW8ntg275bbhvAIy+A/LyDia2bbwQ4tx3emNs=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>EZcl78A0zQsLUIE+9XOUL/KGYgs2RWD9H5pDLkdXad4=</dsig:DigestValue>
+>>>>>>> 632e82b39c798a54d17557f11abb27dc7aca5998
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
+<<<<<<< HEAD
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="68520">
       <assemblyIdentity name="LaserMarking" version="1.0.1.4" language="neutral" processorArchitecture="x86" />
+=======
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="69032">
+      <assemblyIdentity name="LaserMarking" version="1.0.1.1" language="neutral" processorArchitecture="x86" />
+>>>>>>> 632e82b39c798a54d17557f11abb27dc7aca5998
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
         <dsig:DigestValue>raEcIpcBjxi01c/pD8mzmkBa5fDFeqCvHJTC0XDoaQs=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>wLP1ilTdSU2MZ4KgIlrctWtge8cTiBBCua1plv63FNU=</dsig:DigestValue>
+>>>>>>> 632e82b39c798a54d17557f11abb27dc7aca5998
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="LaserMarking.exe.config" size="184">
+  <file name="LaserMarking.exe.config" size="186">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>FihlZtVNgcNyH37Pf0Jtll3jZOm+L55ijXNjtoS2/mo=</dsig:DigestValue>
+      <dsig:DigestValue>Gzd2Nq2uFMFSpX8O7vwhr6hYsb+/2crNIQns3ZxraLY=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
