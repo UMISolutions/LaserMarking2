@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <assemblyIdentity name="LaserMarking.application" version="1.0.1.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <assemblyIdentity name="LaserMarking.application" version="1.0.1.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <description asmv2:publisher="LaserMarking" asmv2:product="LaserMarking" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true">
     <subscription>
@@ -14,18 +14,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="LaserMarking.exe.manifest" size="7425">
-      <assemblyIdentity name="LaserMarking.exe" version="1.0.1.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+    <dependentAssembly dependencyType="install" codebase="LaserMarking.exe.manifest" size="7814">
+      <assemblyIdentity name="LaserMarking.exe" version="1.0.1.5" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-<<<<<<< HEAD
-        <dsig:DigestValue>ZodxxeJ1n/6JZ6hJDkXU3vLVJ3dk612FSIWk6mpDhLw=</dsig:DigestValue>
-=======
-        <dsig:DigestValue>qfjPERKY6KUYvsBlNocXqiZm4XKITMDnEXw0iTn27do=</dsig:DigestValue>
->>>>>>> 632e82b39c798a54d17557f11abb27dc7aca5998
+        <dsig:DigestValue>yOFKg7FS8NBPqnISnczqO9g9btXcyL0jGQwYDTMnNMM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

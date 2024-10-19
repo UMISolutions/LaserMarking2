@@ -82,13 +82,6 @@ C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.CoreCompileInputs.cache
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe.manifest
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.application
-<<<<<<< HEAD
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMar.428953FD.Up2Date
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.pdb
-=======
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.pdb
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\EPDM.Interop.epdm.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMar.428953FD.Up2Date
->>>>>>> 632e82b39c798a54d17557f11abb27dc7aca5998
