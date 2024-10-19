@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="LaserMarking.exe" version="1.0.1.3" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <asmv1:assemblyIdentity name="LaserMarking.exe" version="1.0.1.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="LaserMarking" version="1.0.1.1" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="LaserMarking" version="1.0.1.4" language="neutral" processorArchitecture="x86" />
     <commandLine file="LaserMarking.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>2OlRILUOgRIJhYgRcD1974wt9kia2iL4/PmrpmdLhhA=</dsig:DigestValue>
+        <dsig:DigestValue>X/fly3vbROj8KTRUDOu20Is4ALdawuCCjckPc8vnHqs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>laG72dGYy5D5AYMqM2okoFAQltEZCy50pKef3JT06Yo=</dsig:DigestValue>
+        <dsig:DigestValue>iHEhhcrswbS7AXXYGWN8oPl71zOmrDbOEJwqx1SNw0g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,19 +109,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Os9NLKW72QtbqSZ/8Z0gikWIo3bx+I0Lg8atnp9/IeI=</dsig:DigestValue>
+        <dsig:DigestValue>0mr3syoW8ntg275bbhvAIy+A/LyDia2bbwQ4tx3emNs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="68520">
-      <assemblyIdentity name="LaserMarking" version="1.0.1.1" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="LaserMarking" version="1.0.1.4" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QS26q0XbHNT5qEke+nVtv0A7z3XzpiOabn+DTLrY9EA=</dsig:DigestValue>
+        <dsig:DigestValue>raEcIpcBjxi01c/pD8mzmkBa5fDFeqCvHJTC0XDoaQs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
