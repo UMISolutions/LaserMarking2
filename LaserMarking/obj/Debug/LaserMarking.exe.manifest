@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>UMePj+Vt95eXUWiFpYdC81YHyE5WKsGPM3kmULH6cJI=</dsig:DigestValue>
+        <dsig:DigestValue>01O+wavcCw8CiPEj6jAZOb4tSzqkQ5wdtfjmvyPrfKc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,7 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aYioJbgz0xh9eZAH2za+vlZ+FTNht/IAXAoKJ0Pgryg=</dsig:DigestValue>
+        <dsig:DigestValue>Z0jO1le6v1tuYpWogVtsbaZmMZZHk9XL/k64/qBmySk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -85,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pvW2mAN4JHM2erMAzsHN/RMkJZdJMD4Qev5gnLvc2tM=</dsig:DigestValue>
+        <dsig:DigestValue>gyL6ntQO5w6AGAAkiqn0hv0FVUpYBWyctNskA1iY8Nw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -97,7 +97,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cXWTqNSzYuK9RNjI+AB8GI7o0hOAvId4fjI62wl5y+Y=</dsig:DigestValue>
+        <dsig:DigestValue>3ZDO3YHm8di3qhZmfUFVgW/GtzEFKYSCJGt7p/Xhtv0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,19 +109,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>R963Wy47HchLbI+cTozkwJPFf1dsnDNyUxBVKEmtNMA=</dsig:DigestValue>
+        <dsig:DigestValue>3f+b6Hd9+ep7I6KmiBBdX3rqjEWZeTFKOyCHouXy0Ck=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="63912">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="61864">
       <assemblyIdentity name="LaserMarking" version="1.0.1.5" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cxTPNhtPLRChPkeZgOwP5+jJ8qk+422Aqk8Ds0zDPZk=</dsig:DigestValue>
+        <dsig:DigestValue>+YPA2VVIeBNJn0aGZf1Q3J7EILccWUfGsd31DRMaNKc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

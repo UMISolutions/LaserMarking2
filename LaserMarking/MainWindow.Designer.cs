@@ -48,7 +48,6 @@ namespace LaserMarking
             this.ControllerContextButton = new System.Windows.Forms.Button();
             this.LightOnButton = new System.Windows.Forms.Button();
             this.LightOffButton = new System.Windows.Forms.Button();
-            this.OpenJobButton = new System.Windows.Forms.Button();
             this.JobTitleLabel = new System.Windows.Forms.Label();
             this.ProgramMaterialCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,7 +70,6 @@ namespace LaserMarking
             this.FlipPartNumbersButton = new System.Windows.Forms.Button();
             this.SetCameraPosition = new System.Windows.Forms.Button();
             this.OpenControllerJob = new System.Windows.Forms.Button();
-            this.File1List = new System.Windows.Forms.ListBox();
             this.OpenFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label5 = new System.Windows.Forms.Label();
             this.SelectedMaterialPN = new System.Windows.Forms.Label();
@@ -209,16 +207,6 @@ namespace LaserMarking
             this.LightOffButton.Text = "Light Off";
             this.LightOffButton.UseVisualStyleBackColor = true;
             this.LightOffButton.Click += new System.EventHandler(this.LightOffButton_Click);
-            // 
-            // OpenJobButton
-            // 
-            this.OpenJobButton.Location = new System.Drawing.Point(1162, 7);
-            this.OpenJobButton.Name = "OpenJobButton";
-            this.OpenJobButton.Size = new System.Drawing.Size(107, 23);
-            this.OpenJobButton.TabIndex = 14;
-            this.OpenJobButton.Text = "Open Program";
-            this.OpenJobButton.UseVisualStyleBackColor = true;
-            this.OpenJobButton.Click += new System.EventHandler(this.OpenJobButton_Click);
             // 
             // JobTitleLabel
             // 
@@ -425,15 +413,6 @@ namespace LaserMarking
             this.OpenControllerJob.UseVisualStyleBackColor = true;
             this.OpenControllerJob.Click += new System.EventHandler(this.OpenControllerJob_Click);
             // 
-            // File1List
-            // 
-            this.File1List.FormattingEnabled = true;
-            this.File1List.Location = new System.Drawing.Point(1411, 7);
-            this.File1List.Name = "File1List";
-            this.File1List.Size = new System.Drawing.Size(52, 17);
-            this.File1List.TabIndex = 48;
-            this.File1List.Visible = false;
-            // 
             // OpenFileDialog1
             // 
             this.OpenFileDialog1.FileName = "openFileDialog1";
@@ -604,7 +583,6 @@ namespace LaserMarking
             this.Controls.Add(this.GetOrderTubePNBTN);
             this.Controls.Add(this.SelectedMaterialPN);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.File1List);
             this.Controls.Add(this.OpenControllerJob);
             this.Controls.Add(this.SetCameraPosition);
             this.Controls.Add(this.FlipPartNumbersButton);
@@ -627,7 +605,6 @@ namespace LaserMarking
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ProgramMaterialCombo);
             this.Controls.Add(this.JobTitleLabel);
-            this.Controls.Add(this.OpenJobButton);
             this.Controls.Add(this.LightOffButton);
             this.Controls.Add(this.LightOnButton);
             this.Controls.Add(this.ControllerContextButton);
@@ -662,7 +639,6 @@ namespace LaserMarking
         private System.Windows.Forms.Button ControllerContextButton;
         private System.Windows.Forms.Button LightOnButton;
         private System.Windows.Forms.Button LightOffButton;
-        private System.Windows.Forms.Button OpenJobButton;
         private System.Windows.Forms.Label JobTitleLabel;
         private System.Windows.Forms.ComboBox ProgramMaterialCombo;
         private System.Windows.Forms.Label label1;
@@ -685,7 +661,6 @@ namespace LaserMarking
         private System.Windows.Forms.Button FlipPartNumbersButton;
         private System.Windows.Forms.Button SetCameraPosition;
         private System.Windows.Forms.Button OpenControllerJob;
-        private System.Windows.Forms.ListBox File1List;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label SelectedMaterialPN;
