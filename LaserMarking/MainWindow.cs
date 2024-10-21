@@ -1643,6 +1643,12 @@ namespace LaserMarking
 
             try
             {
+                if (externalProcess != null && !externalProcess.HasExited)
+                {
+                    externalProcess.Kill(); // Forcefully close the application
+                    externalProcess.Dispose(); // Release the process resources
+                    externalProcess = null; // Clear the reference
+                }
                 externalProcess = Process.Start(markingBuilderPath, filePath);
                 externalProcess.WaitForInputIdle();
 
