@@ -16,6 +16,8 @@ using System.Collections;
 using System.Diagnostics;
 using static System.Net.WebRequestMethods;
 using System.CodeDom;
+using AxMBPActXLib;
+using System.Threading;
 
 namespace LaserMarking
 {
@@ -30,28 +32,31 @@ namespace LaserMarking
         //PDM Variables
         private IEdmVault5 vault1 = null;
         IEdmFile7 aFile;
-        IEdmFolder5 aFolder;
-        IEdmPos5 aPos;
-        IEdmCard6 aCard;
-        IEdmCardControl7 aControl;
         IEdmFolder5 ppoRetParentFolder;
         private IEdmBom bom;
-        private IEdmBomMgr2 bomMgr;
         private IEdmBomView3 bomView;
-        string fileExt;
 
 
         bool GenericProgram = true;
+        bool isConnected = false;
+        bool partNumsFliped = false;
+
+        private Process externalProcess;
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        [return: System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.Bool)]
+        static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+        private const int SWP_NOZORDER = 0x0004;
+        private const int SWP_NOACTIVATE = 0x0010;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            Application.ApplicationExit += new EventHandler(this.OnApplicationExit);
-
             InitializeMarker();
-
-            USBConnection();
 
             loadMaterialComboBox();
 
@@ -71,6 +76,7 @@ namespace LaserMarking
 
         }
 
+        // Fills Material & Size Combo box on init :: Complete
         private void loadMaterialComboBox()
         {
             ProgramMaterialCombo.Items.Add("SS");
@@ -85,22 +91,9 @@ namespace LaserMarking
             ProgramSizeCombo.Items.Add("24");
             ProgramSizeCombo.Items.Add("28");
             ProgramSizeCombo.Items.Add("32");
-
-            SelectedBlockCombo.Items.Add("Date");
-            SelectedBlockCombo.Items.Add("Logo");
-            SelectedBlockCombo.Items.Add("Part No.");
-            SelectedBlockCombo.Items.Add("Cust PN");
-            SelectedBlockCombo.Items.Add("Desc 1");
-            SelectedBlockCombo.Items.Add("Desc 2");
-
         }
 
-        private void OnApplicationExit(object sender, EventArgs e)
-        {
-
-        }
-
-
+        // ???
         private void InitializeMarker()
         {
             try
@@ -113,54 +106,11 @@ namespace LaserMarking
             }
 
         }
-
-        private void USBConnection()
+        
+        //Function to load items on Refresh Orders Click :: Complete
+        private void updateOpenOrderItems() 
         {
-            //int ControllerSerialNo = 12345;
-            //try
-            //{
-            //    //If the application is exited without disconnected, the instance may exclusively use the online connection. In this case, release the online connection.
-            //if (axMBActX1.Comm.IsOnline)
-            //    {
-            //        axMBActX1.Comm.Offline();
-            //    }
-            //    axMBActX1.Comm.ConnectionType = MBPLib2.ConnectionTypes.CONNECTION_USB;
-            //    axMBActX1.Comm.UsbControllerSerialNo = ControllerSerialNo;
-            //    bool is_success = axMBActX1.Comm.Online();
-            //}
-            //catch (System.Runtime.InteropServices.COMException error)
-            //{
-            //    MessageBox.Show(error.Message);
-            //}
-
-
-
-
-        }
-
-        public static string OpenConnect(string connStr)
-        {
-            try
-            {
-                using (SqlConnection cn = new SqlConnection(connStr))
-                {
-                    cn.Open();
-                    //MessageBox.Show(connStr);
-                    return connStr;
-
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in OpenConnect() Cant open with connection string.\n" + ex.Message);
-                return connStr;
-            }
-        }
-
-        private void updateOpenOrderItems()
-        {
-            using (SqlConnection cn = new SqlConnection(OpenConnect(SAPConnectionString)))
+            using (SqlConnection cn = new SqlConnection(SAPConnectionString))
             {
                 try
                 {
@@ -168,33 +118,20 @@ namespace LaserMarking
                     SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
                     cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
 
-                    cmd2.Parameters.AddWithValue("@Search", "%%");
-                    /*
-                    // Code used before
-                    cmd2.CommandText = "" +
+                    cmd2.CommandText = @"select OWOR.ItemCode as Part_number, 
+                                        OWOR.PlannedQty as Total_QTY, 
+                                        WOR1.EndDate as  Due_date, 
+                                        OWOR.OriginNum as ProductionNumber
+                                        from WOR1 --rows
+                                        left join OWOR on OWOR.DocEntry = WOR1.DocEntry  -- headers
+                                        where WOR1.ItemCode like '%tub%'  
+                                        and OWOR.Status != 'L' --closed
+                                        and OWOR.Status!= 'C' -- Cancelled";
 
-                    //" DECLARE @temp TABLE (SO_Number VARCHAR(255),Order_Date VARCHAR(255),Promise_Date VARCHAR(255),Customer VARCHAR(255),Part_Number VARCHAR(255),Open_Qty VARCHAR(255),Price VARCHAR(255),Open_Amount VARCHAR(255))    " +
-                    //" INSERT @temp EXEC CheckOpenOrders                                                                                                                                                                                  " +
-                    //" SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
-                    //" where Part_Number like '80%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
-
-                    
-
-                    " DECLARE @temp TABLE (SO_Number VARCHAR(255),Order_Date VARCHAR(255),Promise_Date VARCHAR(255),Customer VARCHAR(255),Part_Number VARCHAR(255),Open_Qty VARCHAR(255),Price VARCHAR(255),Open_Amount VARCHAR(255))    " +
-                    " INSERT @temp EXEC CheckOpenOrders                                                                                                                                                                                  " +
-                    " SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
-                    " where Part_Number like '8%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
-                    */
-                    cmd2.CommandText = "" +
-                    " select wo.ItemCode as Part_number, wo1.PlannedQty as Total_QTY, wo1.EndDate as  Due_date " +
-                    "from WOR1 wo1 " +
-                    " left join OWOR wo on wo.DocEntry = wo1.DocEntry  " +
-                    "where wo1.ItemCode like '%tub%'  and wo.Status != 'L' ";
                     DataTable dt = new DataTable();
                     dt.Load(cmd2.ExecuteReader());
-                    
+
                     OrdersGridView.DataSource = dt;
-                    
 
                 }
                 catch (Exception ex)
@@ -204,10 +141,11 @@ namespace LaserMarking
             }
         }
 
+        // Adds Material Column to datagrid :: Complete
         private void GetOrderTubePNBTN_Click(object sender, EventArgs e)
         {
             OrdersGridView.Columns.Add("Material", "Material");
-            OrdersGridView.Columns["Material"].DisplayIndex = 1; ;
+            OrdersGridView.Columns["Material"].DisplayIndex = 1;
 
             foreach (DataGridViewRow row in OrdersGridView.Rows)
             {
@@ -220,6 +158,7 @@ namespace LaserMarking
             }
         }
 
+        //Gets Material types for GetOrderTubePNBTN_Click :: Complete
         private object SimplyGetTubeMaterialFromPN(string PN)
         {
             try
@@ -234,11 +173,11 @@ namespace LaserMarking
                 {
                     vault1.LoginAuto("UMIS", this.Handle.ToInt32());
                 }
+
                 aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{PN}.slddrw", out ppoRetParentFolder);
                 if (aFile != null)
                 {
 
-                    bomMgr = (IEdmBomMgr2)(IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
                     EdmBomInfo[] derivedBOMs;
 
                     aFile.GetDerivedBOMs(out derivedBOMs);
@@ -264,8 +203,7 @@ namespace LaserMarking
                     {
                         int ColumnCount = 1;
 
-                        //foreach (EdmBomColumn COLUMN in BomColumns)
-                        //{
+                       
                             if (ColumnCount <= (BomColumns.Count() - 1)) // in case BOM has more columns than expeted
                             {
                                 CELL.GetVar(BomColumns[ColumnCount].mlVariableID, BomColumns[ColumnCount].meType, out cellVar, out ComputedValue, out config, out ReadOnlyOut);
@@ -282,9 +220,7 @@ namespace LaserMarking
                                 {
 
                                 }
-                                //ColumnCount += 1;
                             }
-                        //}
                     }
                     if (TubesFound.Count == 0)
                     {
@@ -314,7 +250,7 @@ namespace LaserMarking
             }
         }
 
-        //Sets connection strings based on whether we are debugging or not
+        //Sets connection strings based on whether we are debugging or not :: Complete
         private void SetDBConnections()
         {
             if (SQLTest == 1)
@@ -332,6 +268,7 @@ namespace LaserMarking
 
         }
 
+        // Connect to laser :: Complete
         private void AttemptToConnectToLaser()
         {
             bool is_success = false;
@@ -345,8 +282,7 @@ namespace LaserMarking
                     axMBActX2.Comm.Offline();
                 }
                 
-                axMBActX2.Comm.ConnectionType =
-                MBPLib2.ConnectionTypes.CONNECTION_USB;
+                axMBActX2.Comm.ConnectionType = MBPLib2.ConnectionTypes.CONNECTION_USB;
                 is_success = axMBActX2.Comm.Online();
                 
             }
@@ -366,11 +302,13 @@ namespace LaserMarking
 
         }
 
+        // Call connect to laser :: Complete
         private void markerConnectButton_Click(object sender, EventArgs e)
         {
             AttemptToConnectToLaser();
         }
 
+        // Disconnect laser :: Complete
         private void MarkerDisconnectButton_Click(object sender, EventArgs e)
         {
 
@@ -397,59 +335,15 @@ namespace LaserMarking
             {
                 MessageBox.Show(error.Message);
             }
-
-            //try
-            //{
-            //    //If the application is exited without disconnected, the
-            //    //instance may exclusively use the online connection.In this
-            //    //case, release the online connection.
-            //    if (axMBActX1.Comm.IsOnline)
-            //    {
-            //        axMBActX1.Comm.Offline();
-            //    }
-                
-            //}
-            //catch (System.Runtime.InteropServices.COMException error)
-            //{
-            //    MessageBox.Show(error.Message);
-            //}
         }
 
+        // Calls function to load items on Refresh Orders Click :: Complete
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             updateOpenOrderItems();
         }
 
-
-        private void Map_Surface_Click(object sender, EventArgs e)
-        {
-            axMBActX2.Operation.StartXYTracking(0);
-
-            double diffX;
-            double diffY;
-            double angle;
-            int corr;
-            int time;
-            bool result;
-            axMBActX2.Operation.GetXYTrackingResult(0, out diffX, out diffY, out angle, out corr, out time, out result);
-            MessageBox.Show(" diffX: " + diffX + " diffY: " + diffY + " angle: " + angle + " corr: " + corr + " time: " + time + " result: " + result);
-        }
-        private void Get_Z_Click(object sender, EventArgs e)
-        {
-            axMBActX2.SaveControllerJob(0);
-            axMBActX2.Operation.StartZTracking(0);
-
-            double diffZ;
-            double tiltX;
-            double tiltY;
-            int stab;
-            int time;
-            bool isWithinTolerance;
-            bool result;
-            axMBActX2.Operation.GetZTrackingResult(0, out diffZ, out tiltX, out tiltY, out stab, out time, out isWithinTolerance, out result);
-            MessageBox.Show(" diffZ: " + diffZ + " tiltX: " + tiltX + " tiltY: " + tiltY + " stab: " + stab + " time: " + time + " isWithinTolerance: " + isWithinTolerance + " result: " + result);
-
-        }
+        // Marks part :: Probably works
         private void Mark_Part_Click(object sender, EventArgs e)
         {
             Mark_Part.BackColor = Color.Red;
@@ -472,19 +366,10 @@ namespace LaserMarking
                 MessageBox.Show(error.Message);
                
             }
-
-
-            //axMBActX1.IsBlockingCommunication = false;
-            //axMBActX2.IsBlockingCommunication = true;
-            
-
             try
             {
 
                 axMBActX2.SaveControllerJob(0);
-                
-                //int JobNo;
-                //JobNo = axMBActX2.Operation.GetCurrentJobNo();
 
                 axMBActX2.IsBlockingCommunication = true;
 
@@ -492,53 +377,73 @@ namespace LaserMarking
 
                 axMBActX2.Operation.StartMarking();
 
-
-                //MessageBox.Show("Marking Done");
-
-                //MessageBox.Show("JOb Number "+JobNo);
-
-
-
-                //try
-                //{
-                //    axMBActX1.Operation.StartGuideLaserMarking(MBPLib2.GuideLaserTypes.GUIDELASER_BLOCKFRAME);
-                //}
-                //catch (System.Runtime.InteropServices.COMException error)
-                //{
-                //    MessageBox.Show(error.Message);
-                //}
-
-
-                //Get_Z_Click performs the same operation 
-                //get result
-                double diffZ;
-                double tiltX;
-                double tiltY;
-                int stab;
-                int time;
-                bool isWithinTolerance;
-                bool result;
                 bool result2;
                 double time2;
 
-                //axMBActX2.Operation.GetZTrackingResult(0, out diffZ, out tiltX, out tiltY, out stab, out time, out isWithinTolerance, out result);
                 axMBActX2.Operation.GetMarkingResult(out result2,out time2);
-                //MessageBox.Show(" diffZ: " + diffZ + " tiltX: " + tiltX + " tiltY: " + tiltY + " stab: " + stab + " time: " + time + " isWithinTolerance: " + isWithinTolerance + " result: " + result + " result2: " + result2 + " time2: " + time2);
 
-
-                
             }
             catch (System.Runtime.InteropServices.COMException error)
             {
                 MessageBox.Show(error.Message);
             }
 
-            
-
-            // axMBActX1.Operation.StartZTracking(0);
+            sendMarkedToDB();
 
         }
-        
+
+        // sends info about marked part to DB :: Complete
+        private void sendMarkedToDB()
+        {
+            try { isConnected = axMBActX2.Comm.Online(); }
+            catch { }
+            using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
+            {
+                try
+                {
+                    cn.Open(); 
+
+                    // Prepare the SQL command with parameters
+                    string sql = @"
+            INSERT INTO LaserMarkings (DateTimeMarked, PartNum, ProductionNumber, HeatNumber, IsConnected)
+            VALUES (@DateTimeMarked, @PartNum, @ProductionNumber, @HeatNumber, @IsConnected)";
+
+                    using (SqlCommand cmd2 = new SqlCommand(sql, cn))
+                    {
+                        cmd2.CommandTimeout = 120; // Set a long timeout in case of really complex queries
+
+                        DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
+                        string ProductionNumber = "";
+                        try { ProductionNumber = row.Cells["ProductionNumber"].Value.ToString(); }
+                        catch { }
+
+                        // Add parameters to the command
+                        cmd2.Parameters.AddWithValue("@DateTimeMarked", DateTime.Now); // Set to current date and time
+                        if (!partNumsFliped)
+                        {
+                            cmd2.Parameters.AddWithValue("@PartNum", PartNumAndRevBox.Text);
+                        } else
+                        {
+                            cmd2.Parameters.AddWithValue("@PartNum", CustPartNumAndRevBox.Text);
+                        }
+                        cmd2.Parameters.AddWithValue("@ProductionNumber", ProductionNumber); // Replace with actual production order
+                        cmd2.Parameters.AddWithValue("@HeatNumber", HeatBox.Text);
+                        cmd2.Parameters.AddWithValue("@IsConnected", isConnected); // Replace with actual test flag value
+
+                        // Execute the command
+                        cmd2.ExecuteNonQuery();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Handle exceptions (e.g., log the error)
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+
+        }
+
+        // Flips IsCameraFinderView after marking end event :: Probably works
         private void axMBActX1_EvMarkingEnd(object sender, _DMBActXEvents_EvMarkingEndEvent e)
         {
             try
@@ -563,33 +468,7 @@ namespace LaserMarking
             Mark_Part.BackColor = SystemColors.ControlLight;
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                axMBActX2.Operation.StartCameraScanningMode2(ShutterStateTypes.SHUTTERSTATE_OPEN);
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                axMBActX2.Operation.FinishCameraScanningMode();
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-        }
-
-        
-
+        // Turns ligh on :: Complete
         private void LightOffButton_Click(object sender, EventArgs e)
         {
             try
@@ -602,6 +481,7 @@ namespace LaserMarking
             }
         }
 
+        // Turns ligh off :: Complete
         private void LightOnButton_Click(object sender, EventArgs e)
         {
             try
@@ -616,69 +496,12 @@ namespace LaserMarking
             
         }
 
-        private void OpenJobButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //@"\\UMISSERVER2\UMI\Engineering\MaterialQuotes\";
-
-                //if (axMBActX1.OpenJob(@"C: \Users\treeves/Desktop\LazerJunk\CaliperMarker2.MA1\"))
-                if (axMBActX2.OpenJob(""))
-                {
-                    JobTitleLabel.Text = axMBActX2.Job.Title;
-                }
-                List<string> tempList = new List<string>();
-                for (int a = 0; a <= 10; a++)
-                {
-                    
-                }
-                
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message + error);
-            }
-        }
-
-        private void EditingContextButton_Click(object sender, EventArgs e)
-        {
-            axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
-        }
-
-        private void ControllerContextButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                axMBActX2.Context = ContextTypes.CONTEXT_CONTROLLER;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("" + ex);
-            }
-            
-        }
-
-        private void SetMarkingConditionButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                axMBActX2.Block(2).SetMarkingCondition(5);
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-            
-        }
-
+        // Loads label when click on part :: Complete
         private void OrdersGridView_Click(object sender, EventArgs e)
         {
+            save.Enabled = true;
             Mark_Part.BackColor = SystemColors.ControlLight ;
             string SelectedPN = "";
-            string SelectedRev = "";
-            string SelectedCustomerPN = "";
-            string SelectedCustomerRev = "";
-            string SelectedCustomerDesc = "";
             double diam;
             double wall;
             string partnum;
@@ -704,6 +527,11 @@ namespace LaserMarking
                 orderRev = SelectedPN.Split('_')[1];
             }
 
+            // SelectedPN: PN as shown in table (may have rev)
+            // PNSub: PN
+            // orderRev: rev
+
+            
             if (SelectedPN[0] == 'T')
             {
                 DataTable dt = new DataTable();
@@ -715,13 +543,15 @@ namespace LaserMarking
                 GetTubeKitFromPDMBom(PNSub,dt);
                 OrdersGridView.DataSource = dt;
             }
+
+            // P case (what means)
             else if (SelectedPN[0] == 'P')
             {
+                CheckForCustomProgram(SelectedPN);
                 if (SelectedPN.Contains("_"))
                 {
                     SelectedPN = PNSub;
                 }
-                CheckForCustomProgram(SelectedPN);
                 if (GenericProgram)
                 {
                     GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall,out  partnum, out mtl, out fileFound);
@@ -732,9 +562,10 @@ namespace LaserMarking
                     }
                 }
             }
+
+            // From 8xxxx (no rev)
             else if (SelectedPN[0] == '8' && SelectedPN.Length == 5)
             {
-                File1List.Items.Clear();
 
                 IEdmVault7 vault2 = null;
                 if (vault1 == null)
@@ -768,11 +599,13 @@ namespace LaserMarking
                     getVarSuccess = enumVariable.GetVarAsText("Description", "@", ppoRetParentFolder.ID, out object poDescription);
                     dr = dt.NewRow();
 
-                    dr["Part_Number"] = poPartNo != null ? poPartNo.ToString() : "N/A";
-                    dr["Customer"] = poCustomer != null ? poCustomer.ToString() : "N/A";
-                    dr["CustomerPN"] = poCustomerPN != null ? poCustomerPN.ToString() : "N/A";
-                    dr["Rev"] = poRevision != null ? poRevision.ToString() : "N/A";
-                    dr["Description"] = poDescription != null ? poDescription.ToString() : "N/A";
+
+
+                    dr["Part_Number"] = GetValueOrDefault(poPartNo);
+                    dr["Customer"] = GetValueOrDefault(poCustomer);
+                    dr["CustomerPN"] = GetValueOrDefault(poCustomerPN);
+                    dr["Rev"] = GetValueOrDefault(poRevision);
+                    dr["Description"] = GetValueOrDefault(poDescription);
 
                     dt.Rows.Add(dr);
 
@@ -780,7 +613,6 @@ namespace LaserMarking
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
-
                 }
 
                 OrdersGridView.DataSource = dt;
@@ -788,6 +620,7 @@ namespace LaserMarking
                 orderRev = row.Cells["Rev"].Value.ToString();
 
                 CheckForCustomProgram(SelectedPN + "_" + orderRev);
+
                 if (GenericProgram)
                 {
                     GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl, out fileFound);
@@ -811,103 +644,20 @@ namespace LaserMarking
                     }
                 }
             }
-
-
-            /*
-            if (SelectedPN[0] == '8' && SelectedPN.Length >= 7 && SelectedPN.Contains("_"))
-            {
-                CheckForCustomProgram(SelectedPN);
-                if (GenericProgram)
-                {
-                    string[] numbers = SelectedPN.Split('_');
-                    GetTubePartNumberFromPDMBom(numbers[0], out diam, out wall, out partnum, out mtl);
-                    OpenGenericProgram();
-                    
-                    FillTubeDetails(numbers[0], numbers[1]);
-
-                }
-            }
-            else if (SelectedPN[0] == '8' && SelectedPN.Length == 5)
-            {
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Part_Number");
-                dt.Columns.Add("Customer");
-                dt.Columns.Add("CustomerPN");
-                dt.Columns.Add("Rev");
-                dt.Columns.Add("Description");
-                DataRow dr = null;
-                aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{SelectedPN}.slddrw", out ppoRetParentFolder);
-               
-                try
-                {
-
-                    IEdmEnumeratorVariable10 enumVariable = (IEdmEnumeratorVariable10)aFile.GetEnumeratorVariable();
-                    bool getVarSuccess = enumVariable.GetVarAsText("PartNo", "@", ppoRetParentFolder.ID, out object poPartNo);
-                    getVarSuccess = enumVariable.GetVarAsText("Customer Name", "@", ppoRetParentFolder.ID, out object poCustomer);
-                    getVarSuccess = enumVariable.GetVarAsText("CustomerPN", "@", ppoRetParentFolder.ID, out object poCustomerPN);
-                    getVarSuccess = enumVariable.GetVarAsText("Revision", "@", ppoRetParentFolder.ID, out object poRevision);
-                    getVarSuccess = enumVariable.GetVarAsText("Description", "@", ppoRetParentFolder.ID, out object poDescription);
-
-
-                    dr = dt.NewRow();
-                  
-                    dr["Part_Number"] = poPartNo != null ? poPartNo.ToString() : "N/A";
-                    dr["Customer"] = poCustomer != null ? poCustomer.ToString() : "N/A";
-                    dr["CustomerPN"] = poCustomerPN != null ? poCustomerPN.ToString() : "N/A";
-                    dr["Rev"] = poRevision != null ? poRevision.ToString() : "N/A";
-                    dr["Description"] = poDescription != null ? poDescription.ToString() : "N/A";
-
-                    dt.Rows.Add(dr);
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-
-                }
-                
-                OrdersGridView.DataSource = dt;
-                DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
-                OrderRev = row.Cells["Rev"].Value.ToString();
-               
-                CheckForCustomProgram(SelectedPN + "_" + OrderRev);
-                if (GenericProgram)
-                {
-                    
-                    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl);
-                    OpenGenericProgram();
-                    FillTubeDetails(SelectedPN, OrderRev);
-                }
-            }
-            else
-            {
-                CheckForCustomProgram(SelectedPN);
-                if (GenericProgram)
-                {
-                    OpenGenericProgram();
-                    FillTubeDetails(SelectedPN, OrderRev);
-                }
-            }
-
-            */
-
-            //CheckForCustomProgram(PNSub);
-            //if (GenericProgram == true)
-            //{
-            //    GetTubePartNumberFromPDMBom(SelectedPN, out diam, out wall, out partnum, out mtl);  
-            //    OpenGenericProgram();
-            //    Console.WriteLine("Here1");
-            //    FillTubeDetails(SelectedPN, orderRev); // needs to happen after the program is opened
-            //}
-
         }
 
+        // Returns "N/A" when null or empty :: Complete
+        private string GetValueOrDefault(object value)
+        {
+            return string.IsNullOrEmpty(value as string) ? "N/A" : value.ToString();
+        }
+
+        // Called from OrdersGridView_Click when have "TK" :: Untested (No TK currently)
         private void GetTubeKitFromPDMBom(string partNumber, DataTable dt)
         {
             
             try
             {
-                File1List.Items.Clear();
 
                 IEdmVault7 vault2 = null;                                                                                   
                 if (vault1 == null)
@@ -964,7 +714,6 @@ namespace LaserMarking
                 {
                     Dictionary<string, string> tubes = new Dictionary<string, string>();
                     List<string> BOMnames = new List<string>();
-                    bomMgr = (IEdmBomMgr2)(IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
                     EdmBomInfo[] derivedBOMs;
 
                     aFile.GetDerivedBOMs(out derivedBOMs);
@@ -1061,6 +810,8 @@ namespace LaserMarking
                 MessageBox.Show("Error looking up BOM.\n\n" + ex.Message);
             }
         }
+
+        // Checks if we have a saved program for the part :: Complete
         private void CheckForCustomProgram(string PN)
         {
             string FilePath = $@"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\{PN}.MA2";
@@ -1074,31 +825,71 @@ namespace LaserMarking
                         string customerNum = "";
                         string description = "";
                         string description2 = "";
+                        string heatin = "";
                         axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
                         axMBActX2.OpenJob(FilePath);
                         try
                         {
                             JobTitleLabel.Text = axMBActX2.Job.Title;
-                            partNum = axMBActX2.Block(3).Text;
-                            customerNum = axMBActX2.Block(4).Text;
-                            description = axMBActX2.Block(5).Text;
-                            description2 = axMBActX2.Block(6).Text;
-                            
+                            try
+                            {
+                                partNum = axMBActX2.Block(3).Text;
+                            }
+                            catch {}
+
+                            try
+                            {
+                                customerNum = axMBActX2.Block(4).Text;
+                            }
+                            catch{ }
+
+                            try
+                            {
+                                description = axMBActX2.Block(5).Text;
+                            }
+                            catch{}
+
+                            try
+                            {
+                                description2 = axMBActX2.Block(6).Text;
+                            }
+                            catch{}
+                            try
+                            {
+                                heatin = axMBActX2.Block(7).Text;
+                            }
+                            catch { }
+                            try
+                            {
+                                string disabled = axMBActX2.Block(16).Text; //New disabled "DO NOT MODIFY" block
+                                if (disabled == "DO NOT MODIFY")
+                                {
+                                    save.Enabled = false; // Disable the button
+                                }
+                            }
+                            catch (System.Runtime.InteropServices.COMException error)
+                            {
+                            }
                             PartNumAndRevBox.Text = partNum;
                             CustPartNumAndRevBox.Text = customerNum;
                             DescLine1Box.Text = description;
                             DescLine2Box.Text = description2;
+                            HeatBox.Text = heatin;  
 
-                            if (axMBActX2.Block(8).IsMarkingEnable)
+                            try
                             {
-                                QRCheckBox.Checked = true;
+                                if (axMBActX2.Block(8).IsMarkingEnable)
+                                {
+                                    QRCheckBox.Checked = true;
+                                }
+                                else
+                                {
+                                    QRCheckBox.Checked = false;
+                                }
                             }
-                            else
-                            {
-                                QRCheckBox.Checked = false;
-                            }
-                            UpdateCurrentProgramBlocks(0);
-
+                            catch { }
+                                UpdateCurrentProgramBlocks(0);
+                            
                         }
                         catch (System.Runtime.InteropServices.COMException error)
                         {
@@ -1115,10 +906,31 @@ namespace LaserMarking
             }
             else
             {
-                GenericProgram = true;
+                if (PN.Contains("_"))
+                {
+                    var parts = PN.Split('_');
+                    string selectedPN = parts[0];
+                    int orderRev;
+                    if (parts.Length > 1 && int.TryParse(parts[1], out orderRev))
+                    {
+                        orderRev--;
+                        if (orderRev >= 0)
+                        {
+                            CheckForCustomProgram(selectedPN + "_" + orderRev);
+                        } else
+                        {
+                            GenericProgram = true;
+                        }
+                    }
+                    else
+                    {
+                        GenericProgram = true;
+                    }
+                }
             }
         }
 
+        // Gets information for label from PN :: Complete
         private void GetTubePartNumberFromPDMBom(string pNSub, out double diameter, out double wallThick, out string partNumber, out string mtl, out bool fileFound)
         {
             diameter = 9999;
@@ -1130,7 +942,6 @@ namespace LaserMarking
             //GetFileFromSearch*******************
             try
             {
-                File1List.Items.Clear();
 
                 IEdmVault7 vault2 = null;
                 if (vault1 == null)
@@ -1208,53 +1019,12 @@ namespace LaserMarking
                     if (aFile != null)
                     {
 
-                        bomMgr = (IEdmBomMgr2)(IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
                         EdmBomInfo[] derivedBOMs;
 
                         aFile.GetDerivedBOMs(out derivedBOMs);
 
-                        // MessageBox.Show(""+derivedBOMs.Length);
-
-                        ////**************
-                        //int arrSize = 0;
-                        //EdmBomVersion[] ppoVersions = null;
-                        //int i = 0;
-
-                        //int id = 0;
-                        //string str = "";
-                        //string verstr = "";
-                        //int verArrSize = 0;
-                        //arrSize = derivedBOMs.Length;
-                        //int userID = 0;
-                        //bool canSeeLayout = false;
-
-                        ////userID = vault2.GetLoggedInWindowsUserID(vault2.Name);
-
-                        //while (i < arrSize)
-                        //{
-                        //    id = derivedBOMs[i].mlBomID;
-                        //    bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, id);
-                        //    str = "Named BOM: " + derivedBOMs[i].mbsBomName + "\r\n" + "Type of BOM as defined in EdmBomType: " + derivedBOMs[i].meType + "\\n" + "Check-out user: " + bom.CheckOutUserID + "\r\n" + "Current state: " + bom.CurrentState.Name + "\r\n" + "Current version: " + bom.CurrentVersion + "\r\n" + "ID: " + bom.FileID + "\r\n" + "Is checked out: " + bom.IsCheckedOut;
-                        //    MessageBox.Show(str);
-                        //    bom.GetVersions(out ppoVersions);
-                        //    verArrSize = ppoVersions.Length;
-                        //    int j = 0;
-                        //    while (j < verArrSize)
-                        //    {
-                        //        verstr = "BOM version: " + "\r\n" + "Type as defined in EdmBomVersionType: " + ppoVersions[j].meType + "\r\n" + "Version number: " + ppoVersions[j].mlVersion + "\r\n" + "Date: " + ppoVersions[j].moDate + "\r\n" + "Label: " + ppoVersions[j].mbsTag + "\r\n" + "Comment: " + ppoVersions[j].mbsComment;
-                        //        MessageBox.Show(verstr);
-                        //        j = j + 1;
-                        //    }
-                        //    i = i + 1;
-                        //}
-
-
-
-                        //*****************
-
                         bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, derivedBOMs[(derivedBOMs.Length - 1)].mlBomID); // USE ID OF DERIVED BOM at end of the list. I assume it is the latest date, most recent.
                         bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
-
 
                         EdmBomColumn[] BomColumns = null;
                         bomView.GetColumns(out BomColumns);
@@ -1317,22 +1087,11 @@ namespace LaserMarking
                         }
                         else
                         {
-                            //string StringDiameter = "";
-                            //string StringWallThickness = "";
-                            //StringDiameter = TubesFound[0].Substring(TubesFound[0].Length - 7, 4);
-                            //StringWallThickness = TubesFound[0].Substring(TubesFound[0].Length - 3, 3);
-                            //MessageBox.Show("Diameter " + Convert.ToDouble(StringDiameter) / 1000 + "\nWall: " + Convert.ToDouble(StringWallThickness) / 1000);
                             partNumber = TubesFound[0];
                             SelectedMaterialPN.Text = partNumber;
                             diameter = Convert.ToDouble(TubesFound[0].Substring(TubesFound[0].Length - 7, 4)) / 1000;
                             wallThick = Convert.ToDouble(TubesFound[0].Substring(TubesFound[0].Length - 3, 3)) / 1000;
-
                         }
-
-
-
-
-
                     }
                 }
                 catch (System.Runtime.InteropServices.COMException ex)
@@ -1357,8 +1116,7 @@ namespace LaserMarking
             }
         }
 
-        
-
+        // Selects prgram based on diameter & material :: Complete
         private void AttemptToSelectProgram(double diameter, string mtl)
         {
             ProgramSizeCombo.SelectedIndex = -1;
@@ -1443,98 +1201,11 @@ namespace LaserMarking
             }
         }
 
+        // Fills details (text blocks) in for the label :: Complete
         private void FillTubeDetails(string TubePartNumber, string OrderRev)
         {
-            /*
-            int customerId =0;
-            using (SqlConnection cn = new SqlConnection(OpenConnect(UMIConnectionString)))
-            {
-                try
-                {
-                    cn.Open();  // Open connection using the SQL connection string above
-                    SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
-                    cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
-
-                    cmd2.Parameters.AddWithValue("@Search", TubePartNumber);
-
-                    cmd2.Parameters.AddWithValue("@rev", OrderRev);
-
-                    if (OrderRev == " ")
-                    {
-                        cmd2.CommandText = "" +
-
-                        " select * FROM [HydraulicHoseInfo_prod].[dbo].[TubeAssemblies] where PartNo = @Search";
-                    }
-                    else
-                    {
-                        cmd2.CommandText = "" +
-
-                        " select * FROM [HydraulicHoseInfo_prod].[dbo].[TubeAssemblies] where PartNo = @Search AND Rev = @rev";
-                    }                                                                                                   
-
-                    SqlDataReader reader2 = cmd2.ExecuteReader();  //SET up reader to read values out of command.
-
-                    
-                    while (reader2.Read())
-                    {
-                        try
-                        {
-                            //if ((reader2["Rev"]).ToString() == "" )
-                            
-                            if (OrderRev == " ") // USE REV FROM ORDER FOR NOW
-                            {
-                                PartNumAndRevBox.Text = (reader2["PartNo"]).ToString();
-                            }
-                            else
-                            {
-                                PartNumAndRevBox.Text = (reader2["PartNo"]).ToString() + "_" + (reader2["Rev"]).ToString();
-                            }
-                            if ((reader2["CustomerRev"]).ToString() == "")
-                            {
-                                CustPartNumAndRevBox.Text = (reader2["CustomerPN"]).ToString();
-                            }
-                            else{
-                                CustPartNumAndRevBox.Text = (reader2["CustomerPN"]).ToString() + "_" + (reader2["CustomerRev"]).ToString();
-                            }
-                            
-                            string desc = (reader2["Description"]).ToString();
-                            //string desc = "123456789ABCDEFGHIJKLMNOPQRSTUVWXZY123456789AA";
-                            int DescLengthAllow =32;
-                            if (desc.Length <= DescLengthAllow)
-                            {
-                                DescLine1Box.Text = desc;
-                            }
-                            else if(desc.Length > DescLengthAllow && desc.Length <= (DescLengthAllow*2))
-                            {
-                                DescLine1Box.Text = desc.Substring(0, DescLengthAllow);
-                                DescLine2Box.Text = desc.Substring(DescLengthAllow, desc.Length- DescLengthAllow);
-                            }
-                            else
-                            {
-                                DescLine1Box.Text = desc.Substring(0, DescLengthAllow);
-                                DescLine2Box.Text = desc.Substring(DescLengthAllow, DescLengthAllow);
-                                
-                            }
-                            customerId = Convert.ToInt32((reader2["Customer_id"]).ToString());
-                            UpdateCurrentProgramBlocks(customerId);
-                        }
-                        catch
-                        {
-
-                        }
-                        
-                    }
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error getting open orders" + ex);
-                }
-            }
-            */
             try
             {
-                File1List.Items.Clear();
 
                 IEdmVault7 vault2 = null;
                 if (vault1 == null)
@@ -1588,11 +1259,11 @@ namespace LaserMarking
                 }
                 if (poCustomerPN == null)
                 {
-                    poCustomerPN = "No Part number found";
+                    poCustomerPN = "";
                 }
                 if (poDescription == null)
                 {
-                    poDescription = "No description found";
+                    poDescription = "";
                 }
 
                 PartNumAndRevBox.Text = poPartNo.ToString() +"_"+ poRevision.ToString();
@@ -1614,7 +1285,7 @@ namespace LaserMarking
                     DescLine2Box.Text = desc.Substring(DescLengthAllow, DescLengthAllow);
 
                 }
-                using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
+                using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
                 {
                     try
                     {
@@ -1644,9 +1315,10 @@ namespace LaserMarking
 
         }
 
+        // Sets label to the text in boxes :: Complete
         private void UpdateCurrentProgramBlocks(int customerId)
         {
-            
+            partNumsFliped = false;
             try { if (axMBActX2.Block(2).IsEditable) { axMBActX2.Block(2).Text = DateBox.Text; } }
             catch { axMBActX2.Block(2).Text = " "; }
             try { if (axMBActX2.Block(3).IsEditable) { axMBActX2.Block(3).Text = PartNumAndRevBox.Text; } }
@@ -1657,6 +1329,8 @@ namespace LaserMarking
             catch { axMBActX2.Block(5).Text = " "; }
             try { if (axMBActX2.Block(6).IsEditable) { axMBActX2.Block(6).Text = DescLine2Box.Text; } }
             catch { axMBActX2.Block(6).Text = " "; }
+            try { if (axMBActX2.Block(7).IsEditable) { axMBActX2.Block(7).Text = HeatBox.Text; } }
+            catch { axMBActX2.Block(7).Text = " "; }
             if (customerId != 0)
             {
                 try 
@@ -1682,57 +1356,395 @@ namespace LaserMarking
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        // Calls UpdateCurrentProgramBlocks(0) when any text for a block changes :: Complete
+        private void BlockText_TextChanged(object sender, EventArgs e)
         {
+            UpdateCurrentProgramBlocks(0);
+        }
+
+        // Flips part numbers :: Complete
+        private void FlipPartNumbersButton_Click(object sender, EventArgs e)
+        {
+            string tempPN = PartNumAndRevBox.Text;
+            string tempCustPN = CustPartNumAndRevBox.Text;
+            if (partNumsFliped) partNumsFliped = false;
+            else partNumsFliped = true;
+
+            PartNumAndRevBox.Text = tempCustPN;
+            CustPartNumAndRevBox.Text = tempPN;
+        }
+
+        // Sets cameras position (works I think) Should add ability to move from user inputs??
+        private void SetCameraPosition_Click(object sender, EventArgs e)
+        {
+            double PositionX = 1.000;
+            double PositionY = 2.000;
+            double PositionZ = 3.00;
+            bool IsAffectWorkpiecePositionAdjustment = false;
             try
             {
-                //Edit the block No. 2
-                axMBActX2.Block(2).IsMarkingEnable = true;
+                axMBActX2.Operation.StartCameraScanningMode2(ShutterStateTypes.SHUTTERSTATE_OPEN);
             }
             catch (System.Runtime.InteropServices.COMException error)
             {
                 MessageBox.Show(error.Message);
             }
-        }
-
-        private void ProgramSizeCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //ProgramMaterialCombo.SelectedIndex = -1;
-        }
-
-        private void CheckForExistingProgram(string selectedPN)
-        {
-            string partialName = "999999999999";
+        
             try
             {
-                partialName = selectedPN.Substring(0, 5);
+                axMBActX2.Operation.SetCameraPosition(PositionX, PositionY, PositionZ, IsAffectWorkpiecePositionAdjustment);
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+            try
+            {
+                axMBActX2.Operation.FinishCameraScanningMode();
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+
+        }
+
+        // Opens a generic program for material and size :: Complete
+        private void OpenGenericProgram()
+        {
+            if (ProgramMaterialCombo.SelectedIndex != -1 && ProgramSizeCombo.SelectedIndex != -1)
+            {
+                try
+                {
+                    string FilePath = @"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\" + ProgramSizeCombo.SelectedItem.ToString() + "-" + ProgramMaterialCombo.SelectedItem.ToString() + "-A.MA2";
+                    if (axMBActX2.OpenJob(FilePath))
+                    {
+                        axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
+                        axMBActX2.OpenJob(FilePath);
+                        JobTitleLabel.Text = axMBActX2.Job.Title;
+                        var block = axMBActX2.Block(8);
+                        try
+                        {
+                            // Check if IsMarkingEnable property is accessible
+                            if (block.IsMarkingEnable)
+                            {
+                                block.IsMarkingEnable = false;
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            // Handle the exception if accessing the property fails
+                            Console.WriteLine($"Error accessing IsMarkingEnable: {ex.Message}");
+                        }
+                        axMBActX2.Block(3).X = 10;
+
+                    }
+                    
+                }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message + error);
+                }
+            }
+        }
+
+        // (8xxxx) Populate with all part numbers :: Complete
+        private void AllPartNumBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                IEdmVault7 vault2 = null;
+                if (vault1 == null)
+                {
+                    vault1 = new EdmVault5();
+                }
+
+                vault2 = (IEdmVault7)vault1;
+                if (!vault1.IsLoggedIn)
+                {
+                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+                }
+                //Show the Select File dialog
+
+                DataTable dt = new DataTable();
+                dt.Columns.Add("Part_Number");
+                DataRow dr = null;
+
+                string path = $@"C:\UMIS\UMi Parts\80000\";
+
+                var folderPath = System.IO.Path.GetDirectoryName(path);
+                var folder = vault2.GetFolderFromPath(folderPath);
+                IEdmPos5 FilePos = folder.GetFirstFilePosition();
+                while (!FilePos.IsNull)
+                {
+                    IEdmFile5 file = folder.GetNextFile(FilePos);
+
+                    if (file != null && file.Name.EndsWith(".slddrw", StringComparison.OrdinalIgnoreCase))
+                    {
+                        
+                        dr = dt.NewRow();
+                        dr["Part_Number"] = Path.GetFileNameWithoutExtension(file.Name);
+                        dt.Rows.Add(dr);
+                        
+
+                    }
+                }
+                dt.DefaultView.Sort = "Part_Number" + " " + "ASC";
+                dt = dt.DefaultView.ToTable();
+
+                OrdersGridView.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        // Change image to MultiFlow :: Complete
+        private void pictureBox1_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                    axMBActX2.Block(1).IsLogoAspectRatioKeep = true;
+                    //axMBActX2.Block(1).LogoWidth = 10.250; //in mm
+                    DirectoryInfo directory = new DirectoryInfo(@"U:\Engineering\CUSTOMERLOGO\");
+                    axMBActX2.Block(1).Text = "" + directory.ToString() + "Multiflow.MHL";
+            }
+            catch { MessageBox.Show("No Image Block (1) exists or is not editable"); }
+        }
+
+        // Changes if desc2 is marked :: Complete
+        private void Desc2Box_CheckedChanged(object sender, EventArgs e)
+        {
+            try 
+            {
+                if (Desc2Box.Checked)
+                {
+                    axMBActX2.Block(6).IsMarkingEnable = true;
+                }
+                else
+                {
+                    axMBActX2.Block(6).IsMarkingEnable = false;
+                }
+            } catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No Desc2 Block (6) exists or is not editable");
+            }
+
+        }
+
+        // Changes if heat number is marked :: Complete
+        private void HeatCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (HeatCheckBox.Checked)
+                {
+                    axMBActX2.Block(7).IsMarkingEnable = true;
+                }
+                else
+                {
+                    axMBActX2.Block(7).IsMarkingEnable = false;
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No Heat Number Block (7) exists or is not editable");
+            }
+        }
+
+        // Changes QR marking & editability :: Complete
+        private void QRCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (QRCheckBox.Checked)
+                {
+                    QRCodeDataBox.ReadOnly = false;
+
+                    axMBActX2.Block(8).IsMarkingEnable = true;
+
+                    if (axMBActX2.Block(8).IsEditable)
+                    {
+                        axMBActX2.Block(8).Text = "umisolutions.ca";
+                    }
+                }
+                else
+                {
+                    QRCodeDataBox.ReadOnly = true;
+                    axMBActX2.Block(8).IsMarkingEnable = false;
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No QR Block (8) exists or is not editable");
+            }
+        }
+
+        // Change QR based on txt :: Complete
+        private void QRCodeDataBox_TextChanged(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (axMBActX2.Block(8).IsEditable)
+                {
+                    axMBActX2.Block(8).Text = QRCodeDataBox.Text;
+                }
             }
             catch
             {
-                MessageBox.Show("Something went wrong when trimming your string.");
+                axMBActX2.Block(8).Text = "umisolutions.ca";
             }
-            
+        }
 
-            DirectoryInfo hdDirectoryInWhichToSearch = new DirectoryInfo(@"U:\Engineering\LaserMarkingProfiles");
-            FileInfo[] filesInDir = hdDirectoryInWhichToSearch.GetFiles("*" + partialName + "*.*");
+        // Saves the file :: Complete
+        private void save_Click(object sender, EventArgs e)
+        {
 
-            if(filesInDir.Count() > 1)
+            string FilePath = $@"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\{PartNumAndRevBox}.MA2";
+
+            try
             {
 
-            }else if(filesInDir.Count() == 0)
-            {
+                if (System.IO.File.Exists(FilePath))
+                {
+                    System.IO.File.Delete(FilePath);
 
+                    axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
+                }
+                else
+                {
+
+                    axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
+                }
+
+
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+        }
+
+        // Opens Marker Builder plus into panel :: Complete
+        private void btnOpenMarkerBuilder_MouseClick(object sender, MouseEventArgs e)
+        {
+            // save the file (use normal save)... will guarentee file exists
+            save_Click(sender, e);
+
+            // open file in marker builder
+            string filePath = $@"U:\Engineering\LaserMarkingProfiles\{PartNumAndRevBox.Text.Trim()}.MA2";
+            string markingBuilderPath = @"C:\Program Files (x86)\KEYENCE\MarkingBuilderPlus_Ver2\MarkingBuilderPlus.exe";
+
+            try
+            {
+                if (externalProcess != null && !externalProcess.HasExited)
+                {
+                    externalProcess.Kill(); // Forcefully close the application
+                    externalProcess.Dispose(); // Release the process resources
+                    externalProcess = null; // Clear the reference
+                }
+                externalProcess = Process.Start(markingBuilderPath, filePath);
+                externalProcess.WaitForInputIdle();
+
+                while (externalProcess.MainWindowHandle == IntPtr.Zero)
+                {
+                    Thread.Sleep(100);
+                    externalProcess.Refresh();
+                }
+
+                // Set the parent of the external app window to panel1
+                SetParent(externalProcess.MainWindowHandle, this.panel1.Handle);
+
+                externalProcess.EnableRaisingEvents = true;
+
+                externalProcess.Exited += ExternalProcess_Exited;
+
+                panel1.Size = new System.Drawing.Size(1070, 800);
+                panel1.Location = new System.Drawing.Point(456, 0);
+
+                // Resize the external app window to fit the panel
+                ResizeChildWindow(externalProcess.MainWindowHandle, panel1.Width, panel1.Height);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening the application: " + ex.Message);
+            }
+        }
+
+        // Event handler for when the external process exits :: Complete
+        private void ExternalProcess_Exited(object sender, EventArgs e)
+        {
+            // This will be called when the external app closes
+            if (panel1.InvokeRequired)
+            {
+                // Use Invoke to update the UI from the non-UI thread
+                panel1.Invoke(new Action(() => ResizePanel()));
             }
             else
             {
+                ResizePanel();
+            }
+        }
 
+        // Method to resize panel1 to 0,0 :: Complete
+        private void ResizePanel()
+        {
+            panel1.Size = new System.Drawing.Size(0, 0);
+            panel1.Location = new System.Drawing.Point(0, 0); // Optionally move it off-screen
+        }
+
+        // Resizes panel for extrenal app :: Complete
+        private void ResizeChildWindow(IntPtr hWnd, int width, int height)
+        {
+            // Set the position and size of the child window
+            SetWindowPos(hWnd, IntPtr.Zero, 0, 0, width, height, SWP_NOZORDER | SWP_NOACTIVATE);
+        }
+
+        // Calls OrdersGridView_Click to load in new (saved) file :: Complete
+        private void btnRefreshTag_Click(object sender, EventArgs e)
+        {
+            OrdersGridView_Click(sender, e);
+        }
+
+        private void Get_Z_Click(object sender, EventArgs e)
+        {
+            axMBActX2.SaveControllerJob(0);
+            axMBActX2.Operation.StartZTracking(0);
+
+            double diffZ;
+            double tiltX;
+            double tiltY;
+            int stab;
+            int time;
+            bool isWithinTolerance;
+            bool result;
+            axMBActX2.Operation.GetZTrackingResult(0, out diffZ, out tiltX, out tiltY, out stab, out time, out isWithinTolerance, out result);
+            MessageBox.Show(" diffZ: " + diffZ + " tiltX: " + tiltX + " tiltY: " + tiltY + " stab: " + stab + " time: " + time + " isWithinTolerance: " + isWithinTolerance + " result: " + result);
+
+        }
+
+        private void EditingContextButton_Click(object sender, EventArgs e)
+        {
+            axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
+        }
+
+        private void ControllerContextButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                axMBActX2.Context = ContextTypes.CONTEXT_CONTROLLER;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("" + ex);
             }
 
-            OpenProgram op = new OpenProgram();
-            
-            op.OpenExistingProgramListBox.Items.AddRange(filesInDir);
-            
-            op.Show();
         }
 
         private void CameraFinderViewButton_Click(object sender, EventArgs e)
@@ -1779,11 +1791,6 @@ namespace LaserMarking
             }
         }
 
-        private void axMBActX1_EvError(object sender, EventArgs e)
-        {
-            MessageBox.Show("Error CALLED: "+e);
-        }
-
         private void ClearErrors_Btn_Click(object sender, EventArgs e)
         {
             try
@@ -1803,7 +1810,7 @@ namespace LaserMarking
             try
             {
                 Count = axMBActX2.UpdateErrorCount();
-                if (Count >0)
+                if (Count > 0)
                 {
                     for (int index = 0; index < Count; index++)
                     {
@@ -1821,256 +1828,6 @@ namespace LaserMarking
             {
                 MessageBox.Show(error.Message);
             }
-        }
-
-        private void PartNumAndRevBox_TextChanged(object sender, EventArgs e)
-        {
-            UpdateCurrentProgramBlocks(0);
-        }
-
-        private void CustPartNumAndRevBox_TextChanged(object sender, EventArgs e)
-        {
-            UpdateCurrentProgramBlocks(0);
-        }
-
-        private void DescLine1Box_TextChanged(object sender, EventArgs e)
-        {
-            UpdateCurrentProgramBlocks(0);
-        }
-
-        private void DescLine2Box_TextChanged(object sender, EventArgs e)
-        {
-            UpdateCurrentProgramBlocks(0);
-        }
-
-        private void QRCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            if (QRCheckBox.Checked)
-            {
-                QRCodeDataBox.ReadOnly = false;
-                axMBActX2.Block(8).IsMarkingEnable = true;
-                try
-                {
-                    if (axMBActX2.Block(8).IsEditable)
-                    {
-                        axMBActX2.Block(8).Text = "umisolutions.ca";// + QRCodeDataBox.Text;
-                    }
-                }
-                catch (System.Runtime.InteropServices.COMException error)
-                {
-                    MessageBox.Show(error.Message);
-                }
-            }
-            else
-            {
-                QRCodeDataBox.ReadOnly = true;
-                axMBActX2.Block(8).IsMarkingEnable = false;
-            }
-        }
-
-        private void QRCodeDataBox_TextChanged(object sender, EventArgs e)
-        {
-            
-            try { if (axMBActX2.Block(8).IsEditable) { axMBActX2.Block(8).Text = QRCodeDataBox.Text; } }
-            catch { axMBActX2.Block(8).Text = "umisolutions.ca"; }
-        }
-
-        private void FlipPartNumbersButton_Click(object sender, EventArgs e)
-        {
-            string tempPN = PartNumAndRevBox.Text;
-            string tempCustPN = CustPartNumAndRevBox.Text;
-
-            PartNumAndRevBox.Text = tempCustPN;
-            CustPartNumAndRevBox.Text = tempPN;
-
-            //80006 rev 2 
-            //80139 rev 0
-            //80140 rev 0
-        }
-
-        private void XMoveNegButton_Click(object sender, EventArgs e)
-        {
-            MoveBlock("XN", (SelectedBlockCombo.SelectedItem).ToString());
-        }
-
-        private void MoveBlock(string Direction, string Block)
-        {
-            int BlockNum = 999;
-
-
-
-
-            if (Block == "Date")
-            {
-                BlockNum = 2;
-            }else if (Block == "Logo")
-            {
-                BlockNum = 1;
-            }
-            else if (Block == "Part No.")
-            {
-                BlockNum = 3;
-            }
-            else if (Block == "Cust PN")
-            {
-                BlockNum = 4;
-            }
-            else if (Block == "Desc 1")
-            {
-                BlockNum = 5;
-            }
-            else if (Block == "Desc 2")
-            {
-                BlockNum = 6;
-            }
-
-            axMBActX2.Block(0).X = 0;
-            axMBActX2.Block(0).Y = 0;
-
-            if (Block != "" && BlockNum != 999)
-            {
-                if(Direction == "XP")
-                {
-                    try
-                    {
-                        axMBActX2.Block(BlockNum).X += 1; // Edit the block No. 2
-                    }
-                    catch (System.Runtime.InteropServices.COMException error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-                }else if (Direction == "XN")
-                {
-                    try
-                    {
-                        axMBActX2.Block(BlockNum).X -= 1; // Edit the block No. 2
-                    }
-                    catch (System.Runtime.InteropServices.COMException error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-                }
-                else if (Direction == "YP")
-                {
-                    try
-                    {
-                        axMBActX2.Block(BlockNum).Y += 1; // Edit the block No. 2
-                    }
-                    catch (System.Runtime.InteropServices.COMException error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-                }
-                else if (Direction == "YN")
-                {
-                    try
-                    {
-                        axMBActX2.Block(BlockNum).Y -= 1; // Edit the block No. 2
-                    }
-                    catch (System.Runtime.InteropServices.COMException error)
-                    {
-                        MessageBox.Show(error.Message);
-                    }
-                }
-            }
-            axMBActX2.Block(0).X = 0;
-            axMBActX2.Block(0).Y = 0;
-
-        }
-
-        private void YMoveNegButton_Click(object sender, EventArgs e)
-        {
-            MoveBlock("YN", (SelectedBlockCombo.SelectedItem).ToString());
-        }
-        private void XPositiveButton_Click(object sender, EventArgs e)
-        {
-            MoveBlock("XP", (SelectedBlockCombo.SelectedItem).ToString());
-            
-        }
-
-        private void YMovePositiveButton_Click(object sender, EventArgs e)
-        {
-            MoveBlock("YP", (SelectedBlockCombo.SelectedItem).ToString());
-            try
-            {
-                axMBActX2.Block(1).Y += 1; // Edit the block No. 2
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-        }
-
-        private void SetCameraPosition_Click(object sender, EventArgs e)
-        {
-            double PositionX = 1.000;
-            double PositionY = 2.000;
-            double PositionZ = 3.00;
-            bool IsAffectWorkpiecePositionAdjustment = false;
-            try
-            {
-                axMBActX2.Operation.StartCameraScanningMode2(ShutterStateTypes.SHUTTERSTATE_OPEN);
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-        
-
-        
-
-
-
-            try
-            {
-                axMBActX2.Operation.SetCameraPosition(PositionX, PositionY, PositionZ, IsAffectWorkpiecePositionAdjustment);
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-
-
-            try
-            {
-                axMBActX2.Operation.FinishCameraScanningMode();
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-
-
-        }
-
-        private void ProgramMaterialCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            
-        }
-
-        private void OpenGenericProgram()
-        {
-            if (ProgramMaterialCombo.SelectedIndex != -1 && ProgramSizeCombo.SelectedIndex != -1)
-            {
-                try
-                {
-                    string FilePath = @"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\" + ProgramSizeCombo.SelectedItem.ToString() + "-" + ProgramMaterialCombo.SelectedItem.ToString() + "-A.MA2";
-                    if (axMBActX2.OpenJob(FilePath))
-                    {
-                        JobTitleLabel.Text = axMBActX2.Job.Title;
-                        axMBActX2.Block(8).IsMarkingEnable = false;
-
-                    }
-                    
-                }
-                catch (System.Runtime.InteropServices.COMException error)
-                {
-                    MessageBox.Show(error.Message + error);
-                }
-            }
-            
-            
         }
 
         private void OpenControllerJob_Click(object sender, EventArgs e)
@@ -2098,398 +1855,12 @@ namespace LaserMarking
             }
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void GetLengthsBtn_Click(object sender, EventArgs e) //used to checking all SW boms!!!!!!!!!!!!!!!!!!
         {
-            try
+            using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
             {
-                IEdmVault7 vault2 = null;
-                if (vault1 == null)
-                {
-                    vault1 = new EdmVault5();
-                }
-                vault2 = (IEdmVault9)vault1;
-                if (!vault1.IsLoggedIn)
-                {
-                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
-                }
-
-                if (aFile != null)
-                {
-
-                    bomMgr = (IEdmBomMgr2)(IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
-                    EdmBomInfo[] derivedBOMs;
-                    aFile.GetDerivedBOMs(out derivedBOMs);
-                    int i = 0;
-                    int arrSize = derivedBOMs.Length;
-                    string str = "";
-                    int id;
-                    while (i < arrSize)
-                    {
-                        id = derivedBOMs[i].mlBomID;
-                        bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, id);
-                        str = "Derived BOM: " + derivedBOMs[i].mbsBomName + " " + bom.CheckOutUserID + " " + bom.CurrentState.Name + " " + bom.CurrentVersion + " " + bom.FileID + " " + bom.IsCheckedOut;
-
-                        //MessageBox.Show(str);
-                        i = i + 1;
-                    }
-                    
-
-                    bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
-                    
-
-                    EdmBomColumn[] ppoColumns = null;
-                    bomView.GetColumns(out ppoColumns);
-
-                    object[] ppoRows = null;
-                    IEdmBomCell ppoRow = default(IEdmBomCell);
-                    bomView.GetRows(out ppoRows);
-
-                    object cellItem = null;
-                    object cmop = null;
-                    string config = null;
-                    bool nnn= false;
-                    
-
-                    
-
-                    i = 0;
-                    arrSize = ppoColumns.Length;
-                    str = "";
-                    while (i < arrSize)
-                    {
-                        str = "BOM Column " + i + ": " + "\n" + "Header: " + ppoColumns[i].mbsCaption + "\n" + "Column type as defined in EdmBomColumnType: " + ppoColumns[i].meType + "\n" + "ID: " + ppoColumns[i].mlColumnID + "\n" + "Flags: " + ppoColumns[i].mlFlags + "\n" + "Variable ID: " + ppoColumns[i].mlVariableID + "\n" + "Variable type as defined in EdmVariableType: " + ppoColumns[i].mlVariableType + "\n" + "Column width: " + ppoColumns[i].mlWidth;
-                        //MessageBox.Show(str);
-                        i = i + 1;
-                    }
-
-
-
-
-                    
-                    
-                    i = 0;
-                    arrSize = ppoRows.Length;
-                    str = "";
-                    while (i < arrSize)
-                    {
-                        ppoRow = (IEdmBomCell)ppoRows[i];
-                        str = "BOM Row " + i + ": " + "\n" + "Item ID: " + ppoRow.GetItemID() + "\n" + "Path name: " + ppoRow.GetPathName() + "\n" + "Tree level: " + ppoRow.GetTreeLevel() + "\n" + " Is locked? " + ppoRow.IsLocked();
-                        //MessageBox.Show(str);
-                        i = i + 1;
-                    }
-
-                    string parts = "";
-                    foreach (IEdmBomCell rowe in ppoRows)
-                    {
-                        int abc = 0;
-                        foreach (EdmBomColumn d in ppoColumns)
-                        {
-                            
-                            
-                            if(abc<= (ppoColumns.Count() - 1))
-                            {
-                                rowe.GetVar(ppoColumns[abc].mlVariableID, ppoColumns[abc].meType, out cellItem, out cmop, out config, out nnn);
-                                if (abc == 1)
-                                {
-                                    parts += cellItem + "\n";
-                                }
-                                MessageBox.Show("Col Position: " + abc + "\n Col ml variable: " + ppoColumns[abc].mlVariableID + "\n cell item :" + cellItem + "\n Col Type for [abc] :" + ppoColumns[abc].meType);
-                                abc += 1;
-
-
-
-                            }
-
-                            
-                        }
-
-
-                    }
-
-                    foreach (IEdmBomCell rowe in ppoRows)
-                    {
-                        int abc = 1;
-                        //foreach (EdmBomColumn d in ppoColumns)
-                        //{
-                            rowe.GetVar(ppoColumns[1].mlVariableID, ppoColumns[1].meType, out cellItem, out cmop, out config, out nnn);
-
-                            if (abc == 1)
-                            {
-                                parts += cellItem + "\n";
-                            }
-                            MessageBox.Show("222222Col Position: " + abc + "\n Col ml variable: " + ppoColumns[abc].mlVariableID + "\n cell item :" + cellItem + "\n Col Type for [2] :" + ppoColumns[2].meType);
-                            abc += 1;
-                        //}
-
-
-                    }
-                    MessageBox.Show(parts);
-                    
-
-                    
-
-                }
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                MessageBox.Show("HRESULT = 0x" + ex.ErrorCode.ToString("X") + " " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                File1List.Items.Clear();
-
-                IEdmVault7 vault2 = null;
-                if (vault1 == null)
-                {
-                    vault1 = new EdmVault5();
-                }
-
-                vault2 = (IEdmVault7)vault1;
-                if (!vault1.IsLoggedIn)
-                {
-                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
-                }
-
-
-                aFile = (IEdmFile7)vault1.GetFileFromPath(@"C:\UMIS\UMi Parts\80000\81024.slddrw", out ppoRetParentFolder);
-                File1List.Items.Add(aFile.Name);
-
-
-                ////Set the initial directory in the Select File dialog
-                //OpenFileDialog1.InitialDirectory = vault1.RootFolderPath;
-
-                ////Show the Select File dialog
-                //System.Windows.Forms.DialogResult DialogResult;
-                //DialogResult = OpenFileDialog1.ShowDialog();
-
-                //if (!(DialogResult == System.Windows.Forms.DialogResult.OK))
-                //{
-                //    // do nothing
-                //}
-                //else
-                //{
-                //    foreach (string FileName in OpenFileDialog1.FileNames)
-                //    {
-                //        File1List.Items.Add(FileName);
-                //        aFile = (IEdmFile7)vault1.GetFileFromPath(FileName, out ppoRetParentFolder);
-                //        k = FileName.LastIndexOf(".");
-                //        fileExt = FileName.Substring(k + 1, (FileName.Length) - k - 1);
-                //        aPos = aFile.GetFirstFolderPosition();
-                //        aFolder = aFile.GetNextFolder(aPos);
-                //    }
-                //}
-
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                MessageBox.Show("HRESULT = 0x" + ex.ErrorCode.ToString("X") + " " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-
-            try
-            {
-                IEdmVault7 vault2 = null;
-                if (vault1 == null)
-                {
-                    vault1 = new EdmVault5();
-                }
-
-                vault2 = (IEdmVault9)vault1;
-                if (!vault1.IsLoggedIn)
-                {
-                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
-                }
-
-
-                if ((aFile != null))
-                {
-                    IEdmEnumeratorVariable10 EnumVarObj = default(IEdmEnumeratorVariable10);
-                    EnumVarObj = (IEdmEnumeratorVariable10)aFile.GetEnumeratorVariable();
-                    
-
-                    // Get configurations
-                    EdmStrLst5 cfgList = default(EdmStrLst5);
-                    cfgList = aFile.GetConfigurations();
-
-                    IEdmPos5 pos = default(IEdmPos5);
-                    pos = cfgList.GetHeadPosition();
-                    string cfgName = null;
-
-                    Dictionary<string, Dictionary<string, string>> myDictDict = new Dictionary<string, Dictionary<string, string>>();
-
-                    object[] varz = null;
-                    string[] configz = null;
-                    EdmGetVarData poRetDat = new EdmGetVarData();
-                    EnumVarObj.GetVersionVars(aFile.GetLocalVersionNo(ppoRetParentFolder.ID), ppoRetParentFolder.ID, out varz, out configz, poRetDat);
-
-                    string str = null;
-                    str = "File variable data for " + aFile.Name + "\r\n";
-                    str = str + "Version: " + poRetDat.mlVersion + "\r\n";
-                    str = str + "Latest version: " + poRetDat.mlLatestVersion + "\r\n";
-                    str = str + "Revision: " + poRetDat.mbsRevision + "\r\n";
-                    str = str + "State: " + poRetDat.mbsState + "\r\n";
-                    str = str + "Workflow: " + poRetDat.mbsWorkflow + "r\\n";
-                    str = str + "Category: " + poRetDat.mbsCategory + "\r\n";
-                    str = str + "SQL Server date format code: " + poRetDat.mlDateFmt + "\r\n";
-                    str = str + "EdmGetVarDataFlags: " + poRetDat.mlEdmGetVarDataFlags;
-
-                    //MessageBox.Show(str);
-                    foreach (IEdmVariableValue6 b in varz)
-                    {
-                        MessageBox.Show("" + b.VariableName + "  " + b.GetValue("@"));
-                    }
-
-
-
-                    while (!pos.IsNull)
-                    {
-
-                        cfgName = cfgList.GetNext(pos);
-                        
-                        object VarObj = null;
-
-                        EnumVarObj.GetVar("PartNo", cfgName, out VarObj);
-                        string VarVal = VarObj?.ToString();
-
-                        EnumVarObj.GetVar("Description", cfgName, out VarObj);
-                        string Description = VarObj?.ToString();
-
-                        EnumVarObj.GetVar("Revision", cfgName, out VarObj);
-                        string revision = VarObj?.ToString();
-
-                        //EnumVarObj.GetVar("DrawnBy", "@", out VarObj);
-                        
-                        EnumVarObj.GetVarAsText("Customer Name", "@",(ppoRetParentFolder.ID), out VarObj);
-                        string Customer = VarObj?.ToString();
-
-                        EnumVarObj.GetVar("CustomerPN", cfgName, out VarObj);
-                        string CustomerPN = VarObj?.ToString();
-
-                        Dictionary<string, string> values = new Dictionary<string, string>();
-
-                        values.Add("PartNo", VarVal);
-                        values.Add("Revision", revision);
-                        values.Add("Description", Description);
-                        MessageBox.Show("PartNo: "+ VarVal+ "\nRev: " + revision + "\nDescription: " + Description + "\nCustomer: " + Customer + "\nCustomerPN: " + CustomerPN);
-
-                    }
-
-
-
-
-                    //    // Get the selected file's data card
-                    //    aCard = (IEdmCard6)aFolder.GetCard(fileExt);
-                    //cardID = aFolder.GetCardID(fileExt);
-                    
-                    //aCard.GetSize(out plWidth, out plHeight);
-                    
-                    //str = "File: " + aFile.Name + "\r\n" + "Card ID: " + cardID + ", EdmCardType: " + aCard.CardType + ", Width: " + plWidth + ", Height: " + plHeight;
-                    //MessageBox.Show(str);
-
-                    //aPos = aCard.GetFirstControlPosition();
-                    //while (!(aPos.IsNull))
-                    //{
-                    //    aControl = (IEdmCardControl7)(IEdmCardControl6)aCard.GetNextControl(aPos);
-                    //    contType = (int)aControl.ControlType;
-                    //    try
-                    //    {
-                    //        string[] a;
-                    //        aControl.GetControlVariableList(aFile.ID, out a);
-                            
-                    //        //int i = 0;    
-                    //        foreach (string b in a)
-                    //        {
-                    //            MessageBox.Show("Look    " + aControl.Name + " " + b );
-                    //        }
-                    //    }
-                    //    catch
-                    //    {
-
-                    //    }
-
-
-                    //    bool ret = false;
-                    //    string[] variableItemsList = null;
-                    //    if (((contType == 7) | (contType == 8) | (contType == 9) | (contType == 10)))
-                    //    {
-                    //        str = "List values associated with drop-down card control: " + aControl.VariableID.ToString();
-                    //        ret = aControl.GetControlVariableList(aFile.ID, out variableItemsList);
-
-                    //        foreach (string listValue in variableItemsList)
-                    //        {
-                    //            str = str + "\r\n" + listValue;
-                    //        }
-                    //        MessageBox.Show(str);
-                    //    }
-
-
-
-                    //    // Get the edit box controls in the card
-                    //    if (contType == 4)
-                    //    {
-                    //        str = "";
-                    //        aControl.GetParentInfo(out plParentCtrlID, out plPageNo);
-                    //        aControl.GetPosition(out plX, out plY, out plWidth, out plHeight);
-                    //        varType = (int)aControl.GetValidation(out poMin, out poMax);
-
-                    //        str = "Card control: " + aControl.Name;
-                    //        str = str + "\r\n" + "Variable ID: " + aControl.VariableID + "\t\n" + "EdmCardControlType: " + contType + "\r\n" + "Is multi-line? " + aControl.IsMultiLine + "\r\n" + "Is read-only? " + aControl.IsReadOnly + "\r\n" + "Show in preview? " + aControl.ShowInPreview;
-                    //        str = str + "\r\n" + "Location on card: [" + plX + ", " + plY + "], Width: " + plWidth + ", Height: " + plHeight;
-                    //        str = str + "\r\n" + "Parent control ID (0, if none): " + plParentCtrlID;
-                    //        str = str + "\r\n" + "Tab index: " + plPageNo;
-                    //        str = str + "\r\n" + "EdmVariableType: " + varType;
-
-                    //        str = str + "\r\n" + "Updates all configurations? " + aControl.UpdatesAllConfigurations.ToString();
-
-
-
-                    //        MessageBox.Show(str);
-                    //    }
-                    //}
-                }
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                MessageBox.Show("HRESULT = 0x" + ex.ErrorCode.ToString("X") + " " + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-        
-    }
-
-        private void OrdersGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void AllPartNumBtn_Click(object sender, EventArgs e)
-        {
-            /*
-            //Populate 80000 series from sql database
-            using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
-            {
-
                 try
                 {
-                    
                     cn.Open();  // Open connection using the SQL connection string above
                     SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
                     cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
@@ -2504,94 +1875,29 @@ namespace LaserMarking
                     //" where Part_Number like '80%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
 
                     "  SELECT TOP (10000) [PartNo] as Part_Number,c.Name as Customer,[CustomerPN] ,[CustomerRev],[Description],[TubeQty]             " +
-                    " FROM TubeAssemblies ta                                                                                                         " +
-                    "left join Customers c on c.id = Customer_id                                                                                      " +
-                   " where PartNo like '8%'                                             " +
-                    " order by PartNo desc                                                                                                            ";
-                    DataTable dt = new DataTable();                                                                      
+                    " FROM TubeAssemblies ta                                                                             " +
+                    "left join Customers c on c.id = Customer_id                                                          " +
+                    " where PartNo like '8%'                                             " +
+                    " order by PartNo desc                                                                                ";
+                    DataTable dt = new DataTable();
                     dt.Load(cmd2.ExecuteReader());
 
                     OrdersGridView.DataSource = dt;
-                    
-                }
-                catch { }
-            }
-            */
-            //Populate 80000 from pdm
-            try
-            { 
-                File1List.Items.Clear();
 
-                IEdmVault7 vault2 = null;
-                if (vault1 == null)
+
+                }
+                catch (Exception ex)
                 {
-                    vault1 = new EdmVault5();
+                    MessageBox.Show("Error getting open orders" + ex);
                 }
-
-                vault2 = (IEdmVault7)vault1;
-                if (!vault1.IsLoggedIn)
-                {
-                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
-                }
-
-                //Show the Select File dialog
-
-                DataTable dt = new DataTable();
-                dt.Columns.Add("Part_Number");
-                DataRow dr = null;
-
-                string path = $@"C:\UMIS\UMi Parts\80000\";
-
-                var folderPath = System.IO.Path.GetDirectoryName(path);
-                var folder = vault2.GetFolderFromPath(folderPath);
-                IEdmPos5 FilePos = folder.GetFirstFilePosition();
-                while (!FilePos.IsNull)
-                {
-                    IEdmFile5 file = folder.GetNextFile(FilePos);
-
-                    if (file != null && file.Name.EndsWith(".slddrw", StringComparison.OrdinalIgnoreCase))
-                    {
-                        
-                        dr = dt.NewRow();
-                        dr["Part_Number"] = Path.GetFileNameWithoutExtension(file.Name);
-                        dt.Rows.Add(dr);
-                        
-
-                    }
-                }
-                dt.DefaultView.Sort = "Part_Number" + " " + "ASC";
-                dt = dt.DefaultView.ToTable();
-
-                //DirectoryInfo di = new DirectoryInfo(path);
-                //Queue<FileInfo> unvisited = new Queue<FileInfo>();
-
-                //foreach (var fi in di.EnumerateFiles("*.slddrw"))
-                //{
-                //    if (fi.Name != null && fi != null)
-                //    {
-                //        unvisited.Enqueue(fi);
-                //    }
-                //}
-
-                //while (unvisited.Count > 0)
-                //{
-                //    var filed = unvisited.Dequeue();
-                //    dr = dt.NewRow();
-                //    dr["Part_Number"] = Path.GetFileNameWithoutExtension(filed.Name);
-                //    dt.Rows.Add(dr);
-                //}
-                OrdersGridView.DataSource = dt;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
+            runlengthCheck();
         }
 
+        // Called from GetLengthsBtn_Click
         private void runlengthCheck() //used to checking all SW boms!!!!!!!!!!!!!!!!!!
         {
-            
+
             string SelectedPN = "";
             string SelectedRev = "";
             string SelectedCustomerPN = "";
@@ -2600,7 +1906,7 @@ namespace LaserMarking
             string mtl;
 
             string printout = "";
-            foreach(DataGridViewRow rowwwww in OrdersGridView.Rows)
+            foreach (DataGridViewRow rowwwww in OrdersGridView.Rows)
             {
                 SelectedPN = rowwwww.Cells["Part_Number"].Value.ToString();
                 SelectedCustomerPN = rowwwww.Cells["Customer"].Value.ToString();
@@ -2614,14 +1920,14 @@ namespace LaserMarking
 
 
                 GetTubeLengthFromSWDrawing(PNSub, out len, out partnum, out mtl);
-                printout += PNSub + "\t" + len +"\n";
+                printout += PNSub + "\t" + len + "\n";
                 Debug.WriteLine(PNSub + "\t" + len + "\n");
             }
 
             MessageBox.Show("" + printout);
 
-            
-            
+
+
         }
 
         private void GetTubeLengthFromSWDrawing(string pNSub, out double length, out string partNumber, out string mtl)//used to checking all SW boms!!!!!!!!!!!!!!!!!!
@@ -2632,7 +1938,6 @@ namespace LaserMarking
             //GetFileFromSearch*******************
             try
             {
-                File1List.Items.Clear();
 
                 IEdmVault7 vault2 = null;
                 if (vault1 == null)
@@ -2648,15 +1953,6 @@ namespace LaserMarking
 
 
                 aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{pNSub}.slddrw", out ppoRetParentFolder);
-                if (aFile != null)
-                {
-                    File1List.Items.Add(aFile.Name);
-                }
-                else
-                {
-                    //MessageBox.Show("File not found in 80,000 folder.");
-
-                }
 
 
 
@@ -2689,7 +1985,6 @@ namespace LaserMarking
 
                     try
                     {
-                        bomMgr = (IEdmBomMgr2)(IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
                         EdmBomInfo[] derivedBOMs;
 
                         aFile.GetDerivedBOMs(out derivedBOMs);
@@ -2787,93 +2082,6 @@ namespace LaserMarking
 
         }
 
-        private void GetLengthsBtn_Click(object sender, EventArgs e) //used to checking all SW boms!!!!!!!!!!!!!!!!!!
-        {
-            using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
-            {
-                try
-                {
-                    cn.Open();  // Open connection using the SQL connection string above
-                    SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
-                    cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
-
-                    cmd2.Parameters.AddWithValue("@Search", "%%");
-
-                    cmd2.CommandText = "" +
-
-                    //" DECLARE @temp TABLE (SO_Number VARCHAR(255),Order_Date VARCHAR(255),Promise_Date VARCHAR(255),Customer VARCHAR(255),Part_Number VARCHAR(255),Open_Qty VARCHAR(255),Price VARCHAR(255),Open_Amount VARCHAR(255))    " +
-                    //" INSERT @temp EXEC CheckOpenOrders                                                                                                                                                                                  " +
-                    //" SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
-                    //" where Part_Number like '80%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
-
-                    "  SELECT TOP (10000) [PartNo] as Part_Number,c.Name as Customer,[CustomerPN] ,[CustomerRev],[Description],[TubeQty]             " +
-                    " FROM TubeAssemblies ta                                                                             " +
-                    "left join Customers c on c.id = Customer_id                                                          " +
-                    " where PartNo like '8%'                                             " +
-                    " order by PartNo desc                                                                                ";
-                    DataTable dt = new DataTable();
-                    dt.Load(cmd2.ExecuteReader());
-
-                    OrdersGridView.DataSource = dt;
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error getting open orders" + ex);
-                }
-            }
-            runlengthCheck();
-        }
-
-        private void pictureBox1_DoubleClick(object sender, EventArgs e)
-        {
-            try
-            {
-
-                if (axMBActX2.Block(1).IsEditable)
-                {
-
-                    axMBActX2.Block(1).IsLogoAspectRatioKeep = true;
-                    //axMBActX2.Block(1).LogoWidth = 10.250; //in mm
-                    DirectoryInfo directory = new DirectoryInfo(@"U:\Engineering\CUSTOMERLOGO\");
-                    axMBActX2.Block(1).Text = "" + directory.ToString() + "Multiflow.MHL";
-
-                }
-
-            }
-            catch { axMBActX2.Block(1).Text = " "; }
-        }
-
-        private void save_Click(object sender, EventArgs e)
-        {
-          
-            string FilePath = $@"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\{PartNumAndRevBox}.MA2";
-           
-               
-            try
-            {
-                
-                if (System.IO.File.Exists(FilePath))
-                {
-                    System.IO.File.Delete(FilePath);
-
-                    axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
-                }
-                else
-                {
-
-                    axMBActX2.SaveJob($@"U:\Engineering\LaserMarkingProfiles\" + PartNumAndRevBox.Text + ".MA2");
-                }
-     
-                
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-            
-        }
     }
 }
 
