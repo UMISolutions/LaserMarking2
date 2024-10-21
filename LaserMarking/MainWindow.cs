@@ -1513,7 +1513,7 @@ namespace LaserMarking
                     DirectoryInfo directory = new DirectoryInfo(@"U:\Engineering\CUSTOMERLOGO\");
                     axMBActX2.Block(1).Text = "" + directory.ToString() + "Multiflow.MHL";
             }
-            catch { MessageBox.Show("No Image Block (2) exists or is not editable"); }
+            catch { MessageBox.Show("No Image Block (1) exists or is not editable"); }
         }
 
         // Changes if desc2 is marked :: Complete
