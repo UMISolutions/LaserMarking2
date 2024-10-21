@@ -86,6 +86,7 @@ namespace LaserMarking
             this.label9 = new System.Windows.Forms.Label();
             this.HeatBox = new System.Windows.Forms.TextBox();
             this.HeatCheckBox = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,13 +94,11 @@ namespace LaserMarking
             // 
             // axMBActX2
             // 
-            this.axMBActX2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.axMBActX2.Enabled = true;
-            this.axMBActX2.Location = new System.Drawing.Point(446, 41);
+            this.axMBActX2.Location = new System.Drawing.Point(456, 12);
             this.axMBActX2.Name = "axMBActX2";
             this.axMBActX2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMBActX2.OcxState")));
-            this.axMBActX2.Size = new System.Drawing.Size(823, 618);
+            this.axMBActX2.Size = new System.Drawing.Size(775, 775);
             this.axMBActX2.TabIndex = 0;
             this.axMBActX2.UseWaitCursor = true;
             this.axMBActX2.EvMarkingEnd += new AxMBPLib2._DMBActXEvents_EvMarkingEndEventHandler(this.axMBActX1_EvMarkingEnd);
@@ -119,9 +118,9 @@ namespace LaserMarking
             // 
             // Get_Z
             // 
-            this.Get_Z.Location = new System.Drawing.Point(272, 731);
+            this.Get_Z.Location = new System.Drawing.Point(1237, 625);
             this.Get_Z.Name = "Get_Z";
-            this.Get_Z.Size = new System.Drawing.Size(75, 23);
+            this.Get_Z.Size = new System.Drawing.Size(52, 23);
             this.Get_Z.TabIndex = 2;
             this.Get_Z.Text = "Get Z";
             this.Get_Z.UseVisualStyleBackColor = true;
@@ -130,9 +129,9 @@ namespace LaserMarking
             // Mark_Part
             // 
             this.Mark_Part.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Mark_Part.Location = new System.Drawing.Point(1007, 806);
+            this.Mark_Part.Location = new System.Drawing.Point(1244, 357);
             this.Mark_Part.Name = "Mark_Part";
-            this.Mark_Part.Size = new System.Drawing.Size(262, 52);
+            this.Mark_Part.Size = new System.Drawing.Size(235, 52);
             this.Mark_Part.TabIndex = 4;
             this.Mark_Part.Text = "Mark Part";
             this.Mark_Part.UseVisualStyleBackColor = false;
@@ -140,9 +139,9 @@ namespace LaserMarking
             // 
             // markerConnectButton
             // 
-            this.markerConnectButton.Location = new System.Drawing.Point(11, 760);
+            this.markerConnectButton.Location = new System.Drawing.Point(1237, 596);
             this.markerConnectButton.Name = "markerConnectButton";
-            this.markerConnectButton.Size = new System.Drawing.Size(139, 23);
+            this.markerConnectButton.Size = new System.Drawing.Size(121, 23);
             this.markerConnectButton.TabIndex = 5;
             this.markerConnectButton.Text = "Connect USB Marker";
             this.markerConnectButton.UseVisualStyleBackColor = true;
@@ -150,9 +149,9 @@ namespace LaserMarking
             // 
             // MarkerDisconnectButton
             // 
-            this.MarkerDisconnectButton.Location = new System.Drawing.Point(11, 731);
+            this.MarkerDisconnectButton.Location = new System.Drawing.Point(1237, 567);
             this.MarkerDisconnectButton.Name = "MarkerDisconnectButton";
-            this.MarkerDisconnectButton.Size = new System.Drawing.Size(139, 23);
+            this.MarkerDisconnectButton.Size = new System.Drawing.Size(130, 23);
             this.MarkerDisconnectButton.TabIndex = 6;
             this.MarkerDisconnectButton.Text = "Disconnect USB Marker";
             this.MarkerDisconnectButton.UseVisualStyleBackColor = true;
@@ -170,9 +169,9 @@ namespace LaserMarking
             // 
             // EditingContextButton
             // 
-            this.EditingContextButton.Location = new System.Drawing.Point(156, 731);
+            this.EditingContextButton.Location = new System.Drawing.Point(1373, 567);
             this.EditingContextButton.Name = "EditingContextButton";
-            this.EditingContextButton.Size = new System.Drawing.Size(110, 23);
+            this.EditingContextButton.Size = new System.Drawing.Size(88, 23);
             this.EditingContextButton.TabIndex = 10;
             this.EditingContextButton.Text = "Editing Context";
             this.EditingContextButton.UseVisualStyleBackColor = true;
@@ -180,9 +179,9 @@ namespace LaserMarking
             // 
             // ControllerContextButton
             // 
-            this.ControllerContextButton.Location = new System.Drawing.Point(156, 760);
+            this.ControllerContextButton.Location = new System.Drawing.Point(1364, 596);
             this.ControllerContextButton.Name = "ControllerContextButton";
-            this.ControllerContextButton.Size = new System.Drawing.Size(110, 23);
+            this.ControllerContextButton.Size = new System.Drawing.Size(101, 23);
             this.ControllerContextButton.TabIndex = 11;
             this.ControllerContextButton.Text = "Controller Context";
             this.ControllerContextButton.UseVisualStyleBackColor = true;
@@ -190,7 +189,7 @@ namespace LaserMarking
             // 
             // LightOnButton
             // 
-            this.LightOnButton.Location = new System.Drawing.Point(640, 716);
+            this.LightOnButton.Location = new System.Drawing.Point(1266, 283);
             this.LightOnButton.Name = "LightOnButton";
             this.LightOnButton.Size = new System.Drawing.Size(92, 53);
             this.LightOnButton.TabIndex = 12;
@@ -200,7 +199,7 @@ namespace LaserMarking
             // 
             // LightOffButton
             // 
-            this.LightOffButton.Location = new System.Drawing.Point(640, 775);
+            this.LightOffButton.Location = new System.Drawing.Point(1361, 282);
             this.LightOffButton.Name = "LightOffButton";
             this.LightOffButton.Size = new System.Drawing.Size(92, 54);
             this.LightOffButton.TabIndex = 13;
@@ -211,7 +210,7 @@ namespace LaserMarking
             // JobTitleLabel
             // 
             this.JobTitleLabel.AutoSize = true;
-            this.JobTitleLabel.Location = new System.Drawing.Point(683, 17);
+            this.JobTitleLabel.Location = new System.Drawing.Point(299, 755);
             this.JobTitleLabel.Name = "JobTitleLabel";
             this.JobTitleLabel.Size = new System.Drawing.Size(69, 13);
             this.JobTitleLabel.TabIndex = 15;
@@ -255,7 +254,7 @@ namespace LaserMarking
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(606, 15);
+            this.label3.Location = new System.Drawing.Point(222, 755);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 24;
@@ -274,7 +273,7 @@ namespace LaserMarking
             // CameraFinderViewButton
             // 
             this.CameraFinderViewButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CameraFinderViewButton.Location = new System.Drawing.Point(738, 716);
+            this.CameraFinderViewButton.Location = new System.Drawing.Point(1286, 228);
             this.CameraFinderViewButton.Name = "CameraFinderViewButton";
             this.CameraFinderViewButton.Size = new System.Drawing.Size(136, 49);
             this.CameraFinderViewButton.TabIndex = 26;
@@ -284,9 +283,9 @@ namespace LaserMarking
             // 
             // ShowFileListButton
             // 
-            this.ShowFileListButton.Location = new System.Drawing.Point(11, 789);
+            this.ShowFileListButton.Location = new System.Drawing.Point(1370, 654);
             this.ShowFileListButton.Name = "ShowFileListButton";
-            this.ShowFileListButton.Size = new System.Drawing.Size(100, 23);
+            this.ShowFileListButton.Size = new System.Drawing.Size(90, 23);
             this.ShowFileListButton.TabIndex = 27;
             this.ShowFileListButton.Text = "Show File List";
             this.ShowFileListButton.UseVisualStyleBackColor = true;
@@ -294,9 +293,9 @@ namespace LaserMarking
             // 
             // Errors_Btn
             // 
-            this.Errors_Btn.Location = new System.Drawing.Point(117, 789);
+            this.Errors_Btn.Location = new System.Drawing.Point(1319, 654);
             this.Errors_Btn.Name = "Errors_Btn";
-            this.Errors_Btn.Size = new System.Drawing.Size(75, 23);
+            this.Errors_Btn.Size = new System.Drawing.Size(45, 23);
             this.Errors_Btn.TabIndex = 28;
             this.Errors_Btn.Text = "Errors";
             this.Errors_Btn.UseVisualStyleBackColor = true;
@@ -304,9 +303,9 @@ namespace LaserMarking
             // 
             // ClearErrors_Btn
             // 
-            this.ClearErrors_Btn.Location = new System.Drawing.Point(198, 789);
+            this.ClearErrors_Btn.Location = new System.Drawing.Point(1237, 654);
             this.ClearErrors_Btn.Name = "ClearErrors_Btn";
-            this.ClearErrors_Btn.Size = new System.Drawing.Size(111, 23);
+            this.ClearErrors_Btn.Size = new System.Drawing.Size(76, 23);
             this.ClearErrors_Btn.TabIndex = 29;
             this.ClearErrors_Btn.Text = "Clear Errors";
             this.ClearErrors_Btn.UseVisualStyleBackColor = true;
@@ -315,7 +314,7 @@ namespace LaserMarking
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(14, 457);
+            this.pictureBox1.Location = new System.Drawing.Point(156, 458);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -366,7 +365,7 @@ namespace LaserMarking
             // QRCheckBox
             // 
             this.QRCheckBox.AutoSize = true;
-            this.QRCheckBox.Location = new System.Drawing.Point(151, 459);
+            this.QRCheckBox.Location = new System.Drawing.Point(178, 663);
             this.QRCheckBox.Name = "QRCheckBox";
             this.QRCheckBox.Size = new System.Drawing.Size(115, 17);
             this.QRCheckBox.TabIndex = 37;
@@ -376,7 +375,7 @@ namespace LaserMarking
             // 
             // QRCodeDataBox
             // 
-            this.QRCodeDataBox.Location = new System.Drawing.Point(134, 479);
+            this.QRCodeDataBox.Location = new System.Drawing.Point(299, 661);
             this.QRCodeDataBox.Name = "QRCodeDataBox";
             this.QRCodeDataBox.ReadOnly = true;
             this.QRCodeDataBox.Size = new System.Drawing.Size(132, 20);
@@ -395,9 +394,9 @@ namespace LaserMarking
             // 
             // SetCameraPosition
             // 
-            this.SetCameraPosition.Location = new System.Drawing.Point(318, 821);
+            this.SetCameraPosition.Location = new System.Drawing.Point(1237, 683);
             this.SetCameraPosition.Name = "SetCameraPosition";
-            this.SetCameraPosition.Size = new System.Drawing.Size(75, 23);
+            this.SetCameraPosition.Size = new System.Drawing.Size(88, 23);
             this.SetCameraPosition.TabIndex = 43;
             this.SetCameraPosition.Text = "CameraPosition";
             this.SetCameraPosition.UseVisualStyleBackColor = true;
@@ -405,9 +404,9 @@ namespace LaserMarking
             // 
             // OpenControllerJob
             // 
-            this.OpenControllerJob.Location = new System.Drawing.Point(74, 821);
+            this.OpenControllerJob.Location = new System.Drawing.Point(1295, 625);
             this.OpenControllerJob.Name = "OpenControllerJob";
-            this.OpenControllerJob.Size = new System.Drawing.Size(152, 23);
+            this.OpenControllerJob.Size = new System.Drawing.Size(101, 23);
             this.OpenControllerJob.TabIndex = 44;
             this.OpenControllerJob.Text = "OPN CNTRL JOB";
             this.OpenControllerJob.UseVisualStyleBackColor = true;
@@ -421,7 +420,7 @@ namespace LaserMarking
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(446, 16);
+            this.label5.Location = new System.Drawing.Point(42, 755);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 49;
@@ -430,7 +429,7 @@ namespace LaserMarking
             // SelectedMaterialPN
             // 
             this.SelectedMaterialPN.AutoSize = true;
-            this.SelectedMaterialPN.Location = new System.Drawing.Point(500, 18);
+            this.SelectedMaterialPN.Location = new System.Drawing.Point(96, 755);
             this.SelectedMaterialPN.Name = "SelectedMaterialPN";
             this.SelectedMaterialPN.Size = new System.Drawing.Size(81, 13);
             this.SelectedMaterialPN.TabIndex = 50;
@@ -458,20 +457,19 @@ namespace LaserMarking
             // 
             // GetLengthsBtn
             // 
-            this.GetLengthsBtn.Location = new System.Drawing.Point(856, 8);
+            this.GetLengthsBtn.Location = new System.Drawing.Point(1402, 625);
             this.GetLengthsBtn.Name = "GetLengthsBtn";
-            this.GetLengthsBtn.Size = new System.Drawing.Size(75, 23);
+            this.GetLengthsBtn.Size = new System.Drawing.Size(77, 23);
             this.GetLengthsBtn.TabIndex = 54;
             this.GetLengthsBtn.Text = "GetTubeLengths";
             this.GetLengthsBtn.UseVisualStyleBackColor = true;
-            this.GetLengthsBtn.Visible = false;
             this.GetLengthsBtn.Click += new System.EventHandler(this.GetLengthsBtn_Click);
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(311, 657);
+            this.save.Location = new System.Drawing.Point(14, 455);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(120, 47);
+            this.save.Size = new System.Drawing.Size(136, 57);
             this.save.TabIndex = 55;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
@@ -490,9 +488,9 @@ namespace LaserMarking
             // 
             // btnOpenMarkerBuilder
             // 
-            this.btnOpenMarkerBuilder.Location = new System.Drawing.Point(20, 657);
+            this.btnOpenMarkerBuilder.Location = new System.Drawing.Point(14, 688);
             this.btnOpenMarkerBuilder.Name = "btnOpenMarkerBuilder";
-            this.btnOpenMarkerBuilder.Size = new System.Drawing.Size(151, 47);
+            this.btnOpenMarkerBuilder.Size = new System.Drawing.Size(204, 60);
             this.btnOpenMarkerBuilder.TabIndex = 59;
             this.btnOpenMarkerBuilder.Text = "Open In Marker Builder";
             this.btnOpenMarkerBuilder.UseVisualStyleBackColor = true;
@@ -500,9 +498,9 @@ namespace LaserMarking
             // 
             // btnRefreshTag
             // 
-            this.btnRefreshTag.Location = new System.Drawing.Point(177, 657);
+            this.btnRefreshTag.Location = new System.Drawing.Point(224, 688);
             this.btnRefreshTag.Name = "btnRefreshTag";
-            this.btnRefreshTag.Size = new System.Drawing.Size(128, 47);
+            this.btnRefreshTag.Size = new System.Drawing.Size(207, 60);
             this.btnRefreshTag.TabIndex = 60;
             this.btnRefreshTag.Text = "Reload (After Saving in Marker Builder)";
             this.btnRefreshTag.UseVisualStyleBackColor = true;
@@ -511,7 +509,7 @@ namespace LaserMarking
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(198, 511);
+            this.label6.Location = new System.Drawing.Point(196, 515);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 61;
@@ -563,11 +561,19 @@ namespace LaserMarking
             this.HeatCheckBox.UseVisualStyleBackColor = true;
             this.HeatCheckBox.CheckedChanged += new System.EventHandler(this.HeatCheckBox_CheckedChanged);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(1428, 8);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(25, 27);
+            this.panel1.TabIndex = 67;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1465, 870);
+            this.ClientSize = new System.Drawing.Size(1509, 793);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.HeatCheckBox);
             this.Controls.Add(this.HeatBox);
             this.Controls.Add(this.label9);
@@ -677,6 +683,7 @@ namespace LaserMarking
         private Label label9;
         private TextBox HeatBox;
         private CheckBox HeatCheckBox;
+        private Panel panel1;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form

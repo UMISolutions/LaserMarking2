@@ -17,6 +17,7 @@ using System.Diagnostics;
 using static System.Net.WebRequestMethods;
 using System.CodeDom;
 using AxMBPActXLib;
+using System.Threading;
 
 namespace LaserMarking
 {
@@ -39,6 +40,17 @@ namespace LaserMarking
         bool GenericProgram = true;
         bool isConnected = false;
         bool partNumsFliped = false;
+
+        private Process externalProcess;
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        static extern IntPtr SetParent(IntPtr hWndChild, IntPtr hWndNewParent);
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        [return: System.Runtime.InteropServices.MarshalAs(System.Runtime.InteropServices.UnmanagedType.Bool)]
+        static extern bool SetWindowPos(IntPtr hWnd, IntPtr hWndInsertAfter, int X, int Y, int cx, int cy, uint uFlags);
+
+        private const int SWP_NOZORDER = 0x0004;
+        private const int SWP_NOACTIVATE = 0x0010;
 
         public MainWindow()
         {
@@ -1619,7 +1631,7 @@ namespace LaserMarking
 
         }
 
-        // NEED TO MAKE THIS SHOW IN PANEL LIKE ON EXTERNAL APP TEST
+        // Opens Marker Builder plus into panel :: Complete
         private void btnOpenMarkerBuilder_MouseClick(object sender, MouseEventArgs e)
         {
             // save the file (use normal save)... will guarentee file exists
@@ -1627,18 +1639,65 @@ namespace LaserMarking
 
             // open file in marker builder
             string filePath = $@"U:\Engineering\LaserMarkingProfiles\{PartNumAndRevBox.Text.Trim()}.MA2";
+            string markingBuilderPath = @"C:\Program Files (x86)\KEYENCE\MarkingBuilderPlus_Ver2\MarkingBuilderPlus.exe";
 
             try
             {
-                string markingBuilderPath = @"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\KEYENCE LASER MARKER\Marking Builder Plus Ver.2.lnk"; // replace with path for computer
+                externalProcess = Process.Start(markingBuilderPath, filePath);
+                externalProcess.WaitForInputIdle();
 
-                // Start the process with the file as an argument
-                Process.Start(markingBuilderPath, filePath);
+                while (externalProcess.MainWindowHandle == IntPtr.Zero)
+                {
+                    Thread.Sleep(100);
+                    externalProcess.Refresh();
+                }
+
+                // Set the parent of the external app window to panel1
+                SetParent(externalProcess.MainWindowHandle, this.panel1.Handle);
+
+                externalProcess.EnableRaisingEvents = true;
+
+                externalProcess.Exited += ExternalProcess_Exited;
+
+                panel1.Size = new System.Drawing.Size(1070, 800);
+                panel1.Location = new System.Drawing.Point(456, 0);
+
+                // Resize the external app window to fit the panel
+                ResizeChildWindow(externalProcess.MainWindowHandle, panel1.Width, panel1.Height);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error opening the application: " + ex.Message);
             }
+        }
+
+        // Event handler for when the external process exits :: Complete
+        private void ExternalProcess_Exited(object sender, EventArgs e)
+        {
+            // This will be called when the external app closes
+            if (panel1.InvokeRequired)
+            {
+                // Use Invoke to update the UI from the non-UI thread
+                panel1.Invoke(new Action(() => ResizePanel()));
+            }
+            else
+            {
+                ResizePanel();
+            }
+        }
+
+        // Method to resize panel1 to 0,0 :: Complete
+        private void ResizePanel()
+        {
+            panel1.Size = new System.Drawing.Size(0, 0);
+            panel1.Location = new System.Drawing.Point(0, 0); // Optionally move it off-screen
+        }
+
+        // Resizes panel for extrenal app :: Complete
+        private void ResizeChildWindow(IntPtr hWnd, int width, int height)
+        {
+            // Set the position and size of the child window
+            SetWindowPos(hWnd, IntPtr.Zero, 0, 0, width, height, SWP_NOZORDER | SWP_NOACTIVATE);
         }
 
         // Calls OrdersGridView_Click to load in new (saved) file :: Complete
