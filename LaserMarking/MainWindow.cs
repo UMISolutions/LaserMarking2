@@ -1189,7 +1189,7 @@ namespace LaserMarking
             }
         }
 
-        // 
+        // Fills details (text blocks) in for the label :: Complete
         private void FillTubeDetails(string TubePartNumber, string OrderRev)
         {
             try
@@ -1306,7 +1306,7 @@ namespace LaserMarking
         // Sets label to the text in boxes :: Complete
         private void UpdateCurrentProgramBlocks(int customerId)
         {
-            
+            partNumsFliped = false;
             try { if (axMBActX2.Block(2).IsEditable) { axMBActX2.Block(2).Text = DateBox.Text; } }
             catch { axMBActX2.Block(2).Text = " "; }
             try { if (axMBActX2.Block(3).IsEditable) { axMBActX2.Block(3).Text = PartNumAndRevBox.Text; } }
@@ -1342,89 +1342,6 @@ namespace LaserMarking
             }
             
 
-        }
-
-        private void CameraFinderViewButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (axMBActX2.Operation.IsCameraFinderView == true)
-                {
-                    axMBActX2.Operation.IsCameraFinderView = false;
-
-                }
-                else
-                {
-                    axMBActX2.Operation.IsCameraFinderView = true;
-
-
-                }
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-
-        }
-
-        private void ShowFileListButton_Click(object sender, EventArgs e)
-        {
-            int Count;
-            string List = "";
-            try
-            {
-                Count = axMBActX2.UpdateControllerFileCount(MBPLib2.ControllerFileTypes.CONTROLLERFILE_JOB);
-                for (int index = 0; index < Count; index++)
-                {
-                    List = List + axMBActX2.ControllerFile(index).JobNo + ":" + axMBActX2.ControllerFile(index).FileName + "\n";
-                }
-                MessageBox.Show("controller Job file list is below...\n" + List);
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-
-
-
-            }
-        }
-
-        private void ClearErrors_Btn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                axMBActX2.Operation.ClearError();
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-        }
-
-        private void Errors_Btn_Click(object sender, EventArgs e)
-        {
-            int Count;
-            string List = "";
-            try
-            {
-                Count = axMBActX2.UpdateErrorCount();
-                if (Count >0)
-                {
-                    for (int index = 0; index < Count; index++)
-                    {
-                        List = List + axMBActX2.Error(index).ErrorCode + ":" + axMBActX2.Error(index).ErrorCaption + "\n";
-                    }
-                    MessageBox.Show("Occurring error list is below...\n" + List);
-                }
-                else
-                {
-                    MessageBox.Show("No Errors.");
-                }
-
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
         }
 
         // Calls UpdateCurrentProgramBlocks(0) when any text for a block changes :: Complete
@@ -1482,6 +1399,7 @@ namespace LaserMarking
 
         }
 
+        // Opens a generic program for material and size :: Complete
         private void OpenGenericProgram()
         {
             if (ProgramMaterialCombo.SelectedIndex != -1 && ProgramSizeCombo.SelectedIndex != -1)
@@ -1518,76 +1436,13 @@ namespace LaserMarking
                     MessageBox.Show(error.Message + error);
                 }
             }
-            
-            
         }
 
-        private void OpenControllerJob_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (axMBActX2.SendControllerJob
-                (3, ""))
-                {
-                    MessageBox.Show("Sent ");
-                }
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-
-            try
-            {
-                axMBActX2.OpenControllerJob(3);
-            }
-            catch (System.Runtime.InteropServices.COMException error)
-            {
-                MessageBox.Show(error.Message);
-            }
-        }
-
+        // (8xxxx) Populate with all part numbers :: Complete
         private void AllPartNumBtn_Click(object sender, EventArgs e)
         {
-            /*
-            //Populate 80000 series from sql database
-            using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
-            {
-
-                try
-                {
-                    
-                    cn.Open();  // Open connection using the SQL connection string above
-                    SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
-                    cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
-
-                    cmd2.Parameters.AddWithValue("@Search", "%%");
-
-                    cmd2.CommandText = "" +
-
-                    //" DECLARE @temp TABLE (SO_Number VARCHAR(255),Order_Date VARCHAR(255),Promise_Date VARCHAR(255),Customer VARCHAR(255),Part_Number VARCHAR(255),Open_Qty VARCHAR(255),Price VARCHAR(255),Open_Amount VARCHAR(255))    " +
-                    //" INSERT @temp EXEC CheckOpenOrders                                                                                                                                                                                  " +
-                    //" SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
-                    //" where Part_Number like '80%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
-
-                    "  SELECT TOP (10000) [PartNo] as Part_Number,c.Name as Customer,[CustomerPN] ,[CustomerRev],[Description],[TubeQty]             " +
-                    " FROM TubeAssemblies ta                                                                                                         " +
-                    "left join Customers c on c.id = Customer_id                                                                                      " +
-                   " where PartNo like '8%'                                             " +
-                    " order by PartNo desc                                                                                                            ";
-                    DataTable dt = new DataTable();                                                                      
-                    dt.Load(cmd2.ExecuteReader());
-
-                    OrdersGridView.DataSource = dt;
-                    
-                }
-                catch { }
-            }
-            */
-            //Populate 80000 from pdm
             try
             {
-
                 IEdmVault7 vault2 = null;
                 if (vault1 == null)
                 {
@@ -1599,7 +1454,6 @@ namespace LaserMarking
                 {
                     vault1.LoginAuto("UMIS", this.Handle.ToInt32());
                 }
-
                 //Show the Select File dialog
 
                 DataTable dt = new DataTable();
@@ -1628,24 +1482,6 @@ namespace LaserMarking
                 dt.DefaultView.Sort = "Part_Number" + " " + "ASC";
                 dt = dt.DefaultView.ToTable();
 
-                //DirectoryInfo di = new DirectoryInfo(path);
-                //Queue<FileInfo> unvisited = new Queue<FileInfo>();
-
-                //foreach (var fi in di.EnumerateFiles("*.slddrw"))
-                //{
-                //    if (fi.Name != null && fi != null)
-                //    {
-                //        unvisited.Enqueue(fi);
-                //    }
-                //}
-
-                //while (unvisited.Count > 0)
-                //{
-                //    var filed = unvisited.Dequeue();
-                //    dr = dt.NewRow();
-                //    dr["Part_Number"] = Path.GetFileNameWithoutExtension(filed.Name);
-                //    dt.Rows.Add(dr);
-                //}
                 OrdersGridView.DataSource = dt;
             }
             catch (Exception ex)
@@ -1653,232 +1489,6 @@ namespace LaserMarking
                 MessageBox.Show(ex.Message);
             }
 
-        }
-
-        private void runlengthCheck() //used to checking all SW boms!!!!!!!!!!!!!!!!!!
-        {
-            
-            string SelectedPN = "";
-            string SelectedRev = "";
-            string SelectedCustomerPN = "";
-            double len;
-            string partnum;
-            string mtl;
-
-            string printout = "";
-            foreach(DataGridViewRow rowwwww in OrdersGridView.Rows)
-            {
-                SelectedPN = rowwwww.Cells["Part_Number"].Value.ToString();
-                SelectedCustomerPN = rowwwww.Cells["Customer"].Value.ToString();
-
-                string PNSub = SelectedPN.Substring(0, 5);
-                string OrderRev = " ";
-                if (SelectedPN.Length > 5)
-                {
-                    OrderRev = SelectedPN.Substring(6, SelectedPN.Length - 6);
-                }
-
-
-                GetTubeLengthFromSWDrawing(PNSub, out len, out partnum, out mtl);
-                printout += PNSub + "\t" + len +"\n";
-                Debug.WriteLine(PNSub + "\t" + len + "\n");
-            }
-
-            MessageBox.Show("" + printout);
-
-            
-            
-        }
-
-        private void GetTubeLengthFromSWDrawing(string pNSub, out double length, out string partNumber, out string mtl)//used to checking all SW boms!!!!!!!!!!!!!!!!!!
-        {
-            length = 99999.99;
-            partNumber = "";
-            mtl = "";
-            //GetFileFromSearch*******************
-            try
-            {
-
-                IEdmVault7 vault2 = null;
-                if (vault1 == null)
-                {
-                    vault1 = new EdmVault5();
-                }
-
-                vault2 = (IEdmVault7)vault1;
-                if (!vault1.IsLoggedIn)
-                {
-                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
-                }
-
-
-                aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{pNSub}.slddrw", out ppoRetParentFolder);
-
-
-
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                MessageBox.Show("Error selecting drawing given PN: " + pNSub + " From 80000 folder\n." + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error selecting drawing given PN: " + pNSub + " From 80000 folder.\n" + ex.Message);
-            }
-
-            //GetBOMFromFILE*******************
-            try
-            {
-                IEdmVault7 vault2 = null;
-                if (vault1 == null)
-                {
-                    vault1 = new EdmVault5();
-                }
-                vault2 = (IEdmVault9)vault1;
-                if (!vault1.IsLoggedIn)
-                {
-                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
-                }
-
-                if (aFile != null)
-                {
-
-                    try
-                    {
-                        EdmBomInfo[] derivedBOMs;
-
-                        aFile.GetDerivedBOMs(out derivedBOMs);
-
-                        if (derivedBOMs != null)
-                        {
-                            bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, derivedBOMs[(derivedBOMs.Length - 1)].mlBomID); // USE ID OF DERIVED BOM at end of the list. I assume it is the latest date, most recent.
-                            bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
-
-
-                            EdmBomColumn[] BomColumns = null;
-                            bomView.GetColumns(out BomColumns);
-
-                            object[] BomRows = null;
-                            bomView.GetRows(out BomRows);
-
-                            object cellVar = null;
-                            object cellVar2 = null;
-                            object ComputedValue = null;
-                            string config = null;
-                            bool ReadOnlyOut = false;
-                            List<string> TubesFound = new List<string>();
-
-                            //search all cells inluding item column (different column type)
-                            int qtyCol = 9;
-                            int uomCol;
-
-                            foreach (IEdmBomCell CELL in BomRows)
-                            {
-                                //MessageBox.Show(CELL.GetPathName());
-                                int ColumnCount = 0;
-
-                                if (CELL.GetPathName().Contains("UMi Parts") == true)
-                                {
-                                    //MessageBox.Show("Yaya"+ CELL.GetPathName());
-                                    foreach (EdmBomColumn COLUMN in BomColumns)
-                                    {
-                                        if (ColumnCount <= (BomColumns.Count() - 1)) // in case BOM has more columns than expeted
-                                        {
-
-                                            if (COLUMN.mbsCaption == "QTY")
-                                            {
-                                                qtyCol = ColumnCount;
-                                            }
-                                            if (COLUMN.mbsCaption == "UOM")
-                                            {
-                                                uomCol = ColumnCount;
-                                            }
-                                            //MessageBox.Show("" + COLUMN.mbsCaption);
-                                            if (COLUMN.mbsCaption == "UOM")
-                                            {
-                                                CELL.GetVar(BomColumns[ColumnCount].mlVariableID, BomColumns[ColumnCount].meType, out cellVar, out ComputedValue, out config, out ReadOnlyOut);
-                                                if (cellVar.ToString().Contains("FT") == true)
-                                                {
-                                                    CELL.GetVar(BomColumns[qtyCol].mlVariableID, BomColumns[qtyCol].meType, out cellVar2, out ComputedValue, out config, out ReadOnlyOut);
-
-                                                    //MessageBox.Show(""+ cellVar2.ToString());
-                                                    length = Convert.ToDouble(cellVar2);
-
-                                                }
-                                            }
-                                            ColumnCount += 1;
-
-
-
-                                        }
-                                    }
-                                }
-
-                            }
-                        }
-
-                    }
-                    catch
-                    {
-
-                    }
-
-
-
-
-
-                }
-            }
-            catch (System.Runtime.InteropServices.COMException ex)
-            {
-                //MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                //MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
-            }
-
-
-
-        }
-
-        private void GetLengthsBtn_Click(object sender, EventArgs e) //used to checking all SW boms!!!!!!!!!!!!!!!!!!
-        {
-            using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
-            {
-                try
-                {
-                    cn.Open();  // Open connection using the SQL connection string above
-                    SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
-                    cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
-
-                    cmd2.Parameters.AddWithValue("@Search", "%%");
-
-                    cmd2.CommandText = "" +
-
-                    //" DECLARE @temp TABLE (SO_Number VARCHAR(255),Order_Date VARCHAR(255),Promise_Date VARCHAR(255),Customer VARCHAR(255),Part_Number VARCHAR(255),Open_Qty VARCHAR(255),Price VARCHAR(255),Open_Amount VARCHAR(255))    " +
-                    //" INSERT @temp EXEC CheckOpenOrders                                                                                                                                                                                  " +
-                    //" SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
-                    //" where Part_Number like '80%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
-
-                    "  SELECT TOP (10000) [PartNo] as Part_Number,c.Name as Customer,[CustomerPN] ,[CustomerRev],[Description],[TubeQty]             " +
-                    " FROM TubeAssemblies ta                                                                             " +
-                    "left join Customers c on c.id = Customer_id                                                          " +
-                    " where PartNo like '8%'                                             " +
-                    " order by PartNo desc                                                                                ";
-                    DataTable dt = new DataTable();
-                    dt.Load(cmd2.ExecuteReader());
-
-                    OrdersGridView.DataSource = dt;
-
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error getting open orders" + ex);
-                }
-            }
-            runlengthCheck();
         }
 
         // Change image to MultiFlow :: Complete
@@ -2069,6 +1679,341 @@ namespace LaserMarking
             {
                 MessageBox.Show("" + ex);
             }
+
+        }
+
+        private void CameraFinderViewButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (axMBActX2.Operation.IsCameraFinderView == true)
+                {
+                    axMBActX2.Operation.IsCameraFinderView = false;
+
+                }
+                else
+                {
+                    axMBActX2.Operation.IsCameraFinderView = true;
+
+
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+        }
+
+        private void ShowFileListButton_Click(object sender, EventArgs e)
+        {
+            int Count;
+            string List = "";
+            try
+            {
+                Count = axMBActX2.UpdateControllerFileCount(MBPLib2.ControllerFileTypes.CONTROLLERFILE_JOB);
+                for (int index = 0; index < Count; index++)
+                {
+                    List = List + axMBActX2.ControllerFile(index).JobNo + ":" + axMBActX2.ControllerFile(index).FileName + "\n";
+                }
+                MessageBox.Show("controller Job file list is below...\n" + List);
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+
+
+
+            }
+        }
+
+        private void ClearErrors_Btn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                axMBActX2.Operation.ClearError();
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        private void Errors_Btn_Click(object sender, EventArgs e)
+        {
+            int Count;
+            string List = "";
+            try
+            {
+                Count = axMBActX2.UpdateErrorCount();
+                if (Count > 0)
+                {
+                    for (int index = 0; index < Count; index++)
+                    {
+                        List = List + axMBActX2.Error(index).ErrorCode + ":" + axMBActX2.Error(index).ErrorCaption + "\n";
+                    }
+                    MessageBox.Show("Occurring error list is below...\n" + List);
+                }
+                else
+                {
+                    MessageBox.Show("No Errors.");
+                }
+
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        private void OpenControllerJob_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (axMBActX2.SendControllerJob
+                (3, ""))
+                {
+                    MessageBox.Show("Sent ");
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+            try
+            {
+                axMBActX2.OpenControllerJob(3);
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
+        private void GetLengthsBtn_Click(object sender, EventArgs e) //used to checking all SW boms!!!!!!!!!!!!!!!!!!
+        {
+            using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
+            {
+                try
+                {
+                    cn.Open();  // Open connection using the SQL connection string above
+                    SqlCommand cmd2 = new SqlCommand("", cn);    //Declare text command for server connection
+                    cmd2.CommandTimeout = 120; //set a long timeout in case of really complex queries 2019-04-30
+
+                    cmd2.Parameters.AddWithValue("@Search", "%%");
+
+                    cmd2.CommandText = "" +
+
+                    //" DECLARE @temp TABLE (SO_Number VARCHAR(255),Order_Date VARCHAR(255),Promise_Date VARCHAR(255),Customer VARCHAR(255),Part_Number VARCHAR(255),Open_Qty VARCHAR(255),Price VARCHAR(255),Open_Amount VARCHAR(255))    " +
+                    //" INSERT @temp EXEC CheckOpenOrders                                                                                                                                                                                  " +
+                    //" SELECT Part_Number,Open_Qty,  Customer, Order_Date,Promise_Date, SO_Number  FROM @temp                                                                                                                                                                                                 " +
+                    //" where Part_Number like '80%' and LEN(Part_Number) <9  and (SO_Number like '%' + @Search + '%' or Part_Number like '%' + @Search + '%')                                                                                                                                                                                   ";
+
+                    "  SELECT TOP (10000) [PartNo] as Part_Number,c.Name as Customer,[CustomerPN] ,[CustomerRev],[Description],[TubeQty]             " +
+                    " FROM TubeAssemblies ta                                                                             " +
+                    "left join Customers c on c.id = Customer_id                                                          " +
+                    " where PartNo like '8%'                                             " +
+                    " order by PartNo desc                                                                                ";
+                    DataTable dt = new DataTable();
+                    dt.Load(cmd2.ExecuteReader());
+
+                    OrdersGridView.DataSource = dt;
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error getting open orders" + ex);
+                }
+            }
+            runlengthCheck();
+        }
+
+        // Called from GetLengthsBtn_Click
+        private void runlengthCheck() //used to checking all SW boms!!!!!!!!!!!!!!!!!!
+        {
+
+            string SelectedPN = "";
+            string SelectedRev = "";
+            string SelectedCustomerPN = "";
+            double len;
+            string partnum;
+            string mtl;
+
+            string printout = "";
+            foreach (DataGridViewRow rowwwww in OrdersGridView.Rows)
+            {
+                SelectedPN = rowwwww.Cells["Part_Number"].Value.ToString();
+                SelectedCustomerPN = rowwwww.Cells["Customer"].Value.ToString();
+
+                string PNSub = SelectedPN.Substring(0, 5);
+                string OrderRev = " ";
+                if (SelectedPN.Length > 5)
+                {
+                    OrderRev = SelectedPN.Substring(6, SelectedPN.Length - 6);
+                }
+
+
+                GetTubeLengthFromSWDrawing(PNSub, out len, out partnum, out mtl);
+                printout += PNSub + "\t" + len + "\n";
+                Debug.WriteLine(PNSub + "\t" + len + "\n");
+            }
+
+            MessageBox.Show("" + printout);
+
+
+
+        }
+
+        private void GetTubeLengthFromSWDrawing(string pNSub, out double length, out string partNumber, out string mtl)//used to checking all SW boms!!!!!!!!!!!!!!!!!!
+        {
+            length = 99999.99;
+            partNumber = "";
+            mtl = "";
+            //GetFileFromSearch*******************
+            try
+            {
+
+                IEdmVault7 vault2 = null;
+                if (vault1 == null)
+                {
+                    vault1 = new EdmVault5();
+                }
+
+                vault2 = (IEdmVault7)vault1;
+                if (!vault1.IsLoggedIn)
+                {
+                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+                }
+
+
+                aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\80000\{pNSub}.slddrw", out ppoRetParentFolder);
+
+
+
+            }
+            catch (System.Runtime.InteropServices.COMException ex)
+            {
+                MessageBox.Show("Error selecting drawing given PN: " + pNSub + " From 80000 folder\n." + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error selecting drawing given PN: " + pNSub + " From 80000 folder.\n" + ex.Message);
+            }
+
+            //GetBOMFromFILE*******************
+            try
+            {
+                IEdmVault7 vault2 = null;
+                if (vault1 == null)
+                {
+                    vault1 = new EdmVault5();
+                }
+                vault2 = (IEdmVault9)vault1;
+                if (!vault1.IsLoggedIn)
+                {
+                    vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+                }
+
+                if (aFile != null)
+                {
+
+                    try
+                    {
+                        EdmBomInfo[] derivedBOMs;
+
+                        aFile.GetDerivedBOMs(out derivedBOMs);
+
+                        if (derivedBOMs != null)
+                        {
+                            bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, derivedBOMs[(derivedBOMs.Length - 1)].mlBomID); // USE ID OF DERIVED BOM at end of the list. I assume it is the latest date, most recent.
+                            bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
+
+
+                            EdmBomColumn[] BomColumns = null;
+                            bomView.GetColumns(out BomColumns);
+
+                            object[] BomRows = null;
+                            bomView.GetRows(out BomRows);
+
+                            object cellVar = null;
+                            object cellVar2 = null;
+                            object ComputedValue = null;
+                            string config = null;
+                            bool ReadOnlyOut = false;
+                            List<string> TubesFound = new List<string>();
+
+                            //search all cells inluding item column (different column type)
+                            int qtyCol = 9;
+                            int uomCol;
+
+                            foreach (IEdmBomCell CELL in BomRows)
+                            {
+                                //MessageBox.Show(CELL.GetPathName());
+                                int ColumnCount = 0;
+
+                                if (CELL.GetPathName().Contains("UMi Parts") == true)
+                                {
+                                    //MessageBox.Show("Yaya"+ CELL.GetPathName());
+                                    foreach (EdmBomColumn COLUMN in BomColumns)
+                                    {
+                                        if (ColumnCount <= (BomColumns.Count() - 1)) // in case BOM has more columns than expeted
+                                        {
+
+                                            if (COLUMN.mbsCaption == "QTY")
+                                            {
+                                                qtyCol = ColumnCount;
+                                            }
+                                            if (COLUMN.mbsCaption == "UOM")
+                                            {
+                                                uomCol = ColumnCount;
+                                            }
+                                            //MessageBox.Show("" + COLUMN.mbsCaption);
+                                            if (COLUMN.mbsCaption == "UOM")
+                                            {
+                                                CELL.GetVar(BomColumns[ColumnCount].mlVariableID, BomColumns[ColumnCount].meType, out cellVar, out ComputedValue, out config, out ReadOnlyOut);
+                                                if (cellVar.ToString().Contains("FT") == true)
+                                                {
+                                                    CELL.GetVar(BomColumns[qtyCol].mlVariableID, BomColumns[qtyCol].meType, out cellVar2, out ComputedValue, out config, out ReadOnlyOut);
+
+                                                    //MessageBox.Show(""+ cellVar2.ToString());
+                                                    length = Convert.ToDouble(cellVar2);
+
+                                                }
+                                            }
+                                            ColumnCount += 1;
+
+
+
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+                    }
+                    catch
+                    {
+
+                    }
+
+
+
+
+
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException ex)
+            {
+                //MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+            }
+
+
 
         }
 
