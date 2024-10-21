@@ -1,87 +1,28 @@
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.AssemblyReference.cache
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\Interop.EdmLib.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.ResolveComReference.cache
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.MainWindow.resources
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.OpenProgram.resources
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.Properties.Resources.resources
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.GenerateResource.cache
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.CoreCompileInputs.cache
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe.config
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe.manifest
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.application
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.pdb
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\EPDM.Interop.epdm.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\Interop.EdmLib.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\Interop.MBPActXLib.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\Interop.MBPLib2.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\AxInterop.MBPActXLib.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\AxInterop.MBPLib2.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\Interop.MBPActXLib.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\Interop.MBPLib2.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\AxInterop.MBPActXLib.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\AxInterop.MBPLib2.dll
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe.manifest
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.application
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMar.428953FD.Up2Date
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe
-C:\Users\arpatel\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.pdb
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe.config
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe.manifest
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.application
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.pdb
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\EPDM.Interop.epdm.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\Interop.EdmLib.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\Interop.MBPActXLib.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\Interop.MBPLib2.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\AxInterop.MBPActXLib.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\bin\Debug\AxInterop.MBPLib2.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.AssemblyReference.cache
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\Interop.EdmLib.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\Interop.MBPActXLib.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\Interop.MBPLib2.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\AxInterop.MBPActXLib.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\AxInterop.MBPLib2.dll
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.ResolveComReference.cache
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.MainWindow.resources
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.OpenProgram.resources
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.Properties.Resources.resources
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.GenerateResource.cache
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.CoreCompileInputs.cache
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe.manifest
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.application
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.CopyComplete
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe
-C:\Users\treeves\Source\Repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.pdb
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe.config
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe.manifest
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.application
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.pdb
-<<<<<<< HEAD
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\EPDM.Interop.epdm.dll
-=======
->>>>>>> 632e82b39c798a54d17557f11abb27dc7aca5998
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\Interop.EdmLib.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\Interop.MBPActXLib.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\Interop.MBPLib2.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\AxInterop.MBPActXLib.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\AxInterop.MBPLib2.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.AssemblyReference.cache
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\Interop.EdmLib.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\Interop.MBPActXLib.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\Interop.MBPLib2.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\AxInterop.MBPActXLib.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\AxInterop.MBPLib2.dll
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.ResolveComReference.cache
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.MainWindow.resources
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.OpenProgram.resources
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.Properties.Resources.resources
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.GenerateResource.cache
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.CoreCompileInputs.cache
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe.manifest
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.application
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMar.428953FD.Up2Date
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe
-C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.pdb
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.AssemblyReference.cache
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\Interop.EdmLib.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\Interop.MBPActXLib.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\Interop.MBPLib2.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\AxInterop.MBPActXLib.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\AxInterop.MBPLib2.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.ResolveComReference.cache
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.MainWindow.resources
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.OpenProgram.resources
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.Properties.Resources.resources
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.GenerateResource.cache
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.CoreCompileInputs.cache
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe.config
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe.manifest
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.application
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.pdb
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\EPDM.Interop.epdm.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\Interop.EdmLib.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\Interop.MBPActXLib.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\Interop.MBPLib2.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\AxInterop.MBPActXLib.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\AxInterop.MBPLib2.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe.manifest
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.application
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMar.428953FD.Up2Date
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.pdb

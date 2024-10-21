@@ -1562,8 +1562,7 @@ namespace LaserMarking
                     DescLine2Box.Text = desc.Substring(DescLengthAllow, DescLengthAllow);
 
                 }
-                using (SqlConnection cn = new SqlConnection(UMIConnectionString))
-                using (SqlConnection cn = new SqlConnection(OpenConnect(HHI_PUMIConnectionString)))
+                using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
                 {
                     try
                     {
