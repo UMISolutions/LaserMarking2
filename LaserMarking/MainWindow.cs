@@ -437,7 +437,7 @@ namespace LaserMarking
                 catch (Exception ex)
                 {
                     // Handle exceptions (e.g., log the error)
-                    Console.WriteLine($"Error: {ex.Message}");
+                    MessageBox.Show(ex.ToString());
                 }
             }
 
