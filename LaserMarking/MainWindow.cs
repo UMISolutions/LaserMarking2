@@ -360,11 +360,12 @@ namespace LaserMarking
 
 
                 }
+                isConnected = true;
             }
             catch (System.Runtime.InteropServices.COMException error)
             {
                 MessageBox.Show(error.Message);
-               
+                isConnected = false;
             }
             try
             {
@@ -382,10 +383,13 @@ namespace LaserMarking
 
                 axMBActX2.Operation.GetMarkingResult(out result2,out time2);
 
+                isConnected = true;
+
             }
             catch (System.Runtime.InteropServices.COMException error)
             {
                 MessageBox.Show(error.Message);
+                isConnected = false;
             }
 
             sendMarkedToDB();
@@ -395,8 +399,6 @@ namespace LaserMarking
         // sends info about marked part to DB :: Complete
         private void sendMarkedToDB()
         {
-            try { isConnected = axMBActX2.Comm.Online(); }
-            catch { }
             using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
             {
                 try
