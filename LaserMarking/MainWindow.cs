@@ -2130,55 +2130,73 @@ namespace LaserMarking
         private void widthBox_TextChanged(object sender, EventArgs e)
         {
             double charWidth = 0;
-            try
+            if (comboBox1.SelectedItem.ToString() != "Block 1")
             {
-                if (double.TryParse(widthBox.Text, out charWidth))
+                try
                 {
-                    axMBActX2.Block(blockNo).CharWidth = charWidth;
+                    if (double.TryParse(widthBox.Text, out charWidth))
+                    {
+                        axMBActX2.Block(blockNo).CharWidth = charWidth;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid input. Please enter a valid number for width.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Invalid input. Please enter a valid number for width.");
-                }
-            }
-            catch
-            {
-                try 
-                {
-                    axMBActX2.Block(blockNo).LogoWidth = charWidth;
-                } catch (Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
-                
+            } else
+            {
+                try
+                {
+                    if (double.TryParse(widthBox.Text, out charWidth))
+                    {
+                        axMBActX2.Block(blockNo).LogoWidth = charWidth;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
 
         private void heightBox_TextChanged(object sender, EventArgs e)
         {
             double charHeight = 0;
-            try
-            {
-                if (double.TryParse(heightBox.Text, out charHeight))
-                {
-                    axMBActX2.Block(blockNo).CharHeight = charHeight;
-                }
-                else
-                {
-                    MessageBox.Show("Invalid input. Please enter a valid number for height.");
-                }
-            }
-            catch
+            if (comboBox1.SelectedItem.ToString() != "Block 1")
             {
                 try
                 {
-                    axMBActX2.Block(blockNo).LogoHeight = charHeight;
+                    if (double.TryParse(heightBox.Text, out charHeight))
+                    {
+                        axMBActX2.Block(blockNo).CharHeight = charHeight;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid input. Please enter a valid number for height.");
+                    }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
                 }
-
+            }
+            else
+            {
+                try
+                {
+                    if (double.TryParse(heightBox.Text, out charHeight))
+                    {
+                        axMBActX2.Block(blockNo).LogoHeight = charHeight;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
 

@@ -148,7 +148,7 @@ namespace LaserMarking
             // Mark_Part
             // 
             this.Mark_Part.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Mark_Part.Location = new System.Drawing.Point(1262, 218);
+            this.Mark_Part.Location = new System.Drawing.Point(1258, 239);
             this.Mark_Part.Name = "Mark_Part";
             this.Mark_Part.Size = new System.Drawing.Size(235, 52);
             this.Mark_Part.TabIndex = 4;
@@ -208,7 +208,7 @@ namespace LaserMarking
             // 
             // LightOnButton
             // 
-            this.LightOnButton.Location = new System.Drawing.Point(1289, 159);
+            this.LightOnButton.Location = new System.Drawing.Point(1284, 180);
             this.LightOnButton.Name = "LightOnButton";
             this.LightOnButton.Size = new System.Drawing.Size(92, 53);
             this.LightOnButton.TabIndex = 12;
@@ -218,7 +218,7 @@ namespace LaserMarking
             // 
             // LightOffButton
             // 
-            this.LightOffButton.Location = new System.Drawing.Point(1387, 158);
+            this.LightOffButton.Location = new System.Drawing.Point(1382, 179);
             this.LightOffButton.Name = "LightOffButton";
             this.LightOffButton.Size = new System.Drawing.Size(92, 54);
             this.LightOffButton.TabIndex = 13;
@@ -292,7 +292,7 @@ namespace LaserMarking
             // CameraFinderViewButton
             // 
             this.CameraFinderViewButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CameraFinderViewButton.Location = new System.Drawing.Point(1317, 103);
+            this.CameraFinderViewButton.Location = new System.Drawing.Point(1308, 125);
             this.CameraFinderViewButton.Name = "CameraFinderViewButton";
             this.CameraFinderViewButton.Size = new System.Drawing.Size(136, 49);
             this.CameraFinderViewButton.TabIndex = 26;
@@ -599,16 +599,16 @@ namespace LaserMarking
             "Block 6",
             "Block 7",
             "Block 8"});
-            this.comboBox1.Location = new System.Drawing.Point(1360, 305);
+            this.comboBox1.Location = new System.Drawing.Point(1387, 361);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(73, 21);
             this.comboBox1.TabIndex = 69;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1240, 356);
+            this.label10.Location = new System.Drawing.Point(1243, 420);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 70;
@@ -617,7 +617,7 @@ namespace LaserMarking
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1240, 420);
+            this.label11.Location = new System.Drawing.Point(1240, 487);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(38, 13);
             this.label11.TabIndex = 72;
@@ -625,7 +625,7 @@ namespace LaserMarking
             // 
             // widthBox
             // 
-            this.widthBox.Location = new System.Drawing.Point(1284, 349);
+            this.widthBox.Location = new System.Drawing.Point(1284, 417);
             this.widthBox.Name = "widthBox";
             this.widthBox.Size = new System.Drawing.Size(100, 20);
             this.widthBox.TabIndex = 73;
@@ -635,7 +635,7 @@ namespace LaserMarking
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label12.Location = new System.Drawing.Point(1254, 306);
+            this.label12.Location = new System.Drawing.Point(1284, 362);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 20);
             this.label12.TabIndex = 75;
@@ -643,7 +643,7 @@ namespace LaserMarking
             // 
             // heightBox
             // 
-            this.heightBox.Location = new System.Drawing.Point(1284, 413);
+            this.heightBox.Location = new System.Drawing.Point(1284, 484);
             this.heightBox.Name = "heightBox";
             this.heightBox.Size = new System.Drawing.Size(100, 20);
             this.heightBox.TabIndex = 76;
@@ -738,7 +738,7 @@ namespace LaserMarking
             this.tableLayoutPanel1.Controls.Add(this.wp1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.wm10, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.wm1, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1387, 332);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1387, 392);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -756,7 +756,7 @@ namespace LaserMarking
             this.tableLayoutPanel2.Controls.Add(this.hp1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.hm1, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.hm10, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1387, 397);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1387, 465);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
