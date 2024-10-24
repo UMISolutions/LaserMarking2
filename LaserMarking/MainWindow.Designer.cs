@@ -104,11 +104,23 @@ namespace LaserMarking
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label13 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.ReferenceBox1 = new System.Windows.Forms.CheckBox();
+            this.ReferenceBox2 = new System.Windows.Forms.CheckBox();
+            this.ReferenceBox0 = new System.Windows.Forms.CheckBox();
+            this.ReferenceBox4 = new System.Windows.Forms.CheckBox();
+            this.ReferenceBox5 = new System.Windows.Forms.CheckBox();
+            this.ReferenceBox3 = new System.Windows.Forms.CheckBox();
+            this.ReferenceBox7 = new System.Windows.Forms.CheckBox();
+            this.ReferenceBox8 = new System.Windows.Forms.CheckBox();
+            this.ReferenceBox6 = new System.Windows.Forms.CheckBox();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // axMBActX2
@@ -148,7 +160,7 @@ namespace LaserMarking
             // Mark_Part
             // 
             this.Mark_Part.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Mark_Part.Location = new System.Drawing.Point(1258, 239);
+            this.Mark_Part.Location = new System.Drawing.Point(1262, 195);
             this.Mark_Part.Name = "Mark_Part";
             this.Mark_Part.Size = new System.Drawing.Size(235, 52);
             this.Mark_Part.TabIndex = 4;
@@ -208,7 +220,7 @@ namespace LaserMarking
             // 
             // LightOnButton
             // 
-            this.LightOnButton.Location = new System.Drawing.Point(1284, 180);
+            this.LightOnButton.Location = new System.Drawing.Point(1281, 135);
             this.LightOnButton.Name = "LightOnButton";
             this.LightOnButton.Size = new System.Drawing.Size(92, 53);
             this.LightOnButton.TabIndex = 12;
@@ -218,7 +230,7 @@ namespace LaserMarking
             // 
             // LightOffButton
             // 
-            this.LightOffButton.Location = new System.Drawing.Point(1382, 179);
+            this.LightOffButton.Location = new System.Drawing.Point(1379, 135);
             this.LightOffButton.Name = "LightOffButton";
             this.LightOffButton.Size = new System.Drawing.Size(92, 54);
             this.LightOffButton.TabIndex = 13;
@@ -292,7 +304,7 @@ namespace LaserMarking
             // CameraFinderViewButton
             // 
             this.CameraFinderViewButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CameraFinderViewButton.Location = new System.Drawing.Point(1308, 125);
+            this.CameraFinderViewButton.Location = new System.Drawing.Point(1308, 80);
             this.CameraFinderViewButton.Name = "CameraFinderViewButton";
             this.CameraFinderViewButton.Size = new System.Drawing.Size(136, 49);
             this.CameraFinderViewButton.TabIndex = 26;
@@ -597,9 +609,8 @@ namespace LaserMarking
             "Block 4",
             "Block 5",
             "Block 6",
-            "Block 7",
-            "Block 8"});
-            this.comboBox1.Location = new System.Drawing.Point(1387, 361);
+            "Block 7"});
+            this.comboBox1.Location = new System.Drawing.Point(1384, 282);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(73, 21);
             this.comboBox1.TabIndex = 69;
@@ -608,7 +619,7 @@ namespace LaserMarking
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(1243, 420);
+            this.label10.Location = new System.Drawing.Point(1240, 334);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 70;
@@ -617,7 +628,7 @@ namespace LaserMarking
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(1240, 487);
+            this.label11.Location = new System.Drawing.Point(1237, 400);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(38, 13);
             this.label11.TabIndex = 72;
@@ -625,7 +636,7 @@ namespace LaserMarking
             // 
             // widthBox
             // 
-            this.widthBox.Location = new System.Drawing.Point(1284, 417);
+            this.widthBox.Location = new System.Drawing.Point(1281, 331);
             this.widthBox.Name = "widthBox";
             this.widthBox.Size = new System.Drawing.Size(100, 20);
             this.widthBox.TabIndex = 73;
@@ -635,7 +646,7 @@ namespace LaserMarking
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
-            this.label12.Location = new System.Drawing.Point(1284, 362);
+            this.label12.Location = new System.Drawing.Point(1278, 283);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(100, 20);
             this.label12.TabIndex = 75;
@@ -643,7 +654,7 @@ namespace LaserMarking
             // 
             // heightBox
             // 
-            this.heightBox.Location = new System.Drawing.Point(1284, 484);
+            this.heightBox.Location = new System.Drawing.Point(1278, 397);
             this.heightBox.Name = "heightBox";
             this.heightBox.Size = new System.Drawing.Size(100, 20);
             this.heightBox.TabIndex = 76;
@@ -738,7 +749,7 @@ namespace LaserMarking
             this.tableLayoutPanel1.Controls.Add(this.wp1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.wm10, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.wm1, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(1387, 392);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1384, 314);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -756,7 +767,7 @@ namespace LaserMarking
             this.tableLayoutPanel2.Controls.Add(this.hp1, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.hm1, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.hm10, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1387, 465);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1384, 379);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -774,11 +785,136 @@ namespace LaserMarking
             this.label13.Text = "DO NOT REMOVE --> \r\nIt\'s important\r\n";
             this.label13.Visible = false;
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.25373F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.74627F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 19F));
+            this.tableLayoutPanel3.Controls.Add(this.ReferenceBox1, 2, 2);
+            this.tableLayoutPanel3.Controls.Add(this.ReferenceBox2, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.ReferenceBox0, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.ReferenceBox4, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.ReferenceBox3, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.ReferenceBox7, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ReferenceBox8, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ReferenceBox6, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.ReferenceBox5, 1, 1);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1387, 451);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 19F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(62, 57);
+            this.tableLayoutPanel3.TabIndex = 88;
+            // 
+            // ReferenceBox1
+            // 
+            this.ReferenceBox1.AutoSize = true;
+            this.ReferenceBox1.Location = new System.Drawing.Point(45, 41);
+            this.ReferenceBox1.Name = "ReferenceBox1";
+            this.ReferenceBox1.Size = new System.Drawing.Size(14, 13);
+            this.ReferenceBox1.TabIndex = 8;
+            this.ReferenceBox1.UseVisualStyleBackColor = true;
+            this.ReferenceBox1.CheckedChanged += new System.EventHandler(this.ReferenceBox1_CheckedChanged);
+            // 
+            // ReferenceBox2
+            // 
+            this.ReferenceBox2.AutoSize = true;
+            this.ReferenceBox2.Location = new System.Drawing.Point(24, 41);
+            this.ReferenceBox2.Name = "ReferenceBox2";
+            this.ReferenceBox2.Size = new System.Drawing.Size(15, 13);
+            this.ReferenceBox2.TabIndex = 7;
+            this.ReferenceBox2.UseVisualStyleBackColor = true;
+            this.ReferenceBox2.CheckedChanged += new System.EventHandler(this.ReferenceBox2_CheckedChanged);
+            // 
+            // ReferenceBox0
+            // 
+            this.ReferenceBox0.AutoSize = true;
+            this.ReferenceBox0.Location = new System.Drawing.Point(3, 41);
+            this.ReferenceBox0.Name = "ReferenceBox0";
+            this.ReferenceBox0.Size = new System.Drawing.Size(15, 13);
+            this.ReferenceBox0.TabIndex = 6;
+            this.ReferenceBox0.UseVisualStyleBackColor = true;
+            this.ReferenceBox0.CheckedChanged += new System.EventHandler(this.ReferenceBox0_CheckedChanged);
+            // 
+            // ReferenceBox4
+            // 
+            this.ReferenceBox4.AutoSize = true;
+            this.ReferenceBox4.Location = new System.Drawing.Point(45, 22);
+            this.ReferenceBox4.Name = "ReferenceBox4";
+            this.ReferenceBox4.Size = new System.Drawing.Size(14, 13);
+            this.ReferenceBox4.TabIndex = 5;
+            this.ReferenceBox4.UseVisualStyleBackColor = true;
+            this.ReferenceBox4.CheckedChanged += new System.EventHandler(this.ReferenceBox4_CheckedChanged);
+            // 
+            // ReferenceBox5
+            // 
+            this.ReferenceBox5.AutoSize = true;
+            this.ReferenceBox5.Location = new System.Drawing.Point(24, 22);
+            this.ReferenceBox5.Name = "ReferenceBox5";
+            this.ReferenceBox5.Size = new System.Drawing.Size(15, 13);
+            this.ReferenceBox5.TabIndex = 4;
+            this.ReferenceBox5.UseVisualStyleBackColor = true;
+            this.ReferenceBox5.CheckedChanged += new System.EventHandler(this.ReferenceBox5_CheckedChanged);
+            // 
+            // ReferenceBox3
+            // 
+            this.ReferenceBox3.AutoSize = true;
+            this.ReferenceBox3.Location = new System.Drawing.Point(3, 22);
+            this.ReferenceBox3.Name = "ReferenceBox3";
+            this.ReferenceBox3.Size = new System.Drawing.Size(15, 13);
+            this.ReferenceBox3.TabIndex = 3;
+            this.ReferenceBox3.UseVisualStyleBackColor = true;
+            this.ReferenceBox3.CheckedChanged += new System.EventHandler(this.ReferenceBox3_CheckedChanged);
+            // 
+            // ReferenceBox7
+            // 
+            this.ReferenceBox7.AutoSize = true;
+            this.ReferenceBox7.Location = new System.Drawing.Point(45, 3);
+            this.ReferenceBox7.Name = "ReferenceBox7";
+            this.ReferenceBox7.Size = new System.Drawing.Size(14, 13);
+            this.ReferenceBox7.TabIndex = 2;
+            this.ReferenceBox7.UseVisualStyleBackColor = true;
+            this.ReferenceBox7.CheckedChanged += new System.EventHandler(this.ReferenceBox7_CheckedChanged);
+            // 
+            // ReferenceBox8
+            // 
+            this.ReferenceBox8.AutoSize = true;
+            this.ReferenceBox8.Location = new System.Drawing.Point(24, 3);
+            this.ReferenceBox8.Name = "ReferenceBox8";
+            this.ReferenceBox8.Size = new System.Drawing.Size(15, 13);
+            this.ReferenceBox8.TabIndex = 1;
+            this.ReferenceBox8.UseVisualStyleBackColor = true;
+            this.ReferenceBox8.CheckedChanged += new System.EventHandler(this.ReferenceBox8_CheckedChanged);
+            // 
+            // ReferenceBox6
+            // 
+            this.ReferenceBox6.AutoSize = true;
+            this.ReferenceBox6.Location = new System.Drawing.Point(3, 3);
+            this.ReferenceBox6.Name = "ReferenceBox6";
+            this.ReferenceBox6.Size = new System.Drawing.Size(15, 13);
+            this.ReferenceBox6.TabIndex = 0;
+            this.ReferenceBox6.UseVisualStyleBackColor = true;
+            this.ReferenceBox6.CheckedChanged += new System.EventHandler(this.ReferenceBox6_CheckedChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(1276, 473);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(97, 13);
+            this.label14.TabIndex = 89;
+            this.label14.Text = "Reference Position";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1509, 793);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -844,6 +980,8 @@ namespace LaserMarking
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -918,6 +1056,17 @@ namespace LaserMarking
         private TableLayoutPanel tableLayoutPanel1;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label13;
+        private TableLayoutPanel tableLayoutPanel3;
+        private CheckBox ReferenceBox1;
+        private CheckBox ReferenceBox2;
+        private CheckBox ReferenceBox0;
+        private CheckBox ReferenceBox4;
+        private CheckBox ReferenceBox5;
+        private CheckBox ReferenceBox3;
+        private CheckBox ReferenceBox7;
+        private CheckBox ReferenceBox8;
+        private CheckBox ReferenceBox6;
+        private Label label14;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form

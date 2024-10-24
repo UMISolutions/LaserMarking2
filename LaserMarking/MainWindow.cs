@@ -2091,13 +2091,81 @@ namespace LaserMarking
         // Changes the block for changes to be applied to
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            for (int i = 0; i <= 8; i++)
+            {
+                string checkBoxName = "ReferenceBox" + i; // Construct the checkbox name
+                CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                if (referenceCheckBox != null)
+                {
+                    referenceCheckBox.Checked = false; // Uncheck the checkbox
+                }
+            }
+            string selectedItem = comboBox1.SelectedItem.ToString();
+
+            var match = System.Text.RegularExpressions.Regex.Match(selectedItem, @"\d+");
+
+            blockNo = int.Parse(match.Value); // Convert the extracted number to int
+            try
+            {
+                string refPosStr = axMBActX2.Block(blockNo).ReferencePosition.ToString();
+                int referencePosition;
+
+                switch (refPosStr)
+                {
+                    case "REFERENCEPOSITION_BOTTOMLEFT":
+                        referencePosition = 0;
+                        break;
+                    case "REFERENCEPOSITION_BOTTOMRIGHT":
+                        referencePosition = 1;
+                        break;
+                    case "REFERENCEPOSITION_BOTTOMCENTER":
+                        referencePosition = 2;
+                        break;
+                    case "REFERENCEPOSITION_MIDDLELEFT":
+                        referencePosition = 3;
+                        break;
+                    case "REFERENCEPOSITION_MIDDLERIGHT":
+                        referencePosition = 4;
+                        break;
+                    case "REFERENCEPOSITION_MIDDLECENTER":
+                        referencePosition = 5;
+                        break;
+                    case "REFERENCEPOSITION_TOPLEFT":
+                        referencePosition = 6;
+                        break;
+                    case "REFERENCEPOSITION_TOPRIGHT":
+                        referencePosition = 7;
+                        break;
+                    case "REFERENCEPOSITION_TOPCENTER":
+                        referencePosition = 8;
+                        break;
+                    default:
+                        throw new ArgumentException("Invalid reference position: " + refPosStr);
+                }
+
+                // Construct the checkbox name
+                string checkBoxName = "ReferenceBox" + referencePosition;
+
+                // Find the checkbox in the form's controls
+                CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                // Check if the checkbox was found and check it
+                if (referenceCheckBox != null)
+                {
+                    referenceCheckBox.Checked = true; // Check the checkbox
+                }
+                else
+                {
+                    MessageBox.Show("Checkbox not found: " + checkBoxName);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
             if (comboBox1.SelectedIndex != -1)
             {
-                string selectedItem = comboBox1.SelectedItem.ToString();
-
-                var match = System.Text.RegularExpressions.Regex.Match(selectedItem, @"\d+");
-
-                blockNo = int.Parse(match.Value); // Convert the extracted number to int
                 try
                 {
                     widthBox.Text = axMBActX2.Block(blockNo).CharWidth.ToString();
@@ -2117,14 +2185,6 @@ namespace LaserMarking
                 }
 
             }
-        }
-
-        private void wp10_Click(object sender, EventArgs e)
-        {
-            double temp;
-            double.TryParse(widthBox.Text, out temp);
-            temp *= 1.1;
-            widthBox.Text = temp.ToString();
         }
 
         private void widthBox_TextChanged(object sender, EventArgs e)
@@ -2200,6 +2260,14 @@ namespace LaserMarking
             }
         }
 
+        private void wp10_Click(object sender, EventArgs e)
+        {
+            double temp;
+            double.TryParse(widthBox.Text, out temp);
+            temp *= 1.1;
+            widthBox.Text = temp.ToString();
+        }
+
         private void wp1_Click(object sender, EventArgs e)
         {
             double temp;
@@ -2254,6 +2322,222 @@ namespace LaserMarking
             double.TryParse(heightBox.Text, out temp);
             temp *= 0.99;
             heightBox.Text = temp.ToString();
+        }
+
+        private void ReferenceBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox referenceBox = sender as CheckBox;
+            if (referenceBox != null && referenceBox.Checked)
+            {
+                for (int i = 0; i <= 8; i++)
+                {
+                    string checkBoxName = "ReferenceBox" + i; // Construct the checkbox name
+                    CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                    if (referenceCheckBox != null && i != 6)
+                    {
+                        referenceCheckBox.Checked = false; // Uncheck the checkbox
+                    }
+                }
+                try
+                { axMBActX2.Block(blockNo).ReferencePosition = MBPLib2.ReferencePositionTypes.REFERENCEPOSITION_TOPLEFT; }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+        }
+
+        private void ReferenceBox8_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox referenceBox = sender as CheckBox;
+            if (referenceBox != null && referenceBox.Checked)
+            {
+                for (int i = 0; i <= 8; i++)
+                {
+                    string checkBoxName = "ReferenceBox" + i; // Construct the checkbox name
+                    CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                    if (referenceCheckBox != null && i != 8)
+                    {
+                        referenceCheckBox.Checked = false; // Uncheck the checkbox
+                    }
+                }
+                try
+                { axMBActX2.Block(blockNo).ReferencePosition = MBPLib2.ReferencePositionTypes.REFERENCEPOSITION_TOPCENTER; }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+        }
+
+        private void ReferenceBox7_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox referenceBox = sender as CheckBox;
+            if (referenceBox != null && referenceBox.Checked)
+            {
+                for (int i = 0; i <= 8; i++)
+                {
+                    string checkBoxName = "ReferenceBox" + i; // Construct the checkbox name
+                    CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                    if (referenceCheckBox != null && i != 7)
+                    {
+                        referenceCheckBox.Checked = false; // Uncheck the checkbox
+                    }
+                }
+                try
+                { axMBActX2.Block(blockNo).ReferencePosition = MBPLib2.ReferencePositionTypes.REFERENCEPOSITION_TOPRIGHT; }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+        }
+
+        private void ReferenceBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox referenceBox = sender as CheckBox;
+            if (referenceBox != null && referenceBox.Checked)
+            {
+                for (int i = 0; i <= 8; i++)
+                {
+                    string checkBoxName = "ReferenceBox" + i; // Construct the checkbox name
+                    CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                    if (referenceCheckBox != null && i != 3)
+                    {
+                        referenceCheckBox.Checked = false; // Uncheck the checkbox
+                    }
+                }
+                try
+                { axMBActX2.Block(blockNo).ReferencePosition = MBPLib2.ReferencePositionTypes.REFERENCEPOSITION_MIDDLELEFT; }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+        }
+
+        private void ReferenceBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox referenceBox = sender as CheckBox;
+            if (referenceBox != null && referenceBox.Checked)
+            {
+                for (int i = 0; i <= 8; i++)
+                {
+                    string checkBoxName = "ReferenceBox" + i; // Construct the checkbox name
+                    CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                    if (referenceCheckBox != null && i != 5)
+                    {
+                        referenceCheckBox.Checked = false; // Uncheck the checkbox
+                    }
+                }
+                try
+                { axMBActX2.Block(blockNo).ReferencePosition = MBPLib2.ReferencePositionTypes.REFERENCEPOSITION_MIDDLECENTER; }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+        }
+
+        private void ReferenceBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox referenceBox = sender as CheckBox;
+            if (referenceBox != null && referenceBox.Checked)
+            {
+                for (int i = 0; i <= 8; i++)
+                {
+                    string checkBoxName = "ReferenceBox" + i; // Construct the checkbox name
+                    CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                    if (referenceCheckBox != null && i != 4)
+                    {
+                        referenceCheckBox.Checked = false; // Uncheck the checkbox
+                    }
+                }
+                try
+                { axMBActX2.Block(blockNo).ReferencePosition = MBPLib2.ReferencePositionTypes.REFERENCEPOSITION_MIDDLERIGHT; }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+        }
+
+        private void ReferenceBox0_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox referenceBox = sender as CheckBox;
+            if (referenceBox != null && referenceBox.Checked)
+            {
+                for (int i = 0; i <= 8; i++)
+                {
+                    string checkBoxName = "ReferenceBox" + i; // Construct the checkbox name
+                    CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                    if (referenceCheckBox != null && i != 0)
+                    {
+                        referenceCheckBox.Checked = false; // Uncheck the checkbox
+                    }
+                }
+                try
+                { axMBActX2.Block(blockNo).ReferencePosition = MBPLib2.ReferencePositionTypes.REFERENCEPOSITION_BOTTOMLEFT; }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+        }
+
+        private void ReferenceBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox referenceBox = sender as CheckBox;
+            if (referenceBox != null && referenceBox.Checked)
+            {
+                for (int i = 0; i <= 8; i++)
+                {
+                    string checkBoxName = "ReferenceBox" + i; // Construct the checkbox name
+                    CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                    if (referenceCheckBox != null && i != 2)
+                    {
+                        referenceCheckBox.Checked = false; // Uncheck the checkbox
+                    }
+                }
+                try
+                { axMBActX2.Block(blockNo).ReferencePosition = MBPLib2.ReferencePositionTypes.REFERENCEPOSITION_BOTTOMCENTER; }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
+        }
+
+        private void ReferenceBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox referenceBox = sender as CheckBox;
+            if (referenceBox != null && referenceBox.Checked)
+            {
+                for (int i = 0; i <= 8; i++)
+                {
+                    string checkBoxName = "ReferenceBox" + i; // Construct the checkbox name
+                    CheckBox referenceCheckBox = this.Controls.Find(checkBoxName, true).FirstOrDefault() as CheckBox;
+
+                    if (referenceCheckBox != null && i != 1)
+                    {
+                        referenceCheckBox.Checked = false; // Uncheck the checkbox
+                    }
+                }
+                try
+                { axMBActX2.Block(blockNo).ReferencePosition = MBPLib2.ReferencePositionTypes.REFERENCEPOSITION_BOTTOMRIGHT; }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
         }
     }
 }
