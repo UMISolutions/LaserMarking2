@@ -87,9 +87,11 @@ namespace LaserMarking
             this.HeatBox = new System.Windows.Forms.TextBox();
             this.HeatCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.UpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // axMBActX2
@@ -568,11 +570,20 @@ namespace LaserMarking
             this.panel1.Size = new System.Drawing.Size(25, 27);
             this.panel1.TabIndex = 67;
             // 
+            // UpDown
+            // 
+            this.UpDown.Location = new System.Drawing.Point(1333, 475);
+            this.UpDown.Name = "UpDown";
+            this.UpDown.Size = new System.Drawing.Size(120, 20);
+            this.UpDown.TabIndex = 68;
+            this.UpDown.ValueChanged += new System.EventHandler(this.UpDown_ValueChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1509, 793);
+            this.Controls.Add(this.UpDown);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.HeatCheckBox);
             this.Controls.Add(this.HeatBox);
@@ -627,6 +638,7 @@ namespace LaserMarking
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -684,6 +696,7 @@ namespace LaserMarking
         private TextBox HeatBox;
         private CheckBox HeatCheckBox;
         private Panel panel1;
+        private NumericUpDown UpDown;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form

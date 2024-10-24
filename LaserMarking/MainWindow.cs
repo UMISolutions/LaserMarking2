@@ -502,6 +502,7 @@ namespace LaserMarking
         private void OrdersGridView_Click(object sender, EventArgs e)
         {
             save.Enabled = true;
+            btnOpenMarkerBuilder.Enabled = true;
             Mark_Part.BackColor = SystemColors.ControlLight ;
             string SelectedPN = "";
             double diam;
@@ -533,7 +534,7 @@ namespace LaserMarking
             // PNSub: PN
             // orderRev: rev
 
-            
+            // Not sure what happens (No TK rn)
             if (SelectedPN[0] == 'T')
             {
                 DataTable dt = new DataTable();
@@ -546,7 +547,7 @@ namespace LaserMarking
                 OrdersGridView.DataSource = dt;
             }
 
-            // P case (what means)
+            // P case
             else if (SelectedPN[0] == 'P')
             {
                 CheckForCustomProgram(SelectedPN);
@@ -867,6 +868,7 @@ namespace LaserMarking
                                 if (disabled == "DO NOT MODIFY")
                                 {
                                     save.Enabled = false; // Disable the button
+                                    btnOpenMarkerBuilder.Enabled = false;
                                 }
                             }
                             catch (System.Runtime.InteropServices.COMException error)
@@ -2084,6 +2086,16 @@ namespace LaserMarking
 
         }
 
+        private void UpDown_ValueChanged(object sender, EventArgs e)
+        {
+            /*
+            int blockNo = 2;
+            try
+            {
+                axMBActX2.Block(blockNo).Width += 1;
+            }
+            */
+        }
     }
 }
 
