@@ -1641,6 +1641,7 @@ namespace LaserMarking
         {
             // save the file (use normal save)... will guarentee file exists
             save_Click(sender, e);
+            panel1.BringToFront();
 
             // open file in marker builder
             string filePath = $@"U:\Engineering\LaserMarkingProfiles\{PartNumAndRevBox.Text.Trim()}.MA2";
@@ -2102,9 +2103,17 @@ namespace LaserMarking
                     widthBox.Text = axMBActX2.Block(blockNo).CharWidth.ToString();
                     heightBox.Text = axMBActX2.Block(blockNo).CharHeight.ToString();
                 }
-                catch (Exception ex)
+                catch 
                 {
-                    MessageBox.Show(ex.Message); // Display the error message from the exception
+                    try
+                    {
+                        widthBox.Text = axMBActX2.Block(blockNo).LogoWidth.ToString();
+                        heightBox.Text = axMBActX2.Block(blockNo).LogoHeight.ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
                 }
 
             }
@@ -2120,9 +2129,9 @@ namespace LaserMarking
 
         private void widthBox_TextChanged(object sender, EventArgs e)
         {
+            double charWidth = 0;
             try
             {
-                double charWidth;
                 if (double.TryParse(widthBox.Text, out charWidth))
                 {
                     axMBActX2.Block(blockNo).CharWidth = charWidth;
@@ -2132,17 +2141,24 @@ namespace LaserMarking
                     MessageBox.Show("Invalid input. Please enter a valid number for width.");
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error: " + ex.Message);
+                try 
+                {
+                    axMBActX2.Block(blockNo).LogoWidth = charWidth;
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                
             }
         }
 
         private void heightBox_TextChanged(object sender, EventArgs e)
         {
+            double charHeight = 0;
             try
             {
-                double charHeight;
                 if (double.TryParse(heightBox.Text, out charHeight))
                 {
                     axMBActX2.Block(blockNo).CharHeight = charHeight;
@@ -2152,9 +2168,17 @@ namespace LaserMarking
                     MessageBox.Show("Invalid input. Please enter a valid number for height.");
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show("Error: " + ex.Message);
+                try
+                {
+                    axMBActX2.Block(blockNo).LogoHeight = charHeight;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+
             }
         }
 
