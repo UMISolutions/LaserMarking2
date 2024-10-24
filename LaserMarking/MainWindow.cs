@@ -40,6 +40,7 @@ namespace LaserMarking
         bool GenericProgram = true;
         bool isConnected = false;
         bool partNumsFliped = false;
+        int blockNo;
 
         private Process externalProcess;
         [System.Runtime.InteropServices.DllImport("user32.dll")]
@@ -2086,15 +2087,131 @@ namespace LaserMarking
 
         }
 
-        private void UpDown_ValueChanged(object sender, EventArgs e)
+        // Changes the block for changes to be applied to
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
-            int blockNo = 2;
+            if (comboBox1.SelectedIndex != -1)
+            {
+                string selectedItem = comboBox1.SelectedItem.ToString();
+
+                var match = System.Text.RegularExpressions.Regex.Match(selectedItem, @"\d+");
+
+                blockNo = int.Parse(match.Value); // Convert the extracted number to int
+                try
+                {
+                    widthBox.Text = axMBActX2.Block(blockNo).CharWidth.ToString();
+                    heightBox.Text = axMBActX2.Block(blockNo).CharHeight.ToString();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message); // Display the error message from the exception
+                }
+
+            }
+        }
+
+        private void wp10_Click(object sender, EventArgs e)
+        {
+            double temp;
+            double.TryParse(widthBox.Text, out temp);
+            temp *= 1.1;
+            widthBox.Text = temp.ToString();
+        }
+
+        private void widthBox_TextChanged(object sender, EventArgs e)
+        {
             try
             {
-                axMBActX2.Block(blockNo).Width += 1;
+                double charWidth;
+                if (double.TryParse(widthBox.Text, out charWidth))
+                {
+                    axMBActX2.Block(blockNo).CharWidth = charWidth;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input. Please enter a valid number for width.");
+                }
             }
-            */
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void heightBox_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                double charHeight;
+                if (double.TryParse(heightBox.Text, out charHeight))
+                {
+                    axMBActX2.Block(blockNo).CharHeight = charHeight;
+                }
+                else
+                {
+                    MessageBox.Show("Invalid input. Please enter a valid number for height.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void wp1_Click(object sender, EventArgs e)
+        {
+            double temp;
+            double.TryParse(widthBox.Text, out temp);
+            temp *= 1.01;
+            widthBox.Text = temp.ToString();
+        }
+
+        private void wm10_Click(object sender, EventArgs e)
+        {
+            double temp;
+            double.TryParse(widthBox.Text, out temp);
+            temp *= 0.9;
+            widthBox.Text = temp.ToString();
+        }
+
+        private void wm1_Click(object sender, EventArgs e)
+        {
+            double temp;
+            double.TryParse(widthBox.Text, out temp);
+            temp *= 0.99;
+            widthBox.Text = temp.ToString();
+        }
+
+        private void hp10_Click(object sender, EventArgs e)
+        {
+            double temp;
+            double.TryParse(heightBox.Text, out temp);
+            temp *= 1.1;
+            heightBox.Text = temp.ToString();
+        }
+
+        private void hp1_Click(object sender, EventArgs e)
+        {
+            double temp;
+            double.TryParse(heightBox.Text, out temp);
+            temp *= 1.01;
+            heightBox.Text = temp.ToString();
+        }
+
+        private void hm10_Click(object sender, EventArgs e)
+        {
+            double temp;
+            double.TryParse(heightBox.Text, out temp);
+            temp *= 0.9;
+            heightBox.Text = temp.ToString();
+        }
+
+        private void hm1_Click(object sender, EventArgs e)
+        {
+            double temp;
+            double.TryParse(heightBox.Text, out temp);
+            temp *= 0.99;
+            heightBox.Text = temp.ToString();
         }
     }
 }

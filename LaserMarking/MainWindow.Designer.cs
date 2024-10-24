@@ -87,11 +87,28 @@ namespace LaserMarking
             this.HeatBox = new System.Windows.Forms.TextBox();
             this.HeatCheckBox = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.UpDown = new System.Windows.Forms.NumericUpDown();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.widthBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.heightBox = new System.Windows.Forms.TextBox();
+            this.wp10 = new System.Windows.Forms.Button();
+            this.wm10 = new System.Windows.Forms.Button();
+            this.wp1 = new System.Windows.Forms.Button();
+            this.wm1 = new System.Windows.Forms.Button();
+            this.hp10 = new System.Windows.Forms.Button();
+            this.hp1 = new System.Windows.Forms.Button();
+            this.hm10 = new System.Windows.Forms.Button();
+            this.hm1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpDown)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // axMBActX2
@@ -131,7 +148,7 @@ namespace LaserMarking
             // Mark_Part
             // 
             this.Mark_Part.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Mark_Part.Location = new System.Drawing.Point(1244, 357);
+            this.Mark_Part.Location = new System.Drawing.Point(1262, 218);
             this.Mark_Part.Name = "Mark_Part";
             this.Mark_Part.Size = new System.Drawing.Size(235, 52);
             this.Mark_Part.TabIndex = 4;
@@ -191,7 +208,7 @@ namespace LaserMarking
             // 
             // LightOnButton
             // 
-            this.LightOnButton.Location = new System.Drawing.Point(1266, 283);
+            this.LightOnButton.Location = new System.Drawing.Point(1289, 159);
             this.LightOnButton.Name = "LightOnButton";
             this.LightOnButton.Size = new System.Drawing.Size(92, 53);
             this.LightOnButton.TabIndex = 12;
@@ -201,7 +218,7 @@ namespace LaserMarking
             // 
             // LightOffButton
             // 
-            this.LightOffButton.Location = new System.Drawing.Point(1361, 282);
+            this.LightOffButton.Location = new System.Drawing.Point(1387, 158);
             this.LightOffButton.Name = "LightOffButton";
             this.LightOffButton.Size = new System.Drawing.Size(92, 54);
             this.LightOffButton.TabIndex = 13;
@@ -275,7 +292,7 @@ namespace LaserMarking
             // CameraFinderViewButton
             // 
             this.CameraFinderViewButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CameraFinderViewButton.Location = new System.Drawing.Point(1286, 228);
+            this.CameraFinderViewButton.Location = new System.Drawing.Point(1317, 103);
             this.CameraFinderViewButton.Name = "CameraFinderViewButton";
             this.CameraFinderViewButton.Size = new System.Drawing.Size(136, 49);
             this.CameraFinderViewButton.TabIndex = 26;
@@ -565,25 +582,212 @@ namespace LaserMarking
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(1428, 8);
+            this.panel1.Location = new System.Drawing.Point(1479, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(25, 27);
             this.panel1.TabIndex = 67;
             // 
-            // UpDown
+            // comboBox1
             // 
-            this.UpDown.Location = new System.Drawing.Point(1333, 475);
-            this.UpDown.Name = "UpDown";
-            this.UpDown.Size = new System.Drawing.Size(120, 20);
-            this.UpDown.TabIndex = 68;
-            this.UpDown.ValueChanged += new System.EventHandler(this.UpDown_ValueChanged);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Block 1",
+            "Block 2",
+            "Block 3",
+            "Block 4",
+            "Block 5",
+            "Block 6",
+            "Block 7",
+            "Block 8"});
+            this.comboBox1.Location = new System.Drawing.Point(1360, 305);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 69;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1240, 356);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 70;
+            this.label10.Text = "Width";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(1240, 420);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 72;
+            this.label11.Text = "Height";
+            // 
+            // widthBox
+            // 
+            this.widthBox.Location = new System.Drawing.Point(1284, 349);
+            this.widthBox.Name = "widthBox";
+            this.widthBox.Size = new System.Drawing.Size(100, 20);
+            this.widthBox.TabIndex = 73;
+            this.widthBox.TextChanged += new System.EventHandler(this.widthBox_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label12.Location = new System.Drawing.Point(1254, 306);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 20);
+            this.label12.TabIndex = 75;
+            this.label12.Text = "Block Editor";
+            // 
+            // heightBox
+            // 
+            this.heightBox.Location = new System.Drawing.Point(1284, 413);
+            this.heightBox.Name = "heightBox";
+            this.heightBox.Size = new System.Drawing.Size(100, 20);
+            this.heightBox.TabIndex = 76;
+            this.heightBox.TextChanged += new System.EventHandler(this.heightBox_TextChanged);
+            // 
+            // wp10
+            // 
+            this.wp10.Location = new System.Drawing.Point(3, 3);
+            this.wp10.Name = "wp10";
+            this.wp10.Size = new System.Drawing.Size(54, 23);
+            this.wp10.TabIndex = 77;
+            this.wp10.Text = "+ 10%";
+            this.wp10.UseVisualStyleBackColor = true;
+            this.wp10.Click += new System.EventHandler(this.wp10_Click);
+            // 
+            // wm10
+            // 
+            this.wm10.Location = new System.Drawing.Point(3, 32);
+            this.wm10.Name = "wm10";
+            this.wm10.Size = new System.Drawing.Size(54, 23);
+            this.wm10.TabIndex = 78;
+            this.wm10.Text = "- 10%";
+            this.wm10.UseVisualStyleBackColor = true;
+            this.wm10.Click += new System.EventHandler(this.wm10_Click);
+            // 
+            // wp1
+            // 
+            this.wp1.Location = new System.Drawing.Point(63, 3);
+            this.wp1.Name = "wp1";
+            this.wp1.Size = new System.Drawing.Size(54, 23);
+            this.wp1.TabIndex = 79;
+            this.wp1.Text = "+ 1%";
+            this.wp1.UseVisualStyleBackColor = true;
+            this.wp1.Click += new System.EventHandler(this.wp1_Click);
+            // 
+            // wm1
+            // 
+            this.wm1.Location = new System.Drawing.Point(63, 32);
+            this.wm1.Name = "wm1";
+            this.wm1.Size = new System.Drawing.Size(54, 23);
+            this.wm1.TabIndex = 80;
+            this.wm1.Text = "- 1%";
+            this.wm1.UseVisualStyleBackColor = true;
+            this.wm1.Click += new System.EventHandler(this.wm1_Click);
+            // 
+            // hp10
+            // 
+            this.hp10.Location = new System.Drawing.Point(3, 3);
+            this.hp10.Name = "hp10";
+            this.hp10.Size = new System.Drawing.Size(54, 23);
+            this.hp10.TabIndex = 81;
+            this.hp10.Text = "+ 10%";
+            this.hp10.UseVisualStyleBackColor = true;
+            this.hp10.Click += new System.EventHandler(this.hp10_Click);
+            // 
+            // hp1
+            // 
+            this.hp1.Location = new System.Drawing.Point(63, 3);
+            this.hp1.Name = "hp1";
+            this.hp1.Size = new System.Drawing.Size(54, 23);
+            this.hp1.TabIndex = 82;
+            this.hp1.Text = "+ 1%";
+            this.hp1.UseVisualStyleBackColor = true;
+            this.hp1.Click += new System.EventHandler(this.hp1_Click);
+            // 
+            // hm10
+            // 
+            this.hm10.Location = new System.Drawing.Point(3, 32);
+            this.hm10.Name = "hm10";
+            this.hm10.Size = new System.Drawing.Size(54, 23);
+            this.hm10.TabIndex = 83;
+            this.hm10.Text = "- 10%";
+            this.hm10.UseVisualStyleBackColor = true;
+            this.hm10.Click += new System.EventHandler(this.hm10_Click);
+            // 
+            // hm1
+            // 
+            this.hm1.Location = new System.Drawing.Point(63, 32);
+            this.hm1.Name = "hm1";
+            this.hm1.Size = new System.Drawing.Size(54, 23);
+            this.hm1.TabIndex = 84;
+            this.hm1.Text = "- 1%";
+            this.hm1.UseVisualStyleBackColor = true;
+            this.hm1.Click += new System.EventHandler(this.hm1_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.wp10, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.wp1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.wm10, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.wm1, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1387, 332);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(120, 59);
+            this.tableLayoutPanel1.TabIndex = 85;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.hp10, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.hp1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.hm1, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.hm10, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1387, 397);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(120, 59);
+            this.tableLayoutPanel2.TabIndex = 86;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1360, 4);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 26);
+            this.label13.TabIndex = 87;
+            this.label13.Text = "DO NOT REMOVE --> \r\nIt\'s important\r\n";
+            this.label13.Visible = false;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1509, 793);
-            this.Controls.Add(this.UpDown);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.heightBox);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.widthBox);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.HeatCheckBox);
             this.Controls.Add(this.HeatBox);
@@ -638,7 +842,8 @@ namespace LaserMarking
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.UpDown)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -696,7 +901,23 @@ namespace LaserMarking
         private TextBox HeatBox;
         private CheckBox HeatCheckBox;
         private Panel panel1;
-        private NumericUpDown UpDown;
+        private ComboBox comboBox1;
+        private Label label10;
+        private Label label11;
+        private TextBox widthBox;
+        private Label label12;
+        private TextBox heightBox;
+        private Button wp10;
+        private Button wm10;
+        private Button wp1;
+        private Button wm1;
+        private Button hp10;
+        private Button hp1;
+        private Button hm10;
+        private Button hm1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label label13;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
