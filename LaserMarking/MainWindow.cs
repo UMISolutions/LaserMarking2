@@ -83,6 +83,7 @@ namespace LaserMarking
             ProgramMaterialCombo.Items.Add("SS");
             ProgramMaterialCombo.Items.Add("CS");
 
+            ProgramSizeCombo.Items.Add("04");
             ProgramSizeCombo.Items.Add("06");
             ProgramSizeCombo.Items.Add("08");
             ProgramSizeCombo.Items.Add("10");
