@@ -110,6 +110,8 @@ namespace LaserMarking
             this.MinusOne = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.POTxtBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -862,11 +864,29 @@ namespace LaserMarking
             this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 32);
             this.tableLayoutPanel3.TabIndex = 93;
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(1236, 250);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(160, 13);
+            this.label14.TabIndex = 94;
+            this.label14.Text = "Marking For Production Number:";
+            // 
+            // POTxtBox
+            // 
+            this.POTxtBox.Location = new System.Drawing.Point(1397, 247);
+            this.POTxtBox.Name = "POTxtBox";
+            this.POTxtBox.Size = new System.Drawing.Size(100, 20);
+            this.POTxtBox.TabIndex = 95;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1509, 793);
+            this.Controls.Add(this.POTxtBox);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label13);
@@ -1015,6 +1035,8 @@ namespace LaserMarking
         private Button MinusOne;
         private Label label15;
         private TableLayoutPanel tableLayoutPanel3;
+        private Label label14;
+        private TextBox POTxtBox;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form

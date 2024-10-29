@@ -524,6 +524,10 @@ namespace LaserMarking
             {
                 DataGridViewRow row = this.OrdersGridView.SelectedRows[0];
                 SelectedPN = row.Cells["Part_Number"].Value.ToString();
+                try { POTxtBox.Text = row.Cells["ProductionNumber"].Value.ToString(); }
+                catch { POTxtBox.Text = ""; }
+                
+
             }
            
             if (SelectedPN.Contains("_"))
@@ -1157,7 +1161,12 @@ namespace LaserMarking
                 }else if (diameter == 0.750)
                 {
                     ProgramSizeCombo.SelectedItem = "12";
-                }else if (diameter == 0.500)
+                }
+                else if (diameter == 0.625)
+                {
+                    ProgramSizeCombo.SelectedItem = "10";
+                }
+                else if (diameter == 0.500)
                 {
                     ProgramSizeCombo.SelectedItem = "08";
                 }
@@ -1198,6 +1207,10 @@ namespace LaserMarking
                 else if (diameter == 0.750)
                 {
                     ProgramSizeCombo.SelectedItem = "12";
+                }
+                else if (diameter == 0.625)
+                {
+                    ProgramSizeCombo.SelectedItem = "10";
                 }
                 else if (diameter == 0.500)
                 {
