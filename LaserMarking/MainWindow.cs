@@ -1388,17 +1388,17 @@ namespace LaserMarking
         private void UpdateCurrentProgramBlocks(int customerId)
         {
             partNumsFliped = false;
-            try { if (axMBActX2.Block(2).IsEditable) { axMBActX2.Block(2).Text = DateBox.Text; } }
+            try { if (axMBActX2.Block(2).IsEditable) { axMBActX2.Block(2).Text = DateBox.Text.ToUpper(); } }
             catch { axMBActX2.Block(2).Text = " "; }
-            try { if (axMBActX2.Block(3).IsEditable) { axMBActX2.Block(3).Text = PartNumAndRevBox.Text; } }
+            try { if (axMBActX2.Block(3).IsEditable) { axMBActX2.Block(3).Text = PartNumAndRevBox.Text.ToUpper(); } }
             catch { axMBActX2.Block(3).Text = " "; }
-            try { if (axMBActX2.Block(4).IsEditable) { axMBActX2.Block(4).Text = CustPartNumAndRevBox.Text; } }
+            try { if (axMBActX2.Block(4).IsEditable) { axMBActX2.Block(4).Text = CustPartNumAndRevBox.Text.ToUpper(); } }
             catch { axMBActX2.Block(4).Text = " "; }
-            try { if (axMBActX2.Block(5).IsEditable) { axMBActX2.Block(5).Text = DescLine1Box.Text; } }
+            try { if (axMBActX2.Block(5).IsEditable) { axMBActX2.Block(5).Text = DescLine1Box.Text.ToUpper(); } }
             catch { axMBActX2.Block(5).Text = " "; }
-            try { if (axMBActX2.Block(6).IsEditable) { axMBActX2.Block(6).Text = DescLine2Box.Text; } }
+            try { if (axMBActX2.Block(6).IsEditable) { axMBActX2.Block(6).Text = DescLine2Box.Text.ToUpper(); } }
             catch { axMBActX2.Block(6).Text = " "; }
-            try { if (axMBActX2.Block(7).IsEditable) { axMBActX2.Block(7).Text = HeatBox.Text; } }
+            try { if (axMBActX2.Block(7).IsEditable) { axMBActX2.Block(7).Text = HeatBox.Text.ToUpper(); } }
             catch { axMBActX2.Block(7).Text = " "; }
             if (customerId != 0)
             {
