@@ -503,6 +503,8 @@ namespace LaserMarking
         // Loads label when click on part :: Complete
         private void OrdersGridView_Click(object sender, EventArgs e)
         {
+            ProgramMaterialCombo.SelectedIndex = -1;
+            ProgramSizeCombo.SelectedIndex = -1;
             save.Enabled = true;
             btnOpenMarkerBuilder.Enabled = true;
             Mark_Part.BackColor = SystemColors.ControlLight ;
