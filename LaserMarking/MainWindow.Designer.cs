@@ -65,7 +65,6 @@ namespace LaserMarking
             this.CustPartNumAndRevBox = new System.Windows.Forms.TextBox();
             this.DescLine1Box = new System.Windows.Forms.TextBox();
             this.DescLine2Box = new System.Windows.Forms.TextBox();
-            this.QRCheckBox = new System.Windows.Forms.CheckBox();
             this.QRCodeDataBox = new System.Windows.Forms.TextBox();
             this.FlipPartNumbersButton = new System.Windows.Forms.Button();
             this.SetCameraPosition = new System.Windows.Forms.Button();
@@ -112,6 +111,17 @@ namespace LaserMarking
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label14 = new System.Windows.Forms.Label();
             this.POTxtBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.Desc1Box = new System.Windows.Forms.CheckBox();
+            this.PN2Box = new System.Windows.Forms.CheckBox();
+            this.PN1Box = new System.Windows.Forms.CheckBox();
+            this.DateCheckBox = new System.Windows.Forms.CheckBox();
+            this.QRCheckBox = new System.Windows.Forms.CheckBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.LabelBox = new System.Windows.Forms.CheckBox();
+            this.ImageBox = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -390,29 +400,19 @@ namespace LaserMarking
             this.DescLine2Box.TabIndex = 36;
             this.DescLine2Box.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
             // 
-            // QRCheckBox
-            // 
-            this.QRCheckBox.AutoSize = true;
-            this.QRCheckBox.Location = new System.Drawing.Point(178, 663);
-            this.QRCheckBox.Name = "QRCheckBox";
-            this.QRCheckBox.Size = new System.Drawing.Size(115, 17);
-            this.QRCheckBox.TabIndex = 37;
-            this.QRCheckBox.Text = "QR Code (Block 8)";
-            this.QRCheckBox.UseVisualStyleBackColor = true;
-            this.QRCheckBox.CheckedChanged += new System.EventHandler(this.QRCheckBox_CheckedChanged);
-            // 
             // QRCodeDataBox
             // 
-            this.QRCodeDataBox.Location = new System.Drawing.Point(299, 661);
+            this.QRCodeDataBox.Location = new System.Drawing.Point(1475, 33);
             this.QRCodeDataBox.Name = "QRCodeDataBox";
             this.QRCodeDataBox.ReadOnly = true;
-            this.QRCodeDataBox.Size = new System.Drawing.Size(132, 20);
+            this.QRCodeDataBox.Size = new System.Drawing.Size(29, 20);
             this.QRCodeDataBox.TabIndex = 38;
+            this.QRCodeDataBox.Visible = false;
             this.QRCodeDataBox.TextChanged += new System.EventHandler(this.QRCodeDataBox_TextChanged);
             // 
             // FlipPartNumbersButton
             // 
-            this.FlipPartNumbersButton.Location = new System.Drawing.Point(74, 555);
+            this.FlipPartNumbersButton.Location = new System.Drawing.Point(31, 524);
             this.FlipPartNumbersButton.Name = "FlipPartNumbersButton";
             this.FlipPartNumbersButton.Size = new System.Drawing.Size(54, 23);
             this.FlipPartNumbersButton.TabIndex = 39;
@@ -506,11 +506,10 @@ namespace LaserMarking
             // Desc2Box
             // 
             this.Desc2Box.AutoSize = true;
-            this.Desc2Box.Location = new System.Drawing.Point(32, 611);
+            this.Desc2Box.Location = new System.Drawing.Point(435, 615);
             this.Desc2Box.Name = "Desc2Box";
-            this.Desc2Box.Size = new System.Drawing.Size(133, 17);
+            this.Desc2Box.Size = new System.Drawing.Size(15, 14);
             this.Desc2Box.TabIndex = 58;
-            this.Desc2Box.Text = "Description 2 (Block 6)";
             this.Desc2Box.UseVisualStyleBackColor = true;
             this.Desc2Box.CheckedChanged += new System.EventHandler(this.Desc2Box_CheckedChanged);
             // 
@@ -537,7 +536,7 @@ namespace LaserMarking
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(196, 515);
+            this.label6.Location = new System.Drawing.Point(200, 511);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 61;
@@ -546,20 +545,20 @@ namespace LaserMarking
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(156, 538);
+            this.label7.Location = new System.Drawing.Point(127, 534);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 13);
+            this.label7.Size = new System.Drawing.Size(148, 13);
             this.label7.TabIndex = 62;
-            this.label7.Text = "PartNum_Rev (Block 3)";
+            this.label7.Text = "Primary Part Number (Block 3)";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(135, 560);
+            this.label8.Location = new System.Drawing.Point(110, 560);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(140, 13);
+            this.label8.Size = new System.Drawing.Size(165, 13);
             this.label8.TabIndex = 63;
-            this.label8.Text = "CustPartNum_Rev (Block 4)";
+            this.label8.Text = "Secondary Part Number (Block 4)";
             // 
             // label9
             // 
@@ -581,11 +580,10 @@ namespace LaserMarking
             // HeatCheckBox
             // 
             this.HeatCheckBox.AutoSize = true;
-            this.HeatCheckBox.Location = new System.Drawing.Point(31, 637);
+            this.HeatCheckBox.Location = new System.Drawing.Point(435, 640);
             this.HeatCheckBox.Name = "HeatCheckBox";
-            this.HeatCheckBox.Size = new System.Drawing.Size(134, 17);
+            this.HeatCheckBox.Size = new System.Drawing.Size(15, 14);
             this.HeatCheckBox.TabIndex = 66;
-            this.HeatCheckBox.Text = "Heat Number (Block 7)";
             this.HeatCheckBox.UseVisualStyleBackColor = true;
             this.HeatCheckBox.CheckedChanged += new System.EventHandler(this.HeatCheckBox_CheckedChanged);
             // 
@@ -880,11 +878,129 @@ namespace LaserMarking
             this.POTxtBox.Size = new System.Drawing.Size(100, 20);
             this.POTxtBox.TabIndex = 95;
             // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(51, 640);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(115, 13);
+            this.label16.TabIndex = 96;
+            this.label16.Text = "Heat Number (Block 7)";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(51, 612);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(114, 13);
+            this.label17.TabIndex = 97;
+            this.label17.Text = "Description 2 (Block 6)";
+            // 
+            // Desc1Box
+            // 
+            this.Desc1Box.AutoSize = true;
+            this.Desc1Box.Location = new System.Drawing.Point(434, 586);
+            this.Desc1Box.Name = "Desc1Box";
+            this.Desc1Box.Size = new System.Drawing.Size(15, 14);
+            this.Desc1Box.TabIndex = 98;
+            this.Desc1Box.UseVisualStyleBackColor = true;
+            this.Desc1Box.CheckedChanged += new System.EventHandler(this.Desc1Box_CheckedChanged);
+            // 
+            // PN2Box
+            // 
+            this.PN2Box.AutoSize = true;
+            this.PN2Box.Location = new System.Drawing.Point(435, 560);
+            this.PN2Box.Name = "PN2Box";
+            this.PN2Box.Size = new System.Drawing.Size(15, 14);
+            this.PN2Box.TabIndex = 99;
+            this.PN2Box.UseVisualStyleBackColor = true;
+            this.PN2Box.CheckedChanged += new System.EventHandler(this.PN2Box_CheckedChanged);
+            // 
+            // PN1Box
+            // 
+            this.PN1Box.AutoSize = true;
+            this.PN1Box.Location = new System.Drawing.Point(435, 533);
+            this.PN1Box.Name = "PN1Box";
+            this.PN1Box.Size = new System.Drawing.Size(15, 14);
+            this.PN1Box.TabIndex = 100;
+            this.PN1Box.UseVisualStyleBackColor = true;
+            this.PN1Box.CheckedChanged += new System.EventHandler(this.PN1Box_CheckedChanged);
+            // 
+            // DateCheckBox
+            // 
+            this.DateCheckBox.AutoSize = true;
+            this.DateCheckBox.Location = new System.Drawing.Point(436, 510);
+            this.DateCheckBox.Name = "DateCheckBox";
+            this.DateCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.DateCheckBox.TabIndex = 101;
+            this.DateCheckBox.UseVisualStyleBackColor = true;
+            this.DateCheckBox.CheckedChanged += new System.EventHandler(this.DateCheckBox_CheckedChanged);
+            // 
+            // QRCheckBox
+            // 
+            this.QRCheckBox.AutoSize = true;
+            this.QRCheckBox.Location = new System.Drawing.Point(1356, 36);
+            this.QRCheckBox.Name = "QRCheckBox";
+            this.QRCheckBox.Size = new System.Drawing.Size(115, 17);
+            this.QRCheckBox.TabIndex = 37;
+            this.QRCheckBox.Text = "QR Code (Block 8)";
+            this.QRCheckBox.UseVisualStyleBackColor = true;
+            this.QRCheckBox.Visible = false;
+            this.QRCheckBox.CheckedChanged += new System.EventHandler(this.QRCheckBox_CheckedChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(55, 668);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(139, 13);
+            this.label18.TabIndex = 102;
+            this.label18.Text = "Label Background (Block 0)";
+            // 
+            // LabelBox
+            // 
+            this.LabelBox.AutoSize = true;
+            this.LabelBox.Location = new System.Drawing.Point(200, 668);
+            this.LabelBox.Name = "LabelBox";
+            this.LabelBox.Size = new System.Drawing.Size(15, 14);
+            this.LabelBox.TabIndex = 103;
+            this.LabelBox.UseVisualStyleBackColor = true;
+            this.LabelBox.CheckedChanged += new System.EventHandler(this.LabelBox_CheckedChanged);
+            // 
+            // ImageBox
+            // 
+            this.ImageBox.AutoSize = true;
+            this.ImageBox.Location = new System.Drawing.Point(224, 668);
+            this.ImageBox.Name = "ImageBox";
+            this.ImageBox.Size = new System.Drawing.Size(15, 14);
+            this.ImageBox.TabIndex = 104;
+            this.ImageBox.UseVisualStyleBackColor = true;
+            this.ImageBox.CheckedChanged += new System.EventHandler(this.ImageBox_CheckedChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(245, 668);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(110, 13);
+            this.label19.TabIndex = 105;
+            this.label19.Text = "Image/Logo (Block 1)";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1509, 793);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.ImageBox);
+            this.Controls.Add(this.LabelBox);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.DateCheckBox);
+            this.Controls.Add(this.PN1Box);
+            this.Controls.Add(this.PN2Box);
+            this.Controls.Add(this.Desc1Box);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.POTxtBox);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.tableLayoutPanel3);
@@ -990,7 +1106,6 @@ namespace LaserMarking
         private System.Windows.Forms.TextBox CustPartNumAndRevBox;
         private System.Windows.Forms.TextBox DescLine1Box;
         private System.Windows.Forms.TextBox DescLine2Box;
-        private System.Windows.Forms.CheckBox QRCheckBox;
         private System.Windows.Forms.TextBox QRCodeDataBox;
         private System.Windows.Forms.Button FlipPartNumbersButton;
         private System.Windows.Forms.Button SetCameraPosition;
@@ -1037,6 +1152,17 @@ namespace LaserMarking
         private TableLayoutPanel tableLayoutPanel3;
         private Label label14;
         private TextBox POTxtBox;
+        private Label label16;
+        private Label label17;
+        private CheckBox Desc1Box;
+        private CheckBox PN2Box;
+        private CheckBox PN1Box;
+        private CheckBox DateCheckBox;
+        private CheckBox QRCheckBox;
+        private Label label18;
+        private CheckBox LabelBox;
+        private CheckBox ImageBox;
+        private Label label19;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form

@@ -516,7 +516,44 @@ namespace LaserMarking
             bool fileFound;
             string PNSub = " ";
             string orderRev = "0";
-  
+            LabelBox.CheckedChanged -= LabelBox_CheckedChanged;
+            ImageBox.CheckedChanged -= ImageBox_CheckedChanged;
+            DateCheckBox.CheckedChanged -= DateCheckBox_CheckedChanged;
+            PN1Box.CheckedChanged -= PN1Box_CheckedChanged;
+            PN2Box.CheckedChanged -= PN2Box_CheckedChanged;
+            Desc1Box.CheckedChanged -= Desc1Box_CheckedChanged;
+            Desc2Box.CheckedChanged -= Desc2Box_CheckedChanged;
+            HeatCheckBox.CheckedChanged -= HeatCheckBox_CheckedChanged;
+
+            try
+            {
+                LabelBox.Checked = true;
+                ImageBox.Checked = true;
+                DateCheckBox.Checked = true;
+                PN1Box.Checked = true;
+                PN2Box.Checked = true;
+                Desc1Box.Checked = true;
+                Desc2Box.Checked = true;
+                HeatCheckBox.Checked = true;
+            }
+            catch
+            {
+                // Handle exceptions if necessary
+            }
+            finally
+            {
+                // Re-subscribe to the event
+                LabelBox.CheckedChanged += LabelBox_CheckedChanged;
+                ImageBox.CheckedChanged += ImageBox_CheckedChanged;
+                DateCheckBox.CheckedChanged += DateCheckBox_CheckedChanged;
+                PN1Box.CheckedChanged += PN1Box_CheckedChanged;
+                PN2Box.CheckedChanged += PN2Box_CheckedChanged;
+                Desc1Box.CheckedChanged += Desc1Box_CheckedChanged;
+                Desc2Box.CheckedChanged += Desc2Box_CheckedChanged;
+                HeatCheckBox.CheckedChanged += HeatCheckBox_CheckedChanged;
+            }
+
+
             DateTime thisDay = DateTime.Today;
             string customdate = thisDay.ToString("yyyy-MM-dd");
 
@@ -2342,6 +2379,119 @@ namespace LaserMarking
             }
         }
 
+        private void Desc1Box_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Desc1Box.Checked)
+                {
+                    axMBActX2.Block(5).IsMarkingEnable = true;
+                }
+                else
+                {
+                    axMBActX2.Block(5).IsMarkingEnable = false;
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No Desc 1 Block (5) exists or is not editable");
+            }
+        }
+
+        private void PN2Box_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PN2Box.Checked)
+                {
+                    axMBActX2.Block(4).IsMarkingEnable = true;
+                }
+                else
+                {
+                    axMBActX2.Block(4).IsMarkingEnable = false;
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No Secondary PN Block (4) exists or is not editable");
+            }
+        }
+
+        private void PN1Box_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (PN1Box.Checked)
+                {
+                    axMBActX2.Block(3).IsMarkingEnable = true;
+                }
+                else
+                {
+                    axMBActX2.Block(3).IsMarkingEnable = false;
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No Primary PN Block (3) exists or is not editable");
+            }
+        }
+
+        private void DateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DateCheckBox.Checked)
+                {
+                    axMBActX2.Block(2).IsMarkingEnable = true;
+                }
+                else
+                {
+                    axMBActX2.Block(2).IsMarkingEnable = false;
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No Date Block (2) exists or is not editable");
+            }
+        }
+
+        private void LabelBox_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (LabelBox.Checked)
+                {
+                    axMBActX2.Block(0).IsMarkingEnable = true;
+                }
+                else
+                {
+                    axMBActX2.Block(0).IsMarkingEnable = false;
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No Background Block (0) exists or is not editable");
+            }
+        }
+
+        private void ImageBox_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (ImageBox.Checked)
+                {
+                    axMBActX2.Block(1).IsMarkingEnable = true;
+                }
+                else
+                {
+                    axMBActX2.Block(1).IsMarkingEnable = false;
+                }
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show("No Image Block (1) exists or is not editable");
+            }
+        }
     }
 }
 
