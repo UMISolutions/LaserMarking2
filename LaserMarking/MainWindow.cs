@@ -409,8 +409,8 @@ namespace LaserMarking
 
                     // Prepare the SQL command with parameters
                     string sql = @"
-            INSERT INTO LaserMarkings (DateTimeMarked, PartNum, ProductionNumber, HeatNumber, IsConnected)
-            VALUES (@DateTimeMarked, @PartNum, @ProductionNumber, @HeatNumber, @IsConnected)";
+            INSERT INTO LaserMarkings (DateTimeMarked, PrimaryPN, SecondaryPN, ProductionNumber, HeatNumber, IsConnected)
+            VALUES (@DateTimeMarked, @PrimaryPN, @SecondaryPN, @ProductionNumber, @HeatNumber, @IsConnected)";
 
                     using (SqlCommand cmd2 = new SqlCommand(sql, cn))
                     {
@@ -423,14 +423,12 @@ namespace LaserMarking
 
                         // Add parameters to the command
                         cmd2.Parameters.AddWithValue("@DateTimeMarked", DateTime.Now); // Set to current date and time
-                        if (!partNumsFliped)
-                        {
-                            cmd2.Parameters.AddWithValue("@PartNum", PartNumAndRevBox.Text);
-                        } else
-                        {
-                            cmd2.Parameters.AddWithValue("@PartNum", CustPartNumAndRevBox.Text);
-                        }
-                        cmd2.Parameters.AddWithValue("@ProductionNumber", ProductionNumber); // Replace with actual production order
+                        
+                        cmd2.Parameters.AddWithValue("@PrimaryPN", PartNumAndRevBox.Text);
+                        
+                        cmd2.Parameters.AddWithValue("@SecondaryPN", CustPartNumAndRevBox.Text);
+                        
+                        cmd2.Parameters.AddWithValue("@ProductionNumber", ProductionNumber); 
                         cmd2.Parameters.AddWithValue("@HeatNumber", HeatBox.Text);
                         cmd2.Parameters.AddWithValue("@IsConnected", isConnected); // Replace with actual test flag value
 
