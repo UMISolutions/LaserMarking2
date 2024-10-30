@@ -1696,6 +1696,19 @@ namespace LaserMarking
         // Opens Marker Builder plus into panel :: Complete
         private void btnOpenMarkerBuilder_MouseClick(object sender, MouseEventArgs e)
         {
+
+            // Prompt the user with a confirmation message box
+            var result = MessageBox.Show("Try and format your Label with the block editor. Are you sure you want to open the Marker Builder?",
+                                           "Open Marker Builder",
+                                           MessageBoxButtons.YesNo,
+                                           MessageBoxIcon.Question);
+
+            // Check the user's choice
+            if (result == DialogResult.No)
+            {
+                return; // Exit the function if the user selects "Cancel"
+            }
+
             // save the file (use normal save)... will guarentee file exists
             save_Click(sender, e);
             panel1.BringToFront();
