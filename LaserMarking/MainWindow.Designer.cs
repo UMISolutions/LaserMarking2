@@ -59,7 +59,6 @@ namespace LaserMarking
             this.ShowFileListButton = new System.Windows.Forms.Button();
             this.Errors_Btn = new System.Windows.Forms.Button();
             this.ClearErrors_Btn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DateBox = new System.Windows.Forms.TextBox();
             this.PartNumAndRevBox = new System.Windows.Forms.TextBox();
             this.CustPartNumAndRevBox = new System.Windows.Forms.TextBox();
@@ -125,7 +124,6 @@ namespace LaserMarking
             this.LogoComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -258,7 +256,7 @@ namespace LaserMarking
             // ProgramMaterialCombo
             // 
             this.ProgramMaterialCombo.FormattingEnabled = true;
-            this.ProgramMaterialCombo.Location = new System.Drawing.Point(310, 457);
+            this.ProgramMaterialCombo.Location = new System.Drawing.Point(134, 661);
             this.ProgramMaterialCombo.Name = "ProgramMaterialCombo";
             this.ProgramMaterialCombo.Size = new System.Drawing.Size(121, 21);
             this.ProgramMaterialCombo.TabIndex = 19;
@@ -266,7 +264,7 @@ namespace LaserMarking
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(265, 465);
+            this.label1.Location = new System.Drawing.Point(84, 667);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 20;
@@ -275,7 +273,7 @@ namespace LaserMarking
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(282, 492);
+            this.label2.Location = new System.Drawing.Point(277, 664);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 22;
@@ -284,7 +282,7 @@ namespace LaserMarking
             // ProgramSizeCombo
             // 
             this.ProgramSizeCombo.FormattingEnabled = true;
-            this.ProgramSizeCombo.Location = new System.Drawing.Point(310, 484);
+            this.ProgramSizeCombo.Location = new System.Drawing.Point(310, 661);
             this.ProgramSizeCombo.Name = "ProgramSizeCombo";
             this.ProgramSizeCombo.Size = new System.Drawing.Size(121, 21);
             this.ProgramSizeCombo.TabIndex = 23;
@@ -350,17 +348,6 @@ namespace LaserMarking
             this.ClearErrors_Btn.UseVisualStyleBackColor = true;
             this.ClearErrors_Btn.Click += new System.EventHandler(this.ClearErrors_Btn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(156, 458);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
-            // 
             // DateBox
             // 
             this.DateBox.Location = new System.Drawing.Point(277, 508);
@@ -413,9 +400,9 @@ namespace LaserMarking
             // 
             // FlipPartNumbersButton
             // 
-            this.FlipPartNumbersButton.Location = new System.Drawing.Point(31, 524);
+            this.FlipPartNumbersButton.Location = new System.Drawing.Point(51, 531);
             this.FlipPartNumbersButton.Name = "FlipPartNumbersButton";
-            this.FlipPartNumbersButton.Size = new System.Drawing.Size(54, 23);
+            this.FlipPartNumbersButton.Size = new System.Drawing.Size(54, 42);
             this.FlipPartNumbersButton.TabIndex = 39;
             this.FlipPartNumbersButton.Text = "FLIPPN";
             this.FlipPartNumbersButton.UseVisualStyleBackColor = true;
@@ -498,7 +485,7 @@ namespace LaserMarking
             // 
             this.save.Location = new System.Drawing.Point(14, 455);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(136, 57);
+            this.save.Size = new System.Drawing.Size(76, 57);
             this.save.TabIndex = 55;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
@@ -930,7 +917,7 @@ namespace LaserMarking
             // DateCheckBox
             // 
             this.DateCheckBox.AutoSize = true;
-            this.DateCheckBox.Location = new System.Drawing.Point(436, 510);
+            this.DateCheckBox.Location = new System.Drawing.Point(434, 510);
             this.DateCheckBox.Name = "DateCheckBox";
             this.DateCheckBox.Size = new System.Drawing.Size(15, 14);
             this.DateCheckBox.TabIndex = 101;
@@ -952,7 +939,7 @@ namespace LaserMarking
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(55, 668);
+            this.label18.Location = new System.Drawing.Point(289, 466);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(139, 13);
             this.label18.TabIndex = 102;
@@ -961,7 +948,7 @@ namespace LaserMarking
             // LabelBox
             // 
             this.LabelBox.AutoSize = true;
-            this.LabelBox.Location = new System.Drawing.Point(200, 668);
+            this.LabelBox.Location = new System.Drawing.Point(434, 466);
             this.LabelBox.Name = "LabelBox";
             this.LabelBox.Size = new System.Drawing.Size(15, 14);
             this.LabelBox.TabIndex = 103;
@@ -971,7 +958,7 @@ namespace LaserMarking
             // ImageBox
             // 
             this.ImageBox.AutoSize = true;
-            this.ImageBox.Location = new System.Drawing.Point(224, 668);
+            this.ImageBox.Location = new System.Drawing.Point(434, 487);
             this.ImageBox.Name = "ImageBox";
             this.ImageBox.Size = new System.Drawing.Size(15, 14);
             this.ImageBox.TabIndex = 104;
@@ -981,7 +968,7 @@ namespace LaserMarking
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(245, 668);
+            this.label19.Location = new System.Drawing.Point(96, 488);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(110, 13);
             this.label19.TabIndex = 105;
@@ -990,9 +977,9 @@ namespace LaserMarking
             // LogoComboBox
             // 
             this.LogoComboBox.FormattingEnabled = true;
-            this.LogoComboBox.Location = new System.Drawing.Point(1263, 547);
+            this.LogoComboBox.Location = new System.Drawing.Point(212, 484);
             this.LogoComboBox.Name = "LogoComboBox";
-            this.LogoComboBox.Size = new System.Drawing.Size(194, 21);
+            this.LogoComboBox.Size = new System.Drawing.Size(216, 21);
             this.LogoComboBox.TabIndex = 106;
             this.LogoComboBox.SelectedIndexChanged += new System.EventHandler(this.LogoComboBox_SelectedIndexChanged);
             // 
@@ -1051,7 +1038,6 @@ namespace LaserMarking
             this.Controls.Add(this.CustPartNumAndRevBox);
             this.Controls.Add(this.PartNumAndRevBox);
             this.Controls.Add(this.DateBox);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ClearErrors_Btn);
             this.Controls.Add(this.Errors_Btn);
             this.Controls.Add(this.ShowFileListButton);
@@ -1078,7 +1064,6 @@ namespace LaserMarking
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1111,7 +1096,6 @@ namespace LaserMarking
         private System.Windows.Forms.Button ShowFileListButton;
         private System.Windows.Forms.Button Errors_Btn;
         private System.Windows.Forms.Button ClearErrors_Btn;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox DateBox;
         private System.Windows.Forms.TextBox PartNumAndRevBox;
         private System.Windows.Forms.TextBox CustPartNumAndRevBox;
