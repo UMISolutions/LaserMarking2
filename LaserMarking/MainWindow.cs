@@ -63,6 +63,8 @@ namespace LaserMarking
 
             AttemptToConnectToLaser();
 
+            LoadFileNames();
+
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 SQLTest = 1;
@@ -503,6 +505,7 @@ namespace LaserMarking
         {
             ProgramMaterialCombo.SelectedIndex = -1;
             ProgramSizeCombo.SelectedIndex = -1;
+            LogoComboBox.SelectedIndex = -1;
             save.Enabled = true;
             btnOpenMarkerBuilder.Enabled = true;
             Mark_Part.BackColor = SystemColors.ControlLight ;
@@ -2503,6 +2506,99 @@ namespace LaserMarking
                 MessageBox.Show("No Image Block (1) exists or is not editable");
             }
         }
+
+        private void LoadFileNames()
+        {
+            string directoryPath = @"U:\Engineering\CUSTOMERLOGO";
+
+            if (Directory.Exists(directoryPath))
+            {
+                var files = Directory.GetFiles(directoryPath, "*.MHL")
+                                     .Select(Path.GetFileNameWithoutExtension) // Get file names without extension
+                                     .Select(fileName =>
+                                     {
+                                         // Check if the name is all numbers
+                                         if (fileName.All(char.IsDigit))
+                                         {
+                                             string customerName = GetCustomerName(fileName);
+                                             return $"{fileName} - {customerName}";
+                                         }
+
+                                         // Return the original file name if not all numbers
+                                         return fileName;
+                                     });
+
+                LogoComboBox.Items.Clear();
+                LogoComboBox.Items.AddRange(files.ToArray());
+            }
+            else
+            {
+                MessageBox.Show("Error getting logos");
+            }
+        }
+
+        private string GetCustomerName(string custID)
+        {
+            string customerName = string.Empty;
+
+            using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
+            {
+                try
+                {
+                    cn.Open();
+                    string sql = @"SELECT TOP (1) Name FROM Customers WHERE id LIKE @CustID";
+
+                    using (SqlCommand cmd = new SqlCommand(sql, cn))
+                    {
+                        cmd.CommandTimeout = 120;
+                        cmd.Parameters.AddWithValue("@CustID", custID);
+
+                        // Execute the command and get the customer name
+                        customerName = cmd.ExecuteScalar() as string; // Get single result
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
+            }
+
+            return customerName ?? "Unknown Customer"; // Default value if no name found
+        }
+
+
+
+
+        private void LogoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (LogoComboBox.SelectedIndex != -1){
+                try
+                {
+                    string selectedFileName = GetOriginalFileName(LogoComboBox.SelectedItem.ToString());
+                    axMBActX2.Block(1).IsLogoAspectRatioKeep = true;
+                    DirectoryInfo directory = new DirectoryInfo(@"U:\Engineering\CUSTOMERLOGO\");
+                    axMBActX2.Block(1).Text = "" + directory.ToString() + selectedFileName;
+                }
+                catch { MessageBox.Show("No Image Block (1) exists or is not editable"); }
+            }
+        }
+
+        private string GetOriginalFileName(string modifiedFileName)
+        {
+            // Check if the modified file name contains " - "
+            if (modifiedFileName.Contains(" - "))
+            {
+                // Split the string to get the part before " - "
+                string originalName = modifiedFileName.Split(new[] { " - " }, StringSplitOptions.None)[0];
+
+                // Add back the .MHL extension
+                return originalName + ".MHL";
+            }
+
+            // If no appended name, return the modified name with .MHL
+            return modifiedFileName + ".MHL";
+        }
+
     }
 }
 

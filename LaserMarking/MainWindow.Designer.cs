@@ -122,6 +122,7 @@ namespace LaserMarking
             this.LabelBox = new System.Windows.Forms.CheckBox();
             this.ImageBox = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.LogoComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -986,11 +987,21 @@ namespace LaserMarking
             this.label19.TabIndex = 105;
             this.label19.Text = "Image/Logo (Block 1)";
             // 
+            // LogoComboBox
+            // 
+            this.LogoComboBox.FormattingEnabled = true;
+            this.LogoComboBox.Location = new System.Drawing.Point(1263, 547);
+            this.LogoComboBox.Name = "LogoComboBox";
+            this.LogoComboBox.Size = new System.Drawing.Size(194, 21);
+            this.LogoComboBox.TabIndex = 106;
+            this.LogoComboBox.SelectedIndexChanged += new System.EventHandler(this.LogoComboBox_SelectedIndexChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1509, 793);
+            this.Controls.Add(this.LogoComboBox);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.ImageBox);
             this.Controls.Add(this.LabelBox);
@@ -1163,6 +1174,7 @@ namespace LaserMarking
         private CheckBox LabelBox;
         private CheckBox ImageBox;
         private Label label19;
+        private ComboBox LogoComboBox;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
