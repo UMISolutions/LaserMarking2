@@ -18,6 +18,7 @@ using static System.Net.WebRequestMethods;
 using System.CodeDom;
 using AxMBPActXLib;
 using System.Threading;
+using System.Runtime.InteropServices;
 
 namespace LaserMarking
 {
@@ -979,7 +980,7 @@ namespace LaserMarking
                         orderRev--;
                         if (orderRev >= 0)
                         {
-                            CheckForCustomProgram(selectedPN + "_" + orderRev);
+                            UpdateCurrentProgramRecursive(selectedPN + "_" + orderRev, orderRev);
                         } else
                         {
                             GenericProgram = true;
@@ -2631,6 +2632,91 @@ namespace LaserMarking
         {
             ProgramMaterialCombo.SelectedIndexChanged += ProgramMaterialCombo_SelectedIndexChanged;
             ProgramSizeCombo.SelectedIndexChanged += ProgramSizeCombo_SelectedIndexChanged;
+        }
+
+        private void UpdateCurrentProgramRecursive(string PN, int rev)
+        {
+            string FilePath = $@"\\UMISSERVER2\UMI\Engineering\LaserMarkingProfiles\{PN}.MA2";
+            if (System.IO.File.Exists(FilePath))
+            {
+                try
+                {
+                    if (axMBActX2.OpenJob(FilePath))
+                    {
+                        
+                        axMBActX2.Context = ContextTypes.CONTEXT_EDITING;
+                        axMBActX2.OpenJob(FilePath);
+                        try
+                        {
+                            
+                            try
+                            {
+                                string disabled = axMBActX2.Block(16).Text; //New disabled "DO NOT MODIFY" block
+                                if (disabled == "DO NOT MODIFY")
+                                {
+                                    save.Enabled = false; // Disable the button
+                                    btnOpenMarkerBuilder.Enabled = false;
+                                }
+                            }
+                            catch (System.Runtime.InteropServices.COMException error)
+                            {
+                            }
+                            try
+                            {
+                                if (axMBActX2.Block(8).IsMarkingEnable)
+                                {
+                                    QRCheckBox.Checked = true;
+                                }
+                                else
+                                {
+                                    QRCheckBox.Checked = false;
+                                }
+                            }
+                            catch { }
+                            UpdateCurrentProgramBlocks(0);
+
+                        }
+                        catch (System.Runtime.InteropServices.COMException error)
+                        {
+                            MessageBox.Show(error.Message + error);
+                        }
+                    }
+                }
+                catch (System.Runtime.InteropServices.COMException error)
+                {
+                    MessageBox.Show(error.Message + error);
+                }
+                var parts = PN.Split('_');
+                string selectedPN = parts[0];
+                FillTubeDetails(selectedPN, rev.ToString());
+                MessageBox.Show("Custom program found for old revision " + PN);
+                GenericProgram = false;
+            }
+            else
+            {
+                if (PN.Contains("_"))
+                {
+                    var parts = PN.Split('_');
+                    string selectedPN = parts[0];
+                    int orderRev;
+                    if (parts.Length > 1 && int.TryParse(parts[1], out orderRev))
+                    {
+                        orderRev--;
+                        if (orderRev >= 0)
+                        {
+                            UpdateCurrentProgramRecursive(selectedPN + "_" + orderRev, rev);
+                        }
+                        else
+                        {
+                            GenericProgram = true;
+                        }
+                    }
+                    else
+                    {
+                        GenericProgram = true;
+                    }
+                }
+            }
         }
 
 
