@@ -260,6 +260,7 @@ namespace LaserMarking
             this.ProgramMaterialCombo.Name = "ProgramMaterialCombo";
             this.ProgramMaterialCombo.Size = new System.Drawing.Size(121, 21);
             this.ProgramMaterialCombo.TabIndex = 19;
+            this.ProgramMaterialCombo.SelectedIndexChanged += new System.EventHandler(this.ProgramMaterialCombo_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -286,6 +287,7 @@ namespace LaserMarking
             this.ProgramSizeCombo.Name = "ProgramSizeCombo";
             this.ProgramSizeCombo.Size = new System.Drawing.Size(121, 21);
             this.ProgramSizeCombo.TabIndex = 23;
+            this.ProgramSizeCombo.SelectedIndexChanged += new System.EventHandler(this.ProgramSizeCombo_SelectedIndexChanged);
             // 
             // label3
             // 

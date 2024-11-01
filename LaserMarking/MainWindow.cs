@@ -503,6 +503,7 @@ namespace LaserMarking
         // Loads label when click on part :: Complete
         private void OrdersGridView_Click(object sender, EventArgs e)
         {
+            RemoveComboBoxHandlers();
             ProgramMaterialCombo.SelectedIndex = -1;
             ProgramSizeCombo.SelectedIndex = -1;
             LogoComboBox.SelectedIndex = -1;
@@ -704,6 +705,7 @@ namespace LaserMarking
                 {
                 }
             }
+            RestoreComboBoxHandlers();
         }
 
         // Returns "N/A" when null or empty :: Complete
@@ -2598,6 +2600,39 @@ namespace LaserMarking
             // If no appended name, return the modified name with .MHL
             return modifiedFileName + ".MHL";
         }
+
+        private void ProgramMaterialCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Check that ProgramMaterialCombo is selected
+            if (ProgramMaterialCombo.SelectedIndex != -1)
+            {
+                OpenGenericProgram();
+                UpdateCurrentProgramBlocks(0);
+            }
+        }
+
+        private void ProgramSizeCombo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Check that ProgramSizeCombo is selected
+            if (ProgramSizeCombo.SelectedIndex != -1)
+            {
+                OpenGenericProgram();
+                UpdateCurrentProgramBlocks(0);
+            }
+        }
+
+        private void RemoveComboBoxHandlers()
+        {
+            ProgramMaterialCombo.SelectedIndexChanged -= ProgramMaterialCombo_SelectedIndexChanged;
+            ProgramSizeCombo.SelectedIndexChanged -= ProgramSizeCombo_SelectedIndexChanged;
+        }
+
+        private void RestoreComboBoxHandlers()
+        {
+            ProgramMaterialCombo.SelectedIndexChanged += ProgramMaterialCombo_SelectedIndexChanged;
+            ProgramSizeCombo.SelectedIndexChanged += ProgramSizeCombo_SelectedIndexChanged;
+        }
+
 
     }
 }
