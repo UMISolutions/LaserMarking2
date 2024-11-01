@@ -20,6 +20,7 @@ using AxMBPActXLib;
 using System.Threading;
 using System.Runtime.InteropServices;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Reflection;
 
 namespace LaserMarking
 {
@@ -67,6 +68,8 @@ namespace LaserMarking
 
             LoadFileNames();
 
+            SetFormTitle();
+
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 SQLTest = 1;
@@ -79,6 +82,15 @@ namespace LaserMarking
             //Set DB Conn strings to test/prod depending on environment
             SetDBConnections();
 
+        }
+
+        private void SetFormTitle()
+        {
+            // Get the assembly version
+            Version version = Assembly.GetExecutingAssembly().GetName().Version;
+
+            // Set the form title
+            this.Text = $"Laser Marking - Version {version}";
         }
 
         // Fills Material & Size Combo box on init :: Complete

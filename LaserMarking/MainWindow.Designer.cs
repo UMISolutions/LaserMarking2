@@ -1063,7 +1063,7 @@ namespace LaserMarking
             this.Controls.Add(this.OrdersGridView);
             this.Controls.Add(this.axMBActX2);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "Laser Marking";
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
