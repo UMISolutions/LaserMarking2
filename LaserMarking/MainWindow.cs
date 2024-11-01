@@ -1138,7 +1138,7 @@ namespace LaserMarking
                         }
                         if (TubesFound.Count == 0)
                         {
-                            MessageBox.Show("No Tube Part Numbers Found");
+                            MessageBox.Show("No Tube Part Numbers Found For" + pNSub + " from " + folderName);
                         }
                         else if (TubesFound.Count > 1)
                         {
