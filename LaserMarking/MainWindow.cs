@@ -997,6 +997,7 @@ namespace LaserMarking
         // Gets information for label from PN :: Complete
         private void GetTubePartNumberFromPDMBom(string pNSub, out double diameter, out double wallThick, out string partNumber, out string mtl, out bool fileFound)
         {
+            string myfolder = "";
             diameter = 9999;
             wallThick = 9999;
             partNumber = "";
@@ -1036,6 +1037,7 @@ namespace LaserMarking
                     string path = $@"C:\UMIS\Projects\";
                     var folderPath = System.IO.Path.GetDirectoryName(path);
                     var folder = vault2.GetFolderFromPath(folderPath);
+                    myfolder = folderPath.ToString();
                     IEdmPos5 FolderPos = folder.GetFirstSubFolderPosition();
                     while (!FolderPos.IsNull && !fileFound)
                     {
@@ -1055,6 +1057,7 @@ namespace LaserMarking
                     if (fileFound == false)
                     {
                         throw new Exception("Drawing not found for " + pNSub + " from " + folderName + " folder. Please create before continuing.");
+                        return;
                     }
                     
                 }
@@ -1062,6 +1065,7 @@ namespace LaserMarking
             catch (Exception ex)
             {
                 MessageBox.Show("Drawing not found for "+pNSub+" from "+folderName+" folder. Please create before continuing." );
+                return;
             }
 
             if (fileFound == true)
@@ -1138,7 +1142,8 @@ namespace LaserMarking
                         }
                         if (TubesFound.Count == 0)
                         {
-                            MessageBox.Show("No Tube Part Numbers Found For" + pNSub + " from " + folderName);
+                            MessageBox.Show("No Tube Part Numbers Found For " + pNSub + " from " + myfolder);
+                            return;
                         }
                         else if (TubesFound.Count > 1)
                         {
@@ -1160,11 +1165,13 @@ namespace LaserMarking
                 }
                 catch (System.Runtime.InteropServices.COMException ex)
                 {
-                    MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+                    MessageBox.Show("An error occured retrieving data from the BOM for " + pNSub + " from " + myfolder + "\n\n Error message: " + ex.Message);
+                    return;
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error looking up BOM/ determining the diameter and wall thickness.\n\n" + ex.Message);
+                    MessageBox.Show("An error occured retrieving data from the BOM for " + pNSub + " from " + myfolder + "\n\n Error message: " + ex.Message);
+                    return;
                 }
 
                 //APPLY PROGRAM BASED ON SIZE
@@ -1520,6 +1527,13 @@ namespace LaserMarking
                 {
                     MessageBox.Show(error.Message + error);
                 }
+            } else
+            {
+                ProgramMaterialCombo.SelectedIndex = 0;
+                ProgramSizeCombo.SelectedIndex = 4;
+                OpenGenericProgram();
+                MessageBox.Show("The size and/or material could not be found. A generic program has opened with default size and material, adjust these to fit your tube.");
+                
             }
         }
 
