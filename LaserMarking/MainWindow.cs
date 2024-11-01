@@ -19,6 +19,7 @@ using System.CodeDom;
 using AxMBPActXLib;
 using System.Threading;
 using System.Runtime.InteropServices;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LaserMarking
 {
@@ -94,8 +95,6 @@ namespace LaserMarking
             ProgramSizeCombo.Items.Add("16");
             ProgramSizeCombo.Items.Add("20");
             ProgramSizeCombo.Items.Add("24");
-            ProgramSizeCombo.Items.Add("28");
-            ProgramSizeCombo.Items.Add("32");
         }
 
         // ???
@@ -505,6 +504,7 @@ namespace LaserMarking
         private void OrdersGridView_Click(object sender, EventArgs e)
         {
             RemoveComboBoxHandlers();
+            comboBox1.SelectedIndex = -1;
             ProgramMaterialCombo.SelectedIndex = -1;
             ProgramSizeCombo.SelectedIndex = -1;
             LogoComboBox.SelectedIndex = -1;
@@ -1195,11 +1195,7 @@ namespace LaserMarking
             if(mtl == "SS")
             {
                 ProgramMaterialCombo.SelectedItem = "SS";
-                if (diameter == 2.000)
-                {
-                    ProgramSizeCombo.SelectedItem = "32";
-                    
-                }else if (diameter == 1.500)
+                if (diameter == 1.500)
                 {
                     ProgramSizeCombo.SelectedItem = "24";
                 }else if (diameter == 1.250)
@@ -1237,12 +1233,7 @@ namespace LaserMarking
             else
             {
                 ProgramMaterialCombo.SelectedItem = "CS";
-                if (diameter == 2.000)
-                {
-                    ProgramSizeCombo.SelectedItem = "32";
-
-                }
-                else if (diameter == 1.500)
+                if (diameter == 1.500)
                 {
                     ProgramSizeCombo.SelectedItem = "24";
                 }
@@ -2181,6 +2172,7 @@ namespace LaserMarking
         // Changes the block for changes to be applied to
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedIndex != -1){
             string selectedItem = comboBox1.SelectedItem.ToString();
             Control[] controlsToDisable = { wp1, wp10, wm1, wm10, hp1, hp10, hm1, hm10, MinusTen, MinusOne, PlusTen, PlusOne, widthBox, heightBox };
 
@@ -2201,27 +2193,35 @@ namespace LaserMarking
             var match = System.Text.RegularExpressions.Regex.Match(selectedItem, @"\d+");
 
             blockNo = int.Parse(match.Value); // Convert the extracted number to int
-            
-            if (comboBox1.SelectedIndex != -1)
-            {
-                try
-                {
-                    widthBox.Text = axMBActX2.Block(blockNo).CharWidth.ToString();
-                    heightBox.Text = axMBActX2.Block(blockNo).CharHeight.ToString();
-                }
-                catch 
+
+                if (comboBox1.SelectedIndex != -1)
                 {
                     try
                     {
-                        widthBox.Text = axMBActX2.Block(blockNo).LogoWidth.ToString();
-                        heightBox.Text = axMBActX2.Block(blockNo).LogoHeight.ToString();
+                        widthBox.Text = axMBActX2.Block(blockNo).CharWidth.ToString();
+                        heightBox.Text = axMBActX2.Block(blockNo).CharHeight.ToString();
                     }
-                    catch (Exception ex)
+                    catch
                     {
-                        MessageBox.Show("Error: " + ex.Message);
+                        try
+                        {
+                            widthBox.Text = axMBActX2.Block(blockNo).LogoWidth.ToString();
+                            heightBox.Text = axMBActX2.Block(blockNo).LogoHeight.ToString();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Error: " + ex.Message);
+                        }
                     }
-                }
 
+                }
+            } else
+            {
+                Control[] controlsToDisable = { wp1, wp10, wm1, wm10, hp1, hp10, hm1, hm10, MinusTen, MinusOne, PlusTen, PlusOne, widthBox, heightBox };
+                foreach (var control in controlsToDisable)
+                {
+                    control.Enabled = false;
+                }
             }
         }
 
@@ -2619,7 +2619,7 @@ namespace LaserMarking
         private void ProgramMaterialCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Check that ProgramMaterialCombo is selected
-            if (ProgramMaterialCombo.SelectedIndex != -1)
+            if (ProgramSizeCombo.SelectedIndex != -1)
             {
                 OpenGenericProgram();
                 UpdateCurrentProgramBlocks(0);
@@ -2629,7 +2629,7 @@ namespace LaserMarking
         private void ProgramSizeCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Check that ProgramSizeCombo is selected
-            if (ProgramSizeCombo.SelectedIndex != -1)
+            if (ProgramMaterialCombo.SelectedIndex != -1)
             {
                 OpenGenericProgram();
                 UpdateCurrentProgramBlocks(0);

@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="75176">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="75688">
       <assemblyIdentity name="LaserMarking" version="1.0.1.5" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hXGiw0qyKTnUMENPz5dCT+Cm2keKOEe6k+LIBCyXoC4=</dsig:DigestValue>
+        <dsig:DigestValue>WWZmVkAOwTVgJRmeiS/yBEE1pNdLIE3qbH4RaN8Ip4o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
