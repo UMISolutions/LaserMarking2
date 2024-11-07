@@ -1,4 +1,18 @@
-﻿Version 1.0.1.5 - 2024-09-27
+Version 1.0.2.0 - 2024-11-07
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+- Improved error handling
+- Version number in header
+- Loads programs from past revisions with current info
+- Upcase all text into label
+- All blocks can be disabled
+- Material & Size combo boxes now load generic programs
+- Can open Marker Builder within program
+- Can change logo/ customer
+- Can disable editing with block 16
+- New query
+- Added "Block Editor" section... can move blocks along X-axis & change size
+
+Version 1.0.1.5 - 2024-09-27
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 - Added test/prod DB configurations when debugging
 - Updated connection strings for new server
