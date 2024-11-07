@@ -2745,7 +2745,45 @@ namespace LaserMarking
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string send_command = $"RX,JOB={comboBox2.Text},BLK=00{blockNo},3DSurfacePosition"; // Requesting error contents
+            string receive_response;
+            try
+            {
+                receive_response = axMBActX2.Comm.SendAndReceive(send_command);
+                MessageBox.Show(receive_response);
+                string[] parts = receive_response.Split(',');
+                textBoxA.Text = parts[2];
+                textBoxB.Text = parts[3];
+                textBoxC.Text = parts[4];
+                textBoxA2.Text = parts[2];
+                textBoxB2.Text = parts[3];
+                textBoxC2.Text = parts[4];
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string A = textBoxA2.Text;
+            string B = textBoxB2.Text;
+            string C = textBoxC2.Text;
+            string send_command = $"WX,JOB={comboBox2.Text},BLK=00{blockNo},3DSurfacePosition={A},{B},{C}"; // Requesting error contents
+            string receive_response;
+            try
+            {
+                receive_response = axMBActX2.Comm.SendAndReceive(send_command);
+                MessageBox.Show(receive_response);
+            }
+            catch (System.Runtime.InteropServices.COMException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
     }
 }
 
