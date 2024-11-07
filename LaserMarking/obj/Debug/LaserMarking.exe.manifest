@@ -121,7 +121,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7BM784758O8QFGYUKyw8j8ljr8NdJH9w34RmBQjnXr4=</dsig:DigestValue>
+        <dsig:DigestValue>QEGM/XzV2kAO71TkOBWvgXNm49JMiMV5uyec2ITHroM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -134,13 +134,13 @@
       <dsig:DigestValue>Gzd2Nq2uFMFSpX8O7vwhr6hYsb+/2crNIQns3ZxraLY=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="WhatsNew.txt" size="230">
+  <file name="WhatsNew.txt" size="790">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>2tlWF3Ku8mIj+TdKl6RTh+50znrB7pv8wVwQMP47DWQ=</dsig:DigestValue>
+      <dsig:DigestValue>6bZ6ZYkBtGSdMBsZIpvNp5s6mixD9+12SwEFANf+wXY=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
