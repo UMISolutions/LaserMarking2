@@ -82,6 +82,79 @@ namespace LaserMarking
             //Set DB Conn strings to test/prod depending on environment
             SetDBConnections();
 
+            DialogResult result = MessageBox.Show(
+                "Run Service Checking For Updates/Removing Old Versions?",
+                "Check for Updates",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question
+                );
+
+            if (result == DialogResult.Yes)
+            {
+                CheckForUpdate();
+            }
+        }
+
+        private void CheckForUpdate()
+        {
+            // Installer filePath
+            string filePath = $@"C:\Users\akaegi\Install Demo\Inno Setup Installers\Inno Setup {this.Text}.exe";
+
+            // Directory where the App (Directory) is located
+            string appDirectory = @"C:\Users\akaegi\Install Demo\Installed Apps";
+
+            // Name and Version
+            string[] textParts = this.Text.Split(new[] { " - " }, StringSplitOptions.None);
+            string appName = textParts[0]; // "Laser Marking Version"
+            string appVersion = textParts[1]; // 1.0.2.1
+
+            // Check if the installer exists
+            if (System.IO.File.Exists(filePath))
+            {
+                // If the installer exists, delete all directories except the one with the correct version
+                try
+                {
+                    string[] directories = Directory.GetDirectories(appDirectory);
+
+                    foreach (string dir in directories)
+                    {
+                        // Check if the directory name contains Name and Version
+                        string dirName = Path.GetFileName(dir);
+
+                        if (!dirName.Contains($"{appVersion}") && dirName.Contains($"{appName}"))
+                        {
+                            Directory.Delete(dir, true);
+                            MessageBox.Show($"Deleted old app: {dirName}");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error while deleting directories: {ex.Message}");
+                }
+            }
+            else
+            {
+                // If the file doesn't exist, run the installer
+                string installerPath = @"C:\Users\akaegi\Install Demo\Inno Setup Installers";
+
+                // Find the installer with the correct version (in case the name contains version info like "Inno Setup Laser Marking - Version x.x.exe")
+                string installerFile = Directory.GetFiles(installerPath, $"Inno Setup {appName} *.exe")[0];
+
+                try
+                {
+                    // Run the installer
+                    MessageBox.Show("A new version of the app has been found");
+                    Process.Start(installerFile);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error while running the installer: {ex.Message}");
+                }
+
+                // Close the app after running the installer
+                Environment.Exit(0);
+            }
         }
 
         private void SetFormTitle()

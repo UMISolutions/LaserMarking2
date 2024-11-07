@@ -3,7 +3,7 @@
   <asmv1:assemblyIdentity name="LaserMarking.exe" version="1.0.2.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="LaserMarking" version="1.0.2.0" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="LaserMarking" version="1.0.0.1" language="neutral" processorArchitecture="x86" />
     <commandLine file="LaserMarking.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -114,14 +114,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="71592">
-      <assemblyIdentity name="LaserMarking" version="1.0.2.0" language="neutral" processorArchitecture="x86" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="73128">
+      <assemblyIdentity name="LaserMarking" version="1.0.0.1" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ihTAvuVxEoaixXp3tKW9SZ84H1JhoZh5QWAUevDIR04=</dsig:DigestValue>
+        <dsig:DigestValue>JbWSY2YJUMom99C2qyj/I0oT8p4VHyzK+w4ZlKlHDQY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
