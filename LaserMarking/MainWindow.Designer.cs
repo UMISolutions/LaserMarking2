@@ -40,25 +40,17 @@ namespace LaserMarking
             this.axMBActX2 = new AxMBPLib2.AxMBActX();
             this.OrdersGridView = new System.Windows.Forms.DataGridView();
             this.Get_Z = new System.Windows.Forms.Button();
-            this.Map_Surface = new System.Windows.Forms.Button();
             this.Mark_Part = new System.Windows.Forms.Button();
             this.markerConnectButton = new System.Windows.Forms.Button();
             this.MarkerDisconnectButton = new System.Windows.Forms.Button();
             this.RefreshButton = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.EditingContextButton = new System.Windows.Forms.Button();
             this.ControllerContextButton = new System.Windows.Forms.Button();
             this.LightOnButton = new System.Windows.Forms.Button();
             this.LightOffButton = new System.Windows.Forms.Button();
-            this.OpenJobButton = new System.Windows.Forms.Button();
             this.JobTitleLabel = new System.Windows.Forms.Label();
-            this.XPositiveButton = new System.Windows.Forms.Button();
-            this.YMovePositiveButton = new System.Windows.Forms.Button();
-            this.SetMarkingConditionButton = new System.Windows.Forms.Button();
             this.ProgramMaterialCombo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.ProgramSizeCombo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,50 +59,85 @@ namespace LaserMarking
             this.ShowFileListButton = new System.Windows.Forms.Button();
             this.Errors_Btn = new System.Windows.Forms.Button();
             this.ClearErrors_Btn = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DateBox = new System.Windows.Forms.TextBox();
             this.PartNumAndRevBox = new System.Windows.Forms.TextBox();
             this.CustPartNumAndRevBox = new System.Windows.Forms.TextBox();
             this.DescLine1Box = new System.Windows.Forms.TextBox();
             this.DescLine2Box = new System.Windows.Forms.TextBox();
-            this.QRCheckBox = new System.Windows.Forms.CheckBox();
             this.QRCodeDataBox = new System.Windows.Forms.TextBox();
             this.FlipPartNumbersButton = new System.Windows.Forms.Button();
-            this.XMoveNegButton = new System.Windows.Forms.Button();
-            this.YMoveNegButton = new System.Windows.Forms.Button();
-            this.SelectedBlockCombo = new System.Windows.Forms.ComboBox();
             this.SetCameraPosition = new System.Windows.Forms.Button();
             this.OpenControllerJob = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.File1List = new System.Windows.Forms.ListBox();
             this.OpenFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.label5 = new System.Windows.Forms.Label();
             this.SelectedMaterialPN = new System.Windows.Forms.Label();
             this.GetOrderTubePNBTN = new System.Windows.Forms.Button();
-            this.axMBActX1 = new AxMBPLib2.AxMBActX();
             this.AllPartNumBtn = new System.Windows.Forms.Button();
             this.GetLengthsBtn = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
+            this.Desc2Box = new System.Windows.Forms.CheckBox();
+            this.btnOpenMarkerBuilder = new System.Windows.Forms.Button();
+            this.btnRefreshTag = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.HeatBox = new System.Windows.Forms.TextBox();
+            this.HeatCheckBox = new System.Windows.Forms.CheckBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.widthBox = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.heightBox = new System.Windows.Forms.TextBox();
+            this.wp10 = new System.Windows.Forms.Button();
+            this.wm10 = new System.Windows.Forms.Button();
+            this.wp1 = new System.Windows.Forms.Button();
+            this.wm1 = new System.Windows.Forms.Button();
+            this.hp10 = new System.Windows.Forms.Button();
+            this.hp1 = new System.Windows.Forms.Button();
+            this.hm10 = new System.Windows.Forms.Button();
+            this.hm1 = new System.Windows.Forms.Button();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.PlusOne = new System.Windows.Forms.Button();
+            this.PlusTen = new System.Windows.Forms.Button();
+            this.MinusTen = new System.Windows.Forms.Button();
+            this.MinusOne = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.POTxtBox = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.Desc1Box = new System.Windows.Forms.CheckBox();
+            this.PN2Box = new System.Windows.Forms.CheckBox();
+            this.PN1Box = new System.Windows.Forms.CheckBox();
+            this.DateCheckBox = new System.Windows.Forms.CheckBox();
+            this.QRCheckBox = new System.Windows.Forms.CheckBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.LabelBox = new System.Windows.Forms.CheckBox();
+            this.ImageBox = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.LogoComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axMBActX1)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // axMBActX2
             // 
-            this.axMBActX2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.axMBActX2.Enabled = true;
-            this.axMBActX2.Location = new System.Drawing.Point(446, 41);
+            this.axMBActX2.Location = new System.Drawing.Point(456, 12);
             this.axMBActX2.Name = "axMBActX2";
             this.axMBActX2.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMBActX2.OcxState")));
-            this.axMBActX2.Size = new System.Drawing.Size(823, 618);
+            this.axMBActX2.Size = new System.Drawing.Size(775, 775);
             this.axMBActX2.TabIndex = 0;
             this.axMBActX2.UseWaitCursor = true;
-            this.axMBActX2.EvError += new System.EventHandler(this.axMBActX1_EvError);
             this.axMBActX2.EvMarkingEnd += new AxMBPLib2._DMBActXEvents_EvMarkingEndEventHandler(this.axMBActX1_EvMarkingEnd);
             // 
             // OrdersGridView
@@ -124,36 +151,24 @@ namespace LaserMarking
             this.OrdersGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.OrdersGridView.Size = new System.Drawing.Size(417, 410);
             this.OrdersGridView.TabIndex = 1;
-            this.OrdersGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OrdersGridView_CellContentClick);
             this.OrdersGridView.Click += new System.EventHandler(this.OrdersGridView_Click);
             // 
             // Get_Z
             // 
-            this.Get_Z.Location = new System.Drawing.Point(272, 731);
+            this.Get_Z.Location = new System.Drawing.Point(1237, 687);
             this.Get_Z.Name = "Get_Z";
-            this.Get_Z.Size = new System.Drawing.Size(75, 23);
+            this.Get_Z.Size = new System.Drawing.Size(52, 23);
             this.Get_Z.TabIndex = 2;
             this.Get_Z.Text = "Get Z";
             this.Get_Z.UseVisualStyleBackColor = true;
             this.Get_Z.Click += new System.EventHandler(this.Get_Z_Click);
             // 
-            // Map_Surface
-            // 
-            this.Map_Surface.Enabled = false;
-            this.Map_Surface.Location = new System.Drawing.Point(942, 713);
-            this.Map_Surface.Name = "Map_Surface";
-            this.Map_Surface.Size = new System.Drawing.Size(115, 23);
-            this.Map_Surface.TabIndex = 3;
-            this.Map_Surface.Text = "Map XY";
-            this.Map_Surface.UseVisualStyleBackColor = true;
-            this.Map_Surface.Click += new System.EventHandler(this.Map_Surface_Click);
-            // 
             // Mark_Part
             // 
             this.Mark_Part.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.Mark_Part.Location = new System.Drawing.Point(1007, 806);
+            this.Mark_Part.Location = new System.Drawing.Point(1262, 195);
             this.Mark_Part.Name = "Mark_Part";
-            this.Mark_Part.Size = new System.Drawing.Size(262, 52);
+            this.Mark_Part.Size = new System.Drawing.Size(235, 52);
             this.Mark_Part.TabIndex = 4;
             this.Mark_Part.Text = "Mark Part";
             this.Mark_Part.UseVisualStyleBackColor = false;
@@ -161,9 +176,9 @@ namespace LaserMarking
             // 
             // markerConnectButton
             // 
-            this.markerConnectButton.Location = new System.Drawing.Point(11, 760);
+            this.markerConnectButton.Location = new System.Drawing.Point(1237, 657);
             this.markerConnectButton.Name = "markerConnectButton";
-            this.markerConnectButton.Size = new System.Drawing.Size(139, 23);
+            this.markerConnectButton.Size = new System.Drawing.Size(121, 23);
             this.markerConnectButton.TabIndex = 5;
             this.markerConnectButton.Text = "Connect USB Marker";
             this.markerConnectButton.UseVisualStyleBackColor = true;
@@ -171,9 +186,9 @@ namespace LaserMarking
             // 
             // MarkerDisconnectButton
             // 
-            this.MarkerDisconnectButton.Location = new System.Drawing.Point(11, 731);
+            this.MarkerDisconnectButton.Location = new System.Drawing.Point(1240, 631);
             this.MarkerDisconnectButton.Name = "MarkerDisconnectButton";
-            this.MarkerDisconnectButton.Size = new System.Drawing.Size(139, 23);
+            this.MarkerDisconnectButton.Size = new System.Drawing.Size(130, 23);
             this.MarkerDisconnectButton.TabIndex = 6;
             this.MarkerDisconnectButton.Text = "Disconnect USB Marker";
             this.MarkerDisconnectButton.UseVisualStyleBackColor = true;
@@ -189,33 +204,11 @@ namespace LaserMarking
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
-            // button1
-            // 
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(942, 684);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "StartCameraScanning";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(1069, 684);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "FinishCameraScanning";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // EditingContextButton
             // 
-            this.EditingContextButton.Location = new System.Drawing.Point(156, 731);
+            this.EditingContextButton.Location = new System.Drawing.Point(1376, 631);
             this.EditingContextButton.Name = "EditingContextButton";
-            this.EditingContextButton.Size = new System.Drawing.Size(110, 23);
+            this.EditingContextButton.Size = new System.Drawing.Size(88, 23);
             this.EditingContextButton.TabIndex = 10;
             this.EditingContextButton.Text = "Editing Context";
             this.EditingContextButton.UseVisualStyleBackColor = true;
@@ -223,9 +216,9 @@ namespace LaserMarking
             // 
             // ControllerContextButton
             // 
-            this.ControllerContextButton.Location = new System.Drawing.Point(156, 760);
+            this.ControllerContextButton.Location = new System.Drawing.Point(1364, 657);
             this.ControllerContextButton.Name = "ControllerContextButton";
-            this.ControllerContextButton.Size = new System.Drawing.Size(110, 23);
+            this.ControllerContextButton.Size = new System.Drawing.Size(101, 23);
             this.ControllerContextButton.TabIndex = 11;
             this.ControllerContextButton.Text = "Controller Context";
             this.ControllerContextButton.UseVisualStyleBackColor = true;
@@ -233,7 +226,7 @@ namespace LaserMarking
             // 
             // LightOnButton
             // 
-            this.LightOnButton.Location = new System.Drawing.Point(640, 716);
+            this.LightOnButton.Location = new System.Drawing.Point(1281, 135);
             this.LightOnButton.Name = "LightOnButton";
             this.LightOnButton.Size = new System.Drawing.Size(92, 53);
             this.LightOnButton.TabIndex = 12;
@@ -243,7 +236,7 @@ namespace LaserMarking
             // 
             // LightOffButton
             // 
-            this.LightOffButton.Location = new System.Drawing.Point(640, 775);
+            this.LightOffButton.Location = new System.Drawing.Point(1379, 135);
             this.LightOffButton.Name = "LightOffButton";
             this.LightOffButton.Size = new System.Drawing.Size(92, 54);
             this.LightOffButton.TabIndex = 13;
@@ -251,60 +244,19 @@ namespace LaserMarking
             this.LightOffButton.UseVisualStyleBackColor = true;
             this.LightOffButton.Click += new System.EventHandler(this.LightOffButton_Click);
             // 
-            // OpenJobButton
-            // 
-            this.OpenJobButton.Location = new System.Drawing.Point(1162, 7);
-            this.OpenJobButton.Name = "OpenJobButton";
-            this.OpenJobButton.Size = new System.Drawing.Size(107, 23);
-            this.OpenJobButton.TabIndex = 14;
-            this.OpenJobButton.Text = "Open Program";
-            this.OpenJobButton.UseVisualStyleBackColor = true;
-            this.OpenJobButton.Click += new System.EventHandler(this.OpenJobButton_Click);
-            // 
             // JobTitleLabel
             // 
             this.JobTitleLabel.AutoSize = true;
-            this.JobTitleLabel.Location = new System.Drawing.Point(683, 17);
+            this.JobTitleLabel.Location = new System.Drawing.Point(299, 755);
             this.JobTitleLabel.Name = "JobTitleLabel";
             this.JobTitleLabel.Size = new System.Drawing.Size(69, 13);
             this.JobTitleLabel.TabIndex = 15;
             this.JobTitleLabel.Text = "Program Title";
             // 
-            // XPositiveButton
-            // 
-            this.XPositiveButton.Location = new System.Drawing.Point(537, 760);
-            this.XPositiveButton.Name = "XPositiveButton";
-            this.XPositiveButton.Size = new System.Drawing.Size(52, 38);
-            this.XPositiveButton.TabIndex = 16;
-            this.XPositiveButton.Text = "+X";
-            this.XPositiveButton.UseVisualStyleBackColor = true;
-            this.XPositiveButton.Click += new System.EventHandler(this.XPositiveButton_Click);
-            // 
-            // YMovePositiveButton
-            // 
-            this.YMovePositiveButton.Location = new System.Drawing.Point(446, 713);
-            this.YMovePositiveButton.Name = "YMovePositiveButton";
-            this.YMovePositiveButton.Size = new System.Drawing.Size(48, 36);
-            this.YMovePositiveButton.TabIndex = 17;
-            this.YMovePositiveButton.Text = "+Y";
-            this.YMovePositiveButton.UseVisualStyleBackColor = true;
-            this.YMovePositiveButton.Click += new System.EventHandler(this.YMovePositiveButton_Click);
-            // 
-            // SetMarkingConditionButton
-            // 
-            this.SetMarkingConditionButton.Enabled = false;
-            this.SetMarkingConditionButton.Location = new System.Drawing.Point(942, 742);
-            this.SetMarkingConditionButton.Name = "SetMarkingConditionButton";
-            this.SetMarkingConditionButton.Size = new System.Drawing.Size(151, 23);
-            this.SetMarkingConditionButton.TabIndex = 18;
-            this.SetMarkingConditionButton.Text = "Set Mark Cond. To block";
-            this.SetMarkingConditionButton.UseVisualStyleBackColor = true;
-            this.SetMarkingConditionButton.Click += new System.EventHandler(this.SetMarkingConditionButton_Click);
-            // 
             // ProgramMaterialCombo
             // 
             this.ProgramMaterialCombo.FormattingEnabled = true;
-            this.ProgramMaterialCombo.Location = new System.Drawing.Point(257, 467);
+            this.ProgramMaterialCombo.Location = new System.Drawing.Point(134, 661);
             this.ProgramMaterialCombo.Name = "ProgramMaterialCombo";
             this.ProgramMaterialCombo.Size = new System.Drawing.Size(121, 21);
             this.ProgramMaterialCombo.TabIndex = 19;
@@ -313,27 +265,16 @@ namespace LaserMarking
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(207, 472);
+            this.label1.Location = new System.Drawing.Point(84, 667);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 20;
             this.label1.Text = "Material";
             // 
-            // button3
-            // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(1069, 713);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 23);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Block Mark Enable";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 472);
+            this.label2.Location = new System.Drawing.Point(277, 664);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(27, 13);
             this.label2.TabIndex = 22;
@@ -342,7 +283,7 @@ namespace LaserMarking
             // ProgramSizeCombo
             // 
             this.ProgramSizeCombo.FormattingEnabled = true;
-            this.ProgramSizeCombo.Location = new System.Drawing.Point(69, 467);
+            this.ProgramSizeCombo.Location = new System.Drawing.Point(310, 661);
             this.ProgramSizeCombo.Name = "ProgramSizeCombo";
             this.ProgramSizeCombo.Size = new System.Drawing.Size(121, 21);
             this.ProgramSizeCombo.TabIndex = 23;
@@ -352,9 +293,9 @@ namespace LaserMarking
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(606, 15);
+            this.label3.Location = new System.Drawing.Point(222, 755);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 16);
+            this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 24;
             this.label3.Text = "Program:";
             // 
@@ -364,14 +305,14 @@ namespace LaserMarking
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(7, 15);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 16);
+            this.label4.Size = new System.Drawing.Size(59, 16);
             this.label4.TabIndex = 25;
             this.label4.Text = "Orders:";
             // 
             // CameraFinderViewButton
             // 
             this.CameraFinderViewButton.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.CameraFinderViewButton.Location = new System.Drawing.Point(738, 716);
+            this.CameraFinderViewButton.Location = new System.Drawing.Point(1308, 80);
             this.CameraFinderViewButton.Name = "CameraFinderViewButton";
             this.CameraFinderViewButton.Size = new System.Drawing.Size(136, 49);
             this.CameraFinderViewButton.TabIndex = 26;
@@ -381,9 +322,9 @@ namespace LaserMarking
             // 
             // ShowFileListButton
             // 
-            this.ShowFileListButton.Location = new System.Drawing.Point(11, 789);
+            this.ShowFileListButton.Location = new System.Drawing.Point(1367, 716);
             this.ShowFileListButton.Name = "ShowFileListButton";
-            this.ShowFileListButton.Size = new System.Drawing.Size(100, 23);
+            this.ShowFileListButton.Size = new System.Drawing.Size(90, 23);
             this.ShowFileListButton.TabIndex = 27;
             this.ShowFileListButton.Text = "Show File List";
             this.ShowFileListButton.UseVisualStyleBackColor = true;
@@ -391,9 +332,9 @@ namespace LaserMarking
             // 
             // Errors_Btn
             // 
-            this.Errors_Btn.Location = new System.Drawing.Point(117, 789);
+            this.Errors_Btn.Location = new System.Drawing.Point(1319, 716);
             this.Errors_Btn.Name = "Errors_Btn";
-            this.Errors_Btn.Size = new System.Drawing.Size(75, 23);
+            this.Errors_Btn.Size = new System.Drawing.Size(45, 23);
             this.Errors_Btn.TabIndex = 28;
             this.Errors_Btn.Text = "Errors";
             this.Errors_Btn.UseVisualStyleBackColor = true;
@@ -401,128 +342,79 @@ namespace LaserMarking
             // 
             // ClearErrors_Btn
             // 
-            this.ClearErrors_Btn.Location = new System.Drawing.Point(198, 789);
+            this.ClearErrors_Btn.Location = new System.Drawing.Point(1237, 716);
             this.ClearErrors_Btn.Name = "ClearErrors_Btn";
-            this.ClearErrors_Btn.Size = new System.Drawing.Size(111, 23);
+            this.ClearErrors_Btn.Size = new System.Drawing.Size(76, 23);
             this.ClearErrors_Btn.TabIndex = 29;
             this.ClearErrors_Btn.Text = "Clear Errors";
             this.ClearErrors_Btn.UseVisualStyleBackColor = true;
             this.ClearErrors_Btn.Click += new System.EventHandler(this.ClearErrors_Btn_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 505);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
-            // 
             // DateBox
             // 
-            this.DateBox.Location = new System.Drawing.Point(129, 505);
+            this.DateBox.Location = new System.Drawing.Point(277, 508);
             this.DateBox.Name = "DateBox";
             this.DateBox.ReadOnly = true;
-            this.DateBox.Size = new System.Drawing.Size(141, 20);
+            this.DateBox.Size = new System.Drawing.Size(154, 20);
             this.DateBox.TabIndex = 32;
             // 
             // PartNumAndRevBox
             // 
-            this.PartNumAndRevBox.Location = new System.Drawing.Point(129, 532);
+            this.PartNumAndRevBox.Location = new System.Drawing.Point(277, 531);
             this.PartNumAndRevBox.Name = "PartNumAndRevBox";
-            this.PartNumAndRevBox.Size = new System.Drawing.Size(141, 20);
+            this.PartNumAndRevBox.Size = new System.Drawing.Size(154, 20);
             this.PartNumAndRevBox.TabIndex = 33;
-            this.PartNumAndRevBox.TextChanged += new System.EventHandler(this.PartNumAndRevBox_TextChanged);
+            this.PartNumAndRevBox.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
             // 
             // CustPartNumAndRevBox
             // 
-            this.CustPartNumAndRevBox.Location = new System.Drawing.Point(129, 559);
+            this.CustPartNumAndRevBox.Location = new System.Drawing.Point(277, 557);
             this.CustPartNumAndRevBox.Name = "CustPartNumAndRevBox";
-            this.CustPartNumAndRevBox.Size = new System.Drawing.Size(141, 20);
+            this.CustPartNumAndRevBox.Size = new System.Drawing.Size(154, 20);
             this.CustPartNumAndRevBox.TabIndex = 34;
-            this.CustPartNumAndRevBox.TextChanged += new System.EventHandler(this.CustPartNumAndRevBox_TextChanged);
+            this.CustPartNumAndRevBox.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
             // 
             // DescLine1Box
             // 
-            this.DescLine1Box.Location = new System.Drawing.Point(34, 587);
+            this.DescLine1Box.Location = new System.Drawing.Point(166, 583);
             this.DescLine1Box.Name = "DescLine1Box";
             this.DescLine1Box.Size = new System.Drawing.Size(265, 20);
             this.DescLine1Box.TabIndex = 35;
-            this.DescLine1Box.TextChanged += new System.EventHandler(this.DescLine1Box_TextChanged);
+            this.DescLine1Box.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
             // 
             // DescLine2Box
             // 
-            this.DescLine2Box.Location = new System.Drawing.Point(34, 614);
+            this.DescLine2Box.Location = new System.Drawing.Point(166, 609);
             this.DescLine2Box.Name = "DescLine2Box";
             this.DescLine2Box.Size = new System.Drawing.Size(265, 20);
             this.DescLine2Box.TabIndex = 36;
-            this.DescLine2Box.TextChanged += new System.EventHandler(this.DescLine2Box_TextChanged);
-            // 
-            // QRCheckBox
-            // 
-            this.QRCheckBox.AutoSize = true;
-            this.QRCheckBox.Location = new System.Drawing.Point(299, 534);
-            this.QRCheckBox.Name = "QRCheckBox";
-            this.QRCheckBox.Size = new System.Drawing.Size(70, 17);
-            this.QRCheckBox.TabIndex = 37;
-            this.QRCheckBox.Text = "QR Code";
-            this.QRCheckBox.UseVisualStyleBackColor = true;
-            this.QRCheckBox.CheckedChanged += new System.EventHandler(this.QRCheckBox_CheckedChanged);
+            this.DescLine2Box.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
             // 
             // QRCodeDataBox
             // 
-            this.QRCodeDataBox.Location = new System.Drawing.Point(276, 559);
+            this.QRCodeDataBox.Location = new System.Drawing.Point(1475, 33);
             this.QRCodeDataBox.Name = "QRCodeDataBox";
             this.QRCodeDataBox.ReadOnly = true;
-            this.QRCodeDataBox.Size = new System.Drawing.Size(135, 20);
+            this.QRCodeDataBox.Size = new System.Drawing.Size(29, 20);
             this.QRCodeDataBox.TabIndex = 38;
+            this.QRCodeDataBox.Visible = false;
             this.QRCodeDataBox.TextChanged += new System.EventHandler(this.QRCodeDataBox_TextChanged);
             // 
             // FlipPartNumbersButton
             // 
-            this.FlipPartNumbersButton.Location = new System.Drawing.Point(69, 559);
+            this.FlipPartNumbersButton.Location = new System.Drawing.Point(51, 531);
             this.FlipPartNumbersButton.Name = "FlipPartNumbersButton";
-            this.FlipPartNumbersButton.Size = new System.Drawing.Size(54, 23);
+            this.FlipPartNumbersButton.Size = new System.Drawing.Size(54, 42);
             this.FlipPartNumbersButton.TabIndex = 39;
             this.FlipPartNumbersButton.Text = "FLIPPN";
             this.FlipPartNumbersButton.UseVisualStyleBackColor = true;
             this.FlipPartNumbersButton.Click += new System.EventHandler(this.FlipPartNumbersButton_Click);
             // 
-            // XMoveNegButton
-            // 
-            this.XMoveNegButton.Location = new System.Drawing.Point(357, 760);
-            this.XMoveNegButton.Name = "XMoveNegButton";
-            this.XMoveNegButton.Size = new System.Drawing.Size(47, 38);
-            this.XMoveNegButton.TabIndex = 40;
-            this.XMoveNegButton.Text = "-X";
-            this.XMoveNegButton.UseVisualStyleBackColor = true;
-            this.XMoveNegButton.Click += new System.EventHandler(this.XMoveNegButton_Click);
-            // 
-            // YMoveNegButton
-            // 
-            this.YMoveNegButton.Location = new System.Drawing.Point(446, 797);
-            this.YMoveNegButton.Name = "YMoveNegButton";
-            this.YMoveNegButton.Size = new System.Drawing.Size(48, 35);
-            this.YMoveNegButton.TabIndex = 41;
-            this.YMoveNegButton.Text = "-Y";
-            this.YMoveNegButton.UseVisualStyleBackColor = true;
-            this.YMoveNegButton.Click += new System.EventHandler(this.YMoveNegButton_Click);
-            // 
-            // SelectedBlockCombo
-            // 
-            this.SelectedBlockCombo.FormattingEnabled = true;
-            this.SelectedBlockCombo.Location = new System.Drawing.Point(410, 770);
-            this.SelectedBlockCombo.Name = "SelectedBlockCombo";
-            this.SelectedBlockCombo.Size = new System.Drawing.Size(121, 21);
-            this.SelectedBlockCombo.TabIndex = 42;
-            // 
             // SetCameraPosition
             // 
-            this.SetCameraPosition.Location = new System.Drawing.Point(318, 821);
+            this.SetCameraPosition.Location = new System.Drawing.Point(1237, 745);
             this.SetCameraPosition.Name = "SetCameraPosition";
-            this.SetCameraPosition.Size = new System.Drawing.Size(75, 23);
+            this.SetCameraPosition.Size = new System.Drawing.Size(88, 23);
             this.SetCameraPosition.TabIndex = 43;
             this.SetCameraPosition.Text = "CameraPosition";
             this.SetCameraPosition.UseVisualStyleBackColor = true;
@@ -530,55 +422,13 @@ namespace LaserMarking
             // 
             // OpenControllerJob
             // 
-            this.OpenControllerJob.Location = new System.Drawing.Point(74, 821);
+            this.OpenControllerJob.Location = new System.Drawing.Point(1295, 687);
             this.OpenControllerJob.Name = "OpenControllerJob";
-            this.OpenControllerJob.Size = new System.Drawing.Size(152, 23);
+            this.OpenControllerJob.Size = new System.Drawing.Size(101, 23);
             this.OpenControllerJob.TabIndex = 44;
             this.OpenControllerJob.Text = "OPN CNTRL JOB";
             this.OpenControllerJob.UseVisualStyleBackColor = true;
             this.OpenControllerJob.Click += new System.EventHandler(this.OpenControllerJob_Click);
-            // 
-            // button4
-            // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(1042, 768);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 45;
-            this.button4.Text = "GetSWBom";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(942, 768);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(94, 23);
-            this.button5.TabIndex = 46;
-            this.button5.Text = "OpenSWDwg";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.Enabled = false;
-            this.button6.Location = new System.Drawing.Point(1099, 742);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 47;
-            this.button6.Text = "GetSWCustomProp";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // File1List
-            // 
-            this.File1List.FormattingEnabled = true;
-            this.File1List.Location = new System.Drawing.Point(342, 340);
-            this.File1List.Name = "File1List";
-            this.File1List.Size = new System.Drawing.Size(172, 121);
-            this.File1List.TabIndex = 48;
-            this.File1List.Visible = false;
             // 
             // OpenFileDialog1
             // 
@@ -588,16 +438,16 @@ namespace LaserMarking
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(446, 16);
+            this.label5.Location = new System.Drawing.Point(42, 755);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
+            this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 49;
             this.label5.Text = "Tube:";
             // 
             // SelectedMaterialPN
             // 
             this.SelectedMaterialPN.AutoSize = true;
-            this.SelectedMaterialPN.Location = new System.Drawing.Point(500, 18);
+            this.SelectedMaterialPN.Location = new System.Drawing.Point(96, 755);
             this.SelectedMaterialPN.Name = "SelectedMaterialPN";
             this.SelectedMaterialPN.Size = new System.Drawing.Size(81, 13);
             this.SelectedMaterialPN.TabIndex = 50;
@@ -613,16 +463,6 @@ namespace LaserMarking
             this.GetOrderTubePNBTN.UseVisualStyleBackColor = true;
             this.GetOrderTubePNBTN.Click += new System.EventHandler(this.GetOrderTubePNBTN_Click);
             // 
-            // axMBActX1
-            // 
-            this.axMBActX1.Enabled = true;
-            this.axMBActX1.Location = new System.Drawing.Point(537, 614);
-            this.axMBActX1.Name = "axMBActX1";
-            this.axMBActX1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axMBActX1.OcxState")));
-            this.axMBActX1.Size = new System.Drawing.Size(100, 50);
-            this.axMBActX1.TabIndex = 52;
-            this.axMBActX1.Visible = false;
-            // 
             // AllPartNumBtn
             // 
             this.AllPartNumBtn.Location = new System.Drawing.Point(171, 12);
@@ -635,46 +475,563 @@ namespace LaserMarking
             // 
             // GetLengthsBtn
             // 
-            this.GetLengthsBtn.Location = new System.Drawing.Point(856, 8);
+            this.GetLengthsBtn.Location = new System.Drawing.Point(1399, 688);
             this.GetLengthsBtn.Name = "GetLengthsBtn";
-            this.GetLengthsBtn.Size = new System.Drawing.Size(75, 23);
+            this.GetLengthsBtn.Size = new System.Drawing.Size(77, 23);
             this.GetLengthsBtn.TabIndex = 54;
             this.GetLengthsBtn.Text = "GetTubeLengths";
             this.GetLengthsBtn.UseVisualStyleBackColor = true;
-            this.GetLengthsBtn.Visible = false;
             this.GetLengthsBtn.Click += new System.EventHandler(this.GetLengthsBtn_Click);
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(329, 617);
+            this.save.Location = new System.Drawing.Point(14, 455);
             this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(82, 47);
+            this.save.Size = new System.Drawing.Size(76, 57);
             this.save.TabIndex = 55;
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = true;
             this.save.Click += new System.EventHandler(this.save_Click);
             // 
+            // Desc2Box
+            // 
+            this.Desc2Box.AutoSize = true;
+            this.Desc2Box.Location = new System.Drawing.Point(435, 615);
+            this.Desc2Box.Name = "Desc2Box";
+            this.Desc2Box.Size = new System.Drawing.Size(15, 14);
+            this.Desc2Box.TabIndex = 58;
+            this.Desc2Box.UseVisualStyleBackColor = true;
+            this.Desc2Box.CheckedChanged += new System.EventHandler(this.Desc2Box_CheckedChanged);
+            // 
+            // btnOpenMarkerBuilder
+            // 
+            this.btnOpenMarkerBuilder.Location = new System.Drawing.Point(14, 688);
+            this.btnOpenMarkerBuilder.Name = "btnOpenMarkerBuilder";
+            this.btnOpenMarkerBuilder.Size = new System.Drawing.Size(204, 60);
+            this.btnOpenMarkerBuilder.TabIndex = 59;
+            this.btnOpenMarkerBuilder.Text = "Open In Marker Builder";
+            this.btnOpenMarkerBuilder.UseVisualStyleBackColor = true;
+            this.btnOpenMarkerBuilder.MouseClick += new System.Windows.Forms.MouseEventHandler(this.btnOpenMarkerBuilder_MouseClick);
+            // 
+            // btnRefreshTag
+            // 
+            this.btnRefreshTag.Location = new System.Drawing.Point(224, 688);
+            this.btnRefreshTag.Name = "btnRefreshTag";
+            this.btnRefreshTag.Size = new System.Drawing.Size(207, 60);
+            this.btnRefreshTag.TabIndex = 60;
+            this.btnRefreshTag.Text = "Reload (After Saving in Marker Builder)";
+            this.btnRefreshTag.UseVisualStyleBackColor = true;
+            this.btnRefreshTag.Click += new System.EventHandler(this.btnRefreshTag_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(200, 511);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 61;
+            this.label6.Text = "Date (Block 2)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(127, 534);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(148, 13);
+            this.label7.TabIndex = 62;
+            this.label7.Text = "Primary Part Number (Block 3)";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(110, 560);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(165, 13);
+            this.label8.TabIndex = 63;
+            this.label8.Text = "Secondary Part Number (Block 4)";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(51, 586);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(114, 13);
+            this.label9.TabIndex = 64;
+            this.label9.Text = "Description 1 (Block 5)";
+            // 
+            // HeatBox
+            // 
+            this.HeatBox.Location = new System.Drawing.Point(166, 635);
+            this.HeatBox.Name = "HeatBox";
+            this.HeatBox.Size = new System.Drawing.Size(265, 20);
+            this.HeatBox.TabIndex = 65;
+            this.HeatBox.TextChanged += new System.EventHandler(this.BlockText_TextChanged);
+            // 
+            // HeatCheckBox
+            // 
+            this.HeatCheckBox.AutoSize = true;
+            this.HeatCheckBox.Location = new System.Drawing.Point(435, 640);
+            this.HeatCheckBox.Name = "HeatCheckBox";
+            this.HeatCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.HeatCheckBox.TabIndex = 66;
+            this.HeatCheckBox.UseVisualStyleBackColor = true;
+            this.HeatCheckBox.CheckedChanged += new System.EventHandler(this.HeatCheckBox_CheckedChanged);
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(1479, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(25, 27);
+            this.panel1.TabIndex = 67;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Block 0",
+            "Block 1",
+            "Block 2",
+            "Block 3",
+            "Block 4",
+            "Block 5",
+            "Block 6",
+            "Block 7"});
+            this.comboBox1.Location = new System.Drawing.Point(1384, 282);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(73, 21);
+            this.comboBox1.TabIndex = 69;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(1240, 334);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 70;
+            this.label10.Text = "Width";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(1237, 400);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 13);
+            this.label11.TabIndex = 72;
+            this.label11.Text = "Height";
+            // 
+            // widthBox
+            // 
+            this.widthBox.Enabled = false;
+            this.widthBox.Location = new System.Drawing.Point(1281, 331);
+            this.widthBox.Name = "widthBox";
+            this.widthBox.Size = new System.Drawing.Size(100, 20);
+            this.widthBox.TabIndex = 73;
+            this.widthBox.TextChanged += new System.EventHandler(this.widthBox_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.25F);
+            this.label12.Location = new System.Drawing.Point(1278, 283);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(100, 20);
+            this.label12.TabIndex = 75;
+            this.label12.Text = "Block Editor";
+            // 
+            // heightBox
+            // 
+            this.heightBox.Enabled = false;
+            this.heightBox.Location = new System.Drawing.Point(1278, 397);
+            this.heightBox.Name = "heightBox";
+            this.heightBox.Size = new System.Drawing.Size(100, 20);
+            this.heightBox.TabIndex = 76;
+            this.heightBox.TextChanged += new System.EventHandler(this.heightBox_TextChanged);
+            // 
+            // wp10
+            // 
+            this.wp10.Enabled = false;
+            this.wp10.Location = new System.Drawing.Point(3, 3);
+            this.wp10.Name = "wp10";
+            this.wp10.Size = new System.Drawing.Size(54, 23);
+            this.wp10.TabIndex = 77;
+            this.wp10.Text = "+ 10%";
+            this.wp10.UseVisualStyleBackColor = true;
+            this.wp10.Click += new System.EventHandler(this.wp10_Click);
+            // 
+            // wm10
+            // 
+            this.wm10.Enabled = false;
+            this.wm10.Location = new System.Drawing.Point(3, 32);
+            this.wm10.Name = "wm10";
+            this.wm10.Size = new System.Drawing.Size(54, 23);
+            this.wm10.TabIndex = 78;
+            this.wm10.Text = "- 10%";
+            this.wm10.UseVisualStyleBackColor = true;
+            this.wm10.Click += new System.EventHandler(this.wm10_Click);
+            // 
+            // wp1
+            // 
+            this.wp1.Enabled = false;
+            this.wp1.Location = new System.Drawing.Point(63, 3);
+            this.wp1.Name = "wp1";
+            this.wp1.Size = new System.Drawing.Size(54, 23);
+            this.wp1.TabIndex = 79;
+            this.wp1.Text = "+ 1%";
+            this.wp1.UseVisualStyleBackColor = true;
+            this.wp1.Click += new System.EventHandler(this.wp1_Click);
+            // 
+            // wm1
+            // 
+            this.wm1.Enabled = false;
+            this.wm1.Location = new System.Drawing.Point(63, 32);
+            this.wm1.Name = "wm1";
+            this.wm1.Size = new System.Drawing.Size(54, 23);
+            this.wm1.TabIndex = 80;
+            this.wm1.Text = "- 1%";
+            this.wm1.UseVisualStyleBackColor = true;
+            this.wm1.Click += new System.EventHandler(this.wm1_Click);
+            // 
+            // hp10
+            // 
+            this.hp10.Enabled = false;
+            this.hp10.Location = new System.Drawing.Point(3, 3);
+            this.hp10.Name = "hp10";
+            this.hp10.Size = new System.Drawing.Size(54, 23);
+            this.hp10.TabIndex = 81;
+            this.hp10.Text = "+ 10%";
+            this.hp10.UseVisualStyleBackColor = true;
+            this.hp10.Click += new System.EventHandler(this.hp10_Click);
+            // 
+            // hp1
+            // 
+            this.hp1.Enabled = false;
+            this.hp1.Location = new System.Drawing.Point(63, 3);
+            this.hp1.Name = "hp1";
+            this.hp1.Size = new System.Drawing.Size(54, 23);
+            this.hp1.TabIndex = 82;
+            this.hp1.Text = "+ 1%";
+            this.hp1.UseVisualStyleBackColor = true;
+            this.hp1.Click += new System.EventHandler(this.hp1_Click);
+            // 
+            // hm10
+            // 
+            this.hm10.Enabled = false;
+            this.hm10.Location = new System.Drawing.Point(3, 32);
+            this.hm10.Name = "hm10";
+            this.hm10.Size = new System.Drawing.Size(54, 23);
+            this.hm10.TabIndex = 83;
+            this.hm10.Text = "- 10%";
+            this.hm10.UseVisualStyleBackColor = true;
+            this.hm10.Click += new System.EventHandler(this.hm10_Click);
+            // 
+            // hm1
+            // 
+            this.hm1.Enabled = false;
+            this.hm1.Location = new System.Drawing.Point(63, 32);
+            this.hm1.Name = "hm1";
+            this.hm1.Size = new System.Drawing.Size(54, 23);
+            this.hm1.TabIndex = 84;
+            this.hm1.Text = "- 1%";
+            this.hm1.UseVisualStyleBackColor = true;
+            this.hm1.Click += new System.EventHandler(this.hm1_Click);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.wp10, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.wp1, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.wm10, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.wm1, 1, 1);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(1384, 314);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(120, 59);
+            this.tableLayoutPanel1.TabIndex = 85;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.hp10, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.hp1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.hm1, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.hm10, 0, 1);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1384, 379);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(120, 59);
+            this.tableLayoutPanel2.TabIndex = 86;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1360, 4);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 26);
+            this.label13.TabIndex = 87;
+            this.label13.Text = "DO NOT REMOVE --> \r\nIt\'s important\r\n";
+            this.label13.Visible = false;
+            // 
+            // PlusOne
+            // 
+            this.PlusOne.Enabled = false;
+            this.PlusOne.Location = new System.Drawing.Point(103, 3);
+            this.PlusOne.Name = "PlusOne";
+            this.PlusOne.Size = new System.Drawing.Size(43, 23);
+            this.PlusOne.TabIndex = 0;
+            this.PlusOne.Text = "+ 1";
+            this.PlusOne.UseVisualStyleBackColor = true;
+            this.PlusOne.Click += new System.EventHandler(this.PlusOne_Click);
+            // 
+            // PlusTen
+            // 
+            this.PlusTen.Enabled = false;
+            this.PlusTen.Location = new System.Drawing.Point(154, 3);
+            this.PlusTen.Name = "PlusTen";
+            this.PlusTen.Size = new System.Drawing.Size(43, 23);
+            this.PlusTen.TabIndex = 1;
+            this.PlusTen.Text = "+ 10";
+            this.PlusTen.UseVisualStyleBackColor = true;
+            this.PlusTen.Click += new System.EventHandler(this.PlusTen_Click);
+            // 
+            // MinusTen
+            // 
+            this.MinusTen.Enabled = false;
+            this.MinusTen.Location = new System.Drawing.Point(3, 3);
+            this.MinusTen.Name = "MinusTen";
+            this.MinusTen.Size = new System.Drawing.Size(42, 22);
+            this.MinusTen.TabIndex = 2;
+            this.MinusTen.Text = "- 10";
+            this.MinusTen.UseVisualStyleBackColor = true;
+            this.MinusTen.Click += new System.EventHandler(this.MinusTen_Click);
+            // 
+            // MinusOne
+            // 
+            this.MinusOne.Enabled = false;
+            this.MinusOne.Location = new System.Drawing.Point(51, 3);
+            this.MinusOne.Name = "MinusOne";
+            this.MinusOne.Size = new System.Drawing.Size(46, 22);
+            this.MinusOne.TabIndex = 3;
+            this.MinusOne.Text = "- 1";
+            this.MinusOne.UseVisualStyleBackColor = true;
+            this.MinusOne.Click += new System.EventHandler(this.MinusOne_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(1319, 441);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(81, 13);
+            this.label15.TabIndex = 92;
+            this.label15.Text = "Move on X-Axis";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 4;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel3.Controls.Add(this.MinusTen, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.MinusOne, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.PlusTen, 3, 0);
+            this.tableLayoutPanel3.Controls.Add(this.PlusOne, 2, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(1265, 458);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(200, 32);
+            this.tableLayoutPanel3.TabIndex = 93;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(1236, 250);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(160, 13);
+            this.label14.TabIndex = 94;
+            this.label14.Text = "Marking For Production Number:";
+            // 
+            // POTxtBox
+            // 
+            this.POTxtBox.Location = new System.Drawing.Point(1397, 247);
+            this.POTxtBox.Name = "POTxtBox";
+            this.POTxtBox.Size = new System.Drawing.Size(100, 20);
+            this.POTxtBox.TabIndex = 95;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(51, 640);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(115, 13);
+            this.label16.TabIndex = 96;
+            this.label16.Text = "Heat Number (Block 7)";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(51, 612);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(114, 13);
+            this.label17.TabIndex = 97;
+            this.label17.Text = "Description 2 (Block 6)";
+            // 
+            // Desc1Box
+            // 
+            this.Desc1Box.AutoSize = true;
+            this.Desc1Box.Location = new System.Drawing.Point(434, 586);
+            this.Desc1Box.Name = "Desc1Box";
+            this.Desc1Box.Size = new System.Drawing.Size(15, 14);
+            this.Desc1Box.TabIndex = 98;
+            this.Desc1Box.UseVisualStyleBackColor = true;
+            this.Desc1Box.CheckedChanged += new System.EventHandler(this.Desc1Box_CheckedChanged);
+            // 
+            // PN2Box
+            // 
+            this.PN2Box.AutoSize = true;
+            this.PN2Box.Location = new System.Drawing.Point(435, 560);
+            this.PN2Box.Name = "PN2Box";
+            this.PN2Box.Size = new System.Drawing.Size(15, 14);
+            this.PN2Box.TabIndex = 99;
+            this.PN2Box.UseVisualStyleBackColor = true;
+            this.PN2Box.CheckedChanged += new System.EventHandler(this.PN2Box_CheckedChanged);
+            // 
+            // PN1Box
+            // 
+            this.PN1Box.AutoSize = true;
+            this.PN1Box.Location = new System.Drawing.Point(435, 533);
+            this.PN1Box.Name = "PN1Box";
+            this.PN1Box.Size = new System.Drawing.Size(15, 14);
+            this.PN1Box.TabIndex = 100;
+            this.PN1Box.UseVisualStyleBackColor = true;
+            this.PN1Box.CheckedChanged += new System.EventHandler(this.PN1Box_CheckedChanged);
+            // 
+            // DateCheckBox
+            // 
+            this.DateCheckBox.AutoSize = true;
+            this.DateCheckBox.Location = new System.Drawing.Point(434, 510);
+            this.DateCheckBox.Name = "DateCheckBox";
+            this.DateCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.DateCheckBox.TabIndex = 101;
+            this.DateCheckBox.UseVisualStyleBackColor = true;
+            this.DateCheckBox.CheckedChanged += new System.EventHandler(this.DateCheckBox_CheckedChanged);
+            // 
+            // QRCheckBox
+            // 
+            this.QRCheckBox.AutoSize = true;
+            this.QRCheckBox.Location = new System.Drawing.Point(1356, 36);
+            this.QRCheckBox.Name = "QRCheckBox";
+            this.QRCheckBox.Size = new System.Drawing.Size(115, 17);
+            this.QRCheckBox.TabIndex = 37;
+            this.QRCheckBox.Text = "QR Code (Block 8)";
+            this.QRCheckBox.UseVisualStyleBackColor = true;
+            this.QRCheckBox.Visible = false;
+            this.QRCheckBox.CheckedChanged += new System.EventHandler(this.QRCheckBox_CheckedChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(289, 466);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(139, 13);
+            this.label18.TabIndex = 102;
+            this.label18.Text = "Label Background (Block 0)";
+            // 
+            // LabelBox
+            // 
+            this.LabelBox.AutoSize = true;
+            this.LabelBox.Location = new System.Drawing.Point(434, 466);
+            this.LabelBox.Name = "LabelBox";
+            this.LabelBox.Size = new System.Drawing.Size(15, 14);
+            this.LabelBox.TabIndex = 103;
+            this.LabelBox.UseVisualStyleBackColor = true;
+            this.LabelBox.CheckedChanged += new System.EventHandler(this.LabelBox_CheckedChanged);
+            // 
+            // ImageBox
+            // 
+            this.ImageBox.AutoSize = true;
+            this.ImageBox.Location = new System.Drawing.Point(434, 487);
+            this.ImageBox.Name = "ImageBox";
+            this.ImageBox.Size = new System.Drawing.Size(15, 14);
+            this.ImageBox.TabIndex = 104;
+            this.ImageBox.UseVisualStyleBackColor = true;
+            this.ImageBox.CheckedChanged += new System.EventHandler(this.ImageBox_CheckedChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(96, 488);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(110, 13);
+            this.label19.TabIndex = 105;
+            this.label19.Text = "Image/Logo (Block 1)";
+            // 
+            // LogoComboBox
+            // 
+            this.LogoComboBox.FormattingEnabled = true;
+            this.LogoComboBox.Location = new System.Drawing.Point(212, 484);
+            this.LogoComboBox.Name = "LogoComboBox";
+            this.LogoComboBox.Size = new System.Drawing.Size(216, 21);
+            this.LogoComboBox.TabIndex = 106;
+            this.LogoComboBox.SelectedIndexChanged += new System.EventHandler(this.LogoComboBox_SelectedIndexChanged);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1465, 870);
+            this.ClientSize = new System.Drawing.Size(1509, 793);
+            this.Controls.Add(this.LogoComboBox);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.ImageBox);
+            this.Controls.Add(this.LabelBox);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.DateCheckBox);
+            this.Controls.Add(this.PN1Box);
+            this.Controls.Add(this.PN2Box);
+            this.Controls.Add(this.Desc1Box);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.POTxtBox);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.tableLayoutPanel3);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.heightBox);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.widthBox);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.HeatCheckBox);
+            this.Controls.Add(this.HeatBox);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnRefreshTag);
+            this.Controls.Add(this.btnOpenMarkerBuilder);
+            this.Controls.Add(this.Desc2Box);
             this.Controls.Add(this.save);
             this.Controls.Add(this.GetLengthsBtn);
             this.Controls.Add(this.AllPartNumBtn);
-            this.Controls.Add(this.axMBActX1);
             this.Controls.Add(this.GetOrderTubePNBTN);
             this.Controls.Add(this.SelectedMaterialPN);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.File1List);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.OpenControllerJob);
             this.Controls.Add(this.SetCameraPosition);
-            this.Controls.Add(this.SelectedBlockCombo);
-            this.Controls.Add(this.YMoveNegButton);
-            this.Controls.Add(this.XMoveNegButton);
             this.Controls.Add(this.FlipPartNumbersButton);
             this.Controls.Add(this.QRCodeDataBox);
             this.Controls.Add(this.QRCheckBox);
@@ -683,7 +1040,6 @@ namespace LaserMarking
             this.Controls.Add(this.CustPartNumAndRevBox);
             this.Controls.Add(this.PartNumAndRevBox);
             this.Controls.Add(this.DateBox);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ClearErrors_Btn);
             this.Controls.Add(this.Errors_Btn);
             this.Controls.Add(this.ShowFileListButton);
@@ -692,34 +1048,27 @@ namespace LaserMarking
             this.Controls.Add(this.label3);
             this.Controls.Add(this.ProgramSizeCombo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ProgramMaterialCombo);
-            this.Controls.Add(this.SetMarkingConditionButton);
-            this.Controls.Add(this.YMovePositiveButton);
-            this.Controls.Add(this.XPositiveButton);
             this.Controls.Add(this.JobTitleLabel);
-            this.Controls.Add(this.OpenJobButton);
             this.Controls.Add(this.LightOffButton);
             this.Controls.Add(this.LightOnButton);
             this.Controls.Add(this.ControllerContextButton);
             this.Controls.Add(this.EditingContextButton);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.MarkerDisconnectButton);
             this.Controls.Add(this.markerConnectButton);
             this.Controls.Add(this.Mark_Part);
-            this.Controls.Add(this.Map_Surface);
             this.Controls.Add(this.Get_Z);
             this.Controls.Add(this.OrdersGridView);
             this.Controls.Add(this.axMBActX2);
             this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Text = "Laser Marking";
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axMBActX1)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -730,25 +1079,17 @@ namespace LaserMarking
         private AxMBPLib2.AxMBActX axMBActX2;
         private System.Windows.Forms.DataGridView OrdersGridView;
         private System.Windows.Forms.Button Get_Z;
-        private System.Windows.Forms.Button Map_Surface;
         private System.Windows.Forms.Button Mark_Part;
         private System.Windows.Forms.Button markerConnectButton;
         private System.Windows.Forms.Button MarkerDisconnectButton;
         private System.Windows.Forms.Button RefreshButton;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button EditingContextButton;
         private System.Windows.Forms.Button ControllerContextButton;
         private System.Windows.Forms.Button LightOnButton;
         private System.Windows.Forms.Button LightOffButton;
-        private System.Windows.Forms.Button OpenJobButton;
         private System.Windows.Forms.Label JobTitleLabel;
-        private System.Windows.Forms.Button XPositiveButton;
-        private System.Windows.Forms.Button YMovePositiveButton;
-        private System.Windows.Forms.Button SetMarkingConditionButton;
         private System.Windows.Forms.ComboBox ProgramMaterialCombo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox ProgramSizeCombo;
         private System.Windows.Forms.Label label3;
@@ -757,32 +1098,69 @@ namespace LaserMarking
         private System.Windows.Forms.Button ShowFileListButton;
         private System.Windows.Forms.Button Errors_Btn;
         private System.Windows.Forms.Button ClearErrors_Btn;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox DateBox;
         private System.Windows.Forms.TextBox PartNumAndRevBox;
         private System.Windows.Forms.TextBox CustPartNumAndRevBox;
         private System.Windows.Forms.TextBox DescLine1Box;
         private System.Windows.Forms.TextBox DescLine2Box;
-        private System.Windows.Forms.CheckBox QRCheckBox;
         private System.Windows.Forms.TextBox QRCodeDataBox;
         private System.Windows.Forms.Button FlipPartNumbersButton;
-        private System.Windows.Forms.Button XMoveNegButton;
-        private System.Windows.Forms.Button YMoveNegButton;
-        private System.Windows.Forms.ComboBox SelectedBlockCombo;
         private System.Windows.Forms.Button SetCameraPosition;
         private System.Windows.Forms.Button OpenControllerJob;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.ListBox File1List;
         private System.Windows.Forms.OpenFileDialog OpenFileDialog1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label SelectedMaterialPN;
         private System.Windows.Forms.Button GetOrderTubePNBTN;
-        private AxMBPLib2.AxMBActX axMBActX1;
         private System.Windows.Forms.Button AllPartNumBtn;
         private System.Windows.Forms.Button GetLengthsBtn;
         private System.Windows.Forms.Button save;
+        private CheckBox Desc2Box;
+        private Button btnOpenMarkerBuilder;
+        private Button btnRefreshTag;
+        private Label label6;
+        private Label label7;
+        private Label label8;
+        private Label label9;
+        private TextBox HeatBox;
+        private CheckBox HeatCheckBox;
+        private Panel panel1;
+        private ComboBox comboBox1;
+        private Label label10;
+        private Label label11;
+        private TextBox widthBox;
+        private Label label12;
+        private TextBox heightBox;
+        private Button wp10;
+        private Button wm10;
+        private Button wp1;
+        private Button wm1;
+        private Button hp10;
+        private Button hp1;
+        private Button hm10;
+        private Button hm1;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label label13;
+        private Button PlusOne;
+        private Button PlusTen;
+        private Button MinusTen;
+        private Button MinusOne;
+        private Label label15;
+        private TableLayoutPanel tableLayoutPanel3;
+        private Label label14;
+        private TextBox POTxtBox;
+        private Label label16;
+        private Label label17;
+        private CheckBox Desc1Box;
+        private CheckBox PN2Box;
+        private CheckBox PN1Box;
+        private CheckBox DateCheckBox;
+        private CheckBox QRCheckBox;
+        private Label label18;
+        private CheckBox LabelBox;
+        private CheckBox ImageBox;
+        private Label label19;
+        private ComboBox LogoComboBox;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
