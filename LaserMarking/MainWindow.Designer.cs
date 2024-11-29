@@ -36,6 +36,7 @@ namespace LaserMarking
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.axMBActX2 = new AxMBPLib2.AxMBActX();
             this.OrdersGridView = new System.Windows.Forms.DataGridView();
@@ -123,15 +124,49 @@ namespace LaserMarking
             this.label19 = new System.Windows.Forms.Label();
             this.LogoComboBox = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabLaserMarking = new System.Windows.Forms.TabPage();
+            this.tabBrazing = new System.Windows.Forms.TabPage();
+            this.btnLoadResults = new System.Windows.Forms.Button();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dgvBrazeParameters = new System.Windows.Forms.DataGridView();
+            this.btnAddBrazeEntry = new System.Windows.Forms.Button();
+            this.txtComments = new System.Windows.Forms.TextBox();
+            this.txtBrazeRings = new System.Windows.Forms.TextBox();
+            this.txtJointClearance = new System.Windows.Forms.TextBox();
+            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.txtDuration = new System.Windows.Forms.TextBox();
+            this.txtPowerLevel = new System.Windows.Forms.TextBox();
+            this.txtConePN = new System.Windows.Forms.TextBox();
+            this.txtTubeEndStyle = new System.Windows.Forms.TextBox();
+            this.txtFittingPN = new System.Windows.Forms.TextBox();
+            this.lblMeasuredJointClearance = new System.Windows.Forms.Label();
+            this.lblBrazeRings = new System.Windows.Forms.Label();
+            this.lblComments = new System.Windows.Forms.Label();
+            this.lblHeight = new System.Windows.Forms.Label();
+            this.lblDuration = new System.Windows.Forms.Label();
+            this.lblPowerLevel = new System.Windows.Forms.Label();
+            this.lblConePN = new System.Windows.Forms.Label();
+            this.lblTubeEndStyle = new System.Windows.Forms.Label();
+            this.lblFittingPN = new System.Windows.Forms.Label();
+            this.lblTubePN = new System.Windows.Forms.Label();
+            this.lblAddBrazeEntry = new System.Windows.Forms.Label();
+            this.txtTubePN = new System.Windows.Forms.TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabLaserMarking.SuspendLayout();
+            this.tabBrazing.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBrazeParameters)).BeginInit();
             this.SuspendLayout();
             // 
             // axMBActX2
@@ -1076,112 +1111,408 @@ namespace LaserMarking
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabLaserMarking);
+            this.tabControl1.Controls.Add(this.tabBrazing);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(2002, 994);
+            this.tabControl1.Size = new System.Drawing.Size(2002, 948);
             this.tabControl1.TabIndex = 107;
             // 
-            // tabPage1
+            // tabLaserMarking
             // 
-            this.tabPage1.Controls.Add(this.axMBActX2);
-            this.tabPage1.Controls.Add(this.OrdersGridView);
-            this.tabPage1.Controls.Add(this.Get_Z);
-            this.tabPage1.Controls.Add(this.Mark_Part);
-            this.tabPage1.Controls.Add(this.markerConnectButton);
-            this.tabPage1.Controls.Add(this.MarkerDisconnectButton);
-            this.tabPage1.Controls.Add(this.RefreshButton);
-            this.tabPage1.Controls.Add(this.EditingContextButton);
-            this.tabPage1.Controls.Add(this.ControllerContextButton);
-            this.tabPage1.Controls.Add(this.LightOnButton);
-            this.tabPage1.Controls.Add(this.LightOffButton);
-            this.tabPage1.Controls.Add(this.JobTitleLabel);
-            this.tabPage1.Controls.Add(this.ProgramMaterialCombo);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.ProgramSizeCombo);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.CameraFinderViewButton);
-            this.tabPage1.Controls.Add(this.ShowFileListButton);
-            this.tabPage1.Controls.Add(this.Errors_Btn);
-            this.tabPage1.Controls.Add(this.ClearErrors_Btn);
-            this.tabPage1.Controls.Add(this.PartNumAndRevBox);
-            this.tabPage1.Controls.Add(this.CustPartNumAndRevBox);
-            this.tabPage1.Controls.Add(this.DescLine1Box);
-            this.tabPage1.Controls.Add(this.DescLine2Box);
-            this.tabPage1.Controls.Add(this.DateBox);
-            this.tabPage1.Controls.Add(this.QRCheckBox);
-            this.tabPage1.Controls.Add(this.QRCodeDataBox);
-            this.tabPage1.Controls.Add(this.FlipPartNumbersButton);
-            this.tabPage1.Controls.Add(this.SetCameraPosition);
-            this.tabPage1.Controls.Add(this.OpenControllerJob);
-            this.tabPage1.Controls.Add(this.label5);
-            this.tabPage1.Controls.Add(this.SelectedMaterialPN);
-            this.tabPage1.Controls.Add(this.GetOrderTubePNBTN);
-            this.tabPage1.Controls.Add(this.AllPartNumBtn);
-            this.tabPage1.Controls.Add(this.GetLengthsBtn);
-            this.tabPage1.Controls.Add(this.save);
-            this.tabPage1.Controls.Add(this.Desc2Box);
-            this.tabPage1.Controls.Add(this.btnOpenMarkerBuilder);
-            this.tabPage1.Controls.Add(this.btnRefreshTag);
-            this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label7);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.HeatBox);
-            this.tabPage1.Controls.Add(this.HeatCheckBox);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.comboBox1);
-            this.tabPage1.Controls.Add(this.label10);
-            this.tabPage1.Controls.Add(this.label11);
-            this.tabPage1.Controls.Add(this.widthBox);
-            this.tabPage1.Controls.Add(this.label12);
-            this.tabPage1.Controls.Add(this.heightBox);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel2);
-            this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.label15);
-            this.tabPage1.Controls.Add(this.tableLayoutPanel3);
-            this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.POTxtBox);
-            this.tabPage1.Controls.Add(this.label16);
-            this.tabPage1.Controls.Add(this.label17);
-            this.tabPage1.Controls.Add(this.Desc1Box);
-            this.tabPage1.Controls.Add(this.PN2Box);
-            this.tabPage1.Controls.Add(this.PN1Box);
-            this.tabPage1.Controls.Add(this.DateCheckBox);
-            this.tabPage1.Controls.Add(this.label18);
-            this.tabPage1.Controls.Add(this.LabelBox);
-            this.tabPage1.Controls.Add(this.ImageBox);
-            this.tabPage1.Controls.Add(this.label19);
-            this.tabPage1.Controls.Add(this.LogoComboBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1994, 965);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabLaserMarking.Controls.Add(this.axMBActX2);
+            this.tabLaserMarking.Controls.Add(this.OrdersGridView);
+            this.tabLaserMarking.Controls.Add(this.Get_Z);
+            this.tabLaserMarking.Controls.Add(this.Mark_Part);
+            this.tabLaserMarking.Controls.Add(this.markerConnectButton);
+            this.tabLaserMarking.Controls.Add(this.MarkerDisconnectButton);
+            this.tabLaserMarking.Controls.Add(this.RefreshButton);
+            this.tabLaserMarking.Controls.Add(this.EditingContextButton);
+            this.tabLaserMarking.Controls.Add(this.ControllerContextButton);
+            this.tabLaserMarking.Controls.Add(this.LightOnButton);
+            this.tabLaserMarking.Controls.Add(this.LightOffButton);
+            this.tabLaserMarking.Controls.Add(this.JobTitleLabel);
+            this.tabLaserMarking.Controls.Add(this.ProgramMaterialCombo);
+            this.tabLaserMarking.Controls.Add(this.label1);
+            this.tabLaserMarking.Controls.Add(this.label2);
+            this.tabLaserMarking.Controls.Add(this.ProgramSizeCombo);
+            this.tabLaserMarking.Controls.Add(this.label3);
+            this.tabLaserMarking.Controls.Add(this.label4);
+            this.tabLaserMarking.Controls.Add(this.CameraFinderViewButton);
+            this.tabLaserMarking.Controls.Add(this.ShowFileListButton);
+            this.tabLaserMarking.Controls.Add(this.Errors_Btn);
+            this.tabLaserMarking.Controls.Add(this.ClearErrors_Btn);
+            this.tabLaserMarking.Controls.Add(this.PartNumAndRevBox);
+            this.tabLaserMarking.Controls.Add(this.CustPartNumAndRevBox);
+            this.tabLaserMarking.Controls.Add(this.DescLine1Box);
+            this.tabLaserMarking.Controls.Add(this.DescLine2Box);
+            this.tabLaserMarking.Controls.Add(this.DateBox);
+            this.tabLaserMarking.Controls.Add(this.QRCheckBox);
+            this.tabLaserMarking.Controls.Add(this.QRCodeDataBox);
+            this.tabLaserMarking.Controls.Add(this.FlipPartNumbersButton);
+            this.tabLaserMarking.Controls.Add(this.SetCameraPosition);
+            this.tabLaserMarking.Controls.Add(this.OpenControllerJob);
+            this.tabLaserMarking.Controls.Add(this.label5);
+            this.tabLaserMarking.Controls.Add(this.SelectedMaterialPN);
+            this.tabLaserMarking.Controls.Add(this.GetOrderTubePNBTN);
+            this.tabLaserMarking.Controls.Add(this.AllPartNumBtn);
+            this.tabLaserMarking.Controls.Add(this.GetLengthsBtn);
+            this.tabLaserMarking.Controls.Add(this.save);
+            this.tabLaserMarking.Controls.Add(this.Desc2Box);
+            this.tabLaserMarking.Controls.Add(this.btnOpenMarkerBuilder);
+            this.tabLaserMarking.Controls.Add(this.btnRefreshTag);
+            this.tabLaserMarking.Controls.Add(this.label6);
+            this.tabLaserMarking.Controls.Add(this.label7);
+            this.tabLaserMarking.Controls.Add(this.label8);
+            this.tabLaserMarking.Controls.Add(this.label9);
+            this.tabLaserMarking.Controls.Add(this.HeatBox);
+            this.tabLaserMarking.Controls.Add(this.HeatCheckBox);
+            this.tabLaserMarking.Controls.Add(this.panel1);
+            this.tabLaserMarking.Controls.Add(this.comboBox1);
+            this.tabLaserMarking.Controls.Add(this.label10);
+            this.tabLaserMarking.Controls.Add(this.label11);
+            this.tabLaserMarking.Controls.Add(this.widthBox);
+            this.tabLaserMarking.Controls.Add(this.label12);
+            this.tabLaserMarking.Controls.Add(this.heightBox);
+            this.tabLaserMarking.Controls.Add(this.tableLayoutPanel1);
+            this.tabLaserMarking.Controls.Add(this.tableLayoutPanel2);
+            this.tabLaserMarking.Controls.Add(this.label13);
+            this.tabLaserMarking.Controls.Add(this.label15);
+            this.tabLaserMarking.Controls.Add(this.tableLayoutPanel3);
+            this.tabLaserMarking.Controls.Add(this.label14);
+            this.tabLaserMarking.Controls.Add(this.POTxtBox);
+            this.tabLaserMarking.Controls.Add(this.label16);
+            this.tabLaserMarking.Controls.Add(this.label17);
+            this.tabLaserMarking.Controls.Add(this.Desc1Box);
+            this.tabLaserMarking.Controls.Add(this.PN2Box);
+            this.tabLaserMarking.Controls.Add(this.PN1Box);
+            this.tabLaserMarking.Controls.Add(this.DateCheckBox);
+            this.tabLaserMarking.Controls.Add(this.label18);
+            this.tabLaserMarking.Controls.Add(this.LabelBox);
+            this.tabLaserMarking.Controls.Add(this.ImageBox);
+            this.tabLaserMarking.Controls.Add(this.label19);
+            this.tabLaserMarking.Controls.Add(this.LogoComboBox);
+            this.tabLaserMarking.ImageIndex = 2;
+            this.tabLaserMarking.Location = new System.Drawing.Point(4, 25);
+            this.tabLaserMarking.Name = "tabLaserMarking";
+            this.tabLaserMarking.Padding = new System.Windows.Forms.Padding(3);
+            this.tabLaserMarking.Size = new System.Drawing.Size(1994, 919);
+            this.tabLaserMarking.TabIndex = 0;
+            this.tabLaserMarking.Text = "Laser Marking";
+            this.tabLaserMarking.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // tabBrazing
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1994, 965);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabBrazing.Controls.Add(this.btnLoadResults);
+            this.tabBrazing.Controls.Add(this.tbSearch);
+            this.tabBrazing.Controls.Add(this.lblSearch);
+            this.tabBrazing.Controls.Add(this.splitContainer1);
+            this.tabBrazing.ImageIndex = 0;
+            this.tabBrazing.Location = new System.Drawing.Point(4, 25);
+            this.tabBrazing.Name = "tabBrazing";
+            this.tabBrazing.Padding = new System.Windows.Forms.Padding(3);
+            this.tabBrazing.Size = new System.Drawing.Size(1994, 919);
+            this.tabBrazing.TabIndex = 1;
+            this.tabBrazing.Text = "Brazing";
+            this.tabBrazing.UseVisualStyleBackColor = true;
+            // 
+            // btnLoadResults
+            // 
+            this.btnLoadResults.Location = new System.Drawing.Point(385, 5);
+            this.btnLoadResults.Name = "btnLoadResults";
+            this.btnLoadResults.Size = new System.Drawing.Size(188, 29);
+            this.btnLoadResults.TabIndex = 1;
+            this.btnLoadResults.Text = "Load All";
+            this.btnLoadResults.UseVisualStyleBackColor = true;
+            this.btnLoadResults.Click += new System.EventHandler(this.btnLoadResults_Click);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(67, 6);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(264, 22);
+            this.tbSearch.TabIndex = 2;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Location = new System.Drawing.Point(8, 8);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(53, 17);
+            this.lblSearch.TabIndex = 1;
+            this.lblSearch.Text = "Search";
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Location = new System.Drawing.Point(0, 40);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.dgvBrazeParameters);
+            this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnAddBrazeEntry);
+            this.splitContainer1.Panel2.Controls.Add(this.txtComments);
+            this.splitContainer1.Panel2.Controls.Add(this.txtBrazeRings);
+            this.splitContainer1.Panel2.Controls.Add(this.txtJointClearance);
+            this.splitContainer1.Panel2.Controls.Add(this.txtHeight);
+            this.splitContainer1.Panel2.Controls.Add(this.txtDuration);
+            this.splitContainer1.Panel2.Controls.Add(this.txtPowerLevel);
+            this.splitContainer1.Panel2.Controls.Add(this.txtConePN);
+            this.splitContainer1.Panel2.Controls.Add(this.txtTubeEndStyle);
+            this.splitContainer1.Panel2.Controls.Add(this.txtFittingPN);
+            this.splitContainer1.Panel2.Controls.Add(this.lblMeasuredJointClearance);
+            this.splitContainer1.Panel2.Controls.Add(this.lblBrazeRings);
+            this.splitContainer1.Panel2.Controls.Add(this.lblComments);
+            this.splitContainer1.Panel2.Controls.Add(this.lblHeight);
+            this.splitContainer1.Panel2.Controls.Add(this.lblDuration);
+            this.splitContainer1.Panel2.Controls.Add(this.lblPowerLevel);
+            this.splitContainer1.Panel2.Controls.Add(this.lblConePN);
+            this.splitContainer1.Panel2.Controls.Add(this.lblTubeEndStyle);
+            this.splitContainer1.Panel2.Controls.Add(this.lblFittingPN);
+            this.splitContainer1.Panel2.Controls.Add(this.lblTubePN);
+            this.splitContainer1.Panel2.Controls.Add(this.lblAddBrazeEntry);
+            this.splitContainer1.Panel2.Controls.Add(this.txtTubePN);
+            this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer1.Size = new System.Drawing.Size(1541, 879);
+            this.splitContainer1.SplitterDistance = 361;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // dgvBrazeParameters
+            // 
+            this.dgvBrazeParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBrazeParameters.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBrazeParameters.Location = new System.Drawing.Point(0, 0);
+            this.dgvBrazeParameters.Name = "dgvBrazeParameters";
+            this.dgvBrazeParameters.RowTemplate.Height = 24;
+            this.dgvBrazeParameters.Size = new System.Drawing.Size(1541, 361);
+            this.dgvBrazeParameters.TabIndex = 0;
+            // 
+            // btnAddBrazeEntry
+            // 
+            this.btnAddBrazeEntry.Location = new System.Drawing.Point(8, 368);
+            this.btnAddBrazeEntry.Name = "btnAddBrazeEntry";
+            this.btnAddBrazeEntry.Size = new System.Drawing.Size(338, 28);
+            this.btnAddBrazeEntry.TabIndex = 21;
+            this.btnAddBrazeEntry.Text = "Add Braze Entry";
+            this.btnAddBrazeEntry.UseVisualStyleBackColor = true;
+            this.btnAddBrazeEntry.Click += new System.EventHandler(this.btnAddBrazeEntry_Click);
+            // 
+            // txtComments
+            // 
+            this.txtComments.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtComments.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtComments.Location = new System.Drawing.Point(125, 304);
+            this.txtComments.Multiline = true;
+            this.txtComments.Name = "txtComments";
+            this.txtComments.Size = new System.Drawing.Size(223, 58);
+            this.txtComments.TabIndex = 20;
+            // 
+            // txtBrazeRings
+            // 
+            this.txtBrazeRings.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtBrazeRings.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtBrazeRings.Location = new System.Drawing.Point(125, 276);
+            this.txtBrazeRings.Name = "txtBrazeRings";
+            this.txtBrazeRings.Size = new System.Drawing.Size(223, 22);
+            this.txtBrazeRings.TabIndex = 19;
+            // 
+            // txtJointClearance
+            // 
+            this.txtJointClearance.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtJointClearance.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtJointClearance.Location = new System.Drawing.Point(125, 248);
+            this.txtJointClearance.Name = "txtJointClearance";
+            this.txtJointClearance.Size = new System.Drawing.Size(223, 22);
+            this.txtJointClearance.TabIndex = 18;
+            // 
+            // txtHeight
+            // 
+            this.txtHeight.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtHeight.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtHeight.Location = new System.Drawing.Point(125, 220);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(223, 22);
+            this.txtHeight.TabIndex = 17;
+            // 
+            // txtDuration
+            // 
+            this.txtDuration.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtDuration.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtDuration.Location = new System.Drawing.Point(125, 192);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(223, 22);
+            this.txtDuration.TabIndex = 16;
+            // 
+            // txtPowerLevel
+            // 
+            this.txtPowerLevel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtPowerLevel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtPowerLevel.Location = new System.Drawing.Point(125, 164);
+            this.txtPowerLevel.Name = "txtPowerLevel";
+            this.txtPowerLevel.Size = new System.Drawing.Size(223, 22);
+            this.txtPowerLevel.TabIndex = 15;
+            // 
+            // txtConePN
+            // 
+            this.txtConePN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtConePN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtConePN.Location = new System.Drawing.Point(125, 136);
+            this.txtConePN.Name = "txtConePN";
+            this.txtConePN.Size = new System.Drawing.Size(223, 22);
+            this.txtConePN.TabIndex = 14;
+            // 
+            // txtTubeEndStyle
+            // 
+            this.txtTubeEndStyle.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtTubeEndStyle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtTubeEndStyle.Enabled = false;
+            this.txtTubeEndStyle.Location = new System.Drawing.Point(125, 108);
+            this.txtTubeEndStyle.Name = "txtTubeEndStyle";
+            this.txtTubeEndStyle.Size = new System.Drawing.Size(223, 22);
+            this.txtTubeEndStyle.TabIndex = 13;
+            // 
+            // txtFittingPN
+            // 
+            this.txtFittingPN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtFittingPN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtFittingPN.Location = new System.Drawing.Point(125, 79);
+            this.txtFittingPN.Name = "txtFittingPN";
+            this.txtFittingPN.Size = new System.Drawing.Size(223, 22);
+            this.txtFittingPN.TabIndex = 12;
+            // 
+            // lblMeasuredJointClearance
+            // 
+            this.lblMeasuredJointClearance.AutoSize = true;
+            this.lblMeasuredJointClearance.Location = new System.Drawing.Point(15, 248);
+            this.lblMeasuredJointClearance.Name = "lblMeasuredJointClearance";
+            this.lblMeasuredJointClearance.Size = new System.Drawing.Size(106, 17);
+            this.lblMeasuredJointClearance.TabIndex = 9;
+            this.lblMeasuredJointClearance.Text = "Joint Clearance";
+            // 
+            // lblBrazeRings
+            // 
+            this.lblBrazeRings.AutoSize = true;
+            this.lblBrazeRings.Location = new System.Drawing.Point(8, 276);
+            this.lblBrazeRings.Name = "lblBrazeRings";
+            this.lblBrazeRings.Size = new System.Drawing.Size(113, 17);
+            this.lblBrazeRings.TabIndex = 10;
+            this.lblBrazeRings.Text = "# of Braze Rings";
+            // 
+            // lblComments
+            // 
+            this.lblComments.AutoSize = true;
+            this.lblComments.Location = new System.Drawing.Point(39, 304);
+            this.lblComments.Name = "lblComments";
+            this.lblComments.Size = new System.Drawing.Size(74, 17);
+            this.lblComments.TabIndex = 11;
+            this.lblComments.Text = "Comments";
+            // 
+            // lblHeight
+            // 
+            this.lblHeight.AutoSize = true;
+            this.lblHeight.Location = new System.Drawing.Point(64, 220);
+            this.lblHeight.Name = "lblHeight";
+            this.lblHeight.Size = new System.Drawing.Size(49, 17);
+            this.lblHeight.TabIndex = 8;
+            this.lblHeight.Text = "Height";
+            // 
+            // lblDuration
+            // 
+            this.lblDuration.AutoSize = true;
+            this.lblDuration.Location = new System.Drawing.Point(38, 192);
+            this.lblDuration.Name = "lblDuration";
+            this.lblDuration.Size = new System.Drawing.Size(83, 17);
+            this.lblDuration.TabIndex = 7;
+            this.lblDuration.Text = "Duration (s)";
+            // 
+            // lblPowerLevel
+            // 
+            this.lblPowerLevel.AutoSize = true;
+            this.lblPowerLevel.Location = new System.Drawing.Point(10, 164);
+            this.lblPowerLevel.Name = "lblPowerLevel";
+            this.lblPowerLevel.Size = new System.Drawing.Size(111, 17);
+            this.lblPowerLevel.TabIndex = 6;
+            this.lblPowerLevel.Text = "Power Level (%)";
+            // 
+            // lblConePN
+            // 
+            this.lblConePN.AutoSize = true;
+            this.lblConePN.Location = new System.Drawing.Point(49, 136);
+            this.lblConePN.Name = "lblConePN";
+            this.lblConePN.Size = new System.Drawing.Size(64, 17);
+            this.lblConePN.TabIndex = 5;
+            this.lblConePN.Text = "Cone PN";
+            // 
+            // lblTubeEndStyle
+            // 
+            this.lblTubeEndStyle.AutoSize = true;
+            this.lblTubeEndStyle.Location = new System.Drawing.Point(8, 108);
+            this.lblTubeEndStyle.Name = "lblTubeEndStyle";
+            this.lblTubeEndStyle.Size = new System.Drawing.Size(105, 17);
+            this.lblTubeEndStyle.TabIndex = 4;
+            this.lblTubeEndStyle.Text = "Tube End Style";
+            // 
+            // lblFittingPN
+            // 
+            this.lblFittingPN.AutoSize = true;
+            this.lblFittingPN.Location = new System.Drawing.Point(44, 82);
+            this.lblFittingPN.Name = "lblFittingPN";
+            this.lblFittingPN.Size = new System.Drawing.Size(69, 17);
+            this.lblFittingPN.TabIndex = 3;
+            this.lblFittingPN.Text = "Fitting PN";
+            // 
+            // lblTubePN
+            // 
+            this.lblTubePN.AutoSize = true;
+            this.lblTubePN.Location = new System.Drawing.Point(49, 53);
+            this.lblTubePN.Name = "lblTubePN";
+            this.lblTubePN.Size = new System.Drawing.Size(64, 17);
+            this.lblTubePN.TabIndex = 2;
+            this.lblTubePN.Text = "Tube PN";
+            // 
+            // lblAddBrazeEntry
+            // 
+            this.lblAddBrazeEntry.AutoSize = true;
+            this.lblAddBrazeEntry.Font = new System.Drawing.Font("Impact", 15.75F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
+                | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddBrazeEntry.Location = new System.Drawing.Point(8, 11);
+            this.lblAddBrazeEntry.Name = "lblAddBrazeEntry";
+            this.lblAddBrazeEntry.Size = new System.Drawing.Size(199, 34);
+            this.lblAddBrazeEntry.TabIndex = 1;
+            this.lblAddBrazeEntry.Text = "Add Braze Entry";
+            // 
+            // txtTubePN
+            // 
+            this.txtTubePN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtTubePN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtTubePN.Location = new System.Drawing.Point(125, 50);
+            this.txtTubePN.Name = "txtTubePN";
+            this.txtTubePN.Size = new System.Drawing.Size(223, 22);
+            this.txtTubePN.TabIndex = 0;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "brazing128x128.png");
+            this.imageList1.Images.SetKeyName(1, "laser128x128.png");
+            this.imageList1.Images.SetKeyName(2, "lasernew128x128.png");
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2002, 994);
+            this.ClientSize = new System.Drawing.Size(2002, 948);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainWindow";
@@ -1192,8 +1523,16 @@ namespace LaserMarking
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            this.tabLaserMarking.ResumeLayout(false);
+            this.tabLaserMarking.PerformLayout();
+            this.tabBrazing.ResumeLayout(false);
+            this.tabBrazing.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBrazeParameters)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1286,8 +1625,36 @@ namespace LaserMarking
         private Label label19;
         private ComboBox LogoComboBox;
         private TabControl tabControl1;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabPage tabLaserMarking;
+        private TabPage tabBrazing;
+        private ImageList imageList1;
+        private SplitContainer splitContainer1;
+        private DataGridView dgvBrazeParameters;
+        private TextBox tbSearch;
+        private Label lblSearch;
+        private Button btnLoadResults;
+        private TextBox txtTubePN;
+        private Label lblTubePN;
+        private Label lblAddBrazeEntry;
+        private Label lblDuration;
+        private Label lblPowerLevel;
+        private Label lblConePN;
+        private Label lblTubeEndStyle;
+        private Label lblFittingPN;
+        private Label lblBrazeRings;
+        private Label lblMeasuredJointClearance;
+        private Label lblComments;
+        private Label lblHeight;
+        private TextBox txtFittingPN;
+        private TextBox txtComments;
+        private TextBox txtBrazeRings;
+        private TextBox txtJointClearance;
+        private TextBox txtHeight;
+        private TextBox txtDuration;
+        private TextBox txtPowerLevel;
+        private TextBox txtConePN;
+        private TextBox txtTubeEndStyle;
+        private Button btnAddBrazeEntry;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
