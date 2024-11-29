@@ -70,6 +70,7 @@ namespace LaserMarking
 
             SetFormTitle();
 
+
             if (System.Diagnostics.Debugger.IsAttached)
             {
                 SQLTest = 1;
@@ -78,6 +79,8 @@ namespace LaserMarking
             {
                 SQLTest = 0;
             }
+            SetCustomSourcesForTubeParts();
+
 
             //Set DB Conn strings to test/prod depending on environment
             SetDBConnections();
@@ -2745,7 +2748,207 @@ namespace LaserMarking
             }
         }
 
+        private void btnLoadResults_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
+            {
+                try
+                {
+                    cn.Open();  // Open connection using the SQL connection string above
+                    SqlCommand cmd = new SqlCommand("", cn);    //Declare text command for server connection
 
+                    cmd.CommandText = "SELECT id, TubeID, FittingPN, TubeEndStyleID, " +
+                    "ConePN, PowerLevel, Duration, Height, MeasuredJointClearance, " +
+                    "BrazeRings, Comments, DateEntered " +
+                    "FROM BrazeParameters";
+
+
+                    DataTable dt = new DataTable();
+                    dt.Load(cmd.ExecuteReader());
+
+                    dgvBrazeParameters.DataSource = dt;
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error getting open orders" + ex);
+                }
+            }
+        }
+
+        // Adds autocomplete data for the tube part number
+        private void SetCustomSourcesForTubeParts()
+        {
+            txtTubePN.AutoCompleteCustomSource.Clear();
+            
+
+            AutoCompleteStringCollection acTn = new AutoCompleteStringCollection();
+
+            using (SqlConnection cnex = new SqlConnection(HHI_PUMIConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT DISTINCT(PartNo) FROM Tubes", cnex);
+                try
+                {
+                    cnex.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                
+                        acTn.Add(reader["PartNo"].ToString());
+                        Console.WriteLine(reader["PartNo"].ToString());
+
+                    }
+                }
+
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+
+            txtTubePN.AutoCompleteCustomSource = acTn;
+
+        }
+
+        // Adds a braze entry to the database
+        private void btnAddBrazeEntry_Click(object sender, EventArgs e)
+        {
+            if (!BrazeEntryValidationChecks())
+            {
+                return;
+            }
+            else
+            {
+                Console.WriteLine("We will do somthing here");
+            }
+            
+        }
+
+        // Performs validation checks on the data input for braze entry before trying to enter it
+        private bool BrazeEntryValidationChecks()
+        {
+            string tubePN = txtTubePN.Text.ToString();
+            if (!CheckTubePNExists(tubePN))
+            {
+                MessageBox.Show($"A tube with PN {tubePN} does not exist in the Tubes database. It will need to be entered first. \n" +
+                    $"A tool to enter a tube will be available soon. For now contact softwaredev@umis.ca", "Error: No Tube Exists",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // TODO: A check here to see if the end style is in our DB - should also do the same auto fill thing as the tube PN
+
+            int test = -1;
+            if (!int.TryParse(txtPowerLevel.Text.ToString(), out test))
+            {
+                MessageBox.Show($"Power Level is not a valid integer. Please enter a valid integer.", "Power Level Invalid",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            } 
+            
+
+            test = -1;
+            if(!int.TryParse(txtDuration.Text.ToString(), out test))
+            {
+                MessageBox.Show($"Duration is not a valid integer. Please enter a valid integer.", "Duration Invalid",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            
+
+            double testDouble = -1;
+            if (!double.TryParse(txtHeight.Text.ToString(), out testDouble))
+            {
+                MessageBox.Show($"Height is not a valid number. Please enter a valid number.", "Height Invalid",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+           
+
+            testDouble = -1;
+            if (!double.TryParse(txtJointClearance.Text.ToString(), out testDouble))
+            {
+                MessageBox.Show($"Joint Clearance is not a valid number. Please enter a valid number.", "Joint Clearance Invalid",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            
+
+            testDouble = -1;
+            if (!double.TryParse(txtBrazeRings.Text.ToString(), out testDouble))
+            {
+                MessageBox.Show($"Braze Rings is not a valid number. Please enter a valid number.", "Braze Rings Invalid",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
+
+        private bool CheckTubePNExists(string tubePN)
+        {
+            using (SqlConnection cnex = new SqlConnection(HHI_PUMIConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT id FROM Tubes WHERE PartNo = @PartNo", cnex);
+                cmd.Parameters.AddWithValue("@PartNo", tubePN); // Set to current date and time
+
+                try
+                {
+                    cnex.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+
+                        return true;
+
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return false;
+            }
+
+        }
+
+        /* IMPLEMENT THIS LATER ON
+        private bool CheckEndStyleExists(string endStyle)
+        {
+            using (SqlConnection cnex = new SqlConnection(HHI_PUMIConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("SELECT id FROM Tubes WHERE PartNo = @PartNo", cnex);
+                cmd.Parameters.AddWithValue("@PartNo", tubePN); // Set to current date and time
+
+                try
+                {
+                    cnex.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+
+                        return true;
+
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return false;
+            }
+
+        }
+        */
     }
 }
 
