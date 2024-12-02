@@ -2752,6 +2752,12 @@ namespace LaserMarking
 
         private void btnLoadResults_Click(object sender, EventArgs e)
         {
+            RefreshResults();
+        }
+
+        private void RefreshResults() 
+        {
+            string search = tbSearch.Text.ToString();
             using (SqlConnection cn = new SqlConnection(HHI_PUMIConnectionString))
             {
                 try
@@ -2759,10 +2765,14 @@ namespace LaserMarking
                     cn.Open();  // Open connection using the SQL connection string above
                     SqlCommand cmd = new SqlCommand("", cn);    //Declare text command for server connection
 
-                    cmd.CommandText = "SELECT id, TubeID, FittingPN, TubeEndStyleID, " +
-                    "ConePN, PowerLevel, Duration, Height, MeasuredJointClearance, " +
-                    "BrazeRings, Comments, DateEntered " +
-                    "FROM BrazeParameters";
+                    cmd.CommandText = "SELECT BP.id, BP.TubeID, T.PartNo AS TubePN, " +
+                        "BP.FittingPN, BP.TubeEndStyleID, BP.ConePN, BP.PowerLevel, " +
+                        "BP.Duration, BP.Height, BP.MeasuredJointClearance, BP.BrazeRings, " +
+                        "BP.Comments, BP.DateEntered " +
+                        "FROM BrazeParameters BP " +
+                        "LEFT JOIN Tubes T ON BP.TubeID = T.id " +
+                        "WHERE T.PartNo LIKE @Search";
+                    cmd.Parameters.AddWithValue("@Search", "%" + search + "%");
 
 
                     DataTable dt = new DataTable();
@@ -3064,6 +3074,10 @@ namespace LaserMarking
             }
         }
 
+        private void tbSearch_TextChanged(object sender, EventArgs e)
+        {
+            RefreshResults();
+        }
     }
 }
 
