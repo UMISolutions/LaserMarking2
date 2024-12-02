@@ -131,6 +131,7 @@ namespace LaserMarking
             this.lblSearch = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvBrazeParameters = new System.Windows.Forms.DataGridView();
+            this.cbFittingPN = new System.Windows.Forms.ComboBox();
             this.btnAddBrazeEntry = new System.Windows.Forms.Button();
             this.txtComments = new System.Windows.Forms.TextBox();
             this.txtBrazeRings = new System.Windows.Forms.TextBox();
@@ -1258,6 +1259,7 @@ namespace LaserMarking
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.cbFittingPN);
             this.splitContainer1.Panel2.Controls.Add(this.btnAddBrazeEntry);
             this.splitContainer1.Panel2.Controls.Add(this.txtComments);
             this.splitContainer1.Panel2.Controls.Add(this.txtBrazeRings);
@@ -1295,6 +1297,16 @@ namespace LaserMarking
             this.dgvBrazeParameters.RowTemplate.Height = 24;
             this.dgvBrazeParameters.Size = new System.Drawing.Size(1541, 361);
             this.dgvBrazeParameters.TabIndex = 0;
+            // 
+            // cbFittingPN
+            // 
+            this.cbFittingPN.Enabled = false;
+            this.cbFittingPN.FormattingEnabled = true;
+            this.cbFittingPN.Location = new System.Drawing.Point(369, 106);
+            this.cbFittingPN.Name = "cbFittingPN";
+            this.cbFittingPN.Size = new System.Drawing.Size(121, 24);
+            this.cbFittingPN.TabIndex = 22;
+            this.cbFittingPN.Visible = false;
             // 
             // btnAddBrazeEntry
             // 
@@ -1655,6 +1667,7 @@ namespace LaserMarking
         private TextBox txtConePN;
         private TextBox txtTubeEndStyle;
         private Button btnAddBrazeEntry;
+        private ComboBox cbFittingPN;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
