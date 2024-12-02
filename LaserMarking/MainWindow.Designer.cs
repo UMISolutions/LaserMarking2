@@ -1222,11 +1222,11 @@ namespace LaserMarking
             // 
             // btnLoadResults
             // 
-            this.btnLoadResults.Location = new System.Drawing.Point(385, 5);
+            this.btnLoadResults.Location = new System.Drawing.Point(337, 2);
             this.btnLoadResults.Name = "btnLoadResults";
             this.btnLoadResults.Size = new System.Drawing.Size(188, 29);
             this.btnLoadResults.TabIndex = 1;
-            this.btnLoadResults.Text = "Load All";
+            this.btnLoadResults.Text = "Reload";
             this.btnLoadResults.UseVisualStyleBackColor = true;
             this.btnLoadResults.Click += new System.EventHandler(this.btnLoadResults_Click);
             // 
@@ -1236,6 +1236,7 @@ namespace LaserMarking
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(264, 22);
             this.tbSearch.TabIndex = 2;
+            this.tbSearch.TextChanged += new System.EventHandler(this.tbSearch_TextChanged);
             // 
             // lblSearch
             // 
