@@ -35,6 +35,7 @@ namespace LaserMarking
         //PDM Variables
         private IEdmVault5 vault1 = null;
         IEdmFile7 aFile;
+        IEdmFile7 bFile;
         IEdmFolder5 ppoRetParentFolder;
         private IEdmBom bom;
         private IEdmBomView3 bomView;
@@ -1304,6 +1305,7 @@ namespace LaserMarking
                 if (TubePartNumber[0] != 'P')
                 {
                     aFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\{TubePartNumber[0]}0000\{TubePartNumber}.slddrw", out ppoRetParentFolder);
+                    bFile = (IEdmFile7)vault1.GetFileFromPath($@"C:\UMIS\UMi Parts\{TubePartNumber[0]}0000\{TubePartNumber}.sldasm", out ppoRetParentFolder);
 
                 }
                 else
@@ -1330,8 +1332,9 @@ namespace LaserMarking
                     }
                 }
 
-                IEdmEnumeratorVariable6 enumVariable = (IEdmEnumeratorVariable6)aFile.GetEnumeratorVariable();
-                bool getVarSuccess = enumVariable.GetVarFromDb("PartNo", "@", out object poPartNo);
+                IEdmEnumeratorVariable6 enumVariable = (IEdmEnumeratorVariable6)aFile.GetEnumeratorVariable(); 
+                IEdmEnumeratorVariable6 enumVariable2 = (IEdmEnumeratorVariable6)bFile.GetEnumeratorVariable();
+                bool getVarSuccess = enumVariable2.GetVarFromDb("PartNo", "@", out object poPartNo);
                 getVarSuccess = enumVariable.GetVarFromDb("CustomerPN", "@", out object poCustomerPN);
                 getVarSuccess = enumVariable.GetVarFromDb("Revision", "@", out object poRevision);
                 getVarSuccess = enumVariable.GetVarFromDb("Description", "@", out object poDescription);
