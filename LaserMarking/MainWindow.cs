@@ -2838,6 +2838,7 @@ namespace LaserMarking
                 {
                     MessageBox.Show("There was an error adding the braze parameter.", "Braze Parameter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                RefreshResults();
             }
             
         }
@@ -2850,6 +2851,22 @@ namespace LaserMarking
             {
                 MessageBox.Show($"A tube with PN {tubePN} does not exist in the Tubes database. It will need to be entered first. \n" +
                     $"A tool to enter a tube will be available soon. For now contact softwaredev@umis.ca", "Error: No Tube Exists",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string fittingPN = txtFittingPN.Text.ToString();
+            if (fittingPN.Length == 0)
+            {
+                MessageBox.Show($"You must enter a fitting PN", "Error: No Fitting PN",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            string conePN = txtConePN.Text.ToString();
+            if (conePN.Length == 0)
+            {
+                MessageBox.Show($"You must enter a cone PN", "Error: No Cone PN",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }

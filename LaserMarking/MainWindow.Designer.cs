@@ -1285,8 +1285,8 @@ namespace LaserMarking
             this.splitContainer1.Panel2.Controls.Add(this.txtTubePN);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.splitContainer1.Size = new System.Drawing.Size(1541, 879);
-            this.splitContainer1.SplitterDistance = 361;
+            this.splitContainer1.Size = new System.Drawing.Size(1826, 879);
+            this.splitContainer1.SplitterDistance = 345;
             this.splitContainer1.TabIndex = 0;
             // 
             // dgvBrazeParameters
@@ -1296,7 +1296,7 @@ namespace LaserMarking
             this.dgvBrazeParameters.Location = new System.Drawing.Point(0, 0);
             this.dgvBrazeParameters.Name = "dgvBrazeParameters";
             this.dgvBrazeParameters.RowTemplate.Height = 24;
-            this.dgvBrazeParameters.Size = new System.Drawing.Size(1541, 361);
+            this.dgvBrazeParameters.Size = new System.Drawing.Size(1826, 345);
             this.dgvBrazeParameters.TabIndex = 0;
             // 
             // cbFittingPN
