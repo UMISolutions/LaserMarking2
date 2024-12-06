@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>01O+wavcCw8CiPEj6jAZOb4tSzqkQ5wdtfjmvyPrfKc=</dsig:DigestValue>
+        <dsig:DigestValue>pp/4x6EAj2/TsMlOHG2QuBtC4gbNibJjhOHsvAi0HSA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -61,19 +61,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Z0jO1le6v1tuYpWogVtsbaZmMZZHk9XL/k64/qBmySk=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EPDM.Interop.epdm.dll" size="371528">
-      <assemblyIdentity name="EPDM.Interop.epdm" version="5.26.0.0" publicKeyToken="0625A0C4BB5DE148" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Kiqh6ufbWFHAlV0PUZLXgylC4KsXtcFElyXU48E1VT0=</dsig:DigestValue>
+        <dsig:DigestValue>neKk4NTcwI0PIeUpgV4QV9zmXCQuE3nMQZ+NVpp391Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -91,37 +79,49 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.MBPActXLib.dll" size="622592">
-      <assemblyIdentity name="Interop.MBPActXLib" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="Interop.MBPActXLib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3ZDO3YHm8di3qhZmfUFVgW/GtzEFKYSCJGt7p/Xhtv0=</dsig:DigestValue>
+        <dsig:DigestValue>9j+BqZWKfILE59NoE3eHzsJ3hEGhk+Uxnl34gQPDxIM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Interop.MBPLib2.dll" size="104960">
-      <assemblyIdentity name="Interop.MBPLib2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="Interop.MBPLib2" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3f+b6Hd9+ep7I6KmiBBdX3rqjEWZeTFKOyCHouXy0Ck=</dsig:DigestValue>
+        <dsig:DigestValue>XIKkyA2GE8Old1/zhFmPYNBc1O+j/t+KqWyunSYeWhs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="94632">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="104872">
       <assemblyIdentity name="LaserMarking" version="1.0.2.2" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hx93qYb5qkfDfZNb1wfD2DkmLLvcJf2ftSEVep+QYmA=</dsig:DigestValue>
+        <dsig:DigestValue>OVTi+F4bvEY9BrH/Rth+ERxx+qI7mEk6xh9dp4qCBBg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="stdole.dll" size="16384">
+      <assemblyIdentity name="stdole" version="7.0.3300.0" publicKeyToken="B03F5F7F11D50A3A" language="neutral" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>1s35YcbScS/hlYgV5Rowlg15//Hpd4i3dBYn26ly6Pc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

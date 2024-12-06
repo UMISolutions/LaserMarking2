@@ -90,9 +90,18 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EPDM.Interop.epdm">
-      <HintPath>C:\Program Files (x86)\SOLIDWORKS PDM\EPDM.Interop.epdm.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+    <Reference Include="AxInterop.MBPActXLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>obj\Release\AxInterop.MBPActXLib.dll</HintPath>
+    </Reference>
+    <Reference Include="AxInterop.MBPLib2, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>obj\Release\AxInterop.MBPLib2.dll</HintPath>
+    </Reference>
+    <Reference Include="EPDM.Interop.epdm, Version=5.26.0.0, Culture=neutral, PublicKeyToken=0625a0c4bb5de148, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\SOLIDWORKS PDM\EPDM.Interop.epdm.dll</HintPath>
     </Reference>
     <Reference Include="EPDM.Interop.EPDMResultCode">
       <HintPath>C:\Program Files (x86)\SOLIDWORKS PDM\EPDM.Interop.EPDMResultCode.dll</HintPath>
@@ -157,22 +166,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <COMReference Include="AxMBPActXLib">
-      <Guid>{FD3EE3CE-FB4C-4D58-94CF-3639D2CB4216}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
-    <COMReference Include="AxMBPLib2">
-      <Guid>{10C23853-3475-4D1A-9F77-3038E16DBB04}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
     <COMReference Include="EdmLib">
       <Guid>{5FA2C692-8393-4F31-9BDB-05E6F807D0D3}</Guid>
       <VersionMajor>5</VersionMajor>
@@ -181,15 +174,6 @@
       <WrapperTool>tlbimp</WrapperTool>
       <Isolated>False</Isolated>
       <EmbedInteropTypes>False</EmbedInteropTypes>
-    </COMReference>
-    <COMReference Include="MBPActXLib">
-      <Guid>{FD3EE3CE-FB4C-4D58-94CF-3639D2CB4216}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
     <COMReference Include="MBPLib2">
       <Guid>{10C23853-3475-4D1A-9F77-3038E16DBB04}</Guid>
@@ -224,6 +208,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="WhatsNew.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

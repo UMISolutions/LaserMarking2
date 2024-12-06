@@ -1,0 +1,3923 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="__51000" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_ERROR_START</comment>
+  </data>
+  <data name="__53000" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_TERMINAL_START</comment>
+  </data>
+  <data name="__54000" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_SOFT_START</comment>
+  </data>
+  <data name="_0" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_APPLICATION_ERROR_START</comment>
+  </data>
+  <data name="_1" xml:space="preserve">
+    <value>Dotum</value>
+    <comment>IDS_SYSTEMFONT_MS_GOTHIC</comment>
+  </data>
+  <data name="_10" xml:space="preserve">
+    <value>선 폭</value>
+    <comment>IDS_PROPNAME_WOBBLELINEWIDTH</comment>
+  </data>
+  <data name="_1000" xml:space="preserve">
+    <value>파일이 존재하지 않습니다.</value>
+    <comment>ERR_FILE_NOTFOUND</comment>
+  </data>
+  <data name="_1001" xml:space="preserve">
+    <value>유효한 블록이 존재하지 않습니다.</value>
+    <comment>ERR_BLOCK_NOTFOUND</comment>
+  </data>
+  <data name="_1002" xml:space="preserve">
+    <value>블록이 존재합니다. </value>
+    <comment>ERR_BLOCK_ALREADY_FOUND</comment>
+  </data>
+  <data name="_1003" xml:space="preserve">
+    <value>모델 파라미터 정보 파일 읽기에 실패했습니다. </value>
+    <comment>ERR_LOAD_DEVICEPARAMETER</comment>
+  </data>
+  <data name="_1005" xml:space="preserve">
+    <value>덮어쓰기 설정을 추가할 수 없습니다. </value>
+    <comment>ERR_NOTADD_OVERWRITINGSETTING</comment>
+  </data>
+  <data name="_1006" xml:space="preserve">
+    <value>덮어쓰기 설정을 삭제할 수 없습니다.</value>
+    <comment>ERR_NOTDELETE_OVERWRITINGSETTING</comment>
+  </data>
+  <data name="_1007" xml:space="preserve">
+    <value>덮어쓰기 설정이 존재하지 않습니다. </value>
+    <comment>ERR_BLOCKOVERWRITING_NOTFOUND</comment>
+  </data>
+  <data name="_1008" xml:space="preserve">
+    <value>%s는 %d~%d에서 입력해 주십시오. </value>
+    <comment>ERR_OUTOFRANGE_INTEGER</comment>
+  </data>
+  <data name="_1009" xml:space="preserve">
+    <value>%s는 %.1lf~%.1lf에서 입력해 주십시오.</value>
+    <comment>ERR_OUTOFRANGE_DOUBLE1</comment>
+  </data>
+  <data name="_1010" xml:space="preserve">
+    <value>%s는 %.2lf~%.2lf에서 입력해 주십시오. </value>
+    <comment>ERR_OUTOFRANGE_DOUBLE2</comment>
+  </data>
+  <data name="_10101" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 1(%s)</value>
+    <comment>ERR_INVALIDKEY</comment>
+  </data>
+  <data name="_10102" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 2(%s)</value>
+    <comment>ERR_KEY_NOTFOUND</comment>
+  </data>
+  <data name="_10103" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 3</value>
+    <comment>ERR_PARAM_IS_SAME</comment>
+  </data>
+  <data name="_10104" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 4</value>
+    <comment>ERR_FILE_SAVE_ERROR</comment>
+  </data>
+  <data name="_10105" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 5</value>
+    <comment>ERR_UNSUPPORTED_DEVICEFOLDERTYPE</comment>
+  </data>
+  <data name="_10106" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 6</value>
+    <comment>ERR_NOTFOUNDDRAWOPERATOR</comment>
+  </data>
+  <data name="_10107" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 7</value>
+    <comment>ERR_NO_PARSECONTROLTEXT</comment>
+  </data>
+  <data name="_10108" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 8</value>
+    <comment>ERR_INIT_DRAWMAP</comment>
+  </data>
+  <data name="_10109" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 9</value>
+    <comment>ERR_SET_DRAWVALUE</comment>
+  </data>
+  <data name="_1011" xml:space="preserve">
+    <value>%s는 %.3lf~%.3lf에서 입력해 주십시오. </value>
+    <comment>ERR_OUTOFRANGE_DOUBLE3</comment>
+  </data>
+  <data name="_10110" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 10</value>
+    <comment>ERR_INVALID_NODETYPE</comment>
+  </data>
+  <data name="_10111" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 11</value>
+    <comment>ERR_NODE_ALREADY_FOUND</comment>
+  </data>
+  <data name="_10112" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 12</value>
+    <comment>ERR_INVALID_ITEM</comment>
+  </data>
+  <data name="_10113" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 13</value>
+    <comment>ERR_INVALID_OPERATION</comment>
+  </data>
+  <data name="_10114" xml:space="preserve">
+    <value>Marking Builder Plus 애플리케이션 에러 14</value>
+    <comment>ERR_INVALID_PARAMETER</comment>
+  </data>
+  <data name="_1012" xml:space="preserve">
+    <value>블록의 문자열이 비어 있습니다. </value>
+    <comment>ERR_EMPTY_BLOCKTEXT</comment>
+  </data>
+  <data name="_1013" xml:space="preserve">
+    <value>유효한 형상 설정이 존재하지 않습니다. </value>
+    <comment>ERR_SHAPE3D_NOTFOUND</comment>
+  </data>
+  <data name="_1014" xml:space="preserve">
+    <value>비어 있는 형상 설정 번호가 존재하지 않습니다. </value>
+    <comment>ERR_EMPTYSHAPE3DNO_NOTFOUND</comment>
+  </data>
+  <data name="_1015" xml:space="preserve">
+    <value>설정 파일 읽어오기에 실패했습니다.</value>
+    <comment>ERR_LOAD_MFPFILE</comment>
+  </data>
+  <data name="_1016" xml:space="preserve">
+    <value>블록을 추가할 수 없습니다. </value>
+    <comment>ERR_NOTADD_BLOCK</comment>
+  </data>
+  <data name="_1017" xml:space="preserve">
+    <value>파일명에 다음 문자는 사용할 수 없습니다
+#%\/:;,.*?"&lt;&gt;|(space)</value>
+    <comment>ERR_INVALID_FILESTRING</comment>
+  </data>
+  <data name="_1018" xml:space="preserve">
+    <value>파일명이 너무 깁니다. 
+%d 문자 이하의 파일명으로 지정해 주십시오.</value>
+    <comment>ERR_INVALID_FILELENGTH</comment>
+  </data>
+  <data name="_1019" xml:space="preserve">
+    <value>%s는 %d~%d 문자로 입력해 주십시오. </value>
+    <comment>ERR_OUTOFRANGE_STRING</comment>
+  </data>
+  <data name="_1020" xml:space="preserve">
+    <value>이미 같은 값이 설정되어 있습니다. </value>
+    <comment>ERR_ALREADY_EXISTS</comment>
+  </data>
+  <data name="_1021" xml:space="preserve">
+    <value>더 이상 등록할 수 없습니다. </value>
+    <comment>ERR_COUNT_OVER</comment>
+  </data>
+  <data name="_1022" xml:space="preserve">
+    <value>파일 읽어오기에 실패했습니다.</value>
+    <comment>ERR_FILE_READ</comment>
+  </data>
+  <data name="_1023" xml:space="preserve">
+    <value>블록이 존재하지 않으므로 붙여 넣을 수 없습니다. </value>
+    <comment>ERR_PASTE_BLOCK_NOTFOUND</comment>
+  </data>
+  <data name="_1024" xml:space="preserve">
+    <value>그룹이 존재하지 않으므로 붙여 넣을 수 없습니다.</value>
+    <comment>ERR_PASTE_GROUP_NOTFOUND</comment>
+  </data>
+  <data name="_1025" xml:space="preserve">
+    <value>블록의 수가 너무 많습니다. 처리를 중지했습니다. </value>
+    <comment>ERR_PASTE_MAXBLOCK_OVER</comment>
+  </data>
+  <data name="_1026" xml:space="preserve">
+    <value>매트릭스의 수가 너무 많습니다. 처리를 중지했습니다. </value>
+    <comment>ERR_PASTE_MAXMATRIX_OVER</comment>
+  </data>
+  <data name="_1027" xml:space="preserve">
+    <value>그룹의 수가 너무 많습니다. 처리를 중지했습니다. </value>
+    <comment>ERR_PASTE_MAXGROUP_OVER</comment>
+  </data>
+  <data name="_1028" xml:space="preserve">
+    <value>이미 매트릭스가 존재합니다. </value>
+    <comment>ERR_MATRIX_ALREADY_EXISTS</comment>
+  </data>
+  <data name="_1029" xml:space="preserve">
+    <value>유효한 그룹이 존재하지 않습니다. </value>
+    <comment>ERR_GROUP_NOTFOUND</comment>
+  </data>
+  <data name="_1030" xml:space="preserve">
+    <value>유효한 매트릭스가 존재하지 않습니다. </value>
+    <comment>ERR_MATRIX_NOTFOUND</comment>
+  </data>
+  <data name="_1031" xml:space="preserve">
+    <value>이미 그룹이 존재합니다. </value>
+    <comment>ERR_GROUP_ALREADY_EXISTS</comment>
+  </data>
+  <data name="_1034" xml:space="preserve">
+    <value>트리거 ON 중 정점 블록이 존재할 때는 다른 블록, 매트릭스를 추가할 수 없습니다. </value>
+    <comment>ERR_TRIGGER_ON_BLOCK_EXISTS</comment>
+  </data>
+  <data name="_1035" xml:space="preserve">
+    <value>이미 그룹에 속해 있으므로 추가할 수 없습니다. </value>
+    <comment>ERR_IS_BELONG_GROUP</comment>
+  </data>
+  <data name="_1036" xml:space="preserve">
+    <value>그룹은 추가할 수 없습니다.</value>
+    <comment>ERR_NOTADD_GROUP</comment>
+  </data>
+  <data name="_1037" xml:space="preserve">
+    <value>파일 쓰기에 실패했습니다.</value>
+    <comment>ERR_FILE_WRITE</comment>
+  </data>
+  <data name="_1038" xml:space="preserve">
+    <value>블록의 데이터 종류가 바르지 않습니다. </value>
+    <comment>ERR_INVALID_DATATYPE</comment>
+  </data>
+  <data name="_1039" xml:space="preserve">
+    <value>문자열이나 사용 가능 문자 등이 코드의 규격에 맞는지 확인해 주십시오.</value>
+    <comment>ERR_NOT_ENCODABLE</comment>
+  </data>
+  <data name="_1040" xml:space="preserve">
+    <value>문자열은 %d문자 이내로 입력해 주십시오. </value>
+    <comment>ERR_TEXT_LENGTH_OVER</comment>
+  </data>
+  <data name="_1041" xml:space="preserve">
+    <value>문자열의 서식에 문제가 있습니다. </value>
+    <comment>ERR_ILLEGAL_TEXT</comment>
+  </data>
+  <data name="_1042" xml:space="preserve">
+    <value>문자열을 링크할 곳이 바르지 않습니다. </value>
+    <comment>ERR_ILLEGAL_LINK_TARGET</comment>
+  </data>
+  <data name="_1043" xml:space="preserve">
+    <value>파일 형식이 바르지 않습니다.</value>
+    <comment>ERR_INVALID_FILE_FORMAT</comment>
+  </data>
+  <data name="_1044" xml:space="preserve">
+    <value>같은 이름의 로고·포토 파일이 존재합니다. 덮어쓰시겠습니까?</value>
+    <comment>ERR_CONFIRM_OVERWRITE_LOGO</comment>
+  </data>
+  <data name="_1045" xml:space="preserve">
+    <value>같은 이름의 폰트 파일이 존재합니다. 덮어쓰시겠습니까?</value>
+    <comment>ERR_CONFIRM_OVERWRITE_FONT</comment>
+  </data>
+  <data name="_1046" xml:space="preserve">
+    <value>같은 이름의 Z-MAP 파일이 존재합니다. 덮어쓰시겠습니까?</value>
+    <comment>ERR_CONFIRM_OVERWRITE_ZMAP</comment>
+  </data>
+  <data name="_1047" xml:space="preserve">
+    <value>블록 No.%03d에 에러가 있습니다.
+
+%s</value>
+    <comment>ERR_ENCODE_BLOCK</comment>
+  </data>
+  <data name="_1048" xml:space="preserve">
+    <value>범위 밖 에러</value>
+    <comment>ERR_OUTOFRANGE</comment>
+  </data>
+  <data name="_1049" xml:space="preserve">
+    <value>유효한 로고·포토 형식이 아닙니다. </value>
+    <comment>ERR_INVALID_LOGOPHOTOTYPE</comment>
+  </data>
+  <data name="_1050" xml:space="preserve">
+    <value>포트 번호가 중복되어 있습니다.</value>
+    <comment>ERR_DUPLICATE_PORTNO</comment>
+  </data>
+  <data name="_1051" xml:space="preserve">
+    <value>최소 블록 번호와 최대 블록 번호가 바뀌어 있습니다. </value>
+    <comment>ERR_INVERT_BLOCKNO</comment>
+  </data>
+  <data name="_1053" xml:space="preserve">
+    <value>디바이스명이 IP 주소 형식으로 입력되어 있습니다. </value>
+    <comment>ERR_NOTACCEPT_IPADDRESSFORMAT</comment>
+  </data>
+  <data name="_1054" xml:space="preserve">
+    <value>모델 파라미터 정보 파일이 존재하지 않습니다. </value>
+    <comment>ERR_NO_DEVICEPARAMETERFILE</comment>
+  </data>
+  <data name="_1056" xml:space="preserve">
+    <value>모델 정보를 찾을 수 없습니다. </value>
+    <comment>ERR_NO_MACHINEINFO</comment>
+  </data>
+  <data name="_1057" xml:space="preserve">
+    <value>인쇄 순서의 값이 바르지 않습니다. </value>
+    <comment>ERR_INVALID_ORDERVALUES</comment>
+  </data>
+  <data name="_1058" xml:space="preserve">
+    <value>모델 폴더가 동일하지 않으면 사용할 수 없습니다 </value>
+    <comment>ERR_NOSAME_DEVICEFOLDER</comment>
+  </data>
+  <data name="_1059" xml:space="preserve">
+    <value>문자열에 대응하지 않는 Unicode 문자가 포함되어 있습니다. </value>
+    <comment>ERR_ILLEGAL_UNICODE_TEXT</comment>
+  </data>
+  <data name="_1060" xml:space="preserve">
+    <value>XY 평면은 공유할 수 없습니다</value>
+    <comment>ERR_CANNOTSHARE_SHAPE3DXY</comment>
+  </data>
+  <data name="_1061" xml:space="preserve">
+    <value>2D 코드 이외에는 지정할 수 없습니다. </value>
+    <comment>ERR_2DCODEREADER_NOT_SUPPPORT_BLOCK</comment>
+  </data>
+  <data name="_1063" xml:space="preserve">
+    <value>통신 에러(USB 접속)</value>
+    <comment>ERR_CONNECT_USB</comment>
+  </data>
+  <data name="_1064" xml:space="preserve">
+    <value>통신 에러（%s）</value>
+    <comment>ERR_CONNECT_ETHERNET</comment>
+  </data>
+  <data name="_1065" xml:space="preserve">
+    <value>접속 중에는 변경할 수 없습니다. </value>
+    <comment>ERR_CANT_CHANGE_CONNECTING</comment>
+  </data>
+  <data name="_1066" xml:space="preserve">
+    <value>접속되어 있지 않습니다. </value>
+    <comment>ERR_NOT_CONNECTING</comment>
+  </data>
+  <data name="_1067" xml:space="preserve">
+    <value>송수신 파일 오픈 실패</value>
+    <comment>ERR_COM_FILE_OPEN</comment>
+  </data>
+  <data name="_1068" xml:space="preserve">
+    <value>설정 번호 범위 밖 에러</value>
+    <comment>ERR_COM_OUTOFRANGE_SETTING</comment>
+  </data>
+  <data name="_1069" xml:space="preserve">
+    <value>설정 목록의 취득에 실패했습니다. </value>
+    <comment>ERR_SETTINGLIST_GET_FAILED</comment>
+  </data>
+  <data name="_1070" xml:space="preserve">
+    <value>카메라 통신 포트에서의 접속에 실패했습니다. </value>
+    <comment>ERR_CONNECT_CAMERA</comment>
+  </data>
+  <data name="_1071" xml:space="preserve">
+    <value>블록 번호 범위 밖 에러</value>
+    <comment>ERR_COM_OUTOFRANGE_BLOCKNO</comment>
+  </data>
+  <data name="_1072" xml:space="preserve">
+    <value>사용자 폰트 파일이 존재하지 않습니다. </value>
+    <comment>ERR_EXFONT_FILE_NOTFOUND</comment>
+  </data>
+  <data name="_1073" xml:space="preserve">
+    <value>로고·포토 파일이 존재하지 않습니다. </value>
+    <comment>ERR_LOGO_FILE_NOTFOUND</comment>
+  </data>
+  <data name="_1074" xml:space="preserve">
+    <value>파일명에 비대응 Unicode 문자가 포함되어 있습니다.</value>
+    <comment>ERR_ILLEGAL_UNICODE_FILESTRING</comment>
+  </data>
+  <data name="_1075" xml:space="preserve">
+    <value>대응하지 않는 파일 버전입니다</value>
+    <comment>ERR_FILE_NOT_SUPORT_VERSION</comment>
+  </data>
+  <data name="_1076" xml:space="preserve">
+    <value>대응하지 않는 파일 종류입니다 </value>
+    <comment>ERR_FILE_NOT_SUPORT_TYPE</comment>
+  </data>
+  <data name="_1077" xml:space="preserve">
+    <value>포맷 에러가 발생했습니다</value>
+    <comment>ERR_FILE_FORMAT_ERROR</comment>
+  </data>
+  <data name="_1078" xml:space="preserve">
+    <value>폴더 삭제에 실패했습니다.</value>
+    <comment>ERR_DELETEFOLDER</comment>
+  </data>
+  <data name="_1079" xml:space="preserve">
+    <value>경로에서 파일명을 추출하는 데 실패했습니다. </value>
+    <comment>ERR_GETFILENAMEFROMPATH</comment>
+  </data>
+  <data name="_1080" xml:space="preserve">
+    <value>%S는 %d, %d～%d로 입력해 주십시오.</value>
+  </data>
+  <data name="_1081" xml:space="preserve">
+    <value>폰트 설정 취득에 실패했습니다. </value>
+    <comment>ERR_GETFONTCONFIG</comment>
+  </data>
+  <data name="_1087" xml:space="preserve">
+    <value>유효한 nodes가 존재하지 않습니다. </value>
+    <comment>ERR_NODE_NOTFOUND</comment>
+  </data>
+  <data name="_1088" xml:space="preserve">
+    <value>형상 설정 수가 상한을 초과하고 있습니다. </value>
+    <comment>ERR_SHAPE3DSIZE_OVER</comment>
+  </data>
+  <data name="_1089" xml:space="preserve">
+    <value>이미 존재하는 형상 설정 번호입니다. </value>
+    <comment>ERR_EXIST_SHAPE3DNO</comment>
+  </data>
+  <data name="_1090" xml:space="preserve">
+    <value>무효한 형상 종류입니다. </value>
+    <comment>ERR_INVALID_SHAPE3DTYPE</comment>
+  </data>
+  <data name="_1091" xml:space="preserve">
+    <value>매트릭스 번호가 바르지 않습니다. </value>
+    <comment>ERR_INVALID_MATRIXNO</comment>
+  </data>
+  <data name="_1092" xml:space="preserve">
+    <value>그룹 번호가 바르지 않습니다. </value>
+    <comment>ERR_INVALID_GROUPNO</comment>
+  </data>
+  <data name="_1094" xml:space="preserve">
+    <value>모델 폴더 작성에 실패했습니다. </value>
+    <comment>ERR_MAKE_DEVICEFOLDER</comment>
+  </data>
+  <data name="_1099" xml:space="preserve">
+    <value>모델 파라미터 정보를 찾을 수 없습니다. </value>
+    <comment>ERR_DEVICEPARAM_NOTFOUND</comment>
+  </data>
+  <data name="_11" xml:space="preserve">
+    <value>전체 폭</value>
+    <comment>IDS_PROPNAME_FULLWIDTH</comment>
+  </data>
+  <data name="_1100" xml:space="preserve">
+    <value>무효한 타입 정보입니다. </value>
+    <comment>ERR_INVALID_PARAMTYPE</comment>
+  </data>
+  <data name="_1101" xml:space="preserve">
+    <value>무효한 블록 종류입니다. </value>
+    <comment>ERR_INVALID_BLOCKTYPE</comment>
+  </data>
+  <data name="_1102" xml:space="preserve">
+    <value>기록할 수 있는 크기가 상한을 초과하고 있습니다. </value>
+    <comment>ERR_OVER_WRITESIZE</comment>
+  </data>
+  <data name="_1104" xml:space="preserve">
+    <value>무효한 이미지 종류입니다.</value>
+    <comment>ERR_INVALID_IMAGETYPE</comment>
+  </data>
+  <data name="_1105" xml:space="preserve">
+    <value>데이터 매트릭스 이외에는 설정할 수 없습니다.</value>
+    <comment>ERR_NOT_DATAMATRIX</comment>
+  </data>
+  <data name="_1106" xml:space="preserve">
+    <value>덮어쓰기 설정을 사용할 수 없습니다.</value>
+    <comment>ERR_NOTUSE_BLOCKOVERWRITING</comment>
+  </data>
+  <data name="_1107" xml:space="preserve">
+    <value>범위 밖의 카운터 번호입니다.</value>
+    <comment>ERR_COUNTERNO_OUTOFRANGE</comment>
+  </data>
+  <data name="_1108" xml:space="preserve">
+    <value>카운터 정보를 취득할 수 없습니다. </value>
+    <comment>ERR_GET_COUNTER</comment>
+  </data>
+  <data name="_1109" xml:space="preserve">
+    <value>QR 코드 이외에는 설정할 수 없습니다.</value>
+    <comment>ERR_NOT_QRCODE</comment>
+  </data>
+  <data name="_1110" xml:space="preserve">
+    <value>트리거 ON 중 정점 블록에서는 설정할 수 없습니다. </value>
+    <comment>ERR_CANNOTSET_TRIGGERONPOINTBLOCK</comment>
+  </data>
+  <data name="_1111" xml:space="preserve">
+    <value>QR 암호는 6자리로 입력해 주십시오.</value>
+    <comment>ERR_DEGIT_QRPASSWORD</comment>
+  </data>
+  <data name="_1112" xml:space="preserve">
+    <value>올바르지 않은 문자가 사용되고 있습니다. </value>
+    <comment>ERR_INVALIDCHARCTER</comment>
+  </data>
+  <data name="_1113" xml:space="preserve">
+    <value>읽기 전용입니다. </value>
+    <comment>ERR_ISREADONLY</comment>
+  </data>
+  <data name="_1115" xml:space="preserve">
+    <value>무효한 파일 종류입니다.</value>
+    <comment>ERR_INVALID_FILETYPE</comment>
+  </data>
+  <data name="_1117" xml:space="preserve">
+    <value>블록 종류 취득에 실패했습니다.</value>
+    <comment>ERR_GET_BLOCKTYPE</comment>
+  </data>
+  <data name="_1118" xml:space="preserve">
+    <value>범위 정보가 없는 파라미터입니다. </value>
+    <comment>ERR_NORANGE</comment>
+  </data>
+  <data name="_1119" xml:space="preserve">
+    <value>초기값이 없는 파라미터입니다. </value>
+    <comment>ERR_NODEFAULT</comment>
+  </data>
+  <data name="_1120" xml:space="preserve">
+    <value>멀티 매트릭스 모드가 아닙니다. </value>
+    <comment>ERR_NOMULTIMATRIX</comment>
+  </data>
+  <data name="_1121" xml:space="preserve">
+    <value>IP 주소의 포맷이 바르지 않습니다. </value>
+    <comment>ERR_FORMAT_IPADDRESS</comment>
+  </data>
+  <data name="_1122" xml:space="preserve">
+    <value>IP 주소에 바르지 않은 문자가 사용되어 있습니다. </value>
+    <comment>ERR_INVALIDCHAR_IPADDRESS</comment>
+  </data>
+  <data name="_1123" xml:space="preserve">
+    <value>입력명이 바르지 않습니다.</value>
+    <comment>ERR_DXF_INPUTFILENAME_INVALID</comment>
+  </data>
+  <data name="_1124" xml:space="preserve">
+    <value>출력 파일명이 바르지 않습니다. </value>
+    <comment>ERR_DXF_OUTPUTFILENAME_INVALID</comment>
+  </data>
+  <data name="_1125" xml:space="preserve">
+    <value>출력 폴더가 존재하지 않습니다.</value>
+    <comment>ERR_DXF_OUTPUTFOLDERNOTFOUND</comment>
+  </data>
+  <data name="_1126" xml:space="preserve">
+    <value>입력 파일이 존재하지 않습니다. </value>
+    <comment>ERR_DXF_INPUTFILENOTFOUND</comment>
+  </data>
+  <data name="_1127" xml:space="preserve">
+    <value>입력 파일과 출력 파일에 같은 파일명이 사용되고 있습니다. </value>
+    <comment>ERR_DXF_SAMEFILE</comment>
+  </data>
+  <data name="_1128" xml:space="preserve">
+    <value>DXF 파일 불러오기를 중단했습니다. </value>
+    <comment>ERR_DXF_CONVERT</comment>
+  </data>
+  <data name="_1129" xml:space="preserve">
+    <value>DXF 변환으로 사용할 수 없는 파라미터가 지정되었습니다. </value>
+    <comment>ERR_DXF_DISABLED_PARAMETER</comment>
+  </data>
+  <data name="_1130" xml:space="preserve">
+    <value>파일명을 26문자 이내로 해 주십시오.</value>
+    <comment>ERR_DXF_FILENAMELENGTH</comment>
+  </data>
+  <data name="_1131" xml:space="preserve">
+    <value>접속하고 있지 않으므로 운전 모니터는 사용할 수 없습니다. </value>
+    <comment>ERR_MONITOR_OFFLINE</comment>
+  </data>
+  <data name="_1132" xml:space="preserve">
+    <value>운전 모드가 아니므로 점검 모드를 시작할 수 없습니다. </value>
+    <comment>ERR_CANNOT_START_MAINTENANCE</comment>
+  </data>
+  <data name="_1133" xml:space="preserve">
+    <value>점검 모드가 아니므로 점검 모드를 종료할 수 없습니다. </value>
+    <comment>ERR_CANNOT_FINISH_MAINTENANCE</comment>
+  </data>
+  <data name="_1134" xml:space="preserve">
+    <value>점검 모드가 아니므로 실행할 수 없습니다. </value>
+    <comment>ERR_CANNOT_USE_MAINTENANCE</comment>
+  </data>
+  <data name="_1135" xml:space="preserve">
+    <value>통신 이력을 불러올 수 없습니다. </value>
+    <comment>ERR_CANNOT_LOAD_COMMHISTORYLOG</comment>
+  </data>
+  <data name="_1136" xml:space="preserve">
+    <value>운전 모드가 아니므로 단자대 시뮬레이트를 시작할 수 없습니다. </value>
+    <comment>ERR_CANNOT_START_TERMINAL_SIMULATE</comment>
+  </data>
+  <data name="_1137" xml:space="preserve">
+    <value>단자대 시뮬레이트 중이 아니므로 단자대 시뮬레이트를 종료할 수 없습니다. </value>
+    <comment>ERR_CANNOT_FINISH_TERMINAL_SIMULATE</comment>
+  </data>
+  <data name="_1138" xml:space="preserve">
+    <value>단자대 시뮬레이트 중이 아니므로 실행할 수 없습니다. </value>
+    <comment>ERR_CANNOT_USE_TERMINAL_SIMULATE</comment>
+  </data>
+  <data name="_1139" xml:space="preserve">
+    <value>키 스위치가 [LASER ON]일 때는 시뮬레이트할 수 없습니다.</value>
+    <comment>ERR_CANNOT_USE_TERMINAL_SIMULATE_LASER_ON</comment>
+  </data>
+  <data name="_1140" xml:space="preserve">
+    <value>공통 데이터의 데이터는 갱신되어 있지 않습니다.</value>
+    <comment>ERR_NOT_UPDATED_PRINT_COMMON</comment>
+  </data>
+  <data name="_1141" xml:space="preserve">
+    <value>접속 모델의 모델 파라미터는 무효입니다. </value>
+    <comment>ERR_INVALID_CONNECTED_DEVICEPARAMETER</comment>
+  </data>
+  <data name="_1142" xml:space="preserve">
+    <value>%s[%s]
+
+이 모델에서는 카메라 기능사용할 수 없습니다. </value>
+    <comment>ERR_CANNOT_USE_LOWCOST_CAMERA</comment>
+  </data>
+  <data name="_1143" xml:space="preserve">
+    <value>%s[%s]
+
+이 모델에서는 파워 모니터 기능사용할 수 없습니다. </value>
+    <comment>ERR_CANNOT_USE_LOWCOST_POWERMONITOR</comment>
+  </data>
+  <data name="_1144" xml:space="preserve">
+    <value>카메라 기능은 사용할 수 없습니다. </value>
+    <comment>ERR_DEVICE_CANNOT_USE_CAMERA</comment>
+  </data>
+  <data name="_1145" xml:space="preserve">
+    <value>파워 모니터 기능은 사용할 수 없습니다</value>
+    <comment>ERR_DEVICE_CANNOT_USE_POWERMONITOR</comment>
+  </data>
+  <data name="_1146" xml:space="preserve">
+    <value>PROFINET 기능은 사용할 수 없습니다</value>
+    <comment>ERR_DEVICE_CANNOT_USE_PROFINET</comment>
+  </data>
+  <data name="_1147" xml:space="preserve">
+    <value>2D 기능은 사용할 수 없습니다</value>
+    <comment>ERR_DEVICE_CANNOT_USE_2D</comment>
+  </data>
+  <data name="_1148" xml:space="preserve">
+    <value>컨택터 기능은 사용할 수 없습니다.</value>
+    <comment>ERR_DEVICE_CANNOT_USE_CONTACTOR</comment>
+  </data>
+  <data name="_1149" xml:space="preserve">
+    <value>현재 설정 편집 중인 모델과 접속하는 모델이 다릅니다. 
+%s
+
+설정 편집 중인 모델 = %s
+접속하는 모델 = %s</value>
+    <comment>ERR_DEVICE_DIFFERENCE</comment>
+  </data>
+  <data name="_1150" xml:space="preserve">
+    <value>100% &gt; 60% &gt; 20% &gt; 0%가 되도록 레이저 파워를 입력해 주십시오. </value>
+    <comment>ERR_MAINTENANCE_LASEPOWER_UNCONFORMITY</comment>
+  </data>
+  <data name="_1151" xml:space="preserve">
+    <value>디렉토리 '%s'에 액세스할 수 없습니다. </value>
+    <comment>ERR_INVALID_DIR_PATH</comment>
+  </data>
+  <data name="_1152" xml:space="preserve">
+    <value>미러 반전이 ON인 경우 XY 평면 이외의 형상은 설정할 수 없습니다. </value>
+    <comment>ERR_SHAPE3D_MIRRORDIRECTIONREVERSE</comment>
+  </data>
+  <data name="_1153" xml:space="preserve">
+    <value>합계 파일 사이즈가 디스크 여유 용량을 초과하고 있므로 전송할 수 없습니다. </value>
+    <comment>ERR_NOT_ENOUGH_CONTROLLER_MEMORY</comment>
+  </data>
+  <data name="_1154" xml:space="preserve">
+    <value>해치 로고 파일의 변환에 실패했습니다. </value>
+    <comment>ERR_HATCH_CONVERT</comment>
+  </data>
+  <data name="_1155" xml:space="preserve">
+    <value>로고 파일의 변환에 실패했습니다. </value>
+    <comment>ERR_LOGO_CONVERT</comment>
+  </data>
+  <data name="_1156" xml:space="preserve">
+    <value>True Type Font에서 변환한 로고는 사용자 폰트로 저장할 수 없습니다. </value>
+    <comment>ERR_LOGO_CONVERT_TTF</comment>
+  </data>
+  <data name="_1157" xml:space="preserve">
+    <value>Wobble 변환 또는 Scratch 변환한 로고는 사용자 폰트로 저장할 수 없습니다. </value>
+    <comment>ERR_LOGO_CONVERT_WOBBLE</comment>
+  </data>
+  <data name="_1158" xml:space="preserve">
+    <value>파일명에 다음의 문자는 사용할 수 없습니다
+#%\/:;,.*?"&lt;&gt;|(space)</value>
+    <comment>ERR_INVALID_LOGO_FILESTRING</comment>
+  </data>
+  <data name="_1159" xml:space="preserve">
+    <value>파일명에 다음의 문자는 사용할 수 없습니다
+\/:*?"&lt;&gt;|</value>
+    <comment>ERR_INVALID_WINDOWS_FILESTRING</comment>
+  </data>
+  <data name="_1160" xml:space="preserve">
+    <value>리모트 데스크탑 접속에서는 3D 표시는 사용할 수 없습니다</value>
+    <comment>ERR_CANNOT_USE_3DPREVIEW_REMOTE</comment>
+  </data>
+  <data name="_1161" xml:space="preserve">
+    <value>설정 파일의 변환에 실패했습니다. </value>
+    <comment>ERR_CONVERT_MFP</comment>
+  </data>
+  <data name="_1162" xml:space="preserve">
+    <value>폴더를 찾을 수 없었습니다.</value>
+    <comment>ERR_NOT_FOUND_FOLDER</comment>
+  </data>
+  <data name="_1163" xml:space="preserve">
+    <value>지정 폴더가 다릅니다. </value>
+    <comment>ERR_INVALID_FOLDER</comment>
+  </data>
+  <data name="_1164" xml:space="preserve">
+    <value>매트릭스가 존재할 때 연속 인쇄는 설정할 수 없습니다. </value>
+    <comment>ERR_EANBLE_CONTINUOUS_MARKING_EXIST_MATRIX</comment>
+  </data>
+  <data name="_1165" xml:space="preserve">
+    <value>그룹이 존재할 때 연속 인쇄는 설정할 수 없습니다. </value>
+    <comment>ERR_EANBLE_CONTINUOUS_MARKING_EXIST_GROUP</comment>
+  </data>
+  <data name="_1166" xml:space="preserve">
+    <value>연속 인쇄가 설정되어 있으면 매트릭스를 추가할 수 없습니다. </value>
+    <comment>ERR_ADD_MATRIX_CONTINUOUS_MARKING_ON</comment>
+  </data>
+  <data name="_1167" xml:space="preserve">
+    <value>연속 인쇄가 설정되어 있으면 그룹화할 수 없습니다. </value>
+    <comment>ERR_ADD_GROUP_CONTINUOUS_MARKING_ON</comment>
+  </data>
+  <data name="_1168" xml:space="preserve">
+    <value>이동 인쇄에서 매트릭스를 추가할 수 없습니다.</value>
+    <comment>ERR_ADD_MATRIX_XY_NOTSTOP</comment>
+  </data>
+  <data name="_1169" xml:space="preserve">
+    <value>이동 인쇄에서 그룹을 추가할 수 없습니다.</value>
+    <comment>ERR_ADD_GROUP_XY_NOTSTOP</comment>
+  </data>
+  <data name="_1170" xml:space="preserve">
+    <value>트리거 ON 중 정점 블록은 그룹화할 수 없습니다. </value>
+    <comment>ERR_ADD_GROUP_TRIGGERONBLOCK_EXISTS</comment>
+  </data>
+  <data name="_1171" xml:space="preserve">
+    <value>다음의 사항 중 하나라도 해당되면 트리거 ON 중 정점 블록을 추가할 수 없습니다. 
+·다른 블록·매트릭스가 존재할 때 
+·연속 인쇄가 ON일 때
+·이동 인쇄일 때</value>
+    <comment>ERR_ADD_TRIGGER_ON_BLOCK</comment>
+  </data>
+  <data name="_1172" xml:space="preserve">
+    <value>시스템 폰트 파일의 변환에 실패했습니다. </value>
+    <comment>ERR_CONVERT_FSY</comment>
+  </data>
+  <data name="_1173" xml:space="preserve">
+    <value>%s일 때 데이터 변환 할 수 없습니다. </value>
+    <comment>ERR_CONVERT_ABORT</comment>
+  </data>
+  <data name="_1174" xml:space="preserve">
+    <value>트리밍 설정</value>
+    <comment>ERR_CONVERT_ABORT_TRIMMING</comment>
+  </data>
+  <data name="_1175" xml:space="preserve">
+    <value>등속</value>
+    <comment>ERR_CONVERT_ABORT_MOVETYPE_UNIFORM_VEROCITY</comment>
+  </data>
+  <data name="_1176" xml:space="preserve">
+    <value>인코더</value>
+    <comment>ERR_CONVERT_ABORT_MOVETYPE_ENCORDER</comment>
+  </data>
+  <data name="_1177" xml:space="preserve">
+    <value>변환 결과</value>
+    <comment>ERR_CONVERT_LOG_RESULT</comment>
+  </data>
+  <data name="_1178" xml:space="preserve">
+    <value>성공</value>
+    <comment>ERR_CONVERT_LOG_RESULT_SUCCESS</comment>
+  </data>
+  <data name="_1179" xml:space="preserve">
+    <value>에러</value>
+    <comment>ERR_CONVERT_LOG_RESULT_FAILURE</comment>
+  </data>
+  <data name="_1180" xml:space="preserve">
+    <value>경고(변환 내용을 확인해 주십시오)</value>
+    <comment>ERR_CONVERT_LOG_RESULT_WARNING</comment>
+  </data>
+  <data name="_1181" xml:space="preserve">
+    <value>일시</value>
+    <comment>ERR_CONVERT_LOG_DATETIME</comment>
+  </data>
+  <data name="_1182" xml:space="preserve">
+    <value>%04d/%02d/%02d %02d:%02d:%02d</value>
+    <comment>ERR_CONVERT_LOG_DATETIME_FORMAT</comment>
+  </data>
+  <data name="_1183" xml:space="preserve">
+    <value>Marking Builder Plus 버전</value>
+    <comment>ERR_CONVERT_LOG_MB3_VERSION</comment>
+  </data>
+  <data name="_1184" xml:space="preserve">
+    <value>Ver. %s</value>
+    <comment>ERR_CONVERT_LOG_MB3_VERSION_FORMAT</comment>
+  </data>
+  <data name="_1185" xml:space="preserve">
+    <value>입력 파일</value>
+    <comment>ERR_CONVERT_LOG_INPUT_FILE</comment>
+  </data>
+  <data name="_1186" xml:space="preserve">
+    <value>입력 폴더</value>
+    <comment>ERR_CONVERT_LOG_INPUT_FOLDER</comment>
+  </data>
+  <data name="_1187" xml:space="preserve">
+    <value>입력 파일 버전</value>
+    <comment>ERR_CONVERT_LOG_INPUT_FILE_VERSION</comment>
+  </data>
+  <data name="_1188" xml:space="preserve">
+    <value>버전</value>
+    <comment>ERR_CONVERT_LOG_INPUT_FOLDRE_VERSION</comment>
+  </data>
+  <data name="_1189" xml:space="preserve">
+    <value>Ver. %d.%02d</value>
+    <comment>ERR_CONVERT_LOG_MFP_VERSION_FORMAT</comment>
+  </data>
+  <data name="_1190" xml:space="preserve">
+    <value>입력할 원래 모델</value>
+    <comment>ERR_CONVERT_LOG_INPUT_MACHINE</comment>
+  </data>
+  <data name="_1191" xml:space="preserve">
+    <value>출력 파일</value>
+    <comment>ERR_CONVERT_LOG_OUTPUT_FILE</comment>
+  </data>
+  <data name="_1192" xml:space="preserve">
+    <value>출력 파일 버전</value>
+    <comment>ERR_CONVERT_LOG_OUTPUT_VERSION</comment>
+  </data>
+  <data name="_1193" xml:space="preserve">
+    <value>출력할 대상 모델</value>
+    <comment>ERR_CONVERT_LOG_OUTPUT_MACHINE</comment>
+  </data>
+  <data name="_1194" xml:space="preserve">
+    <value>타이틀</value>
+    <comment>ERR_CONVERT_LOG_TITLE</comment>
+  </data>
+  <data name="_1195" xml:space="preserve">
+    <value>블록 No.</value>
+    <comment>ERR_CONVERT_LOG_BLOCKNO</comment>
+  </data>
+  <data name="_1196" xml:space="preserve">
+    <value>그룹 No.</value>
+    <comment>ERR_CONVERT_LOG_GROUPNO</comment>
+  </data>
+  <data name="_1197" xml:space="preserve">
+    <value>매트릭스</value>
+    <comment>ERR_CONVERT_LOG_MATRIX</comment>
+  </data>
+  <data name="_1198" xml:space="preserve">
+    <value>XY 이동 인쇄</value>
+    <comment>ERR_CONVERT_LOG_SETTING_MOVETYPE</comment>
+  </data>
+  <data name="_1199" xml:space="preserve">
+    <value>높이 방향 보정</value>
+    <comment>ERR_CONVERT_LOG_SETTING_ZMOVETYPE</comment>
+  </data>
+  <data name="_12" xml:space="preserve">
+    <value>전체 높이</value>
+    <comment>IDS_PROPNAME_FULLHEIGHT</comment>
+  </data>
+  <data name="_1200" xml:space="preserve">
+    <value>높이 방향의 보정 방법을 외부 장착 변위 센서로 변경합니다. </value>
+    <comment>ERR_CONVERT_LOG_SETTING_ZMOVETYPE_ANALOG</comment>
+  </data>
+  <data name="_1201" xml:space="preserve">
+    <value>높이 방향의 보정 방법을 고정값으로 변경합니다. </value>
+    <comment>ERR_CONVERT_LOG_SETTING_ZMOVETYPE_SELECT</comment>
+  </data>
+  <data name="_1203" xml:space="preserve">
+    <value>존재하지 않으므로 무시합니다. </value>
+    <comment>ERR_CONVERT_LOG_IGNORE</comment>
+  </data>
+  <data name="_1204" xml:space="preserve">
+    <value>콰이어트 존을 최소로 한다</value>
+    <comment>ERR_CONVERT_LOG_SETTING_QUIETZONE_MINIMIZE</comment>
+  </data>
+  <data name="_1205" xml:space="preserve">
+    <value>최소로 합니다.</value>
+    <comment>ERR_CONVERT_LOG_TO_MIN</comment>
+  </data>
+  <data name="_1206" xml:space="preserve">
+    <value>해치 로고 고속 전개</value>
+    <comment>ERR_CONVERT_LOG_SETTING_LOGOHATCH_EXPFAST</comment>
+  </data>
+  <data name="_1207" xml:space="preserve">
+    <value>유효로 합니다.</value>
+    <comment>ERR_CONVERT_LOG_TO_ENABLE</comment>
+  </data>
+  <data name="_1208" xml:space="preserve">
+    <value>CODE128 최단 인코드</value>
+    <comment>ERR_CONVERT_LOG_SETTING_CODE128_ENCODE</comment>
+  </data>
+  <data name="_1209" xml:space="preserve">
+    <value>해치 로고 원호 요소</value>
+    <comment>ERR_CONVERT_LOG_SETTING_HATCHLOGO_ARC_ELEMENT</comment>
+  </data>
+  <data name="_1210" xml:space="preserve">
+    <value>고정밀도로 합니다.</value>
+    <comment>ERR_CONVERT_LOG_SETTING_HATCHLOGO_ARC_ELEMENT_NORMAL</comment>
+  </data>
+  <data name="_1211" xml:space="preserve">
+    <value>인쇄 순서 지정</value>
+    <comment>ERR_CONVERT_LOG_SETTING_PRINTORDER</comment>
+  </data>
+  <data name="_1212" xml:space="preserve">
+    <value>자동으로 합니다.</value>
+    <comment>ERR_CONVERT_LOG_SETTING_PRINTORDER_SPECIFIED_AND_CHAR</comment>
+  </data>
+  <data name="_1214" xml:space="preserve">
+    <value>초기값을 설정합니다. </value>
+    <comment>ERR_CONVERT_LOG_INITIALIZE</comment>
+  </data>
+  <data name="_1219" xml:space="preserve">
+    <value>중단</value>
+    <comment>ERR_CONVERT_LOG_RESULT_ABORT</comment>
+  </data>
+  <data name="_1225" xml:space="preserve">
+    <value>링크 블록</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_LINKBLOCK</comment>
+  </data>
+  <data name="_1226" xml:space="preserve">
+    <value>링크 블록을 해제합니다. </value>
+    <comment>ERR_CONVERT_LOG_BLOCK_LINKBLOCK_CENCEL</comment>
+  </data>
+  <data name="_1227" xml:space="preserve">
+    <value>가공기 블록</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_PRIMITIVE</comment>
+  </data>
+  <data name="_1228" xml:space="preserve">
+    <value>도트 블록</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_DOT</comment>
+  </data>
+  <data name="_1229" xml:space="preserve">
+    <value>블록을 삭제합니다.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_DELETE</comment>
+  </data>
+  <data name="_1236" xml:space="preserve">
+    <value>QR 암호</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_QRPASSWORD</comment>
+  </data>
+  <data name="_1246" xml:space="preserve">
+    <value>디스턴스 포인터</value>
+    <comment>ERR_CONVERT_LOG_SETTING_DISTANCEPOINTER</comment>
+  </data>
+  <data name="_1247" xml:space="preserve">
+    <value>Z＝0.0 mm의 위치에 조사합니다. </value>
+    <comment>ERR_CONVERT_LOG_SETTING_DISTANCEPOINTER_FIXED</comment>
+  </data>
+  <data name="_1248" xml:space="preserve">
+    <value>유효한 블록이 존재하지 않으므로 데이터 변환을 하지 않았습니다. </value>
+    <comment>ERR_CONVERT_ABORT_NO_BLOCKS</comment>
+  </data>
+  <data name="_1249" xml:space="preserve">
+    <value>컨트롤러</value>
+    <comment>ERR_CONVERT_LOG_EQUIPMENT</comment>
+  </data>
+  <data name="_1250" xml:space="preserve">
+    <value>공통 데이터</value>
+    <comment>ERR_CONVERT_LOG_PRINTCOMMON</comment>
+  </data>
+  <data name="_1251" xml:space="preserve">
+    <value>들여쓰기</value>
+    <comment>ERR_CONVERT_LOG_PRINTCOMMON_INDENT</comment>
+  </data>
+  <data name="_1252" xml:space="preserve">
+    <value>30% 고정입니다.</value>
+    <comment>ERR_CONVERT_LOG_PRINTCOMMON_INDENT_FIXED</comment>
+  </data>
+  <data name="_1253" xml:space="preserve">
+    <value>설정 정보</value>
+    <comment>ERR_CONVERT_LOG_SETTING_NO</comment>
+  </data>
+  <data name="_1254" xml:space="preserve">
+    <value>이미 실행 중입니다</value>
+    <comment>ERR_ALREADY_ASYNC_EXEC</comment>
+  </data>
+  <data name="_1255" xml:space="preserve">
+    <value>프로젝트에 트리거 ON 중 정점 블록이 있을 때는 연속 인쇄를 설정할 수 없습니다. </value>
+    <comment>ERR_EANBLE_CONTINUOUS_MARKING_EXIST_TRIGGERONBLOCK</comment>
+  </data>
+  <data name="_1257" xml:space="preserve">
+    <value>백업 파일이 손상되어 있습니다. </value>
+    <comment>ERR_BACKUP_BROKEN</comment>
+  </data>
+  <data name="_1258" xml:space="preserve">
+    <value>백업 정보 파일을 찾을 수 없습니다. </value>
+    <comment>ERR_NOTFOUND_BACKUPINFO</comment>
+  </data>
+  <data name="_1259" xml:space="preserve">
+    <value>복구에 실패했습니다. </value>
+    <comment>ERR_RESTORE_FAIL</comment>
+  </data>
+  <data name="_1260" xml:space="preserve">
+    <value>디스크의 여유 용량이 부족해서 백업을 할 수 없었습니다. </value>
+    <comment>ERR_BACKUP_NOTENOUGH_DISK_SPACE</comment>
+  </data>
+  <data name="_1261" xml:space="preserve">
+    <value>백업을 중지했습니다. </value>
+    <comment>ERR_BACKUP_CANCEL</comment>
+  </data>
+  <data name="_1262" xml:space="preserve">
+    <value>Marking Builder Plus용 파일명을 지정해 주십시오.</value>
+    <comment>ERR_SAVE_MX1FILE</comment>
+  </data>
+  <data name="_1263" xml:space="preserve">
+    <value>링크 블록을 해제하여 덮어쓰기 블록에 통합합니다.</value>
+  </data>
+  <data name="_1285" xml:space="preserve">
+    <value>Z-MAP 파일의 변환에 실패했습니다. </value>
+    <comment>ERR_CONVERT_ZMP_FAILED</comment>
+  </data>
+  <data name="_1286" xml:space="preserve">
+    <value>세로·가로의 도트 수가 10~3464 도트 범위를 초과하였기 때문에 이미지를 불러올 수 없습니다. </value>
+    <comment>ERR_IMAGEZIE</comment>
+  </data>
+  <data name="_1287" xml:space="preserve">
+    <value>문서 형식이 무효이거나 또는 지원되지 않습니다. </value>
+    <comment>ERR_LOAD_IMAGEFILE</comment>
+  </data>
+  <data name="_1288" xml:space="preserve">
+    <value>알 수 없는 에러</value>
+    <comment>ERR_DEVICE_ERROR_NOT_FOUND</comment>
+  </data>
+  <data name="_1289" xml:space="preserve">
+    <value>해치 로고 파일 변환 에러(%d)</value>
+    <comment>ERR_HATCHCONVERT_FORMAT</comment>
+  </data>
+  <data name="_1290" xml:space="preserve">
+    <value>채우기 간격 미리보기 가능한 사이즈의 제한을 초과하고 있습니다. 
+높이 또는 폭을 줄이거나, 선 채우기 간격을 넓혀서 실행해 주십시오. (%d)</value>
+    <comment>ERR_HATCHCONVERT_PREVIEWSIZE</comment>
+  </data>
+  <data name="_1291" xml:space="preserve">
+    <value>저장 가능한 해치 로고 사이즈의 제한을 초과하고 있습니다. 
+높이 또는 폭을 줄이거나 선 채우기 간격을 넓혀서 실행해 주십시오. (%d)</value>
+  </data>
+  <data name="_1292" xml:space="preserve">
+    <value>인쇄로의 전환을 중지했습니다. </value>
+    <comment>ERR_TEST_PRINT_MODE_CANCEL</comment>
+  </data>
+  <data name="_1293" xml:space="preserve">
+    <value>파일 송신을 중지했습니다. </value>
+    <comment>ERR_SEND_CONTROLLER_PROGRAM_CANCEL</comment>
+  </data>
+  <data name="_1294" xml:space="preserve">
+    <value>변환을 취소했습니다. </value>
+    <comment>ERR_IMAGE_CONVERT_CANCEL</comment>
+  </data>
+  <data name="_1295" xml:space="preserve">
+    <value>미리보기를 취소했습니다. </value>
+    <comment>ERR_HATCH_PREVIEW_CANCEL</comment>
+  </data>
+  <data name="_1296" xml:space="preserve">
+    <value>변환을 취소했습니다. </value>
+    <comment>ERR_MB2_BACKUP_CONVERT_CANCEL</comment>
+  </data>
+  <data name="_1297" xml:space="preserve">
+    <value>편집 모드만 유효합니다</value>
+    <comment>ERR_MBACTX_ERROR_MONITOR</comment>
+  </data>
+  <data name="_1298" xml:space="preserve">
+    <value>지원되지 않는 에러</value>
+    <comment>ERR_MBACTX_ERROR_NOTSUPPORT</comment>
+  </data>
+  <data name="_1299" xml:space="preserve">
+    <value>행 수 또는 열 수가 범위를 넘었습니다. </value>
+    <comment>ERR_MBACTX_ERROR_ROW_COULMN_RANGE_ERROR</comment>
+  </data>
+  <data name="_13" xml:space="preserve">
+    <value>문자 간격</value>
+    <comment>IDS_PROPNAME_CHARSPACE</comment>
+  </data>
+  <data name="_1300" xml:space="preserve">
+    <value>MBActX Control의 로드에 실패했습니다. </value>
+    <comment>ERR_MBACTX_ERROR_DESTORY</comment>
+  </data>
+  <data name="_1301" xml:space="preserve">
+    <value>공유 파일의 덮어쓰기를 취소했습니다. </value>
+    <comment>ERR_OVERWRITE_COMMON_FILE_CANCEL</comment>
+  </data>
+  <data name="_1302" xml:space="preserve">
+    <value>「FONT0.FUY」「FONT1.FUY」는 예약어이므로 폰트 파일명으로 사용할 수 없습니다. </value>
+    <comment>ERR_INVALID_FONT_NAME</comment>
+  </data>
+  <data name="_1303" xml:space="preserve">
+    <value>%s은(는) %.3lf~%.3lf(mm)에서 입력해 주십시오. </value>
+    <comment>ERR_OUTOFRANGE_MILLIMETER</comment>
+  </data>
+  <data name="_1304" xml:space="preserve">
+    <value>입력 내용을 확인해 주십시오. </value>
+    <comment>ERR_CHECK_INPUTDATA</comment>
+  </data>
+  <data name="_1305" xml:space="preserve">
+    <value>선 채우기 간격</value>
+    <comment>ERR_CONVERT_LOG_HATCH_LINEPITCH</comment>
+  </data>
+  <data name="_1306" xml:space="preserve">
+    <value>파라미터의 입력값이 범위 밖입니다.</value>
+    <comment>ERR_PARAMETER_RANGE_OVER</comment>
+  </data>
+  <data name="_1307" xml:space="preserve">
+    <value>1.000 mm를 설정합니다.</value>
+    <comment>ERR_CONVERT_LOG_HATCH_LINEPITCH_RANGE_OVER</comment>
+  </data>
+  <data name="_1308" xml:space="preserve">
+    <value>폰트 치환</value>
+    <comment>ERR_CONVERT_LOG_REPLACE_FONT</comment>
+  </data>
+  <data name="_1309" xml:space="preserve">
+    <value>사용자 폰트를 생성하여 폰트 No.%d에 할당했습니다. </value>
+    <comment>ERR_CONVERT_LOG_CONVERT_EXTFONT</comment>
+  </data>
+  <data name="_1310" xml:space="preserve">
+    <value>파일명</value>
+    <comment>ERR_CONVERT_LOG_FILENAME</comment>
+  </data>
+  <data name="_1311" xml:space="preserve">
+    <value>로고·포토 파일이 존재하지 않습니다. </value>
+    <comment>ERR_CONVERT_LOG_NOTEXISTS_LOGOPHOTO</comment>
+  </data>
+  <data name="_1312" xml:space="preserve">
+    <value>사용자 폰트 파일이 존재하지 않습니다. </value>
+    <comment>ERR_CONVERT_LOG_NOTEXISTS_EXTFONT</comment>
+  </data>
+  <data name="_1313" xml:space="preserve">
+    <value>Z-MAP 파일이 존재하지 않습니다. </value>
+    <comment>ERR_CONVERT_LOG_NOTEXISTS_ZMAP</comment>
+  </data>
+  <data name="_1314" xml:space="preserve">
+    <value>치환</value>
+    <comment>ERR_CONVERT_LOG_PRINTCOMMON_REPLACE</comment>
+  </data>
+  <data name="_1315" xml:space="preserve">
+    <value>문자 「％」을(를) 삭제했습니다.</value>
+    <comment>ERR_CONVERT_LOG_PRINTCOMMON_REPLACE_DELETE_PERCENT</comment>
+  </data>
+  <data name="_1316" xml:space="preserve">
+    <value>폰트 번호가 바르지 않습니다.</value>
+    <comment>ERR_MBACTX_ERROR_INVALID_FONTNO</comment>
+  </data>
+  <data name="_1317" xml:space="preserve">
+    <value>인쇄 조건 클립보드에 설정되어 있지 않은 파라미터입니다</value>
+    <comment>ERR_MARKINGCONDITION_NOTPARAMETER</comment>
+  </data>
+  <data name="_1318" xml:space="preserve">
+    <value>「%s」는 삭제할 수 없습니다. </value>
+    <comment>ERR_DELETE_DEFAULTFONT</comment>
+  </data>
+  <data name="_1319" xml:space="preserve">
+    <value>온라인으로 할 수 없습니다.</value>
+    <comment>ERR_CANNOT_ONLINE</comment>
+  </data>
+  <data name="_1320" xml:space="preserve">
+    <value>파일이 읽히지 않았습니다. </value>
+    <comment>ERR_FILE_NOTLOADED</comment>
+  </data>
+  <data name="_1321" xml:space="preserve">
+    <value>온라인 중에 다른 모델의 작업 파일을 읽어올 수 없습니다.</value>
+    <comment>ERR_DIFFERENCE_MACHINEINFO_MX_WHILE_ONLINE</comment>
+  </data>
+  <data name="_1322" xml:space="preserve">
+    <value>파일명을 지정해 주십시오 </value>
+    <comment>ERR_EMPTY_FILESTRING</comment>
+  </data>
+  <data name="_1323" xml:space="preserve">
+    <value>연결 유닛의 레이저 마킹기와 버전 호환성이 없습니다. Marking Builder Plus 에서 버전을 업그레이드해 주십시오.</value>
+    <comment>ERR_OLDER_FIRMVERSION</comment>
+  </data>
+  <data name="_1324" xml:space="preserve">
+    <value>파일을 찾을 수 없었습니다.
+
+%s</value>
+    <comment>ERR_NO_FILES</comment>
+  </data>
+  <data name="_1325" xml:space="preserve">
+    <value>LSC 파일 읽어오기에 실패했습니다.</value>
+    <comment>ERR_LSC_ERROR_LSC_LOAD</comment>
+  </data>
+  <data name="_1326" xml:space="preserve">
+    <value>대응하지 않는 버전의 LSC 파일이기때문에, 불러올 수 없었습니다.</value>
+    <comment>ERR_LSC_ERROR_LSC_VERSION</comment>
+  </data>
+  <data name="_1327" xml:space="preserve">
+    <value>선택 모델과 다른 LSC 파일은 전송할 수 없습니다.</value>
+    <comment>ERR_LSC_ERROR_LSC_HEAD</comment>
+  </data>
+  <data name="_1328" xml:space="preserve">
+    <value>보정 처리에 실패했습니다(%d)</value>
+    <comment>ERR_LSC_ERROR_ETC</comment>
+  </data>
+  <data name="_1329" xml:space="preserve">
+    <value>접속할 곳의 시리얼 No와 LSC 파일의 시리얼 No가 일치하지 않습니다.</value>
+    <comment>ERR_LSC_ERROR_LSC_HEADSERIAL</comment>
+  </data>
+  <data name="_1330" xml:space="preserve">
+    <value>%s
+
+'%s'</value>
+    <comment>ERR_COPY_FILE_API_ERROR</comment>
+  </data>
+  <data name="_1331" xml:space="preserve">
+    <value>유효한 설정 정보가 없습니다.</value>
+    <comment>ERR_CONVERT_LOG_NOTEXISTS_AVAILABLE_PROGRAM</comment>
+  </data>
+  <data name="_1332" xml:space="preserve">
+    <value>범위 외의 파라미터가 존재하므로 범위 내로 수정합니다.</value>
+    <comment>ERR_CONVERT_LOG_CLIP_RANGE</comment>
+  </data>
+  <data name="_1333" xml:space="preserve">
+    <value>공유 파일</value>
+    <comment>ERR_RESTORE_LOG_SHARED_FILES</comment>
+  </data>
+  <data name="_1334" xml:space="preserve">
+    <value>복구 결과</value>
+    <comment>ERR_RESTORE_LOG_RESULT</comment>
+  </data>
+  <data name="_1335" xml:space="preserve">
+    <value>경고(복구 내용을 확인해 주십시오)</value>
+    <comment>ERR_RESTORE_LOG_RESULT_WARNING</comment>
+  </data>
+  <data name="_1336" xml:space="preserve">
+    <value>복구할 모델</value>
+    <comment>ERR_RESTORE_LOG_MACHINE</comment>
+  </data>
+  <data name="_1337" xml:space="preserve">
+    <value>백업 파일</value>
+    <comment>ERR_RESTORE_LOG_BACKUP_FILE</comment>
+  </data>
+  <data name="_1338" xml:space="preserve">
+    <value>컨트롤러 버전</value>
+    <comment>ERR_RESTORE_LOG_CONTROLLER_VERSION</comment>
+  </data>
+  <data name="_1339" xml:space="preserve">
+    <value>컨트롤러 시리얼 No.</value>
+    <comment>ERR_RESTORE_LOG_CONTROLLER_SERIAL</comment>
+  </data>
+  <data name="_1340" xml:space="preserve">
+    <value>타이틀</value>
+    <comment>ERR_RESTORE_LOG_TITLE</comment>
+  </data>
+  <data name="_1341" xml:space="preserve">
+    <value>프로그램 No.</value>
+    <comment>ERR_RESTORE_LOG_PROGRAM_NO</comment>
+  </data>
+  <data name="_1342" xml:space="preserve">
+    <value>%s_%04d%02d%02d_%02d%02d%02d.txt</value>
+    <comment>ERR_RESTORE_LOG_FILE_FORMAT</comment>
+  </data>
+  <data name="_1343" xml:space="preserve">
+    <value>%s은(는) %.2lf~%.2lf(%%)에서 입력해 주십시오. </value>
+    <comment>ERR_OUTOFRANGE_PERCENT</comment>
+  </data>
+  <data name="_1344" xml:space="preserve">
+    <value>센서까지의 거리와 인쇄 개시 위치 오프셋의 합계치가 인쇄 범위 밖이 되도록 입력해 주십시오.</value>
+  </data>
+  <data name="_1345" xml:space="preserve">
+    <value>작업에 매트릭스가 존재할 때 이동 인쇄는 설정할 수 없습니다.</value>
+  </data>
+  <data name="_1346" xml:space="preserve">
+    <value>작업에 그룹이 존재할 때 이동 인쇄는 설정할 수 없습니다.</value>
+  </data>
+  <data name="_1347" xml:space="preserve">
+    <value>오토 포커스는 정시 인쇄 시에만 유효합니다.</value>
+  </data>
+  <data name="_1348" xml:space="preserve">
+    <value>해치 로고 파일 변환 에러(%d)</value>
+  </data>
+  <data name="_1349" xml:space="preserve">
+    <value>저장 가능한 사이즈의 제한을 초과하고 있습니다. 
+높이 또는 폭을 작게 한 후 실행해 주십시오. (%d)</value>
+  </data>
+  <data name="_1350" xml:space="preserve">
+    <value>XY평면의 블록만 유효합니다.</value>
+  </data>
+  <data name="_1351" xml:space="preserve">
+    <value>갱신 문자를 포함한 블록은 변환할 수 없습니다.</value>
+  </data>
+  <data name="_1352" xml:space="preserve">
+    <value>이전 버전의 파일 형식으로 변환하여 저장하면, 일부 설정이 손실될 수 있습니다. 
+
+계속 진행할 경우에는 [확인]를 클릭하여 주십시오. 
+변환하지 않고 중단할 경우에는, [취소]를 클릭하여 주십시오.</value>
+    <comment>ERR_SAVE_OLD_MXFILE</comment>
+  </data>
+  <data name="_1353" xml:space="preserve">
+    <value>작업에 트리거 ON중 정점 블록이 존재할 때 이동 인쇄를 선택 할 수 없습니다.</value>
+    <comment>ERR_CHANGE_XYMOVEORROTATE_EXIST_TRIGGERONBLOCK</comment>
+  </data>
+  <data name="_1354" xml:space="preserve">
+    <value>이동 인쇄의 경우에는 정점 블록을 추가할 수 없습니다.</value>
+    <comment>ERR_ADD_FIXEDPOINTBLOCK</comment>
+  </data>
+  <data name="_1355" xml:space="preserve">
+    <value>작업에 정점 블록이 존재할 때 이동 인쇄를 선택 할 수 없습니다.</value>
+    <comment>ERR_CHANGE_XYMOVEORROTATE_EXIST_FIXEDPOINTBLOCK</comment>
+  </data>
+  <data name="_1356" xml:space="preserve">
+    <value>저장 가능한 블록이 존재하지 않으므로 저장할 수 없습니다.</value>
+    <comment>ERR_SAVE_NOBLOCK</comment>
+  </data>
+  <data name="_1357" xml:space="preserve">
+    <value>인쇄 확인 기능과 2D 코드 리더 기능을 동시에 유효할 수 없습니다.</value>
+    <comment>ERR_VALIDATE_PRINTCHECK_AND_2DCODEREADER</comment>
+  </data>
+  <data name="_1358" xml:space="preserve">
+    <value>센서까지의 거리와 인쇄 오프셋의 합계치가 1200mm를 넘습니다.</value>
+    <comment>ERR_TRIGGERDELAY_OVER</comment>
+  </data>
+  <data name="_1359" xml:space="preserve">
+    <value>TrueType 폰트 파일 사이즈 에러
+문자 수가 너무 많으므로 줄여 주십시오. </value>
+  </data>
+  <data name="_1360" xml:space="preserve">
+    <value>버전 업그레이드에 실패 했습니다.
+레이저 마킹기를 재기동하여, 다시 한 번 버전 업그레이드를 실행 해 주십시오.
+%s</value>
+  </data>
+  <data name="_1361" xml:space="preserve">
+    <value>폴더구성이 올바르지 않습니다.</value>
+  </data>
+  <data name="_1362" xml:space="preserve">
+    <value>연결 유닛: %s
+Marking Builder 2를 사용하여 접속해 주십시오.</value>
+    <comment>ERR_UNSUPPORT_MODEL</comment>
+  </data>
+  <data name="_1363" xml:space="preserve">
+    <value>계조 포토</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_GRADATION_PHOTO</comment>
+  </data>
+  <data name="_1364" xml:space="preserve">
+    <value>고해상도 포토</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_HIGHRESOLUTION_PHOTO</comment>
+  </data>
+  <data name="_1365" xml:space="preserve">
+    <value>CODE93는 대응하지 않으므로 삭제하였습니다.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_DELETE_CODE93</comment>
+  </data>
+  <data name="_1366" xml:space="preserve">
+    <value>Data Matrix의 심볼 사이즈를 48x48로 하였습니다.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_DATAMATRIX_SYMBOLSIZE</comment>
+  </data>
+  <data name="_1367" xml:space="preserve">
+    <value>사용할 수 없는 문자를 삭제하였습니다.</value>
+    <comment>ERR_CONVERT_LOG_TEXT_DELETE_UNUSABLE_CHARS</comment>
+  </data>
+  <data name="_1368" xml:space="preserve">
+    <value>덮어 쓰기에 대응하지 않으므로, 맨 마지막에 인쇄하는 조건만 변환합니다.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_CODE_ONLY_LASTPRINT</comment>
+  </data>
+  <data name="_1369" xml:space="preserve">
+    <value>매트릭스 존재 시, 오토 포커스는 이용할 수 없습니다. 작업에서 오토 포커스를 삭제하였습니다.</value>
+    <comment>ERR_CONVERT_LOG_SETTING_ZMOVECONDITION</comment>
+  </data>
+  <data name="_1370" xml:space="preserve">
+    <value>매트릭스 해제</value>
+    <comment>ERR_CONVERT_LOG_MATRIX_DISABLE</comment>
+  </data>
+  <data name="_1371" xml:space="preserve">
+    <value>입력 문자 코드를 %s로 합니다.</value>
+    <comment>ERR_CONVERT_LOG_ENCODE_CHANGED</comment>
+  </data>
+  <data name="_1372" xml:space="preserve">
+    <value>보드 레이트를 38400로 합니다.</value>
+    <comment>ERR_CONVERT_LOG_EQUIPMENT_BAUDRATE</comment>
+  </data>
+  <data name="_1373" xml:space="preserve">
+    <value>Unicode문자를 삭제하였습니다.</value>
+    <comment>ERR_CONVERT_LOG_TEXT_DELETE_UNICODE_CHARS</comment>
+  </data>
+  <data name="_1374" xml:space="preserve">
+    <value>Font No.0와 No.1에는 표준 폰트가 적용됩니다.</value>
+    <comment>ERR_CONVERT_LOG_FONT_SET_DEFAULT</comment>
+  </data>
+  <data name="_1375" xml:space="preserve">
+    <value>파일명을 변경하였습니다.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_FILENAME_CHANGED</comment>
+  </data>
+  <data name="_1376" xml:space="preserve">
+    <value>바코드</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_BARCODE</comment>
+  </data>
+  <data name="_1377" xml:space="preserve">
+    <value>2D 코드</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_2DCODE</comment>
+  </data>
+  <data name="_1378" xml:space="preserve">
+    <value>QR코드 버전6 이상은 대응하지 않으므로, 삭제하였습니다.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_DELETE_QRCODE_VERSION</comment>
+  </data>
+  <data name="_1379" xml:space="preserve">
+    <value>문자열</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_STRING</comment>
+  </data>
+  <data name="_1380" xml:space="preserve">
+    <value>출력 폴더</value>
+  </data>
+  <data name="_1381" xml:space="preserve">
+    <value>주의 기준을 1/1-1/7로 합니다.</value>
+  </data>
+  <data name="_1382" xml:space="preserve">
+    <value>통신 </value>
+  </data>
+  <data name="_1383" xml:space="preserve">
+    <value>문자 코드</value>
+  </data>
+  <data name="_1384" xml:space="preserve">
+    <value>바코드 대조 확인</value>
+  </data>
+  <data name="_1385" xml:space="preserve">
+    <value>버전</value>
+  </data>
+  <data name="_1386" xml:space="preserve">
+    <value>폰트 파일</value>
+  </data>
+  <data name="_1387" xml:space="preserve">
+    <value>덮어쓰기</value>
+  </data>
+  <data name="_1388" xml:space="preserve">
+    <value>저장 데이터</value>
+  </data>
+  <data name="_1389" xml:space="preserve">
+    <value>설정</value>
+  </data>
+  <data name="_1390" xml:space="preserve">
+    <value>정점</value>
+  </data>
+  <data name="_1391" xml:space="preserve">
+    <value>정점은 3D편집에 대응하지 않으므로, 삭제하였습니다.</value>
+  </data>
+  <data name="_1392" xml:space="preserve">
+    <value>변환을 취소했습니다. </value>
+  </data>
+  <data name="_1393" xml:space="preserve">
+    <value>폴더 이름</value>
+  </data>
+  <data name="_1394" xml:space="preserve">
+    <value>사용할 수 없는 문자가 포함되어 있어, 등록을 해제하였습니다. (%s)</value>
+  </data>
+  <data name="_1395" xml:space="preserve">
+    <value>고속 변경 대상 문자열</value>
+  </data>
+  <data name="_1396" xml:space="preserve">
+    <value>기타 설정</value>
+  </data>
+  <data name="_1397" xml:space="preserve">
+    <value>폰트 이름을 변경하였습니다.</value>
+  </data>
+  <data name="_1398" xml:space="preserve">
+    <value>변환 후의 모델에 대응하지 않습니다.</value>
+  </data>
+  <data name="_1399" xml:space="preserve">
+    <value>이 폴더에 파일을 저장할 수 없습니다.</value>
+    <comment>ERR_CONVERT_RESULT_CANNOT_SAVE</comment>
+  </data>
+  <data name="_14" xml:space="preserve">
+    <value>일반</value>
+    <comment>ID_BLOCKCATEGORY_GENERAL</comment>
+  </data>
+  <data name="_1400" xml:space="preserve">
+    <value>파일명에 다음의 문자는 사용할 수 없습니다
+\/:,.*?"&lt;&gt;|</value>
+  </data>
+  <data name="_1403" xml:space="preserve">
+    <value>이 기종은 지원하지 않습니다.</value>
+  </data>
+  <data name="_1404" xml:space="preserve">
+    <value>%S는 Z-MAP에 대응하지 않으므로, 삭제하였습니다.</value>
+  </data>
+  <data name="_1405" xml:space="preserve">
+    <value>3D 인쇄면 형상이 포함되어 있으므로 이 작업은 열 수 없습니다.</value>
+  </data>
+  <data name="_1406" xml:space="preserve">
+    <value>레이저 출력 값을 취득하지 못했습니다.</value>
+  </data>
+  <data name="_1407" xml:space="preserve">
+    <value>%s[%s]
+
+이 모델에서는 레이저 파워 캘리브레이션 기능을 사용할 수 없습니다.</value>
+  </data>
+  <data name="_1408" xml:space="preserve">
+    <value>「좌→우, 우→좌(고속)」 또는 「우→좌, 좌→우(고속)」일 때, 이 기능은 사용할 수 없습니다.</value>
+  </data>
+  <data name="_1409" xml:space="preserve">
+    <value>작업 내에 같은 이름의 해치 로고 블록이 존재합니다. 다른 이름으로 저장해 주십시오.</value>
+  </data>
+  <data name="_1410" xml:space="preserve">
+    <value>이 이름을 가진 파일이 이미 존재합니다.</value>
+  </data>
+  <data name="_1411" xml:space="preserve">
+    <value>1년의 기준을 1월1일로 합니다.</value>
+  </data>
+  <data name="_1412" xml:space="preserve">
+    <value>리셋 타이밍을 I/O로 합니다.</value>
+  </data>
+  <data name="_1413" xml:space="preserve">
+    <value>개별 카운터(%d)</value>
+  </data>
+  <data name="_1414" xml:space="preserve">
+    <value>공통 카운터(%c)</value>
+  </data>
+  <data name="_1415" xml:space="preserve">
+    <value>형상추정에 필요한 높이 정보를 취득할 수 없었기 때문에, 피트하지 못하였습니다.</value>
+  </data>
+  <data name="_1416" xml:space="preserve">
+    <value>형상 추정에 실패하였습니다.</value>
+  </data>
+  <data name="_1417" xml:space="preserve">
+    <value>비어 있는 측정 설정 번호가 존재하지 않습니다.</value>
+  </data>
+  <data name="_1418" xml:space="preserve">
+    <value>측정 설정 번호가 존재하지 않습니다.</value>
+  </data>
+  <data name="_1419" xml:space="preserve">
+    <value>측정 설정 수가 상한을 넘었습니다.</value>
+  </data>
+  <data name="_1420" xml:space="preserve">
+    <value>유효한 Z좌표 설정이 존재하지 않습니다.</value>
+  </data>
+  <data name="_1421" xml:space="preserve">
+    <value>Z좌표 자동설정을 중단하였습니다.</value>
+  </data>
+  <data name="_1422" xml:space="preserve">
+    <value>Surface Fitting을 중단하였습니다.</value>
+  </data>
+  <data name="_1423" xml:space="preserve">
+    <value>유효한 XY좌표 설정이 존재하지 않습니다.</value>
+  </data>
+  <data name="_1424" xml:space="preserve">
+    <value>측정에 실패하였습니다.</value>
+    <comment>ERR_NOT_ENOUGH_LIGHT_AMOUNT</comment>
+  </data>
+  <data name="_1425" xml:space="preserve">
+    <value>오토 포커스를 Z좌표 설정으로 변환하였습니다. Z 좌표 (MD-AD-ZT)의 기능을 유효로하여, 측정 조건을 다시 설정해 주십시오.</value>
+  </data>
+  <data name="_1426" xml:space="preserve">
+    <value>보정량 0mm 고정으로 외부 장착 변위 센서를 변경하였습니다.</value>
+  </data>
+  <data name="_1427" xml:space="preserve">
+    <value>2D 코드 리더기</value>
+  </data>
+  <data name="_1428" xml:space="preserve">
+    <value>매트릭스 존재 시, 2D코드 리더기는 이용할 수 없습니다. 작업에서 2D코드 리더기를 삭제하였습니다.</value>
+  </data>
+  <data name="_1429" xml:space="preserve">
+    <value>인쇄 확인</value>
+  </data>
+  <data name="_1430" xml:space="preserve">
+    <value>매트릭스 존재 시, 인쇄 확인은 이용할 수 없습니다. 작업에서 인쇄 확인을 삭제하였습니다.</value>
+  </data>
+  <data name="_1431" xml:space="preserve">
+    <value>파일 작성에 실패하였습니다. 
+앱을 재부팅하여, 설정을 작성해 주십시오.</value>
+  </data>
+  <data name="_1432" xml:space="preserve">
+    <value>높이 보정을 오토 포커스로 설정해 주십시오.</value>
+  </data>
+  <data name="_1433" xml:space="preserve">
+    <value>2D 코드 리더기를 무효로 변경합니다.</value>
+  </data>
+  <data name="_1434" xml:space="preserve">
+    <value>인쇄 확인 기능을 무효로 변경합니다.</value>
+  </data>
+  <data name="_1435" xml:space="preserve">
+    <value>바코드·2D 코드 설정 내용 부정 에러</value>
+  </data>
+  <data name="_1436" xml:space="preserve">
+    <value>좌표 보정이나 윈도우 점검 등, 이전 레이저 마킹기에서 대응되지 않는 설정은 삭제됩니다.</value>
+  </data>
+  <data name="_1437" xml:space="preserve">
+    <value>Font-1할당은 Font0으로 변환됩니다.</value>
+  </data>
+  <data name="_1438" xml:space="preserve">
+    <value>인쇄 확인과 2D 코드 리더기를 같은 프로그램에서 사용할 수 없기 때문에, 2D 코드 리더기가 비활성화됩니다.</value>
+  </data>
+  <data name="_1439" xml:space="preserve">
+    <value>사용자 등록수가 최대입니다.  신규 사용자는 작성할 수 없습니다.</value>
+  </data>
+  <data name="_1440" xml:space="preserve">
+    <value>사용자명이 중복됩니다.</value>
+  </data>
+  <data name="_1441" xml:space="preserve">
+    <value>사용자 레벨명이 중복됩니다.</value>
+  </data>
+  <data name="_1442" xml:space="preserve">
+    <value>Admin 사용자가 없습니다.</value>
+  </data>
+  <data name="_1443" xml:space="preserve">
+    <value>사용자명에는 반각 영숫자, 반각 기호(%s)를 입력해 주십시오.</value>
+  </data>
+  <data name="_1444" xml:space="preserve">
+    <value>패스워드에는 반각 영숫자, 반각 기호(%s)를 입력해 주십시오.</value>
+  </data>
+  <data name="_1445" xml:space="preserve">
+    <value>반각 영숫자를 입력해 주십시오.</value>
+  </data>
+  <data name="_1446" xml:space="preserve">
+    <value>유효한 사용자가 없습니다.</value>
+  </data>
+  <data name="_1447" xml:space="preserve">
+    <value>유효한 사용자 레벨이 없습니다.</value>
+  </data>
+  <data name="_1448" xml:space="preserve">
+    <value>%s은(는) %d글자 이내로 입력해 주십시오.</value>
+  </data>
+  <data name="_1449" xml:space="preserve">
+    <value>사용자 관리 정보를 가져오지 못했습니다.</value>
+  </data>
+  <data name="_15" xml:space="preserve">
+    <value>인쇄 데이터</value>
+    <comment>ID_BLOCKCATEGORY_MARKINGDATA</comment>
+  </data>
+  <data name="_1500" xml:space="preserve">
+    <value>사용자 관리 정보 작성에 실패했습니다.</value>
+  </data>
+  <data name="_1501" xml:space="preserve">
+    <value>로그인에 실패했습니다.</value>
+  </data>
+  <data name="_1502" xml:space="preserve">
+    <value>반각 영숫자 또는 반각 기호를 입력하십시오.</value>
+  </data>
+  <data name="_16" xml:space="preserve">
+    <value>폰트</value>
+    <comment>ID_BLOCKCATEGORY_FONT</comment>
+  </data>
+  <data name="_17" xml:space="preserve">
+    <value>크기</value>
+    <comment>ID_BLOCKCATEGORY_SIZE</comment>
+  </data>
+  <data name="_18" xml:space="preserve">
+    <value>인쇄면 형상 레이아웃</value>
+    <comment>ID_BLOCKCATEGORY_SHAPELAYOUT</comment>
+  </data>
+  <data name="_19" xml:space="preserve">
+    <value>블록 레이아웃</value>
+    <comment>ID_BLOCKCATEGORY_BLOCKLAYOUT</comment>
+  </data>
+  <data name="_2" xml:space="preserve">
+    <value>1042</value>
+    <comment>IDS_LC_ID</comment>
+  </data>
+  <data name="_20" xml:space="preserve">
+    <value>가공 내용</value>
+    <comment>ID_BLOCKCATEGORY_PROCESSING</comment>
+  </data>
+  <data name="_21" xml:space="preserve">
+    <value>코드 형식</value>
+    <comment>ID_BLOCKCATEGORY_CODE</comment>
+  </data>
+  <data name="_22" xml:space="preserve">
+    <value>인쇄 조건</value>
+    <comment>ID_BLOCKCATEGORY_MARKINGCONDITION</comment>
+  </data>
+  <data name="_23" xml:space="preserve">
+    <value>선 채우기 인쇄 조건</value>
+    <comment>ID_BLOCKCATEGORY_FILLCONDITION</comment>
+  </data>
+  <data name="_24" xml:space="preserve">
+    <value>선 채우기</value>
+    <comment>ID_BLOCKCATEGORY_FILL</comment>
+  </data>
+  <data name="_25" xml:space="preserve">
+    <value>품질 조정</value>
+    <comment>ID_BLOCKCATEGORY_QUALITY</comment>
+  </data>
+  <data name="_26" xml:space="preserve">
+    <value>카메라 화상 이미지(*%s)|*%s|</value>
+    <comment>IDS_CAMERAIMAGE_FILTER</comment>
+  </data>
+  <data name="_27" xml:space="preserve">
+    <value>문자 폭 비율</value>
+    <comment>IDS_PROPNAME_CHARWIDTHRATIO</comment>
+  </data>
+  <data name="_28" xml:space="preserve">
+    <value>문자 간격 비율</value>
+    <comment>IDS_PROPNAME_CHARSPACERATIO</comment>
+  </data>
+  <data name="_29" xml:space="preserve">
+    <value>ML-Z9500 시리즈</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_3" xml:space="preserve">
+    <value>korean_korea</value>
+    <comment>IDS_LC_LANG</comment>
+  </data>
+  <data name="_30" xml:space="preserve">
+    <value>MD-V9900 시리즈</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_31" xml:space="preserve">
+    <value>MD-S9900 시리즈</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_32" xml:space="preserve">
+    <value>MD-F3000 시리즈</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_33" xml:space="preserve">
+    <value>MD-T1000 시리즈</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_34" xml:space="preserve">
+    <value>MD-F3100/MD-F5100 시리즈</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_35" xml:space="preserve">
+    <value>MD-X1000/MD-X1500 시리즈</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_36" xml:space="preserve">
+    <value>MD-F3200/MD-F5200 시리즈</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_37" xml:space="preserve">
+    <value>프로그램 파일(*.MX1)|*.MX1</value>
+    <comment>IDS_FILTER_MX1</comment>
+  </data>
+  <data name="_38" xml:space="preserve">
+    <value>프로그램 파일(*.MX2)|*.MX2</value>
+    <comment>IDS_FILTER_MX2</comment>
+  </data>
+  <data name="_39" xml:space="preserve">
+    <value>프로그램 파일(*.MX2S)|*.MX2S</value>
+    <comment>IDS_FILTER_MX2S</comment>
+  </data>
+  <data name="_4" xml:space="preserve">
+    <value>모든 작업 파일(%s)|%s|</value>
+    <comment>IDS_PROGRAM_FILTER</comment>
+  </data>
+  <data name="_40" xml:space="preserve">
+    <value>프로그램 파일(*.MX3)|*.MX3</value>
+    <comment>IDS_FILTER_MX3</comment>
+  </data>
+  <data name="_41" xml:space="preserve">
+    <value>MD-F3000/MD-F3100/MD-F5100 시리즈</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_42" xml:space="preserve">
+    <value>무제</value>
+  </data>
+  <data name="_43" xml:space="preserve">
+    <value>편집 중인 프로그램(%s)</value>
+    <comment>IDS_CONVERT_EXPORT_MFP_INPUTFORMAT</comment>
+  </data>
+  <data name="_44" xml:space="preserve">
+    <value>Shift_JIS</value>
+    <comment>IDS_CODEPAGE_SJIS</comment>
+  </data>
+  <data name="_45" xml:space="preserve">
+    <value>Latin-1</value>
+    <comment>IDS_CODEPAGE_LATIN1</comment>
+  </data>
+  <data name="_48" xml:space="preserve">
+    <value>전원 전압 저하 에러</value>
+  </data>
+  <data name="_49999" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_APPLICATION_ERROR_END</comment>
+  </data>
+  <data name="_5" xml:space="preserve">
+    <value>정점</value>
+    <comment>IDS_DATA_PROCESSINGPOINT_TEXT</comment>
+  </data>
+  <data name="_51000" xml:space="preserve">
+    <value>레이저 반사파 에러</value>
+    <comment>ERR_COM_STR_E000</comment>
+  </data>
+  <data name="_51001" xml:space="preserve">
+    <value>레이저 고온 에러</value>
+    <comment>ERR_COM_STR_E001</comment>
+  </data>
+  <data name="_51002" xml:space="preserve">
+    <value>레이저 과전압 에러</value>
+    <comment>ERR_COM_STR_E002</comment>
+  </data>
+  <data name="_51003" xml:space="preserve">
+    <value>헤드 통신 에러</value>
+    <comment>ERR_COM_STR_E003</comment>
+  </data>
+  <data name="_51004" xml:space="preserve">
+    <value>스캐너 에러</value>
+    <comment>ERR_COM_STR_E004</comment>
+  </data>
+  <data name="_51005" xml:space="preserve">
+    <value>셔터 에러</value>
+    <comment>ERR_COM_STR_E005</comment>
+  </data>
+  <data name="_51006" xml:space="preserve">
+    <value>헤드 버전 에러</value>
+  </data>
+  <data name="_51007" xml:space="preserve">
+    <value>헤드 모델 에러</value>
+    <comment>ERR_COM_STR_E007</comment>
+  </data>
+  <data name="_51008" xml:space="preserve">
+    <value>컨트롤러 버전 오류</value>
+    <comment>ERR_COM_STR_E008</comment>
+  </data>
+  <data name="_51009" xml:space="preserve">
+    <value>헤드 FPGA버전 에러</value>
+  </data>
+  <data name="_51010" xml:space="preserve">
+    <value>인쇄 블록 없음 에러</value>
+    <comment>ERR_COM_STR_E010</comment>
+  </data>
+  <data name="_51011" xml:space="preserve">
+    <value>내장 메모리 카드 인식 불능 에러</value>
+    <comment>ERR_COM_STR_E011</comment>
+  </data>
+  <data name="_51012" xml:space="preserve">
+    <value>헤드 데이터 에러</value>
+    <comment>ERR_COM_STR_E012</comment>
+  </data>
+  <data name="_51013" xml:space="preserve">
+    <value>확장 메모리 풀 에러</value>
+    <comment>ERR_COM_STR_E013</comment>
+  </data>
+  <data name="_51014" xml:space="preserve">
+    <value>인쇄 메모리 풀 에러</value>
+    <comment>ERR_COM_STR_E014</comment>
+  </data>
+  <data name="_51015" xml:space="preserve">
+    <value>미설정 에러</value>
+    <comment>ERR_COM_STR_E015</comment>
+  </data>
+  <data name="_51016" xml:space="preserve">
+    <value>최적화 미실행 에러</value>
+    <comment>ERR_COM_STR_E016</comment>
+  </data>
+  <data name="_51017" xml:space="preserve">
+    <value>폰트 파일 없음 에러</value>
+    <comment>ERR_COM_STR_E017</comment>
+  </data>
+  <data name="_51018" xml:space="preserve">
+    <value>인코더 인쇄 Over-speed 에러</value>
+    <comment>ERR_COM_STR_E018</comment>
+  </data>
+  <data name="_51019" xml:space="preserve">
+    <value>인쇄 트리거 에러</value>
+    <comment>ERR_COM_STR_E019</comment>
+  </data>
+  <data name="_51020" xml:space="preserve">
+    <value>확장 메모리 풀 에러２</value>
+    <comment>ERR_COM_STR_E020</comment>
+  </data>
+  <data name="_51021" xml:space="preserve">
+    <value>센서 아웃 에러</value>
+    <comment>ERR_COM_STR_E021</comment>
+  </data>
+  <data name="_51022" xml:space="preserve">
+    <value>에어리어 오버 에러</value>
+    <comment>ERR_COM_STR_E022</comment>
+  </data>
+  <data name="_51023" xml:space="preserve">
+    <value>스캐너 에어리어 오버 에러</value>
+    <comment>ERR_COM_STR_E023</comment>
+  </data>
+  <data name="_51024" xml:space="preserve">
+    <value>파일 대조 확인 에러</value>
+    <comment>ERR_COM_STR_E024</comment>
+  </data>
+  <data name="_51025" xml:space="preserve">
+    <value>로고 파일 에러</value>
+    <comment>ERR_COM_STR_E025</comment>
+  </data>
+  <data name="_51026" xml:space="preserve">
+    <value>사용자 폰트 파일 에러</value>
+    <comment>ERR_COM_STR_E026</comment>
+  </data>
+  <data name="_51027" xml:space="preserve">
+    <value>인코드 불능 에러</value>
+    <comment>ERR_COM_STR_E027</comment>
+  </data>
+  <data name="_51028" xml:space="preserve">
+    <value>작업 전환 불능 에러</value>
+    <comment>ERR_COM_STR_E028</comment>
+  </data>
+  <data name="_51029" xml:space="preserve">
+    <value>스캐너 에러２</value>
+    <comment>ERR_COM_STR_E029</comment>
+  </data>
+  <data name="_51030" xml:space="preserve">
+    <value>기한 설정 에러</value>
+    <comment>ERR_COM_STR_E030</comment>
+  </data>
+  <data name="_51031" xml:space="preserve">
+    <value>재기동 에러</value>
+    <comment>ERR_COM_STR_E031</comment>
+  </data>
+  <data name="_51032" xml:space="preserve">
+    <value>로고·사용자 폰트 사이즈 확대 에러</value>
+    <comment>ERR_COM_STR_E032</comment>
+  </data>
+  <data name="_51033" xml:space="preserve">
+    <value>교점 제거 에러</value>
+    <comment>ERR_COM_STR_E033</comment>
+  </data>
+  <data name="_51034" xml:space="preserve">
+    <value>인코드 불능 에러</value>
+    <comment>ERR_COM_STR_E034</comment>
+  </data>
+  <data name="_51035" xml:space="preserve">
+    <value>고속 문자 변경 전개 에러</value>
+    <comment>ERR_COM_STR_E035</comment>
+  </data>
+  <data name="_51037" xml:space="preserve">
+    <value>가공기 타원 에러 </value>
+    <comment>ERR_COM_STR_E037</comment>
+  </data>
+  <data name="_51038" xml:space="preserve">
+    <value>로고 사용자 폰트 버퍼 풀 에러</value>
+    <comment>ERR_COM_STR_E038</comment>
+  </data>
+  <data name="_51039" xml:space="preserve">
+    <value>Wobble・Scratch 설정 에러</value>
+    <comment>ERR_COM_STR_E039</comment>
+  </data>
+  <data name="_51040" xml:space="preserve">
+    <value>링크 블록 에러</value>
+    <comment>ERR_COM_STR_E040</comment>
+  </data>
+  <data name="_51041" xml:space="preserve">
+    <value>3D 배치 부정 에러</value>
+    <comment>ERR_COM_STR_E041</comment>
+  </data>
+  <data name="_51042" xml:space="preserve">
+    <value>인쇄 빠짐 검출 에러</value>
+    <comment>ERR_COM_STR_E042</comment>
+  </data>
+  <data name="_51043" xml:space="preserve">
+    <value>오발광 검출 에러</value>
+    <comment>ERR_COM_STR_E043</comment>
+  </data>
+  <data name="_51044" xml:space="preserve">
+    <value>Z 에어리어 오버 에러</value>
+    <comment>ERR_COM_STR_E044</comment>
+  </data>
+  <data name="_51045" xml:space="preserve">
+    <value>바코드 미등록 에러</value>
+    <comment>ERR_COM_STR_E045</comment>
+  </data>
+  <data name="_51046" xml:space="preserve">
+    <value>워밍업 설정 에러</value>
+    <comment>ERR_COM_STR_E046</comment>
+  </data>
+  <data name="_51047" xml:space="preserve">
+    <value>3D 블록 사이즈 에러</value>
+    <comment>ERR_COM_STR_E047</comment>
+  </data>
+  <data name="_51048" xml:space="preserve">
+    <value>Z-MAP 파일 에러</value>
+    <comment>ERR_COM_STR_E048</comment>
+  </data>
+  <data name="_51049" xml:space="preserve">
+    <value>폰트 없음 에러</value>
+    <comment>ERR_COM_STR_E049</comment>
+  </data>
+  <data name="_51050" xml:space="preserve">
+    <value>인쇄 데이터 생성 에러</value>
+    <comment>ERR_COM_STR_E050</comment>
+  </data>
+  <data name="_51051" xml:space="preserve">
+    <value>시스템 에러2</value>
+    <comment>ERR_COM_STR_E051</comment>
+  </data>
+  <data name="_51052" xml:space="preserve">
+    <value>시스템 에러3</value>
+    <comment>ERR_COM_STR_E052</comment>
+  </data>
+  <data name="_51053" xml:space="preserve">
+    <value>시스템 에러4</value>
+    <comment>ERR_COM_STR_E053</comment>
+  </data>
+  <data name="_51054" xml:space="preserve">
+    <value>시스템 에러5</value>
+    <comment>ERR_COM_STR_E054</comment>
+  </data>
+  <data name="_51055" xml:space="preserve">
+    <value>시스템 에러6</value>
+    <comment>ERR_COM_STR_E055</comment>
+  </data>
+  <data name="_51056" xml:space="preserve">
+    <value>시스템 에러7</value>
+    <comment>ERR_COM_STR_E056</comment>
+  </data>
+  <data name="_51057" xml:space="preserve">
+    <value>시스템 에러8</value>
+    <comment>ERR_COM_STR_E057</comment>
+  </data>
+  <data name="_51058" xml:space="preserve">
+    <value>시스템 에러9</value>
+    <comment>ERR_COM_STR_E058</comment>
+  </data>
+  <data name="_51059" xml:space="preserve">
+    <value>시스템 에러10</value>
+    <comment>ERR_COM_STR_E059</comment>
+  </data>
+  <data name="_51061" xml:space="preserve">
+    <value>시스템 에러12</value>
+    <comment>ERR_COM_STR_E061</comment>
+  </data>
+  <data name="_51062" xml:space="preserve">
+    <value>시스템 에러13</value>
+    <comment>ERR_COM_STR_E062</comment>
+  </data>
+  <data name="_51063" xml:space="preserve">
+    <value>시스템 에러14</value>
+    <comment>ERR_COM_STR_E063</comment>
+  </data>
+  <data name="_51064" xml:space="preserve">
+    <value>시스템 에러15</value>
+    <comment>ERR_COM_STR_E064</comment>
+  </data>
+  <data name="_51065" xml:space="preserve">
+    <value>시스템 에러16</value>
+    <comment>ERR_COM_STR_E065</comment>
+  </data>
+  <data name="_51066" xml:space="preserve">
+    <value>시스템 에러17</value>
+    <comment>ERR_COM_STR_E066</comment>
+  </data>
+  <data name="_51067" xml:space="preserve">
+    <value>시스템 에러18</value>
+    <comment>ERR_COM_STR_E067</comment>
+  </data>
+  <data name="_51068" xml:space="preserve">
+    <value>시스템 에러19</value>
+    <comment>ERR_COM_STR_E068</comment>
+  </data>
+  <data name="_51069" xml:space="preserve">
+    <value>시스템 에러20</value>
+    <comment>ERR_COM_STR_E069</comment>
+  </data>
+  <data name="_51070" xml:space="preserve">
+    <value>시스템 에러21</value>
+    <comment>ERR_COM_STR_E070</comment>
+  </data>
+  <data name="_51071" xml:space="preserve">
+    <value>시스템 에러22</value>
+    <comment>ERR_COM_STR_E071</comment>
+  </data>
+  <data name="_51072" xml:space="preserve">
+    <value>시스템 에러23</value>
+    <comment>ERR_COM_STR_E072</comment>
+  </data>
+  <data name="_51073" xml:space="preserve">
+    <value>시스템 에러24</value>
+    <comment>ERR_COM_STR_E073</comment>
+  </data>
+  <data name="_51074" xml:space="preserve">
+    <value>시스템 에러25</value>
+    <comment>ERR_COM_STR_E074</comment>
+  </data>
+  <data name="_51075" xml:space="preserve">
+    <value>시스템 에러26</value>
+    <comment>ERR_COM_STR_E075</comment>
+  </data>
+  <data name="_51090" xml:space="preserve">
+    <value>내부 시계 미설정 에러</value>
+    <comment>ERR_COM_STR_E090</comment>
+  </data>
+  <data name="_51091" xml:space="preserve">
+    <value>내부 시계 접속 에러</value>
+    <comment>ERR_COM_STR_E091</comment>
+  </data>
+  <data name="_51092" xml:space="preserve">
+    <value>내장 메모리 액서스 에러</value>
+  </data>
+  <data name="_51100" xml:space="preserve">
+    <value>LD 고온 에러</value>
+    <comment>ERR_COM_STR_E100</comment>
+  </data>
+  <data name="_51101" xml:space="preserve">
+    <value>LD 저온 에러</value>
+    <comment>ERR_COM_STR_E101</comment>
+  </data>
+  <data name="_51102" xml:space="preserve">
+    <value>헤드 고온 에러</value>
+    <comment>ERR_COM_STR_E102</comment>
+  </data>
+  <data name="_51104" xml:space="preserve">
+    <value>Q 스위치 정지 에러</value>
+    <comment>ERR_COM_STR_E104</comment>
+  </data>
+  <data name="_51105" xml:space="preserve">
+    <value>Q 스위치 전원 에러</value>
+    <comment>ERR_COM_STR_E105</comment>
+  </data>
+  <data name="_51106" xml:space="preserve">
+    <value>Q 스위치 제어 에러</value>
+    <comment>ERR_COM_STR_E106</comment>
+  </data>
+  <data name="_51107" xml:space="preserve">
+    <value>Q 스위치 동작 체크 에러</value>
+    <comment>ERR_COM_STR_E107</comment>
+  </data>
+  <data name="_51110" xml:space="preserve">
+    <value>레이저 파워 오토 캘리브레이션 에러 </value>
+    <comment>ERR_COM_STR_E110</comment>
+  </data>
+  <data name="_51111" xml:space="preserve">
+    <value>Z좌표 보정 상한 에러</value>
+    <comment>ERR_COM_STR_E111</comment>
+  </data>
+  <data name="_51112" xml:space="preserve">
+    <value>Z좌표 보정 하한 에러</value>
+    <comment>ERR_COM_STR_E112</comment>
+  </data>
+  <data name="_51113" xml:space="preserve">
+    <value>Z좌표 측정 실패 에러</value>
+    <comment>ERR_COM_STR_E113</comment>
+  </data>
+  <data name="_51114" xml:space="preserve">
+    <value>카운트 작업 에러</value>
+    <comment>ERR_COM_STR_E114</comment>
+  </data>
+  <data name="_51115" xml:space="preserve">
+    <value>위치 보정량 상한 에러</value>
+  </data>
+  <data name="_51116" xml:space="preserve">
+    <value>위치 보정 상관치 저하 에러</value>
+  </data>
+  <data name="_51117" xml:space="preserve">
+    <value>기울기 보정량 상한 에러</value>
+  </data>
+  <data name="_51118" xml:space="preserve">
+    <value>Z좌표 보정 안정도 저하 에러</value>
+  </data>
+  <data name="_51119" xml:space="preserve">
+    <value>위치 보정 계측 실패 에러</value>
+  </data>
+  <data name="_51132" xml:space="preserve">
+    <value>전원 전압 저하 에러</value>
+    <comment>ERR_COM_STR_E132</comment>
+  </data>
+  <data name="_51137" xml:space="preserve">
+    <value>시스템 에러27</value>
+    <comment>ERR_COM_STR_E137</comment>
+  </data>
+  <data name="_51138" xml:space="preserve">
+    <value>시스템 에러28</value>
+    <comment>ERR_COM_STR_E138</comment>
+  </data>
+  <data name="_51139" xml:space="preserve">
+    <value>시스템 에러29</value>
+    <comment>ERR_COM_STR_E139</comment>
+  </data>
+  <data name="_51140" xml:space="preserve">
+    <value>시스템 에러30</value>
+    <comment>ERR_COM_STR_E140</comment>
+  </data>
+  <data name="_51141" xml:space="preserve">
+    <value>시스템 에러31</value>
+    <comment>ERR_COM_STR_E141</comment>
+  </data>
+  <data name="_51142" xml:space="preserve">
+    <value>시스템 에러32</value>
+    <comment>ERR_COM_STR_E142</comment>
+  </data>
+  <data name="_51143" xml:space="preserve">
+    <value>시스템 에러33</value>
+    <comment>ERR_COM_STR_E143</comment>
+  </data>
+  <data name="_51144" xml:space="preserve">
+    <value>반사광 에러</value>
+    <comment>ERR_COM_STR_E144</comment>
+  </data>
+  <data name="_51150" xml:space="preserve">
+    <value>이미지 처리 CPU 실행 에러</value>
+  </data>
+  <data name="_51151" xml:space="preserve">
+    <value>이미지 처리 통신 에러</value>
+  </data>
+  <data name="_51152" xml:space="preserve">
+    <value>XY좌표 메모리 풀 에러</value>
+  </data>
+  <data name="_51153" xml:space="preserve">
+    <value>XY좌표 데이터 에러</value>
+  </data>
+  <data name="_51160" xml:space="preserve">
+    <value>사용자 정보 로딩 실패 에러</value>
+  </data>
+  <data name="_51202" xml:space="preserve">
+    <value>컨트롤러 상부 팬 에러 </value>
+    <comment>ERR_COM_STR_E202</comment>
+  </data>
+  <data name="_51203" xml:space="preserve">
+    <value>컨트롤러 하부 팬 에러</value>
+    <comment>ERR_COM_STR_E203</comment>
+  </data>
+  <data name="_51204" xml:space="preserve">
+    <value>헤드 제어 케이블 미접속 에러</value>
+    <comment>ERR_COM_STR_E204</comment>
+  </data>
+  <data name="_51205" xml:space="preserve">
+    <value>헤드 전원 케이블 미접속 에러</value>
+  </data>
+  <data name="_51206" xml:space="preserve">
+    <value>헤드 팬 잠금 에러</value>
+  </data>
+  <data name="_51220" xml:space="preserve">
+    <value>시스템 에러34</value>
+    <comment>ERR_COM_STR_E220</comment>
+  </data>
+  <data name="_51221" xml:space="preserve">
+    <value>시스템 에러35</value>
+    <comment>ERR_COM_STR_E221</comment>
+  </data>
+  <data name="_51222" xml:space="preserve">
+    <value>시스템 에러36</value>
+    <comment>ERR_COM_STR_E222</comment>
+  </data>
+  <data name="_51223" xml:space="preserve">
+    <value>시스템 에러37</value>
+    <comment>ERR_COM_STR_E223</comment>
+  </data>
+  <data name="_51224" xml:space="preserve">
+    <value>시스템 에러38</value>
+    <comment>ERR_COM_STR_E224</comment>
+  </data>
+  <data name="_51225" xml:space="preserve">
+    <value>시스템 에러39</value>
+    <comment>ERR_COM_STR_E225</comment>
+  </data>
+  <data name="_51226" xml:space="preserve">
+    <value>시스템 에러40</value>
+    <comment>ERR_COM_STR_E226</comment>
+  </data>
+  <data name="_51227" xml:space="preserve">
+    <value>시스템 에러41</value>
+    <comment>ERR_COM_STR_E227</comment>
+  </data>
+  <data name="_51228" xml:space="preserve">
+    <value>시스템 에러42</value>
+    <comment>ERR_COM_STR_E228</comment>
+  </data>
+  <data name="_51229" xml:space="preserve">
+    <value>시스템 에러43</value>
+    <comment>ERR_COM_STR_E229</comment>
+  </data>
+  <data name="_51230" xml:space="preserve">
+    <value>시스템 에러44</value>
+    <comment>ERR_COM_STR_E230</comment>
+  </data>
+  <data name="_51231" xml:space="preserve">
+    <value>시스템 에러45</value>
+    <comment>ERR_COM_STR_E231</comment>
+  </data>
+  <data name="_51232" xml:space="preserve">
+    <value>시스템 에러46</value>
+    <comment>ERR_COM_STR_E232</comment>
+  </data>
+  <data name="_51233" xml:space="preserve">
+    <value>시스템 에러47</value>
+    <comment>ERR_COM_STR_E233</comment>
+  </data>
+  <data name="_51234" xml:space="preserve">
+    <value>LD 온도 조정 불가능 에러</value>
+    <comment>ERR_COM_STR_E234</comment>
+  </data>
+  <data name="_51235" xml:space="preserve">
+    <value>시스템 에러49</value>
+    <comment>ERR_COM_STR_E235</comment>
+  </data>
+  <data name="_51236" xml:space="preserve">
+    <value>시스템 에러50</value>
+    <comment>ERR_COM_STR_E236</comment>
+  </data>
+  <data name="_51237" xml:space="preserve">
+    <value>시스템 에러51</value>
+    <comment>ERR_COM_STR_E237</comment>
+  </data>
+  <data name="_51238" xml:space="preserve">
+    <value>시스템 에러52</value>
+  </data>
+  <data name="_51239" xml:space="preserve">
+    <value>시스템 에러53</value>
+    <comment>ERR_COM_STR_E239</comment>
+  </data>
+  <data name="_51240" xml:space="preserve">
+    <value>시스템 에러60</value>
+    <comment>ERR_COM_STR_E240</comment>
+  </data>
+  <data name="_51241" xml:space="preserve">
+    <value>시스템 에러61</value>
+    <comment>ERR_COM_STR_E241</comment>
+  </data>
+  <data name="_51242" xml:space="preserve">
+    <value>시스템 에러62</value>
+    <comment>ERR_COM_STR_E242</comment>
+  </data>
+  <data name="_51243" xml:space="preserve">
+    <value>시스템 에러63</value>
+    <comment>ERR_COM_STR_E243</comment>
+  </data>
+  <data name="_51244" xml:space="preserve">
+    <value>시스템 에러64</value>
+    <comment>ERR_COM_STR_E244</comment>
+  </data>
+  <data name="_51245" xml:space="preserve">
+    <value>시스템 에러65</value>
+    <comment>ERR_COM_STR_E245</comment>
+  </data>
+  <data name="_51246" xml:space="preserve">
+    <value>시스템 에러66</value>
+    <comment>ERR_COM_STR_E246</comment>
+  </data>
+  <data name="_51247" xml:space="preserve">
+    <value>시스템 에러67</value>
+    <comment>ERR_COM_STR_E247</comment>
+  </data>
+  <data name="_51248" xml:space="preserve">
+    <value>시스템 에러68</value>
+  </data>
+  <data name="_51249" xml:space="preserve">
+    <value>시스템 에러69</value>
+  </data>
+  <data name="_51250" xml:space="preserve">
+    <value>시스템 에러70</value>
+  </data>
+  <data name="_51251" xml:space="preserve">
+    <value>시스템 에러71</value>
+  </data>
+  <data name="_51252" xml:space="preserve">
+    <value>스캐너 에러3</value>
+    <comment>ERR_COM_STR_E252</comment>
+  </data>
+  <data name="_51253" xml:space="preserve">
+    <value>스캐너 에러4</value>
+    <comment>ERR_COM_STR_E253</comment>
+  </data>
+  <data name="_51254" xml:space="preserve">
+    <value>스캐너 에러5</value>
+    <comment>ERR_COM_STR_E254</comment>
+  </data>
+  <data name="_51255" xml:space="preserve">
+    <value>스캐너 에러6</value>
+    <comment>ERR_COM_STR_E255</comment>
+  </data>
+  <data name="_51256" xml:space="preserve">
+    <value>시스템 에러72</value>
+  </data>
+  <data name="_51257" xml:space="preserve">
+    <value>컨트롤러 전원 에러</value>
+    <comment>ERR_COM_STR_E257</comment>
+  </data>
+  <data name="_51258" xml:space="preserve">
+    <value>전원 전압 저하 에러</value>
+  </data>
+  <data name="_51259" xml:space="preserve">
+    <value>24V 전원 전압 저하 에러</value>
+  </data>
+  <data name="_51260" xml:space="preserve">
+    <value>전원 전압 저하 에러2</value>
+  </data>
+  <data name="_51261" xml:space="preserve">
+    <value>시스템 에러73</value>
+  </data>
+  <data name="_51262" xml:space="preserve">
+    <value>시스템 에러74</value>
+  </data>
+  <data name="_51270" xml:space="preserve">
+    <value>컨트롤러 고온 에러</value>
+    <comment>ERR_COM_STR_E270</comment>
+  </data>
+  <data name="_51271" xml:space="preserve">
+    <value>컨트롤러 저온 에러</value>
+    <comment>ERR_COM_STR_E271</comment>
+  </data>
+  <data name="_51272" xml:space="preserve">
+    <value>헤드 고온 에러(레이저관)</value>
+  </data>
+  <data name="_51273" xml:space="preserve">
+    <value>레이저 안전 모듈 상태 에러</value>
+    <comment>ERR_COM_STR_E273</comment>
+  </data>
+  <data name="_51274" xml:space="preserve">
+    <value>헤드 고온 에러(내장 변위 센서)</value>
+  </data>
+  <data name="_51275" xml:space="preserve">
+    <value>헤드 저온 에러(내장 변위 센서)</value>
+  </data>
+  <data name="_51280" xml:space="preserve">
+    <value>헤드 고온 에러(플레이트) </value>
+    <comment>ERR_COM_STR_E280</comment>
+  </data>
+  <data name="_51281" xml:space="preserve">
+    <value>헤드 저온 에러(플레이트)</value>
+    <comment>ERR_COM_STR_E281</comment>
+  </data>
+  <data name="_51282" xml:space="preserve">
+    <value>헤드 고온 에러(기판)</value>
+    <comment>ERR_COM_STR_E282</comment>
+  </data>
+  <data name="_51283" xml:space="preserve">
+    <value>헤드 저온 에러(기판)</value>
+    <comment>ERR_COM_STR_E283</comment>
+  </data>
+  <data name="_51284" xml:space="preserve">
+    <value>스캐너 고온 에러</value>
+    <comment>ERR_COM_STR_E284</comment>
+  </data>
+  <data name="_51285" xml:space="preserve">
+    <value>스캐너 저온 에러</value>
+    <comment>ERR_COM_STR_E285</comment>
+  </data>
+  <data name="_51286" xml:space="preserve">
+    <value>빔 샘플러 고온 에러</value>
+  </data>
+  <data name="_51287" xml:space="preserve">
+    <value>헤드 고온 에러(선반)</value>
+  </data>
+  <data name="_51288" xml:space="preserve">
+    <value>헤드 저온 에러(선반)</value>
+  </data>
+  <data name="_51289" xml:space="preserve">
+    <value>레이저 안전모듈 연결 에러</value>
+  </data>
+  <data name="_51290" xml:space="preserve">
+    <value>컨택터 상태 에러</value>
+  </data>
+  <data name="_51291" xml:space="preserve">
+    <value>헤드 통신 에러2</value>
+    <comment>ERR_COM_STR_E291</comment>
+  </data>
+  <data name="_51292" xml:space="preserve">
+    <value>SSR 비정상</value>
+  </data>
+  <data name="_51293" xml:space="preserve">
+    <value>인터락 비정상</value>
+  </data>
+  <data name="_51294" xml:space="preserve">
+    <value>시스템 에러80</value>
+  </data>
+  <data name="_51295" xml:space="preserve">
+    <value>SD카드 내 설정파일 에러</value>
+  </data>
+  <data name="_51296" xml:space="preserve">
+    <value>시스템 에러81</value>
+  </data>
+  <data name="_51297" xml:space="preserve">
+    <value>시스템 에러82</value>
+  </data>
+  <data name="_51298" xml:space="preserve">
+    <value>헤드 통신 에러3</value>
+    <comment>ERR_COM_STR_E298</comment>
+  </data>
+  <data name="_51299" xml:space="preserve">
+    <value>헤드 통신 에러4</value>
+    <comment>ERR_COM_STR_E299</comment>
+  </data>
+  <data name="_51300" xml:space="preserve">
+    <value>메모리 체크 에러1</value>
+    <comment>ERR_COM_STR_E300</comment>
+  </data>
+  <data name="_51301" xml:space="preserve">
+    <value>메모리 체크 에러2</value>
+    <comment>ERR_COM_STR_E301</comment>
+  </data>
+  <data name="_51302" xml:space="preserve">
+    <value>메모리 체크 에러3</value>
+    <comment>ERR_COM_STR_E302</comment>
+  </data>
+  <data name="_51303" xml:space="preserve">
+    <value>메모리 체크 에러4</value>
+    <comment>ERR_COM_STR_E303</comment>
+  </data>
+  <data name="_51304" xml:space="preserve">
+    <value>메모리 체크 에러5</value>
+    <comment>ERR_COM_STR_E304</comment>
+  </data>
+  <data name="_51305" xml:space="preserve">
+    <value>메모리 체크 에러6</value>
+    <comment>ERR_COM_STR_E305</comment>
+  </data>
+  <data name="_51306" xml:space="preserve">
+    <value>메모리 체크 에러7</value>
+    <comment>ERR_COM_STR_E306</comment>
+  </data>
+  <data name="_51307" xml:space="preserve">
+    <value>메모리 체크 에러8</value>
+    <comment>ERR_COM_STR_E307</comment>
+  </data>
+  <data name="_51308" xml:space="preserve">
+    <value>메모리 체크 에러9</value>
+    <comment>ERR_COM_STR_E308</comment>
+  </data>
+  <data name="_51309" xml:space="preserve">
+    <value>메모리 체크 에러10</value>
+    <comment>ERR_COM_STR_E309</comment>
+  </data>
+  <data name="_51310" xml:space="preserve">
+    <value>메모리 체크 에러11</value>
+    <comment>ERR_COM_STR_E310</comment>
+  </data>
+  <data name="_51311" xml:space="preserve">
+    <value>메모리 체크 에러12</value>
+    <comment>ERR_COM_STR_E311</comment>
+  </data>
+  <data name="_51312" xml:space="preserve">
+    <value>메모리 체크 에러13</value>
+    <comment>ERR_COM_STR_E312</comment>
+  </data>
+  <data name="_51313" xml:space="preserve">
+    <value>메모리 체크 에러14</value>
+    <comment>ERR_COM_STR_E313</comment>
+  </data>
+  <data name="_51314" xml:space="preserve">
+    <value>메모리 체크 에러15</value>
+    <comment>ERR_COM_STR_E314</comment>
+  </data>
+  <data name="_51315" xml:space="preserve">
+    <value>메모리 체크 에러16</value>
+    <comment>ERR_COM_STR_E315</comment>
+  </data>
+  <data name="_51316" xml:space="preserve">
+    <value>메모리 체크 에러17</value>
+    <comment>ERR_COM_STR_E316</comment>
+  </data>
+  <data name="_51317" xml:space="preserve">
+    <value>메모리 체크 에러18</value>
+    <comment>ERR_COM_STR_E317</comment>
+  </data>
+  <data name="_51318" xml:space="preserve">
+    <value>메모리 체크 에러19</value>
+    <comment>ERR_COM_STR_E318</comment>
+  </data>
+  <data name="_51319" xml:space="preserve">
+    <value>메모리 체크 에러20</value>
+    <comment>ERR_COM_STR_E319</comment>
+  </data>
+  <data name="_51400" xml:space="preserve">
+    <value>스캐너 에러X00</value>
+  </data>
+  <data name="_51401" xml:space="preserve">
+    <value>스캐너 에러X01</value>
+  </data>
+  <data name="_51402" xml:space="preserve">
+    <value>스캐너 에러X02</value>
+  </data>
+  <data name="_51403" xml:space="preserve">
+    <value>스캐너 에러X03</value>
+  </data>
+  <data name="_51404" xml:space="preserve">
+    <value>스캐너 에러X04</value>
+  </data>
+  <data name="_51405" xml:space="preserve">
+    <value>스캐너 에러X05</value>
+  </data>
+  <data name="_51406" xml:space="preserve">
+    <value>스캐너 에러X06</value>
+  </data>
+  <data name="_51407" xml:space="preserve">
+    <value>스캐너 에러X07</value>
+  </data>
+  <data name="_51408" xml:space="preserve">
+    <value>스캐너 에러X08</value>
+  </data>
+  <data name="_51409" xml:space="preserve">
+    <value>스캐너 에러X09</value>
+  </data>
+  <data name="_51410" xml:space="preserve">
+    <value>스캐너 에러X10</value>
+  </data>
+  <data name="_51411" xml:space="preserve">
+    <value>스캐너 에러X11</value>
+  </data>
+  <data name="_51412" xml:space="preserve">
+    <value>스캐너 에러X12</value>
+  </data>
+  <data name="_51413" xml:space="preserve">
+    <value>스캐너 에러X13</value>
+  </data>
+  <data name="_51414" xml:space="preserve">
+    <value>스캐너 에러X14</value>
+  </data>
+  <data name="_51415" xml:space="preserve">
+    <value>스캐너 에러X15</value>
+  </data>
+  <data name="_51416" xml:space="preserve">
+    <value>스캐너 에러X16</value>
+  </data>
+  <data name="_51417" xml:space="preserve">
+    <value>스캐너 에러X17</value>
+  </data>
+  <data name="_51418" xml:space="preserve">
+    <value>스캐너 에러X18</value>
+  </data>
+  <data name="_51419" xml:space="preserve">
+    <value>스캐너 에러X19</value>
+  </data>
+  <data name="_51420" xml:space="preserve">
+    <value>스캐너 에러X20</value>
+  </data>
+  <data name="_51421" xml:space="preserve">
+    <value>스캐너 에러X21</value>
+  </data>
+  <data name="_51422" xml:space="preserve">
+    <value>스캐너 에러X22</value>
+  </data>
+  <data name="_51423" xml:space="preserve">
+    <value>스캐너 에러X23</value>
+  </data>
+  <data name="_51424" xml:space="preserve">
+    <value>스캐너 에러X24</value>
+  </data>
+  <data name="_51425" xml:space="preserve">
+    <value>스캐너 에러X25</value>
+  </data>
+  <data name="_51426" xml:space="preserve">
+    <value>스캐너 에러X26</value>
+  </data>
+  <data name="_51427" xml:space="preserve">
+    <value>스캐너 에러X27</value>
+  </data>
+  <data name="_51428" xml:space="preserve">
+    <value>스캐너 에러X28</value>
+  </data>
+  <data name="_51429" xml:space="preserve">
+    <value>스캐너 에러X29</value>
+  </data>
+  <data name="_51430" xml:space="preserve">
+    <value>스캐너 에러X30</value>
+  </data>
+  <data name="_51432" xml:space="preserve">
+    <value>스캐너 에러Y00</value>
+  </data>
+  <data name="_51433" xml:space="preserve">
+    <value>스캐너 에러Y01</value>
+  </data>
+  <data name="_51434" xml:space="preserve">
+    <value>스캐너 에러Y02</value>
+  </data>
+  <data name="_51435" xml:space="preserve">
+    <value>스캐너 에러Y03</value>
+  </data>
+  <data name="_51436" xml:space="preserve">
+    <value>스캐너 에러Y04</value>
+  </data>
+  <data name="_51437" xml:space="preserve">
+    <value>스캐너 에러Y05</value>
+  </data>
+  <data name="_51438" xml:space="preserve">
+    <value>스캐너 에러Y06</value>
+  </data>
+  <data name="_51439" xml:space="preserve">
+    <value>스캐너 에러Y07</value>
+  </data>
+  <data name="_51440" xml:space="preserve">
+    <value>스캐너 에러Y08</value>
+  </data>
+  <data name="_51441" xml:space="preserve">
+    <value>스캐너 에러Y09</value>
+  </data>
+  <data name="_51442" xml:space="preserve">
+    <value>스캐너 에러Y10</value>
+  </data>
+  <data name="_51443" xml:space="preserve">
+    <value>스캐너 에러Y11</value>
+  </data>
+  <data name="_51444" xml:space="preserve">
+    <value>스캐너 에러Y12</value>
+  </data>
+  <data name="_51445" xml:space="preserve">
+    <value>스캐너 에러Y13</value>
+  </data>
+  <data name="_51446" xml:space="preserve">
+    <value>스캐너 에러Y14</value>
+  </data>
+  <data name="_51447" xml:space="preserve">
+    <value>스캐너 에러Y15</value>
+  </data>
+  <data name="_51448" xml:space="preserve">
+    <value>스캐너 에러Y16</value>
+  </data>
+  <data name="_51449" xml:space="preserve">
+    <value>스캐너 에러Y17</value>
+  </data>
+  <data name="_51450" xml:space="preserve">
+    <value>스캐너 에러Y18</value>
+  </data>
+  <data name="_51451" xml:space="preserve">
+    <value>스캐너 에러Y19</value>
+  </data>
+  <data name="_51452" xml:space="preserve">
+    <value>스캐너 에러Y20</value>
+  </data>
+  <data name="_51453" xml:space="preserve">
+    <value>스캐너 에러Y21</value>
+  </data>
+  <data name="_51454" xml:space="preserve">
+    <value>스캐너 에러Y22</value>
+  </data>
+  <data name="_51455" xml:space="preserve">
+    <value>스캐너 에러Y23</value>
+  </data>
+  <data name="_51456" xml:space="preserve">
+    <value>스캐너 에러Y24</value>
+  </data>
+  <data name="_51457" xml:space="preserve">
+    <value>스캐너 에러Y25</value>
+  </data>
+  <data name="_51458" xml:space="preserve">
+    <value>스캐너 에러Y26</value>
+  </data>
+  <data name="_51459" xml:space="preserve">
+    <value>스캐너 에러Y27</value>
+  </data>
+  <data name="_51460" xml:space="preserve">
+    <value>스캐너 에러Y28</value>
+  </data>
+  <data name="_51461" xml:space="preserve">
+    <value>스캐너 에러Y29</value>
+  </data>
+  <data name="_51462" xml:space="preserve">
+    <value>스캐너 에러Y30</value>
+  </data>
+  <data name="_51500" xml:space="preserve">
+    <value>헤드 시스템 에러00</value>
+  </data>
+  <data name="_51501" xml:space="preserve">
+    <value>헤드 시스템 에러01</value>
+  </data>
+  <data name="_51502" xml:space="preserve">
+    <value>헤드 시스템 에러02</value>
+  </data>
+  <data name="_51503" xml:space="preserve">
+    <value>헤드 시스템 에러03</value>
+  </data>
+  <data name="_51504" xml:space="preserve">
+    <value>헤드 시스템 에러04</value>
+  </data>
+  <data name="_51505" xml:space="preserve">
+    <value>헤드 시스템 에러05</value>
+  </data>
+  <data name="_51506" xml:space="preserve">
+    <value>헤드 시스템 에러06</value>
+  </data>
+  <data name="_51507" xml:space="preserve">
+    <value>헤드 시스템 에러07</value>
+  </data>
+  <data name="_51508" xml:space="preserve">
+    <value>헤드 시스템 에러08</value>
+  </data>
+  <data name="_51509" xml:space="preserve">
+    <value>헤드 시스템 에러09</value>
+  </data>
+  <data name="_51510" xml:space="preserve">
+    <value>헤드 시스템 에러10</value>
+  </data>
+  <data name="_51511" xml:space="preserve">
+    <value>헤드 시스템 에러11</value>
+  </data>
+  <data name="_51512" xml:space="preserve">
+    <value>헤드 시스템 에러12</value>
+  </data>
+  <data name="_51513" xml:space="preserve">
+    <value>헤드 시스템 에러13</value>
+  </data>
+  <data name="_51514" xml:space="preserve">
+    <value>헤드 시스템 에러14</value>
+  </data>
+  <data name="_51515" xml:space="preserve">
+    <value>헤드 시스템 에러15</value>
+  </data>
+  <data name="_51516" xml:space="preserve">
+    <value>헤드 시스템 에러16</value>
+  </data>
+  <data name="_51517" xml:space="preserve">
+    <value>헤드 시스템 에러17</value>
+  </data>
+  <data name="_51518" xml:space="preserve">
+    <value>헤드 시스템 에러18</value>
+  </data>
+  <data name="_51519" xml:space="preserve">
+    <value>헤드 시스템 에러19</value>
+  </data>
+  <data name="_51520" xml:space="preserve">
+    <value>헤드 시스템 에러20</value>
+  </data>
+  <data name="_51521" xml:space="preserve">
+    <value>헤드 시스템 에러21</value>
+  </data>
+  <data name="_51522" xml:space="preserve">
+    <value>헤드 시스템 에러22</value>
+  </data>
+  <data name="_51523" xml:space="preserve">
+    <value>헤드 시스템 에러23</value>
+  </data>
+  <data name="_51524" xml:space="preserve">
+    <value>헤드 시스템 에러24</value>
+  </data>
+  <data name="_51525" xml:space="preserve">
+    <value>헤드 시스템 에러25</value>
+  </data>
+  <data name="_51526" xml:space="preserve">
+    <value>헤드 시스템 에러26</value>
+  </data>
+  <data name="_51527" xml:space="preserve">
+    <value>헤드 시스템 에러27</value>
+  </data>
+  <data name="_51528" xml:space="preserve">
+    <value>헤드 시스템 에러28</value>
+  </data>
+  <data name="_51529" xml:space="preserve">
+    <value>헤드 시스템 에러29</value>
+  </data>
+  <data name="_51530" xml:space="preserve">
+    <value>헤드 시스템 에러30</value>
+  </data>
+  <data name="_51531" xml:space="preserve">
+    <value>헤드 시스템 에러31</value>
+  </data>
+  <data name="_51999" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_ERROR_END</comment>
+  </data>
+  <data name="_52001" xml:space="preserve">
+    <value>레이저 온도 경고</value>
+  </data>
+  <data name="_52100" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_WARNING_START</comment>
+  </data>
+  <data name="_52101" xml:space="preserve">
+    <value>헤드 팬 경고</value>
+    <comment>ERR_COM_STR_W101</comment>
+  </data>
+  <data name="_52102" xml:space="preserve">
+    <value>USB 메모리 액세스 실패 경고</value>
+    <comment>ERR_COM_STR_W102</comment>
+  </data>
+  <data name="_52103" xml:space="preserve">
+    <value>CPU 간 통신 타임 아웃 경고</value>
+    <comment>ERR_COM_STR_W103</comment>
+  </data>
+  <data name="_52104" xml:space="preserve">
+    <value>Main통신 상태 이상 경고</value>
+  </data>
+  <data name="_52105" xml:space="preserve">
+    <value>레이저 제어 기판 파라미터 경고</value>
+  </data>
+  <data name="_52106" xml:space="preserve">
+    <value>헤드 기판 파라미터 경고</value>
+  </data>
+  <data name="_52107" xml:space="preserve">
+    <value>컨트롤러 기판 파라미터 경고</value>
+  </data>
+  <data name="_52110" xml:space="preserve">
+    <value>레이저 파워 출력 저하 경고</value>
+    <comment>ERR_COM_STR_W110</comment>
+  </data>
+  <data name="_52111" xml:space="preserve">
+    <value>마킹 에너지 부족 경고</value>
+    <comment>ERR_COM_STR_W111</comment>
+  </data>
+  <data name="_52112" xml:space="preserve">
+    <value>마킹 에너지 초과 경고</value>
+    <comment>ERR_COM_STR_W112</comment>
+  </data>
+  <data name="_52113" xml:space="preserve">
+    <value>파워 모니터 센서 경고</value>
+    <comment>ERR_COM_STR_W113</comment>
+  </data>
+  <data name="_52114" xml:space="preserve">
+    <value>레이저 파워 캘리브레이션 경고</value>
+  </data>
+  <data name="_52122" xml:space="preserve">
+    <value>레이저 유닛 온도 경고1</value>
+    <comment>ERR_COM_STR_W122</comment>
+  </data>
+  <data name="_52123" xml:space="preserve">
+    <value>반사광 경고</value>
+    <comment>ERR_COM_STR_W123</comment>
+  </data>
+  <data name="_52125" xml:space="preserve">
+    <value>전원 전압 저하 경고</value>
+    <comment>ERR_COM_STR_W125</comment>
+  </data>
+  <data name="_52126" xml:space="preserve">
+    <value>전원 전압 저하 경고2</value>
+  </data>
+  <data name="_52150" xml:space="preserve">
+    <value>Z좌표 상한 경고</value>
+    <comment>ERR_COM_STR_W150</comment>
+  </data>
+  <data name="_52151" xml:space="preserve">
+    <value>Z좌표 하한 경고</value>
+    <comment>ERR_COM_STR_W151</comment>
+  </data>
+  <data name="_52152" xml:space="preserve">
+    <value>2D 코드 품질 저하 경고</value>
+    <comment>ERR_COM_STR_W152</comment>
+  </data>
+  <data name="_52153" xml:space="preserve">
+    <value>위치 보정량 상한 경고</value>
+  </data>
+  <data name="_52154" xml:space="preserve">
+    <value>위치 보정 상관값 저하 경고</value>
+  </data>
+  <data name="_52155" xml:space="preserve">
+    <value>기울기 보정량 상한 경고</value>
+  </data>
+  <data name="_52156" xml:space="preserve">
+    <value>Z좌표 보정 안정도 저하 경고</value>
+  </data>
+  <data name="_52157" xml:space="preserve">
+    <value>Z좌표 측정 실패 경고</value>
+  </data>
+  <data name="_52158" xml:space="preserve">
+    <value>위치 보정 계측 실패 경고</value>
+  </data>
+  <data name="_52159" xml:space="preserve">
+    <value>윈도우 점검 실패 경고</value>
+    <comment>ERR_COM_STR_W159</comment>
+  </data>
+  <data name="_52160" xml:space="preserve">
+    <value>컨트롤러 고온 경고</value>
+    <comment>ERR_COM_STR_W160</comment>
+  </data>
+  <data name="_52161" xml:space="preserve">
+    <value>컨트롤러 저온 경고</value>
+    <comment>ERR_COM_STR_W161</comment>
+  </data>
+  <data name="_52162" xml:space="preserve">
+    <value>LD 고온 경고</value>
+    <comment>ERR_COM_STR_W162</comment>
+  </data>
+  <data name="_52163" xml:space="preserve">
+    <value>LD 저온 경고</value>
+    <comment>ERR_COM_STR_W163</comment>
+  </data>
+  <data name="_52170" xml:space="preserve">
+    <value>헤드 고온 경고(플레이트)</value>
+    <comment>ERR_COM_STR_W170</comment>
+  </data>
+  <data name="_52171" xml:space="preserve">
+    <value>헤드 저온 경고(플레이트)</value>
+    <comment>ERR_COM_STR_W171</comment>
+  </data>
+  <data name="_52172" xml:space="preserve">
+    <value>헤드 고온 경고(기판)</value>
+    <comment>ERR_COM_STR_W172</comment>
+  </data>
+  <data name="_52173" xml:space="preserve">
+    <value>헤드 저온 경고(기판)</value>
+    <comment>ERR_COM_STR_W173</comment>
+  </data>
+  <data name="_52174" xml:space="preserve">
+    <value>스캐너 고온 경고</value>
+    <comment>ERR_COM_STR_W174</comment>
+  </data>
+  <data name="_52175" xml:space="preserve">
+    <value>스캐너 저온 경고</value>
+    <comment>ERR_COM_STR_W175</comment>
+  </data>
+  <data name="_52176" xml:space="preserve">
+    <value>헤드 고온 경고(선반)</value>
+  </data>
+  <data name="_52177" xml:space="preserve">
+    <value>헤드 저온 경고(선반)</value>
+  </data>
+  <data name="_52178" xml:space="preserve">
+    <value>헤드 고온 경고(내장 변위 센서)</value>
+  </data>
+  <data name="_52179" xml:space="preserve">
+    <value>헤드 저온 경고(내장 변위 센서)</value>
+  </data>
+  <data name="_52180" xml:space="preserve">
+    <value>헤드건조제 교환 경고</value>
+  </data>
+  <data name="_52181" xml:space="preserve">
+    <value>카메라 보정 경고1</value>
+  </data>
+  <data name="_52182" xml:space="preserve">
+    <value>헤드 통신 경고</value>
+  </data>
+  <data name="_52183" xml:space="preserve">
+    <value>이미지 처리 통신 경고</value>
+  </data>
+  <data name="_52184" xml:space="preserve">
+    <value>카메라 보정 경고2</value>
+  </data>
+  <data name="_52190" xml:space="preserve">
+    <value>Z좌표 캘리브레이션 이상</value>
+  </data>
+  <data name="_52191" xml:space="preserve">
+    <value>윈도우 정리 경고</value>
+  </data>
+  <data name="_52192" xml:space="preserve">
+    <value>Z좌표 캘리브레이션 실시 경고</value>
+  </data>
+  <data name="_52200" xml:space="preserve">
+    <value>로그 저장 불가능 경고(내부 메모리)</value>
+  </data>
+  <data name="_52201" xml:space="preserve">
+    <value>로그 저장 불가능 경고(외부 메모리)</value>
+  </data>
+  <data name="_52202" xml:space="preserve">
+    <value>로그 저장 불가능 경고(FTP 서버)</value>
+  </data>
+  <data name="_52203" xml:space="preserve">
+    <value>로그 데이터 접속 경고</value>
+  </data>
+  <data name="_52204" xml:space="preserve">
+    <value>로그 저장 버퍼 오버 경고</value>
+  </data>
+  <data name="_52205" xml:space="preserve">
+    <value>로그 데이터 삭제 실패 경고</value>
+  </data>
+  <data name="_52206" xml:space="preserve">
+    <value>FTP서버 접속 경고</value>
+  </data>
+  <data name="_52207" xml:space="preserve">
+    <value>외부 메모리 인식 경고</value>
+  </data>
+  <data name="_52208" xml:space="preserve">
+    <value>사용자 정보 로딩 실패 경고</value>
+  </data>
+  <data name="_52400" xml:space="preserve">
+    <value>스캐너 워닝X00</value>
+  </data>
+  <data name="_52401" xml:space="preserve">
+    <value>스캐너 워닝X01</value>
+  </data>
+  <data name="_52402" xml:space="preserve">
+    <value>스캐너 워닝X02</value>
+  </data>
+  <data name="_52403" xml:space="preserve">
+    <value>스캐너 워닝X03</value>
+  </data>
+  <data name="_52404" xml:space="preserve">
+    <value>스캐너 워닝X04</value>
+  </data>
+  <data name="_52405" xml:space="preserve">
+    <value>스캐너 워닝X05</value>
+  </data>
+  <data name="_52406" xml:space="preserve">
+    <value>스캐너 워닝X06</value>
+  </data>
+  <data name="_52407" xml:space="preserve">
+    <value>스캐너 워닝X07</value>
+  </data>
+  <data name="_52408" xml:space="preserve">
+    <value>스캐너 워닝X08</value>
+  </data>
+  <data name="_52409" xml:space="preserve">
+    <value>스캐너 워닝X09</value>
+  </data>
+  <data name="_52410" xml:space="preserve">
+    <value>스캐너 워닝X10</value>
+  </data>
+  <data name="_52411" xml:space="preserve">
+    <value>스캐너 워닝X11</value>
+  </data>
+  <data name="_52412" xml:space="preserve">
+    <value>스캐너 워닝X12</value>
+  </data>
+  <data name="_52413" xml:space="preserve">
+    <value>스캐너 워닝X13</value>
+  </data>
+  <data name="_52414" xml:space="preserve">
+    <value>스캐너 워닝X14</value>
+  </data>
+  <data name="_52416" xml:space="preserve">
+    <value>스캐너 워닝Y00</value>
+  </data>
+  <data name="_52417" xml:space="preserve">
+    <value>스캐너 워닝Y01</value>
+  </data>
+  <data name="_52418" xml:space="preserve">
+    <value>스캐너 워닝Y02</value>
+  </data>
+  <data name="_52419" xml:space="preserve">
+    <value>스캐너 워닝Y03</value>
+  </data>
+  <data name="_52420" xml:space="preserve">
+    <value>스캐너 워닝Y04</value>
+  </data>
+  <data name="_52421" xml:space="preserve">
+    <value>스캐너 워닝Y05</value>
+  </data>
+  <data name="_52422" xml:space="preserve">
+    <value>스캐너 워닝Y06</value>
+  </data>
+  <data name="_52423" xml:space="preserve">
+    <value>스캐너 워닝Y07</value>
+  </data>
+  <data name="_52424" xml:space="preserve">
+    <value>스캐너 워닝Y08</value>
+  </data>
+  <data name="_52425" xml:space="preserve">
+    <value>스캐너 워닝Y09</value>
+  </data>
+  <data name="_52426" xml:space="preserve">
+    <value>스캐너 워닝Y10</value>
+  </data>
+  <data name="_52427" xml:space="preserve">
+    <value>스캐너 워닝Y11</value>
+  </data>
+  <data name="_52428" xml:space="preserve">
+    <value>스캐너 워닝Y12</value>
+  </data>
+  <data name="_52429" xml:space="preserve">
+    <value>스캐너 워닝Y13</value>
+  </data>
+  <data name="_52430" xml:space="preserve">
+    <value>스캐너 워닝Y14</value>
+  </data>
+  <data name="_52500" xml:space="preserve">
+    <value>헤드 시스템 워닝00</value>
+  </data>
+  <data name="_52501" xml:space="preserve">
+    <value>헤드 시스템 워닝01</value>
+  </data>
+  <data name="_52502" xml:space="preserve">
+    <value>헤드 시스템 워닝02</value>
+  </data>
+  <data name="_52503" xml:space="preserve">
+    <value>헤드 시스템 워닝03</value>
+  </data>
+  <data name="_52504" xml:space="preserve">
+    <value>헤드 시스템 워닝04</value>
+  </data>
+  <data name="_52505" xml:space="preserve">
+    <value>헤드 시스템 워닝05</value>
+  </data>
+  <data name="_52506" xml:space="preserve">
+    <value>헤드 시스템 워닝06</value>
+  </data>
+  <data name="_52507" xml:space="preserve">
+    <value>헤드 시스템 워닝07</value>
+  </data>
+  <data name="_52508" xml:space="preserve">
+    <value>헤드 시스템 워닝08</value>
+  </data>
+  <data name="_52509" xml:space="preserve">
+    <value>헤드 시스템 워닝09</value>
+  </data>
+  <data name="_52510" xml:space="preserve">
+    <value>헤드 시스템 워닝10</value>
+  </data>
+  <data name="_52511" xml:space="preserve">
+    <value>헤드 시스템 워닝11</value>
+  </data>
+  <data name="_52512" xml:space="preserve">
+    <value>헤드 시스템 워닝12</value>
+  </data>
+  <data name="_52513" xml:space="preserve">
+    <value>헤드 시스템 워닝13</value>
+  </data>
+  <data name="_52514" xml:space="preserve">
+    <value>헤드 시스템 워닝14</value>
+  </data>
+  <data name="_52515" xml:space="preserve">
+    <value>헤드 시스템 워닝15</value>
+  </data>
+  <data name="_52516" xml:space="preserve">
+    <value>헤드 시스템 워닝16</value>
+  </data>
+  <data name="_52517" xml:space="preserve">
+    <value>헤드 시스템 워닝17</value>
+  </data>
+  <data name="_52518" xml:space="preserve">
+    <value>헤드 시스템 워닝18</value>
+  </data>
+  <data name="_52519" xml:space="preserve">
+    <value>헤드 시스템 워닝19</value>
+  </data>
+  <data name="_52520" xml:space="preserve">
+    <value>헤드 시스템 워닝20</value>
+  </data>
+  <data name="_52521" xml:space="preserve">
+    <value>헤드 시스템 워닝21</value>
+  </data>
+  <data name="_52522" xml:space="preserve">
+    <value>헤드 시스템 워닝22</value>
+  </data>
+  <data name="_52523" xml:space="preserve">
+    <value>헤드 시스템 워닝23</value>
+  </data>
+  <data name="_52524" xml:space="preserve">
+    <value>헤드 시스템 워닝24</value>
+  </data>
+  <data name="_52525" xml:space="preserve">
+    <value>헤드 시스템 워닝25</value>
+  </data>
+  <data name="_52526" xml:space="preserve">
+    <value>헤드 시스템 워닝26</value>
+  </data>
+  <data name="_52527" xml:space="preserve">
+    <value>헤드 시스템 워닝27</value>
+  </data>
+  <data name="_52528" xml:space="preserve">
+    <value>헤드 시스템 워닝28</value>
+  </data>
+  <data name="_52529" xml:space="preserve">
+    <value>헤드 시스템 워닝29</value>
+  </data>
+  <data name="_52530" xml:space="preserve">
+    <value>헤드 시스템 워닝30</value>
+  </data>
+  <data name="_52531" xml:space="preserve">
+    <value>헤드 시스템 워닝31</value>
+  </data>
+  <data name="_52999" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_WARNING_END</comment>
+  </data>
+  <data name="_53000" xml:space="preserve">
+    <value>리모트 인터록 중</value>
+    <comment>ERR_COM_STR_T000</comment>
+  </data>
+  <data name="_53001" xml:space="preserve">
+    <value>셔터 제어 중</value>
+    <comment>ERR_COM_STR_T001</comment>
+  </data>
+  <data name="_53002" xml:space="preserve">
+    <value>트리거 잠금 중</value>
+    <comment>ERR_COM_STR_T002</comment>
+  </data>
+  <data name="_53003" xml:space="preserve">
+    <value>레이저 정지 중</value>
+    <comment>ERR_COM_STR_T003</comment>
+  </data>
+  <data name="_53004" xml:space="preserve">
+    <value>가공 동작 정지 중</value>
+    <comment>ERR_COM_STR_T004</comment>
+  </data>
+  <data name="_53005" xml:space="preserve">
+    <value>디스턴스 포인터 점등 중</value>
+    <comment>ERR_COM_STR_T005</comment>
+  </data>
+  <data name="_53006" xml:space="preserve">
+    <value>레이저 미여기 상태</value>
+    <comment>ERR_COM_STR_T006</comment>
+  </data>
+  <data name="_53007" xml:space="preserve">
+    <value>LD 온도 조정 중</value>
+    <comment>ERR_COM_STR_T007</comment>
+  </data>
+  <data name="_53008" xml:space="preserve">
+    <value>워밍업 운전 중</value>
+    <comment>ERR_COM_STR_T008</comment>
+  </data>
+  <data name="_53009" xml:space="preserve">
+    <value>레이저 파워 오토 캘리브레이션 중</value>
+    <comment>ERR_COM_STR_T009</comment>
+  </data>
+  <data name="_53010" xml:space="preserve">
+    <value>발진기 온도 조정 중 </value>
+    <comment>ERR_COM_STR_T010</comment>
+  </data>
+  <data name="_53011" xml:space="preserve">
+    <value>컨택터 입력 OFF 상태</value>
+    <comment>ERR_COM_STR_T011</comment>
+  </data>
+  <data name="_53012" xml:space="preserve">
+    <value>통신 셔터 제어 중</value>
+    <comment>ERR_COM_STR_T012</comment>
+  </data>
+  <data name="_53013" xml:space="preserve">
+    <value>버전 업그레이드 중</value>
+    <comment>ERR_COM_STR_T013</comment>
+  </data>
+  <data name="_53014" xml:space="preserve">
+    <value>안전셔터 입력 OFF상태</value>
+    <comment>ERR_COM_STR_T014</comment>
+  </data>
+  <data name="_53015" xml:space="preserve">
+    <value>레이저 안전모듈 OFF상태</value>
+  </data>
+  <data name="_53016" xml:space="preserve">
+    <value>윈도우 점검 중</value>
+  </data>
+  <data name="_53017" xml:space="preserve">
+    <value>거리 측정 레이저 정지 중</value>
+  </data>
+  <data name="_53999" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_TERMINAL_END</comment>
+  </data>
+  <data name="_54000" xml:space="preserve">
+    <value>작업 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S000</comment>
+  </data>
+  <data name="_54001" xml:space="preserve">
+    <value>작업 메모리 풀 에러</value>
+    <comment>ERR_COM_STR_S001</comment>
+  </data>
+  <data name="_54002" xml:space="preserve">
+    <value>내부 메모리 카드 풀 에러</value>
+    <comment>ERR_COM_STR_S002</comment>
+  </data>
+  <data name="_54003" xml:space="preserve">
+    <value>USB 메모리 풀 에러 </value>
+    <comment>ERR_COM_STR_S003</comment>
+  </data>
+  <data name="_54004" xml:space="preserve">
+    <value>USB 메모리 미삽입 에러</value>
+    <comment>ERR_COM_STR_S004</comment>
+  </data>
+  <data name="_54005" xml:space="preserve">
+    <value>USB 메모리 인식 불능 에러</value>
+    <comment>ERR_COM_STR_S005</comment>
+  </data>
+  <data name="_54006" xml:space="preserve">
+    <value>우선권 에러 </value>
+    <comment>ERR_COM_STR_S006</comment>
+  </data>
+  <data name="_54008" xml:space="preserve">
+    <value>파일 없음 에러</value>
+    <comment>ERR_COM_STR_S008</comment>
+  </data>
+  <data name="_54009" xml:space="preserve">
+    <value>Busy 에러</value>
+    <comment>ERR_COM_STR_S009</comment>
+  </data>
+  <data name="_54010" xml:space="preserve">
+    <value>인쇄 블록 없음 에러</value>
+    <comment>ERR_COM_STR_S010</comment>
+  </data>
+  <data name="_54011" xml:space="preserve">
+    <value>로고∙사용자 폰트 개수 오버 에러 </value>
+    <comment>ERR_COM_STR_S011</comment>
+  </data>
+  <data name="_54012" xml:space="preserve">
+    <value>최적화 부정 에러</value>
+    <comment>ERR_COM_STR_S012</comment>
+  </data>
+  <data name="_54013" xml:space="preserve">
+    <value>스캔 최적화 불가능 에러</value>
+    <comment>ERR_COM_STR_S013</comment>
+  </data>
+  <data name="_54014" xml:space="preserve">
+    <value>실행 중 작업 조작 에러</value>
+    <comment>ERR_COM_STR_S014</comment>
+  </data>
+  <data name="_54015" xml:space="preserve">
+    <value>로고·사용자 폰트 파일 조작 에러</value>
+    <comment>ERR_COM_STR_S015</comment>
+  </data>
+  <data name="_54016" xml:space="preserve">
+    <value>제어권 취득 불능 에러</value>
+    <comment>ERR_COM_STR_S016</comment>
+  </data>
+  <data name="_54017" xml:space="preserve">
+    <value>정점 인쇄 설정 에러</value>
+    <comment>ERR_COM_STR_S017</comment>
+  </data>
+  <data name="_54018" xml:space="preserve">
+    <value>바코드·2D 코드 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S018</comment>
+  </data>
+  <data name="_54019" xml:space="preserve">
+    <value>모든 설정 복구 에러</value>
+    <comment>ERR_COM_STR_S019</comment>
+  </data>
+  <data name="_54020" xml:space="preserve">
+    <value>데이터 길이 에러</value>
+    <comment>ERR_COM_STR_S020</comment>
+  </data>
+  <data name="_54021" xml:space="preserve">
+    <value>작업 번호 미등록 에러</value>
+    <comment>ERR_COM_STR_S021</comment>
+  </data>
+  <data name="_54022" xml:space="preserve">
+    <value>블록 번호 미등록 에러</value>
+    <comment>ERR_COM_STR_S022</comment>
+  </data>
+  <data name="_54023" xml:space="preserve">
+    <value>상태 에러</value>
+    <comment>ERR_COM_STR_S023</comment>
+  </data>
+  <data name="_54024" xml:space="preserve">
+    <value>커맨드 부정 에러 </value>
+    <comment>ERR_COM_STR_S024</comment>
+  </data>
+  <data name="_54025" xml:space="preserve">
+    <value>체크섬 에러</value>
+    <comment>ERR_COM_STR_S025</comment>
+  </data>
+  <data name="_54026" xml:space="preserve">
+    <value>포맷 에러</value>
+    <comment>ERR_COM_STR_S026</comment>
+  </data>
+  <data name="_54027" xml:space="preserve">
+    <value>커맨드 인식 불능 에러</value>
+    <comment>ERR_COM_STR_S027</comment>
+  </data>
+  <data name="_54028" xml:space="preserve">
+    <value>응답 데이터 길이 에러</value>
+    <comment>ERR_COM_STR_S028</comment>
+  </data>
+  <data name="_54029" xml:space="preserve">
+    <value>인쇄 내용 요구 에러</value>
+    <comment>ERR_COM_STR_S029</comment>
+  </data>
+  <data name="_54030" xml:space="preserve">
+    <value>그룹 번호 미등록 에러</value>
+    <comment>ERR_COM_STR_S030</comment>
+  </data>
+  <data name="_54031" xml:space="preserve">
+    <value>미설정 에러(2D 코드 리더기)</value>
+    <comment>ERR_COM_STR_S031</comment>
+  </data>
+  <data name="_54032" xml:space="preserve">
+    <value>미설정 에러(인쇄 확인 기능)</value>
+    <comment>ERR_COM_STR_S032</comment>
+  </data>
+  <data name="_54033" xml:space="preserve">
+    <value>미설정 에러(3-axis 좌표)</value>
+    <comment>ERR_COM_STR_S033</comment>
+  </data>
+  <data name="_54040" xml:space="preserve">
+    <value>동작 제한 에러(2D 코드 리더기)</value>
+  </data>
+  <data name="_54041" xml:space="preserve">
+    <value>동작 제한 에러(3D 인쇄)</value>
+  </data>
+  <data name="_54042" xml:space="preserve">
+    <value>동작 제한 에러(Z좌표)</value>
+  </data>
+  <data name="_54043" xml:space="preserve">
+    <value>동작 제한 에러(XY좌표)</value>
+  </data>
+  <data name="_54050" xml:space="preserve">
+    <value>고속 문자 변경 설정 에러</value>
+    <comment>ERR_COM_STR_S050</comment>
+  </data>
+  <data name="_54051" xml:space="preserve">
+    <value>샘플 인쇄 불가능 에러</value>
+    <comment>ERR_COM_STR_S051</comment>
+  </data>
+  <data name="_54052" xml:space="preserve">
+    <value>점검 레이저 불가능 에러</value>
+    <comment>ERR_COM_STR_S052</comment>
+  </data>
+  <data name="_54060" xml:space="preserve">
+    <value>블록 종류 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S060</comment>
+  </data>
+  <data name="_54061" xml:space="preserve">
+    <value>블록 배치 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S061</comment>
+  </data>
+  <data name="_54062" xml:space="preserve">
+    <value>문자 사이즈 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S062</comment>
+  </data>
+  <data name="_54063" xml:space="preserve">
+    <value>문자 배치 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S063</comment>
+  </data>
+  <data name="_54064" xml:space="preserve">
+    <value>문자 상세 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S064</comment>
+  </data>
+  <data name="_54065" xml:space="preserve">
+    <value>인쇄 조건 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S065</comment>
+  </data>
+  <data name="_54066" xml:space="preserve">
+    <value>바코드·2D 코드 조건 설정 내용 부정 에러 </value>
+    <comment>ERR_COM_STR_S066</comment>
+  </data>
+  <data name="_54067" xml:space="preserve">
+    <value>연속 인쇄 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S067</comment>
+  </data>
+  <data name="_54068" xml:space="preserve">
+    <value>이동·인쇄 방향 설정 내용 부정 에러 </value>
+    <comment>ERR_COM_STR_S068</comment>
+  </data>
+  <data name="_54069" xml:space="preserve">
+    <value>작업 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S069</comment>
+  </data>
+  <data name="_54070" xml:space="preserve">
+    <value>매트릭스 정보 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S070</comment>
+  </data>
+  <data name="_54071" xml:space="preserve">
+    <value>매트릭스 셀 정보 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S071</comment>
+  </data>
+  <data name="_54072" xml:space="preserve">
+    <value>문자열 설정 내용 부정 에러 </value>
+    <comment>ERR_COM_STR_S072</comment>
+  </data>
+  <data name="_54073" xml:space="preserve">
+    <value>개별 카운터 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S073</comment>
+  </data>
+  <data name="_54074" xml:space="preserve">
+    <value>공통 카운터 설정 내용 부정 에러 </value>
+    <comment>ERR_COM_STR_S074</comment>
+  </data>
+  <data name="_54075" xml:space="preserve">
+    <value>치환 정보 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S075</comment>
+  </data>
+  <data name="_54076" xml:space="preserve">
+    <value>시스템 정보 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S076</comment>
+  </data>
+  <data name="_54077" xml:space="preserve">
+    <value>폰트 치환 정보 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S077</comment>
+  </data>
+  <data name="_54078" xml:space="preserve">
+    <value>폰트 확대 축소 정보 설정 내용 부정 에러</value>
+    <comment>ERR_COM_STR_S078</comment>
+  </data>
+  <data name="_54079" xml:space="preserve">
+    <value>폰트 교점 제거 폭 정보 설정 내용 부정 에러 </value>
+    <comment>ERR_COM_STR_S079</comment>
+  </data>
+  <data name="_54080" xml:space="preserve">
+    <value>로고·사용자 폰트 버퍼 정보 설정 내용 부정 에러 </value>
+    <comment>ERR_COM_STR_S080</comment>
+  </data>
+  <data name="_54081" xml:space="preserve">
+    <value>현재값 정보 설정 내용 부정 에러 </value>
+    <comment>ERR_COM_STR_S081</comment>
+  </data>
+  <data name="_54082" xml:space="preserve">
+    <value>3D 시스템 정보 설정 내용 부정 에러 </value>
+    <comment>ERR_COM_STR_S082</comment>
+  </data>
+  <data name="_54083" xml:space="preserve">
+    <value>3D 설정 정보 내용 부정 에러 </value>
+    <comment>ERR_COM_STR_S083</comment>
+  </data>
+  <data name="_54084" xml:space="preserve">
+    <value>동작 제한 에러 </value>
+    <comment>ERR_COM_STR_S084</comment>
+  </data>
+  <data name="_54085" xml:space="preserve">
+    <value>지원되지 않는 데이터 버전</value>
+    <comment>ERR_COM_STR_S085</comment>
+  </data>
+  <data name="_54086" xml:space="preserve">
+    <value>Wobble 설정 내용 부정 에러 </value>
+    <comment>ERR_COM_STR_S086</comment>
+  </data>
+  <data name="_54087" xml:space="preserve">
+    <value>2D 코드 판독 에러 </value>
+    <comment>ERR_COM_STR_S087</comment>
+  </data>
+  <data name="_54088" xml:space="preserve">
+    <value>워크 디스턴스 측정 에러 </value>
+    <comment>ERR_COM_STR_S088</comment>
+  </data>
+  <data name="_54089" xml:space="preserve">
+    <value>워크 디스턴스 측정 제한 에러 </value>
+    <comment>ERR_COM_STR_S089</comment>
+  </data>
+  <data name="_54090" xml:space="preserve">
+    <value>등록 바코드 에러 </value>
+    <comment>ERR_COM_STR_S090</comment>
+  </data>
+  <data name="_54091" xml:space="preserve">
+    <value>바코드·2D 코드 링크 설정 에러 </value>
+    <comment>ERR_COM_STR_S091</comment>
+  </data>
+  <data name="_54092" xml:space="preserve">
+    <value>바코드 등록 상태 부정 에러</value>
+    <comment>ERR_COM_STR_S092</comment>
+  </data>
+  <data name="_54093" xml:space="preserve">
+    <value>인쇄 확인 기능 부정 에러</value>
+    <comment>ERR_COM_STR_S093</comment>
+  </data>
+  <data name="_54094" xml:space="preserve">
+    <value>TrueType 폰트 파일 사이즈 에러</value>
+    <comment>ERR_COM_STR_S094</comment>
+  </data>
+  <data name="_54095" xml:space="preserve">
+    <value>모델 제한 에러</value>
+    <comment>ERR_COM_STR_S095</comment>
+  </data>
+  <data name="_54096" xml:space="preserve">
+    <value>우선권 해제 에러</value>
+    <comment>ERR_COM_STR_S096</comment>
+  </data>
+  <data name="_54097" xml:space="preserve">
+    <value>파일 액세스 에러</value>
+    <comment>ERR_COM_STR_S097</comment>
+  </data>
+  <data name="_54098" xml:space="preserve">
+    <value>시리얼 번호 비정상</value>
+  </data>
+  <data name="_54099" xml:space="preserve">
+    <value>시리얼 번호 중복</value>
+  </data>
+  <data name="_54100" xml:space="preserve">
+    <value>촬영 조건 부정 에러</value>
+    <comment>ERR_COM_STR_S100</comment>
+  </data>
+  <data name="_54101" xml:space="preserve">
+    <value>처리 사용자 취소</value>
+  </data>
+  <data name="_54102" xml:space="preserve">
+    <value>측정에 실패하였습니다.</value>
+  </data>
+  <data name="_54103" xml:space="preserve">
+    <value>트래킹 번호 미등록 에러</value>
+  </data>
+  <data name="_54104" xml:space="preserve">
+    <value>트래킹 결과 요구 에러</value>
+  </data>
+  <data name="_54105" xml:space="preserve">
+    <value>Log 촬영 결과 요구 에러</value>
+    <comment>ERR_COM_STR_S105</comment>
+  </data>
+  <data name="_54106" xml:space="preserve">
+    <value>워크 플로우 결과 요구 에러</value>
+    <comment>ERR_COM_STR_S106</comment>
+  </data>
+  <data name="_54107" xml:space="preserve">
+    <value>셀 번호 지정 에러</value>
+  </data>
+  <data name="_54108" xml:space="preserve">
+    <value>거리 측정 레이저 미 여기 에러</value>
+  </data>
+  <data name="_54109" xml:space="preserve">
+    <value>촬영 조건 자동 조정 에러</value>
+    <comment>ERR_COM_STR_S109</comment>
+  </data>
+  <data name="_54110" xml:space="preserve">
+    <value>로그 데이터 없음</value>
+    <comment>ERR_COM_STR_S110</comment>
+  </data>
+  <data name="_54111" xml:space="preserve">
+    <value>라우팅 테이블 전체 오류</value>
+  </data>
+  <data name="_54112" xml:space="preserve">
+    <value>사용자 관리 기능 비활성오류</value>
+  </data>
+  <data name="_54113" xml:space="preserve">
+    <value>동시 로그인 수 초과오류</value>
+  </data>
+  <data name="_54114" xml:space="preserve">
+    <value>사용자 인증 실패오류</value>
+  </data>
+  <data name="_54115" xml:space="preserve">
+    <value>사용자 정보 없음 오류</value>
+  </data>
+  <data name="_54999" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_SOFT_END</comment>
+  </data>
+  <data name="_6" xml:space="preserve">
+    <value>트리거 ON 중 정점 </value>
+    <comment>IDS_DATA_PROCESSINGTRIGGERONPOINT_TEXT</comment>
+  </data>
+  <data name="_64" xml:space="preserve">
+    <value>프로그램 파일(*.MX4)|*.MX4</value>
+    <comment>IDS_FILTER_MX4</comment>
+  </data>
+  <data name="_65" xml:space="preserve">
+    <value>MD-U1000 시리즈</value>
+  </data>
+  <data name="_65535" xml:space="preserve">
+    <value />
+    <comment>ERR_SUCCESS</comment>
+  </data>
+  <data name="_66" xml:space="preserve">
+    <value>헤드 온도</value>
+  </data>
+  <data name="_661" xml:space="preserve">
+    <value>컨트롤러 온도</value>
+  </data>
+  <data name="_67" xml:space="preserve">
+    <value>레이저 파워 캘리브레이션 결과</value>
+  </data>
+  <data name="_694" xml:space="preserve">
+    <value>내용</value>
+  </data>
+  <data name="_695" xml:space="preserve">
+    <value>일시</value>
+  </data>
+  <data name="_696" xml:space="preserve">
+    <value>항목</value>
+  </data>
+  <data name="_697" xml:space="preserve">
+    <value>단위</value>
+  </data>
+  <data name="_7" xml:space="preserve">
+    <value>문자 높이</value>
+    <comment>IDS_PROPNAME_CHARHEIGHT</comment>
+  </data>
+  <data name="_70" xml:space="preserve">
+    <value>작업파일 (*.MA1)|*.MA1</value>
+  </data>
+  <data name="_7000" xml:space="preserve">
+    <value>회복 불가능한 에러가 발생 중이므로 이 명령어는 접수 불가</value>
+    <comment>ERR_COM_MB3_NGERR_CRITICAL</comment>
+  </data>
+  <data name="_7001" xml:space="preserve">
+    <value>올바르지 않은 파라미터</value>
+    <comment>ERR_COM_MB3_NGERR_PARAMATER</comment>
+  </data>
+  <data name="_71" xml:space="preserve">
+    <value>패턴영역 주위</value>
+  </data>
+  <data name="_72" xml:space="preserve">
+    <value>사용자명</value>
+  </data>
+  <data name="_73" xml:space="preserve">
+    <value>암호</value>
+  </data>
+  <data name="_74" xml:space="preserve">
+    <value>사용자 레벨명</value>
+  </data>
+  <data name="_75" xml:space="preserve">
+    <value>작업파일 (*.MA2)|*.MA2</value>
+  </data>
+  <data name="_8" xml:space="preserve">
+    <value>문자 폭</value>
+    <comment>IDS_PROPNAME_CHARWIDTH</comment>
+  </data>
+  <data name="_8000" xml:space="preserve">
+    <value>통신 에러</value>
+    <comment>ERR_COM_MB3_CONNECT</comment>
+  </data>
+  <data name="_8001" xml:space="preserve">
+    <value>동작 모드의 범위 밖 에러</value>
+    <comment>ERR_COM_MB3_SA_OVERRANG</comment>
+  </data>
+  <data name="_8002" xml:space="preserve">
+    <value>날짜 범위 에러</value>
+    <comment>ERR_COM_MB3_DB_OVERRANG</comment>
+  </data>
+  <data name="_8003" xml:space="preserve">
+    <value>랭크 범위 밖 에러</value>
+    <comment>ERR_COM_MB3_RL_OVERRANG</comment>
+  </data>
+  <data name="_8004" xml:space="preserve">
+    <value>인쇄 트리거 금지 상태 범위 밖 에러 </value>
+    <comment>ERR_COM_MB3_SP_OVERRANG</comment>
+  </data>
+  <data name="_8005" xml:space="preserve">
+    <value>설정 번호 범위 밖 에러</value>
+    <comment>ERR_COM_MB3_FB_OVERRANG</comment>
+  </data>
+  <data name="_8006" xml:space="preserve">
+    <value>인쇄 트리거 선택 상태 범위 밖 에러</value>
+    <comment>ERR_COM_MB3_IL_OVERRANG</comment>
+  </data>
+  <data name="_8007" xml:space="preserve">
+    <value>연 범위 밖 에러</value>
+    <comment>ERR_COM_MB3_GF_OVERRANG</comment>
+  </data>
+  <data name="_8008" xml:space="preserve">
+    <value>LD 상태 범위 밖 에러</value>
+    <comment>ERR_COM_MB3_SF_OVERRANG</comment>
+  </data>
+  <data name="_8009" xml:space="preserve">
+    <value>디스턴스 포인터 상태 범위 밖 에러 </value>
+    <comment>ERR_COM_MB3_DQ_OVERRANG</comment>
+  </data>
+  <data name="_8010" xml:space="preserve">
+    <value>송수신 파일 오픈 실패</value>
+    <comment>ERR_COM_MB3_FILE_OPEN</comment>
+  </data>
+  <data name="_8011" xml:space="preserve">
+    <value>송수신 파일 불러오기 실패</value>
+    <comment>ERR_COM_MB3_FILE_READ</comment>
+  </data>
+  <data name="_8012" xml:space="preserve">
+    <value>파일 쓰기에 실패하였습니다. 디스크의 여유 용량을 확인해 주십시오.</value>
+    <comment>ERR_COM_MB3_FILE_WRITE</comment>
+  </data>
+  <data name="_8013" xml:space="preserve">
+    <value>LDD 응답 시리얼 번호 불일치</value>
+    <comment>ERR_COM_MB3_LDD_SERIAL</comment>
+  </data>
+  <data name="_8014" xml:space="preserve">
+    <value>LDD 데이터 길이 불일치</value>
+    <comment>ERR_COM_MB3_LDD_DAT_LEN</comment>
+  </data>
+  <data name="_8015" xml:space="preserve">
+    <value>파일이 존재하지 않는 에러</value>
+    <comment>ERR_COM_MB3_FILENOTFOUND</comment>
+  </data>
+  <data name="_8016" xml:space="preserve">
+    <value>다른 애플리케이션의 레이저 마킹기의 연결을 오프라인으로 한 후 실행해 주십시오.</value>
+    <comment>ERR_COM_MB3_MULTICONNECTION</comment>
+  </data>
+  <data name="_8017" xml:space="preserve">
+    <value>통신 취소</value>
+    <comment>ERR_COM_MB3_CANCEL</comment>
+  </data>
+  <data name="_8018" xml:space="preserve">
+    <value>통신 포맷 에러</value>
+    <comment>ERR_COM_MB3_FORMAT_ERROR</comment>
+  </data>
+  <data name="_8019" xml:space="preserve">
+    <value>XY좌표 설정에 실패하였습니다.</value>
+  </data>
+  <data name="_8020" xml:space="preserve">
+    <value>촬영 합성에 실패하였습니다.</value>
+  </data>
+  <data name="_8021" xml:space="preserve">
+    <value>카메라 이미지 촬영 저장에 실패하였습니다.</value>
+  </data>
+  <data name="_8022" xml:space="preserve">
+    <value>윈도우 점검 중입니다.</value>
+    <comment>ERR_WINDOW_MAINTENANCE_NOT_OVER_YET</comment>
+  </data>
+  <data name="_8023" xml:space="preserve">
+    <value>FTP 서버에 연결할 수 없습니다.</value>
+  </data>
+  <data name="_8024" xml:space="preserve">
+    <value>FTP 서버에 로그인할 수 없습니다.</value>
+  </data>
+  <data name="_8025" xml:space="preserve">
+    <value>사용자명 또는 비밀번호가 잘못되었습니다.</value>
+  </data>
+  <data name="_9" xml:space="preserve">
+    <value>선 폭</value>
+    <comment>IDS_PROPNAME_MULTILINEWIDTH</comment>
+  </data>
+  <data name="_9000" xml:space="preserve">
+    <value>LDD 데이터 없음</value>
+    <comment>ERR_COM_MB3_LDD_NODATA</comment>
+  </data>
+  <data name="_91" xml:space="preserve">
+    <value>ML-Z9600 시리즈</value>
+    <comment>IDS_UNSUPPORT_MODEL_MLZ9600</comment>
+  </data>
+  <data name="_92" xml:space="preserve">
+    <value>MD-X2000/MD-X2500 시리즈</value>
+  </data>
+</root>

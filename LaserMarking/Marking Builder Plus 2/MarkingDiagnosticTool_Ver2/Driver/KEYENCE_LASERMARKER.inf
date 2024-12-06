@@ -1,0 +1,121 @@
+;/*++
+;
+;Copyright (c) KEYENCE Corporation.  All rights reserved.
+;
+;Module Name:
+;
+;	KEYENCE_LASERMARKER.INF
+;
+;Abstract:
+;	KEYENCE KMDF USB driver for Windows 2000,XP,Vista
+;
+;--*/
+
+[Version]
+Signature	= "$WINDOWS NT$"
+Class		= KeyenceUSB
+ClassGuid	= {71F238A1-4065-4730-B053-0ADB085CB899}
+Provider	= %KeyenceMfg%
+CatalogFile	= KEYENCE_LASERMARKER.cat
+DriverVer=04/18/2014,1.4.1000.0
+
+; ================= Class section =====================
+
+[ClassInstall32]
+Addreg=KeyenceClassReg
+
+[KeyenceClassReg]
+HKR,,,0,%ClassName%
+HKR,,Icon,,-5
+
+[DestinationDirs]
+DefaultDestDir = 12
+
+; ================= Device section =====================
+
+[Manufacturer]
+%MfgName%	= KEYENCE,NTx86,NTAMD64
+
+; For Win2K
+[KEYENCE]
+%USB\VID_0720&PID_5002.DeviceDesc%=KEYENCE_LASERMARKER.Dev, USB\VID_0720&PID_5002	; KEYENCE_LASERMARKER Series
+
+; For XP and later
+[KEYENCE.NTx86]
+%USB\VID_0720&PID_5002.DeviceDesc%=KEYENCE_LASERMARKER.Dev, USB\VID_0720&PID_5002	; KEYENCE_LASERMARKER Series
+
+[KEYENCE.NTAMD64]
+%USB\VID_0720&PID_5002.DeviceDesc%=KEYENCE_LASERMARKER.Dev, USB\VID_0720&PID_5002	; KEYENCE_LASERMARKER Series
+
+[KEYENCE_LASERMARKER.Dev.NT]
+CopyFiles=KEYENCE_LASERMARKER.Files.Ext
+
+[KEYENCE_LASERMARKER.Dev.NT.Services]
+Addservice = KEYENCE_LASERMARKER, 0x00000002, KEYENCE_LASERMARKER.AddService
+
+[KEYENCE_LASERMARKER.AddService]
+DisplayName    = %KEYENCE_LASERMARKER.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 3                  ; SERVICE_DEMAND_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %10%\System32\Drivers\KEYENCE_LASERMARKER.sys
+AddReg         = KEYENCE_LASERMARKER.AddReg
+LoadOrderGroup = Base
+
+[KEYENCE_LASERMARKER.AddReg]
+HKR,"Parameters","MaximumTransferSize",0x10001,65536
+HKR,"Parameters","DebugLevel",0x10001,2
+HKR, Parameters\Wdf, VerboseOn,       0x00010001, 1
+HKR, Parameters\Wdf, VerifierOn,      0x00010001, 1
+HKR, Parameters\Wdf, DbgBreakOnError, 0x00010001, 1
+
+[KEYENCE_LASERMARKER.Files.Ext]
+KEYENCE_LASERMARKER.sys
+
+[SourceDisksNames]
+1=%Disk_Description%,,,\x86
+2=%Disk_Description%,,,\amd64
+
+[SourceDisksFiles.x86]
+KEYENCE_LASERMARKER.sys = 1
+wdfcoinstaller01005.dll=1 ; make sure the number matches with SourceDisksNames
+
+[SourceDisksFiles.amd64]
+KEYENCE_LASERMARKER.sys = 2
+wdfcoinstaller01005.dll=2 ; make sure the number matches with SourceDisksNames
+
+;-------------- WDF Coinstaller installation
+[DestinationDirs]
+CoInstaller_CopyFiles = 11
+
+[KEYENCE_LASERMARKER.Dev.NT.CoInstallers]
+AddReg=CoInstaller_AddReg
+CopyFiles=CoInstaller_CopyFiles
+
+[CoInstaller_CopyFiles]
+wdfcoinstaller01005.dll
+
+[SourceDisksFiles]
+wdfcoinstaller01005.dll=1 ; make sure the number matches with SourceDisksNames
+
+[CoInstaller_AddReg]
+HKR,,CoInstallers32,0x00010000, "wdfcoinstaller01005.dll,WdfCoInstaller"
+
+[KEYENCE_LASERMARKER.Dev.NT.Wdf]
+KmdfService = KEYENCE_LASERMARKER, KEYENCE_LASERMARKER_wdfsect
+
+[KEYENCE_LASERMARKER_wdfsect]
+KmdfLibraryVersion = 1.5
+
+;---------------------------------------------------------------;
+
+[Strings]
+KeyenceMfg			= "KEYENCE"
+MfgName				= "KEYENCE"
+
+Disk_Description		= "KEYENCE USB Driver Installation Disk"
+KEYENCE_LASERMARKER.SvcDesc		= "KEYENCE_LASERMARKER.sys : WDF Driver for KEYENCE USB Device"
+ClassName			= "KEYENCE USB Device Class"
+
+USB\VID_0720&PID_5002.DeviceDesc="WDF USB for KEYENCE LASERMARKER Series"
+

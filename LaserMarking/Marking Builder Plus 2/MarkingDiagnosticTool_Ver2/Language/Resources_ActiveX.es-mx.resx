@@ -1,0 +1,3933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="__51000" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_ERROR_START</comment>
+  </data>
+  <data name="__53000" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_TERMINAL_START</comment>
+  </data>
+  <data name="__54000" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_SOFT_START</comment>
+  </data>
+  <data name="_0" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_APPLICATION_ERROR_START</comment>
+  </data>
+  <data name="_1" xml:space="preserve">
+    <value>Tahoma</value>
+    <comment>IDS_SYSTEMFONT_MS_GOTHIC</comment>
+  </data>
+  <data name="_10" xml:space="preserve">
+    <value>Ancho de  línea</value>
+    <comment>IDS_PROPNAME_WOBBLELINEWIDTH</comment>
+  </data>
+  <data name="_1000" xml:space="preserve">
+    <value>El archivo no existe.</value>
+    <comment>ERR_FILE_NOTFOUND</comment>
+  </data>
+  <data name="_1001" xml:space="preserve">
+    <value>No existen bloques válidos.</value>
+    <comment>ERR_BLOCK_NOTFOUND</comment>
+  </data>
+  <data name="_1002" xml:space="preserve">
+    <value>Existe un bloque.</value>
+    <comment>ERR_BLOCK_ALREADY_FOUND</comment>
+  </data>
+  <data name="_1003" xml:space="preserve">
+    <value>No se ha podido cargar el arch. de info. de parámetros del modelo.</value>
+    <comment>ERR_LOAD_DEVICEPARAMETER</comment>
+  </data>
+  <data name="_1005" xml:space="preserve">
+    <value>No se pueden agregar ajustes de sobreimpresión.</value>
+    <comment>ERR_NOTADD_OVERWRITINGSETTING</comment>
+  </data>
+  <data name="_1006" xml:space="preserve">
+    <value>Los ajustes de sobreimpresión no se pueden eliminar.</value>
+    <comment>ERR_NOTDELETE_OVERWRITINGSETTING</comment>
+  </data>
+  <data name="_1007" xml:space="preserve">
+    <value>No existen ajustes de sobreimpresión.</value>
+    <comment>ERR_BLOCKOVERWRITING_NOTFOUND</comment>
+  </data>
+  <data name="_1008" xml:space="preserve">
+    <value>Ingrese %s entre %d y %d.</value>
+    <comment>ERR_OUTOFRANGE_INTEGER</comment>
+  </data>
+  <data name="_1009" xml:space="preserve">
+    <value>Ingrese %s entre %.1lf y %.1lf.</value>
+    <comment>ERR_OUTOFRANGE_DOUBLE1</comment>
+  </data>
+  <data name="_1010" xml:space="preserve">
+    <value>Ingrese %s entre %.2lf y %.2lf.</value>
+    <comment>ERR_OUTOFRANGE_DOUBLE2</comment>
+  </data>
+  <data name="_10101" xml:space="preserve">
+    <value>Error de aplic. 1 Marking Builder Plus (%s)</value>
+    <comment>ERR_INVALIDKEY</comment>
+  </data>
+  <data name="_10102" xml:space="preserve">
+    <value>Error de aplic. 2 Marking Builder Plus (%s)</value>
+    <comment>ERR_KEY_NOTFOUND</comment>
+  </data>
+  <data name="_10103" xml:space="preserve">
+    <value>Error de aplic. 3 Marking Builder Plus</value>
+    <comment>ERR_PARAM_IS_SAME</comment>
+  </data>
+  <data name="_10104" xml:space="preserve">
+    <value>Error de aplic. 4 Marking Builder Plus</value>
+    <comment>ERR_FILE_SAVE_ERROR</comment>
+  </data>
+  <data name="_10105" xml:space="preserve">
+    <value>Error de aplic. 5 Marking Builder Plus</value>
+    <comment>ERR_UNSUPPORTED_DEVICEFOLDERTYPE</comment>
+  </data>
+  <data name="_10106" xml:space="preserve">
+    <value>Error de aplic. 6 Marking Builder Plus</value>
+    <comment>ERR_NOTFOUNDDRAWOPERATOR</comment>
+  </data>
+  <data name="_10107" xml:space="preserve">
+    <value>Error de aplic. 7 Marking Builder Plus</value>
+    <comment>ERR_NO_PARSECONTROLTEXT</comment>
+  </data>
+  <data name="_10108" xml:space="preserve">
+    <value>Error de aplic. 8 Marking Builder Plus</value>
+    <comment>ERR_INIT_DRAWMAP</comment>
+  </data>
+  <data name="_10109" xml:space="preserve">
+    <value>Error de aplic. 9 Marking Builder Plus</value>
+    <comment>ERR_SET_DRAWVALUE</comment>
+  </data>
+  <data name="_1011" xml:space="preserve">
+    <value>Ingrese %s entre %.3lf y %.3lf.</value>
+    <comment>ERR_OUTOFRANGE_DOUBLE3</comment>
+  </data>
+  <data name="_10110" xml:space="preserve">
+    <value>Error de aplic. 10 Marking Builder Plus</value>
+    <comment>ERR_INVALID_NODETYPE</comment>
+  </data>
+  <data name="_10111" xml:space="preserve">
+    <value>Error de aplic. 11 Marking Builder Plus</value>
+    <comment>ERR_NODE_ALREADY_FOUND</comment>
+  </data>
+  <data name="_10112" xml:space="preserve">
+    <value>Error de aplic. 12 Marking Builder Plus</value>
+    <comment>ERR_INVALID_ITEM</comment>
+  </data>
+  <data name="_10113" xml:space="preserve">
+    <value>Error de aplic. 13 Marking Builder Plus</value>
+    <comment>ERR_INVALID_OPERATION</comment>
+  </data>
+  <data name="_10114" xml:space="preserve">
+    <value>Error de aplic. 14 Marking Builder Plus</value>
+    <comment>ERR_INVALID_PARAMETER</comment>
+  </data>
+  <data name="_1012" xml:space="preserve">
+    <value>La cadena de carac. de bloq. está vacía.</value>
+    <comment>ERR_EMPTY_BLOCKTEXT</comment>
+  </data>
+  <data name="_1013" xml:space="preserve">
+    <value>No existen ajustes de forma válidos.</value>
+    <comment>ERR_SHAPE3D_NOTFOUND</comment>
+  </data>
+  <data name="_1014" xml:space="preserve">
+    <value>No existe núm. de ajuste de forma.</value>
+    <comment>ERR_EMPTYSHAPE3DNO_NOTFOUND</comment>
+  </data>
+  <data name="_1015" xml:space="preserve">
+    <value>No se ha cargado el archivo de programa.</value>
+    <comment>ERR_LOAD_MFPFILE</comment>
+  </data>
+  <data name="_1016" xml:space="preserve">
+    <value>No se puede agregar un bloque.</value>
+    <comment>ERR_NOTADD_BLOCK</comment>
+  </data>
+  <data name="_1017" xml:space="preserve">
+    <value>Estos caracteres no se pueden usar en nombres de archivo:
+#%\/:;,.*?"&lt;&gt;|(espacio)</value>
+    <comment>ERR_INVALID_FILESTRING</comment>
+  </data>
+  <data name="_1018" xml:space="preserve">
+    <value>El nombre del archivo es demasiado largo.
+Especifique un nombre de archivo de máximo %d caracteres.</value>
+    <comment>ERR_INVALID_FILELENGTH</comment>
+  </data>
+  <data name="_1019" xml:space="preserve">
+    <value>Ingr. %s con entre %d y %d caracteres.</value>
+    <comment>ERR_OUTOFRANGE_STRING</comment>
+  </data>
+  <data name="_1020" xml:space="preserve">
+    <value>Ya se ha establecido el mismo valor.</value>
+    <comment>ERR_ALREADY_EXISTS</comment>
+  </data>
+  <data name="_1021" xml:space="preserve">
+    <value>Ya no se puede registrar.</value>
+    <comment>ERR_COUNT_OVER</comment>
+  </data>
+  <data name="_1022" xml:space="preserve">
+    <value>No se ha podido importar el archivo.</value>
+    <comment>ERR_FILE_READ</comment>
+  </data>
+  <data name="_1023" xml:space="preserve">
+    <value>No se puede pegar el bloque porque no existe.</value>
+    <comment>ERR_PASTE_BLOCK_NOTFOUND</comment>
+  </data>
+  <data name="_1024" xml:space="preserve">
+    <value>No se puede pegar el grupo porque no existe.</value>
+    <comment>ERR_PASTE_GROUP_NOTFOUND</comment>
+  </data>
+  <data name="_1025" xml:space="preserve">
+    <value>Demasiados bloq. Operac. cancelada.</value>
+    <comment>ERR_PASTE_MAXBLOCK_OVER</comment>
+  </data>
+  <data name="_1026" xml:space="preserve">
+    <value>Demasiadas matrices. Operac. cancelada.</value>
+    <comment>ERR_PASTE_MAXMATRIX_OVER</comment>
+  </data>
+  <data name="_1027" xml:space="preserve">
+    <value>Demasiados grupos. Operac. cancelada.</value>
+    <comment>ERR_PASTE_MAXGROUP_OVER</comment>
+  </data>
+  <data name="_1028" xml:space="preserve">
+    <value>Ya existe una matriz.</value>
+    <comment>ERR_MATRIX_ALREADY_EXISTS</comment>
+  </data>
+  <data name="_1029" xml:space="preserve">
+    <value>No existen grupos válidos.</value>
+    <comment>ERR_GROUP_NOTFOUND</comment>
+  </data>
+  <data name="_1030" xml:space="preserve">
+    <value>No existe ninguna matriz válida.</value>
+    <comment>ERR_MATRIX_NOTFOUND</comment>
+  </data>
+  <data name="_1031" xml:space="preserve">
+    <value>Ya existe un grupo.</value>
+    <comment>ERR_GROUP_ALREADY_EXISTS</comment>
+  </data>
+  <data name="_1034" xml:space="preserve">
+    <value>No se puede agregar otro bloque o matriz cuando existe un bloque de punto fijo con un disparo.</value>
+    <comment>ERR_TRIGGER_ON_BLOCK_EXISTS</comment>
+  </data>
+  <data name="_1035" xml:space="preserve">
+    <value>No se puede agregar porque ya pertenece a un grupo.</value>
+    <comment>ERR_IS_BELONG_GROUP</comment>
+  </data>
+  <data name="_1036" xml:space="preserve">
+    <value>No se puede agregar un grupo.</value>
+    <comment>ERR_NOTADD_GROUP</comment>
+  </data>
+  <data name="_1037" xml:space="preserve">
+    <value>No se ha podido exportar el archivo.</value>
+    <comment>ERR_FILE_WRITE</comment>
+  </data>
+  <data name="_1038" xml:space="preserve">
+    <value>Tipo de datos bloq. no válido.</value>
+    <comment>ERR_INVALID_DATATYPE</comment>
+  </data>
+  <data name="_1039" xml:space="preserve">
+    <value>Verif. núm. de caracteres o caracteres disponibles, etc. que corresponden al estándar de código.</value>
+    <comment>ERR_NOT_ENCODABLE</comment>
+  </data>
+  <data name="_1040" xml:space="preserve">
+    <value>La cadena de caracteres debe tener máx. %d caracteres.</value>
+    <comment>ERR_TEXT_LENGTH_OVER</comment>
+  </data>
+  <data name="_1041" xml:space="preserve">
+    <value>Problema con el formato de la cadena de caracteres.</value>
+    <comment>ERR_ILLEGAL_TEXT</comment>
+  </data>
+  <data name="_1042" xml:space="preserve">
+    <value>Dest. conexión de cadena de caract. inválido.</value>
+    <comment>ERR_ILLEGAL_LINK_TARGET</comment>
+  </data>
+  <data name="_1043" xml:space="preserve">
+    <value>Formato arch. no válido.</value>
+    <comment>ERR_INVALID_FILE_FORMAT</comment>
+  </data>
+  <data name="_1044" xml:space="preserve">
+    <value>Ya existe un archivo logo/foto con el mismo nombre. ¿Sobrescribir?</value>
+    <comment>ERR_CONFIRM_OVERWRITE_LOGO</comment>
+  </data>
+  <data name="_1045" xml:space="preserve">
+    <value>Ya existe un archivo de fuente con el mismo nombre. ¿Sobrescribir?</value>
+    <comment>ERR_CONFIRM_OVERWRITE_FONT</comment>
+  </data>
+  <data name="_1046" xml:space="preserve">
+    <value>Ya existe un archivo Z-MAP con el mismo nombre. ¿Sobrescribir?</value>
+    <comment>ERR_CONFIRM_OVERWRITE_ZMAP</comment>
+  </data>
+  <data name="_1047" xml:space="preserve">
+    <value>Error en el bloque %03d. 
+
+%s</value>
+    <comment>ERR_ENCODE_BLOCK</comment>
+  </data>
+  <data name="_1048" xml:space="preserve">
+    <value>Error, fuera de rango</value>
+    <comment>ERR_OUTOFRANGE</comment>
+  </data>
+  <data name="_1049" xml:space="preserve">
+    <value>Formato de logotipo/foto no válido.</value>
+    <comment>ERR_INVALID_LOGOPHOTOTYPE</comment>
+  </data>
+  <data name="_1050" xml:space="preserve">
+    <value>Número de puerto duplicado.</value>
+    <comment>ERR_DUPLICATE_PORTNO</comment>
+  </data>
+  <data name="_1051" xml:space="preserve">
+    <value>El número de bloque mínimo se sustituye por el máximo.</value>
+    <comment>ERR_INVERT_BLOCKNO</comment>
+  </data>
+  <data name="_1053" xml:space="preserve">
+    <value>Se escribió el nombre del disp. en formato de dirección IP.</value>
+    <comment>ERR_NOTACCEPT_IPADDRESSFORMAT</comment>
+  </data>
+  <data name="_1054" xml:space="preserve">
+    <value>El arch. de inform. de parámetros del modelo no existe.</value>
+    <comment>ERR_NO_DEVICEPARAMETERFILE</comment>
+  </data>
+  <data name="_1056" xml:space="preserve">
+    <value>No hay información del modelo.</value>
+    <comment>ERR_NO_MACHINEINFO</comment>
+  </data>
+  <data name="_1057" xml:space="preserve">
+    <value>El valor del orden de marcado es incorrecto.</value>
+    <comment>ERR_INVALID_ORDERVALUES</comment>
+  </data>
+  <data name="_1058" xml:space="preserve">
+    <value>No se puede usar cuando la carpeta modelo no es la misma.</value>
+    <comment>ERR_NOSAME_DEVICEFOLDER</comment>
+  </data>
+  <data name="_1059" xml:space="preserve">
+    <value>Esta cadena de caracteres contiene caract. Unicode incompat.</value>
+    <comment>ERR_ILLEGAL_UNICODE_TEXT</comment>
+  </data>
+  <data name="_1060" xml:space="preserve">
+    <value>El plano XY no se puede compartir.</value>
+    <comment>ERR_CANNOTSHARE_SHAPE3DXY</comment>
+  </data>
+  <data name="_1061" xml:space="preserve">
+    <value>Solo se pueden especificar códigos 2D.</value>
+    <comment>ERR_2DCODEREADER_NOT_SUPPPORT_BLOCK</comment>
+  </data>
+  <data name="_1063" xml:space="preserve">
+    <value>Error de comunicación (conexión USB)</value>
+    <comment>ERR_CONNECT_USB</comment>
+  </data>
+  <data name="_1064" xml:space="preserve">
+    <value>Error, comunicación (%s)</value>
+    <comment>ERR_CONNECT_ETHERNET</comment>
+  </data>
+  <data name="_1065" xml:space="preserve">
+    <value>No se puede cambiar cuando está conectada.</value>
+    <comment>ERR_CANT_CHANGE_CONNECTING</comment>
+  </data>
+  <data name="_1066" xml:space="preserve">
+    <value>No está conectado.</value>
+    <comment>ERR_NOT_CONNECTING</comment>
+  </data>
+  <data name="_1067" xml:space="preserve">
+    <value>Error al abrir el archivo de transmisión</value>
+    <comment>ERR_COM_FILE_OPEN</comment>
+  </data>
+  <data name="_1068" xml:space="preserve">
+    <value>Error de rango, No. De programa</value>
+    <comment>ERR_COM_OUTOFRANGE_SETTING</comment>
+  </data>
+  <data name="_1069" xml:space="preserve">
+    <value>No se ha adquirido la lista de configuración.</value>
+    <comment>ERR_SETTINGLIST_GET_FAILED</comment>
+  </data>
+  <data name="_1070" xml:space="preserve">
+    <value>No se ha podido conectar con el puerto de com. de la cámara.</value>
+    <comment>ERR_CONNECT_CAMERA</comment>
+  </data>
+  <data name="_1071" xml:space="preserve">
+    <value>Error, n.º rango de bloq.</value>
+    <comment>ERR_COM_OUTOFRANGE_BLOCKNO</comment>
+  </data>
+  <data name="_1072" xml:space="preserve">
+    <value>El archivo de carácter personalizado no existe.</value>
+    <comment>ERR_EXFONT_FILE_NOTFOUND</comment>
+  </data>
+  <data name="_1073" xml:space="preserve">
+    <value>El arch. de logotipo/foto no existe.</value>
+    <comment>ERR_LOGO_FILE_NOTFOUND</comment>
+  </data>
+  <data name="_1074" xml:space="preserve">
+    <value>Este nombre contiene caracteres Unicode no compatibles.</value>
+    <comment>ERR_ILLEGAL_UNICODE_FILESTRING</comment>
+  </data>
+  <data name="_1075" xml:space="preserve">
+    <value>Versión de archivo no soportada.</value>
+    <comment>ERR_FILE_NOT_SUPORT_VERSION</comment>
+  </data>
+  <data name="_1076" xml:space="preserve">
+    <value>Tipo de archivo no soportada.</value>
+    <comment>ERR_FILE_NOT_SUPORT_TYPE</comment>
+  </data>
+  <data name="_1077" xml:space="preserve">
+    <value>Se ha producido un error de formato.</value>
+    <comment>ERR_FILE_FORMAT_ERROR</comment>
+  </data>
+  <data name="_1078" xml:space="preserve">
+    <value>No se ha podido eliminar la carpeta.</value>
+    <comment>ERR_DELETEFOLDER</comment>
+  </data>
+  <data name="_1079" xml:space="preserve">
+    <value>No se pudo extraer el nombre del archivo de la ruta.</value>
+    <comment>ERR_GETFILENAMEFROMPATH</comment>
+  </data>
+  <data name="_1080" xml:space="preserve">
+    <value>Ingrese un valor para %s de %d, %d a %d.</value>
+  </data>
+  <data name="_1081" xml:space="preserve">
+    <value>No se ha podido adquirir la configuración de la fuente.</value>
+    <comment>ERR_GETFONTCONFIG</comment>
+  </data>
+  <data name="_1087" xml:space="preserve">
+    <value>No existen nodos válidos.</value>
+    <comment>ERR_NODE_NOTFOUND</comment>
+  </data>
+  <data name="_1088" xml:space="preserve">
+    <value>El número de configuraciones de formas ha superado el límite máximo.</value>
+    <comment>ERR_SHAPE3DSIZE_OVER</comment>
+  </data>
+  <data name="_1089" xml:space="preserve">
+    <value>Ya existe este núm. de configuración de forma.</value>
+    <comment>ERR_EXIST_SHAPE3DNO</comment>
+  </data>
+  <data name="_1090" xml:space="preserve">
+    <value>T. forma no válido.</value>
+    <comment>ERR_INVALID_SHAPE3DTYPE</comment>
+  </data>
+  <data name="_1091" xml:space="preserve">
+    <value>N.º matriz incorrecto.</value>
+    <comment>ERR_INVALID_MATRIXNO</comment>
+  </data>
+  <data name="_1092" xml:space="preserve">
+    <value>Núm. grupo incorrecto.</value>
+    <comment>ERR_INVALID_GROUPNO</comment>
+  </data>
+  <data name="_1094" xml:space="preserve">
+    <value>No se ha podido crear carpeta de modelos.</value>
+    <comment>ERR_MAKE_DEVICEFOLDER</comment>
+  </data>
+  <data name="_1099" xml:space="preserve">
+    <value>La información del parámetro del modelo no puede encontrarse.</value>
+    <comment>ERR_DEVICEPARAM_NOTFOUND</comment>
+  </data>
+  <data name="_11" xml:space="preserve">
+    <value>Ancho compl.</value>
+    <comment>IDS_PROPNAME_FULLWIDTH</comment>
+  </data>
+  <data name="_1100" xml:space="preserve">
+    <value>Inf. tipo no válida.</value>
+    <comment>ERR_INVALID_PARAMTYPE</comment>
+  </data>
+  <data name="_1101" xml:space="preserve">
+    <value>T. bloque no válido.</value>
+    <comment>ERR_INVALID_BLOCKTYPE</comment>
+  </data>
+  <data name="_1102" xml:space="preserve">
+    <value>El tamaño del archivo ha superado el límite máximo.</value>
+    <comment>ERR_OVER_WRITESIZE</comment>
+  </data>
+  <data name="_1104" xml:space="preserve">
+    <value>T. img. no válido.</value>
+    <comment>ERR_INVALID_IMAGETYPE</comment>
+  </data>
+  <data name="_1105" xml:space="preserve">
+    <value>Solo se pueden establecer matrices de datos.</value>
+    <comment>ERR_NOT_DATAMATRIX</comment>
+  </data>
+  <data name="_1106" xml:space="preserve">
+    <value>Los ajustes de sobreimpresión no se pueden usar.</value>
+    <comment>ERR_NOTUSE_BLOCKOVERWRITING</comment>
+  </data>
+  <data name="_1107" xml:space="preserve">
+    <value>El n.º del contador está fuera de rango.</value>
+    <comment>ERR_COUNTERNO_OUTOFRANGE</comment>
+  </data>
+  <data name="_1108" xml:space="preserve">
+    <value>No se puede obtener la información del contador.</value>
+    <comment>ERR_GET_COUNTER</comment>
+  </data>
+  <data name="_1109" xml:space="preserve">
+    <value>Los únicos códigos que puede ver son códigos QR.</value>
+    <comment>ERR_NOT_QRCODE</comment>
+  </data>
+  <data name="_1110" xml:space="preserve">
+    <value>No se puede establecer con bloque de puntos fijos con disparo activo.</value>
+    <comment>ERR_CANNOTSET_TRIGGERONPOINTBLOCK</comment>
+  </data>
+  <data name="_1111" xml:space="preserve">
+    <value>Ingrese una contraseña QR de 6 dígitos.</value>
+    <comment>ERR_DEGIT_QRPASSWORD</comment>
+  </data>
+  <data name="_1112" xml:space="preserve">
+    <value>Se ha usado un carácter prohibido.</value>
+    <comment>ERR_INVALIDCHARCTER</comment>
+  </data>
+  <data name="_1113" xml:space="preserve">
+    <value>Solo lectura</value>
+    <comment>ERR_ISREADONLY</comment>
+  </data>
+  <data name="_1115" xml:space="preserve">
+    <value>T. arch. no válido.</value>
+    <comment>ERR_INVALID_FILETYPE</comment>
+  </data>
+  <data name="_1117" xml:space="preserve">
+    <value>No se ha adquirido el tipo de bloque.</value>
+    <comment>ERR_GET_BLOCKTYPE</comment>
+  </data>
+  <data name="_1118" xml:space="preserve">
+    <value>Los parámetros no tienen información de rango.</value>
+    <comment>ERR_NORANGE</comment>
+  </data>
+  <data name="_1119" xml:space="preserve">
+    <value>Los parámetros no tienen valores predeterm.</value>
+    <comment>ERR_NODEFAULT</comment>
+  </data>
+  <data name="_1120" xml:space="preserve">
+    <value>Este no es el modo multimatriz.</value>
+    <comment>ERR_NOMULTIMATRIX</comment>
+  </data>
+  <data name="_1121" xml:space="preserve">
+    <value>El formato de la dirección IP es incorrecto.</value>
+    <comment>ERR_FORMAT_IPADDRESS</comment>
+  </data>
+  <data name="_1122" xml:space="preserve">
+    <value>Un carácter prohibido se ha usado en la dirección IP.</value>
+    <comment>ERR_INVALIDCHAR_IPADDRESS</comment>
+  </data>
+  <data name="_1123" xml:space="preserve">
+    <value>El nombre ingresado es inválido.</value>
+    <comment>ERR_DXF_INPUTFILENAME_INVALID</comment>
+  </data>
+  <data name="_1124" xml:space="preserve">
+    <value>Nombre arch. salida incorrecto.</value>
+    <comment>ERR_DXF_OUTPUTFILENAME_INVALID</comment>
+  </data>
+  <data name="_1125" xml:space="preserve">
+    <value>No existe carpeta de salida.</value>
+    <comment>ERR_DXF_OUTPUTFOLDERNOTFOUND</comment>
+  </data>
+  <data name="_1126" xml:space="preserve">
+    <value>No existe carpeta de entrada.</value>
+    <comment>ERR_DXF_INPUTFILENOTFOUND</comment>
+  </data>
+  <data name="_1127" xml:space="preserve">
+    <value>Se está usando el mismo nomb. de arch. para el de entr. y el de sal.</value>
+    <comment>ERR_DXF_SAMEFILE</comment>
+  </data>
+  <data name="_1128" xml:space="preserve">
+    <value>Importación del archivo DXF interrumpida.</value>
+    <comment>ERR_DXF_CONVERT</comment>
+  </data>
+  <data name="_1129" xml:space="preserve">
+    <value>Se han indicado los parámetros que no se pueden usar con la conversión DFX.</value>
+    <comment>ERR_DXF_DISABLED_PARAMETER</comment>
+  </data>
+  <data name="_1130" xml:space="preserve">
+    <value>El nombre del archivo debe tener como máximo 26 caracteres.</value>
+    <comment>ERR_DXF_FILENAMELENGTH</comment>
+  </data>
+  <data name="_1131" xml:space="preserve">
+    <value>No está conectado. No se puede usar la supervisión de las operaciones.</value>
+    <comment>ERR_MONITOR_OFFLINE</comment>
+  </data>
+  <data name="_1132" xml:space="preserve">
+    <value>No está en modo de operación. No se puede iniciar el modo de mantenimiento.</value>
+    <comment>ERR_CANNOT_START_MAINTENANCE</comment>
+  </data>
+  <data name="_1133" xml:space="preserve">
+    <value>No está en modo mantenimiento. No se puede finalizar el manten.</value>
+    <comment>ERR_CANNOT_FINISH_MAINTENANCE</comment>
+  </data>
+  <data name="_1134" xml:space="preserve">
+    <value>No está en modo mantenimiento. No se puede ejecutar.</value>
+    <comment>ERR_CANNOT_USE_MAINTENANCE</comment>
+  </data>
+  <data name="_1135" xml:space="preserve">
+    <value>El historial de comunic. no se puede cargar.</value>
+    <comment>ERR_CANNOT_LOAD_COMMHISTORYLOG</comment>
+  </data>
+  <data name="_1136" xml:space="preserve">
+    <value>No está en modo de operación. No se puede iniciar la simul. del bloque de term.</value>
+    <comment>ERR_CANNOT_START_TERMINAL_SIMULATE</comment>
+  </data>
+  <data name="_1137" xml:space="preserve">
+    <value>No está en simul. del bloque de term. No se puede finalizar la simul. del bloque de term.</value>
+    <comment>ERR_CANNOT_FINISH_TERMINAL_SIMULATE</comment>
+  </data>
+  <data name="_1138" xml:space="preserve">
+    <value>No está en simul. del bloque de term. No se puede ejecutar.</value>
+    <comment>ERR_CANNOT_USE_TERMINAL_SIMULATE</comment>
+  </data>
+  <data name="_1139" xml:space="preserve">
+    <value>No se puede realizar la simulación porque el interruptor de llave está en  [LASER ON].</value>
+    <comment>ERR_CANNOT_USE_TERMINAL_SIMULATE_LASER_ON</comment>
+  </data>
+  <data name="_1140" xml:space="preserve">
+    <value>No se han podido actualizar los datos comunes.</value>
+    <comment>ERR_NOT_UPDATED_PRINT_COMMON</comment>
+  </data>
+  <data name="_1141" xml:space="preserve">
+    <value>Los parámetros modelo para el modelo conectado no son válidos.</value>
+    <comment>ERR_INVALID_CONNECTED_DEVICEPARAMETER</comment>
+  </data>
+  <data name="_1142" xml:space="preserve">
+    <value>%s[%s]
+
+La función de cámara no se puede utilizar en este modelo.</value>
+    <comment>ERR_CANNOT_USE_LOWCOST_CAMERA</comment>
+  </data>
+  <data name="_1143" xml:space="preserve">
+    <value>%s[%s]
+
+La función de alimentación del monitor no se puede utilizar en este modelo.</value>
+    <comment>ERR_CANNOT_USE_LOWCOST_POWERMONITOR</comment>
+  </data>
+  <data name="_1144" xml:space="preserve">
+    <value>La función de cámara no se puede usar.</value>
+    <comment>ERR_DEVICE_CANNOT_USE_CAMERA</comment>
+  </data>
+  <data name="_1145" xml:space="preserve">
+    <value>La función de alimentación del monitor no se puede usar.</value>
+    <comment>ERR_DEVICE_CANNOT_USE_POWERMONITOR</comment>
+  </data>
+  <data name="_1146" xml:space="preserve">
+    <value>La función PROFINET no se puede usar.</value>
+    <comment>ERR_DEVICE_CANNOT_USE_PROFINET</comment>
+  </data>
+  <data name="_1147" xml:space="preserve">
+    <value>La función 2D no se puede usar.</value>
+    <comment>ERR_DEVICE_CANNOT_USE_2D</comment>
+  </data>
+  <data name="_1148" xml:space="preserve">
+    <value>La función de contactor no se puede usar.</value>
+    <comment>ERR_DEVICE_CANNOT_USE_CONTACTOR</comment>
+  </data>
+  <data name="_1149" xml:space="preserve">
+    <value>El modelo usado para editar la configuración actual y el modelo conectado son diferentes. 
+%s
+
+Edición de la configuración del modelo = %s
+Modelo conectado = %s</value>
+    <comment>ERR_DEVICE_DIFFERENCE</comment>
+  </data>
+  <data name="_1150" xml:space="preserve">
+    <value>Ingrese energía láser al 100 % &gt; 60 % &gt; 20 % &gt; 0 %.</value>
+    <comment>ERR_MAINTENANCE_LASEPOWER_UNCONFORMITY</comment>
+  </data>
+  <data name="_1151" xml:space="preserve">
+    <value>No hay acceso al directorio "%s".</value>
+    <comment>ERR_INVALID_DIR_PATH</comment>
+  </data>
+  <data name="_1152" xml:space="preserve">
+    <value>Si una imagen reflejada está ACTIVADA, solo se puede establecer la conf. de la forma del plano XY.</value>
+    <comment>ERR_SHAPE3D_MIRRORDIRECTIONREVERSE</comment>
+  </data>
+  <data name="_1153" xml:space="preserve">
+    <value>El tamaño total del archivo supera el espacio en disco disponible. No se puede transferir.</value>
+    <comment>ERR_NOT_ENOUGH_CONTROLLER_MEMORY</comment>
+  </data>
+  <data name="_1154" xml:space="preserve">
+    <value>No se ha convertido el archivo de logo Hatch.</value>
+    <comment>ERR_HATCH_CONVERT</comment>
+  </data>
+  <data name="_1155" xml:space="preserve">
+    <value>Error al convertir el arch. de logo.</value>
+    <comment>ERR_LOGO_CONVERT</comment>
+  </data>
+  <data name="_1156" xml:space="preserve">
+    <value>Los logotipos convertidos a partir de la fuente TrueType no se pueden guardar como carácter personalizado.</value>
+    <comment>ERR_LOGO_CONVERT_TTF</comment>
+  </data>
+  <data name="_1157" xml:space="preserve">
+    <value>Los logos convertidos a ondulado o lineal no se pueden guardar como caracteres personalizados. </value>
+    <comment>ERR_LOGO_CONVERT_WOBBLE</comment>
+  </data>
+  <data name="_1158" xml:space="preserve">
+    <value>Estos caracteres no se pueden usar en nombres de archivo:
+#%\/:;,.*?"&lt;&gt;|(espacio)</value>
+    <comment>ERR_INVALID_LOGO_FILESTRING</comment>
+  </data>
+  <data name="_1159" xml:space="preserve">
+    <value>Estos caracteres no se pueden usar en nombres de archivo:
+\/:*?"&lt;&gt;|</value>
+    <comment>ERR_INVALID_WINDOWS_FILESTRING</comment>
+  </data>
+  <data name="_1160" xml:space="preserve">
+    <value>La vista 3D no se puede usar con una conexión de escritorio remoto.</value>
+    <comment>ERR_CANNOT_USE_3DPREVIEW_REMOTE</comment>
+  </data>
+  <data name="_1161" xml:space="preserve">
+    <value>No se ha podido convertir el arch. de prog.</value>
+    <comment>ERR_CONVERT_MFP</comment>
+  </data>
+  <data name="_1162" xml:space="preserve">
+    <value>No se ha encontrado la carpeta.</value>
+    <comment>ERR_NOT_FOUND_FOLDER</comment>
+  </data>
+  <data name="_1163" xml:space="preserve">
+    <value>Carpeta especificada incorrecta.</value>
+    <comment>ERR_INVALID_FOLDER</comment>
+  </data>
+  <data name="_1164" xml:space="preserve">
+    <value>El marcado continuo no se puede configurar si hay una matriz.</value>
+    <comment>ERR_EANBLE_CONTINUOUS_MARKING_EXIST_MATRIX</comment>
+  </data>
+  <data name="_1165" xml:space="preserve">
+    <value>El marcado continuo no se puede configurar si hay un grupo.</value>
+    <comment>ERR_EANBLE_CONTINUOUS_MARKING_EXIST_GROUP</comment>
+  </data>
+  <data name="_1166" xml:space="preserve">
+    <value>No se puede agregar una matriz si se ha establecido marcado continuo.</value>
+    <comment>ERR_ADD_MATRIX_CONTINUOUS_MARKING_ON</comment>
+  </data>
+  <data name="_1167" xml:space="preserve">
+    <value>No se puede realizar una agrup. si se ha establ. marcado continuo.</value>
+    <comment>ERR_ADD_GROUP_CONTINUOUS_MARKING_ON</comment>
+  </data>
+  <data name="_1168" xml:space="preserve">
+    <value>La matriz no se puede agregar durante un marcado sobre la marcha.</value>
+    <comment>ERR_ADD_MATRIX_XY_NOTSTOP</comment>
+  </data>
+  <data name="_1169" xml:space="preserve">
+    <value>El grupo no se puede agregar durante un marcado sobre la marcha.</value>
+    <comment>ERR_ADD_GROUP_XY_NOTSTOP</comment>
+  </data>
+  <data name="_1170" xml:space="preserve">
+    <value>No se puede realizar una agrupación de bloques de puntos fijos con el disparo activado.</value>
+    <comment>ERR_ADD_GROUP_TRIGGERONBLOCK_EXISTS</comment>
+  </data>
+  <data name="_1171" xml:space="preserve">
+    <value>El bloque de puntos fijos con disparo activo no se puede agregar en las siguientes condiciones. 
+・Cuando ya existe otro bloque o matriz.
+・Cuando el marcado continuo está activo.
+・Cuando se realiza el marcado sobre la marcha.</value>
+    <comment>ERR_ADD_TRIGGER_ON_BLOCK</comment>
+  </data>
+  <data name="_1172" xml:space="preserve">
+    <value>Error al convertir el archivo de fuente de sistema.</value>
+    <comment>ERR_CONVERT_FSY</comment>
+  </data>
+  <data name="_1173" xml:space="preserve">
+    <value>La conversión no se puede realizar al %s.</value>
+    <comment>ERR_CONVERT_ABORT</comment>
+  </data>
+  <data name="_1174" xml:space="preserve">
+    <value>Config. recorte</value>
+    <comment>ERR_CONVERT_ABORT_TRIMMING</comment>
+  </data>
+  <data name="_1175" xml:space="preserve">
+    <value>Constan.</value>
+    <comment>ERR_CONVERT_ABORT_MOVETYPE_UNIFORM_VEROCITY</comment>
+  </data>
+  <data name="_1176" xml:space="preserve">
+    <value>Codificador</value>
+    <comment>ERR_CONVERT_ABORT_MOVETYPE_ENCORDER</comment>
+  </data>
+  <data name="_1177" xml:space="preserve">
+    <value>Result. de conversión</value>
+    <comment>ERR_CONVERT_LOG_RESULT</comment>
+  </data>
+  <data name="_1178" xml:space="preserve">
+    <value>Exitoso</value>
+    <comment>ERR_CONVERT_LOG_RESULT_SUCCESS</comment>
+  </data>
+  <data name="_1179" xml:space="preserve">
+    <value>Error</value>
+    <comment>ERR_CONVERT_LOG_RESULT_FAILURE</comment>
+  </data>
+  <data name="_1180" xml:space="preserve">
+    <value>Advertencia (confirme cont. de conv.)</value>
+    <comment>ERR_CONVERT_LOG_RESULT_WARNING</comment>
+  </data>
+  <data name="_1181" xml:space="preserve">
+    <value>Hora</value>
+    <comment>ERR_CONVERT_LOG_DATETIME</comment>
+  </data>
+  <data name="_1182" xml:space="preserve">
+    <value>%04d/%02d/%02d %02d:%02d:%02d</value>
+    <comment>ERR_CONVERT_LOG_DATETIME_FORMAT</comment>
+  </data>
+  <data name="_1183" xml:space="preserve">
+    <value>Versión Marking Builder Plus</value>
+    <comment>ERR_CONVERT_LOG_MB3_VERSION</comment>
+  </data>
+  <data name="_1184" xml:space="preserve">
+    <value>Ver. %s</value>
+    <comment>ERR_CONVERT_LOG_MB3_VERSION_FORMAT</comment>
+  </data>
+  <data name="_1185" xml:space="preserve">
+    <value>Arch. entr.</value>
+    <comment>ERR_CONVERT_LOG_INPUT_FILE</comment>
+  </data>
+  <data name="_1186" xml:space="preserve">
+    <value>Carpeta de entrada</value>
+    <comment>ERR_CONVERT_LOG_INPUT_FOLDER</comment>
+  </data>
+  <data name="_1187" xml:space="preserve">
+    <value>Versión archivo entr.</value>
+    <comment>ERR_CONVERT_LOG_INPUT_FILE_VERSION</comment>
+  </data>
+  <data name="_1188" xml:space="preserve">
+    <value>Versión</value>
+    <comment>ERR_CONVERT_LOG_INPUT_FOLDRE_VERSION</comment>
+  </data>
+  <data name="_1189" xml:space="preserve">
+    <value>Ver. %d.%02d</value>
+    <comment>ERR_CONVERT_LOG_MFP_VERSION_FORMAT</comment>
+  </data>
+  <data name="_1190" xml:space="preserve">
+    <value>Modelo de fuente de entrada</value>
+    <comment>ERR_CONVERT_LOG_INPUT_MACHINE</comment>
+  </data>
+  <data name="_1191" xml:space="preserve">
+    <value>Archivo de salida.</value>
+    <comment>ERR_CONVERT_LOG_OUTPUT_FILE</comment>
+  </data>
+  <data name="_1192" xml:space="preserve">
+    <value>Versión archivo salida</value>
+    <comment>ERR_CONVERT_LOG_OUTPUT_VERSION</comment>
+  </data>
+  <data name="_1193" xml:space="preserve">
+    <value>Modelo de destino de salida</value>
+    <comment>ERR_CONVERT_LOG_OUTPUT_MACHINE</comment>
+  </data>
+  <data name="_1194" xml:space="preserve">
+    <value>Título</value>
+    <comment>ERR_CONVERT_LOG_TITLE</comment>
+  </data>
+  <data name="_1195" xml:space="preserve">
+    <value>N.º bloq. </value>
+    <comment>ERR_CONVERT_LOG_BLOCKNO</comment>
+  </data>
+  <data name="_1196" xml:space="preserve">
+    <value>Núm. grupo</value>
+    <comment>ERR_CONVERT_LOG_GROUPNO</comment>
+  </data>
+  <data name="_1197" xml:space="preserve">
+    <value>Matriz</value>
+    <comment>ERR_CONVERT_LOG_MATRIX</comment>
+  </data>
+  <data name="_1198" xml:space="preserve">
+    <value>Marc. sobre la marcha XY</value>
+    <comment>ERR_CONVERT_LOG_SETTING_MOVETYPE</comment>
+  </data>
+  <data name="_1199" xml:space="preserve">
+    <value>Corregir dirección de altura</value>
+    <comment>ERR_CONVERT_LOG_SETTING_ZMOVETYPE</comment>
+  </data>
+  <data name="_12" xml:space="preserve">
+    <value>Alt. total</value>
+    <comment>IDS_PROPNAME_FULLHEIGHT</comment>
+  </data>
+  <data name="_1200" xml:space="preserve">
+    <value>Cambia el mét. de correc. de direc. de altura al sensor de desplaz. externo.</value>
+    <comment>ERR_CONVERT_LOG_SETTING_ZMOVETYPE_ANALOG</comment>
+  </data>
+  <data name="_1201" xml:space="preserve">
+    <value>Cambia el mét. de correc. de direc. de altura al valor fijo.</value>
+    <comment>ERR_CONVERT_LOG_SETTING_ZMOVETYPE_SELECT</comment>
+  </data>
+  <data name="_1203" xml:space="preserve">
+    <value>Se ignorará porque no existe.</value>
+    <comment>ERR_CONVERT_LOG_IGNORE</comment>
+  </data>
+  <data name="_1204" xml:space="preserve">
+    <value>Minim. zona quieta.</value>
+    <comment>ERR_CONVERT_LOG_SETTING_QUIETZONE_MINIMIZE</comment>
+  </data>
+  <data name="_1205" xml:space="preserve">
+    <value>Se minimizará.</value>
+    <comment>ERR_CONVERT_LOG_TO_MIN</comment>
+  </data>
+  <data name="_1206" xml:space="preserve">
+    <value>Expansión de alta velocidad de logo Hatch</value>
+    <comment>ERR_CONVERT_LOG_SETTING_LOGOHATCH_EXPFAST</comment>
+  </data>
+  <data name="_1207" xml:space="preserve">
+    <value>Se habilitará.</value>
+    <comment>ERR_CONVERT_LOG_TO_ENABLE</comment>
+  </data>
+  <data name="_1208" xml:space="preserve">
+    <value>Codific. más corta CODE128</value>
+    <comment>ERR_CONVERT_LOG_SETTING_CODE128_ENCODE</comment>
+  </data>
+  <data name="_1209" xml:space="preserve">
+    <value>Elemento de arco de logo Hatch</value>
+    <comment>ERR_CONVERT_LOG_SETTING_HATCHLOGO_ARC_ELEMENT</comment>
+  </data>
+  <data name="_1210" xml:space="preserve">
+    <value>Se establecerá en HD.</value>
+    <comment>ERR_CONVERT_LOG_SETTING_HATCHLOGO_ARC_ELEMENT_NORMAL</comment>
+  </data>
+  <data name="_1211" xml:space="preserve">
+    <value>Especificar orden de marcado</value>
+    <comment>ERR_CONVERT_LOG_SETTING_PRINTORDER</comment>
+  </data>
+  <data name="_1212" xml:space="preserve">
+    <value>Se automatizará.</value>
+    <comment>ERR_CONVERT_LOG_SETTING_PRINTORDER_SPECIFIED_AND_CHAR</comment>
+  </data>
+  <data name="_1214" xml:space="preserve">
+    <value>Se definirá como carpeta predet.</value>
+    <comment>ERR_CONVERT_LOG_INITIALIZE</comment>
+  </data>
+  <data name="_1219" xml:space="preserve">
+    <value>Cancelar</value>
+    <comment>ERR_CONVERT_LOG_RESULT_ABORT</comment>
+  </data>
+  <data name="_1225" xml:space="preserve">
+    <value>Bloq. link</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_LINKBLOCK</comment>
+  </data>
+  <data name="_1226" xml:space="preserve">
+    <value>Se borrará bloq. de conex.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_LINKBLOCK_CENCEL</comment>
+  </data>
+  <data name="_1227" xml:space="preserve">
+    <value>Bloque de procesam. </value>
+    <comment>ERR_CONVERT_LOG_BLOCK_PRIMITIVE</comment>
+  </data>
+  <data name="_1228" xml:space="preserve">
+    <value>Bloq. punt.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_DOT</comment>
+  </data>
+  <data name="_1229" xml:space="preserve">
+    <value>Se eliminará el bloque.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_DELETE</comment>
+  </data>
+  <data name="_1236" xml:space="preserve">
+    <value>Contras. QR</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_QRPASSWORD</comment>
+  </data>
+  <data name="_1246" xml:space="preserve">
+    <value>Puntero de distancia</value>
+    <comment>ERR_CONVERT_LOG_SETTING_DISTANCEPOINTER</comment>
+  </data>
+  <data name="_1247" xml:space="preserve">
+    <value>El láser se emitirá en la posición Z＝0,0 mm.</value>
+    <comment>ERR_CONVERT_LOG_SETTING_DISTANCEPOINTER_FIXED</comment>
+  </data>
+  <data name="_1248" xml:space="preserve">
+    <value>No existen bloques válidos. No se ha podido realizar la convers. de datos.</value>
+    <comment>ERR_CONVERT_ABORT_NO_BLOCKS</comment>
+  </data>
+  <data name="_1249" xml:space="preserve">
+    <value>Controlador</value>
+    <comment>ERR_CONVERT_LOG_EQUIPMENT</comment>
+  </data>
+  <data name="_1250" xml:space="preserve">
+    <value>Datos comunes</value>
+    <comment>ERR_CONVERT_LOG_PRINTCOMMON</comment>
+  </data>
+  <data name="_1251" xml:space="preserve">
+    <value>Giro de línea base</value>
+    <comment>ERR_CONVERT_LOG_PRINTCOMMON_INDENT</comment>
+  </data>
+  <data name="_1252" xml:space="preserve">
+    <value>Fijado en 30 %</value>
+    <comment>ERR_CONVERT_LOG_PRINTCOMMON_INDENT_FIXED</comment>
+  </data>
+  <data name="_1253" xml:space="preserve">
+    <value>Info. de configuración</value>
+    <comment>ERR_CONVERT_LOG_SETTING_NO</comment>
+  </data>
+  <data name="_1254" xml:space="preserve">
+    <value>Ya se está ejecutando.</value>
+    <comment>ERR_ALREADY_ASYNC_EXEC</comment>
+  </data>
+  <data name="_1255" xml:space="preserve">
+    <value>El marcado continuo no se puede establecer si existe un bloque de punto fijo con disparo en el proyecto.</value>
+    <comment>ERR_EANBLE_CONTINUOUS_MARKING_EXIST_TRIGGERONBLOCK</comment>
+  </data>
+  <data name="_1257" xml:space="preserve">
+    <value>El arch. cop. seg. está dañado.</value>
+    <comment>ERR_BACKUP_BROKEN</comment>
+  </data>
+  <data name="_1258" xml:space="preserve">
+    <value>El archivo de información de respaldo no puede encontrarse.</value>
+    <comment>ERR_NOTFOUND_BACKUPINFO</comment>
+  </data>
+  <data name="_1259" xml:space="preserve">
+    <value>No se ha podido restaurar.</value>
+    <comment>ERR_RESTORE_FAIL</comment>
+  </data>
+  <data name="_1260" xml:space="preserve">
+    <value>No se pudo realizar copia de seg. porque no había sufic. espacio libre en disco duro.</value>
+    <comment>ERR_BACKUP_NOTENOUGH_DISK_SPACE</comment>
+  </data>
+  <data name="_1261" xml:space="preserve">
+    <value>Copia seg. cancelada.</value>
+    <comment>ERR_BACKUP_CANCEL</comment>
+  </data>
+  <data name="_1262" xml:space="preserve">
+    <value>Especifique un nombre de archivo para usar con Marking Builder Plus.</value>
+    <comment>ERR_SAVE_MX1FILE</comment>
+  </data>
+  <data name="_1263" xml:space="preserve">
+    <value>Borre el bloq. link y unifique el bloqueo de sobreimpr.</value>
+  </data>
+  <data name="_1285" xml:space="preserve">
+    <value>No se pudo convertir el archivo Z-MAP.</value>
+    <comment>ERR_CONVERT_ZMP_FAILED</comment>
+  </data>
+  <data name="_1286" xml:space="preserve">
+    <value>No se ha podido cargar el archivo de imagen porque el número de puntos verticales/horizontales es menor que 10 o mayor que 3464.</value>
+    <comment>ERR_IMAGEZIE</comment>
+  </data>
+  <data name="_1287" xml:space="preserve">
+    <value>Formato de documento no válido o no compatible.</value>
+    <comment>ERR_LOAD_IMAGEFILE</comment>
+  </data>
+  <data name="_1288" xml:space="preserve">
+    <value>Error desconocido</value>
+    <comment>ERR_DEVICE_ERROR_NOT_FOUND</comment>
+  </data>
+  <data name="_1289" xml:space="preserve">
+    <value>Error conversión de archivo logo Hatch (%d)</value>
+    <comment>ERR_HATCHCONVERT_FORMAT</comment>
+  </data>
+  <data name="_1290" xml:space="preserve">
+    <value>Se ha superado el tamaño máximo posible para la previsualización de relleno. 
+Reduzca la altura o el ancho, o aumente los intervalos de línea de relleno y vuélvalo a intentar.  (%d)</value>
+    <comment>ERR_HATCHCONVERT_PREVIEWSIZE</comment>
+  </data>
+  <data name="_1291" xml:space="preserve">
+    <value>Se ha superado la restricción de tamaño para poder guardar el logo Hatch.
+Reduzca la altura o el ancho, o aumente los intervalos de línea de relleno. (%d)</value>
+  </data>
+  <data name="_1292" xml:space="preserve">
+    <value>La transición al marcado ha sido cancelada.</value>
+    <comment>ERR_TEST_PRINT_MODE_CANCEL</comment>
+  </data>
+  <data name="_1293" xml:space="preserve">
+    <value>Transferencia de archivos cancelada</value>
+    <comment>ERR_SEND_CONTROLLER_PROGRAM_CANCEL</comment>
+  </data>
+  <data name="_1294" xml:space="preserve">
+    <value>Conversión cancelada.</value>
+    <comment>ERR_IMAGE_CONVERT_CANCEL</comment>
+  </data>
+  <data name="_1295" xml:space="preserve">
+    <value>Previsualización cancelada.</value>
+    <comment>ERR_HATCH_PREVIEW_CANCEL</comment>
+  </data>
+  <data name="_1296" xml:space="preserve">
+    <value>Conversión cancelada.</value>
+    <comment>ERR_MB2_BACKUP_CONVERT_CANCEL</comment>
+  </data>
+  <data name="_1297" xml:space="preserve">
+    <value>Solo se habilita en el modo de edición.</value>
+    <comment>ERR_MBACTX_ERROR_MONITOR</comment>
+  </data>
+  <data name="_1298" xml:space="preserve">
+    <value>Error, sin soporte</value>
+    <comment>ERR_MBACTX_ERROR_NOTSUPPORT</comment>
+  </data>
+  <data name="_1299" xml:space="preserve">
+    <value>La cantidad de filas o columnas se encuentra fuera del rango.</value>
+    <comment>ERR_MBACTX_ERROR_ROW_COULMN_RANGE_ERROR</comment>
+  </data>
+  <data name="_13" xml:space="preserve">
+    <value>Espacio</value>
+    <comment>IDS_PROPNAME_CHARSPACE</comment>
+  </data>
+  <data name="_1300" xml:space="preserve">
+    <value>No se ha podido cargar el control MBActX.</value>
+    <comment>ERR_MBACTX_ERROR_DESTORY</comment>
+  </data>
+  <data name="_1301" xml:space="preserve">
+    <value>Cancelada la sobrescritura de un archivo común.</value>
+    <comment>ERR_OVERWRITE_COMMON_FILE_CANCEL</comment>
+  </data>
+  <data name="_1302" xml:space="preserve">
+    <value>"FONT0.FUY" y "FONT1.FUY" son palabras reservadas, así que no pueden usarse como nombres de archivos de fuente.</value>
+    <comment>ERR_INVALID_FONT_NAME</comment>
+  </data>
+  <data name="_1303" xml:space="preserve">
+    <value>Ingresar un valor para %s de %.3lf a %.3lf (mm).</value>
+    <comment>ERR_OUTOFRANGE_MILLIMETER</comment>
+  </data>
+  <data name="_1304" xml:space="preserve">
+    <value>Verifique los contenidos ingresados.</value>
+    <comment>ERR_CHECK_INPUTDATA</comment>
+  </data>
+  <data name="_1305" xml:space="preserve">
+    <value>Interv. de rell.</value>
+    <comment>ERR_CONVERT_LOG_HATCH_LINEPITCH</comment>
+  </data>
+  <data name="_1306" xml:space="preserve">
+    <value>El valor ingresado para el parámetro se encuentra fuera del rango.</value>
+    <comment>ERR_PARAMETER_RANGE_OVER</comment>
+  </data>
+  <data name="_1307" xml:space="preserve">
+    <value>Establecer el valor a 1.000 mm.</value>
+    <comment>ERR_CONVERT_LOG_HATCH_LINEPITCH_RANGE_OVER</comment>
+  </data>
+  <data name="_1308" xml:space="preserve">
+    <value>Reemplazo de fuente</value>
+    <comment>ERR_CONVERT_LOG_REPLACE_FONT</comment>
+  </data>
+  <data name="_1309" xml:space="preserve">
+    <value>La fuente personalizada se ha creado y asignado a la fuente n.º %d.</value>
+    <comment>ERR_CONVERT_LOG_CONVERT_EXTFONT</comment>
+  </data>
+  <data name="_1310" xml:space="preserve">
+    <value>Nombre de archivo</value>
+    <comment>ERR_CONVERT_LOG_FILENAME</comment>
+  </data>
+  <data name="_1311" xml:space="preserve">
+    <value>El arch. de logotipo/foto no existe.</value>
+    <comment>ERR_CONVERT_LOG_NOTEXISTS_LOGOPHOTO</comment>
+  </data>
+  <data name="_1312" xml:space="preserve">
+    <value>El archivo de carácter personalizado no existe.</value>
+    <comment>ERR_CONVERT_LOG_NOTEXISTS_EXTFONT</comment>
+  </data>
+  <data name="_1313" xml:space="preserve">
+    <value>No existe ningún archivo Z-MAP.</value>
+    <comment>ERR_CONVERT_LOG_NOTEXISTS_ZMAP</comment>
+  </data>
+  <data name="_1314" xml:space="preserve">
+    <value>Codific.</value>
+    <comment>ERR_CONVERT_LOG_PRINTCOMMON_REPLACE</comment>
+  </data>
+  <data name="_1315" xml:space="preserve">
+    <value>Se ha eliminado el carácter "%".</value>
+    <comment>ERR_CONVERT_LOG_PRINTCOMMON_REPLACE_DELETE_PERCENT</comment>
+  </data>
+  <data name="_1316" xml:space="preserve">
+    <value>N.º fuente inválido</value>
+    <comment>ERR_MBACTX_ERROR_INVALID_FONTNO</comment>
+  </data>
+  <data name="_1317" xml:space="preserve">
+    <value>Este parámetro no se ha definido en el portapapeles de las condiciones de marcado.</value>
+    <comment>ERR_MARKINGCONDITION_NOTPARAMETER</comment>
+  </data>
+  <data name="_1318" xml:space="preserve">
+    <value>"%s" no se pueden eliminar.</value>
+    <comment>ERR_DELETE_DEFAULTFONT</comment>
+  </data>
+  <data name="_1319" xml:space="preserve">
+    <value>No se puede estar en línea.</value>
+    <comment>ERR_CANNOT_ONLINE</comment>
+  </data>
+  <data name="_1320" xml:space="preserve">
+    <value>No se ha leído el archivo.</value>
+    <comment>ERR_FILE_NOTLOADED</comment>
+  </data>
+  <data name="_1321" xml:space="preserve">
+    <value>No puede cargar un archivo de programa de un modelo diferente mientras está en línea.</value>
+    <comment>ERR_DIFFERENCE_MACHINEINFO_MX_WHILE_ONLINE</comment>
+  </data>
+  <data name="_1322" xml:space="preserve">
+    <value>Especif. el nombre del arch.</value>
+    <comment>ERR_EMPTY_FILESTRING</comment>
+  </data>
+  <data name="_1323" xml:space="preserve">
+    <value>La versión del marcador láser conectado no es compatible. Actualice la versión del Marking Builder Plus.</value>
+    <comment>ERR_OLDER_FIRMVERSION</comment>
+  </data>
+  <data name="_1324" xml:space="preserve">
+    <value>No se ha encontrado el archivo. 
+
+%s</value>
+    <comment>ERR_NO_FILES</comment>
+  </data>
+  <data name="_1325" xml:space="preserve">
+    <value>No se ha podido leer el archivo .lsc.</value>
+    <comment>ERR_LSC_ERROR_LSC_LOAD</comment>
+  </data>
+  <data name="_1326" xml:space="preserve">
+    <value>No se admite la versión del archivo .lsc, el archivo no se ha podido leer.</value>
+    <comment>ERR_LSC_ERROR_LSC_VERSION</comment>
+  </data>
+  <data name="_1327" xml:space="preserve">
+    <value>No se pueden transferir los archivos lsc. que no sean los de los modelos seleccionados.</value>
+    <comment>ERR_LSC_ERROR_LSC_HEAD</comment>
+  </data>
+  <data name="_1328" xml:space="preserve">
+    <value>No se pudo procesar la corrección (%d).</value>
+    <comment>ERR_LSC_ERROR_ETC</comment>
+  </data>
+  <data name="_1329" xml:space="preserve">
+    <value>El número de serie del dispositivo conectado no coincide con el del archivo .lsc.</value>
+    <comment>ERR_LSC_ERROR_LSC_HEADSERIAL</comment>
+  </data>
+  <data name="_1330" xml:space="preserve">
+    <value>%s
+
+'%s'</value>
+    <comment>ERR_COPY_FILE_API_ERROR</comment>
+  </data>
+  <data name="_1331" xml:space="preserve">
+    <value>No hay información de configuración válida.</value>
+    <comment>ERR_CONVERT_LOG_NOTEXISTS_AVAILABLE_PROGRAM</comment>
+  </data>
+  <data name="_1332" xml:space="preserve">
+    <value>Se detectó un parámetro con un valor  fuera del intervalo, así que se corrigió a un valor del intervalo.</value>
+    <comment>ERR_CONVERT_LOG_CLIP_RANGE</comment>
+  </data>
+  <data name="_1333" xml:space="preserve">
+    <value>Ar. común</value>
+    <comment>ERR_RESTORE_LOG_SHARED_FILES</comment>
+  </data>
+  <data name="_1334" xml:space="preserve">
+    <value>Resultado de restauración</value>
+    <comment>ERR_RESTORE_LOG_RESULT</comment>
+  </data>
+  <data name="_1335" xml:space="preserve">
+    <value>Advertencia (compruebe los detalles de restauración).</value>
+    <comment>ERR_RESTORE_LOG_RESULT_WARNING</comment>
+  </data>
+  <data name="_1336" xml:space="preserve">
+    <value>Modelo de destino restauración</value>
+    <comment>ERR_RESTORE_LOG_MACHINE</comment>
+  </data>
+  <data name="_1337" xml:space="preserve">
+    <value>Arch. cop. seg.</value>
+    <comment>ERR_RESTORE_LOG_BACKUP_FILE</comment>
+  </data>
+  <data name="_1338" xml:space="preserve">
+    <value>Vers. controlador</value>
+    <comment>ERR_RESTORE_LOG_CONTROLLER_VERSION</comment>
+  </data>
+  <data name="_1339" xml:space="preserve">
+    <value>N.º serie controlador</value>
+    <comment>ERR_RESTORE_LOG_CONTROLLER_SERIAL</comment>
+  </data>
+  <data name="_1340" xml:space="preserve">
+    <value>Título</value>
+    <comment>ERR_RESTORE_LOG_TITLE</comment>
+  </data>
+  <data name="_1341" xml:space="preserve">
+    <value>N.º progr.</value>
+    <comment>ERR_RESTORE_LOG_PROGRAM_NO</comment>
+  </data>
+  <data name="_1342" xml:space="preserve">
+    <value>%s_%04d%02d%02d_%02d%02d%02d.txt</value>
+    <comment>ERR_RESTORE_LOG_FILE_FORMAT</comment>
+  </data>
+  <data name="_1343" xml:space="preserve">
+    <value>Ingresar un valor para %s de %.2lf a %.2lf (%%).</value>
+    <comment>ERR_OUTOFRANGE_PERCENT</comment>
+  </data>
+  <data name="_1344" xml:space="preserve">
+    <value>Ing. un valor para que la cantidad extendida de la distancia al sensor y la compensación de marcado esté fuera del rango de marcado.</value>
+    <comment>ERR_INVALID_TRIGGERDELAY</comment>
+  </data>
+  <data name="_1345" xml:space="preserve">
+    <value>No se puede seleccionar el marc. sobre la marcha si hay una matriz en el programa.</value>
+    <comment>ERR_CHANGE_XYMOVEORROTATE_EXIST_MATRIX</comment>
+  </data>
+  <data name="_1346" xml:space="preserve">
+    <value>No se puede seleccionar el marc. sobre la marcha si hay un grupo en el programa.</value>
+    <comment>ERR_CHANGE_XYMOVEORROTATE_EXIST_GROUP</comment>
+  </data>
+  <data name="_1347" xml:space="preserve">
+    <value>Enfoque autom.olo se habilita en marcado estacionaio</value>
+    <comment>ERR_ENABLE_ZMOVECONDITION_AUTOFOCUS_XY_NOTSTOP</comment>
+  </data>
+  <data name="_1348" xml:space="preserve">
+    <value>Error conversión de archivo logo Hatch (%d)</value>
+    <comment>ERR_CONVERT_HATCH</comment>
+  </data>
+  <data name="_1349" xml:space="preserve">
+    <value>Se ha superado el tamaño máximo posible para el guardado. 
+Reduzca la altura o el ancho y vuélvalo a intentar.  (%d)</value>
+    <comment>ERR_CONVERT_HATCH_SIZE</comment>
+  </data>
+  <data name="_1350" xml:space="preserve">
+    <value>Habilitado solo el bloque del plano XY.</value>
+    <comment>ERR_CONVERT_HATCH_ONLYXY</comment>
+  </data>
+  <data name="_1351" xml:space="preserve">
+    <value>Los bloques y los caracteres actualizados no se pueden convertir.</value>
+    <comment>ERR_CONVERT_HATCH_ONLY_NOT_CONTROL_TXT</comment>
+  </data>
+  <data name="_1352" xml:space="preserve">
+    <value>Se pueden perder algunos ajustes al guardar, después de haber convertido el archivo a una versión anterior.
+
+Para continuar, haga clic en [Aceptar]. 
+Para detener la operación sin realizar la conversión, haga clic en [Cancelar].</value>
+    <comment>ERR_SAVE_OLD_MXFILE</comment>
+  </data>
+  <data name="_1353" xml:space="preserve">
+    <value>No se puede seleccionar el marc. sobre la marcha si existe un bloque de punto fijo con disparo en el programa.</value>
+    <comment>ERR_CHANGE_XYMOVEORROTATE_EXIST_TRIGGERONBLOCK</comment>
+  </data>
+  <data name="_1354" xml:space="preserve">
+    <value>El bloque de puntos fijos no se puede agregar mientras se realiza el sobre la marcha.</value>
+    <comment>ERR_ADD_FIXEDPOINTBLOCK</comment>
+  </data>
+  <data name="_1355" xml:space="preserve">
+    <value>No se puede seleccionar el marc. sobre la marcha cuando hay un punto fijo en el programa.</value>
+    <comment>ERR_CHANGE_XYMOVEORROTATE_EXIST_FIXEDPOINTBLOCK</comment>
+  </data>
+  <data name="_1356" xml:space="preserve">
+    <value>No se puede guardar porque no existe ningún bloque.</value>
+    <comment>ERR_SAVE_NOBLOCK</comment>
+  </data>
+  <data name="_1357" xml:space="preserve">
+    <value>La función de verificación de marcado y la función de lector de código 2D no se pueden habilitar al mismo tiempo.</value>
+    <comment>ERR_VALIDATE_PRINTCHECK_AND_2DCODEREADER</comment>
+  </data>
+  <data name="_1358" xml:space="preserve">
+    <value>El valor ampliado de distancia entre el sensor y la compensación de marcado excede los 1200 mm</value>
+    <comment>ERR_TRIGGERDELAY_OVER</comment>
+  </data>
+  <data name="_1359" xml:space="preserve">
+    <value>Error de tamaño de archivo True Type.
+El número de caracteres es muy largo, redúcelos.</value>
+    <comment>ERR_TTF_FILESIZE</comment>
+  </data>
+  <data name="_1360" xml:space="preserve">
+    <value>No se ha podido actualizar.
+Reinicie el marcador láser y vuelva a actualizar.
+%s</value>
+    <comment>ERR_FIRMWARE_UPDATE_FAILED</comment>
+  </data>
+  <data name="_1361" xml:space="preserve">
+    <value>Configuración incorrecta de la carpeta.</value>
+    <comment>ERR_FIRMWARE_INVALID_FOLDERSET</comment>
+  </data>
+  <data name="_1362" xml:space="preserve">
+    <value>Conexión: %s
+Realice la conexión mediante Marking Builder 2.</value>
+    <comment>ERR_UNSUPPORT_MODEL</comment>
+  </data>
+  <data name="_1363" xml:space="preserve">
+    <value>Foto esc. gris.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_GRADATION_PHOTO</comment>
+  </data>
+  <data name="_1364" xml:space="preserve">
+    <value>Foto de alta resolución</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_HIGHRESOLUTION_PHOTO</comment>
+  </data>
+  <data name="_1365" xml:space="preserve">
+    <value>Eliminado, CODE93 no es compatible.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_DELETE_CODE93</comment>
+  </data>
+  <data name="_1366" xml:space="preserve">
+    <value>Tam. símb. de Data Matrix establecido en 48 x 48.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_DATAMATRIX_SYMBOLSIZE</comment>
+  </data>
+  <data name="_1367" xml:space="preserve">
+    <value>Se han eliminado los caracteres inutilizables.</value>
+    <comment>ERR_CONVERT_LOG_TEXT_DELETE_UNUSABLE_CHARS</comment>
+  </data>
+  <data name="_1368" xml:space="preserve">
+    <value>Sobreimpresión no soportada. Solo se convertirá la condición del último marcado.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_CODE_ONLY_LASTPRINT</comment>
+  </data>
+  <data name="_1369" xml:space="preserve">
+    <value>Enfoque automático no se puede emplear cuando hay una matriz. El ajuste del enfoque automático está deshabilitado en el programa.</value>
+    <comment>ERR_CONVERT_LOG_SETTING_ZMOVECONDITION</comment>
+  </data>
+  <data name="_1370" xml:space="preserve">
+    <value>Borrar matriz</value>
+    <comment>ERR_CONVERT_LOG_MATRIX_DISABLE</comment>
+  </data>
+  <data name="_1371" xml:space="preserve">
+    <value>Fijar cód. carác. a %s.</value>
+    <comment>ERR_CONVERT_LOG_ENCODE_CHANGED</comment>
+  </data>
+  <data name="_1372" xml:space="preserve">
+    <value>Fijar vel. baud. a 38400.</value>
+    <comment>ERR_CONVERT_LOG_EQUIPMENT_BAUDRATE</comment>
+  </data>
+  <data name="_1373" xml:space="preserve">
+    <value>Se ha eliminado el carácter Unicode.</value>
+    <comment>ERR_CONVERT_LOG_TEXT_DELETE_UNICODE_CHARS</comment>
+  </data>
+  <data name="_1374" xml:space="preserve">
+    <value>La fuente estándar se asignará a Fuente n.º 0 y n.º 1.</value>
+    <comment>ERR_CONVERT_LOG_FONT_SET_DEFAULT</comment>
+  </data>
+  <data name="_1375" xml:space="preserve">
+    <value>Se ha cambiado el nom. arch.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_FILENAME_CHANGED</comment>
+  </data>
+  <data name="_1376" xml:space="preserve">
+    <value>Cód. barr.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_BARCODE</comment>
+  </data>
+  <data name="_1377" xml:space="preserve">
+    <value>Cód. 2D</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_2DCODE</comment>
+  </data>
+  <data name="_1378" xml:space="preserve">
+    <value>Eliminado, códigos QR versión 6 o superior no compatibles.</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_DELETE_QRCODE_VERSION</comment>
+  </data>
+  <data name="_1379" xml:space="preserve">
+    <value>Cadena</value>
+    <comment>ERR_CONVERT_LOG_BLOCK_STRING</comment>
+  </data>
+  <data name="_1380" xml:space="preserve">
+    <value>Carp. Salida</value>
+  </data>
+  <data name="_1381" xml:space="preserve">
+    <value>Fijar ref. semanal a 1/1 - 1/7.</value>
+  </data>
+  <data name="_1382" xml:space="preserve">
+    <value>Comunicación</value>
+  </data>
+  <data name="_1383" xml:space="preserve">
+    <value>Cód. carác.</value>
+  </data>
+  <data name="_1384" xml:space="preserve">
+    <value>Verific. código barras</value>
+  </data>
+  <data name="_1385" xml:space="preserve">
+    <value>Versión</value>
+  </data>
+  <data name="_1386" xml:space="preserve">
+    <value>Arch. de fuente</value>
+  </data>
+  <data name="_1387" xml:space="preserve">
+    <value>Paso múlt.</value>
+  </data>
+  <data name="_1388" xml:space="preserve">
+    <value>D. Guard.</value>
+  </data>
+  <data name="_1389" xml:space="preserve">
+    <value>Config.</value>
+  </data>
+  <data name="_1390" xml:space="preserve">
+    <value>Punto fijo</value>
+  </data>
+  <data name="_1391" xml:space="preserve">
+    <value>Eliminado, punto fijo no compatible con edición 3D.</value>
+  </data>
+  <data name="_1392" xml:space="preserve">
+    <value>Conversión cancelada.</value>
+  </data>
+  <data name="_1393" xml:space="preserve">
+    <value>Nom. Carp.</value>
+  </data>
+  <data name="_1394" xml:space="preserve">
+    <value>Se ha borrado el registro por contener un carácter no válido. (%s)</value>
+  </data>
+  <data name="_1395" xml:space="preserve">
+    <value>Cadena caract. para cambio alta vel.</value>
+  </data>
+  <data name="_1396" xml:space="preserve">
+    <value>Otros Ajustes</value>
+  </data>
+  <data name="_1397" xml:space="preserve">
+    <value>Se ha cambiado el nom. fuente.</value>
+  </data>
+  <data name="_1398" xml:space="preserve">
+    <value>Cambio no soportado por el modelo.</value>
+  </data>
+  <data name="_1399" xml:space="preserve">
+    <value>No se puede guardar archivos en esta carpeta.</value>
+    <comment>ERR_CONVERT_RESULT_CANNOT_SAVE</comment>
+  </data>
+  <data name="_14" xml:space="preserve">
+    <value>General</value>
+    <comment>ID_BLOCKCATEGORY_GENERAL</comment>
+  </data>
+  <data name="_1400" xml:space="preserve">
+    <value>Estos caracteres no se pueden usar en nombres de archivo:
+\/:,.*?"&lt;&gt;|</value>
+  </data>
+  <data name="_1403" xml:space="preserve">
+    <value>Modelo no soportado.</value>
+  </data>
+  <data name="_1404" xml:space="preserve">
+    <value>Se ha eliminado %s porque Z-MAP no es compatible.</value>
+  </data>
+  <data name="_1405" xml:space="preserve">
+    <value>No se puede abrir el programa porque se ha incluido una forma 3D.</value>
+  </data>
+  <data name="_1406" xml:space="preserve">
+    <value>No se ha podido obtener el valor de salida láser</value>
+  </data>
+  <data name="_1407" xml:space="preserve">
+    <value>%s[%s]
+
+La calibración de potencia láser no está disponible en este modelo.</value>
+  </data>
+  <data name="_1408" xml:space="preserve">
+    <value>Esta función no está disponible cuando se utiliza "I -&gt; D, D -&gt; I (alta velocidad)" o "D -&gt; I, I -&gt; D (alta velocidad)".</value>
+  </data>
+  <data name="_1409" xml:space="preserve">
+    <value>Existe un bloque logo Hatch con el mismo nombre en el programa. Guárdelo con un nombre distinto.</value>
+  </data>
+  <data name="_1410" xml:space="preserve">
+    <value>Ya existe un archivo con este nombre.</value>
+  </data>
+  <data name="_1411" xml:space="preserve">
+    <value>Configure como referencia año el 1 ene.</value>
+  </data>
+  <data name="_1412" xml:space="preserve">
+    <value>Configure el horario de reinicio como E/S.</value>
+  </data>
+  <data name="_1413" xml:space="preserve">
+    <value>Cont. indiv.(%d)</value>
+  </data>
+  <data name="_1414" xml:space="preserve">
+    <value>Conteo común(%c)</value>
+  </data>
+  <data name="_1415" xml:space="preserve">
+    <value>No se pudo realizar laconfig. porque la información de altura necesaria para calcular la forma no se pudo adquirir.</value>
+  </data>
+  <data name="_1416" xml:space="preserve">
+    <value>Se produjo un fallo al calcular la forma.</value>
+  </data>
+  <data name="_1417" xml:space="preserve">
+    <value>No existe núm. de config. de medición de distancia disponible.</value>
+  </data>
+  <data name="_1418" xml:space="preserve">
+    <value>No existe núm. de config. de medición de distancia.</value>
+  </data>
+  <data name="_1419" xml:space="preserve">
+    <value>El número de config. de medición de distancia ha superado el límite máximo.</value>
+  </data>
+  <data name="_1420" xml:space="preserve">
+    <value>No existen ajustes de seguimiento de Z válidos.</value>
+  </data>
+  <data name="_1421" xml:space="preserve">
+    <value>Las config. auto. del seguimiento Z se han cancelado.</value>
+  </data>
+  <data name="_1422" xml:space="preserve">
+    <value>La configuración de Ajuste de la superficie se ha cancelado.</value>
+  </data>
+  <data name="_1423" xml:space="preserve">
+    <value>No existen ajustes de seguimiento de XY válidos.</value>
+  </data>
+  <data name="_1424" xml:space="preserve">
+    <value>No se pudo realizar la medición.</value>
+    <comment>ERR_NOT_ENOUGH_LIGHT_AMOUNT</comment>
+  </data>
+  <data name="_1425" xml:space="preserve">
+    <value>El ajuste del enfoque automático pasa a ser el ajuste del seguimiento Z. Active la función de seguimiento Z (MD-AD-ZT) y defina la condición de las mediciones.</value>
+  </data>
+  <data name="_1426" xml:space="preserve">
+    <value>El método de corrección " Sensor de desplazamiento externo" se ha cambiado a " Fijo" y se ha seleccionado una cantidad de corrección de 0.0 mm.</value>
+  </data>
+  <data name="_1427" xml:space="preserve">
+    <value>Lect. cód. 2D</value>
+  </data>
+  <data name="_1428" xml:space="preserve">
+    <value>El lector de códigos 2D no se puede emplear cuando hay una matriz. El ajuste del lector de códigos 2D está deshabilitado en el programa.</value>
+  </data>
+  <data name="_1429" xml:space="preserve">
+    <value>Confirmación marcado</value>
+  </data>
+  <data name="_1430" xml:space="preserve">
+    <value>La confirmación de marcado no se puede emplear cuando hay una matriz. El ajuste de la confirmación de marcado está deshabilitado en el programa.</value>
+  </data>
+  <data name="_1431" xml:space="preserve">
+    <value>No se ha podido exportar el archivo.
+Reinicie la aplicación y cree una configuración.</value>
+  </data>
+  <data name="_1432" xml:space="preserve">
+    <value>Establezca la corrección de altura en enfoque automático.</value>
+  </data>
+  <data name="_1433" xml:space="preserve">
+    <value>Cambie el lector de código 2D a deshabilitado.</value>
+  </data>
+  <data name="_1434" xml:space="preserve">
+    <value>Cambie la confirmación de marcado a deshabilitado.</value>
+  </data>
+  <data name="_1435" xml:space="preserve">
+    <value>Error, config. prohibida cód. 2D/cód. barr.</value>
+  </data>
+  <data name="_1436" xml:space="preserve">
+    <value>Se eliminan los ajustes no admitidos, como el seguimiento o la inspección del lente.</value>
+  </data>
+  <data name="_1437" xml:space="preserve">
+    <value>La asignación de Font-1 se convierte a Font0.</value>
+  </data>
+  <data name="_1438" xml:space="preserve">
+    <value>El lector de códigos 2D está desactivado porque no se pueden utilizar tanto la confirmación de marcado como el lector de códigos 2D en el mismo programa.</value>
+  </data>
+  <data name="_1439" xml:space="preserve">
+    <value>Se ha alcanzado el número máximo de registros de usuarios. No se pueden crear nuevos usuarios.</value>
+  </data>
+  <data name="_1440" xml:space="preserve">
+    <value>El nombre de usuario está duplicado.</value>
+  </data>
+  <data name="_1441" xml:space="preserve">
+    <value>El nombre del nivel de usuario está duplicado.</value>
+  </data>
+  <data name="_1442" xml:space="preserve">
+    <value>El usuario administrador no existe.</value>
+  </data>
+  <data name="_1443" xml:space="preserve">
+    <value>Ingrese su nombre de usuario en caracteres alfanuméricos y símbolos (%s).</value>
+  </data>
+  <data name="_1444" xml:space="preserve">
+    <value>Ingrese su contraseña en caracteres alfanuméricos y símbolos (%s).</value>
+  </data>
+  <data name="_1445" xml:space="preserve">
+    <value>Ingrese caracteres alfanuméricos de un solo byte.</value>
+  </data>
+  <data name="_1446" xml:space="preserve">
+    <value>No existe un usuario válido.</value>
+  </data>
+  <data name="_1447" xml:space="preserve">
+    <value>No existe un nivel de usuario válido.</value>
+  </data>
+  <data name="_1448" xml:space="preserve">
+    <value>%s debe tener máximo %d caracteres.</value>
+  </data>
+  <data name="_1449" xml:space="preserve">
+    <value>No se pudo cargar la información de administración de usuarios.</value>
+  </data>
+  <data name="_15" xml:space="preserve">
+    <value>Datos de marcado</value>
+    <comment>ID_BLOCKCATEGORY_MARKINGDATA</comment>
+  </data>
+  <data name="_1500" xml:space="preserve">
+    <value>No se pudo escribir la información de administración de usuarios.</value>
+  </data>
+  <data name="_1501" xml:space="preserve">
+    <value>Error de inicio de sesión.</value>
+  </data>
+  <data name="_1502" xml:space="preserve">
+    <value>Introduzca caracteres alfanuméricos de un solo byte o símbolos de un solo byte.</value>
+  </data>
+  <data name="_16" xml:space="preserve">
+    <value>Fuente</value>
+    <comment>ID_BLOCKCATEGORY_FONT</comment>
+  </data>
+  <data name="_17" xml:space="preserve">
+    <value>Tam.</value>
+    <comment>ID_BLOCKCATEGORY_SIZE</comment>
+  </data>
+  <data name="_18" xml:space="preserve">
+    <value>Diseño forma de superf. marc.</value>
+    <comment>ID_BLOCKCATEGORY_SHAPELAYOUT</comment>
+  </data>
+  <data name="_19" xml:space="preserve">
+    <value>Diseño bloq.</value>
+    <comment>ID_BLOCKCATEGORY_BLOCKLAYOUT</comment>
+  </data>
+  <data name="_2" xml:space="preserve">
+    <value>1033</value>
+    <comment>IDS_LC_ID</comment>
+  </data>
+  <data name="_20" xml:space="preserve">
+    <value>Contenido de procesam.</value>
+    <comment>ID_BLOCKCATEGORY_PROCESSING</comment>
+  </data>
+  <data name="_21" xml:space="preserve">
+    <value>For. cód.</value>
+    <comment>ID_BLOCKCATEGORY_CODE</comment>
+  </data>
+  <data name="_22" xml:space="preserve">
+    <value>Parám. de marcado</value>
+    <comment>ID_BLOCKCATEGORY_MARKINGCONDITION</comment>
+  </data>
+  <data name="_23" xml:space="preserve">
+    <value>Cond. marc. relleno</value>
+    <comment>ID_BLOCKCATEGORY_FILLCONDITION</comment>
+  </data>
+  <data name="_24" xml:space="preserve">
+    <value>Rell.</value>
+    <comment>ID_BLOCKCATEGORY_FILL</comment>
+  </data>
+  <data name="_25" xml:space="preserve">
+    <value>Aum. calidad marc.</value>
+    <comment>ID_BLOCKCATEGORY_QUALITY</comment>
+  </data>
+  <data name="_26" xml:space="preserve">
+    <value>Form. imagen cám. (*%s)|*%s|</value>
+    <comment>IDS_CAMERAIMAGE_FILTER</comment>
+  </data>
+  <data name="_27" xml:space="preserve">
+    <value>Relación de anchura</value>
+    <comment>IDS_PROPNAME_CHARWIDTHRATIO</comment>
+  </data>
+  <data name="_28" xml:space="preserve">
+    <value>Relación de espacio</value>
+    <comment>IDS_PROPNAME_CHARSPACERATIO</comment>
+  </data>
+  <data name="_29" xml:space="preserve">
+    <value>Serie ML-Z9500</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_3" xml:space="preserve">
+    <value>CM: Modul. de celda</value>
+    <comment>IDS_LC_LANG</comment>
+  </data>
+  <data name="_30" xml:space="preserve">
+    <value>Serie MD-V9900</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_31" xml:space="preserve">
+    <value>Serie MD-S9900</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_32" xml:space="preserve">
+    <value>Serie MD-F3000</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_33" xml:space="preserve">
+    <value>Serie MD-T1000</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_34" xml:space="preserve">
+    <value>Serie MD-F3100/MD-F5100</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_35" xml:space="preserve">
+    <value>Serie MD-X1000/MD-X1500</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_36" xml:space="preserve">
+    <value>Serie MD-F3200/MD-F5200</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_37" xml:space="preserve">
+    <value>Ar. programa (*.MX1)|*.MX1</value>
+    <comment>IDS_FILTER_MX1</comment>
+  </data>
+  <data name="_38" xml:space="preserve">
+    <value>Ar. programa (*.MX2)|*.MX2</value>
+    <comment>IDS_FILTER_MX2</comment>
+  </data>
+  <data name="_39" xml:space="preserve">
+    <value>Ar. programa (*.MX2S)|*.MX2S</value>
+    <comment>IDS_FILTER_MX2S</comment>
+  </data>
+  <data name="_4" xml:space="preserve">
+    <value>Todos los archivos de programa (%s)|%s|</value>
+    <comment>IDS_PROGRAM_FILTER</comment>
+  </data>
+  <data name="_40" xml:space="preserve">
+    <value>Ar. programa (*.MX3)|*.MX3</value>
+    <comment>IDS_FILTER_MX3</comment>
+  </data>
+  <data name="_41" xml:space="preserve">
+    <value>Serie MD-F3000/MD-F3100/MD-F5100</value>
+    <comment>IDS_UNSUPPORT_MODEL_MDV9900</comment>
+  </data>
+  <data name="_42" xml:space="preserve">
+    <value>Sin título</value>
+  </data>
+  <data name="_43" xml:space="preserve">
+    <value>Progr. Edición (%s)</value>
+    <comment>IDS_CONVERT_EXPORT_MFP_INPUTFORMAT</comment>
+  </data>
+  <data name="_44" xml:space="preserve">
+    <value>Shift_JIS</value>
+    <comment>IDS_CODEPAGE_SJIS</comment>
+  </data>
+  <data name="_45" xml:space="preserve">
+    <value>Latin-1</value>
+    <comment>IDS_CODEPAGE_LATIN1</comment>
+  </data>
+  <data name="_48" xml:space="preserve">
+    <value>Error Bajo Voltaje</value>
+  </data>
+  <data name="_49999" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_APPLICATION_ERROR_END</comment>
+  </data>
+  <data name="_5" xml:space="preserve">
+    <value>Punto fijo</value>
+    <comment>IDS_DATA_PROCESSINGPOINT_TEXT</comment>
+  </data>
+  <data name="_51000" xml:space="preserve">
+    <value>Error de onda reflejada por láser</value>
+    <comment>ERR_COM_STR_E000</comment>
+  </data>
+  <data name="_51001" xml:space="preserve">
+    <value>Error por altas temperaturas del láser</value>
+    <comment>ERR_COM_STR_E001</comment>
+  </data>
+  <data name="_51002" xml:space="preserve">
+    <value>Error por sobretensión del láser</value>
+    <comment>ERR_COM_STR_E002</comment>
+  </data>
+  <data name="_51003" xml:space="preserve">
+    <value>Error de com.  en la unidad de marcado</value>
+    <comment>ERR_COM_STR_E003</comment>
+  </data>
+  <data name="_51004" xml:space="preserve">
+    <value>Error escáner</value>
+    <comment>ERR_COM_STR_E004</comment>
+  </data>
+  <data name="_51005" xml:space="preserve">
+    <value>Error obturad.</value>
+    <comment>ERR_COM_STR_E005</comment>
+  </data>
+  <data name="_51006" xml:space="preserve">
+    <value>Error en la versión de la unidad de marcado</value>
+  </data>
+  <data name="_51007" xml:space="preserve">
+    <value>Error en modelo de unidad de marcado</value>
+    <comment>ERR_COM_STR_E007</comment>
+  </data>
+  <data name="_51008" xml:space="preserve">
+    <value>Error versión controlador</value>
+    <comment>ERR_COM_STR_E008</comment>
+  </data>
+  <data name="_51009" xml:space="preserve">
+    <value>Error por la versión FPGA de la unidad de marcado</value>
+  </data>
+  <data name="_51010" xml:space="preserve">
+    <value>Sin errores en el bloque de marcado.</value>
+    <comment>ERR_COM_STR_E010</comment>
+  </data>
+  <data name="_51011" xml:space="preserve">
+    <value>Error, tarjeta mem. integrada no reconocida</value>
+    <comment>ERR_COM_STR_E011</comment>
+  </data>
+  <data name="_51012" xml:space="preserve">
+    <value>Error en datos de la unidad de marcado</value>
+    <comment>ERR_COM_STR_E012</comment>
+  </data>
+  <data name="_51013" xml:space="preserve">
+    <value>Error, mem. de expansión llena</value>
+    <comment>ERR_COM_STR_E013</comment>
+  </data>
+  <data name="_51014" xml:space="preserve">
+    <value>Error, memoria de marcado llena.</value>
+    <comment>ERR_COM_STR_E014</comment>
+  </data>
+  <data name="_51015" xml:space="preserve">
+    <value>Sin errores de progr.</value>
+    <comment>ERR_COM_STR_E015</comment>
+  </data>
+  <data name="_51016" xml:space="preserve">
+    <value>Error de optimización no ejecutada</value>
+    <comment>ERR_COM_STR_E016</comment>
+  </data>
+  <data name="_51017" xml:space="preserve">
+    <value>Sin errores de archivo fuente</value>
+    <comment>ERR_COM_STR_E017</comment>
+  </data>
+  <data name="_51018" xml:space="preserve">
+    <value>Error de velocidad de marcado del codificador</value>
+    <comment>ERR_COM_STR_E018</comment>
+  </data>
+  <data name="_51019" xml:space="preserve">
+    <value>Error, disparo de marcado</value>
+    <comment>ERR_COM_STR_E019</comment>
+  </data>
+  <data name="_51020" xml:space="preserve">
+    <value>Error, mem. de expansión llena 2</value>
+    <comment>ERR_COM_STR_E020</comment>
+  </data>
+  <data name="_51021" xml:space="preserve">
+    <value>Error de tiempo de espera del sensor</value>
+    <comment>ERR_COM_STR_E021</comment>
+  </data>
+  <data name="_51022" xml:space="preserve">
+    <value>Error de superposición de área</value>
+    <comment>ERR_COM_STR_E022</comment>
+  </data>
+  <data name="_51023" xml:space="preserve">
+    <value>Error de superposición de área de escáner</value>
+    <comment>ERR_COM_STR_E023</comment>
+  </data>
+  <data name="_51024" xml:space="preserve">
+    <value>Error verificación archivo</value>
+    <comment>ERR_COM_STR_E024</comment>
+  </data>
+  <data name="_51025" xml:space="preserve">
+    <value>Error archivo logo</value>
+    <comment>ERR_COM_STR_E025</comment>
+  </data>
+  <data name="_51026" xml:space="preserve">
+    <value>Error de arch. de carácter personalizado</value>
+    <comment>ERR_COM_STR_E026</comment>
+  </data>
+  <data name="_51027" xml:space="preserve">
+    <value>Error de codific. deshab.</value>
+    <comment>ERR_COM_STR_E027</comment>
+  </data>
+  <data name="_51028" xml:space="preserve">
+    <value>Error al no poder ejecutar el cambio de programa</value>
+    <comment>ERR_COM_STR_E028</comment>
+  </data>
+  <data name="_51029" xml:space="preserve">
+    <value>Error escáner 2</value>
+    <comment>ERR_COM_STR_E029</comment>
+  </data>
+  <data name="_51030" xml:space="preserve">
+    <value>Error, config. expirac.</value>
+    <comment>ERR_COM_STR_E030</comment>
+  </data>
+  <data name="_51031" xml:space="preserve">
+    <value>Reiniciar error</value>
+    <comment>ERR_COM_STR_E031</comment>
+  </data>
+  <data name="_51032" xml:space="preserve">
+    <value>Error, logo/carácter personalizado agrandado </value>
+    <comment>ERR_COM_STR_E032</comment>
+  </data>
+  <data name="_51033" xml:space="preserve">
+    <value>Error, omitir cruz</value>
+    <comment>ERR_COM_STR_E033</comment>
+  </data>
+  <data name="_51034" xml:space="preserve">
+    <value>Error de codific. deshab.</value>
+    <comment>ERR_COM_STR_E034</comment>
+  </data>
+  <data name="_51035" xml:space="preserve">
+    <value>Error de cambio rápido de expansión de carácter</value>
+    <comment>ERR_COM_STR_E035</comment>
+  </data>
+  <data name="_51037" xml:space="preserve">
+    <value>Procesando óvalo: Error de configuración</value>
+    <comment>ERR_COM_STR_E037</comment>
+  </data>
+  <data name="_51038" xml:space="preserve">
+    <value>Error, búfer lleno de logo/carácter personalizado</value>
+    <comment>ERR_COM_STR_E038</comment>
+  </data>
+  <data name="_51039" xml:space="preserve">
+    <value>Error, ajuste ondulado/lineal incorrecto</value>
+    <comment>ERR_COM_STR_E039</comment>
+  </data>
+  <data name="_51040" xml:space="preserve">
+    <value>Error bloq. link</value>
+    <comment>ERR_COM_STR_E040</comment>
+  </data>
+  <data name="_51041" xml:space="preserve">
+    <value>Rango incorrecto en la posición del marcado 3D</value>
+    <comment>ERR_COM_STR_E041</comment>
+  </data>
+  <data name="_51042" xml:space="preserve">
+    <value>Error, detec. de pérdida de marcado</value>
+    <comment>ERR_COM_STR_E042</comment>
+  </data>
+  <data name="_51043" xml:space="preserve">
+    <value>Error de detección de emisión accidental</value>
+    <comment>ERR_COM_STR_E043</comment>
+  </data>
+  <data name="_51044" xml:space="preserve">
+    <value>Error de área superpuesta Z</value>
+    <comment>ERR_COM_STR_E044</comment>
+  </data>
+  <data name="_51045" xml:space="preserve">
+    <value>Error, cód. barras sin registrar</value>
+    <comment>ERR_COM_STR_E045</comment>
+  </data>
+  <data name="_51046" xml:space="preserve">
+    <value>Error de config. calentamiento</value>
+    <comment>ERR_COM_STR_E046</comment>
+  </data>
+  <data name="_51047" xml:space="preserve">
+    <value>Error de tamaño bloq. 3D</value>
+    <comment>ERR_COM_STR_E047</comment>
+  </data>
+  <data name="_51048" xml:space="preserve">
+    <value>Error archivo Z-MAP</value>
+    <comment>ERR_COM_STR_E048</comment>
+  </data>
+  <data name="_51049" xml:space="preserve">
+    <value>Sin errores de fuente</value>
+    <comment>ERR_COM_STR_E049</comment>
+  </data>
+  <data name="_51050" xml:space="preserve">
+    <value>Error en generación de datos de marcado</value>
+    <comment>ERR_COM_STR_E050</comment>
+  </data>
+  <data name="_51051" xml:space="preserve">
+    <value>Error sist. 2</value>
+    <comment>ERR_COM_STR_E051</comment>
+  </data>
+  <data name="_51052" xml:space="preserve">
+    <value>Error sist. 3</value>
+    <comment>ERR_COM_STR_E052</comment>
+  </data>
+  <data name="_51053" xml:space="preserve">
+    <value>Error sist. 4</value>
+    <comment>ERR_COM_STR_E053</comment>
+  </data>
+  <data name="_51054" xml:space="preserve">
+    <value>Error sist. 5</value>
+    <comment>ERR_COM_STR_E054</comment>
+  </data>
+  <data name="_51055" xml:space="preserve">
+    <value>Error sist. 6</value>
+    <comment>ERR_COM_STR_E055</comment>
+  </data>
+  <data name="_51056" xml:space="preserve">
+    <value>Error sist. 7</value>
+    <comment>ERR_COM_STR_E056</comment>
+  </data>
+  <data name="_51057" xml:space="preserve">
+    <value>Error sist. 8</value>
+    <comment>ERR_COM_STR_E057</comment>
+  </data>
+  <data name="_51058" xml:space="preserve">
+    <value>Error sist. 9</value>
+    <comment>ERR_COM_STR_E058</comment>
+  </data>
+  <data name="_51059" xml:space="preserve">
+    <value>Error sist. 10</value>
+    <comment>ERR_COM_STR_E059</comment>
+  </data>
+  <data name="_51061" xml:space="preserve">
+    <value>Error sist. 12</value>
+    <comment>ERR_COM_STR_E061</comment>
+  </data>
+  <data name="_51062" xml:space="preserve">
+    <value>Error sist. 13</value>
+    <comment>ERR_COM_STR_E062</comment>
+  </data>
+  <data name="_51063" xml:space="preserve">
+    <value>Error sist. 14</value>
+    <comment>ERR_COM_STR_E063</comment>
+  </data>
+  <data name="_51064" xml:space="preserve">
+    <value>Error sist. 15</value>
+    <comment>ERR_COM_STR_E064</comment>
+  </data>
+  <data name="_51065" xml:space="preserve">
+    <value>Error sist. 16</value>
+    <comment>ERR_COM_STR_E065</comment>
+  </data>
+  <data name="_51066" xml:space="preserve">
+    <value>Error sist. 17</value>
+    <comment>ERR_COM_STR_E066</comment>
+  </data>
+  <data name="_51067" xml:space="preserve">
+    <value>Error sist. 18</value>
+    <comment>ERR_COM_STR_E067</comment>
+  </data>
+  <data name="_51068" xml:space="preserve">
+    <value>Error sist. 19</value>
+    <comment>ERR_COM_STR_E068</comment>
+  </data>
+  <data name="_51069" xml:space="preserve">
+    <value>Error sist. 20</value>
+    <comment>ERR_COM_STR_E069</comment>
+  </data>
+  <data name="_51070" xml:space="preserve">
+    <value>Error sist. 21</value>
+    <comment>ERR_COM_STR_E070</comment>
+  </data>
+  <data name="_51071" xml:space="preserve">
+    <value>Error sist. 22</value>
+    <comment>ERR_COM_STR_E071</comment>
+  </data>
+  <data name="_51072" xml:space="preserve">
+    <value>Error sist. 23</value>
+    <comment>ERR_COM_STR_E072</comment>
+  </data>
+  <data name="_51073" xml:space="preserve">
+    <value>Error sist. 24</value>
+    <comment>ERR_COM_STR_E073</comment>
+  </data>
+  <data name="_51074" xml:space="preserve">
+    <value>Error sist. 25</value>
+    <comment>ERR_COM_STR_E074</comment>
+  </data>
+  <data name="_51075" xml:space="preserve">
+    <value>Error sist. 26</value>
+    <comment>ERR_COM_STR_E075</comment>
+  </data>
+  <data name="_51090" xml:space="preserve">
+    <value>Error, config. incorrecta del reloj interno</value>
+    <comment>ERR_COM_STR_E090</comment>
+  </data>
+  <data name="_51091" xml:space="preserve">
+    <value>Error acceso del reloj interno</value>
+    <comment>ERR_COM_STR_E091</comment>
+  </data>
+  <data name="_51092" xml:space="preserve">
+    <value>Error acceso a la memoria interna</value>
+  </data>
+  <data name="_51100" xml:space="preserve">
+    <value>Error por altas temperat. LD</value>
+    <comment>ERR_COM_STR_E100</comment>
+  </data>
+  <data name="_51101" xml:space="preserve">
+    <value>Error por bajas temperaturas LD</value>
+    <comment>ERR_COM_STR_E101</comment>
+  </data>
+  <data name="_51102" xml:space="preserve">
+    <value>Error Altas Temp. Cabez. Marc.</value>
+    <comment>ERR_COM_STR_E102</comment>
+  </data>
+  <data name="_51104" xml:space="preserve">
+    <value>Error parada Qsw</value>
+    <comment>ERR_COM_STR_E104</comment>
+  </data>
+  <data name="_51105" xml:space="preserve">
+    <value>Error de alim. Qsw</value>
+    <comment>ERR_COM_STR_E105</comment>
+  </data>
+  <data name="_51106" xml:space="preserve">
+    <value>Error de control Qsw</value>
+    <comment>ERR_COM_STR_E106</comment>
+  </data>
+  <data name="_51107" xml:space="preserve">
+    <value>Comp. error ejecuc. Qsw</value>
+    <comment>ERR_COM_STR_E107</comment>
+  </data>
+  <data name="_51110" xml:space="preserve">
+    <value>Error en la autocalibración de la potencia láser</value>
+    <comment>ERR_COM_STR_E110</comment>
+  </data>
+  <data name="_51111" xml:space="preserve">
+    <value>Error en el límite sup. de la cantidad de corrección de la coordenada Z</value>
+    <comment>ERR_COM_STR_E111</comment>
+  </data>
+  <data name="_51112" xml:space="preserve">
+    <value>Error en el límite inf. de la cantidad de corrección de la coordenada Z</value>
+    <comment>ERR_COM_STR_E112</comment>
+  </data>
+  <data name="_51113" xml:space="preserve">
+    <value>Error de fallo de medición de la coordenada Z</value>
+    <comment>ERR_COM_STR_E113</comment>
+  </data>
+  <data name="_51114" xml:space="preserve">
+    <value>Error en el programa actual</value>
+    <comment>ERR_COM_STR_E114</comment>
+  </data>
+  <data name="_51115" xml:space="preserve">
+    <value>Error en el límite sup. de la cantidad de corrección de posición</value>
+  </data>
+  <data name="_51116" xml:space="preserve">
+    <value>Error de caída de valor de correlación de la corrección de posición</value>
+  </data>
+  <data name="_51117" xml:space="preserve">
+    <value>Error en el límite sup. de la cantidad de corrección de inclinación</value>
+  </data>
+  <data name="_51118" xml:space="preserve">
+    <value>Error de caída de estabilidad de la cantidad de corrección de la coordenada Z</value>
+  </data>
+  <data name="_51119" xml:space="preserve">
+    <value>Error de medición de ajuste de posición</value>
+  </data>
+  <data name="_51132" xml:space="preserve">
+    <value>Error Bajo Voltaje</value>
+    <comment>ERR_COM_STR_E132</comment>
+  </data>
+  <data name="_51137" xml:space="preserve">
+    <value>Error sist. 27</value>
+    <comment>ERR_COM_STR_E137</comment>
+  </data>
+  <data name="_51138" xml:space="preserve">
+    <value>Error sist. 28</value>
+    <comment>ERR_COM_STR_E138</comment>
+  </data>
+  <data name="_51139" xml:space="preserve">
+    <value>Error sist. 29</value>
+    <comment>ERR_COM_STR_E139</comment>
+  </data>
+  <data name="_51140" xml:space="preserve">
+    <value>Error sist. 30</value>
+    <comment>ERR_COM_STR_E140</comment>
+  </data>
+  <data name="_51141" xml:space="preserve">
+    <value>Error sist. 31</value>
+    <comment>ERR_COM_STR_E141</comment>
+  </data>
+  <data name="_51142" xml:space="preserve">
+    <value>Error sist. 32</value>
+    <comment>ERR_COM_STR_E142</comment>
+  </data>
+  <data name="_51143" xml:space="preserve">
+    <value>Error sist. 33</value>
+    <comment>ERR_COM_STR_E143</comment>
+  </data>
+  <data name="_51144" xml:space="preserve">
+    <value>Error Reflejo Láser</value>
+    <comment>ERR_COM_STR_E144</comment>
+  </data>
+  <data name="_51150" xml:space="preserve">
+    <value>Error de arranque de la CPU de procesamiento de imágenes</value>
+  </data>
+  <data name="_51151" xml:space="preserve">
+    <value>Error de comunicación del procesamiento de imágenes</value>
+  </data>
+  <data name="_51152" xml:space="preserve">
+    <value>Error de mem. de seguimiento de XY</value>
+  </data>
+  <data name="_51153" xml:space="preserve">
+    <value>Error de datos de supervisión de XY</value>
+  </data>
+  <data name="_51160" xml:space="preserve">
+    <value>Error de lectura de información de usuario</value>
+  </data>
+  <data name="_51202" xml:space="preserve">
+    <value>Error ventilador sup. controlador</value>
+    <comment>ERR_COM_STR_E202</comment>
+  </data>
+  <data name="_51203" xml:space="preserve">
+    <value>Error ventilador inf. controlador</value>
+    <comment>ERR_COM_STR_E203</comment>
+  </data>
+  <data name="_51204" xml:space="preserve">
+    <value>Error, Cable de control desconectado.</value>
+    <comment>ERR_COM_STR_E204</comment>
+  </data>
+  <data name="_51205" xml:space="preserve">
+    <value>Error, Cable Cabezal Desconectado</value>
+  </data>
+  <data name="_51206" xml:space="preserve">
+    <value>Error por bloqueo del ventilador de la unidad de marcado</value>
+  </data>
+  <data name="_51220" xml:space="preserve">
+    <value>Error sist. 34</value>
+    <comment>ERR_COM_STR_E220</comment>
+  </data>
+  <data name="_51221" xml:space="preserve">
+    <value>Error sist. 35</value>
+    <comment>ERR_COM_STR_E221</comment>
+  </data>
+  <data name="_51222" xml:space="preserve">
+    <value>Error sist. 36</value>
+    <comment>ERR_COM_STR_E222</comment>
+  </data>
+  <data name="_51223" xml:space="preserve">
+    <value>Error sist. 37</value>
+    <comment>ERR_COM_STR_E223</comment>
+  </data>
+  <data name="_51224" xml:space="preserve">
+    <value>Error sist. 38</value>
+    <comment>ERR_COM_STR_E224</comment>
+  </data>
+  <data name="_51225" xml:space="preserve">
+    <value>Error sist. 39</value>
+    <comment>ERR_COM_STR_E225</comment>
+  </data>
+  <data name="_51226" xml:space="preserve">
+    <value>Error sist. 40</value>
+    <comment>ERR_COM_STR_E226</comment>
+  </data>
+  <data name="_51227" xml:space="preserve">
+    <value>Error sist. 41</value>
+    <comment>ERR_COM_STR_E227</comment>
+  </data>
+  <data name="_51228" xml:space="preserve">
+    <value>Error sist. 42</value>
+    <comment>ERR_COM_STR_E228</comment>
+  </data>
+  <data name="_51229" xml:space="preserve">
+    <value>Error sist. 43</value>
+    <comment>ERR_COM_STR_E229</comment>
+  </data>
+  <data name="_51230" xml:space="preserve">
+    <value>Error sist. 44</value>
+    <comment>ERR_COM_STR_E230</comment>
+  </data>
+  <data name="_51231" xml:space="preserve">
+    <value>Error sist. 45</value>
+    <comment>ERR_COM_STR_E231</comment>
+  </data>
+  <data name="_51232" xml:space="preserve">
+    <value>Error sist. 46</value>
+    <comment>ERR_COM_STR_E232</comment>
+  </data>
+  <data name="_51233" xml:space="preserve">
+    <value>Error sist. 47</value>
+    <comment>ERR_COM_STR_E233</comment>
+  </data>
+  <data name="_51234" xml:space="preserve">
+    <value>Error por temperatura no ajustable del LD</value>
+    <comment>ERR_COM_STR_E234</comment>
+  </data>
+  <data name="_51235" xml:space="preserve">
+    <value>Error sist. 49</value>
+    <comment>ERR_COM_STR_E235</comment>
+  </data>
+  <data name="_51236" xml:space="preserve">
+    <value>Error sist. 50</value>
+    <comment>ERR_COM_STR_E236</comment>
+  </data>
+  <data name="_51237" xml:space="preserve">
+    <value>Error sist. 51</value>
+    <comment>ERR_COM_STR_E237</comment>
+  </data>
+  <data name="_51238" xml:space="preserve">
+    <value>Error sist. 52</value>
+  </data>
+  <data name="_51239" xml:space="preserve">
+    <value>Error sist. 53</value>
+    <comment>ERR_COM_STR_E239</comment>
+  </data>
+  <data name="_51240" xml:space="preserve">
+    <value>Error sist. 60</value>
+    <comment>ERR_COM_STR_E240</comment>
+  </data>
+  <data name="_51241" xml:space="preserve">
+    <value>Error sist. 61</value>
+    <comment>ERR_COM_STR_E241</comment>
+  </data>
+  <data name="_51242" xml:space="preserve">
+    <value>Error sist. 62</value>
+    <comment>ERR_COM_STR_E242</comment>
+  </data>
+  <data name="_51243" xml:space="preserve">
+    <value>Error sist. 63</value>
+    <comment>ERR_COM_STR_E243</comment>
+  </data>
+  <data name="_51244" xml:space="preserve">
+    <value>Error sist. 64</value>
+    <comment>ERR_COM_STR_E244</comment>
+  </data>
+  <data name="_51245" xml:space="preserve">
+    <value>Error sist. 65</value>
+    <comment>ERR_COM_STR_E245</comment>
+  </data>
+  <data name="_51246" xml:space="preserve">
+    <value>Error sist. 66</value>
+    <comment>ERR_COM_STR_E246</comment>
+  </data>
+  <data name="_51247" xml:space="preserve">
+    <value>Error sist. 67</value>
+    <comment>ERR_COM_STR_E247</comment>
+  </data>
+  <data name="_51248" xml:space="preserve">
+    <value>Error sist. 68</value>
+  </data>
+  <data name="_51249" xml:space="preserve">
+    <value>Error sist. 69</value>
+  </data>
+  <data name="_51250" xml:space="preserve">
+    <value>Error sist. 70</value>
+  </data>
+  <data name="_51251" xml:space="preserve">
+    <value>Error sist. 71</value>
+  </data>
+  <data name="_51252" xml:space="preserve">
+    <value>Error escáner 3</value>
+    <comment>ERR_COM_STR_E252</comment>
+  </data>
+  <data name="_51253" xml:space="preserve">
+    <value>Error escáner 4</value>
+    <comment>ERR_COM_STR_E253</comment>
+  </data>
+  <data name="_51254" xml:space="preserve">
+    <value>Error escáner 5</value>
+    <comment>ERR_COM_STR_E254</comment>
+  </data>
+  <data name="_51255" xml:space="preserve">
+    <value>Error escáner 6</value>
+    <comment>ERR_COM_STR_E255</comment>
+  </data>
+  <data name="_51256" xml:space="preserve">
+    <value>Error sist. 72</value>
+  </data>
+  <data name="_51257" xml:space="preserve">
+    <value>Error Alim. Control.</value>
+    <comment>ERR_COM_STR_E257</comment>
+  </data>
+  <data name="_51258" xml:space="preserve">
+    <value>Error Bajo Voltaje</value>
+  </data>
+  <data name="_51259" xml:space="preserve">
+    <value>Error Bajo Voltaje 24 V</value>
+  </data>
+  <data name="_51260" xml:space="preserve">
+    <value>Error Bajo Voltaje 2</value>
+  </data>
+  <data name="_51261" xml:space="preserve">
+    <value>Error sist. 73</value>
+  </data>
+  <data name="_51262" xml:space="preserve">
+    <value>Error sist. 74</value>
+  </data>
+  <data name="_51270" xml:space="preserve">
+    <value>Error altas temp. controlador</value>
+    <comment>ERR_COM_STR_E270</comment>
+  </data>
+  <data name="_51271" xml:space="preserve">
+    <value>Error bajas temp. controlador</value>
+    <comment>ERR_COM_STR_E271</comment>
+  </data>
+  <data name="_51272" xml:space="preserve">
+    <value>Error por altas temperaturas de la unidad de marcado (tubo láser)</value>
+  </data>
+  <data name="_51273" xml:space="preserve">
+    <value>Error de estado del módulo de seguridad del láser</value>
+    <comment>ERR_COM_STR_E273</comment>
+  </data>
+  <data name="_51274" xml:space="preserve">
+    <value>Error Altas Temp. Cabez. Marc. (Sensor de desp. interno)</value>
+  </data>
+  <data name="_51275" xml:space="preserve">
+    <value>Error Bajas Temp. Cabez. Marc. (Sensor de desp. interno)</value>
+  </data>
+  <data name="_51280" xml:space="preserve">
+    <value>Error altas temp. cabezal (placa)</value>
+    <comment>ERR_COM_STR_E280</comment>
+  </data>
+  <data name="_51281" xml:space="preserve">
+    <value>Error bajas temp. Cabezal (placa)</value>
+    <comment>ERR_COM_STR_E281</comment>
+  </data>
+  <data name="_51282" xml:space="preserve">
+    <value>Error altas temp. cabezal (tecl.)</value>
+    <comment>ERR_COM_STR_E282</comment>
+  </data>
+  <data name="_51283" xml:space="preserve">
+    <value>Error bajas temp. cabezal(tecl.)</value>
+    <comment>ERR_COM_STR_E283</comment>
+  </data>
+  <data name="_51284" xml:space="preserve">
+    <value>Error altas temperat. del escáner</value>
+    <comment>ERR_COM_STR_E284</comment>
+  </data>
+  <data name="_51285" xml:space="preserve">
+    <value>Error bajas temperat. del escáner</value>
+    <comment>ERR_COM_STR_E285</comment>
+  </data>
+  <data name="_51286" xml:space="preserve">
+    <value>Error Altas Temp. en Muestreador del Haz</value>
+  </data>
+  <data name="_51287" xml:space="preserve">
+    <value>Error por altas temperaturas de la unidad de marcado (parte superior)</value>
+  </data>
+  <data name="_51288" xml:space="preserve">
+    <value>Error por bajas temperaturas de la unidad de marcado (parte superior)</value>
+  </data>
+  <data name="_51289" xml:space="preserve">
+    <value>Error de conexión del módulo de seguridad del láser</value>
+  </data>
+  <data name="_51290" xml:space="preserve">
+    <value>Error del estado del contactor</value>
+  </data>
+  <data name="_51291" xml:space="preserve">
+    <value>Error de com.  en la unidad de marcado 2</value>
+    <comment>ERR_COM_STR_E291</comment>
+  </data>
+  <data name="_51292" xml:space="preserve">
+    <value>Error de estado de SSR</value>
+  </data>
+  <data name="_51293" xml:space="preserve">
+    <value>Error de estado de enclavamiento</value>
+  </data>
+  <data name="_51294" xml:space="preserve">
+    <value>Error sist. 80</value>
+  </data>
+  <data name="_51295" xml:space="preserve">
+    <value>Error de archivo de configuración de la tarjeta SD</value>
+  </data>
+  <data name="_51296" xml:space="preserve">
+    <value>Error sist. 81</value>
+  </data>
+  <data name="_51297" xml:space="preserve">
+    <value>Error sist. 82</value>
+  </data>
+  <data name="_51298" xml:space="preserve">
+    <value>Error de com.  en la unidad de marcado 3</value>
+    <comment>ERR_COM_STR_E298</comment>
+  </data>
+  <data name="_51299" xml:space="preserve">
+    <value>Error de com.  en la unidad de marcado 4</value>
+    <comment>ERR_COM_STR_E299</comment>
+  </data>
+  <data name="_51300" xml:space="preserve">
+    <value>Error comprob. memoria 1</value>
+    <comment>ERR_COM_STR_E300</comment>
+  </data>
+  <data name="_51301" xml:space="preserve">
+    <value>Error comprob. memoria 2</value>
+    <comment>ERR_COM_STR_E301</comment>
+  </data>
+  <data name="_51302" xml:space="preserve">
+    <value>Error comprob. memoria 3</value>
+    <comment>ERR_COM_STR_E302</comment>
+  </data>
+  <data name="_51303" xml:space="preserve">
+    <value>Error comprob. memoria 4</value>
+    <comment>ERR_COM_STR_E303</comment>
+  </data>
+  <data name="_51304" xml:space="preserve">
+    <value>Error comprob. memoria 5</value>
+    <comment>ERR_COM_STR_E304</comment>
+  </data>
+  <data name="_51305" xml:space="preserve">
+    <value>Error comprob. memoria 6</value>
+    <comment>ERR_COM_STR_E305</comment>
+  </data>
+  <data name="_51306" xml:space="preserve">
+    <value>Error comprob. memoria 7</value>
+    <comment>ERR_COM_STR_E306</comment>
+  </data>
+  <data name="_51307" xml:space="preserve">
+    <value>Error comprob. memoria 8</value>
+    <comment>ERR_COM_STR_E307</comment>
+  </data>
+  <data name="_51308" xml:space="preserve">
+    <value>Error comprob. memoria 9</value>
+    <comment>ERR_COM_STR_E308</comment>
+  </data>
+  <data name="_51309" xml:space="preserve">
+    <value>Error comprob. memoria 10</value>
+    <comment>ERR_COM_STR_E309</comment>
+  </data>
+  <data name="_51310" xml:space="preserve">
+    <value>Error comprob. memoria 11</value>
+    <comment>ERR_COM_STR_E310</comment>
+  </data>
+  <data name="_51311" xml:space="preserve">
+    <value>Error comprob. memoria 12</value>
+    <comment>ERR_COM_STR_E311</comment>
+  </data>
+  <data name="_51312" xml:space="preserve">
+    <value>Error comprob. memoria 13</value>
+    <comment>ERR_COM_STR_E312</comment>
+  </data>
+  <data name="_51313" xml:space="preserve">
+    <value>Error comprob. memoria 14</value>
+    <comment>ERR_COM_STR_E313</comment>
+  </data>
+  <data name="_51314" xml:space="preserve">
+    <value>Error comprob. memoria 15</value>
+    <comment>ERR_COM_STR_E314</comment>
+  </data>
+  <data name="_51315" xml:space="preserve">
+    <value>Error comprob. memoria 16</value>
+    <comment>ERR_COM_STR_E315</comment>
+  </data>
+  <data name="_51316" xml:space="preserve">
+    <value>Error comprob. memoria 17</value>
+    <comment>ERR_COM_STR_E316</comment>
+  </data>
+  <data name="_51317" xml:space="preserve">
+    <value>Error comprob. memoria 18</value>
+    <comment>ERR_COM_STR_E317</comment>
+  </data>
+  <data name="_51318" xml:space="preserve">
+    <value>Error comprob. memoria 19</value>
+    <comment>ERR_COM_STR_E318</comment>
+  </data>
+  <data name="_51319" xml:space="preserve">
+    <value>Error comprob. memoria 20</value>
+    <comment>ERR_COM_STR_E319</comment>
+  </data>
+  <data name="_51400" xml:space="preserve">
+    <value>Error X00 del escáner</value>
+  </data>
+  <data name="_51401" xml:space="preserve">
+    <value>Error X01 del escáner</value>
+  </data>
+  <data name="_51402" xml:space="preserve">
+    <value>Error X02 del escáner</value>
+  </data>
+  <data name="_51403" xml:space="preserve">
+    <value>Error X03 del escáner</value>
+  </data>
+  <data name="_51404" xml:space="preserve">
+    <value>Error X04 del escáner</value>
+  </data>
+  <data name="_51405" xml:space="preserve">
+    <value>Error X05 del escáner</value>
+  </data>
+  <data name="_51406" xml:space="preserve">
+    <value>Error X06 del escáner</value>
+  </data>
+  <data name="_51407" xml:space="preserve">
+    <value>Error X07 del escáner</value>
+  </data>
+  <data name="_51408" xml:space="preserve">
+    <value>Error X08 del escáner</value>
+  </data>
+  <data name="_51409" xml:space="preserve">
+    <value>Error X09 del escáner</value>
+  </data>
+  <data name="_51410" xml:space="preserve">
+    <value>Error X10 del escáner</value>
+  </data>
+  <data name="_51411" xml:space="preserve">
+    <value>Error X11 del escáner</value>
+  </data>
+  <data name="_51412" xml:space="preserve">
+    <value>Error X12 del escáner</value>
+  </data>
+  <data name="_51413" xml:space="preserve">
+    <value>Error X13 del escáner</value>
+  </data>
+  <data name="_51414" xml:space="preserve">
+    <value>Error X14 del escáner</value>
+  </data>
+  <data name="_51415" xml:space="preserve">
+    <value>Error X15 del escáner</value>
+  </data>
+  <data name="_51416" xml:space="preserve">
+    <value>Error X16 del escáner</value>
+  </data>
+  <data name="_51417" xml:space="preserve">
+    <value>Error X17 del escáner</value>
+  </data>
+  <data name="_51418" xml:space="preserve">
+    <value>Error X18 del escáner</value>
+  </data>
+  <data name="_51419" xml:space="preserve">
+    <value>Error X19 del escáner</value>
+  </data>
+  <data name="_51420" xml:space="preserve">
+    <value>Error X20 del escáner</value>
+  </data>
+  <data name="_51421" xml:space="preserve">
+    <value>Error X21 del escáner</value>
+  </data>
+  <data name="_51422" xml:space="preserve">
+    <value>Error X22 del escáner</value>
+  </data>
+  <data name="_51423" xml:space="preserve">
+    <value>Error X23 del escáner</value>
+  </data>
+  <data name="_51424" xml:space="preserve">
+    <value>Error X24 del escáner</value>
+  </data>
+  <data name="_51425" xml:space="preserve">
+    <value>Error X25 del escáner</value>
+  </data>
+  <data name="_51426" xml:space="preserve">
+    <value>Error X26 del escáner</value>
+  </data>
+  <data name="_51427" xml:space="preserve">
+    <value>Error X27 del escáner</value>
+  </data>
+  <data name="_51428" xml:space="preserve">
+    <value>Error X28 del escáner</value>
+  </data>
+  <data name="_51429" xml:space="preserve">
+    <value>Error X29 del escáner</value>
+  </data>
+  <data name="_51430" xml:space="preserve">
+    <value>Error X30 del escáner</value>
+  </data>
+  <data name="_51432" xml:space="preserve">
+    <value>Error Y00 del escáner</value>
+  </data>
+  <data name="_51433" xml:space="preserve">
+    <value>Error Y01 del escáner</value>
+  </data>
+  <data name="_51434" xml:space="preserve">
+    <value>Error Y02 del escáner</value>
+  </data>
+  <data name="_51435" xml:space="preserve">
+    <value>Error Y03 del escáner</value>
+  </data>
+  <data name="_51436" xml:space="preserve">
+    <value>Error Y04 del escáner</value>
+  </data>
+  <data name="_51437" xml:space="preserve">
+    <value>Error Y05 del escáner</value>
+  </data>
+  <data name="_51438" xml:space="preserve">
+    <value>Error Y06 del escáner</value>
+  </data>
+  <data name="_51439" xml:space="preserve">
+    <value>Error Y07 del escáner</value>
+  </data>
+  <data name="_51440" xml:space="preserve">
+    <value>Error Y08 del escáner</value>
+  </data>
+  <data name="_51441" xml:space="preserve">
+    <value>Error Y09 del escáner</value>
+  </data>
+  <data name="_51442" xml:space="preserve">
+    <value>Error Y10 del escáner</value>
+  </data>
+  <data name="_51443" xml:space="preserve">
+    <value>Error Y11 del escáner</value>
+  </data>
+  <data name="_51444" xml:space="preserve">
+    <value>Error Y12 del escáner</value>
+  </data>
+  <data name="_51445" xml:space="preserve">
+    <value>Error Y13 del escáner</value>
+  </data>
+  <data name="_51446" xml:space="preserve">
+    <value>Error Y14 del escáner</value>
+  </data>
+  <data name="_51447" xml:space="preserve">
+    <value>Error Y15 del escáner</value>
+  </data>
+  <data name="_51448" xml:space="preserve">
+    <value>Error Y16 del escáner</value>
+  </data>
+  <data name="_51449" xml:space="preserve">
+    <value>Error Y17 del escáner</value>
+  </data>
+  <data name="_51450" xml:space="preserve">
+    <value>Error Y18 del escáner</value>
+  </data>
+  <data name="_51451" xml:space="preserve">
+    <value>Error Y19 del escáner</value>
+  </data>
+  <data name="_51452" xml:space="preserve">
+    <value>Error Y20 del escáner</value>
+  </data>
+  <data name="_51453" xml:space="preserve">
+    <value>Error Y21 del escáner</value>
+  </data>
+  <data name="_51454" xml:space="preserve">
+    <value>Error Y22 del escáner</value>
+  </data>
+  <data name="_51455" xml:space="preserve">
+    <value>Error Y23 del escáner</value>
+  </data>
+  <data name="_51456" xml:space="preserve">
+    <value>Error Y24 del escáner</value>
+  </data>
+  <data name="_51457" xml:space="preserve">
+    <value>Error Y25 del escáner</value>
+  </data>
+  <data name="_51458" xml:space="preserve">
+    <value>Error Y26 del escáner</value>
+  </data>
+  <data name="_51459" xml:space="preserve">
+    <value>Error Y27 del escáner</value>
+  </data>
+  <data name="_51460" xml:space="preserve">
+    <value>Error Y28 del escáner</value>
+  </data>
+  <data name="_51461" xml:space="preserve">
+    <value>Error Y29 del escáner</value>
+  </data>
+  <data name="_51462" xml:space="preserve">
+    <value>Error Y30 del escáner</value>
+  </data>
+  <data name="_51500" xml:space="preserve">
+    <value>Error 00 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51501" xml:space="preserve">
+    <value>Error 01 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51502" xml:space="preserve">
+    <value>Error 02 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51503" xml:space="preserve">
+    <value>Error 03 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51504" xml:space="preserve">
+    <value>Error 04 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51505" xml:space="preserve">
+    <value>Error 05 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51506" xml:space="preserve">
+    <value>Error 06 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51507" xml:space="preserve">
+    <value>Error 07 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51508" xml:space="preserve">
+    <value>Error 08 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51509" xml:space="preserve">
+    <value>Error 09 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51510" xml:space="preserve">
+    <value>Error 10 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51511" xml:space="preserve">
+    <value>Error 11 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51512" xml:space="preserve">
+    <value>Error 12 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51513" xml:space="preserve">
+    <value>Error 13 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51514" xml:space="preserve">
+    <value>Error 14 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51515" xml:space="preserve">
+    <value>Error 15 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51516" xml:space="preserve">
+    <value>Error 16 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51517" xml:space="preserve">
+    <value>Error 17 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51518" xml:space="preserve">
+    <value>Error 18 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51519" xml:space="preserve">
+    <value>Error 19 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51520" xml:space="preserve">
+    <value>Error 20 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51521" xml:space="preserve">
+    <value>Error 21 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51522" xml:space="preserve">
+    <value>Error 22 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51523" xml:space="preserve">
+    <value>Error 23 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51524" xml:space="preserve">
+    <value>Error 24 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51525" xml:space="preserve">
+    <value>Error 25 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51526" xml:space="preserve">
+    <value>Error 26 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51527" xml:space="preserve">
+    <value>Error 27 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51528" xml:space="preserve">
+    <value>Error 28 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51529" xml:space="preserve">
+    <value>Error 29 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51530" xml:space="preserve">
+    <value>Error 30 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51531" xml:space="preserve">
+    <value>Error 31 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_51999" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_ERROR_END</comment>
+  </data>
+  <data name="_52001" xml:space="preserve">
+    <value>Advertencia por la temperatura del láser</value>
+  </data>
+  <data name="_52100" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_WARNING_START</comment>
+  </data>
+  <data name="_52101" xml:space="preserve">
+    <value>Advertencia del ventilador del cabezal</value>
+    <comment>ERR_COM_STR_W101</comment>
+  </data>
+  <data name="_52102" xml:space="preserve">
+    <value>Advertencia de error al acceder a unidad flash USB</value>
+    <comment>ERR_COM_STR_W102</comment>
+  </data>
+  <data name="_52103" xml:space="preserve">
+    <value>Advertencia de tiempo de espera de comunicac. Inter-CPU</value>
+    <comment>ERR_COM_STR_W103</comment>
+  </data>
+  <data name="_52104" xml:space="preserve">
+    <value>Advertencia de error de estado de com. principal</value>
+  </data>
+  <data name="_52105" xml:space="preserve">
+    <value>Adv. de parám. de panel control láser</value>
+  </data>
+  <data name="_52106" xml:space="preserve">
+    <value>Advertencia por los parámetros del panel de la unidad de marcado</value>
+  </data>
+  <data name="_52107" xml:space="preserve">
+    <value>Advertencia por los parámetros del panel del controlador</value>
+  </data>
+  <data name="_52110" xml:space="preserve">
+    <value>Alarma Disminución de la Potencia de salida del Láser</value>
+    <comment>ERR_COM_STR_W110</comment>
+  </data>
+  <data name="_52111" xml:space="preserve">
+    <value>Alarma  energía de marcado insufic.</value>
+    <comment>ERR_COM_STR_W111</comment>
+  </data>
+  <data name="_52112" xml:space="preserve">
+    <value>Alarma de exceso de energía de marcado</value>
+    <comment>ERR_COM_STR_W112</comment>
+  </data>
+  <data name="_52113" xml:space="preserve">
+    <value>Advert. sensor de monitor aliment.</value>
+    <comment>ERR_COM_STR_W113</comment>
+  </data>
+  <data name="_52114" xml:space="preserve">
+    <value>Advertencia por la calibración de la potencia del láser</value>
+  </data>
+  <data name="_52122" xml:space="preserve">
+    <value>Advert. Temp. Unidad Láser 1</value>
+    <comment>ERR_COM_STR_W122</comment>
+  </data>
+  <data name="_52123" xml:space="preserve">
+    <value>Advert. Reflejo Láser</value>
+    <comment>ERR_COM_STR_W123</comment>
+  </data>
+  <data name="_52125" xml:space="preserve">
+    <value>Adv. de Voltaje Bajo</value>
+    <comment>ERR_COM_STR_W125</comment>
+  </data>
+  <data name="_52126" xml:space="preserve">
+    <value>Adv. de Voltaje Bajo 2</value>
+  </data>
+  <data name="_52150" xml:space="preserve">
+    <value>Advertencia de límite sup. de la coordenada Z</value>
+    <comment>ERR_COM_STR_W150</comment>
+  </data>
+  <data name="_52151" xml:space="preserve">
+    <value>Advertencia de límite inf. de la coordenada Z</value>
+    <comment>ERR_COM_STR_W151</comment>
+  </data>
+  <data name="_52152" xml:space="preserve">
+    <value>Adv. descenso de calidad del cód. 2D</value>
+    <comment>ERR_COM_STR_W152</comment>
+  </data>
+  <data name="_52153" xml:space="preserve">
+    <value>Adv. de límite sup. de la cantidad de corrección de posición</value>
+  </data>
+  <data name="_52154" xml:space="preserve">
+    <value>Advertencia por bajada de valor correlacionado con el ajuste de posición</value>
+  </data>
+  <data name="_52155" xml:space="preserve">
+    <value>Adv. de límite sup. de la cantidad de corrección de inclinación</value>
+  </data>
+  <data name="_52156" xml:space="preserve">
+    <value>Advertencia de caída de estabilidad de la cantidad de corrección de la coordenada Z</value>
+  </data>
+  <data name="_52157" xml:space="preserve">
+    <value>Advertencia de error de medición de Z</value>
+  </data>
+  <data name="_52158" xml:space="preserve">
+    <value>Advertencia de error de medición de ajuste de posición</value>
+  </data>
+  <data name="_52159" xml:space="preserve">
+    <value>Advertencia de error de mantenimiento de ventana</value>
+    <comment>ERR_COM_STR_W159</comment>
+  </data>
+  <data name="_52160" xml:space="preserve">
+    <value>Adv. altas temp. controlador</value>
+    <comment>ERR_COM_STR_W160</comment>
+  </data>
+  <data name="_52161" xml:space="preserve">
+    <value>Adv. bajas temp. controlador</value>
+    <comment>ERR_COM_STR_W161</comment>
+  </data>
+  <data name="_52162" xml:space="preserve">
+    <value>Advert. altas temperat. LD</value>
+    <comment>ERR_COM_STR_W162</comment>
+  </data>
+  <data name="_52163" xml:space="preserve">
+    <value>Advert. bajas temperat. LD</value>
+    <comment>ERR_COM_STR_W163</comment>
+  </data>
+  <data name="_52170" xml:space="preserve">
+    <value>Adv. altas temp. cabezal (placa)</value>
+    <comment>ERR_COM_STR_W170</comment>
+  </data>
+  <data name="_52171" xml:space="preserve">
+    <value>Adv. bajas temp. cabezal (placa)</value>
+    <comment>ERR_COM_STR_W171</comment>
+  </data>
+  <data name="_52172" xml:space="preserve">
+    <value>Adv. altas temp. cabezal(teclado)</value>
+    <comment>ERR_COM_STR_W172</comment>
+  </data>
+  <data name="_52173" xml:space="preserve">
+    <value>Adv. bajas temp. cabezal. (tecl.)</value>
+    <comment>ERR_COM_STR_W173</comment>
+  </data>
+  <data name="_52174" xml:space="preserve">
+    <value>Advert. altas temper. del escáner</value>
+    <comment>ERR_COM_STR_W174</comment>
+  </data>
+  <data name="_52175" xml:space="preserve">
+    <value>Advert. bajas temper. del escáner</value>
+    <comment>ERR_COM_STR_W175</comment>
+  </data>
+  <data name="_52176" xml:space="preserve">
+    <value>Advertencia por altas temperaturas de la unidad de marcado (parte superior)</value>
+  </data>
+  <data name="_52177" xml:space="preserve">
+    <value>Advertencia por bajas temperaturas de la unidad de marcado (parte superior)</value>
+  </data>
+  <data name="_52178" xml:space="preserve">
+    <value>Adv. altas temp. cabez. marc. (Sensor de desp. interno)</value>
+  </data>
+  <data name="_52179" xml:space="preserve">
+    <value>Adv. bajas temp. cabez. marc. (Sensor de desp. interno)</value>
+  </data>
+  <data name="_52180" xml:space="preserve">
+    <value>Advertencia por reemplazo del secante de la unidad de marcado</value>
+  </data>
+  <data name="_52181" xml:space="preserve">
+    <value>Adv. de corrección de cámara 1</value>
+  </data>
+  <data name="_52182" xml:space="preserve">
+    <value>Adv. de comunicación de la unidad de marcado</value>
+  </data>
+  <data name="_52183" xml:space="preserve">
+    <value>Adv. de comunicación de procesamiento de la imagen</value>
+  </data>
+  <data name="_52184" xml:space="preserve">
+    <value>Adv. de corrección de cámara 2</value>
+  </data>
+  <data name="_52190" xml:space="preserve">
+    <value>Error de calibración de seguimiento de Z</value>
+  </data>
+  <data name="_52191" xml:space="preserve">
+    <value>Advertencia de limpieza de ventana</value>
+  </data>
+  <data name="_52192" xml:space="preserve">
+    <value>Advertencia de ejecución de calibración de seguimiento de Z</value>
+  </data>
+  <data name="_52200" xml:space="preserve">
+    <value>Adv. de no disponibilidad de guardado de registro (memoria interna)</value>
+  </data>
+  <data name="_52201" xml:space="preserve">
+    <value>Adv. de no disponibilidad de guardado de registro (memoria externa)</value>
+  </data>
+  <data name="_52202" xml:space="preserve">
+    <value>Adv. de no disponibilidad de guardado de registro (servidor FTP)</value>
+  </data>
+  <data name="_52203" xml:space="preserve">
+    <value>Adv. de acceso a datos del registro</value>
+  </data>
+  <data name="_52204" xml:space="preserve">
+    <value>Adv. de saturación de búfer de guardado de reg.</value>
+  </data>
+  <data name="_52205" xml:space="preserve">
+    <value>Adv. de fallo de eliminación de datos del registro</value>
+  </data>
+  <data name="_52206" xml:space="preserve">
+    <value>Adv. de conexión del servidor FTP</value>
+  </data>
+  <data name="_52207" xml:space="preserve">
+    <value>Adv. de reconocimiento de memoria externa</value>
+  </data>
+  <data name="_52208" xml:space="preserve">
+    <value>Advertencia de error de lectura de información de usuario</value>
+  </data>
+  <data name="_52400" xml:space="preserve">
+    <value>Advertencia X00 del escáner</value>
+  </data>
+  <data name="_52401" xml:space="preserve">
+    <value>Advertencia X01 del escáner</value>
+  </data>
+  <data name="_52402" xml:space="preserve">
+    <value>Advertencia X02 del escáner</value>
+  </data>
+  <data name="_52403" xml:space="preserve">
+    <value>Advertencia X03 del escáner</value>
+  </data>
+  <data name="_52404" xml:space="preserve">
+    <value>Advertencia X04 del escáner</value>
+  </data>
+  <data name="_52405" xml:space="preserve">
+    <value>Advertencia X05 del escáner</value>
+  </data>
+  <data name="_52406" xml:space="preserve">
+    <value>Advertencia X06 del escáner</value>
+  </data>
+  <data name="_52407" xml:space="preserve">
+    <value>Advertencia X07 del escáner</value>
+  </data>
+  <data name="_52408" xml:space="preserve">
+    <value>Advertencia X08 del escáner</value>
+  </data>
+  <data name="_52409" xml:space="preserve">
+    <value>Advertencia X09 del escáner</value>
+  </data>
+  <data name="_52410" xml:space="preserve">
+    <value>Advertencia X10 del escáner</value>
+  </data>
+  <data name="_52411" xml:space="preserve">
+    <value>Advertencia X11 del escáner</value>
+  </data>
+  <data name="_52412" xml:space="preserve">
+    <value>Advertencia X12 del escáner</value>
+  </data>
+  <data name="_52413" xml:space="preserve">
+    <value>Advertencia X13 del escáner</value>
+  </data>
+  <data name="_52414" xml:space="preserve">
+    <value>Advertencia X14 del escáner</value>
+  </data>
+  <data name="_52416" xml:space="preserve">
+    <value>Advertencia Y00 del escáner</value>
+  </data>
+  <data name="_52417" xml:space="preserve">
+    <value>Advertencia Y01 del escáner</value>
+  </data>
+  <data name="_52418" xml:space="preserve">
+    <value>Advertencia Y02 del escáner</value>
+  </data>
+  <data name="_52419" xml:space="preserve">
+    <value>Advertencia Y03 del escáner</value>
+  </data>
+  <data name="_52420" xml:space="preserve">
+    <value>Advertencia Y04 del escáner</value>
+  </data>
+  <data name="_52421" xml:space="preserve">
+    <value>Advertencia Y05 del escáner</value>
+  </data>
+  <data name="_52422" xml:space="preserve">
+    <value>Advertencia Y06 del escáner</value>
+  </data>
+  <data name="_52423" xml:space="preserve">
+    <value>Advertencia Y07 del escáner</value>
+  </data>
+  <data name="_52424" xml:space="preserve">
+    <value>Advertencia Y08 del escáner</value>
+  </data>
+  <data name="_52425" xml:space="preserve">
+    <value>Advertencia Y09 del escáner</value>
+  </data>
+  <data name="_52426" xml:space="preserve">
+    <value>Advertencia Y10 del escáner</value>
+  </data>
+  <data name="_52427" xml:space="preserve">
+    <value>Advertencia Y11 del escáner</value>
+  </data>
+  <data name="_52428" xml:space="preserve">
+    <value>Advertencia Y12 del escáner</value>
+  </data>
+  <data name="_52429" xml:space="preserve">
+    <value>Advertencia Y13 del escáner</value>
+  </data>
+  <data name="_52430" xml:space="preserve">
+    <value>Advertencia Y14 del escáner</value>
+  </data>
+  <data name="_52500" xml:space="preserve">
+    <value>Advertencia 00 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52501" xml:space="preserve">
+    <value>Advertencia 01 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52502" xml:space="preserve">
+    <value>Advertencia 02 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52503" xml:space="preserve">
+    <value>Advertencia 03 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52504" xml:space="preserve">
+    <value>Advertencia 04 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52505" xml:space="preserve">
+    <value>Advertencia 05 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52506" xml:space="preserve">
+    <value>Advertencia 06 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52507" xml:space="preserve">
+    <value>Advertencia 07 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52508" xml:space="preserve">
+    <value>Advertencia 08 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52509" xml:space="preserve">
+    <value>Advertencia 09 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52510" xml:space="preserve">
+    <value>Advertencia 10 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52511" xml:space="preserve">
+    <value>Advertencia 11 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52512" xml:space="preserve">
+    <value>Advertencia 12 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52513" xml:space="preserve">
+    <value>Advertencia 13 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52514" xml:space="preserve">
+    <value>Advertencia 14 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52515" xml:space="preserve">
+    <value>Advertencia 15 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52516" xml:space="preserve">
+    <value>Advertencia 16 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52517" xml:space="preserve">
+    <value>Advertencia 17 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52518" xml:space="preserve">
+    <value>Advertencia 18 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52519" xml:space="preserve">
+    <value>Advertencia 19 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52520" xml:space="preserve">
+    <value>Advertencia 20 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52521" xml:space="preserve">
+    <value>Advertencia 21 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52522" xml:space="preserve">
+    <value>Advertencia 22 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52523" xml:space="preserve">
+    <value>Advertencia 23 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52524" xml:space="preserve">
+    <value>Advertencia 24 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52525" xml:space="preserve">
+    <value>Advertencia 25 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52526" xml:space="preserve">
+    <value>Advertencia 26 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52527" xml:space="preserve">
+    <value>Advertencia 27 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52528" xml:space="preserve">
+    <value>Advertencia 28 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52529" xml:space="preserve">
+    <value>Advertencia 29 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52530" xml:space="preserve">
+    <value>Advertencia 30 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52531" xml:space="preserve">
+    <value>Advertencia 31 del sistema de la unidad de marcado</value>
+  </data>
+  <data name="_52999" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_WARNING_END</comment>
+  </data>
+  <data name="_53000" xml:space="preserve">
+    <value>Enclavam. remoto en uso</value>
+    <comment>ERR_COM_STR_T000</comment>
+  </data>
+  <data name="_53001" xml:space="preserve">
+    <value>Control obturad.</value>
+    <comment>ERR_COM_STR_T001</comment>
+  </data>
+  <data name="_53002" xml:space="preserve">
+    <value>Bloq. disparo en uso</value>
+    <comment>ERR_COM_STR_T002</comment>
+  </data>
+  <data name="_53003" xml:space="preserve">
+    <value>Laser deshabil.</value>
+    <comment>ERR_COM_STR_T003</comment>
+  </data>
+  <data name="_53004" xml:space="preserve">
+    <value>Deshab. modo de oper. de procesam.</value>
+    <comment>ERR_COM_STR_T004</comment>
+  </data>
+  <data name="_53005" xml:space="preserve">
+    <value>Puntero dist. ON</value>
+    <comment>ERR_COM_STR_T005</comment>
+  </data>
+  <data name="_53006" xml:space="preserve">
+    <value>Estado de láser sin activar</value>
+    <comment>ERR_COM_STR_T006</comment>
+  </data>
+  <data name="_53007" xml:space="preserve">
+    <value>Ajust. temp. LD</value>
+    <comment>ERR_COM_STR_T007</comment>
+  </data>
+  <data name="_53008" xml:space="preserve">
+    <value>Calentando</value>
+    <comment>ERR_COM_STR_T008</comment>
+  </data>
+  <data name="_53009" xml:space="preserve">
+    <value>Potencia láser autocalibrada</value>
+    <comment>ERR_COM_STR_T009</comment>
+  </data>
+  <data name="_53010" xml:space="preserve">
+    <value>Ajuste de temperatura del oscilador láser</value>
+    <comment>ERR_COM_STR_T010</comment>
+  </data>
+  <data name="_53011" xml:space="preserve">
+    <value>Entr. del cont. OFF</value>
+    <comment>ERR_COM_STR_T011</comment>
+  </data>
+  <data name="_53012" xml:space="preserve">
+    <value>Control del obturador de comunicación en proceso</value>
+    <comment>ERR_COM_STR_T012</comment>
+  </data>
+  <data name="_53013" xml:space="preserve">
+    <value>Actualización de versión</value>
+    <comment>ERR_COM_STR_T013</comment>
+  </data>
+  <data name="_53014" xml:space="preserve">
+    <value>Desactivación de la entrada del obturador de seguridad</value>
+  </data>
+  <data name="_53015" xml:space="preserve">
+    <value>Estado desactivado del módulo de seguridad del láser</value>
+  </data>
+  <data name="_53016" xml:space="preserve">
+    <value>Mantenimiento de ventana en curso</value>
+  </data>
+  <data name="_53017" xml:space="preserve">
+    <value>Parada de láser de distancia</value>
+  </data>
+  <data name="_53999" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_TERMINAL_END</comment>
+  </data>
+  <data name="_54000" xml:space="preserve">
+    <value>Error de contenido en el programa</value>
+    <comment>ERR_COM_STR_S000</comment>
+  </data>
+  <data name="_54001" xml:space="preserve">
+    <value>Error, mem. De programa llena</value>
+    <comment>ERR_COM_STR_S001</comment>
+  </data>
+  <data name="_54002" xml:space="preserve">
+    <value>Error, tarj. mem. integrada llena</value>
+    <comment>ERR_COM_STR_S002</comment>
+  </data>
+  <data name="_54003" xml:space="preserve">
+    <value>Error, unidad flash USB llena</value>
+    <comment>ERR_COM_STR_S003</comment>
+  </data>
+  <data name="_54004" xml:space="preserve">
+    <value>Error, unidad flash USB no insertada</value>
+    <comment>ERR_COM_STR_S004</comment>
+  </data>
+  <data name="_54005" xml:space="preserve">
+    <value>Error, unidad flash USB no reconocida</value>
+    <comment>ERR_COM_STR_S005</comment>
+  </data>
+  <data name="_54006" xml:space="preserve">
+    <value>Error prioridad</value>
+    <comment>ERR_COM_STR_S006</comment>
+  </data>
+  <data name="_54008" xml:space="preserve">
+    <value>Error, no hay arch.</value>
+    <comment>ERR_COM_STR_S008</comment>
+  </data>
+  <data name="_54009" xml:space="preserve">
+    <value>Error de procesamiento</value>
+    <comment>ERR_COM_STR_S009</comment>
+  </data>
+  <data name="_54010" xml:space="preserve">
+    <value>Sin errores en el bloque de marcado.</value>
+    <comment>ERR_COM_STR_S010</comment>
+  </data>
+  <data name="_54011" xml:space="preserve">
+    <value>Error superp. logos/carác. pers.</value>
+    <comment>ERR_COM_STR_S011</comment>
+  </data>
+  <data name="_54012" xml:space="preserve">
+    <value>Error, optimización no válida</value>
+    <comment>ERR_COM_STR_S012</comment>
+  </data>
+  <data name="_54013" xml:space="preserve">
+    <value>Error no ejec. opt. escan.</value>
+    <comment>ERR_COM_STR_S013</comment>
+  </data>
+  <data name="_54014" xml:space="preserve">
+    <value>Error de ejecución durante la operación del programa</value>
+    <comment>ERR_COM_STR_S014</comment>
+  </data>
+  <data name="_54015" xml:space="preserve">
+    <value>Error, operación de archivo de logo/carácter personalizado</value>
+    <comment>ERR_COM_STR_S015</comment>
+  </data>
+  <data name="_54016" xml:space="preserve">
+    <value>Error al adquirir el derecho de control</value>
+    <comment>ERR_COM_STR_S016</comment>
+  </data>
+  <data name="_54017" xml:space="preserve">
+    <value>Error en parámetro de marcado del punto fijo</value>
+    <comment>ERR_COM_STR_S017</comment>
+  </data>
+  <data name="_54018" xml:space="preserve">
+    <value>Error, config. prohibida cód. 2D/cód. barr.</value>
+    <comment>ERR_COM_STR_S018</comment>
+  </data>
+  <data name="_54019" xml:space="preserve">
+    <value>Todo-error de restauración de configuración</value>
+    <comment>ERR_COM_STR_S019</comment>
+  </data>
+  <data name="_54020" xml:space="preserve">
+    <value>Error long. datos</value>
+    <comment>ERR_COM_STR_S020</comment>
+  </data>
+  <data name="_54021" xml:space="preserve">
+    <value>Error número de programa no registrado</value>
+    <comment>ERR_COM_STR_S021</comment>
+  </data>
+  <data name="_54022" xml:space="preserve">
+    <value>Error, n.º de bloq. sin registrar</value>
+    <comment>ERR_COM_STR_S022</comment>
+  </data>
+  <data name="_54023" xml:space="preserve">
+    <value>Error de estado</value>
+    <comment>ERR_COM_STR_S023</comment>
+  </data>
+  <data name="_54024" xml:space="preserve">
+    <value>Error comando no válido</value>
+    <comment>ERR_COM_STR_S024</comment>
+  </data>
+  <data name="_54025" xml:space="preserve">
+    <value>Error suma verif.</value>
+    <comment>ERR_COM_STR_S025</comment>
+  </data>
+  <data name="_54026" xml:space="preserve">
+    <value>Error de form.</value>
+    <comment>ERR_COM_STR_S026</comment>
+  </data>
+  <data name="_54027" xml:space="preserve">
+    <value>Error comando no identif. </value>
+    <comment>ERR_COM_STR_S027</comment>
+  </data>
+  <data name="_54028" xml:space="preserve">
+    <value>Error long. datos de respuesta</value>
+    <comment>ERR_COM_STR_S028</comment>
+  </data>
+  <data name="_54029" xml:space="preserve">
+    <value>Error en en solicitud de datos de marcado.</value>
+    <comment>ERR_COM_STR_S029</comment>
+  </data>
+  <data name="_54030" xml:space="preserve">
+    <value>Error no registrado núm. grupo</value>
+    <comment>ERR_COM_STR_S030</comment>
+  </data>
+  <data name="_54031" xml:space="preserve">
+    <value>Sin errores de programa (lector de código 2D)</value>
+    <comment>ERR_COM_STR_S031</comment>
+  </data>
+  <data name="_54032" xml:space="preserve">
+    <value>Sin errores de programa (función de confirm. marcado)</value>
+    <comment>ERR_COM_STR_S032</comment>
+  </data>
+  <data name="_54033" xml:space="preserve">
+    <value>Sin errores de programa (seguimiento de 3 ejes)</value>
+    <comment>ERR_COM_STR_S033</comment>
+  </data>
+  <data name="_54040" xml:space="preserve">
+    <value>Error de limitación de operación (lector de código 2D)</value>
+  </data>
+  <data name="_54041" xml:space="preserve">
+    <value>Error de limitación de operación (marcado 3D)</value>
+  </data>
+  <data name="_54042" xml:space="preserve">
+    <value>Error de limitación de operación (seguimiento Z)</value>
+  </data>
+  <data name="_54043" xml:space="preserve">
+    <value>Error de limitación de operación (seguimiento XY)</value>
+  </data>
+  <data name="_54050" xml:space="preserve">
+    <value>Error de cambio rápido de configuración de carácter</value>
+    <comment>ERR_COM_STR_S050</comment>
+  </data>
+  <data name="_54051" xml:space="preserve">
+    <value>Error no ejecut. de marcado de muestra</value>
+    <comment>ERR_COM_STR_S051</comment>
+  </data>
+  <data name="_54052" xml:space="preserve">
+    <value>Error no ejec. de inspección láser</value>
+    <comment>ERR_COM_STR_S052</comment>
+  </data>
+  <data name="_54060" xml:space="preserve">
+    <value>Error, config. incor. de tipo bloq.</value>
+    <comment>ERR_COM_STR_S060</comment>
+  </data>
+  <data name="_54061" xml:space="preserve">
+    <value>Error, config. incor. de asignación bloq.</value>
+    <comment>ERR_COM_STR_S061</comment>
+  </data>
+  <data name="_54062" xml:space="preserve">
+    <value>Error, config. incorr. de tamaño carac.</value>
+    <comment>ERR_COM_STR_S062</comment>
+  </data>
+  <data name="_54063" xml:space="preserve">
+    <value>Error, config. incorr. de asignación carac.</value>
+    <comment>ERR_COM_STR_S063</comment>
+  </data>
+  <data name="_54064" xml:space="preserve">
+    <value>Error, config. avanzada incorrecta de carac.</value>
+    <comment>ERR_COM_STR_S064</comment>
+  </data>
+  <data name="_54065" xml:space="preserve">
+    <value>Error, ajuste incorrecto de condición de marcado</value>
+    <comment>ERR_COM_STR_S065</comment>
+  </data>
+  <data name="_54066" xml:space="preserve">
+    <value>Error, config. prohibida cód. 2D/cód. barr.</value>
+    <comment>ERR_COM_STR_S066</comment>
+  </data>
+  <data name="_54067" xml:space="preserve">
+    <value>Error de config. incorrecta del marcado continuo</value>
+    <comment>ERR_COM_STR_S067</comment>
+  </data>
+  <data name="_54068" xml:space="preserve">
+    <value>Error, ajuste incorrecto de direc. de marcado/movimiento</value>
+    <comment>ERR_COM_STR_S068</comment>
+  </data>
+  <data name="_54069" xml:space="preserve">
+    <value>Error de programa, programa incorrecto</value>
+    <comment>ERR_COM_STR_S069</comment>
+  </data>
+  <data name="_54070" xml:space="preserve">
+    <value>Config. incorrecta de información de matriz</value>
+    <comment>ERR_COM_STR_S070</comment>
+  </data>
+  <data name="_54071" xml:space="preserve">
+    <value>Config. incorrec. de información de celda de matriz</value>
+    <comment>ERR_COM_STR_S071</comment>
+  </data>
+  <data name="_54072" xml:space="preserve">
+    <value>Error, config. incorr. de cadena carac.</value>
+    <comment>ERR_COM_STR_S072</comment>
+  </data>
+  <data name="_54073" xml:space="preserve">
+    <value>Error, Configuración incorrecta del contador individual.</value>
+    <comment>ERR_COM_STR_S073</comment>
+  </data>
+  <data name="_54074" xml:space="preserve">
+    <value>Error, config. incorrecta de conteo común</value>
+    <comment>ERR_COM_STR_S074</comment>
+  </data>
+  <data name="_54075" xml:space="preserve">
+    <value>Config. incorrecta de información de codificación</value>
+    <comment>ERR_COM_STR_S075</comment>
+  </data>
+  <data name="_54076" xml:space="preserve">
+    <value>Config. incorrecta de información del sistema</value>
+    <comment>ERR_COM_STR_S076</comment>
+  </data>
+  <data name="_54077" xml:space="preserve">
+    <value>Error, config. incorrecta de info. de sustitución de fuente</value>
+    <comment>ERR_COM_STR_S077</comment>
+  </data>
+  <data name="_54078" xml:space="preserve">
+    <value>Config. incorrec. de información de escala de fuente</value>
+    <comment>ERR_COM_STR_S078</comment>
+  </data>
+  <data name="_54079" xml:space="preserve">
+    <value>Error, config. incorrecta de info. de cruz de omisión de la fuente</value>
+    <comment>ERR_COM_STR_S079</comment>
+  </data>
+  <data name="_54080" xml:space="preserve">
+    <value>Error config. incorrecta de búfer de logo/carácter personalizado</value>
+    <comment>ERR_COM_STR_S080</comment>
+  </data>
+  <data name="_54081" xml:space="preserve">
+    <value>Error de config. del valor actual incorrecto</value>
+    <comment>ERR_COM_STR_S081</comment>
+  </data>
+  <data name="_54082" xml:space="preserve">
+    <value>Config. incorrecta de información del sistema 3D</value>
+    <comment>ERR_COM_STR_S082</comment>
+  </data>
+  <data name="_54083" xml:space="preserve">
+    <value>Config. incorrecta de información 3D</value>
+    <comment>ERR_COM_STR_S083</comment>
+  </data>
+  <data name="_54084" xml:space="preserve">
+    <value>Error limitación de operación</value>
+    <comment>ERR_COM_STR_S084</comment>
+  </data>
+  <data name="_54085" xml:space="preserve">
+    <value>Vers. soporte exterior de datos</value>
+    <comment>ERR_COM_STR_S085</comment>
+  </data>
+  <data name="_54086" xml:space="preserve">
+    <value>Error, ajuste ondulado incorrecto</value>
+    <comment>ERR_COM_STR_S086</comment>
+  </data>
+  <data name="_54087" xml:space="preserve">
+    <value>Error de lect. del código 2D</value>
+    <comment>ERR_COM_STR_S087</comment>
+  </data>
+  <data name="_54088" xml:space="preserve">
+    <value>Error medida de distancia de trabajo.</value>
+    <comment>ERR_COM_STR_S088</comment>
+  </data>
+  <data name="_54089" xml:space="preserve">
+    <value>Error límite de medición de distancia de trabajo</value>
+    <comment>ERR_COM_STR_S089</comment>
+  </data>
+  <data name="_54090" xml:space="preserve">
+    <value>Error, cód. barras registrado</value>
+    <comment>ERR_COM_STR_S090</comment>
+  </data>
+  <data name="_54091" xml:space="preserve">
+    <value>Error, config. de conex. cód. 2D/cód. barr.</value>
+    <comment>ERR_COM_STR_S091</comment>
+  </data>
+  <data name="_54092" xml:space="preserve">
+    <value>Error, estado de registro prohibido de cód. barras</value>
+    <comment>ERR_COM_STR_S092</comment>
+  </data>
+  <data name="_54093" xml:space="preserve">
+    <value>Error en función de confirm. marcado</value>
+    <comment>ERR_COM_STR_S093</comment>
+  </data>
+  <data name="_54094" xml:space="preserve">
+    <value>Error de tamaño de fuente True Type</value>
+    <comment>ERR_COM_STR_S094</comment>
+  </data>
+  <data name="_54095" xml:space="preserve">
+    <value>Error, limitación de modelo</value>
+    <comment>ERR_COM_STR_S095</comment>
+  </data>
+  <data name="_54096" xml:space="preserve">
+    <value>Abrir error de prioridad</value>
+    <comment>ERR_COM_STR_S096</comment>
+  </data>
+  <data name="_54097" xml:space="preserve">
+    <value>Error de acceso al archivo</value>
+    <comment>ERR_COM_STR_S097</comment>
+  </data>
+  <data name="_54098" xml:space="preserve">
+    <value>Error del n.º de serie</value>
+  </data>
+  <data name="_54099" xml:space="preserve">
+    <value>N.º de serie duplicado</value>
+  </data>
+  <data name="_54100" xml:space="preserve">
+    <value>Error de condición de captura ilegal</value>
+    <comment>ERR_COM_STR_S100</comment>
+  </data>
+  <data name="_54101" xml:space="preserve">
+    <value>Cancelación del procesamiento del usuario</value>
+  </data>
+  <data name="_54102" xml:space="preserve">
+    <value>No se pudo realizar la medición.</value>
+  </data>
+  <data name="_54103" xml:space="preserve">
+    <value>Error de registro del número de seguimiento</value>
+  </data>
+  <data name="_54104" xml:space="preserve">
+    <value>Error de solicitud del resultado del seguimiento</value>
+  </data>
+  <data name="_54105" xml:space="preserve">
+    <value>Error de solicitud de resultados de la captura de registro</value>
+    <comment>ERR_COM_STR_S105</comment>
+  </data>
+  <data name="_54106" xml:space="preserve">
+    <value>Error en la solicitud de resultados del flujo de trabajo</value>
+    <comment>ERR_COM_STR_S106</comment>
+  </data>
+  <data name="_54107" xml:space="preserve">
+    <value>Error de especificación de número de celda</value>
+  </data>
+  <data name="_54108" xml:space="preserve">
+    <value>Error de láser de distancia sin activar</value>
+  </data>
+  <data name="_54109" xml:space="preserve">
+    <value>Error de ajuste auto. de captura de condición</value>
+    <comment>ERR_COM_STR_S109</comment>
+  </data>
+  <data name="_54110" xml:space="preserve">
+    <value>Sin datos registrados</value>
+    <comment>ERR_COM_STR_S110</comment>
+  </data>
+  <data name="_54111" xml:space="preserve">
+    <value>Error, tabla de enrutamiento llena</value>
+  </data>
+  <data name="_54112" xml:space="preserve">
+    <value>Error de desactivación de la función de gestión de usuarios</value>
+  </data>
+  <data name="_54113" xml:space="preserve">
+    <value>Error de inicio de sesión simultáneo excedido</value>
+  </data>
+  <data name="_54114" xml:space="preserve">
+    <value>Error de autenticación de usuario</value>
+  </data>
+  <data name="_54115" xml:space="preserve">
+    <value>Error de sin información de usuario</value>
+  </data>
+  <data name="_54999" xml:space="preserve">
+    <value />
+    <comment>ERR_COM_STR_CATEGORY_SOFT_END</comment>
+  </data>
+  <data name="_6" xml:space="preserve">
+    <value>Punto fijo durante disparo activado</value>
+    <comment>IDS_DATA_PROCESSINGTRIGGERONPOINT_TEXT</comment>
+  </data>
+  <data name="_64" xml:space="preserve">
+    <value>Ar. programa (*.MX4)|*.MX4</value>
+    <comment>IDS_FILTER_MX4</comment>
+  </data>
+  <data name="_65" xml:space="preserve">
+    <value>Serie MD-U1000</value>
+  </data>
+  <data name="_65535" xml:space="preserve">
+    <value />
+    <comment>ERR_SUCCESS</comment>
+  </data>
+  <data name="_66" xml:space="preserve">
+    <value>Temperatura de la unidad de marcado</value>
+  </data>
+  <data name="_661" xml:space="preserve">
+    <value>Temperatura del controlador</value>
+  </data>
+  <data name="_67" xml:space="preserve">
+    <value>Resultado de calibración de la potencia láser</value>
+  </data>
+  <data name="_694" xml:space="preserve">
+    <value>Contenidos</value>
+  </data>
+  <data name="_695" xml:space="preserve">
+    <value>Hora</value>
+  </data>
+  <data name="_696" xml:space="preserve">
+    <value>Parámetro</value>
+  </data>
+  <data name="_697" xml:space="preserve">
+    <value>Módulo</value>
+  </data>
+  <data name="_7" xml:space="preserve">
+    <value>Altura</value>
+    <comment>IDS_PROPNAME_CHARHEIGHT</comment>
+  </data>
+  <data name="_70" xml:space="preserve">
+    <value>Archivo de programa (*.MA1)|*.MA1</value>
+  </data>
+  <data name="_7000" xml:space="preserve">
+    <value>Se está produciendo un error irreparable. No se puede recibir el comando.</value>
+    <comment>ERR_COM_MB3_NGERR_CRITICAL</comment>
+  </data>
+  <data name="_7001" xml:space="preserve">
+    <value>Parámetro prohibido</value>
+    <comment>ERR_COM_MB3_NGERR_PARAMATER</comment>
+  </data>
+  <data name="_71" xml:space="preserve">
+    <value>Ambiente del área de patrón</value>
+  </data>
+  <data name="_72" xml:space="preserve">
+    <value>Nombre de usuario</value>
+  </data>
+  <data name="_73" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="_74" xml:space="preserve">
+    <value>Nombre de nivel de usuario</value>
+  </data>
+  <data name="_75" xml:space="preserve">
+    <value>Archivo de programa (*.MA2)|*.MA2</value>
+  </data>
+  <data name="_8" xml:space="preserve">
+    <value>Ancho</value>
+    <comment>IDS_PROPNAME_CHARWIDTH</comment>
+  </data>
+  <data name="_8000" xml:space="preserve">
+    <value>Error, comunicación</value>
+    <comment>ERR_COM_MB3_CONNECT</comment>
+  </data>
+  <data name="_8001" xml:space="preserve">
+    <value>Error, rango de modo de op.</value>
+    <comment>ERR_COM_MB3_SA_OVERRANG</comment>
+  </data>
+  <data name="_8002" xml:space="preserve">
+    <value>Error rango de datos</value>
+    <comment>ERR_COM_MB3_DB_OVERRANG</comment>
+  </data>
+  <data name="_8003" xml:space="preserve">
+    <value>Error, rango de fila</value>
+    <comment>ERR_COM_MB3_RL_OVERRANG</comment>
+  </data>
+  <data name="_8004" xml:space="preserve">
+    <value>Error de rango, disparador de marcado inhibido.</value>
+    <comment>ERR_COM_MB3_SP_OVERRANG</comment>
+  </data>
+  <data name="_8005" xml:space="preserve">
+    <value>Error de rango, No. De programa</value>
+    <comment>ERR_COM_MB3_FB_OVERRANG</comment>
+  </data>
+  <data name="_8006" xml:space="preserve">
+    <value>Error de rango,  selección del disparo de marcado</value>
+    <comment>ERR_COM_MB3_IL_OVERRANG</comment>
+  </data>
+  <data name="_8007" xml:space="preserve">
+    <value>Error rango de años</value>
+    <comment>ERR_COM_MB3_GF_OVERRANG</comment>
+  </data>
+  <data name="_8008" xml:space="preserve">
+    <value>Error rango de estado LD</value>
+    <comment>ERR_COM_MB3_SF_OVERRANG</comment>
+  </data>
+  <data name="_8009" xml:space="preserve">
+    <value>Error rango puntero distancia</value>
+    <comment>ERR_COM_MB3_DQ_OVERRANG</comment>
+  </data>
+  <data name="_8010" xml:space="preserve">
+    <value>Error al abrir el archivo de transmisión</value>
+    <comment>ERR_COM_MB3_FILE_OPEN</comment>
+  </data>
+  <data name="_8011" xml:space="preserve">
+    <value>Error al cargar el archivo de transmisión</value>
+    <comment>ERR_COM_MB3_FILE_READ</comment>
+  </data>
+  <data name="_8012" xml:space="preserve">
+    <value>Error al escribir el programa. Por favor verifique el espacio en disco.</value>
+    <comment>ERR_COM_MB3_FILE_WRITE</comment>
+  </data>
+  <data name="_8013" xml:space="preserve">
+    <value>Diferente número de serie de la respuesta LDD</value>
+    <comment>ERR_COM_MB3_LDD_SERIAL</comment>
+  </data>
+  <data name="_8014" xml:space="preserve">
+    <value>Diferente longitud de datos LDD</value>
+    <comment>ERR_COM_MB3_LDD_DAT_LEN</comment>
+  </data>
+  <data name="_8015" xml:space="preserve">
+    <value>Error de archivo inexistente</value>
+    <comment>ERR_COM_MB3_FILENOTFOUND</comment>
+  </data>
+  <data name="_8016" xml:space="preserve">
+    <value>Ejecutar después de que la conexión con los marcadores láser en otras aplicaciones se haya desconectado.</value>
+    <comment>ERR_COM_MB3_MULTICONNECTION</comment>
+  </data>
+  <data name="_8017" xml:space="preserve">
+    <value>Cancelar comunicación</value>
+    <comment>ERR_COM_MB3_CANCEL</comment>
+  </data>
+  <data name="_8018" xml:space="preserve">
+    <value>Error, formato de comunic.</value>
+    <comment>ERR_COM_MB3_FORMAT_ERROR</comment>
+  </data>
+  <data name="_8019" xml:space="preserve">
+    <value>Fallo al establecer el seguimiento XY.</value>
+  </data>
+  <data name="_8020" xml:space="preserve">
+    <value>Fallo al realizar la composición de la captura.</value>
+  </data>
+  <data name="_8021" xml:space="preserve">
+    <value>Fallo al guardar la toma de imágenes de la imagen de la cámara.</value>
+  </data>
+  <data name="_8022" xml:space="preserve">
+    <value>Se está realizando el mantenimiento de la ventana.</value>
+    <comment>ERR_WINDOW_MAINTENANCE_NOT_OVER_YET</comment>
+  </data>
+  <data name="_8023" xml:space="preserve">
+    <value>No se ha podido conectar al servidor FTP.</value>
+  </data>
+  <data name="_8024" xml:space="preserve">
+    <value>No se ha podido iniciar sesión en el servidor FTP.</value>
+  </data>
+  <data name="_8025" xml:space="preserve">
+    <value>El nombre de usuario o contraseña son incorrectos.</value>
+  </data>
+  <data name="_9" xml:space="preserve">
+    <value>Ancho de  línea</value>
+    <comment>IDS_PROPNAME_MULTILINEWIDTH</comment>
+  </data>
+  <data name="_9000" xml:space="preserve">
+    <value>Sin datos LDD</value>
+    <comment>ERR_COM_MB3_LDD_NODATA</comment>
+  </data>
+  <data name="_91" xml:space="preserve">
+    <value>Serie ML-Z9600</value>
+    <comment>IDS_UNSUPPORT_MODEL_MLZ9600</comment>
+  </data>
+  <data name="_92" xml:space="preserve">
+    <value>Serie MD-X2000/MD-X2500</value>
+  </data>
+</root>
