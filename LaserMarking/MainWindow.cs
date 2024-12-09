@@ -3148,6 +3148,78 @@ namespace LaserMarking
             txtComments.Text = comments;
 
         }
+
+        // Updates the selected row
+        private void btnUpdateBrazeEntry_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you would like to update the selected row?", "Confirm Update", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                if (!BrazeEntryValidationChecks())
+                {
+                    return;
+                }
+
+                int rowIndex = dgvBrazeParameters.CurrentCell.RowIndex;
+                int updateID = Convert.ToInt32(dgvBrazeParameters.Rows[rowIndex].Cells["id"].Value);
+                if (!UpdateBrazeEntry(updateID))
+                {
+                    MessageBox.Show("There was an error updating the braze entry!", "Error Updating", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                RefreshResults();
+
+            }
+            else
+            {
+                return;
+            }
+        }
+
+        private bool UpdateBrazeEntry(int id)
+        {
+            int tubeId = GetTubeId(txtTubePN.Text.ToString());
+            string fittingPN = txtFittingPN.Text.ToString();
+            // add tube end style id here
+            string conePN = txtConePN.Text.ToString();
+            int powerLevel = Convert.ToInt32(txtPowerLevel.Text.ToString());
+            int duration = Convert.ToInt32(txtDuration.Text.ToString());
+            double height = Convert.ToDouble(txtHeight.Text.ToString());
+            double measuredJointClearance = Convert.ToDouble(txtJointClearance.Text.ToString());
+            double brazeRings = Convert.ToDouble(txtBrazeRings.Text.ToString());
+            string comments = txtComments.Text.ToString();
+
+            using (SqlConnection cnex = new SqlConnection(HHI_PUMIConnectionString))
+            {
+                SqlCommand cmd = new SqlCommand("UPDATE BrazeParameters " +
+                    "SET TubeID = @TubeID, ConePN = @ConePN, PowerLevel = @PowerLevel, Duration = @Duration, Height = @Height, " +
+                    "MeasuredJointClearance = @MeasuredJointClearance, BrazeRings = @BrazeRing, Comments = @Comments, DateEntered = GETDATE() " +
+                    "WHERE id = @id", cnex);
+                cmd.Parameters.AddWithValue("@TubeId", tubeId);
+                cmd.Parameters.AddWithValue("@FittingPN", fittingPN);
+                cmd.Parameters.AddWithValue("@ConePN", conePN);
+                cmd.Parameters.AddWithValue("@PowerLevel", powerLevel);
+                cmd.Parameters.AddWithValue("@Duration", duration);
+                cmd.Parameters.AddWithValue("@Height", height);
+                cmd.Parameters.AddWithValue("@MeasuredJointClearance", measuredJointClearance);
+                cmd.Parameters.AddWithValue("@BrazeRing", brazeRings);
+                cmd.Parameters.AddWithValue("@Comments", comments);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                try
+                {
+                    cnex.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Successfully updated the Braze Parameter entry.", "Success", MessageBoxButtons.OK, MessageBoxIcon.None);
+                    return true;
+                }
+
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                return false;
+            }
+        }
     }
 }
 
