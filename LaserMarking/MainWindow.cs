@@ -3115,6 +3115,39 @@ namespace LaserMarking
             txtComments.Clear();
 
         }
+
+        private void dgvBrazeParameters_SelectionChanged(object sender, EventArgs e)
+        {
+            int rowIndex = dgvBrazeParameters.CurrentCell.RowIndex;
+            DataGridViewRow row = dgvBrazeParameters.Rows[rowIndex];
+            PopulateBrazeParameters(row);
+        }
+
+        private void PopulateBrazeParameters(DataGridViewRow row)
+        {
+            // Gather row data
+            string tubePN = row.Cells["TubePN"].Value.ToString();
+            string fittingPN = row.Cells["FittingPN"].Value.ToString();
+            string conePN = row.Cells["ConePN"].Value.ToString();
+            string powerLevel = row.Cells["PowerLevel"].Value.ToString();
+            string duration = row.Cells["Duration"].Value.ToString();
+            string height = row.Cells["Height"].Value.ToString();
+            string jointClearance = row.Cells["MeasuredJointClearance"].Value.ToString();
+            string brazeRings = row.Cells["BrazeRings"].Value.ToString();
+            string comments = row.Cells["Comments"].Value.ToString();
+
+            // Input data into fields
+            txtTubePN.Text = tubePN;
+            txtFittingPN.Text = fittingPN;
+            txtConePN.Text = conePN;
+            txtPowerLevel.Text = powerLevel;
+            txtDuration.Text = duration;
+            txtHeight.Text = height;
+            txtJointClearance.Text = jointClearance;
+            txtBrazeRings.Text = brazeRings;
+            txtComments.Text = comments;
+
+        }
     }
 }
 

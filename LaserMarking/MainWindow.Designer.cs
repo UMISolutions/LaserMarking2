@@ -1298,6 +1298,7 @@ namespace LaserMarking
             this.dgvBrazeParameters.RowTemplate.Height = 24;
             this.dgvBrazeParameters.Size = new System.Drawing.Size(1826, 345);
             this.dgvBrazeParameters.TabIndex = 0;
+            this.dgvBrazeParameters.SelectionChanged += new System.EventHandler(this.dgvBrazeParameters_SelectionChanged);
             // 
             // cbFittingPN
             // 
