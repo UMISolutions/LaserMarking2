@@ -2839,6 +2839,7 @@ namespace LaserMarking
                     MessageBox.Show("There was an error adding the braze parameter.", "Braze Parameter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 RefreshResults();
+                ClearBrazeFields();
             }
             
         }
@@ -3097,6 +3098,22 @@ namespace LaserMarking
         private void tbSearch_TextChanged(object sender, EventArgs e)
         {
             RefreshResults();
+        }
+
+        private void ClearBrazeFields()
+        {
+            txtTubePN.Clear();
+            txtFittingPN.Clear();
+            txtTubeEndStyle.Clear();
+            cbFittingPN.Text = "";
+            txtConePN.Clear();
+            txtPowerLevel.Clear();
+            txtDuration.Clear();
+            txtHeight.Clear();
+            txtJointClearance.Clear();
+            txtBrazeRings.Clear();
+            txtComments.Clear();
+
         }
     }
 }
