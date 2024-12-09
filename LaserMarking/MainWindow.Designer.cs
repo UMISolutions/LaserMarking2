@@ -155,6 +155,7 @@ namespace LaserMarking
             this.lblAddBrazeEntry = new System.Windows.Forms.Label();
             this.txtTubePN = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnUpdateBrazeEntry = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1260,6 +1261,7 @@ namespace LaserMarking
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnUpdateBrazeEntry);
             this.splitContainer1.Panel2.Controls.Add(this.cbFittingPN);
             this.splitContainer1.Panel2.Controls.Add(this.btnAddBrazeEntry);
             this.splitContainer1.Panel2.Controls.Add(this.txtComments);
@@ -1298,6 +1300,7 @@ namespace LaserMarking
             this.dgvBrazeParameters.RowTemplate.Height = 24;
             this.dgvBrazeParameters.Size = new System.Drawing.Size(1826, 345);
             this.dgvBrazeParameters.TabIndex = 0;
+            this.dgvBrazeParameters.SelectionChanged += new System.EventHandler(this.dgvBrazeParameters_SelectionChanged);
             // 
             // cbFittingPN
             // 
@@ -1313,7 +1316,7 @@ namespace LaserMarking
             // 
             this.btnAddBrazeEntry.Location = new System.Drawing.Point(8, 368);
             this.btnAddBrazeEntry.Name = "btnAddBrazeEntry";
-            this.btnAddBrazeEntry.Size = new System.Drawing.Size(338, 28);
+            this.btnAddBrazeEntry.Size = new System.Drawing.Size(181, 28);
             this.btnAddBrazeEntry.TabIndex = 21;
             this.btnAddBrazeEntry.Text = "Add Braze Entry";
             this.btnAddBrazeEntry.UseVisualStyleBackColor = true;
@@ -1521,6 +1524,16 @@ namespace LaserMarking
             this.imageList1.Images.SetKeyName(1, "laser128x128.png");
             this.imageList1.Images.SetKeyName(2, "lasernew128x128.png");
             // 
+            // btnUpdateBrazeEntry
+            // 
+            this.btnUpdateBrazeEntry.Location = new System.Drawing.Point(195, 368);
+            this.btnUpdateBrazeEntry.Name = "btnUpdateBrazeEntry";
+            this.btnUpdateBrazeEntry.Size = new System.Drawing.Size(181, 28);
+            this.btnUpdateBrazeEntry.TabIndex = 23;
+            this.btnUpdateBrazeEntry.Text = "Update Braze Entry";
+            this.btnUpdateBrazeEntry.UseVisualStyleBackColor = true;
+            this.btnUpdateBrazeEntry.Click += new System.EventHandler(this.btnUpdateBrazeEntry_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1669,6 +1682,7 @@ namespace LaserMarking
         private TextBox txtTubeEndStyle;
         private Button btnAddBrazeEntry;
         private ComboBox cbFittingPN;
+        private Button btnUpdateBrazeEntry;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
