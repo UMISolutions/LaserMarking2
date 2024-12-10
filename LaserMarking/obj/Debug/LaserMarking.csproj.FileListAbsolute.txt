@@ -3,7 +3,6 @@ C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMar
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.application
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.exe
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\LaserMarking.pdb
-C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\EPDM.Interop.epdm.dll
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\Interop.EdmLib.dll
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\Interop.MBPActXLib.dll
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\Interop.MBPLib2.dll
@@ -11,10 +10,7 @@ C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMar
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\AxInterop.MBPLib2.dll
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.AssemblyReference.cache
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\Interop.EdmLib.dll
-C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\Interop.MBPActXLib.dll
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\Interop.MBPLib2.dll
-C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\AxInterop.MBPActXLib.dll
-C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\AxInterop.MBPLib2.dll
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.csproj.ResolveComReference.cache
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.MainWindow.resources
 C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.OpenProgram.resources
@@ -51,3 +47,4 @@ C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMar.428
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.exe
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\obj\Debug\LaserMarking.pdb
 C:\Users\ajackson\source\repos\LaserMarking2\LaserMarking\bin\Debug\stdole.dll
+C:\Users\akaegi\OneDrive - UMI Solutions\Documents\GitHub\LaserMarking2\LaserMarking\bin\Debug\stdole.dll

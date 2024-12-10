@@ -3220,6 +3220,100 @@ namespace LaserMarking
                 return false;
             }
         }
+
+        private void buttonTubeFromAssembly_Click(object sender, EventArgs e)
+        {
+            string path = $@"C:\UMIS\UMi Parts\80000\{txtAssemblyPN.Text}.slddrw";
+            string newTubePN = GetTubeFromAssembly(path);
+            if (newTubePN == "something went wrong")
+            {
+                MessageBox.Show($"Something went wrong getting the Tube from the BOM for assembly {txtAssemblyPN.Text}. Check this is a valid assembly", "Error getting Tube PN");
+            } else {
+                DialogResult result = MessageBox.Show($"Do you want to replace the Tube PN with {newTubePN}?", "Replace Tube PN",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+                // Check if the user clicked 'Yes'
+                if (result == DialogResult.Yes)
+                {
+                    // Set the value of txtTubePN to 9999
+                    txtTubePN.Text = newTubePN;
+                }
+            }
+        }
+
+        private string GetTubeFromAssembly(string path)
+        {
+            string retval = "something went wrong";
+            if (vault1 == null)
+            {
+                vault1 = new EdmVault5();
+            }
+            if (!vault1.IsLoggedIn)
+            {
+                //Log into selected vault as the current user
+                vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+            }
+            IEdmFolder5 ppoRetParentFolder = null;
+            IEdmFile17 File = (IEdmFile17)vault1.GetFileFromPath(path, out ppoRetParentFolder);
+            try
+            {
+                IEdmVault7 vault2 = (IEdmVault7)vault1;
+                IEdmBom bom;
+                IEdmBomMgr bomMgr;
+                IEdmBomView3 bomView;
+
+                if (File != null)
+                {
+
+                    bomMgr = (IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
+                    EdmBomInfo[] derivedBoms;
+                    File.GetDerivedBOMs(out derivedBoms);
+                    bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, derivedBoms[derivedBoms.Length - 1].mlBomID); //use the latest version of the BOM
+                    bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
+
+                    EdmBomColumn[] bomColumns = null;
+                    bomView.GetColumns(out bomColumns);
+
+                    object[] bomRows;
+                    bomView.GetRows(out bomRows);
+
+                    object cellVar = null;
+                    object computedValue = null;
+                    string config = null;
+                    bool readOnly = false;
+                    int i = -1; // rows
+                    bool finding = true;
+                    foreach (IEdmBomCell cell in bomRows)
+                    {
+                        i++;
+                        for (int j = 1; j < bomColumns.Count(); j++) //columns
+                        {
+                            string column = bomColumns[j].mbsCaption.ToLower();
+                            cell.GetVar(bomColumns[j].mlVariableID, bomColumns[j].meType, out cellVar, out computedValue, out config, out readOnly);
+                            if (column.Contains("part no") && finding)
+                            {
+                                retval = (cellVar.ToString());
+                            }
+                            if (column.Contains("uom") && cellVar.ToString() == "FT")
+                            {
+                                finding = false;
+                            }
+                        }
+                    }
+
+                }
+                else
+                {
+                    throw new Exception($"Tube does not exist in the PDM");
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.ToString() + ", " + ex.Message, "Error refreshing tube BOM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return retval;
+        }
     }
 }
 
