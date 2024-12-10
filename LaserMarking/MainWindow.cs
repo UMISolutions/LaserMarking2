@@ -2832,17 +2832,57 @@ namespace LaserMarking
             {
                 return;
             }
-            else
+            if (BrazeDupCheck())
             {
-                if (!AddBrazeEntry())
+                DialogResult result = MessageBox.Show($"An entry with this Tube PN and Fitting PN already exists. Would you like to cancel this upload?", "Duplicate Entry",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+                // Check if the user clicked 'Yes'
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("There was an error adding the braze parameter.", "Braze Parameter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                RefreshResults();
-                ClearBrazeFields();
             }
+            if (!AddBrazeEntry())
+            {
+                MessageBox.Show("There was an error adding the braze parameter.", "Braze Parameter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            RefreshResults();
+            ClearBrazeFields();
             
         }
+
+        public bool BrazeDupCheck()
+        {
+            int tubeId = GetTubeId(txtTubePN.Text.ToString());
+            string fittingPN = txtFittingPN.Text.ToString();
+
+            string query = "SELECT COUNT(*) FROM BrazeParameters WHERE TubeID = @TubeID AND FittingPN = @FittingPN";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(HHI_PUMIConnectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TubeID", tubeId);
+                        command.Parameters.AddWithValue("@FittingPN", fittingPN);
+
+                        int count = (int)command.ExecuteScalar();
+
+                        return count > 0; // Return true if duplicate exists
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or show an error message to the user
+                MessageBox.Show("Error checking for duplicate: " + ex.Message);
+                return false; // Return false if there was an error
+            }
+        }
+
 
         // Performs validation checks on the data input for braze entry before trying to enter it
         private bool BrazeEntryValidationChecks()
@@ -3103,6 +3143,7 @@ namespace LaserMarking
         private void ClearBrazeFields()
         {
             txtTubePN.Clear();
+            txtAssemblyPN.Clear();
             txtFittingPN.Clear();
             txtTubeEndStyle.Clear();
             cbFittingPN.Text = "";
@@ -3223,7 +3264,30 @@ namespace LaserMarking
 
         private void buttonTubeFromAssembly_Click(object sender, EventArgs e)
         {
-            string path = $@"C:\UMIS\UMi Parts\80000\{txtAssemblyPN.Text}.slddrw";
+            string path = "0";
+            if (txtAssemblyPN.Text[0] == 'P')
+            {
+                string fileName = $"{txtAssemblyPN.Text}.slddrw";
+                string baseDirectory = @"C:\UMIS\Projects\";
+
+                // Get all files in the directory and subdirectories
+                string[] files = Directory.GetFiles(baseDirectory, fileName, SearchOption.AllDirectories);
+
+                if (files.Length > 0)
+                {
+                    path = files[0];
+                }
+                else
+                {
+                    // Handle case where file is not found
+                    Console.WriteLine("File not found.");
+                }
+            } else
+            {
+                path = $@"C:\UMIS\UMi Parts\80000\{txtAssemblyPN.Text}.slddrw";
+            }
+            
+
             string newTubePN = GetTubeFromAssembly(path);
             if (newTubePN == "something went wrong")
             {
@@ -3244,6 +3308,7 @@ namespace LaserMarking
 
         private string GetTubeFromAssembly(string path)
         {
+            bool finding = true;
             string retval = "something went wrong";
             if (vault1 == null)
             {
@@ -3283,7 +3348,6 @@ namespace LaserMarking
                     string config = null;
                     bool readOnly = false;
                     int i = -1; // rows
-                    bool finding = true;
                     foreach (IEdmBomCell cell in bomRows)
                     {
                         i++;
@@ -3312,6 +3376,7 @@ namespace LaserMarking
             {
                 //MessageBox.Show(ex.ToString() + ", " + ex.Message, "Error refreshing tube BOM", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            if (finding) retval = "something went wrong";
             return retval;
         }
     }
