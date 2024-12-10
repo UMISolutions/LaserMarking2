@@ -2847,9 +2847,14 @@ namespace LaserMarking
             {
                 MessageBox.Show("There was an error adding the braze parameter.", "Braze Parameter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            if (checkBoxFitting2.Checked)
+            {
+                txtFittingPN.Text = txtFittingPN2.Text;
+                checkBoxFitting2.Checked = false;
+                btnAddBrazeEntry_Click(sender, e);
+            }
             RefreshResults();
             ClearBrazeFields();
-            
         }
 
         public bool BrazeDupCheck()
@@ -3145,6 +3150,7 @@ namespace LaserMarking
             txtTubePN.Clear();
             txtAssemblyPN.Clear();
             txtFittingPN.Clear();
+            txtFittingPN2.Clear();
             txtTubeEndStyle.Clear();
             cbFittingPN.Text = "";
             txtConePN.Clear();
@@ -3154,11 +3160,12 @@ namespace LaserMarking
             txtJointClearance.Clear();
             txtBrazeRings.Clear();
             txtComments.Clear();
-
+            checkBoxFitting.Checked = true;
         }
 
         private void dgvBrazeParameters_SelectionChanged(object sender, EventArgs e)
         {
+            ClearBrazeFields();
             int rowIndex = dgvBrazeParameters.CurrentCell.RowIndex;
             DataGridViewRow row = dgvBrazeParameters.Rows[rowIndex];
             PopulateBrazeParameters(row);
@@ -3264,6 +3271,7 @@ namespace LaserMarking
 
         private void buttonTubeFromAssembly_Click(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(txtAssemblyPN.Text)) return;
             string path = "0";
             if (txtAssemblyPN.Text[0] == 'P')
             {
@@ -3286,29 +3294,21 @@ namespace LaserMarking
             {
                 path = $@"C:\UMIS\UMi Parts\80000\{txtAssemblyPN.Text}.slddrw";
             }
-            
 
             string newTubePN = GetTubeFromAssembly(path);
             if (newTubePN == "something went wrong")
             {
                 MessageBox.Show($"Something went wrong getting the Tube from the BOM for assembly {txtAssemblyPN.Text}. Check this is a valid assembly", "Error getting Tube PN");
-            } else {
-                DialogResult result = MessageBox.Show($"Do you want to replace the Tube PN with {newTubePN}?", "Replace Tube PN",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question);
-
-                // Check if the user clicked 'Yes'
-                if (result == DialogResult.Yes)
-                {
-                    // Set the value of txtTubePN to 9999
-                    txtTubePN.Text = newTubePN;
-                }
+            } else
+            {
+                txtTubePN.Text = newTubePN;
             }
         }
 
         private string GetTubeFromAssembly(string path)
         {
             bool finding = true;
+            bool twofit = false;
             string retval = "something went wrong";
             if (vault1 == null)
             {
@@ -3355,6 +3355,7 @@ namespace LaserMarking
                         {
                             string column = bomColumns[j].mbsCaption.ToLower();
                             cell.GetVar(bomColumns[j].mlVariableID, bomColumns[j].meType, out cellVar, out computedValue, out config, out readOnly);
+                            //MessageBox.Show($"{column}, {cellVar.ToString()}");
                             if (column.Contains("part no") && finding)
                             {
                                 retval = (cellVar.ToString());
@@ -3363,9 +3364,20 @@ namespace LaserMarking
                             {
                                 finding = false;
                             }
+                            if (column.Contains("description") && cellVar.ToString().Contains("ADAPTOR"))
+                            {
+                                if (twofit)
+                                {
+                                    txtFittingPN2.Text = cellVar.ToString();
+                                    checkBoxFitting2.Checked = true;
+                                } else
+                                {
+                                    txtFittingPN.Text = cellVar.ToString();
+                                    twofit = true;
+                                }
+                            }
                         }
                     }
-
                 }
                 else
                 {
@@ -3378,6 +3390,17 @@ namespace LaserMarking
             }
             if (finding) retval = "something went wrong";
             return retval;
+        }
+
+        private void checkBoxFitting_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxFitting2.Checked = !checkBoxFitting.Checked;
+        }
+
+        private void checkBoxFitting2_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxFitting.Checked = !checkBoxFitting2.Checked;
+            txtFittingPN2.Visible = checkBoxFitting2.Checked;
         }
     }
 }

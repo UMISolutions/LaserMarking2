@@ -131,9 +131,14 @@ namespace LaserMarking
             this.lblSearch = new System.Windows.Forms.Label();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvBrazeParameters = new System.Windows.Forms.DataGridView();
+            this.checkBoxFitting2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxFitting = new System.Windows.Forms.CheckBox();
+            this.txtFittingPN2 = new System.Windows.Forms.TextBox();
+            this.txtAssemblyPN = new System.Windows.Forms.TextBox();
+            this.buttonTubeFromAssembly = new System.Windows.Forms.Button();
             this.btnUpdateBrazeEntry = new System.Windows.Forms.Button();
-            this.cbFittingPN = new System.Windows.Forms.ComboBox();
             this.btnAddBrazeEntry = new System.Windows.Forms.Button();
+            this.cbFittingPN = new System.Windows.Forms.ComboBox();
             this.txtComments = new System.Windows.Forms.TextBox();
             this.txtBrazeRings = new System.Windows.Forms.TextBox();
             this.txtJointClearance = new System.Windows.Forms.TextBox();
@@ -156,8 +161,6 @@ namespace LaserMarking
             this.lblAddBrazeEntry = new System.Windows.Forms.Label();
             this.txtTubePN = new System.Windows.Forms.TextBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.buttonTubeFromAssembly = new System.Windows.Forms.Button();
-            this.txtAssemblyPN = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OrdersGridView)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -828,7 +831,7 @@ namespace LaserMarking
             // PlusOne
             // 
             this.PlusOne.Enabled = false;
-            this.PlusOne.Location = new System.Drawing.Point(95, 3);
+            this.PlusOne.Location = new System.Drawing.Point(92, 3);
             this.PlusOne.Name = "PlusOne";
             this.PlusOne.Size = new System.Drawing.Size(43, 23);
             this.PlusOne.TabIndex = 0;
@@ -839,7 +842,7 @@ namespace LaserMarking
             // PlusTen
             // 
             this.PlusTen.Enabled = false;
-            this.PlusTen.Location = new System.Drawing.Point(146, 3);
+            this.PlusTen.Location = new System.Drawing.Point(143, 3);
             this.PlusTen.Name = "PlusTen";
             this.PlusTen.Size = new System.Drawing.Size(43, 23);
             this.PlusTen.TabIndex = 1;
@@ -852,7 +855,7 @@ namespace LaserMarking
             this.MinusTen.Enabled = false;
             this.MinusTen.Location = new System.Drawing.Point(3, 3);
             this.MinusTen.Name = "MinusTen";
-            this.MinusTen.Size = new System.Drawing.Size(38, 22);
+            this.MinusTen.Size = new System.Drawing.Size(37, 22);
             this.MinusTen.TabIndex = 2;
             this.MinusTen.Text = "- 10";
             this.MinusTen.UseVisualStyleBackColor = true;
@@ -861,9 +864,9 @@ namespace LaserMarking
             // MinusOne
             // 
             this.MinusOne.Enabled = false;
-            this.MinusOne.Location = new System.Drawing.Point(47, 3);
+            this.MinusOne.Location = new System.Drawing.Point(46, 3);
             this.MinusOne.Name = "MinusOne";
-            this.MinusOne.Size = new System.Drawing.Size(42, 22);
+            this.MinusOne.Size = new System.Drawing.Size(40, 22);
             this.MinusOne.TabIndex = 3;
             this.MinusOne.Text = "- 1";
             this.MinusOne.UseVisualStyleBackColor = true;
@@ -884,7 +887,7 @@ namespace LaserMarking
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 56F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanel3.Controls.Add(this.MinusTen, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.MinusOne, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.PlusTen, 3, 0);
@@ -1036,7 +1039,7 @@ namespace LaserMarking
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1502, 770);
@@ -1118,9 +1121,9 @@ namespace LaserMarking
             this.tabLaserMarking.Controls.Add(this.LogoComboBox);
             this.tabLaserMarking.ImageIndex = 2;
             this.tabLaserMarking.Location = new System.Drawing.Point(4, 23);
-            this.tabLaserMarking.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabLaserMarking.Margin = new System.Windows.Forms.Padding(2);
             this.tabLaserMarking.Name = "tabLaserMarking";
-            this.tabLaserMarking.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabLaserMarking.Padding = new System.Windows.Forms.Padding(2);
             this.tabLaserMarking.Size = new System.Drawing.Size(1494, 743);
             this.tabLaserMarking.TabIndex = 0;
             this.tabLaserMarking.Text = "Laser Marking";
@@ -1134,9 +1137,9 @@ namespace LaserMarking
             this.tabBrazing.Controls.Add(this.splitContainer1);
             this.tabBrazing.ImageIndex = 0;
             this.tabBrazing.Location = new System.Drawing.Point(4, 23);
-            this.tabBrazing.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabBrazing.Margin = new System.Windows.Forms.Padding(2);
             this.tabBrazing.Name = "tabBrazing";
-            this.tabBrazing.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabBrazing.Padding = new System.Windows.Forms.Padding(2);
             this.tabBrazing.Size = new System.Drawing.Size(1494, 743);
             this.tabBrazing.TabIndex = 1;
             this.tabBrazing.Text = "Brazing";
@@ -1145,7 +1148,7 @@ namespace LaserMarking
             // btnLoadResults
             // 
             this.btnLoadResults.Location = new System.Drawing.Point(253, 2);
-            this.btnLoadResults.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoadResults.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoadResults.Name = "btnLoadResults";
             this.btnLoadResults.Size = new System.Drawing.Size(141, 24);
             this.btnLoadResults.TabIndex = 1;
@@ -1156,7 +1159,7 @@ namespace LaserMarking
             // tbSearch
             // 
             this.tbSearch.Location = new System.Drawing.Point(50, 5);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(2);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(199, 20);
             this.tbSearch.TabIndex = 2;
@@ -1175,7 +1178,7 @@ namespace LaserMarking
             // splitContainer1
             // 
             this.splitContainer1.Location = new System.Drawing.Point(0, 32);
-            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1186,11 +1189,14 @@ namespace LaserMarking
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.checkBoxFitting2);
+            this.splitContainer1.Panel2.Controls.Add(this.checkBoxFitting);
+            this.splitContainer1.Panel2.Controls.Add(this.txtFittingPN2);
             this.splitContainer1.Panel2.Controls.Add(this.txtAssemblyPN);
             this.splitContainer1.Panel2.Controls.Add(this.buttonTubeFromAssembly);
             this.splitContainer1.Panel2.Controls.Add(this.btnUpdateBrazeEntry);
-            this.splitContainer1.Panel2.Controls.Add(this.cbFittingPN);
             this.splitContainer1.Panel2.Controls.Add(this.btnAddBrazeEntry);
+            this.splitContainer1.Panel2.Controls.Add(this.cbFittingPN);
             this.splitContainer1.Panel2.Controls.Add(this.txtComments);
             this.splitContainer1.Panel2.Controls.Add(this.txtBrazeRings);
             this.splitContainer1.Panel2.Controls.Add(this.txtJointClearance);
@@ -1224,17 +1230,72 @@ namespace LaserMarking
             this.dgvBrazeParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBrazeParameters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBrazeParameters.Location = new System.Drawing.Point(0, 0);
-            this.dgvBrazeParameters.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvBrazeParameters.Margin = new System.Windows.Forms.Padding(2);
             this.dgvBrazeParameters.Name = "dgvBrazeParameters";
             this.dgvBrazeParameters.RowTemplate.Height = 24;
             this.dgvBrazeParameters.Size = new System.Drawing.Size(1370, 280);
             this.dgvBrazeParameters.TabIndex = 0;
             this.dgvBrazeParameters.SelectionChanged += new System.EventHandler(this.dgvBrazeParameters_SelectionChanged);
             // 
+            // checkBoxFitting2
+            // 
+            this.checkBoxFitting2.AutoSize = true;
+            this.checkBoxFitting2.Location = new System.Drawing.Point(525, 66);
+            this.checkBoxFitting2.Name = "checkBoxFitting2";
+            this.checkBoxFitting2.Size = new System.Drawing.Size(68, 17);
+            this.checkBoxFitting2.TabIndex = 28;
+            this.checkBoxFitting2.Text = "2 Fittings";
+            this.checkBoxFitting2.UseVisualStyleBackColor = true;
+            this.checkBoxFitting2.CheckedChanged += new System.EventHandler(this.checkBoxFitting2_CheckedChanged);
+            // 
+            // checkBoxFitting
+            // 
+            this.checkBoxFitting.AutoSize = true;
+            this.checkBoxFitting.Checked = true;
+            this.checkBoxFitting.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxFitting.Location = new System.Drawing.Point(456, 66);
+            this.checkBoxFitting.Name = "checkBoxFitting";
+            this.checkBoxFitting.Size = new System.Drawing.Size(63, 17);
+            this.checkBoxFitting.TabIndex = 27;
+            this.checkBoxFitting.Text = "1 Fitting";
+            this.checkBoxFitting.UseVisualStyleBackColor = true;
+            this.checkBoxFitting.CheckedChanged += new System.EventHandler(this.checkBoxFitting_CheckedChanged);
+            // 
+            // txtFittingPN2
+            // 
+            this.txtFittingPN2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtFittingPN2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtFittingPN2.Location = new System.Drawing.Point(267, 64);
+            this.txtFittingPN2.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFittingPN2.Name = "txtFittingPN2";
+            this.txtFittingPN2.Size = new System.Drawing.Size(168, 20);
+            this.txtFittingPN2.TabIndex = 26;
+            this.txtFittingPN2.Visible = false;
+            // 
+            // txtAssemblyPN
+            // 
+            this.txtAssemblyPN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtAssemblyPN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtAssemblyPN.Location = new System.Drawing.Point(440, 40);
+            this.txtAssemblyPN.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAssemblyPN.Name = "txtAssemblyPN";
+            this.txtAssemblyPN.Size = new System.Drawing.Size(168, 20);
+            this.txtAssemblyPN.TabIndex = 25;
+            // 
+            // buttonTubeFromAssembly
+            // 
+            this.buttonTubeFromAssembly.Location = new System.Drawing.Point(267, 39);
+            this.buttonTubeFromAssembly.Name = "buttonTubeFromAssembly";
+            this.buttonTubeFromAssembly.Size = new System.Drawing.Size(168, 23);
+            this.buttonTubeFromAssembly.TabIndex = 24;
+            this.buttonTubeFromAssembly.Text = "<-- Get Tube From Assembly <--";
+            this.buttonTubeFromAssembly.UseVisualStyleBackColor = true;
+            this.buttonTubeFromAssembly.Click += new System.EventHandler(this.buttonTubeFromAssembly_Click);
+            // 
             // btnUpdateBrazeEntry
             // 
             this.btnUpdateBrazeEntry.Location = new System.Drawing.Point(146, 299);
-            this.btnUpdateBrazeEntry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnUpdateBrazeEntry.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateBrazeEntry.Name = "btnUpdateBrazeEntry";
             this.btnUpdateBrazeEntry.Size = new System.Drawing.Size(136, 23);
             this.btnUpdateBrazeEntry.TabIndex = 23;
@@ -1242,21 +1303,10 @@ namespace LaserMarking
             this.btnUpdateBrazeEntry.UseVisualStyleBackColor = true;
             this.btnUpdateBrazeEntry.Click += new System.EventHandler(this.btnUpdateBrazeEntry_Click);
             // 
-            // cbFittingPN
-            // 
-            this.cbFittingPN.Enabled = false;
-            this.cbFittingPN.FormattingEnabled = true;
-            this.cbFittingPN.Location = new System.Drawing.Point(277, 86);
-            this.cbFittingPN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.cbFittingPN.Name = "cbFittingPN";
-            this.cbFittingPN.Size = new System.Drawing.Size(92, 21);
-            this.cbFittingPN.TabIndex = 22;
-            this.cbFittingPN.Visible = false;
-            // 
             // btnAddBrazeEntry
             // 
             this.btnAddBrazeEntry.Location = new System.Drawing.Point(6, 299);
-            this.btnAddBrazeEntry.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddBrazeEntry.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddBrazeEntry.Name = "btnAddBrazeEntry";
             this.btnAddBrazeEntry.Size = new System.Drawing.Size(136, 23);
             this.btnAddBrazeEntry.TabIndex = 21;
@@ -1264,12 +1314,23 @@ namespace LaserMarking
             this.btnAddBrazeEntry.UseVisualStyleBackColor = true;
             this.btnAddBrazeEntry.Click += new System.EventHandler(this.btnAddBrazeEntry_Click);
             // 
+            // cbFittingPN
+            // 
+            this.cbFittingPN.Enabled = false;
+            this.cbFittingPN.FormattingEnabled = true;
+            this.cbFittingPN.Location = new System.Drawing.Point(277, 86);
+            this.cbFittingPN.Margin = new System.Windows.Forms.Padding(2);
+            this.cbFittingPN.Name = "cbFittingPN";
+            this.cbFittingPN.Size = new System.Drawing.Size(92, 21);
+            this.cbFittingPN.TabIndex = 22;
+            this.cbFittingPN.Visible = false;
+            // 
             // txtComments
             // 
             this.txtComments.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtComments.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtComments.Location = new System.Drawing.Point(94, 247);
-            this.txtComments.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtComments.Margin = new System.Windows.Forms.Padding(2);
             this.txtComments.Multiline = true;
             this.txtComments.Name = "txtComments";
             this.txtComments.Size = new System.Drawing.Size(168, 48);
@@ -1280,7 +1341,7 @@ namespace LaserMarking
             this.txtBrazeRings.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtBrazeRings.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtBrazeRings.Location = new System.Drawing.Point(94, 224);
-            this.txtBrazeRings.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBrazeRings.Margin = new System.Windows.Forms.Padding(2);
             this.txtBrazeRings.Name = "txtBrazeRings";
             this.txtBrazeRings.Size = new System.Drawing.Size(168, 20);
             this.txtBrazeRings.TabIndex = 19;
@@ -1290,7 +1351,7 @@ namespace LaserMarking
             this.txtJointClearance.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtJointClearance.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtJointClearance.Location = new System.Drawing.Point(94, 202);
-            this.txtJointClearance.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtJointClearance.Margin = new System.Windows.Forms.Padding(2);
             this.txtJointClearance.Name = "txtJointClearance";
             this.txtJointClearance.Size = new System.Drawing.Size(168, 20);
             this.txtJointClearance.TabIndex = 18;
@@ -1300,7 +1361,7 @@ namespace LaserMarking
             this.txtHeight.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtHeight.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtHeight.Location = new System.Drawing.Point(94, 179);
-            this.txtHeight.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtHeight.Margin = new System.Windows.Forms.Padding(2);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(168, 20);
             this.txtHeight.TabIndex = 17;
@@ -1310,7 +1371,7 @@ namespace LaserMarking
             this.txtDuration.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtDuration.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtDuration.Location = new System.Drawing.Point(94, 156);
-            this.txtDuration.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDuration.Margin = new System.Windows.Forms.Padding(2);
             this.txtDuration.Name = "txtDuration";
             this.txtDuration.Size = new System.Drawing.Size(168, 20);
             this.txtDuration.TabIndex = 16;
@@ -1320,7 +1381,7 @@ namespace LaserMarking
             this.txtPowerLevel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtPowerLevel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtPowerLevel.Location = new System.Drawing.Point(94, 133);
-            this.txtPowerLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPowerLevel.Margin = new System.Windows.Forms.Padding(2);
             this.txtPowerLevel.Name = "txtPowerLevel";
             this.txtPowerLevel.Size = new System.Drawing.Size(168, 20);
             this.txtPowerLevel.TabIndex = 15;
@@ -1330,7 +1391,7 @@ namespace LaserMarking
             this.txtConePN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtConePN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtConePN.Location = new System.Drawing.Point(94, 110);
-            this.txtConePN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtConePN.Margin = new System.Windows.Forms.Padding(2);
             this.txtConePN.Name = "txtConePN";
             this.txtConePN.Size = new System.Drawing.Size(168, 20);
             this.txtConePN.TabIndex = 14;
@@ -1341,7 +1402,7 @@ namespace LaserMarking
             this.txtTubeEndStyle.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtTubeEndStyle.Enabled = false;
             this.txtTubeEndStyle.Location = new System.Drawing.Point(94, 88);
-            this.txtTubeEndStyle.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTubeEndStyle.Margin = new System.Windows.Forms.Padding(2);
             this.txtTubeEndStyle.Name = "txtTubeEndStyle";
             this.txtTubeEndStyle.Size = new System.Drawing.Size(168, 20);
             this.txtTubeEndStyle.TabIndex = 13;
@@ -1351,7 +1412,7 @@ namespace LaserMarking
             this.txtFittingPN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtFittingPN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtFittingPN.Location = new System.Drawing.Point(94, 64);
-            this.txtFittingPN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFittingPN.Margin = new System.Windows.Forms.Padding(2);
             this.txtFittingPN.Name = "txtFittingPN";
             this.txtFittingPN.Size = new System.Drawing.Size(168, 20);
             this.txtFittingPN.TabIndex = 12;
@@ -1473,7 +1534,7 @@ namespace LaserMarking
             this.txtTubePN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtTubePN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtTubePN.Location = new System.Drawing.Point(94, 41);
-            this.txtTubePN.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTubePN.Margin = new System.Windows.Forms.Padding(2);
             this.txtTubePN.Name = "txtTubePN";
             this.txtTubePN.Size = new System.Drawing.Size(168, 20);
             this.txtTubePN.TabIndex = 0;
@@ -1486,26 +1547,6 @@ namespace LaserMarking
             this.imageList1.Images.SetKeyName(0, "brazing128x128.png");
             this.imageList1.Images.SetKeyName(1, "laser128x128.png");
             this.imageList1.Images.SetKeyName(2, "lasernew128x128.png");
-            // 
-            // buttonTubeFromAssembly
-            // 
-            this.buttonTubeFromAssembly.Location = new System.Drawing.Point(267, 39);
-            this.buttonTubeFromAssembly.Name = "buttonTubeFromAssembly";
-            this.buttonTubeFromAssembly.Size = new System.Drawing.Size(168, 23);
-            this.buttonTubeFromAssembly.TabIndex = 24;
-            this.buttonTubeFromAssembly.Text = "<-- Get Tube From Assembly <--";
-            this.buttonTubeFromAssembly.UseVisualStyleBackColor = true;
-            this.buttonTubeFromAssembly.Click += new System.EventHandler(this.buttonTubeFromAssembly_Click);
-            // 
-            // txtAssemblyPN
-            // 
-            this.txtAssemblyPN.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txtAssemblyPN.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.txtAssemblyPN.Location = new System.Drawing.Point(440, 40);
-            this.txtAssemblyPN.Margin = new System.Windows.Forms.Padding(2);
-            this.txtAssemblyPN.Name = "txtAssemblyPN";
-            this.txtAssemblyPN.Size = new System.Drawing.Size(168, 20);
-            this.txtAssemblyPN.TabIndex = 25;
             // 
             // MainWindow
             // 
@@ -1657,6 +1698,9 @@ namespace LaserMarking
         private Button btnUpdateBrazeEntry;
         private TextBox txtAssemblyPN;
         private Button buttonTubeFromAssembly;
+        private CheckBox checkBoxFitting;
+        private TextBox txtFittingPN2;
+        private CheckBox checkBoxFitting2;
         //private System.Windows.Forms.Button saveBtn;
     }
     public partial class frmSelectBOM : Form
