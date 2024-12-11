@@ -3310,6 +3310,7 @@ namespace LaserMarking
             bool finding = true;
             bool twofit = false;
             string retval = "something went wrong";
+            string retval2 = "something went wrong";
             if (vault1 == null)
             {
                 vault1 = new EdmVault5();
@@ -3358,6 +3359,10 @@ namespace LaserMarking
                             //MessageBox.Show($"{column}, {cellVar.ToString()}");
                             if (column.Contains("part no") && finding)
                             {
+                                retval2 = (cellVar.ToString());
+                            }
+                            if (column.Contains("part no"))
+                            {
                                 retval = (cellVar.ToString());
                             }
                             if (column.Contains("uom") && cellVar.ToString() == "FT")
@@ -3368,11 +3373,11 @@ namespace LaserMarking
                             {
                                 if (twofit)
                                 {
-                                    txtFittingPN2.Text = cellVar.ToString();
+                                    txtFittingPN2.Text = retval;
                                     checkBoxFitting2.Checked = true;
                                 } else
                                 {
-                                    txtFittingPN.Text = cellVar.ToString();
+                                    txtFittingPN.Text = retval;
                                     twofit = true;
                                 }
                             }
@@ -3389,7 +3394,7 @@ namespace LaserMarking
                 //MessageBox.Show(ex.ToString() + ", " + ex.Message, "Error refreshing tube BOM", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (finding) retval = "something went wrong";
-            return retval;
+            return retval2;
         }
 
         private void checkBoxFitting_CheckedChanged(object sender, EventArgs e)
