@@ -2832,17 +2832,62 @@ namespace LaserMarking
             {
                 return;
             }
-            else
+            if (BrazeDupCheck())
             {
-                if (!AddBrazeEntry())
+                DialogResult result = MessageBox.Show($"An entry with this Tube PN and Fitting PN already exists. Would you like to cancel this upload?", "Duplicate Entry",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+                // Check if the user clicked 'Yes'
+                if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("There was an error adding the braze parameter.", "Braze Parameter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
-                RefreshResults();
-                ClearBrazeFields();
             }
-            
+            if (!AddBrazeEntry())
+            {
+                MessageBox.Show("There was an error adding the braze parameter.", "Braze Parameter Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (checkBoxFitting2.Checked)
+            {
+                txtFittingPN.Text = txtFittingPN2.Text;
+                checkBoxFitting2.Checked = false;
+                btnAddBrazeEntry_Click(sender, e);
+            }
+            RefreshResults();
+            ClearBrazeFields();
         }
+
+        public bool BrazeDupCheck()
+        {
+            int tubeId = GetTubeId(txtTubePN.Text.ToString());
+            string fittingPN = txtFittingPN.Text.ToString();
+
+            string query = "SELECT COUNT(*) FROM BrazeParameters WHERE TubeID = @TubeID AND FittingPN = @FittingPN";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(HHI_PUMIConnectionString))
+                {
+                    connection.Open();
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@TubeID", tubeId);
+                        command.Parameters.AddWithValue("@FittingPN", fittingPN);
+
+                        int count = (int)command.ExecuteScalar();
+
+                        return count > 0; // Return true if duplicate exists
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the exception or show an error message to the user
+                MessageBox.Show("Error checking for duplicate: " + ex.Message);
+                return false; // Return false if there was an error
+            }
+        }
+
 
         // Performs validation checks on the data input for braze entry before trying to enter it
         private bool BrazeEntryValidationChecks()
@@ -3103,7 +3148,9 @@ namespace LaserMarking
         private void ClearBrazeFields()
         {
             txtTubePN.Clear();
+            txtAssemblyPN.Clear();
             txtFittingPN.Clear();
+            txtFittingPN2.Clear();
             txtTubeEndStyle.Clear();
             cbFittingPN.Text = "";
             txtConePN.Clear();
@@ -3113,11 +3160,12 @@ namespace LaserMarking
             txtJointClearance.Clear();
             txtBrazeRings.Clear();
             txtComments.Clear();
-
+            checkBoxFitting.Checked = true;
         }
 
         private void dgvBrazeParameters_SelectionChanged(object sender, EventArgs e)
         {
+            ClearBrazeFields();
             int rowIndex = dgvBrazeParameters.CurrentCell.RowIndex;
             DataGridViewRow row = dgvBrazeParameters.Rows[rowIndex];
             PopulateBrazeParameters(row);
@@ -3219,6 +3267,145 @@ namespace LaserMarking
                 }
                 return false;
             }
+        }
+
+        private void buttonTubeFromAssembly_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtAssemblyPN.Text)) return;
+            string path = "0";
+            if (txtAssemblyPN.Text[0] == 'P')
+            {
+                string fileName = $"{txtAssemblyPN.Text}.slddrw";
+                string baseDirectory = @"C:\UMIS\Projects\";
+
+                // Get all files in the directory and subdirectories
+                string[] files = Directory.GetFiles(baseDirectory, fileName, SearchOption.AllDirectories);
+
+                if (files.Length > 0)
+                {
+                    path = files[0];
+                }
+                else
+                {
+                    // Handle case where file is not found
+                    Console.WriteLine("File not found.");
+                }
+            } else
+            {
+                path = $@"C:\UMIS\UMi Parts\80000\{txtAssemblyPN.Text}.slddrw";
+            }
+
+            string newTubePN = GetTubeFromAssembly(path);
+            if (newTubePN == "something went wrong")
+            {
+                MessageBox.Show($"Something went wrong getting the Tube from the BOM for assembly {txtAssemblyPN.Text}. Check this is a valid assembly", "Error getting Tube PN");
+            } else
+            {
+                txtTubePN.Text = newTubePN;
+            }
+        }
+
+        private string GetTubeFromAssembly(string path)
+        {
+            bool finding = true;
+            bool twofit = false;
+            string retval = "something went wrong";
+            string retval2 = "something went wrong";
+            if (vault1 == null)
+            {
+                vault1 = new EdmVault5();
+            }
+            if (!vault1.IsLoggedIn)
+            {
+                //Log into selected vault as the current user
+                vault1.LoginAuto("UMIS", this.Handle.ToInt32());
+            }
+            IEdmFolder5 ppoRetParentFolder = null;
+            IEdmFile17 File = (IEdmFile17)vault1.GetFileFromPath(path, out ppoRetParentFolder);
+            try
+            {
+                IEdmVault7 vault2 = (IEdmVault7)vault1;
+                IEdmBom bom;
+                IEdmBomMgr bomMgr;
+                IEdmBomView3 bomView;
+
+                if (File != null)
+                {
+
+                    bomMgr = (IEdmBomMgr)vault2.CreateUtility(EdmUtility.EdmUtil_BomMgr);
+                    EdmBomInfo[] derivedBoms;
+                    File.GetDerivedBOMs(out derivedBoms);
+                    bom = (IEdmBom)vault2.GetObject(EdmObjectType.EdmObject_BOM, derivedBoms[derivedBoms.Length - 1].mlBomID); //use the latest version of the BOM
+                    bomView = (IEdmBomView3)(IEdmBomView2)bom.GetView(0);
+
+                    EdmBomColumn[] bomColumns = null;
+                    bomView.GetColumns(out bomColumns);
+
+                    object[] bomRows;
+                    bomView.GetRows(out bomRows);
+
+                    object cellVar = null;
+                    object computedValue = null;
+                    string config = null;
+                    bool readOnly = false;
+                    int i = -1; // rows
+                    foreach (IEdmBomCell cell in bomRows)
+                    {
+                        i++;
+                        for (int j = 1; j < bomColumns.Count(); j++) //columns
+                        {
+                            string column = bomColumns[j].mbsCaption.ToLower();
+                            cell.GetVar(bomColumns[j].mlVariableID, bomColumns[j].meType, out cellVar, out computedValue, out config, out readOnly);
+                            //MessageBox.Show($"{column}, {cellVar.ToString()}");
+                            if (column.Contains("part no") && finding)
+                            {
+                                retval2 = (cellVar.ToString());
+                            }
+                            if (column.Contains("part no"))
+                            {
+                                retval = (cellVar.ToString());
+                            }
+                            if (column.Contains("uom") && cellVar.ToString() == "FT")
+                            {
+                                finding = false;
+                            }
+                            if (column.Contains("description") && cellVar.ToString().Contains("ADAPTOR"))
+                            {
+                                if (twofit)
+                                {
+                                    txtFittingPN2.Text = retval;
+                                    checkBoxFitting2.Checked = true;
+                                } else
+                                {
+                                    txtFittingPN.Text = retval;
+                                    twofit = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    throw new Exception($"Tube does not exist in the PDM");
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show(ex.ToString() + ", " + ex.Message, "Error refreshing tube BOM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (finding) retval = "something went wrong";
+            return retval2;
+        }
+
+        private void checkBoxFitting_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxFitting2.Checked = !checkBoxFitting.Checked;
+        }
+
+        private void checkBoxFitting2_CheckedChanged(object sender, EventArgs e)
+        {
+            checkBoxFitting.Checked = !checkBoxFitting2.Checked;
+            txtFittingPN2.Visible = checkBoxFitting2.Checked;
         }
     }
 }
