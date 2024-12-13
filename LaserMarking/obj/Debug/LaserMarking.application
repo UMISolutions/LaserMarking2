@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="LaserMarking.exe.manifest" size="7768">
+    <dependentAssembly dependencyType="install" codebase="LaserMarking.exe.manifest" size="8271">
       <assemblyIdentity name="LaserMarking.exe" version="1.0.2.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0Ti6x4q/T33z/UNXy0o12mQ6siSNShzfCFQp2iQy35g=</dsig:DigestValue>
+        <dsig:DigestValue>Jvj4BkDsXuM2wH+mg38BktMyslx3hloerxHuIL5oF34=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -1,3 +1,8 @@
+Version 1.2.5.0 - 2024-12-13
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+- New version number format
+- Added Icon
+
 Version 1.0.2.4 - 2024-12-11
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 - Add ability to translate 80000 assembly or project into tubePN and adaptorPN(s) in Braze tab
