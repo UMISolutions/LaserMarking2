@@ -1,4 +1,4 @@
-Version 1.2.5.0 - 2024-12-11
+Version 1.2.5.0 - 2024-12-13
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 - New version number format
 - Added Icon
