@@ -831,7 +831,7 @@ namespace LaserMarking
             // PlusOne
             // 
             this.PlusOne.Enabled = false;
-            this.PlusOne.Location = new System.Drawing.Point(92, 3);
+            this.PlusOne.Location = new System.Drawing.Point(91, 3);
             this.PlusOne.Name = "PlusOne";
             this.PlusOne.Size = new System.Drawing.Size(43, 23);
             this.PlusOne.TabIndex = 0;
@@ -842,7 +842,7 @@ namespace LaserMarking
             // PlusTen
             // 
             this.PlusTen.Enabled = false;
-            this.PlusTen.Location = new System.Drawing.Point(143, 3);
+            this.PlusTen.Location = new System.Drawing.Point(142, 3);
             this.PlusTen.Name = "PlusTen";
             this.PlusTen.Size = new System.Drawing.Size(43, 23);
             this.PlusTen.TabIndex = 1;
@@ -855,7 +855,7 @@ namespace LaserMarking
             this.MinusTen.Enabled = false;
             this.MinusTen.Location = new System.Drawing.Point(3, 3);
             this.MinusTen.Name = "MinusTen";
-            this.MinusTen.Size = new System.Drawing.Size(37, 22);
+            this.MinusTen.Size = new System.Drawing.Size(36, 22);
             this.MinusTen.TabIndex = 2;
             this.MinusTen.Text = "- 10";
             this.MinusTen.UseVisualStyleBackColor = true;
@@ -864,7 +864,7 @@ namespace LaserMarking
             // MinusOne
             // 
             this.MinusOne.Enabled = false;
-            this.MinusOne.Location = new System.Drawing.Point(46, 3);
+            this.MinusOne.Location = new System.Drawing.Point(45, 3);
             this.MinusOne.Name = "MinusOne";
             this.MinusOne.Size = new System.Drawing.Size(40, 22);
             this.MinusOne.TabIndex = 3;
@@ -887,7 +887,7 @@ namespace LaserMarking
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 51F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 59F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 60F));
             this.tableLayoutPanel3.Controls.Add(this.MinusTen, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.MinusOne, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.PlusTen, 3, 0);
@@ -1554,6 +1554,7 @@ namespace LaserMarking
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1502, 770);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.Text = "Laser Marking";
             ((System.ComponentModel.ISupportInitialize)(this.axMBActX2)).EndInit();
