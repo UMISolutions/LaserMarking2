@@ -4,7 +4,7 @@
   <description asmv2:iconFile="laser-warning_39051.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="LaserMarking" version="1.0.2.4" language="neutral" processorArchitecture="x86" />
+    <assemblyIdentity name="LaserMarking" version="1.2.5.0" language="neutral" processorArchitecture="x86" />
     <commandLine file="LaserMarking.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -104,13 +104,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LaserMarking.exe" size="249768">
-      <assemblyIdentity name="LaserMarking" version="1.0.2.4" language="neutral" processorArchitecture="x86" />
+      <assemblyIdentity name="LaserMarking" version="1.2.5.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>lYGw44FRLQVAp554foB2Ad9m2Ied0PEXvjjQTZM+Ffs=</dsig:DigestValue>
+        <dsig:DigestValue>+HSn13hX7UiFMjRlCB1BGTH8p8+S98GMAXpUgJ4UI3M=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -144,13 +144,13 @@
       <dsig:DigestValue>p7vct3HKLI22F7hn7Su02L4XHpaq0fgieJxSrm1rVoM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="WhatsNew.txt" size="1809">
+  <file name="WhatsNew.txt" size="1986">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>BkpeIjCIVmxZmb/Ou11AoWPoRKVikNJmiQ2AvJxm4WI=</dsig:DigestValue>
+      <dsig:DigestValue>4I1GXv+6PlRpm1HBB8bqX5mIcQq5ru6zenj84UKwTbQ=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>
